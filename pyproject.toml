@@ -1,0 +1,33 @@
+[project]
+name = "wnba-data"
+version = "0.1.0"
+description = "Incremental WNBA dataset repository for Google Colab predictions."
+dependencies = [
+    "pandas>=2.2,<3",
+    "numpy>=1.26,<3",
+    "pyarrow>=16,<22",
+    "requests>=2.32,<3",
+]
+readme = "README.md"
+requires-python = ">=3.12"
+classifiers = [
+    "Programming Language :: Python :: 3.12",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+[project.urls]
+"Source" = "https://github.com/YOUR_GITHUB_USERNAME/wnba-data"
+
+[build-system]
+requires = ["setuptools>=65.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.pytest]
+minversion = "8.0"
+addopts = "--strict-markers --tb=short"
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 90
+target-version = ["py312"]
+exclude = [".git", "__pycache__", "data"]

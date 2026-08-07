@@ -1,0 +1,25 @@
+{
+  "date": "2026-07-01T19:00:00Z",
+  "boxscore": {
+    "teams": [
+      {
+        "team": {"id": "1", "name": "Home", "abbreviation": "HME"},
+        "linescores": [
+          {"period": 1, "score": 20},
+          {"period": 2, "score": 18},
+          {"period": 3, "score": 22},
+          {"period": 4, "score": 15}
+        ]
+      },
+      {
+        "team": {"id": "2", "name": "Away", "abbreviation": "AWY"},
+        "linescores": [
+          {"period": 1, "score": 18},
+          {"period": 2, "score": 16},
+          {"period": 3, "score": 20},
+          {"period": 4, "score": 12}
+        ]
+      }
+    ]
+  }
+}

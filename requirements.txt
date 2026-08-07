@@ -1,0 +1,6 @@
+pandas>=2.2,<3
+numpy>=1.26,<3
+pyarrow>=16,<22
+requests>=2.32,<3
+pytest>=8,<9
+pytest-cov>=5,<7

@@ -1,0 +1,34 @@
+name: Daily WNBA Update
+
+on:
+  schedule:
+    - cron: '0 6 * * *'
+  workflow_dispatch: {}
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      - name: Run daily update
+        run: |
+          python scripts/run_daily_update.py
+      - name: Commit updated data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/*.parquet data/last_update.json
+          git diff --quiet --staged || git commit -m "Daily WNBA data update"
+      - name: Push changes
+        uses: ad-m/github-push-action@v0.3.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: main

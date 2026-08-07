@@ -1,0 +1,20 @@
+{
+  "events": [
+    {
+      "id": "123",
+      "date": "2026-07-01T19:00:00Z",
+      "season": 2026,
+      "status": {"type": {"name": "STATUS_FINAL", "detail": "Final", "completed": true}},
+      "competitions": [
+        {
+          "competitors": [
+            {"homeAway": "home", "team": {"id": "1", "name": "Home", "abbreviation": "HME"}, "score": "75"},
+            {"homeAway": "away", "team": {"id": "2", "name": "Away", "abbreviation": "AWY"}, "score": 68}
+          ],
+          "venue": {"fullName": "Arena"},
+          "neutralSite": false
+        }
+      ]
+    }
+  ]
+}

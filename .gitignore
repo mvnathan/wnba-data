@@ -1,0 +1,15 @@
+__pycache__/
+*.py[cod]
+*.log
+*.tmp
+.pytest_cache/
+.vscode/
+.ipynb_checkpoints/
+.env
+.venv/
+venv/
+secret*.txt
+.DS_Store
+
+# Ignore generated backfill progress files
+data/backfill_progress.json
