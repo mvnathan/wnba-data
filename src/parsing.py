@@ -74,6 +74,19 @@ def parse_scoreboard_event(event: dict[str, Any]) -> dict[str, Any] | None:
     status = type_info.get("name") or status_info.get("type") or ""
     status_detail = type_info.get("detail") or type_info.get("shortDetail") or ""
     completed = bool(type_info.get("completed") or status.lower() == "final")
+    clock = (
+        status_info.get("displayClock")
+        or status_info.get("clock")
+        or type_info.get("displayClock")
+        or type_info.get("clock")
+        or ""
+    )
+    period = (
+        _safe_int(status_info.get("period"))
+        or _safe_int(type_info.get("period"))
+        or _safe_int(status_info.get("periodNumber"))
+        or _safe_int(type_info.get("periodNumber"))
+    )
 
     competitions = event.get("competitions")
     if not isinstance(competitions, list) or not competitions:
@@ -128,6 +141,8 @@ def parse_scoreboard_event(event: dict[str, Any]) -> dict[str, Any] | None:
         "completed": completed,
         "status": str(status),
         "status_detail": str(status_detail),
+        "clock": clock,
+        "period": period,
         "home_team_id": home_team_id,
         "home_team": home_team,
         "home_abbr": home_abbr,
@@ -164,103 +179,38 @@ def parse_quarter_scores(
         return []
 
     game_id = str(game_id)
+    
+    boxscore = summary.get("boxscore", {})
+    if not isinstance(boxscore, dict):
+        return []
 
-    # ---------------------------------------------------------
-    # 1. Identify home and away teams
-    # ---------------------------------------------------------
+    teams = boxscore.get("teams")
+    if not isinstance(teams, list) or len(teams) < 2:
+        return []
 
-    competitors = []
-
-    header = summary.get("header", {})
-
-    if isinstance(header, dict):
-        competitions = header.get(
-            "competitions",
-            [],
-        )
-
-        if (
-            isinstance(competitions, list)
-            and competitions
-            and isinstance(competitions[0], dict)
-        ):
-            competitors = competitions[0].get(
-                "competitors",
-                [],
-            )
-
-    # Fallback to boxscore teams.
-    if not competitors:
-
-        boxscore = summary.get(
-            "boxscore",
-            {},
-        )
-
-        if isinstance(boxscore, dict):
-            competitors = boxscore.get(
-                "teams",
-                [],
-            )
-
-    if not isinstance(competitors, list):
-        competitors = []
-
+    # Try to identify home/away teams
     team_info = {}
-
-    for competitor in competitors:
-
-        if not isinstance(competitor, dict):
+    for team_data in teams:
+        if not isinstance(team_data, dict):
             continue
 
-        team = competitor.get(
-            "team",
-            {},
-        )
-
+        team = team_data.get("team", {})
         if not isinstance(team, dict):
             continue
 
-        home_away = competitor.get(
-            "homeAway"
-        )
-
-        if home_away not in (
-            "home",
-            "away",
-        ):
-            continue
-
-        team_info[home_away] = {
-            "team_id": str(
-                team.get("id", "")
-            ),
-            "team": (
-                team.get("displayName")
-                or team.get("name")
-                or ""
-            ),
-            "team_abbr": (
-                team.get("abbreviation")
-                or ""
-            ),
-        }
-
-    if (
-        "home" not in team_info
-        or "away" not in team_info
-    ):
-        return []
+        home_away = team_data.get("homeAway")
+        if home_away in ("home", "away"):
+            team_info[home_away] = {
+                "team_id": str(team.get("id", "")),
+                "team": team.get("displayName") or team.get("name") or "",
+                "team_abbr": team.get("abbreviation") or "",
+            }
 
     # ---------------------------------------------------------
-    # 2. Read ESPN play-by-play
+    # Read ESPN play-by-play for cumulative scores
     # ---------------------------------------------------------
 
-    plays = summary.get(
-        "plays",
-        [],
-    )
-
+    plays = summary.get("plays", [])
     if not isinstance(plays, list):
         plays = []
 
@@ -268,199 +218,136 @@ def parse_quarter_scores(
     period_end_scores = {}
 
     for play in plays:
-
         if not isinstance(play, dict):
             continue
 
-        period = play.get(
-            "period",
-            {},
-        )
-
+        period = play.get("period", {})
         if isinstance(period, dict):
-            period_number = period.get(
-                "number"
-            )
+            period_number = period.get("number")
         else:
             period_number = period
 
         try:
-            period_number = int(
-                period_number
-            )
+            period_number = int(period_number)
         except (TypeError, ValueError):
             continue
 
         try:
-            home_score = int(
-                float(
-                    play.get(
-                        "homeScore"
-                    )
-                )
-            )
-
-            away_score = int(
-                float(
-                    play.get(
-                        "awayScore"
-                    )
-                )
-            )
-
+            home_score = int(float(play.get("homeScore")))
+            away_score = int(float(play.get("awayScore")))
         except (TypeError, ValueError):
             continue
 
-        # Because ESPN plays are chronological, repeatedly
-        # assigning here leaves us with the final cumulative
-        # score observed in the period.
-        period_end_scores[
-            period_number
-        ] = {
-            "home": home_score,
-            "away": away_score,
-        }
+        # Because ESPN plays are chronological, repeatedly assigning here
+        # leaves us with the final cumulative score observed in the period.
+        period_end_scores[period_number] = {"home": home_score, "away": away_score}
 
     # ---------------------------------------------------------
-    # 3. Convert cumulative scores to period scores
+    # Convert cumulative scores to period scores
     # ---------------------------------------------------------
 
     home_period_scores = {}
     away_period_scores = {}
 
-    previous_home = 0
-    previous_away = 0
+    # If we have play-by-play data, convert cumulative to individual period scores
+    if period_end_scores:
+        previous_home = 0
+        previous_away = 0
 
-    for period_number in sorted(
-        period_end_scores
-    ):
+        for period_number in sorted(period_end_scores):
+            cumulative = period_end_scores[period_number]
+            cumulative_home = cumulative["home"]
+            cumulative_away = cumulative["away"]
 
-        cumulative = (
-            period_end_scores[
-                period_number
-            ]
-        )
+            home_period_scores[period_number] = cumulative_home - previous_home
+            away_period_scores[period_number] = cumulative_away - previous_away
 
-        cumulative_home = cumulative[
-            "home"
-        ]
-
-        cumulative_away = cumulative[
-            "away"
-        ]
-
-        home_period_scores[
-            period_number
-        ] = (
-            cumulative_home
-            - previous_home
-        )
-
-        away_period_scores[
-            period_number
-        ] = (
-            cumulative_away
-            - previous_away
-        )
-
-        previous_home = cumulative_home
-        previous_away = cumulative_away
+            previous_home = cumulative_home
+            previous_away = cumulative_away
 
     # ---------------------------------------------------------
-    # 4. Helper
-    # ---------------------------------------------------------
-
-    def score_for(
-        scores: dict,
-        period_number: int,
-    ):
-
-        value = scores.get(
-            period_number
-        )
-
-        if value is None:
-            return None
-
-        return int(value)
-
-    # ---------------------------------------------------------
-    # 5. Build output rows
+    # Build output rows
     # ---------------------------------------------------------
 
     rows = []
+    updated_at_utc = _parse_datetime_utc(summary.get("date"))
 
-    for home_away in (
-        "home",
-        "away",
-    ):
+    def score_for(scores: dict, period_number: int):
+        value = scores.get(period_number)
+        if value is None:
+            return None
+        return int(value)
 
-        info = team_info[
-            home_away
-        ]
+    # If we have identified home/away teams and have period scores, use that approach
+    if team_info.get("home") and team_info.get("away") and (home_period_scores or away_period_scores):
+        for home_away in ("home", "away"):
+            info = team_info[home_away]
+            scores = home_period_scores if home_away == "home" else away_period_scores
 
-        if home_away == "home":
-            scores = home_period_scores
-        else:
-            scores = away_period_scores
+            rows.append(
+                {
+                    "game_id": game_id,
+                    "team_id": info["team_id"],
+                    "team": info["team"],
+                    "team_abbr": info["team_abbr"],
+                    "q1": score_for(scores, 1),
+                    "q2": score_for(scores, 2),
+                    "q3": score_for(scores, 3),
+                    "q4": score_for(scores, 4),
+                    "ot1": score_for(scores, 5),
+                    "ot2": score_for(scores, 6),
+                    "total_periods": len(scores),
+                    "updated_at_utc": updated_at_utc,
+                }
+            )
+    else:
+        # Fallback: iterate through teams directly and extract linescores
+        for team_data in teams:
+            if not isinstance(team_data, dict):
+                continue
 
-        rows.append(
-            {
-                "game_id": game_id,
+            team = team_data.get("team", {})
+            if not isinstance(team, dict):
+                continue
 
-                "team_id":
-                    info["team_id"],
+            team_id = str(team.get("id")) if team.get("id") is not None else ""
+            team_name = team.get("name") or team.get("displayName") or ""
+            team_abbr = team.get("abbreviation") or ""
 
-                "team":
-                    info["team"],
+            scores: dict[str, int | None] = {f"q{i}": None for i in range(1, 5)}
+            scores.update({f"ot{i}": None for i in range(1, 3)})
 
-                "team_abbr":
-                    info["team_abbr"],
+            linescores = team_data.get("linescores")
+            if isinstance(linescores, list) and linescores:
+                for line in linescores:
+                    if not isinstance(line, dict):
+                        continue
+                    period_number = _safe_int(line.get("period")) or _safe_int(line.get("number"))
+                    score_value = _safe_int(line.get("score"))
+                    if period_number is None or score_value is None:
+                        continue
+                    if period_number <= 4:
+                        scores[f"q{period_number}"] = score_value
+                    else:
+                        overtime_index = period_number - 4
+                        if 1 <= overtime_index <= 2:
+                            scores[f"ot{overtime_index}"] = score_value
 
-                "q1":
-                    score_for(
-                        scores,
-                        1,
-                    ),
-
-                "q2":
-                    score_for(
-                        scores,
-                        2,
-                    ),
-
-                "q3":
-                    score_for(
-                        scores,
-                        3,
-                    ),
-
-                "q4":
-                    score_for(
-                        scores,
-                        4,
-                    ),
-
-                "ot1":
-                    score_for(
-                        scores,
-                        5,
-                    ),
-
-                "ot2":
-                    score_for(
-                        scores,
-                        6,
-                    ),
-
-                "total_periods":
-                    len(scores),
-
-                "updated_at_utc":
-                    datetime.now(
-                        timezone.utc
-                    ),
-            }
-        )
+            rows.append(
+                {
+                    "game_id": game_id,
+                    "team_id": team_id,
+                    "team": team_name,
+                    "team_abbr": team_abbr,
+                    "q1": scores["q1"],
+                    "q2": scores["q2"],
+                    "q3": scores["q3"],
+                    "q4": scores["q4"],
+                    "ot1": scores["ot1"],
+                    "ot2": scores["ot2"],
+                    "total_periods": sum(1 for v in scores.values() if v is not None),
+                    "updated_at_utc": updated_at_utc,
+                }
+            )
 
     return rows

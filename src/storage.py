@@ -84,3 +84,18 @@ def write_update_metadata(metadata: dict[str, Any]) -> None:
         json.dump(metadata, handle, indent=2)
         temp_path = Path(handle.name)
     temp_path.replace(metadata_path)
+
+
+def load_json_or_empty(path: Path) -> dict[str, Any]:
+    if not path.exists():
+        return {}
+    with path.open("r", encoding="utf-8") as handle:
+        return json.load(handle)
+
+
+def write_json_atomic(path: Path, value: dict[str, Any]) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with tempfile.NamedTemporaryFile("w", delete=False, dir=path.parent, encoding="utf-8", suffix=".json") as handle:
+        json.dump(value, handle, indent=2)
+        temp_path = Path(handle.name)
+    temp_path.replace(path)

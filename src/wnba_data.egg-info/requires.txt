@@ -1,0 +1,9 @@
+pandas<3,>=2.2
+numpy<3,>=1.26
+pyarrow<22,>=16
+requests<3,>=2.32
+scikit-learn<2,>=1.4
+xgboost<2,>=1.8
+lightgbm<5,>=4.0
+catboost<1.4,>=1.2
+joblib<2,>=1.3

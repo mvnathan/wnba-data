@@ -1,0 +1,21 @@
+Metadata-Version: 2.4
+Name: wnba-data
+Version: 0.1.0
+Summary: Incremental WNBA dataset repository for Google Colab predictions.
+Project-URL: Source, https://github.com/YOUR_GITHUB_USERNAME/wnba-data
+Classifier: Programming Language :: Python :: 3.12
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.12
+Description-Content-Type: text/markdown
+Requires-Dist: pandas<3,>=2.2
+Requires-Dist: numpy<3,>=1.26
+Requires-Dist: pyarrow<22,>=16
+Requires-Dist: requests<3,>=2.32
+Requires-Dist: scikit-learn<2,>=1.4
+Requires-Dist: xgboost<2,>=1.8
+Requires-Dist: lightgbm<5,>=4.0
+Requires-Dist: catboost<1.4,>=1.2
+Requires-Dist: joblib<2,>=1.3
+
+# wnba-data
