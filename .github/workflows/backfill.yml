@@ -4,24 +4,35 @@ on:
   workflow_dispatch:
     inputs:
       seasons:
-        description: 'Space-separated seasons to backfill'
+        description: "Space-separated seasons to backfill"
         required: true
-        default: '2024 2025 2026'
+        default: "2024 2025 2026"
+
+permissions:
+  contents: write
 
 jobs:
   backfill:
     runs-on: ubuntu-latest
+
+    env:
+      PYTHONPATH: ${{ github.workspace }}
+
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
       - name: Set up Python
         uses: actions/setup-python@v6
         with:
-          python-version: '3.12'
+          python-version: "3.12"
+
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
           pip install -e .
+
       - name: Backfill seasons
         run: |
           python scripts/run_backfill.py --seasons ${{ github.event.inputs.seasons }}
