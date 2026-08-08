@@ -142,73 +142,125 @@ def parse_scoreboard_event(event: dict[str, Any]) -> dict[str, Any] | None:
     }
 
 
-def parse_quarter_scores(summary: dict[str, Any], game_id: str) -> list[dict[str, Any]]:
-    if not isinstance(summary, dict) or not isinstance(game_id, str):
-        raise TypeError("Invalid summary or game_id")
+def parse_quarter_scores(
+    summary: dict[str, Any],
+    game_id: str,
+) -> list[dict[str, Any]]:
+    """Parse quarter and overtime scores from an ESPN game summary."""
 
-    boxscore = summary.get("boxscore", {})
-    if not isinstance(boxscore, dict):
+    if not isinstance(summary, dict):
+        raise TypeError("summary must be a dictionary")
+
+    if not isinstance(game_id, str):
+        game_id = str(game_id)
+
+    header = summary.get("header", {})
+    if not isinstance(header, dict):
         return []
 
-    teams = boxscore.get("teams")
-    if not isinstance(teams, list) or len(teams) < 2:
+    competitions = header.get("competitions", [])
+    if not isinstance(competitions, list) or not competitions:
         return []
 
-    period_map: dict[int, dict[str, Any]] = {}
-    if isinstance(boxscore.get("periods"), list):
-        for period in boxscore.get("periods", []):
-            if not isinstance(period, dict):
-                continue
-            period_number = _safe_int(period.get("number")) or _safe_int(period.get("period"))
-            if period_number is None:
-                continue
-            period_map[period_number] = period
+    competition = competitions[0]
 
-    rows: list[dict[str, Any]] = []
-    updated_at_utc = _parse_datetime_utc(summary.get("date"))
-    for team_data in teams:
-        if not isinstance(team_data, dict):
+    competitors = competition.get("competitors", [])
+    if not isinstance(competitors, list):
+        return []
+
+    rows = []
+
+    updated_at_utc = (
+        _parse_datetime_utc(summary.get("date"))
+        or datetime.now(tz=UTC)
+    )
+
+    for competitor in competitors:
+
+        if not isinstance(competitor, dict):
             continue
-        team = team_data.get("team", {})
-        team_id = str(team.get("id")) if team.get("id") is not None else ""
-        team_name = team.get("name") or team.get("displayName") or ""
-        team_abbr = team.get("abbreviation") or ""
 
-        scores: dict[str, int | None] = {f"q{i}": None for i in range(1, 5)}
-        scores.update({f"ot{i}": None for i in range(1, 3)})
+        team = competitor.get("team", {})
+
+        if not isinstance(team, dict):
+            team = {}
+
+        team_id = (
+            str(team.get("id"))
+            if team.get("id") is not None
+            else ""
+        )
+
+        team_name = (
+            team.get("displayName")
+            or team.get("name")
+            or ""
+        )
+
+        team_abbr = (
+            team.get("abbreviation")
+            or ""
+        )
+
+        scores = {
+            "q1": None,
+            "q2": None,
+            "q3": None,
+            "q4": None,
+            "ot1": None,
+            "ot2": None,
+        }
+
+        linescores = competitor.get("linescores", [])
+
         total_periods = 0
 
-        linescores = team_data.get("linescores")
-        if isinstance(linescores, list) and linescores:
-            for line in linescores:
-                period_number = _safe_int(line.get("period")) or _safe_int(line.get("number"))
-                if period_number is None:
+        if isinstance(linescores, list):
+
+            for index, line in enumerate(
+                linescores,
+                start=1,
+            ):
+
+                if not isinstance(line, dict):
                     continue
-                score_value = _safe_int(line.get("score"))
+
+                # ESPN commonly supplies "value".
+                score_value = _safe_int(
+                    line.get("value")
+                )
+
+                if score_value is None:
+                    score_value = _safe_int(
+                        line.get("score")
+                    )
+
                 if score_value is None:
                     continue
+
+                # Some responses have an explicit period;
+                # otherwise list position is the period.
+                period_number = (
+                    _safe_int(line.get("period"))
+                    or _safe_int(line.get("number"))
+                    or index
+                )
+
                 if period_number <= 4:
-                    scores[f"q{period_number}"] = score_value
+                    scores[
+                        f"q{period_number}"
+                    ] = score_value
+
                 else:
-                    overtime_index = period_number - 4
-                    if 1 <= overtime_index <= 2:
-                        scores[f"ot{overtime_index}"] = score_value
-                total_periods += 1
-        elif period_map:
-            home_away = team_data.get("homeAway")
-            for period_number, period in period_map.items():
-                if home_away == "home":
-                    score_value = _safe_int(period.get("home", {}).get("score")) if isinstance(period.get("home"), dict) else _safe_int(period.get("home"))
-                else:
-                    score_value = _safe_int(period.get("away", {}).get("score")) if isinstance(period.get("away"), dict) else _safe_int(period.get("away"))
-                if score_value is None:
-                    continue
-                if period_number <= 4:
-                    scores[f"q{period_number}"] = score_value
-                else:
-                    overtime_index = period_number - 4
-                    if 1 <= overtime_index <= 2:
-                        scores[f"ot{overtime_index}"] = score_value
+                    overtime_number = (
+                        period_number - 4
+                    )
+
+                    if overtime_number <= 2:
+                        scores[
+                            f"ot{overtime_number}"
+                        ] = score_value
+
                 total_periods += 1
 
         rows.append(
@@ -224,7 +276,9 @@ def parse_quarter_scores(summary: dict[str, Any], game_id: str) -> list[dict[str
                 "ot1": scores["ot1"],
                 "ot2": scores["ot2"],
                 "total_periods": total_periods,
-                "updated_at_utc": updated_at_utc,
+                "updated_at_utc":
+                    updated_at_utc,
             }
         )
+
     return rows
