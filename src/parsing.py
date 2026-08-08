@@ -146,63 +146,98 @@ def parse_quarter_scores(
     summary: dict[str, Any],
     game_id: str,
 ) -> list[dict[str, Any]]:
-    """Parse quarter and overtime scores from an ESPN game summary."""
+    """Extract WNBA quarter scores from several ESPN summary layouts."""
 
     if not isinstance(summary, dict):
-        raise TypeError("summary must be a dictionary")
-
-    if not isinstance(game_id, str):
-        game_id = str(game_id)
-
-    header = summary.get("header", {})
-    if not isinstance(header, dict):
         return []
 
-    competitions = header.get("competitions", [])
-    if not isinstance(competitions, list) or not competitions:
-        return []
+    game_id = str(game_id)
 
-    competition = competitions[0]
+    competitors = []
 
-    competitors = competition.get("competitors", [])
-    if not isinstance(competitors, list):
-        return []
+    # -----------------------------------------------------
+    # Layout 1:
+    # header -> competitions -> competitors
+    # -----------------------------------------------------
+    try:
+        competitors = (
+            summary
+            .get("header", {})
+            .get("competitions", [])[0]
+            .get("competitors", [])
+        )
+    except (IndexError, AttributeError, TypeError):
+        competitors = []
+
+    # -----------------------------------------------------
+    # Layout 2:
+    # boxscore -> teams
+    # -----------------------------------------------------
+    if not competitors:
+        teams = (
+            summary
+            .get("boxscore", {})
+            .get("teams", [])
+        )
+
+        if isinstance(teams, list):
+            competitors = teams
 
     rows = []
-
-    updated_at_utc = (
-        _parse_datetime_utc(summary.get("date"))
-        or datetime.now(tz=UTC)
-    )
 
     for competitor in competitors:
 
         if not isinstance(competitor, dict):
             continue
 
-        team = competitor.get("team", {})
+        # Team can be directly on competitor or nested under team
+        team_obj = competitor.get("team", {})
 
-        if not isinstance(team, dict):
-            team = {}
+        if not isinstance(team_obj, dict):
+            team_obj = {}
 
-        team_id = (
-            str(team.get("id"))
-            if team.get("id") is not None
-            else ""
+        team_id = str(
+            team_obj.get("id")
+            or competitor.get("teamId")
+            or competitor.get("id")
+            or ""
         )
 
         team_name = (
-            team.get("displayName")
-            or team.get("name")
+            team_obj.get("displayName")
+            or team_obj.get("name")
+            or competitor.get("displayName")
             or ""
         )
 
         team_abbr = (
-            team.get("abbreviation")
+            team_obj.get("abbreviation")
+            or competitor.get("abbreviation")
             or ""
         )
 
-        scores = {
+        # -------------------------------------------------
+        # Try several line-score fields
+        # -------------------------------------------------
+        linescores = (
+            competitor.get("linescores")
+            or competitor.get("lineScores")
+            or competitor.get("linescore")
+            or competitor.get("periods")
+            or []
+        )
+
+        # Some ESPN responses nest these under statistics
+        if not linescores:
+            stats = competitor.get("statistics", {})
+            if isinstance(stats, dict):
+                linescores = (
+                    stats.get("linescores")
+                    or stats.get("periods")
+                    or []
+                )
+
+        q_values = {
             "q1": None,
             "q2": None,
             "q3": None,
@@ -211,57 +246,55 @@ def parse_quarter_scores(
             "ot2": None,
         }
 
-        linescores = competitor.get("linescores", [])
-
-        total_periods = 0
+        valid_periods = 0
 
         if isinstance(linescores, list):
 
-            for index, line in enumerate(
-                linescores,
-                start=1,
-            ):
+            for idx, item in enumerate(linescores, start=1):
 
-                if not isinstance(line, dict):
+                if not isinstance(item, dict):
                     continue
 
-                # ESPN commonly supplies "value".
-                score_value = _safe_int(
-                    line.get("value")
+                raw_value = (
+                    item.get("value")
+                    if item.get("value") is not None
+                    else item.get("score")
                 )
 
-                if score_value is None:
-                    score_value = _safe_int(
-                        line.get("score")
-                    )
+                if raw_value is None:
+                    raw_value = item.get("points")
 
-                if score_value is None:
+                try:
+                    value = int(float(raw_value))
+                except (TypeError, ValueError):
                     continue
 
-                # Some responses have an explicit period;
-                # otherwise list position is the period.
-                period_number = (
-                    _safe_int(line.get("period"))
-                    or _safe_int(line.get("number"))
-                    or index
+                period = (
+                    item.get("period")
+                    or item.get("number")
+                    or item.get("sequence")
+                    or idx
                 )
 
-                if period_number <= 4:
-                    scores[
-                        f"q{period_number}"
-                    ] = score_value
+                try:
+                    period = int(period)
+                except (TypeError, ValueError):
+                    period = idx
 
-                else:
-                    overtime_number = (
-                        period_number - 4
-                    )
+                if period == 1:
+                    q_values["q1"] = value
+                elif period == 2:
+                    q_values["q2"] = value
+                elif period == 3:
+                    q_values["q3"] = value
+                elif period == 4:
+                    q_values["q4"] = value
+                elif period == 5:
+                    q_values["ot1"] = value
+                elif period == 6:
+                    q_values["ot2"] = value
 
-                    if overtime_number <= 2:
-                        scores[
-                            f"ot{overtime_number}"
-                        ] = score_value
-
-                total_periods += 1
+                valid_periods += 1
 
         rows.append(
             {
@@ -269,15 +302,14 @@ def parse_quarter_scores(
                 "team_id": team_id,
                 "team": team_name,
                 "team_abbr": team_abbr,
-                "q1": scores["q1"],
-                "q2": scores["q2"],
-                "q3": scores["q3"],
-                "q4": scores["q4"],
-                "ot1": scores["ot1"],
-                "ot2": scores["ot2"],
-                "total_periods": total_periods,
-                "updated_at_utc":
-                    updated_at_utc,
+                "q1": q_values["q1"],
+                "q2": q_values["q2"],
+                "q3": q_values["q3"],
+                "q4": q_values["q4"],
+                "ot1": q_values["ot1"],
+                "ot2": q_values["ot2"],
+                "total_periods": valid_periods,
+                "updated_at_utc": datetime.now(tz=UTC),
             }
         )
 
