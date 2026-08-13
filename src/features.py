@@ -202,11 +202,30 @@ def _build_matchup_features(games: pd.DataFrame) -> pd.DataFrame:
 
 
 def _build_difference_features(df: pd.DataFrame) -> pd.DataFrame:
-    for col in [c for c in df.columns if c.startswith("home_")]:
-        away_col = f"away_{col[5:]}"
-        diff_col = f"diff_{col[5:]}"
-        if away_col in df.columns and diff_col not in df.columns:
-            df[diff_col] = df[col] - df[away_col]
+    df = df.copy()
+
+    for col in list(df.columns):
+        if not col.startswith("home_"):
+            continue
+
+        suffix = col[len("home_"):]
+        away_col = f"away_{suffix}"
+
+        if away_col not in df.columns:
+            continue
+
+        # Difference features only make sense for numeric values.
+        home_values = pd.to_numeric(df[col], errors="coerce")
+        away_values = pd.to_numeric(df[away_col], errors="coerce")
+
+        # Skip pairs that are entirely non-numeric, such as team names,
+        # abbreviations, status fields, dates, IDs stored as strings, etc.
+        if home_values.notna().sum() == 0 or away_values.notna().sum() == 0:
+            continue
+
+        diff_col = f"diff_{suffix}"
+        df[diff_col] = home_values - away_values
+
     return df
 
 
@@ -248,10 +267,54 @@ def build_model_features(data_root: str = "data") -> pd.DataFrame:
     return games.sort_values(["game_date_utc", "game_id"]).reset_index(drop=True)
 
 
-def build_and_save(data_root: str = "data", out_path: str = "features/model_features.parquet") -> None:
+def build_and_save(
+    data_root: str = "data",
+    out_path: str = "features/model_features.parquet"
+) -> None:
     df = build_model_features(data_root)
-    Path(out_path).parent.mkdir(parents=True, exist_ok=True)
-    df.to_parquet(out_path, index=False)
+
+    object_cols = df.select_dtypes(include=["object"]).columns
+
+    for col in object_cols:
+        col_lower = col.lower()
+        s = df[col]
+
+        # Normalize boolean-like object columns.
+        normalized = (
+            s.astype("string")
+             .str.strip()
+             .str.lower()
+        )
+
+        boolean_tokens = {"0", "1", "true", "false", "<na>"}
+
+        if set(normalized.dropna().unique()).issubset(boolean_tokens):
+            df[col] = normalized.map({
+                "1": True,
+                "0": False,
+                "true": True,
+                "false": False,
+            }).astype("boolean")
+
+        # Normalize identifier / descriptive columns to strings.
+        elif (
+            "team" in col_lower
+            or "abbr" in col_lower
+            or "status" in col_lower
+            or col_lower.endswith("_id")
+            or col_lower == "game_id"
+        ):
+            df[col] = df[col].astype("string")
+
+    Path(out_path).parent.mkdir(
+        parents=True,
+        exist_ok=True,
+    )
+
+    df.to_parquet(
+        out_path,
+        index=False,
+    )
 
 
 if __name__ == "__main__":
