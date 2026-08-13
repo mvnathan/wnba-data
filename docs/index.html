@@ -3,21 +3,26 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <title>WNBA Prediction Dashboard</title>
 
   <style>
     :root {
-      color-scheme: dark;
+      --bg: #090c11;
+      --panel: #151a22;
+      --panel-soft: #10151c;
+      --panel-raised: #1a2029;
 
-      --background: #0f1115;
-      --panel: #181c23;
-      --panel-dark: #11151b;
-      --border: #2a2f38;
-      --text: #f5f7fa;
-      --muted: #aab2bf;
-      --positive: #65d38e;
-      --negative: #ff8a8a;
-      --accent: #8ab4ff;
+      --border: #29313d;
+      --border-soft: #202833;
+
+      --text: #f4f7fb;
+      --muted: #929cab;
+
+      --accent: #7aa2ff;
+      --green: #63d297;
+      --red: #ff8585;
+      --yellow: #f4cd66;
     }
 
     * {
@@ -26,8 +31,7 @@
 
     body {
       margin: 0;
-      background: var(--background);
-      color: var(--text);
+
       font-family:
         Inter,
         ui-sans-serif,
@@ -36,807 +40,2131 @@
         BlinkMacSystemFont,
         "Segoe UI",
         sans-serif;
+
+      background: var(--bg);
+      color: var(--text);
     }
 
     header {
-      padding: 22px;
       border-bottom: 1px solid var(--border);
-      background: rgba(15, 17, 21, 0.96);
-      position: sticky;
-      top: 0;
-      z-index: 10;
+      background: rgba(9, 12, 17, 0.96);
     }
 
-    header h1 {
-      margin: 0 0 6px;
-      font-size: 1.7rem;
-    }
-
-    main {
-      width: min(1200px, calc(100% - 32px));
+    .header-inner {
+      max-width: 1240px;
       margin: 0 auto;
-      padding: 24px 0 48px;
+      padding: 28px 24px;
     }
 
-    h2,
-    h3 {
-      margin-top: 0;
+    .header-title {
+      margin: 0 0 6px;
+      font-size: 2rem;
+      font-weight: 800;
     }
 
     .muted {
       color: var(--muted);
     }
 
-    .card {
+    main {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 24px;
+    }
+
+    .dashboard-status {
+      margin-bottom: 22px;
+      padding: 16px 20px;
+
       background: var(--panel);
       border: 1px solid var(--border);
       border-radius: 14px;
-      padding: 18px;
-      margin-bottom: 18px;
     }
 
     .game-card {
+      margin-bottom: 24px;
+
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+
       overflow: hidden;
     }
 
-    .game-heading {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: 16px;
-      margin-bottom: 16px;
-    }
+    .game-header {
+      padding: 20px 24px;
 
-    .game-heading h2 {
-      margin: 8px 0 4px;
+      border-bottom: 1px solid var(--border);
     }
 
     .status {
       display: inline-block;
-      padding: 5px 9px;
+
+      margin-bottom: 12px;
+      padding: 5px 10px;
+
       border-radius: 999px;
-      background: #2a2f38;
+
+      background: #29313d;
+
       color: #dce3ed;
-      font-size: 0.78rem;
-      font-weight: 700;
-      letter-spacing: 0.03em;
+
+      font-size: 0.76rem;
+      font-weight: 750;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
     }
 
-    .grid {
-      display: grid;
-      grid-template-columns:
-        repeat(auto-fit, minmax(180px, 1fr));
+    .matchup-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 18px;
+    }
+
+    .matchup-teams {
+      display: flex;
+      align-items: center;
+
       gap: 12px;
-    }
 
-    .metric {
-      background: var(--panel-dark);
-      border: 1px solid #222833;
-      border-radius: 11px;
-      padding: 13px;
       min-width: 0;
     }
 
-    .metric-label {
-      color: var(--muted);
-      font-size: 0.82rem;
-      margin-bottom: 5px;
+    .team-block {
+      display: flex;
+      align-items: center;
+
+      gap: 9px;
     }
 
-    .metric strong {
-      display: block;
-      font-size: 1.35rem;
-      overflow-wrap: anywhere;
+    .team-logo {
+      width: 42px;
+      height: 42px;
+
+      object-fit: contain;
+
+      flex: 0 0 auto;
     }
 
-    .score-line {
+    .team-logo-small {
+      width: 25px;
+      height: 25px;
+
+      object-fit: contain;
+
+      vertical-align: middle;
+      margin-right: 6px;
+    }
+
+    .team-fallback {
+      width: 42px;
+      height: 42px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      border-radius: 50%;
+
+      background: #252d38;
+
+      color: var(--text);
+
+      font-size: 0.72rem;
+      font-weight: 800;
+    }
+
+    .matchup-name {
       font-size: 1.55rem;
-      font-weight: 750;
-      margin: 4px 0;
+      font-weight: 800;
     }
 
-    .team-probabilities {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 8px;
-      margin-top: 8px;
-    }
-
-    .probability-bar {
-      height: 8px;
-      border-radius: 999px;
-      overflow: hidden;
-      background: #2a2f38;
-      margin-top: 8px;
-    }
-
-    .probability-fill {
-      height: 100%;
-      background: var(--accent);
-      border-radius: 999px;
-    }
-
-    .section-heading {
-      margin: 20px 0 10px;
-      font-size: 1rem;
-      color: #dce3ed;
-    }
-
-    .quarter-grid {
-      display: grid;
-      grid-template-columns:
-        repeat(auto-fit, minmax(140px, 1fr));
-      gap: 10px;
-    }
-
-    .quarter {
-      background: var(--panel-dark);
-      border-radius: 10px;
-      padding: 11px;
-    }
-
-    .quarter-name {
+    .at-symbol {
       color: var(--muted);
-      font-size: 0.78rem;
-      margin-bottom: 5px;
-    }
-
-    .quarter-score {
+      font-size: 1.1rem;
       font-weight: 700;
+    }
+
+    .venue {
+      margin-top: 7px;
+
+      color: var(--muted);
+
+      font-size: 0.88rem;
+    }
+
+    .game-body {
+      padding: 22px 24px 26px;
+    }
+
+    .headline-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+      gap: 12px;
+
+      margin-bottom: 16px;
+    }
+
+    .metric {
+      min-width: 0;
+
+      padding: 14px;
+
+      background: var(--panel-soft);
+      border: 1px solid var(--border-soft);
+      border-radius: 12px;
+    }
+
+    .metric-label {
+      margin-bottom: 7px;
+
+      color: var(--muted);
+
+      font-size: 0.8rem;
+    }
+
+    .metric-value {
+      font-size: 1.45rem;
+      font-weight: 800;
+
+      line-height: 1.1;
+    }
+
+    .metric-value.pick {
+      color: var(--green);
+    }
+
+    .score-grid {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 8px;
+    }
+
+    .score-side {
+      flex: 1;
+
+      text-align: center;
+    }
+
+    .score-abbr {
+      margin-bottom: 3px;
+
+      color: var(--muted);
+
+      font-size: 0.72rem;
+      font-weight: 800;
+    }
+
+    .score-number {
+      font-size: 1.7rem;
+      font-weight: 850;
+    }
+
+    .score-separator {
+      color: var(--muted);
+
+      font-weight: 700;
+    }
+
+    .section-title {
+      margin: 26px 0 12px;
+
       font-size: 1rem;
     }
 
-    table {
-      width: 100%;
-      border-collapse: collapse;
+    .market-section {
+      display: grid;
+
+      grid-template-columns:
+        minmax(0, 1fr)
+        minmax(0, 1fr);
+
+      gap: 14px;
     }
 
-    th,
-    td {
-      text-align: left;
-      padding: 10px;
-      border-bottom: 1px solid var(--border);
-      vertical-align: top;
+    .market-panel {
+      padding: 16px;
+
+      background: var(--panel-soft);
+      border: 1px solid var(--border-soft);
+      border-radius: 13px;
     }
 
-    th {
-      color: var(--muted);
+    .market-panel-title {
+      margin-bottom: 13px;
+
       font-size: 0.82rem;
+      font-weight: 800;
+
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
     }
 
-    .table-wrap {
+    .market-line {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 12px;
+
+      padding: 8px 0;
+
+      border-bottom: 1px solid var(--border-soft);
+    }
+
+    .market-line:last-child {
+      border-bottom: none;
+    }
+
+    .market-label {
+      color: var(--muted);
+      font-size: 0.84rem;
+    }
+
+    .market-value {
+      text-align: right;
+
+      font-weight: 800;
+    }
+
+    .edge-positive {
+      color: var(--green);
+    }
+
+    .edge-negative {
+      color: var(--red);
+    }
+
+    .edge-neutral {
+      color: var(--yellow);
+    }
+
+    .market-placeholder {
+      color: var(--muted);
+
+      font-size: 0.88rem;
+      line-height: 1.5;
+    }
+
+    .projection-table-wrap {
       overflow-x: auto;
     }
 
-    .positive {
-      color: var(--positive);
+    .projection-table {
+      width: 100%;
+
+      border-collapse: separate;
+      border-spacing: 0;
+
+      background: var(--panel-soft);
+
+      border: 1px solid var(--border-soft);
+      border-radius: 12px;
+
+      overflow: hidden;
     }
 
-    .negative {
-      color: var(--negative);
+    .projection-table th,
+    .projection-table td {
+      padding: 10px 13px;
+
+      text-align: right;
+
+      border-bottom: 1px solid var(--border-soft);
     }
 
-    .updated {
-      font-size: 0.82rem;
+    .projection-table th:first-child,
+    .projection-table td:first-child {
+      text-align: left;
+    }
+
+    .projection-table th {
       color: var(--muted);
-      margin-top: 8px;
+
+      font-size: 0.76rem;
+      font-weight: 700;
     }
 
-    @media (max-width: 640px) {
-      main {
-        width: min(100% - 20px, 1200px);
+    .projection-table td {
+      font-size: 0.9rem;
+      font-weight: 650;
+    }
+
+    .projection-table tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .history-card {
+      margin-top: 30px;
+      padding: 20px;
+
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+    }
+
+    .history-card h2 {
+      margin-top: 0;
+    }
+
+    .history-table-wrap {
+      overflow-x: auto;
+    }
+
+    .history-table {
+      width: 100%;
+
+      border-collapse: collapse;
+    }
+
+    .history-table th,
+    .history-table td {
+      padding: 10px;
+
+      text-align: left;
+
+      border-bottom: 1px solid var(--border);
+    }
+
+    .history-table th {
+      color: var(--muted);
+
+      font-size: 0.78rem;
+    }
+
+    @media (max-width: 950px) {
+      .headline-grid {
+        grid-template-columns:
+          repeat(2, minmax(0, 1fr));
       }
 
-      header {
-        padding: 16px;
+      .market-section {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 620px) {
+      main,
+      .header-inner {
+        padding-left: 14px;
+        padding-right: 14px;
       }
 
-      .game-heading {
+      .headline-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .matchup-row {
         display: block;
       }
 
-      .team-probabilities {
-        grid-template-columns: 1fr;
+      .matchup-teams {
+        flex-wrap: wrap;
+      }
+
+      .matchup-name {
+        font-size: 1.25rem;
+      }
+
+      .team-logo {
+        width: 34px;
+        height: 34px;
+      }
+
+      .projection-table {
+        font-size: 0.8rem;
       }
     }
   </style>
 </head>
 
 <body>
-  <header>
-    <h1>WNBA Prediction Dashboard</h1>
+
+<header>
+  <div class="header-inner">
+
+    <h1 class="header-title">
+      WNBA Prediction Dashboard
+    </h1>
+
     <div class="muted">
-      Pregame model forecasts, quarter projections, and prediction history
-    </div>
-  </header>
-
-  <main>
-    <div id="status" class="card">
-      Loading prediction data...
+      Pregame projections, market comparison, and live forecasts
     </div>
 
-    <div id="games"></div>
+  </div>
+</header>
 
-    <section class="card">
-      <h2>Prediction history</h2>
-      <div id="history">Loading...</div>
-    </section>
-  </main>
 
-  <script>
-    async function loadJSON(path, fallback) {
-      try {
-        const response = await fetch(
-          path + "?t=" + Date.now()
-        );
+<main>
 
-        if (!response.ok) {
-          return fallback;
+  <div
+    id="status"
+    class="dashboard-status"
+  >
+    Loading prediction data...
+  </div>
+
+  <div id="games"></div>
+
+
+  <section class="history-card">
+
+    <h2>
+      Prediction History
+    </h2>
+
+    <div id="history">
+      Loading...
+    </div>
+
+  </section>
+
+</main>
+
+
+<script>
+
+  /*
+   * ESPN's CDN is useful here because the URLs are static image assets.
+   *
+   * If a logo fails to load, the dashboard automatically falls back
+   * to the team abbreviation rather than breaking the card.
+   */
+  const TEAM_LOGOS = {
+    ATL: "https://a.espncdn.com/i/teamlogos/wnba/500/atl.png",
+    CHI: "https://a.espncdn.com/i/teamlogos/wnba/500/chi.png",
+    CON: "https://a.espncdn.com/i/teamlogos/wnba/500/conn.png",
+    DAL: "https://a.espncdn.com/i/teamlogos/wnba/500/dal.png",
+    GS:  "https://a.espncdn.com/i/teamlogos/wnba/500/gs.png",
+    IND: "https://a.espncdn.com/i/teamlogos/wnba/500/ind.png",
+    LA:  "https://a.espncdn.com/i/teamlogos/wnba/500/la.png",
+    LV:  "https://a.espncdn.com/i/teamlogos/wnba/500/lv.png",
+    MIN: "https://a.espncdn.com/i/teamlogos/wnba/500/min.png",
+    NY:  "https://a.espncdn.com/i/teamlogos/wnba/500/ny.png",
+    PHX: "https://a.espncdn.com/i/teamlogos/wnba/500/phx.png",
+    POR: "https://a.espncdn.com/i/teamlogos/wnba/500/por.png",
+    SEA: "https://a.espncdn.com/i/teamlogos/wnba/500/sea.png",
+    TOR: "https://a.espncdn.com/i/teamlogos/wnba/500/tor.png",
+    WSH: "https://a.espncdn.com/i/teamlogos/wnba/500/was.png"
+  };
+
+
+  async function loadJSON(
+    path,
+    fallback
+  ) {
+    try {
+
+      const response = await fetch(
+        path + "?t=" + Date.now(),
+        {
+          cache: "no-store"
         }
+      );
 
-        return await response.json();
-      } catch (error) {
-        console.error(
-          "Failed to load",
-          path,
-          error
-        );
-
+      if (!response.ok) {
         return fallback;
       }
+
+      return await response.json();
+
+    } catch (error) {
+
+      console.error(
+        "Failed loading",
+        path,
+        error
+      );
+
+      return fallback;
+    }
+  }
+
+
+  function exists(value) {
+
+    return (
+      value !== null &&
+      value !== undefined &&
+      !Number.isNaN(Number(value))
+    );
+  }
+
+
+  /*
+   * All dashboard numeric values are shown with
+   * one decimal maximum.
+   */
+  function num(value) {
+
+    if (!exists(value)) {
+      return "—";
     }
 
-    function value(
-      input,
-      fallback = "—"
-    ) {
-      return (
-        input === null ||
-        input === undefined ||
-        Number.isNaN(input)
+    return Number(value).toFixed(1);
+  }
+
+
+  function probability(value) {
+
+    if (!exists(value)) {
+      return "—";
+    }
+
+    return (
+      Number(value) * 100
+    ).toFixed(1) + "%";
+  }
+
+
+  function teamAbbr(
+    game,
+    side
+  ) {
+
+    return (
+      game[
+        side + "_abbr"
+      ] ||
+      side.toUpperCase()
+    );
+  }
+
+
+  function teamName(
+    game,
+    side
+  ) {
+
+    return (
+      game[
+        side + "_team"
+      ] ||
+      teamAbbr(
+        game,
+        side
       )
-        ? fallback
-        : input;
+    );
+  }
+
+
+  function logoURL(abbr) {
+
+    return (
+      TEAM_LOGOS[
+        String(abbr).toUpperCase()
+      ] ||
+      null
+    );
+  }
+
+
+  function teamLogo(
+    abbr,
+    small = false
+  ) {
+
+    const url = logoURL(abbr);
+
+    if (!url) {
+
+      return `
+        <span
+          class="team-fallback"
+          style="${
+            small
+              ? "width:25px;height:25px;font-size:.55rem;"
+              : ""
+          }"
+        >
+          ${abbr}
+        </span>
+      `;
     }
 
-    function number(
-      input,
-      digits = 1
-    ) {
-      if (
-        input === null ||
-        input === undefined ||
-        Number.isNaN(Number(input))
-      ) {
-        return "—";
-      }
+    return `
+      <img
+        class="${
+          small
+            ? "team-logo-small"
+            : "team-logo"
+        }"
 
-      return Number(input).toFixed(digits);
+        src="${url}"
+
+        alt="${abbr} logo"
+
+        loading="lazy"
+
+        onerror="
+          this.style.display='none';
+        "
+      >
+    `;
+  }
+
+
+  function cleanStatus(status) {
+
+    if (!status) {
+      return "Scheduled";
     }
 
-    function probability(
-      input
-    ) {
-      if (
-        input === null ||
-        input === undefined ||
-        Number.isNaN(Number(input))
-      ) {
-        return "—";
-      }
+    const map = {
+      STATUS_SCHEDULED: "Scheduled",
+      STATUS_IN_PROGRESS: "Live",
+      STATUS_HALFTIME: "Halftime",
+      STATUS_FINAL: "Final",
+      STATUS_POSTPONED: "Postponed"
+    };
 
-      return (
-        Number(input) * 100
-      ).toFixed(1) + "%";
-    }
-
-    function teamName(
-      game,
-      side
-    ) {
-      return (
-        game[`${side}_team`] ||
-        game[`${side}_abbr`] ||
-        (
-          side === "home"
-            ? "Home"
-            : "Away"
+    return (
+      map[status] ||
+      String(status)
+        .replace(
+          "STATUS_",
+          ""
         )
+        .replaceAll(
+          "_",
+          " "
+        )
+    );
+  }
+
+
+  /*
+   * Model margin is home score - away score.
+   *
+   * Positive:
+   * home team is favored.
+   *
+   * Negative:
+   * away team is favored.
+   *
+   * We convert it into sportsbook-like notation:
+   *
+   * NY -7.0
+   * ATL -7.9
+   */
+  function modelSpread(game) {
+
+    if (
+      !exists(
+        game.predicted_margin
+      )
+    ) {
+      return "—";
+    }
+
+    const margin = Number(
+      game.predicted_margin
+    );
+
+    if (
+      Math.abs(margin) < 0.05
+    ) {
+      return "PK";
+    }
+
+    if (margin > 0) {
+
+      return (
+        teamAbbr(
+          game,
+          "home"
+        ) +
+        " -" +
+        Math.abs(
+          margin
+        ).toFixed(1)
       );
     }
 
-    function statusLabel(
-      status
-    ) {
-      if (!status) {
-        return "Scheduled";
-      }
+    return (
+      teamAbbr(
+        game,
+        "away"
+      ) +
+      " -" +
+      Math.abs(
+        margin
+      ).toFixed(1)
+    );
+  }
 
-      return String(status)
-        .replace(/^STATUS_/, "")
-        .replaceAll("_", " ");
+
+  function projectedWinner(game) {
+
+    if (
+      !exists(
+        game.home_win_probability
+      )
+    ) {
+      return "—";
     }
 
-    function signed(
-      input,
-      digits = 1
+    if (
+      Number(
+        game.home_win_probability
+      ) >= 0.5
     ) {
-      if (
-        input === null ||
-        input === undefined ||
-        Number.isNaN(Number(input))
-      ) {
-        return "—";
-      }
 
-      const n = Number(input);
-
-      return (
-        n > 0
-          ? "+"
-          : ""
-      ) + n.toFixed(digits);
+      return teamAbbr(
+        game,
+        "home"
+      );
     }
 
-    function marginText(
-      game
+    return teamAbbr(
+      game,
+      "away"
+    );
+  }
+
+
+  function favoriteProbability(
+    game
+  ) {
+
+    if (
+      !exists(
+        game.home_win_probability
+      ) ||
+      !exists(
+        game.away_win_probability
+      )
     ) {
-      const margin = Number(
+      return "—";
+    }
+
+    return probability(
+      Math.max(
+        Number(
+          game.home_win_probability
+        ),
+        Number(
+          game.away_win_probability
+        )
+      )
+    );
+  }
+
+
+  function marketAvailable(game) {
+
+    return (
+      exists(
+        game.market_home_spread
+      ) ||
+      exists(
+        game.market_total
+      ) ||
+      exists(
+        game.market_home_moneyline
+      ) ||
+      exists(
+        game.market_away_moneyline
+      )
+    );
+  }
+
+
+  function signedOdds(value) {
+
+    if (
+      value === null ||
+      value === undefined ||
+      value === ""
+    ) {
+      return "—";
+    }
+
+    const numberValue =
+      Number(value);
+
+    if (
+      Number.isNaN(numberValue)
+    ) {
+      return String(value);
+    }
+
+    return (
+      numberValue > 0
+        ? "+"
+        : ""
+    ) + numberValue.toFixed(0);
+  }
+
+
+  function marketSpread(game) {
+
+    if (
+      exists(
+        game.market_home_spread
+      )
+    ) {
+
+      const spread = Number(
+        game.market_home_spread
+      );
+
+      if (spread < 0) {
+
+        return (
+          teamAbbr(
+            game,
+            "home"
+          ) +
+          " " +
+          spread.toFixed(1)
+        );
+      }
+
+      if (spread > 0) {
+
+        return (
+          teamAbbr(
+            game,
+            "away"
+          ) +
+          " -" +
+          Math.abs(
+            spread
+          ).toFixed(1)
+        );
+      }
+
+      return "PK";
+    }
+
+    return "—";
+  }
+
+
+  /*
+   * MODEL VS MARKET EDGE
+   *
+   * Convert both model margin and market home spread into
+   * home-team margin conventions.
+   *
+   * Example:
+   *
+   * Model predicts NY +7 margin.
+   * Market says NY -5.5.
+   *
+   * Model edge = +7 - +5.5 = +1.5 points.
+   */
+  function spreadEdge(game) {
+
+    if (
+      !exists(
+        game.predicted_margin
+      ) ||
+      !exists(
+        game.market_home_spread
+      )
+    ) {
+      return null;
+    }
+
+    const modelHomeMargin =
+      Number(
         game.predicted_margin
       );
 
-      if (Number.isNaN(margin)) {
-        return "—";
-      }
-
-      if (Math.abs(margin) < 0.05) {
-        return "Pick'em";
-      }
-
-      const favorite = (
-        margin > 0
-          ? teamName(game, "home")
-          : teamName(game, "away")
+    /*
+     * Sportsbook home spread:
+     *
+     * NY -5.5 means expected home margin +5.5.
+     *
+     * Therefore invert the spread sign.
+     */
+    const marketHomeMargin =
+      -Number(
+        game.market_home_spread
       );
 
-      return (
-        favorite +
-        " " +
-        Math.abs(margin).toFixed(1)
-      );
+    return (
+      modelHomeMargin -
+      marketHomeMargin
+    );
+  }
+
+
+  function totalEdge(game) {
+
+    if (
+      !exists(
+        game.predicted_total
+      ) ||
+      !exists(
+        game.market_total
+      )
+    ) {
+      return null;
     }
 
-    function quarterHTML(
-      game,
-      quarter
-    ) {
-      const q = quarter.toLowerCase();
+    return (
+      Number(
+        game.predicted_total
+      ) -
+      Number(
+        game.market_total
+      )
+    );
+  }
 
-      const away = game[`away_${q}`];
-      const home = game[`home_${q}`];
-      const total = game[`${q}_total`];
+
+  function edgeClass(value) {
+
+    if (
+      value === null ||
+      Math.abs(value) < 0.5
+    ) {
+      return "edge-neutral";
+    }
+
+    return (
+      value > 0
+        ? "edge-positive"
+        : "edge-negative"
+    );
+  }
+
+
+  function projectionRow(
+    label,
+    away,
+    home,
+    margin,
+    total
+  ) {
+
+    return `
+      <tr>
+
+        <td>
+          ${label}
+        </td>
+
+        <td>
+          ${num(away)}
+        </td>
+
+        <td>
+          ${num(home)}
+        </td>
+
+        <td>
+          ${num(margin)}
+        </td>
+
+        <td>
+          ${num(total)}
+        </td>
+
+      </tr>
+    `;
+  }
+
+
+  function modelMarketHTML(game) {
+
+    if (
+      !marketAvailable(game)
+    ) {
 
       return `
-        <div class="quarter">
-          <div class="quarter-name">
-            ${quarter}
+        <div class="market-section">
+
+          <div class="market-panel">
+
+            <div class="market-panel-title">
+              Model
+            </div>
+
+            <div class="market-line">
+
+              <span class="market-label">
+                Spread
+              </span>
+
+              <span class="market-value">
+                ${modelSpread(game)}
+              </span>
+
+            </div>
+
+            <div class="market-line">
+
+              <span class="market-label">
+                Total
+              </span>
+
+              <span class="market-value">
+                ${num(
+                  game.predicted_total
+                )}
+              </span>
+
+            </div>
+
+            <div class="market-line">
+
+              <span class="market-label">
+                Win probability
+              </span>
+
+              <span class="market-value">
+                ${
+                  projectedWinner(game)
+                }
+                ${
+                  favoriteProbability(game)
+                }
+              </span>
+
+            </div>
+
           </div>
 
-          <div class="quarter-score">
-            ${value(game.away_abbr, "Away")}
-            ${number(away)}
-            ·
-            ${value(game.home_abbr, "Home")}
-            ${number(home)}
+
+          <div class="market-panel">
+
+            <div class="market-panel-title">
+              Market Odds
+            </div>
+
+            <div class="market-placeholder">
+
+              Market odds are not connected yet.
+
+              <br><br>
+
+              The next step will automatically
+              populate DraftKings spread,
+              total, and moneyline here every
+              time predictions are refreshed.
+
+            </div>
+
           </div>
 
-          <div class="muted">
-            Total ${number(total)}
-          </div>
         </div>
       `;
     }
 
-    function renderGame(
-      game
-    ) {
-      const homeProb = Number(
-        game.home_win_probability
+
+    const spreadEdgeValue =
+      spreadEdge(game);
+
+    const totalEdgeValue =
+      totalEdge(game);
+
+
+    return `
+      <div class="market-section">
+
+        <div class="market-panel">
+
+          <div class="market-panel-title">
+            Model
+          </div>
+
+
+          <div class="market-line">
+
+            <span class="market-label">
+              Spread
+            </span>
+
+            <span class="market-value">
+              ${modelSpread(game)}
+            </span>
+
+          </div>
+
+
+          <div class="market-line">
+
+            <span class="market-label">
+              Total
+            </span>
+
+            <span class="market-value">
+              ${num(
+                game.predicted_total
+              )}
+            </span>
+
+          </div>
+
+
+          <div class="market-line">
+
+            <span class="market-label">
+              Win probability
+            </span>
+
+            <span class="market-value">
+              ${
+                projectedWinner(game)
+              }
+              ${
+                favoriteProbability(game)
+              }
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <div class="market-panel">
+
+          <div class="market-panel-title">
+
+            ${
+              game.market_bookmaker ||
+              "DraftKings"
+            }
+
+          </div>
+
+
+          <div class="market-line">
+
+            <span class="market-label">
+              Spread
+            </span>
+
+            <span class="market-value">
+              ${marketSpread(game)}
+            </span>
+
+          </div>
+
+
+          <div class="market-line">
+
+            <span class="market-label">
+              Total
+            </span>
+
+            <span class="market-value">
+              ${num(
+                game.market_total
+              )}
+            </span>
+
+          </div>
+
+
+          <div class="market-line">
+
+            <span class="market-label">
+              ${
+                teamAbbr(
+                  game,
+                  "away"
+                )
+              } ML
+            </span>
+
+            <span class="market-value">
+              ${signedOdds(
+                game.market_away_moneyline
+              )}
+            </span>
+
+          </div>
+
+
+          <div class="market-line">
+
+            <span class="market-label">
+              ${
+                teamAbbr(
+                  game,
+                  "home"
+                )
+              } ML
+            </span>
+
+            <span class="market-value">
+              ${signedOdds(
+                game.market_home_moneyline
+              )}
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <div class="market-panel">
+
+          <div class="market-panel-title">
+            Model Edge
+          </div>
+
+
+          <div class="market-line">
+
+            <span class="market-label">
+              Spread difference
+            </span>
+
+            <span
+              class="
+                market-value
+                ${
+                  edgeClass(
+                    spreadEdgeValue
+                  )
+                }
+              "
+            >
+
+              ${
+                spreadEdgeValue === null
+                  ? "—"
+                  : (
+                      spreadEdgeValue > 0
+                        ? "+"
+                        : ""
+                    ) +
+                    spreadEdgeValue.toFixed(1) +
+                    " pts"
+              }
+
+            </span>
+
+          </div>
+
+
+          <div class="market-line">
+
+            <span class="market-label">
+              Total difference
+            </span>
+
+            <span
+              class="
+                market-value
+                ${
+                  edgeClass(
+                    totalEdgeValue
+                  )
+                }
+              "
+            >
+
+              ${
+                totalEdgeValue === null
+                  ? "—"
+                  : (
+                      totalEdgeValue > 0
+                        ? "+"
+                        : ""
+                    ) +
+                    totalEdgeValue.toFixed(1) +
+                    " pts"
+              }
+
+            </span>
+
+          </div>
+
+
+          <div class="market-line">
+
+            <span class="market-label">
+              Market updated
+            </span>
+
+            <span class="market-value">
+
+              ${
+                game.market_updated_at
+                  ? new Date(
+                      game.market_updated_at
+                    ).toLocaleTimeString()
+                  : "—"
+              }
+
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+    `;
+  }
+
+
+  function gameCard(game) {
+
+    const awayAbbr =
+      teamAbbr(
+        game,
+        "away"
       );
 
-      const probabilityWidth = (
-        Number.isNaN(homeProb)
-          ? 50
-          : Math.max(
-              0,
-              Math.min(
-                100,
-                homeProb * 100
-              )
-            )
+    const homeAbbr =
+      teamAbbr(
+        game,
+        "home"
       );
 
-      const gameTime = (
-        game.status_detail ||
-        game.game_date_utc ||
-        ""
-      );
 
-      return `
-        <section class="card game-card">
+    const awayScore =
+      exists(
+        game.away_score
+      )
+        ? game.away_score
+        : game.predicted_away_score;
 
-          <div class="game-heading">
+
+    const homeScore =
+      exists(
+        game.home_score
+      )
+        ? game.home_score
+        : game.predicted_home_score;
+
+
+    return `
+
+      <section class="game-card">
+
+
+        <div class="game-header">
+
+          <div class="status">
+            ${cleanStatus(
+              game.status
+            )}
+          </div>
+
+
+          <div class="matchup-row">
 
             <div>
-              <div class="status">
-                ${statusLabel(game.status)}
+
+              <div class="matchup-teams">
+
+
+                <div class="team-block">
+
+                  ${teamLogo(
+                    awayAbbr
+                  )}
+
+                  <span class="matchup-name">
+                    ${teamName(
+                      game,
+                      "away"
+                    )}
+                  </span>
+
+                </div>
+
+
+                <span class="at-symbol">
+                  @
+                </span>
+
+
+                <div class="team-block">
+
+                  ${teamLogo(
+                    homeAbbr
+                  )}
+
+                  <span class="matchup-name">
+                    ${teamName(
+                      game,
+                      "home"
+                    )}
+                  </span>
+
+                </div>
+
+
               </div>
 
-              <h2>
-                ${teamName(game, "away")}
-                @
-                ${teamName(game, "home")}
-              </h2>
 
-              <div class="muted">
-                ${value(gameTime, "")}
+              <div class="venue">
+
+                ${
+                  game.status_detail ||
+                  ""
+                }
+
                 ${
                   game.venue
-                    ? " · " + game.venue
+                    ? " · " +
+                      game.venue
                     : ""
                 }
+
               </div>
+
+
             </div>
 
           </div>
 
-          <div class="grid">
+        </div>
+
+
+        <div class="game-body">
+
+
+          <div class="headline-grid">
+
 
             <div class="metric">
+
               <div class="metric-label">
-                Predicted final
+                Projected Final
               </div>
 
-              <strong>
-                ${value(game.away_abbr, "Away")}
-                ${number(game.away_score)}
-                –
-                ${value(game.home_abbr, "Home")}
-                ${number(game.home_score)}
-              </strong>
+
+              <div class="score-grid">
+
+                <div class="score-side">
+
+                  <div class="score-abbr">
+                    ${awayAbbr}
+                  </div>
+
+                  <div class="score-number">
+                    ${num(
+                      awayScore
+                    )}
+                  </div>
+
+                </div>
+
+
+                <div class="score-separator">
+                  –
+                </div>
+
+
+                <div class="score-side">
+
+                  <div class="score-abbr">
+                    ${homeAbbr}
+                  </div>
+
+                  <div class="score-number">
+                    ${num(
+                      homeScore
+                    )}
+                  </div>
+
+                </div>
+
+              </div>
+
             </div>
 
+
             <div class="metric">
+
               <div class="metric-label">
-                Projected winner / margin
+                Model Spread
               </div>
 
-              <strong>
-                ${marginText(game)}
-              </strong>
+              <div class="metric-value">
+                ${modelSpread(game)}
+              </div>
+
             </div>
 
+
             <div class="metric">
+
               <div class="metric-label">
-                Predicted total
+                Projected Winner
               </div>
 
-              <strong>
-                ${number(game.predicted_total)}
-              </strong>
+              <div class="metric-value pick">
+
+                ${projectedWinner(
+                  game
+                )}
+
+              </div>
+
             </div>
 
+
             <div class="metric">
+
               <div class="metric-label">
-                Home win probability
+                Win Probability
               </div>
 
-              <strong>
+              <div class="metric-value">
+
+                ${favoriteProbability(
+                  game
+                )}
+
+              </div>
+
+            </div>
+
+
+          </div>
+
+
+          <div class="headline-grid">
+
+
+            <div class="metric">
+
+              <div class="metric-label">
+                Predicted Total
+              </div>
+
+              <div class="metric-value">
+
+                ${num(
+                  game.predicted_total
+                )}
+
+              </div>
+
+            </div>
+
+
+            <div class="metric">
+
+              <div class="metric-label">
+                ${awayAbbr} Win
+              </div>
+
+              <div class="metric-value">
+
+                ${probability(
+                  game.away_win_probability
+                )}
+
+              </div>
+
+            </div>
+
+
+            <div class="metric">
+
+              <div class="metric-label">
+                ${homeAbbr} Win
+              </div>
+
+              <div class="metric-value">
+
                 ${probability(
                   game.home_win_probability
                 )}
-              </strong>
-            </div>
 
-          </div>
-
-          <h3 class="section-heading">
-            Win probability
-          </h3>
-
-          <div class="metric">
-
-            <div class="team-probabilities">
-
-              <div>
-                <div class="muted">
-                  ${teamName(game, "away")}
-                </div>
-
-                <strong>
-                  ${probability(
-                    game.away_win_probability
-                  )}
-                </strong>
-              </div>
-
-              <div>
-                <div class="muted">
-                  ${teamName(game, "home")}
-                </div>
-
-                <strong>
-                  ${probability(
-                    game.home_win_probability
-                  )}
-                </strong>
               </div>
 
             </div>
 
-            <div class="probability-bar">
-              <div
-                class="probability-fill"
-                style="
-                  margin-left:
-                    ${100 - probabilityWidth}%;
-                  width:
-                    ${probabilityWidth}%;
-                "
-              ></div>
-            </div>
-
-          </div>
-
-          <h3 class="section-heading">
-            Half projections
-          </h3>
-
-          <div class="grid">
 
             <div class="metric">
+
               <div class="metric-label">
-                First half
+                Model Margin
               </div>
 
-              <strong>
-                ${value(game.away_abbr, "Away")}
-                ${number(game.away_first_half)}
-                –
-                ${value(game.home_abbr, "Home")}
-                ${number(game.home_first_half)}
-              </strong>
+              <div class="metric-value">
 
-              <div class="muted">
-                Total
-                ${number(game.first_half_total)}
-                · Margin
-                ${signed(game.first_half_margin)}
+                ${num(
+                  Math.abs(
+                    Number(
+                      game.predicted_margin
+                    )
+                  )
+                )}
+
               </div>
+
             </div>
 
-            <div class="metric">
-              <div class="metric-label">
-                Second half
-              </div>
-
-              <strong>
-                ${value(game.away_abbr, "Away")}
-                ${number(game.away_second_half)}
-                –
-                ${value(game.home_abbr, "Home")}
-                ${number(game.home_second_half)}
-              </strong>
-
-              <div class="muted">
-                Total
-                ${number(game.second_half_total)}
-                · Margin
-                ${signed(game.second_half_margin)}
-              </div>
-            </div>
 
           </div>
 
-          <h3 class="section-heading">
-            Quarter projections
+
+          <h3 class="section-title">
+            Model vs Market
           </h3>
 
-          <div class="quarter-grid">
-            ${quarterHTML(game, "Q1")}
-            ${quarterHTML(game, "Q2")}
-            ${quarterHTML(game, "Q3")}
-            ${quarterHTML(game, "Q4")}
-          </div>
 
-        </section>
-      `;
-    }
+          ${modelMarketHTML(game)}
 
-    function renderHistory(
-      historyPayload
-    ) {
-      const rows = Array.isArray(historyPayload)
-        ? historyPayload
-        : (
-            Array.isArray(historyPayload.events)
-              ? historyPayload.events
-              : []
-          );
 
-      if (!rows.length) {
-        return `
-          <div class="muted">
-            No prediction history yet.
-          </div>
-        `;
-      }
+          <h3 class="section-title">
+            Period Projections
+          </h3>
 
-      const latestRows = rows.slice(
-        0,
-        30
-      );
 
-      return `
-        <div class="table-wrap">
+          <div class="projection-table-wrap">
 
-          <table>
+            <table class="projection-table">
 
-            <thead>
-              <tr>
-                <th>Game</th>
-                <th>Prediction time</th>
-                <th>Predicted final</th>
-                <th>Margin</th>
-                <th>Total</th>
-                <th>Home win</th>
-              </tr>
-            </thead>
+              <thead>
 
-            <tbody>
-
-              ${latestRows.map(row => `
                 <tr>
 
-                  <td>
-                    ${teamName(row, "away")}
-                    @
-                    ${teamName(row, "home")}
-                  </td>
+                  <th>
+                    Period
+                  </th>
 
-                  <td>
-                    ${value(
-                      row.prediction_date,
-                      "—"
-                    )}
-                  </td>
+                  <th>
+                    ${awayAbbr}
+                  </th>
 
-                  <td>
-                    ${number(row.away_score)}
-                    –
-                    ${number(row.home_score)}
-                  </td>
+                  <th>
+                    ${homeAbbr}
+                  </th>
 
-                  <td>
-                    ${signed(
-                      row.predicted_margin ??
-                      row.full_margin
-                    )}
-                  </td>
+                  <th>
+                    Home Margin
+                  </th>
 
-                  <td>
-                    ${number(
-                      row.predicted_total ??
-                      row.full_total
-                    )}
-                  </td>
-
-                  <td>
-                    ${probability(
-                      row.home_win_probability ??
-                      row.home_win
-                    )}
-                  </td>
+                  <th>
+                    Total
+                  </th>
 
                 </tr>
-              `).join("")}
 
-            </tbody>
+              </thead>
 
-          </table>
+
+              <tbody>
+
+
+                ${projectionRow(
+                  "Q1",
+                  game.away_q1,
+                  game.home_q1,
+                  game.q1_margin,
+                  game.q1_total
+                )}
+
+
+                ${projectionRow(
+                  "Q2",
+                  game.away_q2,
+                  game.home_q2,
+                  game.q2_margin,
+                  game.q2_total
+                )}
+
+
+                ${projectionRow(
+                  "1st Half",
+                  game.away_first_half,
+                  game.home_first_half,
+                  game.first_half_margin,
+                  game.first_half_total
+                )}
+
+
+                ${projectionRow(
+                  "Q3",
+                  game.away_q3,
+                  game.home_q3,
+                  game.q3_margin,
+                  game.q3_total
+                )}
+
+
+                ${projectionRow(
+                  "Q4",
+                  game.away_q4,
+                  game.home_q4,
+                  game.q4_margin,
+                  game.q4_total
+                )}
+
+
+                ${projectionRow(
+                  "2nd Half",
+                  game.away_second_half,
+                  game.home_second_half,
+                  game.second_half_margin,
+                  game.second_half_total
+                )}
+
+
+              </tbody>
+
+            </table>
+
+          </div>
+
 
         </div>
-      `;
-    }
 
-    async function render() {
-      const latest = await loadJSON(
+      </section>
+    `;
+  }
+
+
+  async function render() {
+
+    const latest =
+      await loadJSON(
         "latest.json",
         {}
       );
 
-      const history = await loadJSON(
+
+    const historyPayload =
+      await loadJSON(
         "history.json",
         {
           events: []
         }
       );
 
-      const status = document.getElementById(
+
+    const status =
+      document.getElementById(
         "status"
       );
 
-      const gamesContainer =
-        document.getElementById(
-          "games"
-        );
 
-      const historyContainer =
-        document.getElementById(
-          "history"
-        );
+    const gamesContainer =
+      document.getElementById(
+        "games"
+      );
 
-      const games = (
-        Array.isArray(latest)
-          ? latest
-          : (
-              Array.isArray(latest.games)
-                ? latest.games
-                : []
+
+    const historyContainer =
+      document.getElementById(
+        "history"
+      );
+
+
+    const games =
+      Array.isArray(
+        latest
+      )
+        ? latest
+        : Array.isArray(
+            latest.games
+          )
+          ? latest.games
+          : [];
+
+
+    if (!games.length) {
+
+      status.innerHTML = `
+
+        <strong>
+          Dashboard online
+        </strong>
+
+        <div class="muted">
+          No predictions are currently available.
+        </div>
+
+      `;
+
+
+      gamesContainer.innerHTML =
+        "";
+
+    } else {
+
+      const updatedText =
+        latest.generated_at_utc
+          ? (
+              " · Updated " +
+              new Date(
+                latest.generated_at_utc
+              ).toLocaleString()
             )
-      );
+          : "";
 
-      if (!games.length) {
-        status.innerHTML = `
-          <strong>
-            Dashboard is online.
-          </strong>
 
-          <div class="muted">
-            No upcoming prediction output is available.
-          </div>
-        `;
-      } else {
-        const generated = (
-          latest.generated_at_utc
-          || ""
-        );
+      status.innerHTML = `
 
-        status.innerHTML = `
-          <strong>
-            Pregame predictions loaded.
-          </strong>
+        <strong>
+          Today's WNBA Predictions
+        </strong>
 
-          <div class="muted">
-            ${games.length}
-            upcoming game(s)
-            ${
-              generated
-                ? " · Generated " + generated
-                : ""
-            }
-          </div>
-        `;
-      }
+        <div class="muted">
 
-      gamesContainer.innerHTML = (
-        games.length
-          ? games
-              .map(renderGame)
-              .join("")
-          : ""
-      );
+          ${games.length}
 
-      historyContainer.innerHTML =
-        renderHistory(history);
+          game${
+            games.length === 1
+              ? ""
+              : "s"
+          }
+
+          available
+
+          ${updatedText}
+
+        </div>
+
+      `;
+
+
+      gamesContainer.innerHTML =
+        games
+          .map(
+            gameCard
+          )
+          .join("");
     }
 
-    render();
 
-    setInterval(
-      render,
-      60000
-    );
-  </script>
+    const history =
+      Array.isArray(
+        historyPayload
+      )
+        ? historyPayload
+        : Array.isArray(
+            historyPayload.events
+          )
+          ? historyPayload.events
+          : [];
+
+
+    if (!history.length) {
+
+      historyContainer.innerHTML = `
+
+        <div class="muted">
+          No prediction history yet.
+        </div>
+
+      `;
+
+      return;
+    }
+
+
+    historyContainer.innerHTML = `
+
+      <div class="history-table-wrap">
+
+        <table class="history-table">
+
+          <thead>
+
+            <tr>
+
+              <th>
+                Game
+              </th>
+
+              <th>
+                Prediction Time
+              </th>
+
+              <th>
+                Projected Final
+              </th>
+
+              <th>
+                Model Spread
+              </th>
+
+              <th>
+                Total
+              </th>
+
+              <th>
+                Home Win
+              </th>
+
+            </tr>
+
+          </thead>
+
+
+          <tbody>
+
+
+            ${history
+              .slice(
+                0,
+                25
+              )
+              .map(
+                row => `
+
+                  <tr>
+
+                    <td>
+
+                      ${
+                        row.away_abbr ||
+                        row.away_team ||
+                        "Away"
+                      }
+
+                      @
+
+                      ${
+                        row.home_abbr ||
+                        row.home_team ||
+                        "Home"
+                      }
+
+                    </td>
+
+
+                    <td>
+
+                      ${
+                        row.prediction_date
+                          ? new Date(
+                              row.prediction_date
+                            ).toLocaleString()
+                          : "—"
+                      }
+
+                    </td>
+
+
+                    <td>
+
+                      ${
+                        exists(
+                          row.away_score
+                        )
+                          ? num(
+                              row.away_score
+                            )
+                          : "—"
+                      }
+
+                      –
+
+                      ${
+                        exists(
+                          row.home_score
+                        )
+                          ? num(
+                              row.home_score
+                            )
+                          : "—"
+                      }
+
+                    </td>
+
+
+                    <td>
+
+                      ${
+                        exists(
+                          row.predicted_margin
+                        )
+                          ? (
+                              Number(
+                                row.predicted_margin
+                              ) >= 0
+                                ? (
+                                    (
+                                      row.home_abbr ||
+                                      "HOME"
+                                    ) +
+                                    " -" +
+                                    Math.abs(
+                                      Number(
+                                        row.predicted_margin
+                                      )
+                                    ).toFixed(1)
+                                  )
+                                : (
+                                    (
+                                      row.away_abbr ||
+                                      "AWAY"
+                                    ) +
+                                    " -" +
+                                    Math.abs(
+                                      Number(
+                                        row.predicted_margin
+                                      )
+                                    ).toFixed(1)
+                                  )
+                            )
+                          : "—"
+                      }
+
+                    </td>
+
+
+                    <td>
+
+                      ${num(
+                        row.predicted_total ??
+                        row.full_total
+                      )}
+
+                    </td>
+
+
+                    <td>
+
+                      ${probability(
+                        row.home_win_probability ??
+                        row.home_win
+                      )}
+
+                    </td>
+
+
+                  </tr>
+
+                `
+              )
+              .join("")}
+
+
+          </tbody>
+
+        </table>
+
+      </div>
+
+    `;
+  }
+
+
+  render();
+
+
+  setInterval(
+    render,
+    60000
+  );
+
+</script>
+
 </body>
 </html>
