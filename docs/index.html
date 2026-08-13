@@ -4,226 +4,839 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>WNBA Prediction Dashboard</title>
+
   <style>
+    :root {
+      color-scheme: dark;
+
+      --background: #0f1115;
+      --panel: #181c23;
+      --panel-dark: #11151b;
+      --border: #2a2f38;
+      --text: #f5f7fa;
+      --muted: #aab2bf;
+      --positive: #65d38e;
+      --negative: #ff8a8a;
+      --accent: #8ab4ff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
-      background: #0f1115;
-      color: #f5f7fa;
+      background: var(--background);
+      color: var(--text);
+      font-family:
+        Inter,
+        ui-sans-serif,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
     }
+
     header {
-      padding: 20px;
-      border-bottom: 1px solid #2a2f38;
+      padding: 22px;
+      border-bottom: 1px solid var(--border);
+      background: rgba(15, 17, 21, 0.96);
+      position: sticky;
+      top: 0;
+      z-index: 10;
     }
+
+    header h1 {
+      margin: 0 0 6px;
+      font-size: 1.7rem;
+    }
+
     main {
-      max-width: 1100px;
+      width: min(1200px, calc(100% - 32px));
       margin: 0 auto;
-      padding: 20px;
+      padding: 24px 0 48px;
     }
+
+    h2,
+    h3 {
+      margin-top: 0;
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
     .card {
-      background: #181c23;
-      border: 1px solid #2a2f38;
-      border-radius: 12px;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 14px;
       padding: 18px;
+      margin-bottom: 18px;
+    }
+
+    .game-card {
+      overflow: hidden;
+    }
+
+    .game-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 16px;
       margin-bottom: 16px;
     }
-    .muted {
-      color: #aab2bf;
+
+    .game-heading h2 {
+      margin: 8px 0 4px;
     }
+
+    .status {
+      display: inline-block;
+      padding: 5px 9px;
+      border-radius: 999px;
+      background: #2a2f38;
+      color: #dce3ed;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+    }
+
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      grid-template-columns:
+        repeat(auto-fit, minmax(180px, 1fr));
       gap: 12px;
     }
+
     .metric {
-      background: #11151b;
-      border-radius: 10px;
-      padding: 12px;
+      background: var(--panel-dark);
+      border: 1px solid #222833;
+      border-radius: 11px;
+      padding: 13px;
+      min-width: 0;
     }
+
+    .metric-label {
+      color: var(--muted);
+      font-size: 0.82rem;
+      margin-bottom: 5px;
+    }
+
     .metric strong {
       display: block;
-      font-size: 1.4rem;
-      margin-top: 4px;
+      font-size: 1.35rem;
+      overflow-wrap: anywhere;
     }
+
+    .score-line {
+      font-size: 1.55rem;
+      font-weight: 750;
+      margin: 4px 0;
+    }
+
+    .team-probabilities {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin-top: 8px;
+    }
+
+    .probability-bar {
+      height: 8px;
+      border-radius: 999px;
+      overflow: hidden;
+      background: #2a2f38;
+      margin-top: 8px;
+    }
+
+    .probability-fill {
+      height: 100%;
+      background: var(--accent);
+      border-radius: 999px;
+    }
+
+    .section-heading {
+      margin: 20px 0 10px;
+      font-size: 1rem;
+      color: #dce3ed;
+    }
+
+    .quarter-grid {
+      display: grid;
+      grid-template-columns:
+        repeat(auto-fit, minmax(140px, 1fr));
+      gap: 10px;
+    }
+
+    .quarter {
+      background: var(--panel-dark);
+      border-radius: 10px;
+      padding: 11px;
+    }
+
+    .quarter-name {
+      color: var(--muted);
+      font-size: 0.78rem;
+      margin-bottom: 5px;
+    }
+
+    .quarter-score {
+      font-weight: 700;
+      font-size: 1rem;
+    }
+
     table {
       width: 100%;
       border-collapse: collapse;
     }
-    th, td {
+
+    th,
+    td {
       text-align: left;
       padding: 10px;
-      border-bottom: 1px solid #2a2f38;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
     }
-    .status {
-      display: inline-block;
-      padding: 4px 8px;
-      border-radius: 999px;
-      background: #2a2f38;
+
+    th {
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+    }
+
+    .positive {
+      color: var(--positive);
+    }
+
+    .negative {
+      color: var(--negative);
+    }
+
+    .updated {
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin-top: 8px;
+    }
+
+    @media (max-width: 640px) {
+      main {
+        width: min(100% - 20px, 1200px);
+      }
+
+      header {
+        padding: 16px;
+      }
+
+      .game-heading {
+        display: block;
+      }
+
+      .team-probabilities {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
+
 <body>
   <header>
     <h1>WNBA Prediction Dashboard</h1>
-    <div class="muted">Pregame and live quarter-end forecasts</div>
+    <div class="muted">
+      Pregame model forecasts, quarter projections, and prediction history
+    </div>
   </header>
 
   <main>
-    <div id="status" class="card">Loading prediction data...</div>
+    <div id="status" class="card">
+      Loading prediction data...
+    </div>
+
     <div id="games"></div>
 
-    <div class="card">
+    <section class="card">
       <h2>Prediction history</h2>
       <div id="history">Loading...</div>
-    </div>
+    </section>
   </main>
 
   <script>
     async function loadJSON(path, fallback) {
       try {
-        const r = await fetch(path + "?t=" + Date.now());
-        if (!r.ok) return fallback;
-        return await r.json();
-      } catch {
+        const response = await fetch(
+          path + "?t=" + Date.now()
+        );
+
+        if (!response.ok) {
+          return fallback;
+        }
+
+        return await response.json();
+      } catch (error) {
+        console.error(
+          "Failed to load",
+          path,
+          error
+        );
+
         return fallback;
       }
     }
 
-    function value(v, fallback = "—") {
-      return v === null || v === undefined ? fallback : v;
+    function value(
+      input,
+      fallback = "—"
+    ) {
+      return (
+        input === null ||
+        input === undefined ||
+        Number.isNaN(input)
+      )
+        ? fallback
+        : input;
     }
 
-    async function render() {
-      const latest = await loadJSON("latest.json", {});
-      const history = await loadJSON("history.json", []);
-
-      const status = document.getElementById("status");
-      const gamesContainer = document.getElementById("games");
-      const historyContainer = document.getElementById("history");
-
-      const games =
-        Array.isArray(latest) ? latest :
-        Array.isArray(latest.games) ? latest.games :
-        Object.keys(latest).length ? [latest] : [];
-
-      if (!games.length) {
-        status.innerHTML =
-          "<strong>Dashboard is online.</strong>" +
-          "<div class='muted'>No prediction output is available yet.</div>";
-      } else {
-        status.innerHTML =
-          "<strong>Live prediction data loaded.</strong>" +
-          "<div class='muted'>" + games.length + " game(s) available.</div>";
+    function number(
+      input,
+      digits = 1
+    ) {
+      if (
+        input === null ||
+        input === undefined ||
+        Number.isNaN(Number(input))
+      ) {
+        return "—";
       }
 
-      gamesContainer.innerHTML = games.map(game => `
-        <section class="card">
-          <div class="status">${value(game.status, "Scheduled")}</div>
-          <h2>
-            ${value(game.away_team || game.away_abbr, "Away")}
-            @
-            ${value(game.home_team || game.home_abbr, "Home")}
-          </h2>
+      return Number(input).toFixed(digits);
+    }
 
-          <div class="grid">
-            <div class="metric">
-              Predicted score
-              <strong>
-                ${value(game.predicted_away_score)}
-                -
-                ${value(game.predicted_home_score)}
-              </strong>
-            </div>
+    function probability(
+      input
+    ) {
+      if (
+        input === null ||
+        input === undefined ||
+        Number.isNaN(Number(input))
+      ) {
+        return "—";
+      }
 
-            <div class="metric">
-              Predicted total
-              <strong>${value(game.predicted_total)}</strong>
-            </div>
+      return (
+        Number(input) * 100
+      ).toFixed(1) + "%";
+    }
 
-            <div class="metric">
-              Predicted margin
-              <strong>${value(game.predicted_margin)}</strong>
-            </div>
+    function teamName(
+      game,
+      side
+    ) {
+      return (
+        game[`${side}_team`] ||
+        game[`${side}_abbr`] ||
+        (
+          side === "home"
+            ? "Home"
+            : "Away"
+        )
+      );
+    }
 
-            <div class="metric">
-              Home win probability
-              <strong>
-                ${game.home_win_probability == null
-                  ? "—"
-                  : (game.home_win_probability * 100).toFixed(1) + "%"}
-              </strong>
-            </div>
+    function statusLabel(
+      status
+    ) {
+      if (!status) {
+        return "Scheduled";
+      }
+
+      return String(status)
+        .replace(/^STATUS_/, "")
+        .replaceAll("_", " ");
+    }
+
+    function signed(
+      input,
+      digits = 1
+    ) {
+      if (
+        input === null ||
+        input === undefined ||
+        Number.isNaN(Number(input))
+      ) {
+        return "—";
+      }
+
+      const n = Number(input);
+
+      return (
+        n > 0
+          ? "+"
+          : ""
+      ) + n.toFixed(digits);
+    }
+
+    function marginText(
+      game
+    ) {
+      const margin = Number(
+        game.predicted_margin
+      );
+
+      if (Number.isNaN(margin)) {
+        return "—";
+      }
+
+      if (Math.abs(margin) < 0.05) {
+        return "Pick'em";
+      }
+
+      const favorite = (
+        margin > 0
+          ? teamName(game, "home")
+          : teamName(game, "away")
+      );
+
+      return (
+        favorite +
+        " " +
+        Math.abs(margin).toFixed(1)
+      );
+    }
+
+    function quarterHTML(
+      game,
+      quarter
+    ) {
+      const q = quarter.toLowerCase();
+
+      const away = game[`away_${q}`];
+      const home = game[`home_${q}`];
+      const total = game[`${q}_total`];
+
+      return `
+        <div class="quarter">
+          <div class="quarter-name">
+            ${quarter}
           </div>
 
-          <h3>Current state</h3>
+          <div class="quarter-score">
+            ${value(game.away_abbr, "Away")}
+            ${number(away)}
+            ·
+            ${value(game.home_abbr, "Home")}
+            ${number(home)}
+          </div>
+
+          <div class="muted">
+            Total ${number(total)}
+          </div>
+        </div>
+      `;
+    }
+
+    function renderGame(
+      game
+    ) {
+      const homeProb = Number(
+        game.home_win_probability
+      );
+
+      const probabilityWidth = (
+        Number.isNaN(homeProb)
+          ? 50
+          : Math.max(
+              0,
+              Math.min(
+                100,
+                homeProb * 100
+              )
+            )
+      );
+
+      const gameTime = (
+        game.status_detail ||
+        game.game_date_utc ||
+        ""
+      );
+
+      return `
+        <section class="card game-card">
+
+          <div class="game-heading">
+
+            <div>
+              <div class="status">
+                ${statusLabel(game.status)}
+              </div>
+
+              <h2>
+                ${teamName(game, "away")}
+                @
+                ${teamName(game, "home")}
+              </h2>
+
+              <div class="muted">
+                ${value(gameTime, "")}
+                ${
+                  game.venue
+                    ? " · " + game.venue
+                    : ""
+                }
+              </div>
+            </div>
+
+          </div>
+
           <div class="grid">
+
             <div class="metric">
-              Score
+              <div class="metric-label">
+                Predicted final
+              </div>
+
               <strong>
-                ${value(game.away_score, 0)}
-                -
-                ${value(game.home_score, 0)}
+                ${value(game.away_abbr, "Away")}
+                ${number(game.away_score)}
+                –
+                ${value(game.home_abbr, "Home")}
+                ${number(game.home_score)}
               </strong>
             </div>
 
             <div class="metric">
-              Period
-              <strong>${value(game.period)}</strong>
+              <div class="metric-label">
+                Projected winner / margin
+              </div>
+
+              <strong>
+                ${marginText(game)}
+              </strong>
             </div>
 
             <div class="metric">
-              Clock
-              <strong>${value(game.clock)}</strong>
+              <div class="metric-label">
+                Predicted total
+              </div>
+
+              <strong>
+                ${number(game.predicted_total)}
+              </strong>
             </div>
+
+            <div class="metric">
+              <div class="metric-label">
+                Home win probability
+              </div>
+
+              <strong>
+                ${probability(
+                  game.home_win_probability
+                )}
+              </strong>
+            </div>
+
           </div>
+
+          <h3 class="section-heading">
+            Win probability
+          </h3>
+
+          <div class="metric">
+
+            <div class="team-probabilities">
+
+              <div>
+                <div class="muted">
+                  ${teamName(game, "away")}
+                </div>
+
+                <strong>
+                  ${probability(
+                    game.away_win_probability
+                  )}
+                </strong>
+              </div>
+
+              <div>
+                <div class="muted">
+                  ${teamName(game, "home")}
+                </div>
+
+                <strong>
+                  ${probability(
+                    game.home_win_probability
+                  )}
+                </strong>
+              </div>
+
+            </div>
+
+            <div class="probability-bar">
+              <div
+                class="probability-fill"
+                style="
+                  margin-left:
+                    ${100 - probabilityWidth}%;
+                  width:
+                    ${probabilityWidth}%;
+                "
+              ></div>
+            </div>
+
+          </div>
+
+          <h3 class="section-heading">
+            Half projections
+          </h3>
+
+          <div class="grid">
+
+            <div class="metric">
+              <div class="metric-label">
+                First half
+              </div>
+
+              <strong>
+                ${value(game.away_abbr, "Away")}
+                ${number(game.away_first_half)}
+                –
+                ${value(game.home_abbr, "Home")}
+                ${number(game.home_first_half)}
+              </strong>
+
+              <div class="muted">
+                Total
+                ${number(game.first_half_total)}
+                · Margin
+                ${signed(game.first_half_margin)}
+              </div>
+            </div>
+
+            <div class="metric">
+              <div class="metric-label">
+                Second half
+              </div>
+
+              <strong>
+                ${value(game.away_abbr, "Away")}
+                ${number(game.away_second_half)}
+                –
+                ${value(game.home_abbr, "Home")}
+                ${number(game.home_second_half)}
+              </strong>
+
+              <div class="muted">
+                Total
+                ${number(game.second_half_total)}
+                · Margin
+                ${signed(game.second_half_margin)}
+              </div>
+            </div>
+
+          </div>
+
+          <h3 class="section-heading">
+            Quarter projections
+          </h3>
+
+          <div class="quarter-grid">
+            ${quarterHTML(game, "Q1")}
+            ${quarterHTML(game, "Q2")}
+            ${quarterHTML(game, "Q3")}
+            ${quarterHTML(game, "Q4")}
+          </div>
+
         </section>
-      `).join("");
+      `;
+    }
 
-      const rows = Array.isArray(history) ? history : [];
+    function renderHistory(
+      historyPayload
+    ) {
+      const rows = Array.isArray(historyPayload)
+        ? historyPayload
+        : (
+            Array.isArray(historyPayload.events)
+              ? historyPayload.events
+              : []
+          );
 
       if (!rows.length) {
-        historyContainer.innerHTML =
-          "<div class='muted'>No prediction history yet.</div>";
-      } else {
-        historyContainer.innerHTML = `
+        return `
+          <div class="muted">
+            No prediction history yet.
+          </div>
+        `;
+      }
+
+      const latestRows = rows.slice(
+        0,
+        30
+      );
+
+      return `
+        <div class="table-wrap">
+
           <table>
+
             <thead>
               <tr>
                 <th>Game</th>
-                <th>Event</th>
-                <th>Updated prediction</th>
-                <th>Win probability</th>
+                <th>Prediction time</th>
+                <th>Predicted final</th>
+                <th>Margin</th>
+                <th>Total</th>
+                <th>Home win</th>
               </tr>
             </thead>
+
             <tbody>
-              ${rows.slice().reverse().map(row => `
+
+              ${latestRows.map(row => `
                 <tr>
+
                   <td>
-                    ${value(row.away_team || row.away_abbr, "Away")}
+                    ${teamName(row, "away")}
                     @
-                    ${value(row.home_team || row.home_abbr, "Home")}
+                    ${teamName(row, "home")}
                   </td>
-                  <td>${value(row.event_type)}</td>
+
                   <td>
-                    ${value(row.updated_away_score)}
-                    -
-                    ${value(row.updated_home_score)}
+                    ${value(
+                      row.prediction_date,
+                      "—"
+                    )}
                   </td>
+
                   <td>
-                    ${row.updated_home_win_probability == null
-                      ? "—"
-                      : (row.updated_home_win_probability * 100).toFixed(1) + "%"}
+                    ${number(row.away_score)}
+                    –
+                    ${number(row.home_score)}
                   </td>
+
+                  <td>
+                    ${signed(
+                      row.predicted_margin ??
+                      row.full_margin
+                    )}
+                  </td>
+
+                  <td>
+                    ${number(
+                      row.predicted_total ??
+                      row.full_total
+                    )}
+                  </td>
+
+                  <td>
+                    ${probability(
+                      row.home_win_probability ??
+                      row.home_win
+                    )}
+                  </td>
+
                 </tr>
               `).join("")}
+
             </tbody>
+
           </table>
+
+        </div>
+      `;
+    }
+
+    async function render() {
+      const latest = await loadJSON(
+        "latest.json",
+        {}
+      );
+
+      const history = await loadJSON(
+        "history.json",
+        {
+          events: []
+        }
+      );
+
+      const status = document.getElementById(
+        "status"
+      );
+
+      const gamesContainer =
+        document.getElementById(
+          "games"
+        );
+
+      const historyContainer =
+        document.getElementById(
+          "history"
+        );
+
+      const games = (
+        Array.isArray(latest)
+          ? latest
+          : (
+              Array.isArray(latest.games)
+                ? latest.games
+                : []
+            )
+      );
+
+      if (!games.length) {
+        status.innerHTML = `
+          <strong>
+            Dashboard is online.
+          </strong>
+
+          <div class="muted">
+            No upcoming prediction output is available.
+          </div>
+        `;
+      } else {
+        const generated = (
+          latest.generated_at_utc
+          || ""
+        );
+
+        status.innerHTML = `
+          <strong>
+            Pregame predictions loaded.
+          </strong>
+
+          <div class="muted">
+            ${games.length}
+            upcoming game(s)
+            ${
+              generated
+                ? " · Generated " + generated
+                : ""
+            }
+          </div>
         `;
       }
+
+      gamesContainer.innerHTML = (
+        games.length
+          ? games
+              .map(renderGame)
+              .join("")
+          : ""
+      );
+
+      historyContainer.innerHTML =
+        renderHistory(history);
     }
 
     render();
-    setInterval(render, 60000);
+
+    setInterval(
+      render,
+      60000
+    );
   </script>
 </body>
 </html>
