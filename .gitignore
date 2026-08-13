@@ -13,3 +13,6 @@ secret*.txt
 
 # Ignore generated backfill progress files
 data/backfill_progress.json
+
+# CatBoost local training output
+catboost_info/

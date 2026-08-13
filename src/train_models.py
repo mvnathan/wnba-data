@@ -8,6 +8,7 @@ from typing import Any
 import joblib
 import numpy as np
 import pandas as pd
+from sklearn.base import clone
 from sklearn.ensemble import HistGradientBoostingRegressor, ExtraTreesClassifier, ExtraTreesRegressor
 from sklearn.linear_model import LogisticRegression, Ridge
 from sklearn.metrics import (
@@ -150,6 +151,75 @@ NUMERIC_FEATURE_EXCLUDE = {
     "q3_total",
     "q4_margin",
     "q4_total",
+    "period",
+    "clock",
+    "home_points",
+    "home_opp_points",
+    "home_margin",
+    "home_win",
+    "home_q1",
+    "home_q2",
+    "home_q3",
+    "home_q4",
+    "home_ot1",
+    "home_ot2",
+    "home_first_half_points",
+    "home_second_half_points",
+    "home_regulation_points",
+    "home_opp_q1",
+    "home_opp_q2",
+    "home_opp_q3",
+    "home_opp_q4",
+    "home_q1_margin",
+    "home_q2_margin",
+    "home_q3_margin",
+    "home_q4_margin",
+    "home_first_half_margin",
+    "away_points",
+    "away_opp_points",
+    "away_margin",
+    "away_win",
+    "away_q1",
+    "away_q2",
+    "away_q3",
+    "away_q4",
+    "away_ot1",
+    "away_ot2",
+    "away_first_half_points",
+    "away_second_half_points",
+    "away_regulation_points",
+    "away_opp_q1",
+    "away_opp_q2",
+    "away_opp_q3",
+    "away_opp_q4",
+    "away_q1_margin",
+    "away_q2_margin",
+    "away_q3_margin",
+    "away_q4_margin",
+    "away_first_half_margin",
+    "diff_score",
+    "diff_points",
+    "diff_opp_points",
+    "diff_margin",
+    "diff_win",
+    "diff_q1",
+    "diff_q2",
+    "diff_q3",
+    "diff_q4",
+    "diff_ot1",
+    "diff_ot2",
+    "diff_first_half_points",
+    "diff_second_half_points",
+    "diff_regulation_points",
+    "diff_opp_q1",
+    "diff_opp_q2",
+    "diff_opp_q3",
+    "diff_opp_q4",
+    "diff_q1_margin",
+    "diff_q2_margin",
+    "diff_q3_margin",
+    "diff_q4_margin",
+    "diff_first_half_margin",
 }
 
 
@@ -158,24 +228,26 @@ def _build_pipeline(estimator: Any) -> Pipeline:
         steps=[
             ("imputer", SimpleImputer(strategy="median")),
             ("scaler", StandardScaler()),
-            ("model", estimator),
+            ("model", clone(estimator)),
         ]
     )
 
 
-def _prepare_feature_matrix(df: pd.DataFrame) -> tuple[pd.DataFrame, list[str]]:
+def _prepare_feature_matrix(
+    df: pd.DataFrame,
+) -> tuple[pd.DataFrame, list[str]]:
+
+    excluded = NUMERIC_FEATURE_EXCLUDE | set(TARGETS.keys())
+
     feature_columns = [
         col
         for col in df.columns
-        if col not in NUMERIC_FEATURE_EXCLUDE
-        and col not in {"home_win", "full_margin", "full_total"}
-        and not col.startswith("home_") and not col.startswith("away_")
-        or col.startswith("home_")
-        or col.startswith("away_")
+        if col not in excluded
+        and col not in {"game_id", "game_date_utc"}
+        and pd.api.types.is_numeric_dtype(df[col])
     ]
-    feature_columns = [col for col in feature_columns if col not in {"game_id", "game_date_utc"}]
-    numeric_cols = [col for col in feature_columns if pd.api.types.is_numeric_dtype(df[col])]
-    return df[numeric_cols].astype(float), numeric_cols
+
+    return df[feature_columns].astype(float), feature_columns
 
 
 def _chronological_split(df: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
@@ -207,10 +279,15 @@ def _evaluate_classification(y_true: pd.Series, y_pred: np.ndarray, y_prob: np.n
     return metrics
 
 
-def _evaluate_regression(y_true: pd.Series, y_pred: np.ndarray) -> dict[str, float]:
+def _evaluate_regression(
+    y_true: pd.Series,
+    y_pred: np.ndarray,
+) -> dict[str, float]:
+    mse = mean_squared_error(y_true, y_pred)
+
     return {
         "mae": float(mean_absolute_error(y_true, y_pred)),
-        "rmse": float(mean_squared_error(y_true, y_pred, squared=False)),
+        "rmse": float(np.sqrt(mse)),
     }
 
 
@@ -316,6 +393,7 @@ def train_models() -> dict[str, Any]:
             "holdout_residuals": holdout_residuals,
         },
         PRODUCTION_MODEL_PATH,
+        compress=3,
     )
     return {
         "status": "ok",
