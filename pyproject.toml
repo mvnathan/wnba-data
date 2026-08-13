@@ -27,9 +27,9 @@ classifiers = [
 requires = ["setuptools>=65.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
-[tool.pytest]
+[tool.pytest.ini_options]
 minversion = "8.0"
-addopts = "--strict-markers --tb=short"
+addopts = ["--strict-markers", "--tb=short"]
 testpaths = ["tests"]
 
 [tool.ruff]
