@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-08-13T15:10:10.690806+00:00",
+  "generated_at_utc": "2026-08-13T15:26:43.903927+00:00",
   "target_date": "2026-08-13",
   "games": [
     {
@@ -46,7 +46,18 @@
       "home_win_probability": 0.3065037837340573,
       "away_win_probability": 0.6934962162659427,
       "predicted_margin": -7.875929927700881,
-      "predicted_total": 168.07407007229915
+      "predicted_total": 168.07407007229915,
+      "market_bookmaker": "DraftKings",
+      "market_home_spread": 10.5,
+      "market_away_spread": -10.5,
+      "market_home_spread_price": -115,
+      "market_away_spread_price": -105,
+      "market_total": 174.5,
+      "market_over_price": -108,
+      "market_under_price": -112,
+      "market_home_moneyline": 390,
+      "market_away_moneyline": -520,
+      "market_updated_at": "2026-08-13T15:26:25Z"
     },
     {
       "game_id": "401857141",
@@ -92,7 +103,18 @@
       "home_win_probability": 0.8120819460836564,
       "away_win_probability": 0.18791805391634364,
       "predicted_margin": 6.973604465778237,
-      "predicted_total": 172.72360446577824
+      "predicted_total": 172.72360446577824,
+      "market_bookmaker": "DraftKings",
+      "market_home_spread": -8.5,
+      "market_away_spread": 8.5,
+      "market_home_spread_price": -112,
+      "market_away_spread_price": -108,
+      "market_total": 186.5,
+      "market_over_price": -115,
+      "market_under_price": -105,
+      "market_home_moneyline": -360,
+      "market_away_moneyline": 285,
+      "market_updated_at": "2026-08-13T15:26:25Z"
     },
     {
       "game_id": "401857142",
@@ -138,19 +160,30 @@
       "home_win_probability": 0.7855665042869774,
       "away_win_probability": 0.21443349571302261,
       "predicted_margin": 2.7140141790061847,
-      "predicted_total": 163.94401417900622
+      "predicted_total": 163.94401417900622,
+      "market_bookmaker": "DraftKings",
+      "market_home_spread": -6.5,
+      "market_away_spread": 6.5,
+      "market_home_spread_price": -105,
+      "market_away_spread_price": -115,
+      "market_total": 170.5,
+      "market_over_price": -108,
+      "market_under_price": -112,
+      "market_home_moneyline": -238,
+      "market_away_moneyline": 195,
+      "market_updated_at": "2026-08-13T15:26:25Z"
     }
   ],
   "uncertainty": {
     "full_total": {
-      "p10": 166.267974257784,
-      "median": 175.72324098671072,
-      "p90": 195.1756198788152
+      "p10": 163.9206318167069,
+      "median": 164.70117164773842,
+      "p90": 169.34105922985145
     },
     "home_score": {
-      "p10": 80.74505889364055,
-      "median": 83.3290141790062,
-      "p90": 101.42468640842382
+      "p10": 80.47105889364055,
+      "median": 81.95901417900619,
+      "p90": 107.01068640842382
     }
   }
 }
