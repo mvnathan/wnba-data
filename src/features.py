@@ -296,6 +296,9 @@ def build_and_save(
                 "false": False,
             }).astype("boolean")
 
+        elif col_lower == "clock":
+            df[col] = df[col].astype("string")
+            
         # Normalize identifier / descriptive columns to strings.
         elif (
             "team" in col_lower
