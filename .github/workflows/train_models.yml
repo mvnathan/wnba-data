@@ -25,7 +25,7 @@ jobs:
           PYTHONPATH=. python scripts/run_daily_update.py
       - name: Build features
         run: |
-          python scripts/build_features.py
+          PYTHONPATH=. python scripts/build_features.py
       - name: Train models
         run: |
           PYTHONPATH=. python scripts/train_models.py
