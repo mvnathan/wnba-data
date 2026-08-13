@@ -3,7 +3,7 @@ name: Live WNBA Game Monitor
 on:
   workflow_dispatch:
   schedule:
-    - cron: '*/5 12-23 * * 1-7'
+    - cron: '*/5 * * * *'
 
 concurrency:
   group: wnba-live-monitor

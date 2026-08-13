@@ -3,7 +3,7 @@ name: Generate WNBA Pregame Predictions
 on:
   workflow_dispatch:
   schedule:
-    - cron: '12 14 * * 1-7'
+    - cron: '12 14 * * 1-5'
 
 jobs:
   predict:
