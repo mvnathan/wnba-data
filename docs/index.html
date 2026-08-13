@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WNBA Prediction Dashboard</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #0f1115;
+      color: #f5f7fa;
+    }
+    header {
+      padding: 20px;
+      border-bottom: 1px solid #2a2f38;
+    }
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .card {
+      background: #181c23;
+      border: 1px solid #2a2f38;
+      border-radius: 12px;
+      padding: 18px;
+      margin-bottom: 16px;
+    }
+    .muted {
+      color: #aab2bf;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+    }
+    .metric {
+      background: #11151b;
+      border-radius: 10px;
+      padding: 12px;
+    }
+    .metric strong {
+      display: block;
+      font-size: 1.4rem;
+      margin-top: 4px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      text-align: left;
+      padding: 10px;
+      border-bottom: 1px solid #2a2f38;
+    }
+    .status {
+      display: inline-block;
+      padding: 4px 8px;
+      border-radius: 999px;
+      background: #2a2f38;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>WNBA Prediction Dashboard</h1>
+    <div class="muted">Pregame and live quarter-end forecasts</div>
+  </header>
+
+  <main>
+    <div id="status" class="card">Loading prediction data...</div>
+    <div id="games"></div>
+
+    <div class="card">
+      <h2>Prediction history</h2>
+      <div id="history">Loading...</div>
+    </div>
+  </main>
+
+  <script>
+    async function loadJSON(path, fallback) {
+      try {
+        const r = await fetch(path + "?t=" + Date.now());
+        if (!r.ok) return fallback;
+        return await r.json();
+      } catch {
+        return fallback;
+      }
+    }
+
+    function value(v, fallback = "—") {
+      return v === null || v === undefined ? fallback : v;
+    }
+
+    async function render() {
+      const latest = await loadJSON("latest.json", {});
+      const history = await loadJSON("history.json", []);
+
+      const status = document.getElementById("status");
+      const gamesContainer = document.getElementById("games");
+      const historyContainer = document.getElementById("history");
+
+      const games =
+        Array.isArray(latest) ? latest :
+        Array.isArray(latest.games) ? latest.games :
+        Object.keys(latest).length ? [latest] : [];
+
+      if (!games.length) {
+        status.innerHTML =
+          "<strong>Dashboard is online.</strong>" +
+          "<div class='muted'>No prediction output is available yet.</div>";
+      } else {
+        status.innerHTML =
+          "<strong>Live prediction data loaded.</strong>" +
+          "<div class='muted'>" + games.length + " game(s) available.</div>";
+      }
+
+      gamesContainer.innerHTML = games.map(game => `
+        <section class="card">
+          <div class="status">${value(game.status, "Scheduled")}</div>
+          <h2>
+            ${value(game.away_team || game.away_abbr, "Away")}
+            @
+            ${value(game.home_team || game.home_abbr, "Home")}
+          </h2>
+
+          <div class="grid">
+            <div class="metric">
+              Predicted score
+              <strong>
+                ${value(game.predicted_away_score)}
+                -
+                ${value(game.predicted_home_score)}
+              </strong>
+            </div>
+
+            <div class="metric">
+              Predicted total
+              <strong>${value(game.predicted_total)}</strong>
+            </div>
+
+            <div class="metric">
+              Predicted margin
+              <strong>${value(game.predicted_margin)}</strong>
+            </div>
+
+            <div class="metric">
+              Home win probability
+              <strong>
+                ${game.home_win_probability == null
+                  ? "—"
+                  : (game.home_win_probability * 100).toFixed(1) + "%"}
+              </strong>
+            </div>
+          </div>
+
+          <h3>Current state</h3>
+          <div class="grid">
+            <div class="metric">
+              Score
+              <strong>
+                ${value(game.away_score, 0)}
+                -
+                ${value(game.home_score, 0)}
+              </strong>
+            </div>
+
+            <div class="metric">
+              Period
+              <strong>${value(game.period)}</strong>
+            </div>
+
+            <div class="metric">
+              Clock
+              <strong>${value(game.clock)}</strong>
+            </div>
+          </div>
+        </section>
+      `).join("");
+
+      const rows = Array.isArray(history) ? history : [];
+
+      if (!rows.length) {
+        historyContainer.innerHTML =
+          "<div class='muted'>No prediction history yet.</div>";
+      } else {
+        historyContainer.innerHTML = `
+          <table>
+            <thead>
+              <tr>
+                <th>Game</th>
+                <th>Event</th>
+                <th>Updated prediction</th>
+                <th>Win probability</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${rows.slice().reverse().map(row => `
+                <tr>
+                  <td>
+                    ${value(row.away_team || row.away_abbr, "Away")}
+                    @
+                    ${value(row.home_team || row.home_abbr, "Home")}
+                  </td>
+                  <td>${value(row.event_type)}</td>
+                  <td>
+                    ${value(row.updated_away_score)}
+                    -
+                    ${value(row.updated_home_score)}
+                  </td>
+                  <td>
+                    ${row.updated_home_win_probability == null
+                      ? "—"
+                      : (row.updated_home_win_probability * 100).toFixed(1) + "%"}
+                  </td>
+                </tr>
+              `).join("")}
+            </tbody>
+          </table>
+        `;
+      }
+    }
+
+    render();
+    setInterval(render, 60000);
+  </script>
+</body>
+</html>
