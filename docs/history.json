@@ -1,16 +1,3 @@
 {
-  "events": [
-    {
-      "game_id": "123",
-      "home_team_id": "1",
-      "away_team_id": "2",
-      "game_date_utc": "2026-08-08 19:00:00+00:00",
-      "home_win": 0.7,
-      "home_win_probability": 0.7,
-      "away_win_probability": 0.30000000000000004,
-      "predicted_margin": null,
-      "predicted_total": null,
-      "prediction_date": "2026-08-08T21:33:03.283436+00:00"
-    }
-  ]
+  "events": []
 }
