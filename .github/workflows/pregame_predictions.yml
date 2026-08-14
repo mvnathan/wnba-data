@@ -42,6 +42,10 @@ jobs:
         run: |
           python scripts/predict_today.py
 
+      - name: Evaluate opportunity alerts
+        run: |
+          python scripts/build_opportunity_alerts.py
+
       - name: Build dashboard
         run: |
           python scripts/build_dashboard.py
@@ -88,7 +92,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-          git add predictions/ docs/
+          git add predictions/ docs/ data/alert_state.json
 
           git diff --quiet --cached || \
             git commit -m "Update pregame predictions and dashboard"
