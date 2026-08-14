@@ -11,8 +11,8 @@
       "away_team": "Wings",
       "home_abbr": "IND",
       "away_abbr": "DAL",
-      "status": "STATUS_SCHEDULED",
-      "status_detail": "Fri, August 14th at 7:30 PM EDT",
+      "status": "STATUS_IN_PROGRESS",
+      "status_detail": "8:56 - 1st Quarter",
       "venue": "Gainbridge Fieldhouse",
       "home_win": 0.7161237842392134,
       "home_score": 86.27255855268274,
@@ -62,13 +62,23 @@
       "market_home_moneyline": -325,
       "market_away_moneyline": 260,
       "market_updated_at": "2026-08-14T15:03:09Z",
-      "live_status": "STATUS_SCHEDULED",
-      "live_status_detail": "Fri, August 14th at 7:30 PM EDT",
-      "live_period": null,
-      "live_clock": "0.0",
-      "live_home_score": 0,
+      "live_status": "STATUS_IN_PROGRESS",
+      "live_status_detail": "8:56 - 1st Quarter",
+      "live_period": 1,
+      "live_clock": "8:56",
+      "live_home_score": 2,
       "live_away_score": 0,
-      "live_updated_at": "2026-08-14T23:09:15.226975+00:00"
+      "live_updated_at": "2026-08-14T23:33:49.353046+00:00",
+      "live_projected_home_score": 85.2479201821314,
+      "live_projected_away_score": 78.56470720473888,
+      "live_predicted_margin": 6.683212977392515,
+      "live_predicted_total": 163.81262738687028,
+      "live_home_win_probability": 0.71262880931321,
+      "live_away_win_probability": 0.28737119068678996,
+      "live_elapsed_fraction": 0.02666666666666667,
+      "live_projection_updated_at": "2026-08-14T23:33:49.353046+00:00",
+      "live_projected_winner_side": "home",
+      "live_projected_winner_abbr": "IND"
     },
     {
       "game_id": "401857144",
@@ -136,7 +146,7 @@
       "live_clock": "0.0",
       "live_home_score": 0,
       "live_away_score": 0,
-      "live_updated_at": "2026-08-14T23:09:15.226975+00:00"
+      "live_updated_at": "2026-08-14T23:33:49.353046+00:00"
     }
   ],
   "uncertainty": {
@@ -151,6 +161,6 @@
       "p90": 103.6961478350092
     }
   },
-  "live_generated_at_utc": "2026-08-14T23:09:15.226975+00:00",
-  "last_live_update_utc": "2026-08-14T23:09:15.226975+00:00"
+  "live_generated_at_utc": "2026-08-14T23:33:49.353046+00:00",
+  "last_live_update_utc": "2026-08-14T23:33:49.353046+00:00"
 }
