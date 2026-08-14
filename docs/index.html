@@ -3,6 +3,7 @@
 
 <head>
   <meta charset="utf-8">
+
   <meta
     name="viewport"
     content="width=device-width, initial-scale=1"
@@ -15,15 +16,34 @@
       --bg: #090c11;
       --panel: #151a22;
       --panel-soft: #10151c;
+      --panel-raised: #171e28;
+
       --border: #29313d;
       --border-soft: #202833;
+
       --text: #f4f7fb;
       --muted: #929cab;
-      --green: #63d297;
-      --red: #ff8585;
-      --yellow: #f4cd66;
-      --live: #ff5a5f;
+
       --accent: #7aa2ff;
+
+      --green: #63d297;
+      --green-soft: rgba(99, 210, 151, 0.11);
+      --green-border: rgba(99, 210, 151, 0.35);
+
+      --green-strong: #46df8d;
+      --green-strong-soft: rgba(70, 223, 141, 0.18);
+      --green-strong-border: rgba(70, 223, 141, 0.55);
+
+      --yellow: #f4cd66;
+      --yellow-soft: rgba(244, 205, 102, 0.10);
+      --yellow-border: rgba(244, 205, 102, 0.35);
+
+      --red: #ff8585;
+      --red-soft: rgba(255, 133, 133, 0.10);
+      --red-border: rgba(255, 133, 133, 0.35);
+
+      --blue-soft: rgba(122, 162, 255, 0.10);
+      --blue-border: rgba(122, 162, 255, 0.32);
     }
 
     * {
@@ -31,7 +51,7 @@
     }
 
     html {
-      font-size: 14px;
+      font-size: 15px;
     }
 
     body {
@@ -49,36 +69,40 @@
       line-height: 1.25;
     }
 
+    button {
+      font: inherit;
+    }
+
     header {
       position: sticky;
       top: 0;
-      z-index: 20;
+      z-index: 30;
       background: rgba(9, 12, 17, 0.97);
       border-bottom: 1px solid var(--border);
-      backdrop-filter: blur(10px);
+      backdrop-filter: blur(12px);
     }
 
     .header-inner {
-      max-width: 1240px;
+      max-width: 1280px;
       margin: 0 auto;
-      padding: 12px 16px 8px;
+      padding: 10px 16px 6px;
     }
 
     .header-title {
       margin: 0 0 2px;
       font-size: 1.35rem;
-      font-weight: 850;
+      font-weight: 900;
     }
 
     .header-subtitle {
       color: var(--muted);
-      font-size: 0.76rem;
+      font-size: 0.75rem;
     }
 
     .tabs {
-      max-width: 1240px;
+      max-width: 1280px;
       margin: 0 auto;
-      padding: 0 16px;
+      padding: 0 14px;
       display: flex;
       gap: 4px;
       overflow-x: auto;
@@ -96,10 +120,9 @@
       background: transparent;
       color: var(--muted);
       cursor: pointer;
-      padding: 8px 12px 7px;
-      font: inherit;
-      font-size: 0.78rem;
-      font-weight: 800;
+      padding: 8px 11px 7px;
+      font-size: 0.8rem;
+      font-weight: 850;
       white-space: nowrap;
     }
 
@@ -113,9 +136,9 @@
     }
 
     main {
-      max-width: 1240px;
+      max-width: 1280px;
       margin: 0 auto;
-      padding: 12px 16px 30px;
+      padding: 10px 14px 28px;
     }
 
     .tab-panel {
@@ -127,608 +150,970 @@
     }
 
     .dashboard-status,
-    .section-card,
-    .game-card {
+    .game-card,
+    .section-card {
       background: var(--panel);
       border: 1px solid var(--border);
       border-radius: 12px;
     }
 
     .dashboard-status {
-      padding: 9px 12px;
-      margin-bottom: 10px;
-      font-size: 0.78rem;
+      padding: 8px 11px;
+      margin-bottom: 9px;
+      font-size: 0.76rem;
     }
 
     .muted {
       color: var(--muted);
     }
 
+    /* -------------------------------------------------------
+       LEGEND
+       ------------------------------------------------------- */
+
+    .edge-legend {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      flex-wrap: wrap;
+      margin: 0 0 9px;
+      padding: 7px 9px;
+      border: 1px solid var(--border-soft);
+      background: var(--panel-soft);
+      border-radius: 9px;
+      font-size: 0.66rem;
+    }
+
+    .legend-label {
+      color: var(--muted);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .legend-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .legend-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+    }
+
+    .legend-dot.strong {
+      background: var(--green-strong);
+    }
+
+    .legend-dot.moderate {
+      background: var(--yellow);
+    }
+
+    .legend-dot.neutral {
+      background: #56606d;
+    }
+
+    /* -------------------------------------------------------
+       GAME CARDS
+       ------------------------------------------------------- */
+
     .game-card {
-      margin-bottom: 12px;
+      margin-bottom: 10px;
       overflow: hidden;
     }
 
     .game-card.live-game {
-      border-color: rgba(255, 90, 95, 0.65);
+      border-color: rgba(255, 90, 95, 0.55);
     }
 
     .game-header {
-      padding: 10px 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 8px 11px;
       border-bottom: 1px solid var(--border);
     }
 
-    .status {
-      display: inline-block;
-      margin-bottom: 6px;
-      padding: 3px 7px;
-      border-radius: 999px;
-      background: #29313d;
-      color: #dce3ed;
-      font-size: 0.62rem;
-      font-weight: 800;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-    }
-
-    .status.live {
-      background: rgba(255, 90, 95, 0.17);
-      color: #ff8c8f;
-      border: 1px solid rgba(255, 90, 95, 0.5);
-    }
-
-    .status.final {
-      background: rgba(99, 210, 151, 0.13);
-      color: var(--green);
+    .game-header-left {
+      min-width: 0;
     }
 
     .matchup-teams {
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 7px;
       flex-wrap: wrap;
     }
 
     .team-block {
       display: flex;
       align-items: center;
-      gap: 6px;
+      gap: 5px;
     }
 
     .team-logo {
-      width: 28px;
-      height: 28px;
+      width: 27px;
+      height: 27px;
       object-fit: contain;
     }
 
     .team-fallback {
-      width: 28px;
-      height: 28px;
+      width: 27px;
+      height: 27px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
       border-radius: 50%;
       background: #252d38;
-      font-size: 0.6rem;
-      font-weight: 800;
+      font-size: 0.58rem;
+      font-weight: 850;
     }
 
     .matchup-name {
-      font-size: 1.08rem;
-      font-weight: 850;
+      font-size: 1rem;
+      font-weight: 900;
     }
 
     .at-symbol {
       color: var(--muted);
-      font-weight: 700;
+      font-weight: 800;
     }
 
     .venue {
-      margin-top: 3px;
+      margin-top: 2px;
       color: var(--muted);
-      font-size: 0.7rem;
+      font-size: 0.66rem;
+    }
+
+    .status {
+      display: inline-block;
+      padding: 3px 7px;
+      border-radius: 999px;
+      background: #29313d;
+      color: #dce3ed;
+      font-size: 0.58rem;
+      font-weight: 850;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .status.live {
+      background: rgba(255, 90, 95, 0.16);
+      color: #ff8c8f;
+      border: 1px solid rgba(255, 90, 95, 0.45);
+    }
+
+    .status.final {
+      background: var(--green-soft);
+      color: var(--green);
+      border: 1px solid var(--green-border);
     }
 
     .game-body {
-      padding: 10px 14px 12px;
+      padding: 8px 10px 10px;
     }
+
+    /* -------------------------------------------------------
+       LIVE SCORE
+       ------------------------------------------------------- */
 
     .live-score-panel {
-      margin-bottom: 10px;
-      padding: 10px;
-      border: 1px solid rgba(255, 90, 95, 0.35);
-      background:
-        linear-gradient(
-          135deg,
-          rgba(255, 90, 95, 0.10),
-          rgba(16, 21, 28, 1)
-        );
-      border-radius: 10px;
-    }
-
-    .live-score-header {
-      display: flex;
-      justify-content: space-between;
-      gap: 8px;
-      margin-bottom: 6px;
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 7px;
+      padding: 7px 10px;
+      border: 1px solid rgba(255, 90, 95, 0.32);
+      background: rgba(255, 90, 95, 0.07);
+      border-radius: 9px;
     }
 
     .live-label {
       color: #ff8c8f;
-      font-size: 0.65rem;
-      font-weight: 850;
+      font-size: 0.64rem;
+      font-weight: 900;
       text-transform: uppercase;
-      letter-spacing: 0.05em;
+    }
+
+    .live-score-inline {
+      text-align: center;
+      font-size: 1.25rem;
+      font-weight: 900;
     }
 
     .live-clock {
       color: var(--muted);
-      font-size: 0.72rem;
-      font-weight: 700;
-    }
-
-    .live-score-grid {
-      display: grid;
-      grid-template-columns: 1fr auto 1fr;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .live-team {
-      text-align: center;
-    }
-
-    .live-team-abbr {
-      color: var(--muted);
-      font-size: 0.64rem;
-      font-weight: 800;
-    }
-
-    .live-team-score {
-      font-size: 1.65rem;
-      font-weight: 900;
-    }
-
-    .pregame-heading {
-      margin: 9px 0 6px;
-      color: #d8dee8;
       font-size: 0.68rem;
-      font-weight: 800;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
+      font-weight: 750;
+      text-align: right;
     }
+
+    /* -------------------------------------------------------
+       HEADLINE GRID - 8 CELLS / ONE ROW
+       ------------------------------------------------------- */
 
     .headline-grid {
       display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 6px;
-      margin-bottom: 6px;
-    }
-
-    .metric,
-    .market-panel,
-    .performance-metric {
-      background: var(--panel-soft);
-      border: 1px solid var(--border-soft);
-      border-radius: 9px;
+      grid-template-columns: repeat(8, minmax(0, 1fr));
+      gap: 5px;
+      margin-bottom: 7px;
     }
 
     .metric {
-      padding: 8px;
+      min-width: 0;
+      padding: 7px;
+      border: 1px solid var(--border-soft);
+      border-radius: 8px;
+      background: var(--panel-soft);
     }
 
     .metric-label {
-      margin-bottom: 3px;
+      margin-bottom: 2px;
       color: var(--muted);
-      font-size: 0.64rem;
+      font-size: 0.58rem;
+      font-weight: 700;
+      white-space: nowrap;
     }
 
     .metric-value {
-      font-size: 1rem;
-      font-weight: 850;
+      font-size: 0.88rem;
+      font-weight: 900;
       line-height: 1.05;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
     .metric-value.pick {
       color: var(--green);
     }
 
-    .score-grid {
-      display: flex;
+    .score-mini {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 2px;
       align-items: center;
-      justify-content: space-between;
-      gap: 4px;
     }
 
-    .score-side {
-      flex: 1;
+    .score-mini-side {
       text-align: center;
     }
 
-    .score-abbr {
+    .score-mini-abbr {
       color: var(--muted);
-      font-size: 0.58rem;
-      font-weight: 800;
-    }
-
-    .score-number {
-      font-size: 1.2rem;
+      font-size: 0.48rem;
       font-weight: 850;
     }
 
-    .warning {
-      margin: 6px 0;
-      padding: 6px 8px;
-      border-radius: 8px;
-      border: 1px solid rgba(244, 205, 102, 0.35);
-      background: rgba(244, 205, 102, 0.08);
-      color: var(--yellow);
-      font-size: 0.66rem;
-      font-weight: 700;
+    .score-mini-number {
+      font-size: 0.9rem;
+      font-weight: 900;
     }
+
+    .warning {
+      margin: 0 0 7px;
+      padding: 6px 8px;
+      border-radius: 7px;
+      border: 1px solid var(--yellow-border);
+      background: var(--yellow-soft);
+      color: var(--yellow);
+      font-size: 0.64rem;
+      font-weight: 750;
+    }
+
+    /* -------------------------------------------------------
+       MODEL VS MARKET MATRIX
+       ------------------------------------------------------- */
 
     .section-title {
-      margin: 10px 0 5px;
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
+      margin: 8px 0 4px;
       color: #d8dee8;
-    }
-
-    .market-section {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 6px;
-    }
-
-    .market-panel {
-      padding: 8px;
-    }
-
-    .market-panel-title {
-      margin-bottom: 4px;
-      color: var(--muted);
-      font-size: 0.62rem;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-    }
-
-    .market-line {
-      display: flex;
-      justify-content: space-between;
-      gap: 8px;
-      padding: 3px 0;
-      border-bottom: 1px solid var(--border-soft);
-    }
-
-    .market-line:last-child {
-      border-bottom: 0;
-    }
-
-    .market-label {
-      color: var(--muted);
-      font-size: 0.64rem;
-    }
-
-    .market-value {
       font-size: 0.68rem;
-      font-weight: 800;
-      text-align: right;
+      font-weight: 900;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
     }
 
-    .edge-positive {
-      color: var(--green);
-    }
-
-    .edge-negative {
-      color: var(--red);
-    }
-
-    .edge-neutral {
-      color: var(--yellow);
-    }
-
-    .projection-table-wrap,
-    .history-timeline,
-    .performance-table-wrap {
-      overflow-x: auto;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-    }
-
-    th,
-    td {
-      padding: 5px 6px;
-      border-bottom: 1px solid var(--border-soft);
-      text-align: left;
-      white-space: nowrap;
-      font-size: 0.66rem;
-    }
-
-    th {
-      color: var(--muted);
-      font-size: 0.6rem;
-      font-weight: 800;
-    }
-
-    .projection-table {
-      background: var(--panel-soft);
+    .comparison-matrix {
+      display: grid;
+      grid-template-columns:
+        0.7fr
+        repeat(3, minmax(0, 1fr));
       border: 1px solid var(--border-soft);
       border-radius: 9px;
       overflow: hidden;
+      background: var(--panel-soft);
     }
 
-    .projection-table th,
-    .projection-table td {
-      text-align: right;
+    .comparison-cell {
+      min-width: 0;
+      padding: 6px 8px;
+      border-right: 1px solid var(--border-soft);
+      border-bottom: 1px solid var(--border-soft);
     }
 
-    .projection-table th:first-child,
-    .projection-table td:first-child {
-      text-align: left;
+    .comparison-cell:nth-child(4n) {
+      border-right: 0;
     }
+
+    .comparison-cell.bottom-row {
+      border-bottom: 0;
+    }
+
+    .comparison-header {
+      color: var(--muted);
+      font-size: 0.57rem;
+      font-weight: 850;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .comparison-row-label {
+      color: var(--muted);
+      font-size: 0.62rem;
+      font-weight: 800;
+    }
+
+    .comparison-value {
+      font-size: 0.78rem;
+      font-weight: 900;
+    }
+
+    .opportunity {
+      position: relative;
+    }
+
+    .opportunity-neutral {
+      background: transparent;
+    }
+
+    .opportunity-moderate {
+      background: var(--yellow-soft);
+      box-shadow: inset 0 0 0 1px var(--yellow-border);
+    }
+
+    .opportunity-strong {
+      background: var(--green-soft);
+      box-shadow: inset 0 0 0 1px var(--green-border);
+    }
+
+    .opportunity-very-strong {
+      background: var(--green-strong-soft);
+      box-shadow: inset 0 0 0 1px var(--green-strong-border);
+    }
+
+    .opportunity-negative {
+      background: var(--red-soft);
+      box-shadow: inset 0 0 0 1px var(--red-border);
+    }
+
+    .opportunity-moderate .comparison-value {
+      color: var(--yellow);
+    }
+
+    .opportunity-strong .comparison-value,
+    .opportunity-very-strong .comparison-value {
+      color: var(--green-strong);
+    }
+
+    .opportunity-negative .comparison-value {
+      color: var(--red);
+    }
+
+    .edge-tag {
+      display: inline-block;
+      margin-left: 4px;
+      padding: 1px 4px;
+      border-radius: 999px;
+      font-size: 0.48rem;
+      font-weight: 900;
+      vertical-align: middle;
+      text-transform: uppercase;
+    }
+
+    .edge-tag.moderate {
+      color: var(--yellow);
+      background: rgba(244, 205, 102, 0.13);
+    }
+
+    .edge-tag.strong,
+    .edge-tag.very-strong {
+      color: var(--green-strong);
+      background: rgba(70, 223, 141, 0.14);
+    }
+
+    /* -------------------------------------------------------
+       PERIOD GRIDS - 2 ROWS x 3 CELLS
+       ------------------------------------------------------- */
+
+    .period-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 5px;
+    }
+
+    .period-cell {
+      padding: 6px 8px;
+      border: 1px solid var(--border-soft);
+      border-radius: 8px;
+      background: var(--panel-soft);
+    }
+
+    .period-name {
+      margin-bottom: 4px;
+      color: var(--accent);
+      font-size: 0.6rem;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .period-main {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5px;
+      margin-bottom: 3px;
+    }
+
+    .period-team {
+      font-size: 0.68rem;
+      font-weight: 900;
+    }
+
+    .period-team span {
+      color: var(--muted);
+      font-size: 0.53rem;
+      margin-right: 3px;
+    }
+
+    .period-meta {
+      display: flex;
+      justify-content: space-between;
+      gap: 6px;
+      color: var(--muted);
+      font-size: 0.55rem;
+    }
+
+    .period-meta strong {
+      color: var(--text);
+    }
+
+    /* -------------------------------------------------------
+       SECTION CARDS
+       ------------------------------------------------------- */
 
     .section-card {
-      padding: 12px;
+      padding: 10px;
     }
 
     .section-card h2 {
-      margin: 0 0 3px;
-      font-size: 1rem;
+      margin: 0 0 2px;
+      font-size: 1.05rem;
     }
 
     .section-intro {
-      margin-bottom: 10px;
+      margin-bottom: 8px;
       color: var(--muted);
-      font-size: 0.7rem;
+      font-size: 0.68rem;
     }
+
+    /* -------------------------------------------------------
+       PERFORMANCE TAB
+       ------------------------------------------------------- */
 
     .performance-grid {
       display: grid;
       grid-template-columns: repeat(8, minmax(0, 1fr));
-      gap: 6px;
-      margin-bottom: 10px;
+      gap: 5px;
+      margin-bottom: 9px;
     }
 
     .performance-metric {
-      padding: 8px;
+      padding: 7px;
+      border: 1px solid var(--border-soft);
+      border-radius: 8px;
+      background: var(--panel-soft);
     }
 
     .performance-metric-label {
-      color: var(--muted);
-      font-size: 0.6rem;
       margin-bottom: 2px;
+      color: var(--muted);
+      font-size: 0.54rem;
+      font-weight: 750;
     }
 
     .performance-metric-value {
-      font-size: 1rem;
-      font-weight: 850;
+      font-size: 0.9rem;
+      font-weight: 900;
     }
 
-    .performance-games,
-    .history-games {
+    .performance-games {
       display: grid;
-      gap: 8px;
+      gap: 7px;
     }
 
-    .performance-game,
-    .history-game {
-      background: var(--panel-soft);
+    .performance-game {
       border: 1px solid var(--border-soft);
-      border-radius: 10px;
+      border-radius: 9px;
+      background: var(--panel-soft);
       overflow: hidden;
     }
 
-    .performance-game summary,
-    .history-game summary {
+    .performance-game summary {
       list-style: none;
       cursor: pointer;
-      padding: 8px 10px;
+      padding: 7px 9px;
     }
 
-    .performance-game summary::-webkit-details-marker,
-    .history-game summary::-webkit-details-marker {
+    .performance-game summary::-webkit-details-marker {
       display: none;
     }
 
-    .performance-game[open] summary,
-    .history-game[open] summary {
+    .performance-game[open] summary {
       border-bottom: 1px solid var(--border-soft);
     }
 
     .performance-summary {
       display: grid;
       grid-template-columns:
-        minmax(140px, 1.2fr)
-        repeat(5, minmax(72px, 1fr));
+        1.1fr
+        1.1fr
+        repeat(3, minmax(75px, 0.7fr));
       align-items: center;
-      gap: 6px;
+      gap: 8px;
     }
 
-    .performance-matchup,
-    .history-summary-matchup {
-      font-weight: 850;
-      font-size: 0.78rem;
+    .performance-matchup {
+      font-size: 0.8rem;
+      font-weight: 900;
     }
 
-    .performance-date,
-    .history-summary-meta {
+    .performance-date {
       display: block;
       margin-top: 2px;
       color: var(--muted);
-      font-size: 0.58rem;
-      font-weight: 500;
+      font-size: 0.53rem;
     }
 
-    .performance-summary-label,
-    .history-summary-label {
-      display: block;
+    /* Stacked predicted vs actual */
+    .stacked-score {
+      display: grid;
+      grid-template-columns: 0.65fr 0.7fr 0.7fr;
+      gap: 4px;
+      align-items: center;
+    }
+
+    .stacked-score-head {
       color: var(--muted);
-      font-size: 0.56rem;
-      margin-bottom: 1px;
+      font-size: 0.49rem;
+      font-weight: 850;
+      text-align: right;
+      text-transform: uppercase;
     }
 
-    .performance-summary-value,
-    .history-summary-value {
-      font-size: 0.7rem;
-      font-weight: 800;
+    .stacked-team {
+      color: var(--muted);
+      font-size: 0.55rem;
+      font-weight: 850;
+    }
+
+    .stacked-value {
+      text-align: right;
+      font-size: 0.72rem;
+      font-weight: 900;
+    }
+
+    .performance-summary-label {
+      display: block;
+      margin-bottom: 2px;
+      color: var(--muted);
+      font-size: 0.52rem;
+    }
+
+    .performance-summary-value {
+      font-size: 0.72rem;
+      font-weight: 900;
+    }
+
+    .result-good {
+      color: var(--green);
+    }
+
+    .result-bad {
+      color: var(--red);
+    }
+
+    .result-neutral {
+      color: var(--yellow);
     }
 
     .performance-detail {
-      padding: 8px;
+      padding: 7px;
     }
 
-    .performance-table {
-      min-width: 760px;
-    }
-
-    .performance-table td,
-    .performance-table th {
-      text-align: right;
-    }
-
-    .performance-table td:first-child,
-    .performance-table th:first-child {
-      text-align: left;
-    }
-
-    .performance-market {
-      margin-top: 8px;
+    .performance-period-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 5px;
+      margin-bottom: 6px;
+    }
+
+    .performance-period-cell {
+      padding: 6px 7px;
+      border: 1px solid var(--border-soft);
+      border-radius: 8px;
+      background: #0e1319;
+    }
+
+    .performance-period-title {
+      margin-bottom: 4px;
+      color: var(--accent);
+      font-size: 0.58rem;
+      font-weight: 900;
+    }
+
+    .period-score-compare {
+      display: grid;
+      grid-template-columns: 0.55fr 0.65fr 0.65fr;
+      gap: 3px;
+      align-items: center;
+    }
+
+    .period-score-head {
+      color: var(--muted);
+      text-align: right;
+      font-size: 0.46rem;
+      font-weight: 800;
+    }
+
+    .period-score-team {
+      color: var(--muted);
+      font-size: 0.52rem;
+      font-weight: 850;
+    }
+
+    .period-score-number {
+      text-align: right;
+      font-size: 0.66rem;
+      font-weight: 900;
+    }
+
+    .period-errors {
+      display: flex;
+      justify-content: space-between;
+      gap: 5px;
+      margin-top: 4px;
+      padding-top: 4px;
+      border-top: 1px solid var(--border-soft);
+      color: var(--muted);
+      font-size: 0.5rem;
+    }
+
+    .period-errors strong {
+      color: var(--text);
+    }
+
+    .performance-final-band {
+      display: grid;
+      grid-template-columns:
+        1.4fr
+        repeat(4, minmax(0, 1fr));
+      gap: 5px;
+      margin-bottom: 6px;
+    }
+
+    .performance-final-cell {
+      padding: 6px 7px;
+      border: 1px solid var(--border-soft);
+      border-radius: 8px;
+      background: var(--panel-raised);
+    }
+
+    .performance-final-label {
+      color: var(--muted);
+      font-size: 0.5rem;
+    }
+
+    .performance-final-value {
+      margin-top: 2px;
+      font-size: 0.72rem;
+      font-weight: 900;
+    }
+
+    .performance-market-row {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 5px;
+    }
+
+    .performance-market-cell {
+      padding: 6px 7px;
+      border: 1px solid var(--border-soft);
+      border-radius: 8px;
+      background: #0e1319;
+    }
+
+    .performance-market-title {
+      margin-bottom: 4px;
+      color: var(--muted);
+      font-size: 0.54rem;
+      font-weight: 850;
+      text-transform: uppercase;
+    }
+
+    .performance-market-line {
+      display: flex;
+      justify-content: space-between;
       gap: 6px;
+      padding: 2px 0;
+      font-size: 0.58rem;
     }
 
-    .performance-result-good,
-    .coherent-yes {
-      color: var(--green);
-      font-weight: 800;
+    .performance-market-line span:first-child {
+      color: var(--muted);
     }
 
-    .performance-result-bad {
-      color: var(--red);
-      font-weight: 800;
+    .performance-market-line span:last-child {
+      font-weight: 850;
     }
 
-    .performance-result-neutral,
-    .coherent-no {
-      color: var(--yellow);
-      font-weight: 800;
+    /* -------------------------------------------------------
+       HISTORY TAB
+       ------------------------------------------------------- */
+
+    .history-games {
+      display: grid;
+      gap: 7px;
+    }
+
+    .history-game {
+      border: 1px solid var(--border-soft);
+      border-radius: 9px;
+      background: var(--panel-soft);
+      overflow: hidden;
+    }
+
+    .history-game summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 7px 9px;
+    }
+
+    .history-game summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .history-game[open] summary {
+      border-bottom: 1px solid var(--border-soft);
     }
 
     .history-summary {
-      display: flex;
+      display: grid;
+      grid-template-columns:
+        1.2fr
+        repeat(4, minmax(70px, 0.65fr));
       align-items: center;
-      justify-content: space-between;
-      gap: 8px;
-      flex-wrap: wrap;
+      gap: 7px;
     }
 
-    .history-summary-main {
-      display: flex;
-      flex-direction: column;
-      gap: 1px;
+    .history-matchup {
+      font-size: 0.78rem;
+      font-weight: 900;
     }
 
-    .history-summary-metrics {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
+    .history-meta {
+      margin-top: 2px;
+      color: var(--muted);
+      font-size: 0.52rem;
     }
 
-    .history-summary-metric {
-      min-width: 60px;
+    .history-summary-label {
+      display: block;
+      color: var(--muted);
+      font-size: 0.5rem;
+      margin-bottom: 1px;
     }
 
-    .history-timeline {
-      padding: 0 6px 6px;
+    .history-summary-value {
+      font-size: 0.68rem;
+      font-weight: 900;
     }
 
-    .history-timeline table {
-      min-width: 650px;
+    .snapshot-list {
+      display: grid;
+      gap: 4px;
+      padding: 5px;
     }
 
-    .history-timeline tr.latest-history-row td {
-      background: rgba(122, 162, 255, 0.07);
+    .snapshot-row {
+      display: grid;
+      grid-template-columns:
+        1.15fr
+        0.8fr
+        0.8fr
+        1fr
+        0.75fr
+        0.75fr;
+      gap: 5px;
+      align-items: center;
+      padding: 5px 6px;
+      border: 1px solid var(--border-soft);
+      border-radius: 7px;
+      background: #0e1319;
     }
 
-    .history-latest-badge {
+    .snapshot-row.latest {
+      background: var(--blue-soft);
+      border-color: var(--blue-border);
+    }
+
+    .snapshot-cell-label {
+      display: block;
+      color: var(--muted);
+      font-size: 0.46rem;
+      margin-bottom: 1px;
+    }
+
+    .snapshot-cell-value {
+      font-size: 0.62rem;
+      font-weight: 850;
+    }
+
+    .latest-badge {
       display: inline-block;
       margin-left: 3px;
       padding: 1px 4px;
       border-radius: 999px;
       color: var(--accent);
-      background: rgba(122, 162, 255, 0.12);
-      font-size: 0.5rem;
-      font-weight: 800;
+      background: rgba(122, 162, 255, 0.13);
+      font-size: 0.45rem;
+      font-weight: 900;
       text-transform: uppercase;
     }
 
     .empty-state {
+      padding: 5px 0;
       color: var(--muted);
-      padding: 6px 0;
-      font-size: 0.7rem;
+      font-size: 0.68rem;
     }
 
-    @media (max-width: 1000px) {
+    /* -------------------------------------------------------
+       RESPONSIVE
+       ------------------------------------------------------- */
+
+    @media (max-width: 1050px) {
+      .headline-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
       .performance-grid {
         grid-template-columns: repeat(4, minmax(0, 1fr));
       }
 
       .performance-summary {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-template-columns:
+          1fr
+          1fr
+          repeat(3, minmax(70px, 0.6fr));
       }
 
-      .performance-summary > div:first-child {
-        grid-column: 1 / -1;
+      .history-summary {
+        grid-template-columns:
+          1fr
+          repeat(4, minmax(65px, 0.6fr));
       }
     }
 
     @media (max-width: 760px) {
       html {
-        font-size: 13px;
+        font-size: 14px;
       }
 
       .header-inner {
-        padding: 8px 10px 5px;
+        padding: 8px 9px 5px;
       }
 
       .tabs {
-        padding: 0 8px;
+        padding: 0 7px;
       }
 
       main {
-        padding: 8px 8px 24px;
-      }
-
-      .header-title {
-        font-size: 1.08rem;
-      }
-
-      .header-subtitle {
-        font-size: 0.62rem;
-      }
-
-      .tab-button {
-        padding: 7px 8px 6px;
-        font-size: 0.68rem;
-      }
-
-      .game-header {
-        padding: 7px 9px;
-      }
-
-      .game-body {
-        padding: 7px 9px 9px;
+        padding: 7px 7px 22px;
       }
 
       .headline-grid {
         grid-template-columns: repeat(4, minmax(0, 1fr));
-        gap: 4px;
+      }
+
+      .metric-value {
+        font-size: 0.8rem;
+      }
+
+      .comparison-matrix {
+        grid-template-columns:
+          0.55fr
+          repeat(3, minmax(0, 1fr));
+      }
+
+      .period-grid,
+      .performance-period-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .performance-summary {
+        grid-template-columns:
+          1fr
+          1fr
+          repeat(3, minmax(60px, 0.6fr));
+      }
+
+      .performance-final-band {
+        grid-template-columns:
+          1.2fr
+          repeat(4, minmax(0, 1fr));
+      }
+
+      .snapshot-row {
+        grid-template-columns:
+          1.1fr
+          repeat(5, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 560px) {
+      .header-title {
+        font-size: 1.05rem;
+      }
+
+      .header-subtitle {
+        font-size: 0.6rem;
+      }
+
+      .tab-button {
+        padding: 7px 8px 6px;
+        font-size: 0.67rem;
+      }
+
+      .game-header {
+        align-items: flex-start;
+      }
+
+      .matchup-name {
+        font-size: 0.9rem;
+      }
+
+      .team-logo,
+      .team-fallback {
+        width: 23px;
+        height: 23px;
+      }
+
+      .headline-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
       }
 
       .metric {
@@ -736,83 +1121,88 @@
       }
 
       .metric-label {
-        font-size: 0.54rem;
+        font-size: 0.5rem;
       }
 
       .metric-value {
-        font-size: 0.78rem;
+        font-size: 0.7rem;
       }
 
-      .score-number {
-        font-size: 0.9rem;
+      .score-mini-number {
+        font-size: 0.72rem;
       }
 
-      .market-section {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 4px;
-      }
-
-      .market-panel {
+      .comparison-cell {
         padding: 5px;
       }
 
-      .market-label,
-      .market-value {
-        font-size: 0.56rem;
+      .comparison-value {
+        font-size: 0.64rem;
       }
 
-      .performance-market {
-        grid-template-columns: 1fr;
+      .period-cell {
+        padding: 5px;
+      }
+
+      .period-team {
+        font-size: 0.58rem;
       }
 
       .performance-grid {
         grid-template-columns: repeat(4, minmax(0, 1fr));
       }
-    }
-
-    @media (max-width: 520px) {
-      .matchup-name {
-        font-size: 0.9rem;
-      }
-
-      .team-logo,
-      .team-fallback {
-        width: 24px;
-        height: 24px;
-      }
-
-      .venue {
-        font-size: 0.58rem;
-      }
-
-      .headline-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .market-section {
-        grid-template-columns: 1fr;
-      }
-
-      .performance-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
 
       .performance-summary {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns:
+          1fr
+          1fr
+          0.7fr;
+      }
+
+      .performance-summary > div:nth-child(4),
+      .performance-summary > div:nth-child(5) {
+        display: none;
+      }
+
+      .performance-period-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .performance-final-band {
+        grid-template-columns:
+          1.25fr
+          repeat(2, minmax(0, 1fr));
+      }
+
+      .performance-final-cell:nth-child(4),
+      .performance-final-cell:nth-child(5) {
+        display: none;
+      }
+
+      .performance-market-row {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
       }
 
       .history-summary {
-        align-items: flex-start;
+        grid-template-columns:
+          1fr
+          repeat(2, minmax(60px, 0.7fr));
       }
 
-      .history-summary-metrics {
-        width: 100%;
-        gap: 6px;
+      .history-summary > div:nth-child(4),
+      .history-summary > div:nth-child(5) {
+        display: none;
       }
 
-      .history-summary-metric {
-        flex: 1;
-        min-width: 55px;
+      .snapshot-row {
+        grid-template-columns:
+          1.1fr
+          repeat(3, minmax(0, 1fr));
+      }
+
+      .snapshot-row > div:nth-child(5),
+      .snapshot-row > div:nth-child(6) {
+        display: none;
       }
     }
   </style>
@@ -821,17 +1211,19 @@
 <body>
 
 <header>
+
   <div class="header-inner">
     <h1 class="header-title">
       WNBA Prediction Dashboard
     </h1>
 
     <div class="header-subtitle">
-      Pregame projections, DraftKings comparison, live tracking, and model results
+      Pregame projections, DraftKings comparison, live tracking, and model performance
     </div>
   </div>
 
   <nav class="tabs">
+
     <button
       class="tab-button active"
       data-tab="today"
@@ -855,7 +1247,9 @@
     >
       Prediction History
     </button>
+
   </nav>
+
 </header>
 
 <main>
@@ -864,6 +1258,7 @@
     id="tab-today"
     class="tab-panel active"
   >
+
     <div
       id="status"
       class="dashboard-status"
@@ -871,15 +1266,41 @@
       Loading prediction data...
     </div>
 
+    <div class="edge-legend">
+      <span class="legend-label">
+        Edge strength
+      </span>
+
+      <span class="legend-item">
+        <span class="legend-dot strong"></span>
+        Strong
+      </span>
+
+      <span class="legend-item">
+        <span class="legend-dot moderate"></span>
+        Moderate
+      </span>
+
+      <span class="legend-item">
+        <span class="legend-dot neutral"></span>
+        Neutral
+      </span>
+    </div>
+
     <div id="games"></div>
+
   </section>
 
   <section
     id="tab-performance"
     class="tab-panel"
   >
+
     <div class="section-card">
-      <h2>Model Performance</h2>
+
+      <h2>
+        Model Performance
+      </h2>
 
       <div class="section-intro">
         Final pregame predictions compared with completed-game outcomes.
@@ -888,24 +1309,32 @@
       <div id="performance">
         Loading...
       </div>
+
     </div>
+
   </section>
 
   <section
     id="tab-history"
     class="tab-panel"
   >
+
     <div class="section-card">
-      <h2>Prediction History</h2>
+
+      <h2>
+        Prediction History
+      </h2>
 
       <div class="section-intro">
-        Historical prediction snapshots and market movement before tip-off.
+        Historical model snapshots and DraftKings movement before tip-off.
       </div>
 
       <div id="history">
         Loading...
       </div>
+
     </div>
+
   </section>
 
 </main>
@@ -947,14 +1376,12 @@
           const target =
             button.dataset.tab;
 
-          buttons.forEach(
-            candidate => {
-              candidate.classList.toggle(
-                "active",
-                candidate === button
-              );
-            }
-          );
+          buttons.forEach(candidate => {
+            candidate.classList.toggle(
+              "active",
+              candidate === button
+            );
+          });
 
           panels.forEach(panel => {
             panel.classList.toggle(
@@ -995,14 +1422,20 @@
     }
   }
 
-  async function loadJSON(path, fallback) {
+  async function loadJSON(
+    path,
+    fallback
+  ) {
     try {
-      const response = await fetch(
-        path + "?t=" + Date.now(),
-        {
-          cache: "no-store"
-        }
-      );
+      const response =
+        await fetch(
+          path +
+          "?t=" +
+          Date.now(),
+          {
+            cache: "no-store"
+          }
+        );
 
       if (!response.ok) {
         return fallback;
@@ -1026,7 +1459,9 @@
       value !== null &&
       value !== undefined &&
       value !== "" &&
-      !Number.isNaN(Number(value))
+      !Number.isNaN(
+        Number(value)
+      )
     );
   }
 
@@ -1035,7 +1470,9 @@
       return "—";
     }
 
-    return Number(value).toFixed(1);
+    return Number(
+      value
+    ).toFixed(1);
   }
 
   function integerish(value) {
@@ -1043,7 +1480,8 @@
       return "—";
     }
 
-    const number = Number(value);
+    const number =
+      Number(value);
 
     if (
       Math.abs(
@@ -1074,14 +1512,14 @@
       return "—";
     }
 
-    const numberValue =
+    const n =
       Number(value);
 
     return (
-      numberValue > 0
+      n > 0
         ? "+"
         : ""
-    ) + numberValue.toFixed(0);
+    ) + n.toFixed(0);
   }
 
   function dateTime(value) {
@@ -1111,24 +1549,41 @@
     );
   }
 
-  function teamAbbr(game, side) {
+  function teamAbbr(
+    game,
+    side
+  ) {
     return (
-      game[side + "_abbr"] ||
+      game[
+        side +
+        "_abbr"
+      ] ||
       side.toUpperCase()
     );
   }
 
-  function teamName(game, side) {
+  function teamName(
+    game,
+    side
+  ) {
     return (
-      game[side + "_team"] ||
-      teamAbbr(game, side)
+      game[
+        side +
+        "_team"
+      ] ||
+      teamAbbr(
+        game,
+        side
+      )
     );
   }
 
   function teamLogo(abbr) {
     const url =
       TEAM_LOGOS[
-        String(abbr).toUpperCase()
+        String(
+          abbr
+        ).toUpperCase()
       ];
 
     if (!url) {
@@ -1179,7 +1634,9 @@
       currentStatus(game)
     )
       .toUpperCase()
-      .includes("FINAL");
+      .includes(
+        "FINAL"
+      );
   }
 
   function cleanStatus(game) {
@@ -1187,12 +1644,18 @@
       currentStatus(game);
 
     const map = {
-      STATUS_SCHEDULED: "Scheduled",
-      STATUS_IN_PROGRESS: "Live",
-      STATUS_HALFTIME: "Halftime",
-      STATUS_FINAL: "Final",
-      STATUS_FINAL_OT: "Final / OT",
-      STATUS_POSTPONED: "Postponed"
+      STATUS_SCHEDULED:
+        "Scheduled",
+      STATUS_IN_PROGRESS:
+        "Live",
+      STATUS_HALFTIME:
+        "Halftime",
+      STATUS_FINAL:
+        "Final",
+      STATUS_FINAL_OT:
+        "Final / OT",
+      STATUS_POSTPONED:
+        "Postponed"
     };
 
     return (
@@ -1241,9 +1704,7 @@
       );
 
     if (
-      !Number.isFinite(
-        period
-      ) ||
+      !Number.isFinite(period) ||
       period <= 0
     ) {
       return "";
@@ -1275,7 +1736,6 @@
       clock === undefined ||
       clock === "" ||
       clock === 0 ||
-      clock === 0.0 ||
       clock === "0.0"
     ) {
       clock = "";
@@ -1320,28 +1780,28 @@
       return "PK";
     }
 
-    if (margin > 0) {
-      return (
-        teamAbbr(
-          game,
-          "home"
-        ) +
-        " -" +
-        Math.abs(
-          margin
-        ).toFixed(1)
-      );
-    }
-
     return (
-      teamAbbr(
-        game,
-        "away"
-      ) +
-      " -" +
-      Math.abs(
-        margin
-      ).toFixed(1)
+      margin > 0
+        ? (
+            teamAbbr(
+              game,
+              "home"
+            ) +
+            " -" +
+            Math.abs(
+              margin
+            ).toFixed(1)
+          )
+        : (
+            teamAbbr(
+              game,
+              "away"
+            ) +
+            " -" +
+            Math.abs(
+              margin
+            ).toFixed(1)
+          )
     );
   }
 
@@ -1429,7 +1889,9 @@
     );
   }
 
-  function predictionIsCoherent(game) {
+  function predictionIsCoherent(
+    game
+  ) {
     if (
       game.prediction_coherent
         === true ||
@@ -1493,23 +1955,6 @@
         ${classifierFavoriteProbability(game)}.
       </div>
     `;
-  }
-
-  function marketAvailable(game) {
-    return (
-      exists(
-        game.market_home_spread
-      ) ||
-      exists(
-        game.market_total
-      ) ||
-      exists(
-        game.market_home_moneyline
-      ) ||
-      exists(
-        game.market_away_moneyline
-      )
-    );
   }
 
   function marketSpread(game) {
@@ -1600,21 +2045,6 @@
     );
   }
 
-  function edgeClass(value) {
-    if (
-      value === null ||
-      Math.abs(value) < 0.5
-    ) {
-      return "edge-neutral";
-    }
-
-    return (
-      value > 0
-        ? "edge-positive"
-        : "edge-negative"
-    );
-  }
-
   function spreadEdgeText(game) {
     const value =
       spreadEdge(game);
@@ -1625,34 +2055,35 @@
       return "—";
     }
 
-    const home =
-      teamAbbr(
-        game,
-        "home"
-      );
-
-    const away =
-      teamAbbr(
-        game,
-        "away"
-      );
-
-    if (value > 0) {
-      return (
-        home +
-        " +" +
-        Math.abs(
-          value
-        ).toFixed(1)
-      );
+    if (
+      Math.abs(value)
+      < 0.5
+    ) {
+      return "No edge";
     }
 
     return (
-      away +
-      " +" +
-      Math.abs(
-        value
-      ).toFixed(1)
+      value > 0
+        ? (
+            teamAbbr(
+              game,
+              "home"
+            ) +
+            " +" +
+            Math.abs(
+              value
+            ).toFixed(1)
+          )
+        : (
+            teamAbbr(
+              game,
+              "away"
+            ) +
+            " +" +
+            Math.abs(
+              value
+            ).toFixed(1)
+          )
     );
   }
 
@@ -1664,6 +2095,13 @@
       value === null
     ) {
       return "—";
+    }
+
+    if (
+      Math.abs(value)
+      < 0.5
+    ) {
+      return "No edge";
     }
 
     return (
@@ -1683,6 +2121,93 @@
     );
   }
 
+  function spreadOpportunityLevel(
+    value
+  ) {
+    if (
+      value === null
+    ) {
+      return "neutral";
+    }
+
+    const edge =
+      Math.abs(value);
+
+    if (edge >= 7) {
+      return "very-strong";
+    }
+
+    if (edge >= 4) {
+      return "strong";
+    }
+
+    if (edge >= 2) {
+      return "moderate";
+    }
+
+    return "neutral";
+  }
+
+  function totalOpportunityLevel(
+    value
+  ) {
+    if (
+      value === null
+    ) {
+      return "neutral";
+    }
+
+    const edge =
+      Math.abs(value);
+
+    if (edge >= 10) {
+      return "very-strong";
+    }
+
+    if (edge >= 6) {
+      return "strong";
+    }
+
+    if (edge >= 3) {
+      return "moderate";
+    }
+
+    return "neutral";
+  }
+
+  function opportunityClass(
+    level
+  ) {
+    return (
+      "opportunity-" +
+      level
+    );
+  }
+
+  function edgeTag(level) {
+    if (
+      level === "neutral"
+    ) {
+      return "";
+    }
+
+    const label =
+      level === "very-strong"
+        ? "Very Strong"
+        : level === "strong"
+          ? "Strong"
+          : "Moderate";
+
+    return `
+      <span class="
+        edge-tag
+        ${level}
+      ">
+        ${label}
+      </span>
+    `;
+  }
+
   function livePanel(game) {
     if (
       !isLive(game) &&
@@ -1690,6 +2215,140 @@
     ) {
       return "";
     }
+
+    return `
+      <div class="live-score-panel">
+
+        <div class="live-label">
+          ${
+            isFinal(game)
+              ? "Final"
+              : "Live"
+          }
+        </div>
+
+        <div class="live-score-inline">
+          ${teamAbbr(
+            game,
+            "away"
+          )}
+          ${integerish(
+            game.live_away_score
+          )}
+          –
+          ${teamAbbr(
+            game,
+            "home"
+          )}
+          ${integerish(
+            game.live_home_score
+          )}
+        </div>
+
+        <div class="live-clock">
+          ${
+            isFinal(game)
+              ? cleanStatus(game)
+              : liveClockText(game)
+          }
+        </div>
+
+      </div>
+    `;
+  }
+
+  function headlineMetric(
+    label,
+    value,
+    extraClass = ""
+  ) {
+    return `
+      <div class="metric">
+
+        <div class="metric-label">
+          ${label}
+        </div>
+
+        <div class="
+          metric-value
+          ${extraClass}
+        ">
+          ${value}
+        </div>
+
+      </div>
+    `;
+  }
+
+  function projectedScoreMetric(game) {
+    const away =
+      teamAbbr(
+        game,
+        "away"
+      );
+
+    const home =
+      teamAbbr(
+        game,
+        "home"
+      );
+
+    return `
+      <div class="metric">
+
+        <div class="metric-label">
+          Projected Final
+        </div>
+
+        <div class="score-mini">
+
+          <div class="score-mini-side">
+            <div class="score-mini-abbr">
+              ${away}
+            </div>
+
+            <div class="score-mini-number">
+              ${num(
+                game.away_score
+              )}
+            </div>
+          </div>
+
+          <div>–</div>
+
+          <div class="score-mini-side">
+            <div class="score-mini-abbr">
+              ${home}
+            </div>
+
+            <div class="score-mini-number">
+              ${num(
+                game.home_score
+              )}
+            </div>
+          </div>
+
+        </div>
+      </div>
+    `;
+  }
+
+  function comparisonMatrix(game) {
+    const spreadValue =
+      spreadEdge(game);
+
+    const totalValue =
+      totalEdge(game);
+
+    const spreadLevel =
+      spreadOpportunityLevel(
+        spreadValue
+      );
+
+    const totalLevel =
+      totalOpportunityLevel(
+        totalValue
+      );
 
     const away =
       teamAbbr(
@@ -1704,261 +2363,134 @@
       );
 
     return `
-      <div class="live-score-panel">
+      <div class="comparison-matrix">
 
-        <div class="live-score-header">
-          <div class="live-label">
-            ${
-              isFinal(game)
-                ? "Final"
-                : "Live"
-            }
-          </div>
+        <div class="comparison-cell">
+        </div>
 
-          <div class="live-clock">
-            ${
-              isFinal(game)
-                ? cleanStatus(game)
-                : liveClockText(game)
-            }
+        <div class="comparison-cell comparison-header">
+          Model
+        </div>
+
+        <div class="comparison-cell comparison-header">
+          DraftKings
+        </div>
+
+        <div class="comparison-cell comparison-header">
+          Edge
+        </div>
+
+        <div class="comparison-cell comparison-row-label">
+          Spread
+        </div>
+
+        <div class="comparison-cell">
+          <div class="comparison-value">
+            ${modelSpread(game)}
           </div>
         </div>
 
-        <div class="live-score-grid">
-
-          <div class="live-team">
-            <div class="live-team-abbr">
-              ${away}
-            </div>
-
-            <div class="live-team-score">
-              ${integerish(
-                game.live_away_score
-              )}
-            </div>
-          </div>
-
-          <div>–</div>
-
-          <div class="live-team">
-            <div class="live-team-abbr">
-              ${home}
-            </div>
-
-            <div class="live-team-score">
-              ${integerish(
-                game.live_home_score
-              )}
-            </div>
-          </div>
-
-        </div>
-      </div>
-    `;
-  }
-
-  function modelMarketHTML(game) {
-    if (
-      !marketAvailable(
-        game
-      )
-    ) {
-      return `
-        <div class="market-section">
-
-          <div class="market-panel">
-            <div class="market-panel-title">
-              Model
-            </div>
-
-            <div class="market-line">
-              <span class="market-label">
-                Spread
-              </span>
-
-              <span class="market-value">
-                ${modelSpread(game)}
-              </span>
-            </div>
-
-            <div class="market-line">
-              <span class="market-label">
-                Total
-              </span>
-
-              <span class="market-value">
-                ${num(
-                  game.predicted_total
-                )}
-              </span>
-            </div>
-          </div>
-
-          <div class="market-panel">
-            <div class="market-panel-title">
-              Market
-            </div>
-
-            <div class="muted">
-              No market data.
-            </div>
-          </div>
-
-        </div>
-      `;
-    }
-
-    const spreadValue =
-      spreadEdge(game);
-
-    const totalValue =
-      totalEdge(game);
-
-    return `
-      <div class="market-section">
-
-        <div class="market-panel">
-          <div class="market-panel-title">
-            Model
-          </div>
-
-          <div class="market-line">
-            <span class="market-label">
-              Spread
-            </span>
-
-            <span class="market-value">
-              ${modelSpread(game)}
-            </span>
-          </div>
-
-          <div class="market-line">
-            <span class="market-label">
-              Total
-            </span>
-
-            <span class="market-value">
-              ${num(
-                game.predicted_total
-              )}
-            </span>
-          </div>
-
-          <div class="market-line">
-            <span class="market-label">
-              Win
-            </span>
-
-            <span class="market-value">
-              ${classifierWinner(game)}
-              ${classifierFavoriteProbability(game)}
-            </span>
+        <div class="comparison-cell">
+          <div class="comparison-value">
+            ${marketSpread(game)}
           </div>
         </div>
 
-        <div class="market-panel">
-          <div class="market-panel-title">
-            ${game.market_bookmaker || "DraftKings"}
-          </div>
-
-          <div class="market-line">
-            <span class="market-label">
-              Spread
-            </span>
-
-            <span class="market-value">
-              ${marketSpread(game)}
-            </span>
-          </div>
-
-          <div class="market-line">
-            <span class="market-label">
-              Total
-            </span>
-
-            <span class="market-value">
-              ${num(
-                game.market_total
-              )}
-            </span>
-          </div>
-
-          <div class="market-line">
-            <span class="market-label">
-              ${teamAbbr(
-                game,
-                "away"
-              )} ML
-            </span>
-
-            <span class="market-value">
-              ${signedOdds(
-                game.market_away_moneyline
-              )}
-            </span>
-          </div>
-
-          <div class="market-line">
-            <span class="market-label">
-              ${teamAbbr(
-                game,
-                "home"
-              )} ML
-            </span>
-
-            <span class="market-value">
-              ${signedOdds(
-                game.market_home_moneyline
-              )}
-            </span>
+        <div class="
+          comparison-cell
+          opportunity
+          ${opportunityClass(
+            spreadLevel
+          )}
+        ">
+          <div class="comparison-value">
+            ${spreadEdgeText(game)}
+            ${edgeTag(
+              spreadLevel
+            )}
           </div>
         </div>
 
-        <div class="market-panel">
-          <div class="market-panel-title">
-            Edge
+        <div class="comparison-cell comparison-row-label">
+          Total
+        </div>
+
+        <div class="comparison-cell">
+          <div class="comparison-value">
+            ${num(
+              game.predicted_total
+            )}
           </div>
+        </div>
 
-          <div class="market-line">
-            <span class="market-label">
-              Spread
-            </span>
-
-            <span class="
-              market-value
-              ${edgeClass(
-                spreadValue
-              )}
-            ">
-              ${spreadEdgeText(game)}
-            </span>
+        <div class="comparison-cell">
+          <div class="comparison-value">
+            ${num(
+              game.market_total
+            )}
           </div>
+        </div>
 
-          <div class="market-line">
-            <span class="market-label">
-              Total
-            </span>
-
-            <span class="
-              market-value
-              ${edgeClass(
-                totalValue
-              )}
-            ">
-              ${totalEdgeText(game)}
-            </span>
+        <div class="
+          comparison-cell
+          opportunity
+          ${opportunityClass(
+            totalLevel
+          )}
+        ">
+          <div class="comparison-value">
+            ${totalEdgeText(game)}
+            ${edgeTag(
+              totalLevel
+            )}
           </div>
+        </div>
 
-          <div class="market-line">
-            <span class="market-label">
-              Updated
-            </span>
+        <div class="
+          comparison-cell
+          comparison-row-label
+          bottom-row
+        ">
+          Win
+        </div>
 
-            <span class="market-value">
-              ${dateTime(
-                game.market_updated_at
-              )}
-            </span>
+        <div class="
+          comparison-cell
+          bottom-row
+        ">
+          <div class="comparison-value">
+            ${classifierWinner(game)}
+            ${classifierFavoriteProbability(
+              game
+            )}
+          </div>
+        </div>
+
+        <div class="
+          comparison-cell
+          bottom-row
+        ">
+          <div class="comparison-value">
+            ${away}
+            ${signedOdds(
+              game.market_away_moneyline
+            )}
+            /
+            ${home}
+            ${signedOdds(
+              game.market_home_moneyline
+            )}
+          </div>
+        </div>
+
+        <div class="
+          comparison-cell
+          bottom-row
+        ">
+          <div class="comparison-value">
+            ${dateTime(
+              game.market_updated_at
+            )}
           </div>
         </div>
 
@@ -1966,21 +2498,74 @@
     `;
   }
 
-  function projectionRow(
+  function periodCell(
     label,
-    away,
-    home,
-    margin,
-    total
+    game,
+    awayKey,
+    homeKey,
+    totalKey,
+    marginKey
   ) {
+    const away =
+      teamAbbr(
+        game,
+        "away"
+      );
+
+    const home =
+      teamAbbr(
+        game,
+        "home"
+      );
+
     return `
-      <tr>
-        <td>${label}</td>
-        <td>${num(away)}</td>
-        <td>${num(home)}</td>
-        <td>${num(margin)}</td>
-        <td>${num(total)}</td>
-      </tr>
+      <div class="period-cell">
+
+        <div class="period-name">
+          ${label}
+        </div>
+
+        <div class="period-main">
+
+          <div class="period-team">
+            <span>${away}</span>
+            ${num(
+              game[awayKey]
+            )}
+          </div>
+
+          <div class="period-team">
+            <span>${home}</span>
+            ${num(
+              game[homeKey]
+            )}
+          </div>
+
+        </div>
+
+        <div class="period-meta">
+
+          <div>
+            Total
+            <strong>
+              ${num(
+                game[totalKey]
+              )}
+            </strong>
+          </div>
+
+          <div>
+            Margin
+            <strong>
+              ${num(
+                game[marginKey]
+              )}
+            </strong>
+          </div>
+
+        </div>
+
+      </div>
     `;
   }
 
@@ -2009,50 +2594,54 @@
 
         <div class="game-header">
 
+          <div class="game-header-left">
+
+            <div class="matchup-teams">
+
+              <div class="team-block">
+                ${teamLogo(away)}
+
+                <span class="matchup-name">
+                  ${teamName(
+                    game,
+                    "away"
+                  )}
+                </span>
+              </div>
+
+              <span class="at-symbol">
+                @
+              </span>
+
+              <div class="team-block">
+                ${teamLogo(home)}
+
+                <span class="matchup-name">
+                  ${teamName(
+                    game,
+                    "home"
+                  )}
+                </span>
+              </div>
+
+            </div>
+
+            <div class="venue">
+              ${game.status_detail || ""}
+              ${
+                game.venue
+                  ? (
+                      " · " +
+                      game.venue
+                    )
+                  : ""
+              }
+            </div>
+
+          </div>
+
           <div class="${statusClass(game)}">
             ${cleanStatus(game)}
-          </div>
-
-          <div class="matchup-teams">
-
-            <div class="team-block">
-              ${teamLogo(away)}
-
-              <span class="matchup-name">
-                ${teamName(
-                  game,
-                  "away"
-                )}
-              </span>
-            </div>
-
-            <span class="at-symbol">
-              @
-            </span>
-
-            <div class="team-block">
-              ${teamLogo(home)}
-
-              <span class="matchup-name">
-                ${teamName(
-                  game,
-                  "home"
-                )}
-              </span>
-            </div>
-
-          </div>
-
-          <div class="venue">
-            ${game.status_detail || ""}
-            ${
-              game.venue
-                ? (
-                    " · " +
-                    game.venue
-                  )
-                : ""
-            }
           </div>
 
         </div>
@@ -2061,228 +2650,149 @@
 
           ${livePanel(game)}
 
-          <div class="pregame-heading">
-            Pregame Model
-          </div>
-
           <div class="headline-grid">
 
-            <div class="metric">
-              <div class="metric-label">
-                Final
-              </div>
+            ${projectedScoreMetric(game)}
 
-              <div class="score-grid">
+            ${headlineMetric(
+              "Spread",
+              modelSpread(game)
+            )}
 
-                <div class="score-side">
-                  <div class="score-abbr">
-                    ${away}
-                  </div>
+            ${headlineMetric(
+              "Score Pick",
+              projectedWinner(game),
+              "pick"
+            )}
 
-                  <div class="score-number">
-                    ${num(
-                      game.away_score
-                    )}
-                  </div>
-                </div>
+            ${headlineMetric(
+              "Win Pick",
+              (
+                classifierWinner(game) +
+                " " +
+                classifierFavoriteProbability(
+                  game
+                )
+              )
+            )}
 
-                <div>–</div>
+            ${headlineMetric(
+              "Total",
+              num(
+                game.predicted_total
+              )
+            )}
 
-                <div class="score-side">
-                  <div class="score-abbr">
-                    ${home}
-                  </div>
+            ${headlineMetric(
+              away + " Win",
+              probability(
+                game.away_win_probability
+              )
+            )}
 
-                  <div class="score-number">
-                    ${num(
-                      game.home_score
-                    )}
-                  </div>
-                </div>
+            ${headlineMetric(
+              home + " Win",
+              probability(
+                game.home_win_probability
+              )
+            )}
 
-              </div>
-            </div>
-
-            <div class="metric">
-              <div class="metric-label">
-                Spread
-              </div>
-
-              <div class="metric-value">
-                ${modelSpread(game)}
-              </div>
-            </div>
-
-            <div class="metric">
-              <div class="metric-label">
-                Score Pick
-              </div>
-
-              <div class="metric-value pick">
-                ${projectedWinner(game)}
-              </div>
-            </div>
-
-            <div class="metric">
-              <div class="metric-label">
-                Win Pick
-              </div>
-
-              <div class="metric-value">
-                ${classifierWinner(game)}
-                ${classifierFavoriteProbability(game)}
-              </div>
-            </div>
+            ${headlineMetric(
+              "Margin",
+              exists(
+                game.predicted_margin
+              )
+                ? num(
+                    Math.abs(
+                      Number(
+                        game.predicted_margin
+                      )
+                    )
+                  )
+                : "—"
+            )}
 
           </div>
 
           ${coherenceWarning(game)}
 
-          <div class="headline-grid">
-
-            <div class="metric">
-              <div class="metric-label">
-                Total
-              </div>
-
-              <div class="metric-value">
-                ${num(
-                  game.predicted_total
-                )}
-              </div>
-            </div>
-
-            <div class="metric">
-              <div class="metric-label">
-                ${away} Win
-              </div>
-
-              <div class="metric-value">
-                ${probability(
-                  game.away_win_probability
-                )}
-              </div>
-            </div>
-
-            <div class="metric">
-              <div class="metric-label">
-                ${home} Win
-              </div>
-
-              <div class="metric-value">
-                ${probability(
-                  game.home_win_probability
-                )}
-              </div>
-            </div>
-
-            <div class="metric">
-              <div class="metric-label">
-                Margin
-              </div>
-
-              <div class="metric-value">
-                ${
-                  exists(
-                    game.predicted_margin
-                  )
-                    ? num(
-                        Math.abs(
-                          Number(
-                            game.predicted_margin
-                          )
-                        )
-                      )
-                    : "—"
-                }
-              </div>
-            </div>
-
-          </div>
-
           <h3 class="section-title">
             Model vs Market
           </h3>
 
-          ${modelMarketHTML(game)}
+          ${comparisonMatrix(game)}
 
           <h3 class="section-title">
             Period Projections
           </h3>
 
-          <div class="projection-table-wrap">
+          <div class="period-grid">
 
-            <table class="projection-table">
+            ${periodCell(
+              "Q1",
+              game,
+              "away_q1",
+              "home_q1",
+              "q1_total",
+              "q1_margin"
+            )}
 
-              <thead>
-                <tr>
-                  <th>Period</th>
-                  <th>${away}</th>
-                  <th>${home}</th>
-                  <th>Margin</th>
-                  <th>Total</th>
-                </tr>
-              </thead>
+            ${periodCell(
+              "Q2",
+              game,
+              "away_q2",
+              "home_q2",
+              "q2_total",
+              "q2_margin"
+            )}
 
-              <tbody>
+            ${periodCell(
+              "1H",
+              game,
+              "away_first_half",
+              "home_first_half",
+              "first_half_total",
+              "first_half_margin"
+            )}
 
-                ${projectionRow(
-                  "Q1",
-                  game.away_q1,
-                  game.home_q1,
-                  game.q1_margin,
-                  game.q1_total
-                )}
+            ${periodCell(
+              "Q3",
+              game,
+              "away_q3",
+              "home_q3",
+              "q3_total",
+              "q3_margin"
+            )}
 
-                ${projectionRow(
-                  "Q2",
-                  game.away_q2,
-                  game.home_q2,
-                  game.q2_margin,
-                  game.q2_total
-                )}
+            ${periodCell(
+              "Q4",
+              game,
+              "away_q4",
+              "home_q4",
+              "q4_total",
+              "q4_margin"
+            )}
 
-                ${projectionRow(
-                  "1H",
-                  game.away_first_half,
-                  game.home_first_half,
-                  game.first_half_margin,
-                  game.first_half_total
-                )}
+            ${periodCell(
+              "2H",
+              game,
+              "away_second_half",
+              "home_second_half",
+              "second_half_total",
+              "second_half_margin"
+            )}
 
-                ${projectionRow(
-                  "Q3",
-                  game.away_q3,
-                  game.home_q3,
-                  game.q3_margin,
-                  game.q3_total
-                )}
-
-                ${projectionRow(
-                  "Q4",
-                  game.away_q4,
-                  game.home_q4,
-                  game.q4_margin,
-                  game.q4_total
-                )}
-
-                ${projectionRow(
-                  "2H",
-                  game.away_second_half,
-                  game.home_second_half,
-                  game.second_half_margin,
-                  game.second_half_total
-                )}
-
-              </tbody>
-
-            </table>
           </div>
 
         </div>
+
       </section>
     `;
   }
+
+  /* ---------------------------------------------------------
+     PERFORMANCE
+     --------------------------------------------------------- */
 
   function performanceMetric(
     label,
@@ -2303,24 +2813,202 @@
     `;
   }
 
-  function yesNoResult(value) {
-    if (value === true) {
+  function resultText(value) {
+    if (
+      value === true
+    ) {
       return `
-        <span class="performance-result-good">
+        <span class="result-good">
           ✓ Correct
         </span>
       `;
     }
 
-    if (value === false) {
+    if (
+      value === false
+    ) {
       return `
-        <span class="performance-result-bad">
+        <span class="result-bad">
           ✕ Miss
         </span>
       `;
     }
 
-    return "—";
+    return `
+      <span class="result-neutral">
+        —
+      </span>
+    `;
+  }
+
+  function stackedScore(game) {
+    const away =
+      game.away_abbr ||
+      "AWAY";
+
+    const home =
+      game.home_abbr ||
+      "HOME";
+
+    return `
+      <div class="stacked-score">
+
+        <div></div>
+
+        <div class="stacked-score-head">
+          Model
+        </div>
+
+        <div class="stacked-score-head">
+          Actual
+        </div>
+
+        <div class="stacked-team">
+          ${away}
+        </div>
+
+        <div class="stacked-value">
+          ${num(
+            game.predicted_away_score
+          )}
+        </div>
+
+        <div class="stacked-value">
+          ${integerish(
+            game.actual_away_score
+          )}
+        </div>
+
+        <div class="stacked-team">
+          ${home}
+        </div>
+
+        <div class="stacked-value">
+          ${num(
+            game.predicted_home_score
+          )}
+        </div>
+
+        <div class="stacked-value">
+          ${integerish(
+            game.actual_home_score
+          )}
+        </div>
+
+      </div>
+    `;
+  }
+
+  function performancePeriodCell(
+    game,
+    label,
+    key
+  ) {
+    const away =
+      game.away_abbr ||
+      "AWAY";
+
+    const home =
+      game.home_abbr ||
+      "HOME";
+
+    return `
+      <div class="performance-period-cell">
+
+        <div class="performance-period-title">
+          ${label}
+        </div>
+
+        <div class="period-score-compare">
+
+          <div></div>
+
+          <div class="period-score-head">
+            Model
+          </div>
+
+          <div class="period-score-head">
+            Actual
+          </div>
+
+          <div class="period-score-team">
+            ${away}
+          </div>
+
+          <div class="period-score-number">
+            ${num(
+              game[
+                "predicted_away_" +
+                key
+              ]
+            )}
+          </div>
+
+          <div class="period-score-number">
+            ${integerish(
+              game[
+                "actual_away_" +
+                key
+              ]
+            )}
+          </div>
+
+          <div class="period-score-team">
+            ${home}
+          </div>
+
+          <div class="period-score-number">
+            ${num(
+              game[
+                "predicted_home_" +
+                key
+              ]
+            )}
+          </div>
+
+          <div class="period-score-number">
+            ${integerish(
+              game[
+                "actual_home_" +
+                key
+              ]
+            )}
+          </div>
+
+        </div>
+
+        <div class="period-errors">
+
+          <span>
+            Total Err
+            <strong>
+              ${num(
+                game[
+                  "absolute_" +
+                  key +
+                  "_total_error"
+                ]
+              )}
+            </strong>
+          </span>
+
+          <span>
+            Margin Err
+            <strong>
+              ${num(
+                game[
+                  "absolute_" +
+                  key +
+                  "_margin_error"
+                ]
+              )}
+            </strong>
+          </span>
+
+        </div>
+
+      </div>
+    `;
   }
 
   function directionalResult(
@@ -2346,188 +3034,27 @@
       );
     }
 
+    const symbol =
+      correct === true
+        ? "✓"
+        : correct === false
+          ? "✕"
+          : "—";
+
+    const cls =
+      correct === true
+        ? "result-good"
+        : correct === false
+          ? "result-bad"
+          : "result-neutral";
+
     return `
       ${String(
         modelSide
       ).toUpperCase()}
-      ·
-      ${
-        correct === true
-          ? '<span class="performance-result-good">✓</span>'
-          : correct === false
-            ? '<span class="performance-result-bad">✕</span>'
-            : "—"
-      }
-    `;
-  }
-
-  function performancePeriodRow(
-    game,
-    label,
-    key
-  ) {
-    return `
-      <tr>
-        <td>${label}</td>
-
-        <td>
-          ${num(
-            game[
-              "predicted_away_" +
-              key
-            ]
-          )}
-          -
-          ${num(
-            game[
-              "predicted_home_" +
-              key
-            ]
-          )}
-        </td>
-
-        <td>
-          ${integerish(
-            game[
-              "actual_away_" +
-              key
-            ]
-          )}
-          -
-          ${integerish(
-            game[
-              "actual_home_" +
-              key
-            ]
-          )}
-        </td>
-
-        <td>
-          ${num(
-            game[
-              "absolute_" +
-              key +
-              "_total_error"
-            ]
-          )}
-        </td>
-
-        <td>
-          ${num(
-            game[
-              "absolute_" +
-              key +
-              "_margin_error"
-            ]
-          )}
-        </td>
-      </tr>
-    `;
-  }
-
-  function performanceHalfRow(
-    game,
-    label,
-    prefix
-  ) {
-    return `
-      <tr>
-        <td>${label}</td>
-
-        <td>
-          ${num(
-            game[
-              "predicted_away_" +
-              prefix
-            ]
-          )}
-          -
-          ${num(
-            game[
-              "predicted_home_" +
-              prefix
-            ]
-          )}
-        </td>
-
-        <td>
-          ${integerish(
-            game[
-              "actual_away_" +
-              prefix
-            ]
-          )}
-          -
-          ${integerish(
-            game[
-              "actual_home_" +
-              prefix
-            ]
-          )}
-        </td>
-
-        <td>
-          ${num(
-            game[
-              "absolute_" +
-              prefix +
-              "_total_error"
-            ]
-          )}
-        </td>
-
-        <td>
-          ${num(
-            game[
-              "absolute_" +
-              prefix +
-              "_margin_error"
-            ]
-          )}
-        </td>
-      </tr>
-    `;
-  }
-
-  function performanceFinalRow(game) {
-    return `
-      <tr>
-
-        <td>Final</td>
-
-        <td>
-          ${num(
-            game.predicted_away_score
-          )}
-          -
-          ${num(
-            game.predicted_home_score
-          )}
-        </td>
-
-        <td>
-          ${integerish(
-            game.actual_away_score
-          )}
-          -
-          ${integerish(
-            game.actual_home_score
-          )}
-        </td>
-
-        <td>
-          ${num(
-            game.absolute_total_error
-          )}
-        </td>
-
-        <td>
-          ${num(
-            game.absolute_margin_error
-          )}
-        </td>
-
-      </tr>
+      <span class="${cls}">
+        ${symbol}
+      </span>
     `;
   }
 
@@ -2554,6 +3081,7 @@
           <div class="performance-summary">
 
             <div>
+
               <div class="performance-matchup">
                 ${away} @ ${home}
               </div>
@@ -2563,55 +3091,31 @@
                   game.game_date_utc
                 )}
               </span>
+
             </div>
 
             <div>
-              <span class="performance-summary-label">
-                Model
-              </span>
-
-              <span class="performance-summary-value">
-                ${num(
-                  game.predicted_away_score
-                )}
-                -
-                ${num(
-                  game.predicted_home_score
-                )}
-              </span>
+              ${stackedScore(game)}
             </div>
 
             <div>
-              <span class="performance-summary-label">
-                Actual
-              </span>
 
-              <span class="performance-summary-value">
-                ${integerish(
-                  game.actual_away_score
-                )}
-                -
-                ${integerish(
-                  game.actual_home_score
-                )}
-              </span>
-            </div>
-
-            <div>
               <span class="performance-summary-label">
                 Winner
               </span>
 
               <span class="performance-summary-value">
-                ${yesNoResult(
+                ${resultText(
                   game.winner_correct
                 )}
               </span>
+
             </div>
 
             <div>
+
               <span class="performance-summary-label">
-                Margin Err
+                Margin Error
               </span>
 
               <span class="performance-summary-value">
@@ -2619,11 +3123,13 @@
                   game.absolute_margin_error
                 )}
               </span>
+
             </div>
 
             <div>
+
               <span class="performance-summary-label">
-                Total Err
+                Total Error
               </span>
 
               <span class="performance-summary-value">
@@ -2631,136 +3137,191 @@
                   game.absolute_total_error
                 )}
               </span>
+
             </div>
 
           </div>
+
         </summary>
 
         <div class="performance-detail">
 
-          <div class="performance-table-wrap">
+          <div class="performance-period-grid">
 
-            <table class="performance-table">
+            ${performancePeriodCell(
+              game,
+              "Q1",
+              "q1"
+            )}
 
-              <thead>
-                <tr>
-                  <th>Period</th>
-                  <th>Model</th>
-                  <th>Actual</th>
-                  <th>Total Err</th>
-                  <th>Margin Err</th>
-                </tr>
-              </thead>
+            ${performancePeriodCell(
+              game,
+              "Q2",
+              "q2"
+            )}
 
-              <tbody>
+            ${performancePeriodCell(
+              game,
+              "1H",
+              "first_half"
+            )}
 
-                ${performancePeriodRow(
-                  game,
-                  "Q1",
-                  "q1"
-                )}
+            ${performancePeriodCell(
+              game,
+              "Q3",
+              "q3"
+            )}
 
-                ${performancePeriodRow(
-                  game,
-                  "Q2",
-                  "q2"
-                )}
+            ${performancePeriodCell(
+              game,
+              "Q4",
+              "q4"
+            )}
 
-                ${performanceHalfRow(
-                  game,
-                  "1H",
-                  "first_half"
-                )}
-
-                ${performancePeriodRow(
-                  game,
-                  "Q3",
-                  "q3"
-                )}
-
-                ${performancePeriodRow(
-                  game,
-                  "Q4",
-                  "q4"
-                )}
-
-                ${performanceHalfRow(
-                  game,
-                  "2H",
-                  "second_half"
-                )}
-
-                ${performanceFinalRow(
-                  game
-                )}
-
-              </tbody>
-            </table>
+            ${performancePeriodCell(
+              game,
+              "2H",
+              "second_half"
+            )}
 
           </div>
 
-          <div class="performance-market">
+          <div class="performance-final-band">
 
-            <div class="market-panel">
+            <div class="performance-final-cell">
 
-              <div class="market-panel-title">
+              <div class="performance-final-label">
+                Final
+              </div>
+
+              <div class="performance-final-value">
+                ${away}
+                ${num(
+                  game.predicted_away_score
+                )}
+                /
+                ${integerish(
+                  game.actual_away_score
+                )}
+                ·
+                ${home}
+                ${num(
+                  game.predicted_home_score
+                )}
+                /
+                ${integerish(
+                  game.actual_home_score
+                )}
+              </div>
+
+            </div>
+
+            <div class="performance-final-cell">
+
+              <div class="performance-final-label">
+                Winner
+              </div>
+
+              <div class="performance-final-value">
+                ${game.actual_winner_abbr || "—"}
+              </div>
+
+            </div>
+
+            <div class="performance-final-cell">
+
+              <div class="performance-final-label">
+                Brier
+              </div>
+
+              <div class="performance-final-value">
+                ${
+                  exists(
+                    game.brier_score
+                  )
+                    ? Number(
+                        game.brier_score
+                      ).toFixed(3)
+                    : "—"
+                }
+              </div>
+
+            </div>
+
+            <div class="performance-final-cell">
+
+              <div class="performance-final-label">
+                Margin Error
+              </div>
+
+              <div class="performance-final-value">
+                ${num(
+                  game.absolute_margin_error
+                )}
+              </div>
+
+            </div>
+
+            <div class="performance-final-cell">
+
+              <div class="performance-final-label">
+                Total Error
+              </div>
+
+              <div class="performance-final-value">
+                ${num(
+                  game.absolute_total_error
+                )}
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="performance-market-row">
+
+            <div class="performance-market-cell">
+
+              <div class="performance-market-title">
                 Win Model
               </div>
 
-              <div class="market-line">
-                <span class="market-label">
+              <div class="performance-market-line">
+                <span>
                   Home win
                 </span>
 
-                <span class="market-value">
+                <span>
                   ${probability(
                     game.home_win_probability
                   )}
                 </span>
               </div>
 
-              <div class="market-line">
-                <span class="market-label">
-                  Winner
+              <div class="performance-market-line">
+                <span>
+                  Actual
                 </span>
 
-                <span class="market-value">
+                <span>
                   ${game.actual_winner_abbr || "—"}
-                </span>
-              </div>
-
-              <div class="market-line">
-                <span class="market-label">
-                  Brier
-                </span>
-
-                <span class="market-value">
-                  ${
-                    exists(
-                      game.brier_score
-                    )
-                      ? Number(
-                          game.brier_score
-                        ).toFixed(3)
-                      : "—"
-                  }
                 </span>
               </div>
 
             </div>
 
-            <div class="market-panel">
+            <div class="performance-market-cell">
 
-              <div class="market-panel-title">
+              <div class="performance-market-title">
                 Spread
               </div>
 
-              <div class="market-line">
-                <span class="market-label">
+              <div class="performance-market-line">
+                <span>
                   DK
                 </span>
 
-                <span class="market-value">
+                <span>
                   ${
                     exists(
                       game.market_home_spread
@@ -2777,12 +3338,12 @@
                 </span>
               </div>
 
-              <div class="market-line">
-                <span class="market-label">
-                  Model side
+              <div class="performance-market-line">
+                <span>
+                  Model
                 </span>
 
-                <span class="market-value">
+                <span>
                   ${directionalResult(
                     game.model_market_side,
                     game.actual_market_side,
@@ -2791,12 +3352,12 @@
                 </span>
               </div>
 
-              <div class="market-line">
-                <span class="market-label">
-                  Result
+              <div class="performance-market-line">
+                <span>
+                  Actual
                 </span>
 
-                <span class="market-value">
+                <span>
                   ${
                     game.actual_market_side
                       ? String(
@@ -2809,30 +3370,30 @@
 
             </div>
 
-            <div class="market-panel">
+            <div class="performance-market-cell">
 
-              <div class="market-panel-title">
+              <div class="performance-market-title">
                 Total
               </div>
 
-              <div class="market-line">
-                <span class="market-label">
+              <div class="performance-market-line">
+                <span>
                   DK
                 </span>
 
-                <span class="market-value">
+                <span>
                   ${num(
                     game.market_total
                   )}
                 </span>
               </div>
 
-              <div class="market-line">
-                <span class="market-label">
+              <div class="performance-market-line">
+                <span>
                   Model
                 </span>
 
-                <span class="market-value">
+                <span>
                   ${directionalResult(
                     game.model_total_side,
                     game.actual_total_side,
@@ -2841,12 +3402,12 @@
                 </span>
               </div>
 
-              <div class="market-line">
-                <span class="market-label">
-                  Result
+              <div class="performance-market-line">
+                <span>
+                  Actual
                 </span>
 
-                <span class="market-value">
+                <span>
                   ${
                     game.actual_total_side
                       ? String(
@@ -2867,7 +3428,9 @@
     `;
   }
 
-  function performanceHTML(payload) {
+  function performanceHTML(
+    payload
+  ) {
     const summary =
       payload &&
       typeof payload === "object"
@@ -2969,6 +3532,10 @@
     `;
   }
 
+  /* ---------------------------------------------------------
+     HISTORY
+     --------------------------------------------------------- */
+
   function historyModelSpread(row) {
     if (
       !exists(
@@ -3009,13 +3576,95 @@
     );
   }
 
+  function historyMarketSpread(row) {
+    if (
+      !exists(
+        row.market_home_spread
+      )
+    ) {
+      return "—";
+    }
+
+    const spread =
+      Number(
+        row.market_home_spread
+      );
+
+    if (
+      Math.abs(spread)
+      < 0.05
+    ) {
+      return "PK";
+    }
+
+    return (
+      spread < 0
+        ? (
+            (row.home_abbr || "HOME") +
+            " " +
+            spread.toFixed(1)
+          )
+        : (
+            (row.away_abbr || "AWAY") +
+            " -" +
+            Math.abs(
+              spread
+            ).toFixed(1)
+          )
+    );
+  }
+
+  function historySpreadEdge(row) {
+    if (
+      !exists(
+        row.predicted_margin
+      ) ||
+      !exists(
+        row.market_home_spread
+      )
+    ) {
+      return null;
+    }
+
+    return (
+      Number(
+        row.predicted_margin
+      ) +
+      Number(
+        row.market_home_spread
+      )
+    );
+  }
+
+  function historyTotalEdge(row) {
+    if (
+      !exists(
+        row.predicted_total
+      ) ||
+      !exists(
+        row.market_total
+      )
+    ) {
+      return null;
+    }
+
+    return (
+      Number(
+        row.predicted_total
+      ) -
+      Number(
+        row.market_total
+      )
+    );
+  }
+
   function historyCoherence(row) {
     if (
       row.prediction_coherent
         === true
     ) {
       return `
-        <span class="coherent-yes">
+        <span class="result-good">
           ✓ Agree
         </span>
       `;
@@ -3026,7 +3675,7 @@
         === false
     ) {
       return `
-        <span class="coherent-no">
+        <span class="result-neutral">
           ⚠ Disagree
         </span>
       `;
@@ -3064,52 +3713,6 @@
         row.home_team ||
         "Home"
       )
-    );
-  }
-
-  function historyMarketSpread(row) {
-    if (
-      !exists(
-        row.market_home_spread
-      )
-    ) {
-      return "—";
-    }
-
-    const home =
-      row.home_abbr ||
-      "HOME";
-
-    const away =
-      row.away_abbr ||
-      "AWAY";
-
-    const spread =
-      Number(
-        row.market_home_spread
-      );
-
-    if (
-      Math.abs(spread)
-      < 0.05
-    ) {
-      return "PK";
-    }
-
-    return (
-      spread < 0
-        ? (
-            home +
-            " " +
-            spread.toFixed(1)
-          )
-        : (
-            away +
-            " -" +
-            Math.abs(
-              spread
-            ).toFixed(1)
-          )
     );
   }
 
@@ -3167,6 +3770,140 @@
     return result;
   }
 
+  function historySnapshotRow(
+    row,
+    index
+  ) {
+    const spreadEdgeValue =
+      historySpreadEdge(row);
+
+    const totalEdgeValue =
+      historyTotalEdge(row);
+
+    const spreadLevel =
+      spreadOpportunityLevel(
+        spreadEdgeValue
+      );
+
+    const totalLevel =
+      totalOpportunityLevel(
+        totalEdgeValue
+      );
+
+    return `
+      <div class="
+        snapshot-row
+        ${index === 0 ? "latest" : ""}
+      ">
+
+        <div>
+
+          <span class="snapshot-cell-label">
+            Prediction
+          </span>
+
+          <span class="snapshot-cell-value">
+            ${dateTime(
+              row.prediction_date
+            )}
+
+            ${
+              index === 0
+                ? `
+                  <span class="latest-badge">
+                    Latest
+                  </span>
+                `
+                : ""
+            }
+          </span>
+
+        </div>
+
+        <div>
+
+          <span class="snapshot-cell-label">
+            Model
+          </span>
+
+          <span class="snapshot-cell-value">
+            ${historyModelSpread(row)}
+          </span>
+
+        </div>
+
+        <div>
+
+          <span class="snapshot-cell-label">
+            DraftKings
+          </span>
+
+          <span class="snapshot-cell-value">
+            ${historyMarketSpread(row)}
+          </span>
+
+        </div>
+
+        <div class="
+          ${opportunityClass(
+            spreadLevel
+          )}
+        ">
+
+          <span class="snapshot-cell-label">
+            Spread Edge
+          </span>
+
+          <span class="snapshot-cell-value">
+            ${
+              spreadEdgeValue === null
+                ? "—"
+                : Math.abs(
+                    spreadEdgeValue
+                  ).toFixed(1)
+            }
+          </span>
+
+        </div>
+
+        <div class="
+          ${opportunityClass(
+            totalLevel
+          )}
+        ">
+
+          <span class="snapshot-cell-label">
+            Total
+          </span>
+
+          <span class="snapshot-cell-value">
+            ${num(
+              row.predicted_total
+            )}
+            /
+            ${num(
+              row.market_total
+            )}
+          </span>
+
+        </div>
+
+        <div>
+
+          <span class="snapshot-cell-label">
+            Models
+          </span>
+
+          <span class="snapshot-cell-value">
+            ${historyCoherence(row)}
+          </span>
+
+        </div>
+
+      </div>
+    `;
+  }
+
   function historyHTML(
     historyPayload
   ) {
@@ -3200,34 +3937,40 @@
         ${groups.map(
           (
             group,
-            groupIndex
+            index
           ) => {
             const latest =
               group[0];
 
+            const spreadEdgeValue =
+              historySpreadEdge(
+                latest
+              );
+
+            const totalEdgeValue =
+              historyTotalEdge(
+                latest
+              );
+
             return `
               <details
                 class="history-game"
-                ${
-                  groupIndex === 0
-                    ? "open"
-                    : ""
-                }
+                ${index === 0 ? "open" : ""}
               >
 
                 <summary>
 
                   <div class="history-summary">
 
-                    <div class="history-summary-main">
+                    <div>
 
-                      <div class="history-summary-matchup">
+                      <div class="history-matchup">
                         ${historyMatchup(
                           latest
                         )}
                       </div>
 
-                      <div class="history-summary-meta">
+                      <div class="history-meta">
                         ${group.length}
                         snapshot${
                           group.length === 1
@@ -3242,155 +3985,79 @@
 
                     </div>
 
-                    <div class="history-summary-metrics">
+                    <div>
 
-                      <div class="history-summary-metric">
-                        <span class="history-summary-label">
-                          Model
-                        </span>
+                      <span class="history-summary-label">
+                        Model
+                      </span>
 
-                        <span class="history-summary-value">
-                          ${historyModelSpread(
-                            latest
-                          )}
-                        </span>
-                      </div>
-
-                      <div class="history-summary-metric">
-                        <span class="history-summary-label">
-                          DK
-                        </span>
-
-                        <span class="history-summary-value">
-                          ${historyMarketSpread(
-                            latest
-                          )}
-                        </span>
-                      </div>
-
-                      <div class="history-summary-metric">
-                        <span class="history-summary-label">
-                          Total
-                        </span>
-
-                        <span class="history-summary-value">
-                          ${num(
-                            latest.predicted_total ??
-                            latest.full_total
-                          )}
-                        </span>
-                      </div>
-
-                      <div class="history-summary-metric">
-                        <span class="history-summary-label">
-                          Home Win
-                        </span>
-
-                        <span class="history-summary-value">
-                          ${probability(
-                            latest.home_win_probability ??
-                            latest.home_win
-                          )}
-                        </span>
-                      </div>
+                      <span class="history-summary-value">
+                        ${historyModelSpread(
+                          latest
+                        )}
+                      </span>
 
                     </div>
+
+                    <div>
+
+                      <span class="history-summary-label">
+                        DK
+                      </span>
+
+                      <span class="history-summary-value">
+                        ${historyMarketSpread(
+                          latest
+                        )}
+                      </span>
+
+                    </div>
+
+                    <div>
+
+                      <span class="history-summary-label">
+                        Spread Edge
+                      </span>
+
+                      <span class="history-summary-value">
+                        ${
+                          spreadEdgeValue === null
+                            ? "—"
+                            : Math.abs(
+                                spreadEdgeValue
+                              ).toFixed(1)
+                        }
+                      </span>
+
+                    </div>
+
+                    <div>
+
+                      <span class="history-summary-label">
+                        Total Edge
+                      </span>
+
+                      <span class="history-summary-value">
+                        ${
+                          totalEdgeValue === null
+                            ? "—"
+                            : Math.abs(
+                                totalEdgeValue
+                              ).toFixed(1)
+                        }
+                      </span>
+
+                    </div>
+
                   </div>
 
                 </summary>
 
-                <div class="history-timeline">
+                <div class="snapshot-list">
 
-                  <table>
-
-                    <thead>
-                      <tr>
-                        <th>Time</th>
-                        <th>Model</th>
-                        <th>DK</th>
-                        <th>Total</th>
-                        <th>DK Total</th>
-                        <th>Home Win</th>
-                        <th>Models</th>
-                      </tr>
-                    </thead>
-
-                    <tbody>
-
-                      ${group.map(
-                        (
-                          row,
-                          rowIndex
-                        ) => `
-                          <tr
-                            class="${
-                              rowIndex === 0
-                                ? "latest-history-row"
-                                : ""
-                            }"
-                          >
-
-                            <td>
-                              ${dateTime(
-                                row.prediction_date
-                              )}
-
-                              ${
-                                rowIndex === 0
-                                  ? `
-                                    <span class="history-latest-badge">
-                                      Latest
-                                    </span>
-                                  `
-                                  : ""
-                              }
-                            </td>
-
-                            <td>
-                              ${historyModelSpread(
-                                row
-                              )}
-                            </td>
-
-                            <td>
-                              ${historyMarketSpread(
-                                row
-                              )}
-                            </td>
-
-                            <td>
-                              ${num(
-                                row.predicted_total ??
-                                row.full_total
-                              )}
-                            </td>
-
-                            <td>
-                              ${num(
-                                row.market_total
-                              )}
-                            </td>
-
-                            <td>
-                              ${probability(
-                                row.home_win_probability ??
-                                row.home_win
-                              )}
-                            </td>
-
-                            <td>
-                              ${historyCoherence(
-                                row
-                              )}
-                            </td>
-
-                          </tr>
-                        `
-                      ).join("")}
-
-                    </tbody>
-
-                  </table>
+                  ${group.map(
+                    historySnapshotRow
+                  ).join("")}
 
                 </div>
 
@@ -3402,6 +4069,10 @@
       </div>
     `;
   }
+
+  /* ---------------------------------------------------------
+     RENDER
+     --------------------------------------------------------- */
 
   async function render() {
     const [
@@ -3496,7 +4167,8 @@
         </strong>
 
         <span class="muted">
-          · ${games.length}
+          ·
+          ${games.length}
           game${
             games.length === 1
               ? ""
