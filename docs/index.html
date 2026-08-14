@@ -50,6 +50,7 @@
       z-index: 10;
       background: rgba(9, 12, 17, 0.96);
       border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(10px);
     }
 
     .header-inner {
@@ -277,6 +278,7 @@
 
     .warning {
       margin-top: 12px;
+      margin-bottom: 16px;
       padding: 12px 14px;
       border-radius: 10px;
       border: 1px solid rgba(244, 205, 102, 0.35);
@@ -414,10 +416,13 @@
 
     .history-card h2 {
       margin-top: 0;
+      margin-bottom: 8px;
     }
 
-    .history-matchup {
-      font-weight: 800;
+    .history-intro {
+      margin-bottom: 18px;
+      color: var(--muted);
+      font-size: 0.88rem;
     }
 
     .coherent-yes {
@@ -428,6 +433,107 @@
     .coherent-no {
       color: var(--yellow);
       font-weight: 800;
+    }
+
+    .history-games {
+      display: grid;
+      gap: 16px;
+    }
+
+    .history-game {
+      background: var(--panel-soft);
+      border: 1px solid var(--border-soft);
+      border-radius: 14px;
+      overflow: hidden;
+    }
+
+    .history-game summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 16px 18px;
+    }
+
+    .history-game summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .history-game[open] summary {
+      border-bottom: 1px solid var(--border-soft);
+    }
+
+    .history-summary {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .history-summary-main {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .history-summary-matchup {
+      font-size: 1.05rem;
+      font-weight: 850;
+    }
+
+    .history-summary-meta {
+      color: var(--muted);
+      font-size: 0.8rem;
+    }
+
+    .history-summary-metrics {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .history-summary-metric {
+      min-width: 82px;
+    }
+
+    .history-summary-label {
+      display: block;
+      color: var(--muted);
+      font-size: 0.7rem;
+      margin-bottom: 2px;
+    }
+
+    .history-summary-value {
+      font-weight: 800;
+    }
+
+    .history-timeline {
+      padding: 0 12px 12px;
+      overflow-x: auto;
+    }
+
+    .history-timeline table {
+      min-width: 760px;
+    }
+
+    .history-timeline tr.latest-history-row td {
+      background: rgba(122, 162, 255, 0.07);
+    }
+
+    .history-latest-badge {
+      display: inline-block;
+      margin-left: 6px;
+      padding: 2px 6px;
+      border-radius: 999px;
+      color: var(--accent);
+      background: rgba(122, 162, 255, 0.12);
+      font-size: 0.65rem;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .history-empty {
+      color: var(--muted);
+      padding: 8px 0;
     }
 
     @media (max-width: 950px) {
@@ -463,6 +569,20 @@
       .live-team-score {
         font-size: 2rem;
       }
+
+      .history-summary {
+        align-items: flex-start;
+      }
+
+      .history-summary-metrics {
+        width: 100%;
+        gap: 12px;
+      }
+
+      .history-summary-metric {
+        flex: 1;
+        min-width: 70px;
+      }
     }
   </style>
 </head>
@@ -494,7 +614,14 @@
 
   <section class="history-card">
     <h2>Prediction History</h2>
-    <div id="history">Loading...</div>
+
+    <div class="history-intro">
+      Expand a matchup to see how the model and market changed across prediction runs.
+    </div>
+
+    <div id="history">
+      Loading...
+    </div>
   </section>
 
 </main>
@@ -725,9 +852,6 @@
     );
   }
 
-  /*
-   * Treat anything under half a point as effectively a pick'em.
-   */
   function modelSpread(game) {
     if (!exists(game.predicted_margin)) {
       return "—";
@@ -827,7 +951,8 @@
       return null;
     }
 
-    const scoreHomePick = margin > 0;
+    const scoreHomePick =
+      margin > 0;
 
     const classifierHomePick =
       Number(
@@ -869,7 +994,8 @@
       return "—";
     }
 
-    const numberValue = Number(value);
+    const numberValue =
+      Number(value);
 
     if (Number.isNaN(numberValue)) {
       return String(value);
@@ -900,6 +1026,10 @@
       game.market_home_spread
     );
 
+    if (Math.abs(spread) < 0.05) {
+      return "PK";
+    }
+
     if (spread < 0) {
       return (
         teamAbbr(game, "home") +
@@ -908,15 +1038,11 @@
       );
     }
 
-    if (spread > 0) {
-      return (
-        teamAbbr(game, "away") +
-        " -" +
-        Math.abs(spread).toFixed(1)
-      );
-    }
-
-    return "PK";
+    return (
+      teamAbbr(game, "away") +
+      " -" +
+      Math.abs(spread).toFixed(1)
+    );
   }
 
   function spreadEdge(game) {
@@ -1089,6 +1215,7 @@
     if (!marketAvailable(game)) {
       return `
         <div class="market-section">
+
           <div class="market-panel">
             <div class="market-panel-title">
               Model
@@ -1124,12 +1251,16 @@
               Current market data is not available.
             </div>
           </div>
+
         </div>
       `;
     }
 
-    const spreadValue = spreadEdge(game);
-    const totalValue = totalEdge(game);
+    const spreadValue =
+      spreadEdge(game);
+
+    const totalValue =
+      totalEdge(game);
 
     return `
       <div class="market-section">
@@ -1320,6 +1451,7 @@
           </div>
 
           <div class="matchup-teams">
+
             <div class="team-block">
               ${teamLogo(away)}
 
@@ -1339,6 +1471,7 @@
                 ${teamName(game, "home")}
               </span>
             </div>
+
           </div>
 
           <div class="venue">
@@ -1367,6 +1500,7 @@
               </div>
 
               <div class="score-grid">
+
                 <div class="score-side">
                   <div class="score-abbr">
                     ${away}
@@ -1388,6 +1522,7 @@
                     ${num(game.home_score)}
                   </div>
                 </div>
+
               </div>
             </div>
 
@@ -1617,6 +1752,163 @@
     return "—";
   }
 
+  function historyGameKey(row) {
+    return (
+      row.game_id ||
+      [
+        row.away_abbr ||
+          row.away_team ||
+          "away",
+        row.home_abbr ||
+          row.home_team ||
+          "home",
+        row.game_date_utc ||
+          ""
+      ].join("|")
+    );
+  }
+
+  function historyMatchup(row) {
+    const away =
+      row.away_abbr ||
+      row.away_team ||
+      "Away";
+
+    const home =
+      row.home_abbr ||
+      row.home_team ||
+      "Home";
+
+    return (
+      away +
+      " @ " +
+      home
+    );
+  }
+
+  function historyMarketSpread(row) {
+    if (!exists(row.market_home_spread)) {
+      return "—";
+    }
+
+    const home =
+      row.home_abbr ||
+      "HOME";
+
+    const away =
+      row.away_abbr ||
+      "AWAY";
+
+    const spread = Number(
+      row.market_home_spread
+    );
+
+    if (Math.abs(spread) < 0.05) {
+      return "PK";
+    }
+
+    if (spread < 0) {
+      return (
+        home +
+        " " +
+        spread.toFixed(1)
+      );
+    }
+
+    return (
+      away +
+      " -" +
+      Math.abs(spread).toFixed(1)
+    );
+  }
+
+  function historyTime(value) {
+    if (!value) {
+      return "—";
+    }
+
+    const date =
+      new Date(value);
+
+    if (
+      Number.isNaN(
+        date.getTime()
+      )
+    ) {
+      return "—";
+    }
+
+    return date.toLocaleString(
+      [],
+      {
+        month: "short",
+        day: "numeric",
+        hour: "numeric",
+        minute: "2-digit"
+      }
+    );
+  }
+
+  function historyGroups(rows) {
+    const groups =
+      new Map();
+
+    rows.forEach(row => {
+      const key =
+        historyGameKey(row);
+
+      if (!groups.has(key)) {
+        groups.set(
+          key,
+          []
+        );
+      }
+
+      groups.get(key).push(
+        row
+      );
+    });
+
+    const result =
+      Array.from(
+        groups.values()
+      );
+
+    result.forEach(group => {
+      group.sort((a, b) => {
+        return (
+          new Date(
+            b.prediction_date
+          ).getTime() -
+          new Date(
+            a.prediction_date
+          ).getTime()
+        );
+      });
+    });
+
+    result.sort((a, b) => {
+      const aTime =
+        new Date(
+          a[0]?.prediction_date ||
+          0
+        ).getTime();
+
+      const bTime =
+        new Date(
+          b[0]?.prediction_date ||
+          0
+        ).getTime();
+
+      return (
+        bTime -
+        aTime
+      );
+    });
+
+    return result;
+  }
+
   function historyHTML(historyPayload) {
     const history =
       Array.isArray(historyPayload)
@@ -1629,118 +1921,233 @@
 
     if (!history.length) {
       return `
-        <div class="muted">
+        <div class="history-empty">
           No prediction history yet.
         </div>
       `;
     }
 
+    const groups =
+      historyGroups(
+        history
+      );
+
     return `
-      <div class="history-table-wrap">
+      <div class="history-games">
 
-        <table class="history-table">
+        ${groups.map(
+          (
+            group,
+            groupIndex
+          ) => {
+            const latest =
+              group[0];
 
-          <thead>
-            <tr>
-              <th>Game</th>
-              <th>Prediction Time</th>
-              <th>Projected Final</th>
-              <th>Model Spread</th>
-              <th>Total</th>
-              <th>Home Win</th>
-              <th>Models</th>
-            </tr>
-          </thead>
+            const latestHomeWin =
+              latest.home_win_probability ??
+              latest.home_win;
 
-          <tbody>
+            return `
+              <details
+                class="history-game"
+                ${
+                  groupIndex < 2
+                    ? "open"
+                    : ""
+                }
+              >
 
-            ${history
-              .slice(0, 50)
-              .map(
-                row => `
-                  <tr>
+                <summary>
+                  <div class="history-summary">
 
-                    <td class="history-matchup">
-                      ${
-                        row.away_abbr ||
-                        row.away_team ||
-                        "Away"
-                      }
-                      @
-                      ${
-                        row.home_abbr ||
-                        row.home_team ||
-                        "Home"
-                      }
-                    </td>
+                    <div class="history-summary-main">
 
-                    <td>
-                      ${
-                        row.prediction_date
-                          ? new Date(
-                              row.prediction_date
-                            ).toLocaleString()
-                          : "—"
-                      }
-                    </td>
+                      <div class="history-summary-matchup">
+                        ${historyMatchup(latest)}
+                      </div>
 
-                    <td>
-                      ${num(row.away_score)}
-                      –
-                      ${num(row.home_score)}
-                    </td>
+                      <div class="history-summary-meta">
+                        ${group.length}
+                        prediction snapshot${
+                          group.length === 1
+                            ? ""
+                            : "s"
+                        }
+                        · Latest
+                        ${historyTime(
+                          latest.prediction_date
+                        )}
+                      </div>
 
-                    <td>
-                      ${historyModelSpread(row)}
-                    </td>
+                    </div>
 
-                    <td>
-                      ${num(
-                        row.predicted_total ??
-                        row.full_total
-                      )}
-                    </td>
+                    <div class="history-summary-metrics">
 
-                    <td>
-                      ${probability(
-                        row.home_win_probability ??
-                        row.home_win
-                      )}
-                    </td>
+                      <div class="history-summary-metric">
+                        <span class="history-summary-label">
+                          Model
+                        </span>
 
-                    <td>
-                      ${historyCoherence(row)}
-                    </td>
+                        <span class="history-summary-value">
+                          ${historyModelSpread(latest)}
+                        </span>
+                      </div>
 
-                  </tr>
-                `
-              )
-              .join("")}
+                      <div class="history-summary-metric">
+                        <span class="history-summary-label">
+                          DraftKings
+                        </span>
 
-          </tbody>
+                        <span class="history-summary-value">
+                          ${historyMarketSpread(latest)}
+                        </span>
+                      </div>
 
-        </table>
+                      <div class="history-summary-metric">
+                        <span class="history-summary-label">
+                          Model Total
+                        </span>
+
+                        <span class="history-summary-value">
+                          ${num(
+                            latest.predicted_total ??
+                            latest.full_total
+                          )}
+                        </span>
+                      </div>
+
+                      <div class="history-summary-metric">
+                        <span class="history-summary-label">
+                          Home Win
+                        </span>
+
+                        <span class="history-summary-value">
+                          ${probability(
+                            latestHomeWin
+                          )}
+                        </span>
+                      </div>
+
+                    </div>
+                  </div>
+                </summary>
+
+                <div class="history-timeline">
+
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Prediction Time</th>
+                        <th>Model Spread</th>
+                        <th>DK Spread</th>
+                        <th>Model Total</th>
+                        <th>DK Total</th>
+                        <th>Home Win</th>
+                        <th>Models</th>
+                      </tr>
+                    </thead>
+
+                    <tbody>
+
+                      ${group.map(
+                        (
+                          row,
+                          rowIndex
+                        ) => `
+                          <tr
+                            class="${
+                              rowIndex === 0
+                                ? "latest-history-row"
+                                : ""
+                            }"
+                          >
+
+                            <td>
+                              ${historyTime(
+                                row.prediction_date
+                              )}
+
+                              ${
+                                rowIndex === 0
+                                  ? `
+                                    <span class="history-latest-badge">
+                                      Latest
+                                    </span>
+                                  `
+                                  : ""
+                              }
+                            </td>
+
+                            <td>
+                              ${historyModelSpread(row)}
+                            </td>
+
+                            <td>
+                              ${historyMarketSpread(row)}
+                            </td>
+
+                            <td>
+                              ${num(
+                                row.predicted_total ??
+                                row.full_total
+                              )}
+                            </td>
+
+                            <td>
+                              ${num(
+                                row.market_total
+                              )}
+                            </td>
+
+                            <td>
+                              ${probability(
+                                row.home_win_probability ??
+                                row.home_win
+                              )}
+                            </td>
+
+                            <td>
+                              ${historyCoherence(row)}
+                            </td>
+
+                          </tr>
+                        `
+                      ).join("")}
+
+                    </tbody>
+
+                  </table>
+
+                </div>
+
+              </details>
+            `;
+          }
+        ).join("")}
 
       </div>
     `;
   }
 
   async function render() {
-    const latest = await loadJSON(
-      "latest.json",
-      {}
-    );
+    const latest =
+      await loadJSON(
+        "latest.json",
+        {}
+      );
 
-    const historyPayload = await loadJSON(
-      "history.json",
-      {
-        events: []
-      }
-    );
+    const historyPayload =
+      await loadJSON(
+        "history.json",
+        {
+          events: []
+        }
+      );
 
-    const status = document.getElementById(
-      "status"
-    );
+    const status =
+      document.getElementById(
+        "status"
+      );
 
     const gamesContainer =
       document.getElementById(
@@ -1755,7 +2162,9 @@
     const games =
       Array.isArray(latest)
         ? latest
-        : Array.isArray(latest.games)
+        : Array.isArray(
+            latest.games
+          )
           ? latest.games
           : [];
 
@@ -1770,12 +2179,14 @@
         </div>
       `;
 
-      gamesContainer.innerHTML = "";
+      gamesContainer.innerHTML =
+        "";
 
     } else {
-      const liveGames = games.filter(
-        game => isLive(game)
-      ).length;
+      const liveGames =
+        games.filter(
+          game => isLive(game)
+        ).length;
 
       const generated =
         latest.last_live_update_utc ||
