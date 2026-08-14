@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-08-14T13:09:26.961357+00:00",
+  "generated_at_utc": "2026-08-14T15:03:54.631117+00:00",
   "target_date": "2026-08-14",
   "games": [
     {
@@ -47,28 +47,21 @@
       "away_win_probability": 0.2838762157607866,
       "predicted_margin": -0.14744144731724873,
       "predicted_total": 172.69255855268273,
-      "projected_winner_side": "away",
-      "projected_winner_abbr": "DAL",
-      "projected_spread": -0.14744144731724873,
-      "prediction_coherent": false,
+      "projected_winner_side": "pick",
+      "projected_winner_abbr": null,
+      "projected_spread": 0.0,
+      "prediction_coherent": null,
       "market_bookmaker": "DraftKings",
-      "market_home_spread": -7.5,
-      "market_away_spread": 7.5,
-      "market_home_spread_price": -110,
-      "market_away_spread_price": -110,
-      "market_total": 187.5,
-      "market_over_price": -108,
-      "market_under_price": -112,
-      "market_home_moneyline": -310,
-      "market_away_moneyline": 250,
-      "market_updated_at": "2026-08-14T13:09:00Z",
-      "live_status": "STATUS_SCHEDULED",
-      "live_status_detail": "Fri, August 14th at 7:30 PM EDT",
-      "live_period": null,
-      "live_clock": "0.0",
-      "live_home_score": 0,
-      "live_away_score": 0,
-      "live_updated_at": "2026-08-14T13:59:00.863113+00:00"
+      "market_home_spread": -8.5,
+      "market_away_spread": 8.5,
+      "market_home_spread_price": 100,
+      "market_away_spread_price": -120,
+      "market_total": 186.5,
+      "market_over_price": -112,
+      "market_under_price": -108,
+      "market_home_moneyline": -325,
+      "market_away_moneyline": 260,
+      "market_updated_at": "2026-08-14T15:03:09Z"
     },
     {
       "game_id": "401857144",
@@ -122,35 +115,26 @@
       "market_bookmaker": "DraftKings",
       "market_home_spread": -2.5,
       "market_away_spread": 2.5,
-      "market_home_spread_price": -120,
-      "market_away_spread_price": 100,
-      "market_total": 180.5,
-      "market_over_price": -105,
-      "market_under_price": -115,
-      "market_home_moneyline": -155,
-      "market_away_moneyline": 130,
-      "market_updated_at": "2026-08-14T13:09:00Z",
-      "live_status": "STATUS_SCHEDULED",
-      "live_status_detail": "Fri, August 14th at 10:00 PM EDT",
-      "live_period": null,
-      "live_clock": "0.0",
-      "live_home_score": 0,
-      "live_away_score": 0,
-      "live_updated_at": "2026-08-14T13:59:00.863113+00:00"
+      "market_home_spread_price": -118,
+      "market_away_spread_price": -102,
+      "market_total": 179.5,
+      "market_over_price": -112,
+      "market_under_price": -108,
+      "market_home_moneyline": -142,
+      "market_away_moneyline": 120,
+      "market_updated_at": "2026-08-14T15:03:09Z"
     }
   ],
   "uncertainty": {
     "full_total": {
-      "p10": 174.83260657673966,
-      "median": 175.1243934604964,
-      "p90": 175.41618034425315
+      "p10": 171.82685242589727,
+      "median": 173.52994255433612,
+      "p90": 175.233032682775
     },
     "home_score": {
-      "p10": 81.28051291738568,
-      "median": 85.07233037619744,
-      "p90": 88.8641478350092
+      "p10": 88.20851291738568,
+      "median": 95.95233037619744,
+      "p90": 103.6961478350092
     }
-  },
-  "live_generated_at_utc": "2026-08-14T13:59:00.863113+00:00",
-  "last_live_update_utc": "2026-08-14T13:59:00.863113+00:00"
+  }
 }
