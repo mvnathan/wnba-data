@@ -73,11 +73,15 @@ def test_alert_lifecycle_dedupes_escalates_resolves_and_reactivates(tmp_path):
 
 def test_material_change_respects_cooldown(tmp_path):
     now = datetime(2026, 8, 14, 20, 0, tzinfo=timezone.utc)
+
+    # Start with a strong DAL spread edge of 5.0 points.
     _run(tmp_path, _game(margin=3.0, spread=-8.0), now)
 
+    # Move to a still-strong 6.5-point edge inside the cooldown. This is not
+    # enough to trigger the 2-point material-change threshold anyway.
     during_cooldown = _run(
         tmp_path,
-        _game(margin=0.5, spread=-8.0),
+        _game(margin=1.5, spread=-8.0),
         now + timedelta(minutes=10),
     )
     assert not [
@@ -85,10 +89,24 @@ def test_material_change_respects_cooldown(tmp_path):
         if e["market"] == "spread" and e["event_type"] == "material_change"
     ]
 
+    # After the cooldown, move to a still-strong 6.9-point edge. Relative to
+    # the last-notified 5.0 baseline this is only 1.9, so still no event.
+    below_threshold = _run(
+        tmp_path,
+        _game(margin=1.1, spread=-8.0),
+        now + timedelta(minutes=31),
+    )
+    assert not [
+        e for e in below_threshold["notification_events"]
+        if e["market"] == "spread" and e["event_type"] == "material_change"
+    ]
+
+    # A 2.1-point move from the last-notified baseline, while remaining in the
+    # same strength bucket, should now produce a material-change event.
     after_cooldown = _run(
         tmp_path,
-        _game(margin=0.5, spread=-8.0),
-        now + timedelta(minutes=31),
+        _game(margin=0.9, spread=-8.0),
+        now + timedelta(minutes=32),
     )
     spread = [
         e for e in after_cooldown["notification_events"]
