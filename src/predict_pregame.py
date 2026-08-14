@@ -659,60 +659,148 @@ def _add_prediction_coherence_fields(
     """
     Add canonical pick fields derived from predicted margin.
 
-    The score/margin prediction determines the projected winner.
-    The independently trained home-win classifier is preserved.
+    Margins smaller than 0.5 points are treated as pick'em.
 
-    If the two models disagree on the winner, record that explicitly
-    rather than silently altering either prediction.
+    The score/margin model determines the canonical spread pick.
+    The independently trained home-win classifier remains intact.
+
+    When both models make a directional pick, disagreement is
+    recorded explicitly rather than altering either prediction.
     """
     df = df.copy()
 
-    if "predicted_margin" not in df.columns:
+    if (
+        "predicted_margin"
+        not in df.columns
+    ):
         return df
 
-    def build_row(row: pd.Series) -> pd.Series:
-        margin = row.get("predicted_margin")
+    pick_threshold = 0.5
 
-        if pd.isna(margin):
-            row["projected_winner_side"] = None
-            row["projected_winner_abbr"] = None
-            row["projected_spread"] = None
-            row["prediction_coherent"] = None
+    def build_row(
+        row: pd.Series,
+    ) -> pd.Series:
+        margin = row.get(
+            "predicted_margin"
+        )
+
+        if pd.isna(
+            margin
+        ):
+            row[
+                "projected_winner_side"
+            ] = None
+
+            row[
+                "projected_winner_abbr"
+            ] = None
+
+            row[
+                "projected_spread"
+            ] = None
+
+            row[
+                "prediction_coherent"
+            ] = None
+
             return row
 
-        margin = float(margin)
+        margin = float(
+            margin
+        )
 
-        if abs(margin) < 0.05:
-            row["projected_winner_side"] = "pick"
-            row["projected_winner_abbr"] = None
-            row["projected_spread"] = 0.0
-        elif margin > 0:
-            row["projected_winner_side"] = "home"
-            row["projected_winner_abbr"] = row.get("home_abbr")
-            row["projected_spread"] = -abs(margin)
-        else:
-            row["projected_winner_side"] = "away"
-            row["projected_winner_abbr"] = row.get("away_abbr")
-            row["projected_spread"] = -abs(margin)
+        # -----------------------------------------------------
+        # Pick'em zone
+        # -----------------------------------------------------
+        if (
+            abs(
+                margin
+            )
+            < pick_threshold
+        ):
+            row[
+                "projected_winner_side"
+            ] = "pick"
 
-        home_prob = row.get("home_win_probability")
+            row[
+                "projected_winner_abbr"
+            ] = None
 
-        if pd.isna(home_prob):
-            row["prediction_coherent"] = None
+            row[
+                "projected_spread"
+            ] = 0.0
+
+            # A near-zero score margin does not provide enough
+            # directional information to call this disagreement.
+            row[
+                "prediction_coherent"
+            ] = None
+
             return row
 
-        classifier_home_pick = float(home_prob) >= 0.5
-
+        # -----------------------------------------------------
+        # Canonical spread winner
+        # -----------------------------------------------------
         if margin > 0:
-            margin_home_pick = True
-        elif margin < 0:
-            margin_home_pick = False
+            row[
+                "projected_winner_side"
+            ] = "home"
+
+            row[
+                "projected_winner_abbr"
+            ] = row.get(
+                "home_abbr"
+            )
+
         else:
-            row["prediction_coherent"] = None
+            row[
+                "projected_winner_side"
+            ] = "away"
+
+            row[
+                "projected_winner_abbr"
+            ] = row.get(
+                "away_abbr"
+            )
+
+        row[
+            "projected_spread"
+        ] = -abs(
+            margin
+        )
+
+        # -----------------------------------------------------
+        # Compare directional score-model pick with classifier.
+        # -----------------------------------------------------
+        home_prob = row.get(
+            "home_win_probability"
+        )
+
+        if pd.isna(
+            home_prob
+        ):
+            row[
+                "prediction_coherent"
+            ] = None
+
             return row
 
-        row["prediction_coherent"] = (
-            classifier_home_pick == margin_home_pick
+        classifier_home_pick = (
+            float(
+                home_prob
+            )
+            >= 0.5
+        )
+
+        margin_home_pick = (
+            margin > 0
+        )
+
+        row[
+            "prediction_coherent"
+        ] = (
+            classifier_home_pick
+            == margin_home_pick
         )
 
         return row
