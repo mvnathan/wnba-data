@@ -61,7 +61,14 @@
       "market_under_price": -108,
       "market_home_moneyline": -325,
       "market_away_moneyline": 260,
-      "market_updated_at": "2026-08-14T15:03:09Z"
+      "market_updated_at": "2026-08-14T15:03:09Z",
+      "live_status": "STATUS_SCHEDULED",
+      "live_status_detail": "Fri, August 14th at 7:30 PM EDT",
+      "live_period": null,
+      "live_clock": "0.0",
+      "live_home_score": 0,
+      "live_away_score": 0,
+      "live_updated_at": "2026-08-14T15:38:07.219788+00:00"
     },
     {
       "game_id": "401857144",
@@ -122,7 +129,14 @@
       "market_under_price": -108,
       "market_home_moneyline": -142,
       "market_away_moneyline": 120,
-      "market_updated_at": "2026-08-14T15:03:09Z"
+      "market_updated_at": "2026-08-14T15:03:09Z",
+      "live_status": "STATUS_SCHEDULED",
+      "live_status_detail": "Fri, August 14th at 10:00 PM EDT",
+      "live_period": null,
+      "live_clock": "0.0",
+      "live_home_score": 0,
+      "live_away_score": 0,
+      "live_updated_at": "2026-08-14T15:38:07.219788+00:00"
     }
   ],
   "uncertainty": {
@@ -136,5 +150,7 @@
       "median": 95.95233037619744,
       "p90": 103.6961478350092
     }
-  }
+  },
+  "live_generated_at_utc": "2026-08-14T15:38:07.219788+00:00",
+  "last_live_update_utc": "2026-08-14T15:38:07.219788+00:00"
 }
