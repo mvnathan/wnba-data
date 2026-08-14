@@ -1,19 +1,19 @@
 {
   "401857140": {
-    "last_seen_period": 2,
-    "last_seen_clock": "2:02",
-    "last_home_score": 28,
-    "last_away_score": 45,
+    "last_seen_period": 4,
+    "last_seen_clock": "6:07",
+    "last_home_score": 58,
+    "last_away_score": 85,
     "last_event_type": "START",
-    "last_prediction_timestamp": "2026-08-13T23:55:14.400553+00:00"
+    "last_prediction_timestamp": "2026-08-14T00:56:06.961920+00:00"
   },
   "401857141": {
-    "last_seen_period": null,
+    "last_seen_period": 2,
     "last_seen_clock": "0.0",
-    "last_home_score": 0,
-    "last_away_score": 0,
+    "last_home_score": 49,
+    "last_away_score": 32,
     "last_event_type": "PREGAME",
-    "last_prediction_timestamp": "2026-08-13T23:55:14.400576+00:00"
+    "last_prediction_timestamp": "2026-08-14T00:56:06.961932+00:00"
   },
   "401857142": {
     "last_seen_period": null,
@@ -21,6 +21,6 @@
     "last_home_score": 0,
     "last_away_score": 0,
     "last_event_type": "PREGAME",
-    "last_prediction_timestamp": "2026-08-13T23:55:14.400584+00:00"
+    "last_prediction_timestamp": "2026-08-14T00:56:06.961937+00:00"
   }
 }
