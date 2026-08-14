@@ -26,9 +26,15 @@ MODEL_LEADERBOARD_PATH = MODELS_DIR / "model_leaderboard.csv"
 PREDICTION_LATEST_JSON = PREDICTIONS_DIR / "latest.json"
 PREDICTION_LATEST_CSV = PREDICTIONS_DIR / "latest.csv"
 PREDICTION_HISTORY_PATH = PREDICTIONS_DIR / "prediction_history.parquet"
+PERFORMANCE_HISTORY_PATH = (
+    PREDICTIONS_DIR / "performance_history.parquet"
+)
 QUARTER_EVENTS_PATH = PREDICTIONS_DIR / "quarter_events.parquet"
 DOCS_LATEST_JSON = DOCS_DIR / "latest.json"
 DOCS_HISTORY_JSON = DOCS_DIR / "history.json"
+DOCS_PERFORMANCE_JSON = (
+    DOCS_DIR / "performance.json"
+)
 
 ESPN_SCOREBOARD_URL = "https://site.api.espn.com/apis/site/v2/sports/basketball/wnba/scoreboard"
 ESPN_SUMMARY_URL = "https://site.api.espn.com/apis/site/v2/sports/basketball/wnba/summary"

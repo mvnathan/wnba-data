@@ -8,6 +8,10 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: wnba-daily-update
+  cancel-in-progress: false
+
 jobs:
   update:
     runs-on: ubuntu-latest
@@ -30,14 +34,107 @@ jobs:
           pip install -r requirements.txt
           pip install -e .
 
-      - name: Run daily update
+      - name: Run daily data update
         run: |
           python scripts/run_daily_update.py
+
+      - name: Evaluate completed predictions
+        run: |
+          python scripts/evaluate_predictions.py
+
+      - name: Verify performance output
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          path = Path("docs/performance.json")
+
+          if not path.exists():
+              raise SystemExit(
+                  "docs/performance.json was not created"
+              )
+
+          with path.open() as f:
+              data = json.load(f)
+
+          summary = data.get(
+              "summary",
+              {}
+          )
+
+          print(
+              "Games evaluated:",
+              summary.get(
+                  "games_evaluated"
+              )
+          )
+
+          print(
+              "Winner accuracy:",
+              summary.get(
+                  "winner_accuracy"
+              )
+          )
+
+          print(
+              "Margin MAE:",
+              summary.get(
+                  "margin_mae"
+              )
+          )
+
+          print(
+              "Total MAE:",
+              summary.get(
+                  "total_mae"
+              )
+          )
+
+          print(
+              "Brier score:",
+              summary.get(
+                  "brier_score"
+              )
+          )
+
+          print(
+              "ATS direction accuracy:",
+              summary.get(
+                  "ats_direction_accuracy"
+              )
+          )
+
+          print(
+              "O/U direction accuracy:",
+              summary.get(
+                  "total_direction_accuracy"
+              )
+          )
+
+          print(
+              "Performance rows:",
+              len(
+                  data.get(
+                      "games",
+                      []
+                  )
+              )
+          )
+          PY
 
       - name: Show data changes
         run: |
           echo "Data files:"
           find data -maxdepth 2 -type f -print
+
+          echo ""
+          echo "Performance files:"
+          ls -lh \
+            predictions/performance_history.parquet \
+            docs/performance.json \
+            2>/dev/null || true
+
           echo ""
           echo "Git changes:"
           git status --short
@@ -48,10 +145,13 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
           git add -f data/
+          git add predictions/performance_history.parquet
+          git add docs/performance.json
 
           if git diff --cached --quiet; then
-            echo "No new WNBA data to commit."
+            echo "No new WNBA data or performance results to commit."
           else
-            git commit -m "Daily WNBA data update"
+            git commit -m "Update WNBA data and prediction performance"
             git push
           fi
+          
