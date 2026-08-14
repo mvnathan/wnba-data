@@ -653,6 +653,74 @@ def _attach_current_market_odds(
 
         return games
 
+def _add_prediction_coherence_fields(
+    df: pd.DataFrame,
+) -> pd.DataFrame:
+    """
+    Add canonical pick fields derived from predicted margin.
+
+    The score/margin prediction determines the projected winner.
+    The independently trained home-win classifier is preserved.
+
+    If the two models disagree on the winner, record that explicitly
+    rather than silently altering either prediction.
+    """
+    df = df.copy()
+
+    if "predicted_margin" not in df.columns:
+        return df
+
+    def build_row(row: pd.Series) -> pd.Series:
+        margin = row.get("predicted_margin")
+
+        if pd.isna(margin):
+            row["projected_winner_side"] = None
+            row["projected_winner_abbr"] = None
+            row["projected_spread"] = None
+            row["prediction_coherent"] = None
+            return row
+
+        margin = float(margin)
+
+        if abs(margin) < 0.05:
+            row["projected_winner_side"] = "pick"
+            row["projected_winner_abbr"] = None
+            row["projected_spread"] = 0.0
+        elif margin > 0:
+            row["projected_winner_side"] = "home"
+            row["projected_winner_abbr"] = row.get("home_abbr")
+            row["projected_spread"] = -abs(margin)
+        else:
+            row["projected_winner_side"] = "away"
+            row["projected_winner_abbr"] = row.get("away_abbr")
+            row["projected_spread"] = -abs(margin)
+
+        home_prob = row.get("home_win_probability")
+
+        if pd.isna(home_prob):
+            row["prediction_coherent"] = None
+            return row
+
+        classifier_home_pick = float(home_prob) >= 0.5
+
+        if margin > 0:
+            margin_home_pick = True
+        elif margin < 0:
+            margin_home_pick = False
+        else:
+            row["prediction_coherent"] = None
+            return row
+
+        row["prediction_coherent"] = (
+            classifier_home_pick == margin_home_pick
+        )
+
+        return row
+
+    return df.apply(
+        build_row,
+        axis=1,
+    )
 
 def predict_today(
     target_date: date | None = None,
@@ -942,7 +1010,8 @@ def predict_today(
         )
         else None
     )
-
+    df = _add_prediction_coherence_fields(df)
+    
     # ---------------------------------------------------------
     # Convert to records before attaching market data
     # ---------------------------------------------------------
