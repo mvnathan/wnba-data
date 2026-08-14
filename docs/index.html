@@ -76,7 +76,7 @@
     }
 
     .dashboard-status,
-    .history-card,
+    .section-card,
     .game-card {
       background: var(--panel);
       border: 1px solid var(--border);
@@ -250,7 +250,8 @@
     }
 
     .metric,
-    .market-panel {
+    .market-panel,
+    .performance-metric {
       background: var(--panel-soft);
       border: 1px solid var(--border-soft);
       border-radius: 12px;
@@ -370,7 +371,8 @@
     }
 
     .projection-table-wrap,
-    .history-table-wrap {
+    .history-timeline,
+    .performance-table-wrap {
       overflow-x: auto;
     }
 
@@ -409,20 +411,137 @@
       text-align: left;
     }
 
-    .history-card {
+    .section-card {
       margin-top: 30px;
       padding: 20px;
     }
 
-    .history-card h2 {
+    .section-card h2 {
       margin-top: 0;
       margin-bottom: 8px;
     }
 
-    .history-intro {
+    .section-intro {
       margin-bottom: 18px;
       color: var(--muted);
       font-size: 0.88rem;
+    }
+
+    .performance-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .performance-metric {
+      padding: 15px;
+    }
+
+    .performance-metric-label {
+      color: var(--muted);
+      font-size: 0.78rem;
+      margin-bottom: 5px;
+    }
+
+    .performance-metric-value {
+      font-size: 1.5rem;
+      font-weight: 850;
+    }
+
+    .performance-games {
+      display: grid;
+      gap: 14px;
+    }
+
+    .performance-game {
+      background: var(--panel-soft);
+      border: 1px solid var(--border-soft);
+      border-radius: 14px;
+      overflow: hidden;
+    }
+
+    .performance-game summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 16px 18px;
+    }
+
+    .performance-game summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .performance-game[open] summary {
+      border-bottom: 1px solid var(--border-soft);
+    }
+
+    .performance-summary {
+      display: grid;
+      grid-template-columns:
+        minmax(180px, 1.2fr)
+        repeat(5, minmax(90px, 1fr));
+      align-items: center;
+      gap: 12px;
+    }
+
+    .performance-matchup {
+      font-weight: 850;
+    }
+
+    .performance-date {
+      display: block;
+      margin-top: 3px;
+      color: var(--muted);
+      font-size: 0.76rem;
+      font-weight: 500;
+    }
+
+    .performance-summary-label {
+      display: block;
+      color: var(--muted);
+      font-size: 0.7rem;
+      margin-bottom: 3px;
+    }
+
+    .performance-summary-value {
+      font-weight: 800;
+    }
+
+    .performance-result-good {
+      color: var(--green);
+    }
+
+    .performance-result-bad {
+      color: var(--red);
+    }
+
+    .performance-result-neutral {
+      color: var(--yellow);
+    }
+
+    .performance-detail {
+      padding: 14px;
+    }
+
+    .performance-table {
+      min-width: 920px;
+    }
+
+    .performance-table td,
+    .performance-table th {
+      text-align: right;
+    }
+
+    .performance-table td:first-child,
+    .performance-table th:first-child {
+      text-align: left;
+    }
+
+    .performance-market {
+      margin-top: 14px;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
     }
 
     .coherent-yes {
@@ -508,7 +627,6 @@
 
     .history-timeline {
       padding: 0 12px 12px;
-      overflow-x: auto;
     }
 
     .history-timeline table {
@@ -531,18 +649,31 @@
       text-transform: uppercase;
     }
 
-    .history-empty {
+    .empty-state {
       color: var(--muted);
       padding: 8px 0;
     }
 
-    @media (max-width: 950px) {
+    @media (max-width: 1000px) {
       .headline-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
-      .market-section {
+      .market-section,
+      .performance-market {
         grid-template-columns: 1fr;
+      }
+
+      .performance-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .performance-summary {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .performance-summary > div:first-child {
+        grid-column: 1 / -1;
       }
     }
 
@@ -553,7 +684,8 @@
         padding-right: 14px;
       }
 
-      .headline-grid {
+      .headline-grid,
+      .performance-grid {
         grid-template-columns: 1fr;
       }
 
@@ -568,6 +700,10 @@
 
       .live-team-score {
         font-size: 2rem;
+      }
+
+      .performance-summary {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
       .history-summary {
@@ -596,7 +732,7 @@
     </h1>
 
     <div class="muted">
-      Pregame projections, DraftKings market comparison, and live game tracking
+      Pregame projections, DraftKings market comparison, live tracking, and model performance
     </div>
   </div>
 </header>
@@ -612,11 +748,23 @@
 
   <div id="games"></div>
 
-  <section class="history-card">
-    <h2>Prediction History</h2>
+  <section class="section-card">
+    <h2>Model Performance</h2>
 
-    <div class="history-intro">
-      Expand a matchup to see how the model and market changed across prediction runs.
+    <div class="section-intro">
+      Completed-game results comparing the model's final pregame forecast with actual outcomes.
+    </div>
+
+    <div id="performance">
+      Loading...
+    </div>
+  </section>
+
+  <section class="section-card">
+    <h2>Prediction Archive</h2>
+
+    <div class="section-intro">
+      Historical prediction snapshots showing how forecasts and market lines changed before games.
     </div>
 
     <div id="history">
@@ -688,6 +836,26 @@
     return Number(value).toFixed(1);
   }
 
+  function integerish(value) {
+    if (!exists(value)) {
+      return "—";
+    }
+
+    const number = Number(value);
+
+    if (
+      Math.abs(
+        number - Math.round(number)
+      ) < 0.001
+    ) {
+      return String(
+        Math.round(number)
+      );
+    }
+
+    return number.toFixed(1);
+  }
+
   function probability(value) {
     if (!exists(value)) {
       return "—";
@@ -696,6 +864,46 @@
     return (
       Number(value) * 100
     ).toFixed(1) + "%";
+  }
+
+  function signedOdds(value) {
+    if (!exists(value)) {
+      return "—";
+    }
+
+    const numberValue = Number(value);
+
+    return (
+      numberValue > 0
+        ? "+"
+        : ""
+    ) + numberValue.toFixed(0);
+  }
+
+  function dateTime(value) {
+    if (!value) {
+      return "—";
+    }
+
+    const date = new Date(value);
+
+    if (
+      Number.isNaN(
+        date.getTime()
+      )
+    ) {
+      return "—";
+    }
+
+    return date.toLocaleString(
+      [],
+      {
+        month: "short",
+        day: "numeric",
+        hour: "numeric",
+        minute: "2-digit"
+      }
+    );
   }
 
   function teamAbbr(game, side) {
@@ -985,29 +1193,6 @@
     `;
   }
 
-  function signedOdds(value) {
-    if (
-      value === null ||
-      value === undefined ||
-      value === ""
-    ) {
-      return "—";
-    }
-
-    const numberValue =
-      Number(value);
-
-    if (Number.isNaN(numberValue)) {
-      return String(value);
-    }
-
-    return (
-      numberValue > 0
-        ? "+"
-        : ""
-    ) + numberValue.toFixed(0);
-  }
-
   function marketAvailable(game) {
     return (
       exists(game.market_home_spread) ||
@@ -1190,7 +1375,7 @@
             </div>
 
             <div class="live-team-score">
-              ${num(game.live_away_score)}
+              ${integerish(game.live_away_score)}
             </div>
           </div>
 
@@ -1202,7 +1387,7 @@
             </div>
 
             <div class="live-team-score">
-              ${num(game.live_home_score)}
+              ${integerish(game.live_home_score)}
             </div>
           </div>
         </div>
@@ -1391,14 +1576,8 @@
             <span class="market-value">
               ${
                 game.market_updated_at
-                  ? new Date(
+                  ? dateTime(
                       game.market_updated_at
-                    ).toLocaleTimeString(
-                      [],
-                      {
-                        hour: "numeric",
-                        minute: "2-digit"
-                      }
                     )
                   : "—"
               }
@@ -1700,6 +1879,591 @@
     `;
   }
 
+  function performanceMetric(
+    label,
+    value
+  ) {
+    return `
+      <div class="performance-metric">
+        <div class="performance-metric-label">
+          ${label}
+        </div>
+
+        <div class="performance-metric-value">
+          ${value}
+        </div>
+      </div>
+    `;
+  }
+
+  function yesNoResult(value) {
+    if (value === true) {
+      return `
+        <span class="performance-result-good">
+          ✓ Correct
+        </span>
+      `;
+    }
+
+    if (value === false) {
+      return `
+        <span class="performance-result-bad">
+          ✕ Miss
+        </span>
+      `;
+    }
+
+    return `
+      <span class="performance-result-neutral">
+        —
+      </span>
+    `;
+  }
+
+  function directionalResult(
+    modelSide,
+    actualSide,
+    correct
+  ) {
+    if (
+      modelSide === null ||
+      modelSide === undefined
+    ) {
+      return "—";
+    }
+
+    if (actualSide === "push") {
+      return (
+        String(modelSide).toUpperCase() +
+        " · Push"
+      );
+    }
+
+    return `
+      ${String(modelSide).toUpperCase()}
+      ·
+      ${
+        correct === true
+          ? '<span class="performance-result-good">✓</span>'
+          : correct === false
+            ? '<span class="performance-result-bad">✕</span>'
+            : "—"
+      }
+    `;
+  }
+
+  function performancePeriodRow(
+    game,
+    label,
+    key
+  ) {
+    const predAway =
+      game["predicted_away_" + key];
+
+    const predHome =
+      game["predicted_home_" + key];
+
+    const actualAway =
+      game["actual_away_" + key];
+
+    const actualHome =
+      game["actual_home_" + key];
+
+    const totalError =
+      game["absolute_" + key + "_total_error"];
+
+    const marginError =
+      game["absolute_" + key + "_margin_error"];
+
+    return `
+      <tr>
+        <td>${label}</td>
+
+        <td>
+          ${num(predAway)}
+          -
+          ${num(predHome)}
+        </td>
+
+        <td>
+          ${integerish(actualAway)}
+          -
+          ${integerish(actualHome)}
+        </td>
+
+        <td>
+          ${num(totalError)}
+        </td>
+
+        <td>
+          ${num(marginError)}
+        </td>
+      </tr>
+    `;
+  }
+
+  function performanceHalfRow(
+    game,
+    label,
+    prefix
+  ) {
+    const predAway =
+      game["predicted_away_" + prefix];
+
+    const predHome =
+      game["predicted_home_" + prefix];
+
+    const actualAway =
+      game["actual_away_" + prefix];
+
+    const actualHome =
+      game["actual_home_" + prefix];
+
+    const totalError =
+      game["absolute_" + prefix + "_total_error"];
+
+    const marginError =
+      game["absolute_" + prefix + "_margin_error"];
+
+    return `
+      <tr>
+        <td>${label}</td>
+
+        <td>
+          ${num(predAway)}
+          -
+          ${num(predHome)}
+        </td>
+
+        <td>
+          ${integerish(actualAway)}
+          -
+          ${integerish(actualHome)}
+        </td>
+
+        <td>
+          ${num(totalError)}
+        </td>
+
+        <td>
+          ${num(marginError)}
+        </td>
+      </tr>
+    `;
+  }
+
+  function performanceFinalRow(game) {
+    return `
+      <tr>
+        <td>Final</td>
+
+        <td>
+          ${num(game.predicted_away_score)}
+          -
+          ${num(game.predicted_home_score)}
+        </td>
+
+        <td>
+          ${integerish(game.actual_away_score)}
+          -
+          ${integerish(game.actual_home_score)}
+        </td>
+
+        <td>
+          ${num(game.absolute_total_error)}
+        </td>
+
+        <td>
+          ${num(game.absolute_margin_error)}
+        </td>
+      </tr>
+    `;
+  }
+
+  function performanceGameHTML(
+    game,
+    index
+  ) {
+    const away =
+      game.away_abbr ||
+      "AWAY";
+
+    const home =
+      game.home_abbr ||
+      "HOME";
+
+    return `
+      <details
+        class="performance-game"
+        ${index < 2 ? "open" : ""}
+      >
+
+        <summary>
+          <div class="performance-summary">
+
+            <div>
+              <div class="performance-matchup">
+                ${away} @ ${home}
+              </div>
+
+              <span class="performance-date">
+                ${dateTime(game.game_date_utc)}
+              </span>
+            </div>
+
+            <div>
+              <span class="performance-summary-label">
+                Model
+              </span>
+
+              <span class="performance-summary-value">
+                ${num(game.predicted_away_score)}
+                -
+                ${num(game.predicted_home_score)}
+              </span>
+            </div>
+
+            <div>
+              <span class="performance-summary-label">
+                Actual
+              </span>
+
+              <span class="performance-summary-value">
+                ${integerish(game.actual_away_score)}
+                -
+                ${integerish(game.actual_home_score)}
+              </span>
+            </div>
+
+            <div>
+              <span class="performance-summary-label">
+                Winner
+              </span>
+
+              <span class="performance-summary-value">
+                ${yesNoResult(game.winner_correct)}
+              </span>
+            </div>
+
+            <div>
+              <span class="performance-summary-label">
+                Margin Error
+              </span>
+
+              <span class="performance-summary-value">
+                ${num(game.absolute_margin_error)}
+              </span>
+            </div>
+
+            <div>
+              <span class="performance-summary-label">
+                Total Error
+              </span>
+
+              <span class="performance-summary-value">
+                ${num(game.absolute_total_error)}
+              </span>
+            </div>
+
+          </div>
+        </summary>
+
+        <div class="performance-detail">
+
+          <div class="performance-table-wrap">
+            <table class="performance-table">
+              <thead>
+                <tr>
+                  <th>Period</th>
+                  <th>Model Score</th>
+                  <th>Actual Score</th>
+                  <th>Total Error</th>
+                  <th>Margin Error</th>
+                </tr>
+              </thead>
+
+              <tbody>
+
+                ${performancePeriodRow(
+                  game,
+                  "Q1",
+                  "q1"
+                )}
+
+                ${performancePeriodRow(
+                  game,
+                  "Q2",
+                  "q2"
+                )}
+
+                ${performanceHalfRow(
+                  game,
+                  "1st Half",
+                  "first_half"
+                )}
+
+                ${performancePeriodRow(
+                  game,
+                  "Q3",
+                  "q3"
+                )}
+
+                ${performancePeriodRow(
+                  game,
+                  "Q4",
+                  "q4"
+                )}
+
+                ${performanceHalfRow(
+                  game,
+                  "2nd Half",
+                  "second_half"
+                )}
+
+                ${performanceFinalRow(game)}
+
+              </tbody>
+            </table>
+          </div>
+
+          <div class="performance-market">
+
+            <div class="market-panel">
+              <div class="market-panel-title">
+                Win Model
+              </div>
+
+              <div class="market-line">
+                <span class="market-label">
+                  Home win probability
+                </span>
+
+                <span class="market-value">
+                  ${probability(
+                    game.home_win_probability
+                  )}
+                </span>
+              </div>
+
+              <div class="market-line">
+                <span class="market-label">
+                  Actual winner
+                </span>
+
+                <span class="market-value">
+                  ${game.actual_winner_abbr || "—"}
+                </span>
+              </div>
+
+              <div class="market-line">
+                <span class="market-label">
+                  Brier score
+                </span>
+
+                <span class="market-value">
+                  ${num(game.brier_score)}
+                </span>
+              </div>
+            </div>
+
+            <div class="market-panel">
+              <div class="market-panel-title">
+                Spread Performance
+              </div>
+
+              <div class="market-line">
+                <span class="market-label">
+                  DK spread
+                </span>
+
+                <span class="market-value">
+                  ${
+                    exists(game.market_home_spread)
+                      ? (
+                          home +
+                          " " +
+                          Number(
+                            game.market_home_spread
+                          ).toFixed(1)
+                        )
+                      : "—"
+                  }
+                </span>
+              </div>
+
+              <div class="market-line">
+                <span class="market-label">
+                  Model ATS side
+                </span>
+
+                <span class="market-value">
+                  ${directionalResult(
+                    game.model_market_side,
+                    game.actual_market_side,
+                    game.ats_model_correct
+                  )}
+                </span>
+              </div>
+
+              <div class="market-line">
+                <span class="market-label">
+                  Actual ATS side
+                </span>
+
+                <span class="market-value">
+                  ${
+                    game.actual_market_side
+                      ? String(
+                          game.actual_market_side
+                        ).toUpperCase()
+                      : "—"
+                  }
+                </span>
+              </div>
+            </div>
+
+            <div class="market-panel">
+              <div class="market-panel-title">
+                Total Performance
+              </div>
+
+              <div class="market-line">
+                <span class="market-label">
+                  DK total
+                </span>
+
+                <span class="market-value">
+                  ${num(game.market_total)}
+                </span>
+              </div>
+
+              <div class="market-line">
+                <span class="market-label">
+                  Model O/U side
+                </span>
+
+                <span class="market-value">
+                  ${directionalResult(
+                    game.model_total_side,
+                    game.actual_total_side,
+                    game.total_model_correct
+                  )}
+                </span>
+              </div>
+
+              <div class="market-line">
+                <span class="market-label">
+                  Actual O/U
+                </span>
+
+                <span class="market-value">
+                  ${
+                    game.actual_total_side
+                      ? String(
+                          game.actual_total_side
+                        ).toUpperCase()
+                      : "—"
+                  }
+                </span>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </details>
+    `;
+  }
+
+  function performanceHTML(payload) {
+    const summary =
+      payload &&
+      typeof payload === "object"
+        ? payload.summary || {}
+        : {};
+
+    const games =
+      payload &&
+      Array.isArray(payload.games)
+        ? payload.games
+        : [];
+
+    if (!games.length) {
+      return `
+        <div class="empty-state">
+          No completed-game performance data yet.
+        </div>
+      `;
+    }
+
+    return `
+      <div class="performance-grid">
+
+        ${performanceMetric(
+          "Games Evaluated",
+          exists(summary.games_evaluated)
+            ? Number(
+                summary.games_evaluated
+              ).toFixed(0)
+            : "—"
+        )}
+
+        ${performanceMetric(
+          "Winner Accuracy",
+          probability(
+            summary.winner_accuracy
+          )
+        )}
+
+        ${performanceMetric(
+          "Margin MAE",
+          num(summary.margin_mae)
+        )}
+
+        ${performanceMetric(
+          "Total MAE",
+          num(summary.total_mae)
+        )}
+
+        ${performanceMetric(
+          "Brier Score",
+          exists(summary.brier_score)
+            ? Number(
+                summary.brier_score
+              ).toFixed(3)
+            : "—"
+        )}
+
+        ${performanceMetric(
+          "ATS Accuracy",
+          probability(
+            summary.ats_direction_accuracy
+          )
+        )}
+
+        ${performanceMetric(
+          "O/U Accuracy",
+          probability(
+            summary.total_direction_accuracy
+          )
+        )}
+
+        ${performanceMetric(
+          "Q4 Margin MAE",
+          num(summary.q4_margin_mae)
+        )}
+
+      </div>
+
+      <div class="performance-games">
+        ${games.map(
+          performanceGameHTML
+        ).join("")}
+      </div>
+    `;
+  }
+
   function historyModelSpread(row) {
     if (!exists(row.predicted_margin)) {
       return "—";
@@ -1822,33 +2586,6 @@
     );
   }
 
-  function historyTime(value) {
-    if (!value) {
-      return "—";
-    }
-
-    const date =
-      new Date(value);
-
-    if (
-      Number.isNaN(
-        date.getTime()
-      )
-    ) {
-      return "—";
-    }
-
-    return date.toLocaleString(
-      [],
-      {
-        month: "short",
-        day: "numeric",
-        hour: "numeric",
-        minute: "2-digit"
-      }
-    );
-  }
-
   function historyGroups(rows) {
     const groups =
       new Map();
@@ -1921,7 +2658,7 @@
 
     if (!history.length) {
       return `
-        <div class="history-empty">
+        <div class="empty-state">
           No prediction history yet.
         </div>
       `;
@@ -1974,7 +2711,7 @@
                             : "s"
                         }
                         · Latest
-                        ${historyTime(
+                        ${dateTime(
                           latest.prediction_date
                         )}
                       </div>
@@ -2063,7 +2800,7 @@
                           >
 
                             <td>
-                              ${historyTime(
+                              ${dateTime(
                                 row.prediction_date
                               )}
 
@@ -2136,6 +2873,15 @@
         {}
       );
 
+    const performancePayload =
+      await loadJSON(
+        "performance.json",
+        {
+          summary: {},
+          games: []
+        }
+      );
+
     const historyPayload =
       await loadJSON(
         "history.json",
@@ -2152,6 +2898,11 @@
     const gamesContainer =
       document.getElementById(
         "games"
+      );
+
+    const performanceContainer =
+      document.getElementById(
+        "performance"
       );
 
     const historyContainer =
@@ -2221,9 +2972,9 @@
             generated
               ? (
                   " · Updated " +
-                  new Date(
+                  dateTime(
                     generated
-                  ).toLocaleString()
+                  )
                 )
               : ""
           }
@@ -2235,6 +2986,11 @@
           .map(gameCard)
           .join("");
     }
+
+    performanceContainer.innerHTML =
+      performanceHTML(
+        performancePayload
+      );
 
     historyContainer.innerHTML =
       historyHTML(
