@@ -1,12 +1,20 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>WNBA Prediction Dashboard</title>
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
+
+  <title>
+    WNBA Prediction Dashboard
+  </title>
 
   <style>
+
     :root {
       --bg: #090c11;
       --panel: #151a22;
@@ -23,11 +31,15 @@
       --green: #63d297;
       --red: #ff8585;
       --yellow: #f4cd66;
+
+      --live: #ff5a5f;
     }
+
 
     * {
       box-sizing: border-box;
     }
+
 
     body {
       margin: 0;
@@ -45,86 +57,196 @@
       color: var(--text);
     }
 
+
     header {
-      border-bottom: 1px solid var(--border);
-      background: rgba(9, 12, 17, 0.96);
+      border-bottom:
+        1px solid var(--border);
+
+      background:
+        rgba(
+          9,
+          12,
+          17,
+          0.96
+        );
+
+      position: sticky;
+      top: 0;
+      z-index: 10;
     }
+
 
     .header-inner {
       max-width: 1240px;
+
       margin: 0 auto;
-      padding: 28px 24px;
+
+      padding:
+        24px 24px;
     }
 
+
     .header-title {
-      margin: 0 0 6px;
-      font-size: 2rem;
+      margin:
+        0 0 5px;
+
+      font-size: 1.9rem;
       font-weight: 800;
     }
+
 
     .muted {
       color: var(--muted);
     }
 
+
     main {
       max-width: 1240px;
+
       margin: 0 auto;
-      padding: 24px;
+
+      padding:
+        24px;
     }
+
 
     .dashboard-status {
       margin-bottom: 22px;
-      padding: 16px 20px;
 
-      background: var(--panel);
-      border: 1px solid var(--border);
-      border-radius: 14px;
+      padding:
+        15px 19px;
+
+      background:
+        var(--panel);
+
+      border:
+        1px solid var(--border);
+
+      border-radius:
+        14px;
     }
+
 
     .game-card {
       margin-bottom: 24px;
 
-      background: var(--panel);
-      border: 1px solid var(--border);
-      border-radius: 18px;
+      background:
+        var(--panel);
+
+      border:
+        1px solid var(--border);
+
+      border-radius:
+        18px;
 
       overflow: hidden;
     }
 
-    .game-header {
-      padding: 20px 24px;
 
-      border-bottom: 1px solid var(--border);
+    .game-card.live-game {
+      border-color:
+        rgba(
+          255,
+          90,
+          95,
+          0.65
+        );
     }
+
+
+    .game-header {
+      padding:
+        20px 24px;
+
+      border-bottom:
+        1px solid var(--border);
+    }
+
 
     .status {
       display: inline-block;
 
-      margin-bottom: 12px;
-      padding: 5px 10px;
+      margin-bottom:
+        12px;
 
-      border-radius: 999px;
+      padding:
+        5px 10px;
 
-      background: #29313d;
+      border-radius:
+        999px;
 
-      color: #dce3ed;
+      background:
+        #29313d;
 
-      font-size: 0.76rem;
-      font-weight: 750;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
+      color:
+        #dce3ed;
+
+      font-size:
+        0.76rem;
+
+      font-weight:
+        750;
+
+      letter-spacing:
+        0.04em;
+
+      text-transform:
+        uppercase;
     }
+
+
+    .status.live {
+      background:
+        rgba(
+          255,
+          90,
+          95,
+          0.17
+        );
+
+      color:
+        #ff8c8f;
+
+      border:
+        1px solid
+        rgba(
+          255,
+          90,
+          95,
+          0.5
+        );
+    }
+
+
+    .status.final {
+      background:
+        rgba(
+          99,
+          210,
+          151,
+          0.13
+        );
+
+      color:
+        var(--green);
+    }
+
 
     .matchup-row {
       display: flex;
+
       align-items: center;
-      justify-content: space-between;
+
+      justify-content:
+        space-between;
 
       gap: 18px;
     }
 
+
     .matchup-teams {
       display: flex;
+
       align-items: center;
 
       gap: 12px;
@@ -132,12 +254,15 @@
       min-width: 0;
     }
 
+
     .team-block {
       display: flex;
+
       align-items: center;
 
       gap: 9px;
     }
+
 
     .team-logo {
       width: 42px;
@@ -148,347 +273,721 @@
       flex: 0 0 auto;
     }
 
-    .team-logo-small {
-      width: 25px;
-      height: 25px;
-
-      object-fit: contain;
-
-      vertical-align: middle;
-      margin-right: 6px;
-    }
 
     .team-fallback {
       width: 42px;
       height: 42px;
 
       display: flex;
+
       align-items: center;
-      justify-content: center;
 
-      border-radius: 50%;
+      justify-content:
+        center;
 
-      background: #252d38;
+      border-radius:
+        50%;
 
-      color: var(--text);
+      background:
+        #252d38;
 
-      font-size: 0.72rem;
-      font-weight: 800;
+      color:
+        var(--text);
+
+      font-size:
+        0.72rem;
+
+      font-weight:
+        800;
     }
+
 
     .matchup-name {
-      font-size: 1.55rem;
-      font-weight: 800;
+      font-size:
+        1.5rem;
+
+      font-weight:
+        800;
     }
+
 
     .at-symbol {
-      color: var(--muted);
-      font-size: 1.1rem;
-      font-weight: 700;
+      color:
+        var(--muted);
+
+      font-size:
+        1.1rem;
+
+      font-weight:
+        700;
     }
+
 
     .venue {
-      margin-top: 7px;
+      margin-top:
+        7px;
 
-      color: var(--muted);
+      color:
+        var(--muted);
 
-      font-size: 0.88rem;
+      font-size:
+        0.88rem;
     }
+
 
     .game-body {
-      padding: 22px 24px 26px;
+      padding:
+        22px 24px 26px;
     }
+
+
+    .live-score-panel {
+      margin-bottom:
+        22px;
+
+      padding:
+        18px;
+
+      border:
+        1px solid
+        rgba(
+          255,
+          90,
+          95,
+          0.35
+        );
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(
+            255,
+            90,
+            95,
+            0.10
+          ),
+          rgba(
+            16,
+            21,
+            28,
+            1
+          )
+        );
+
+      border-radius:
+        14px;
+    }
+
+
+    .live-score-header {
+      display: flex;
+
+      justify-content:
+        space-between;
+
+      align-items: center;
+
+      gap: 12px;
+
+      margin-bottom:
+        14px;
+    }
+
+
+    .live-label {
+      color:
+        #ff8c8f;
+
+      font-size:
+        0.8rem;
+
+      font-weight:
+        850;
+
+      text-transform:
+        uppercase;
+
+      letter-spacing:
+        0.06em;
+    }
+
+
+    .live-clock {
+      color:
+        var(--muted);
+
+      font-size:
+        0.9rem;
+
+      font-weight:
+        700;
+    }
+
+
+    .live-score-grid {
+      display: grid;
+
+      grid-template-columns:
+        1fr auto 1fr;
+
+      align-items:
+        center;
+
+      gap: 16px;
+    }
+
+
+    .live-team {
+      text-align:
+        center;
+    }
+
+
+    .live-team-abbr {
+      color:
+        var(--muted);
+
+      margin-bottom:
+        3px;
+
+      font-size:
+        0.78rem;
+
+      font-weight:
+        800;
+    }
+
+
+    .live-team-score {
+      font-size:
+        2.4rem;
+
+      font-weight:
+        900;
+    }
+
+
+    .live-score-divider {
+      color:
+        var(--muted);
+
+      font-size:
+        1.2rem;
+
+      font-weight:
+        700;
+    }
+
+
+    .pregame-heading {
+      margin:
+        22px 0 12px;
+
+      color:
+        #d8dee8;
+
+      font-size:
+        0.85rem;
+
+      font-weight:
+        800;
+
+      letter-spacing:
+        0.05em;
+
+      text-transform:
+        uppercase;
+    }
+
 
     .headline-grid {
       display: grid;
 
       grid-template-columns:
-        repeat(4, minmax(0, 1fr));
+        repeat(
+          4,
+          minmax(
+            0,
+            1fr
+          )
+        );
 
       gap: 12px;
 
-      margin-bottom: 16px;
+      margin-bottom:
+        16px;
     }
+
 
     .metric {
       min-width: 0;
 
-      padding: 14px;
+      padding:
+        14px;
 
-      background: var(--panel-soft);
-      border: 1px solid var(--border-soft);
-      border-radius: 12px;
+      background:
+        var(--panel-soft);
+
+      border:
+        1px solid
+        var(--border-soft);
+
+      border-radius:
+        12px;
     }
+
 
     .metric-label {
-      margin-bottom: 7px;
+      margin-bottom:
+        7px;
 
-      color: var(--muted);
+      color:
+        var(--muted);
 
-      font-size: 0.8rem;
+      font-size:
+        0.8rem;
     }
+
 
     .metric-value {
-      font-size: 1.45rem;
-      font-weight: 800;
+      font-size:
+        1.45rem;
 
-      line-height: 1.1;
+      font-weight:
+        800;
+
+      line-height:
+        1.1;
     }
+
 
     .metric-value.pick {
-      color: var(--green);
+      color:
+        var(--green);
     }
+
 
     .score-grid {
       display: flex;
+
       align-items: center;
-      justify-content: space-between;
+
+      justify-content:
+        space-between;
 
       gap: 8px;
     }
 
+
     .score-side {
       flex: 1;
 
-      text-align: center;
+      text-align:
+        center;
     }
+
 
     .score-abbr {
-      margin-bottom: 3px;
+      margin-bottom:
+        3px;
 
-      color: var(--muted);
+      color:
+        var(--muted);
 
-      font-size: 0.72rem;
-      font-weight: 800;
+      font-size:
+        0.72rem;
+
+      font-weight:
+        800;
     }
+
 
     .score-number {
-      font-size: 1.7rem;
-      font-weight: 850;
+      font-size:
+        1.7rem;
+
+      font-weight:
+        850;
     }
+
 
     .score-separator {
-      color: var(--muted);
+      color:
+        var(--muted);
 
-      font-weight: 700;
+      font-weight:
+        700;
     }
+
 
     .section-title {
-      margin: 26px 0 12px;
+      margin:
+        26px 0 12px;
 
-      font-size: 1rem;
+      font-size:
+        1rem;
     }
+
 
     .market-section {
       display: grid;
 
       grid-template-columns:
-        minmax(0, 1fr)
-        minmax(0, 1fr);
+        repeat(
+          3,
+          minmax(
+            0,
+            1fr
+          )
+        );
 
       gap: 14px;
     }
 
-    .market-panel {
-      padding: 16px;
 
-      background: var(--panel-soft);
-      border: 1px solid var(--border-soft);
-      border-radius: 13px;
+    .market-panel {
+      padding:
+        16px;
+
+      background:
+        var(--panel-soft);
+
+      border:
+        1px solid
+        var(--border-soft);
+
+      border-radius:
+        13px;
     }
+
 
     .market-panel-title {
-      margin-bottom: 13px;
+      margin-bottom:
+        13px;
 
-      font-size: 0.82rem;
-      font-weight: 800;
+      color:
+        var(--muted);
 
-      color: var(--muted);
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
+      font-size:
+        0.82rem;
+
+      font-weight:
+        800;
+
+      text-transform:
+        uppercase;
+
+      letter-spacing:
+        0.04em;
     }
+
 
     .market-line {
       display: flex;
-      align-items: center;
-      justify-content: space-between;
+
+      align-items:
+        center;
+
+      justify-content:
+        space-between;
 
       gap: 12px;
 
-      padding: 8px 0;
+      padding:
+        8px 0;
 
-      border-bottom: 1px solid var(--border-soft);
+      border-bottom:
+        1px solid
+        var(--border-soft);
     }
+
 
     .market-line:last-child {
-      border-bottom: none;
+      border-bottom:
+        none;
     }
+
 
     .market-label {
-      color: var(--muted);
-      font-size: 0.84rem;
+      color:
+        var(--muted);
+
+      font-size:
+        0.84rem;
     }
+
 
     .market-value {
-      text-align: right;
+      text-align:
+        right;
 
-      font-weight: 800;
+      font-weight:
+        800;
     }
+
 
     .edge-positive {
-      color: var(--green);
+      color:
+        var(--green);
     }
+
 
     .edge-negative {
-      color: var(--red);
+      color:
+        var(--red);
     }
+
 
     .edge-neutral {
-      color: var(--yellow);
+      color:
+        var(--yellow);
     }
+
 
     .market-placeholder {
-      color: var(--muted);
+      color:
+        var(--muted);
 
-      font-size: 0.88rem;
-      line-height: 1.5;
+      font-size:
+        0.88rem;
+
+      line-height:
+        1.5;
     }
 
-    .projection-table-wrap {
-      overflow-x: auto;
+
+    .projection-table-wrap,
+    .history-table-wrap {
+      overflow-x:
+        auto;
     }
+
 
     .projection-table {
-      width: 100%;
+      width:
+        100%;
 
-      border-collapse: separate;
-      border-spacing: 0;
+      border-collapse:
+        separate;
 
-      background: var(--panel-soft);
+      border-spacing:
+        0;
 
-      border: 1px solid var(--border-soft);
-      border-radius: 12px;
+      background:
+        var(--panel-soft);
 
-      overflow: hidden;
+      border:
+        1px solid
+        var(--border-soft);
+
+      border-radius:
+        12px;
+
+      overflow:
+        hidden;
     }
+
 
     .projection-table th,
     .projection-table td {
-      padding: 10px 13px;
+      padding:
+        10px 13px;
 
-      text-align: right;
+      text-align:
+        right;
 
-      border-bottom: 1px solid var(--border-soft);
+      border-bottom:
+        1px solid
+        var(--border-soft);
     }
+
 
     .projection-table th:first-child,
     .projection-table td:first-child {
-      text-align: left;
+      text-align:
+        left;
     }
+
 
     .projection-table th {
-      color: var(--muted);
+      color:
+        var(--muted);
 
-      font-size: 0.76rem;
-      font-weight: 700;
+      font-size:
+        0.76rem;
+
+      font-weight:
+        700;
     }
+
 
     .projection-table td {
-      font-size: 0.9rem;
-      font-weight: 650;
+      font-size:
+        0.9rem;
+
+      font-weight:
+        650;
     }
+
 
     .projection-table tr:last-child td {
-      border-bottom: 0;
+      border-bottom:
+        0;
     }
+
 
     .history-card {
-      margin-top: 30px;
-      padding: 20px;
+      margin-top:
+        30px;
 
-      background: var(--panel);
-      border: 1px solid var(--border);
-      border-radius: 18px;
+      padding:
+        20px;
+
+      background:
+        var(--panel);
+
+      border:
+        1px solid
+        var(--border);
+
+      border-radius:
+        18px;
     }
+
 
     .history-card h2 {
-      margin-top: 0;
+      margin-top:
+        0;
     }
 
-    .history-table-wrap {
-      overflow-x: auto;
-    }
 
     .history-table {
-      width: 100%;
+      width:
+        100%;
 
-      border-collapse: collapse;
+      border-collapse:
+        collapse;
     }
+
 
     .history-table th,
     .history-table td {
-      padding: 10px;
+      padding:
+        10px;
 
-      text-align: left;
+      text-align:
+        left;
 
-      border-bottom: 1px solid var(--border);
+      border-bottom:
+        1px solid
+        var(--border);
     }
+
 
     .history-table th {
-      color: var(--muted);
+      color:
+        var(--muted);
 
-      font-size: 0.78rem;
+      font-size:
+        0.78rem;
     }
 
-    @media (max-width: 950px) {
+
+    @media (
+      max-width:
+      950px
+    ) {
+
       .headline-grid {
         grid-template-columns:
-          repeat(2, minmax(0, 1fr));
+          repeat(
+            2,
+            minmax(
+              0,
+              1fr
+            )
+          );
       }
+
 
       .market-section {
-        grid-template-columns: 1fr;
+        grid-template-columns:
+          1fr;
       }
+
     }
 
-    @media (max-width: 620px) {
+
+    @media (
+      max-width:
+      620px
+    ) {
+
       main,
       .header-inner {
-        padding-left: 14px;
-        padding-right: 14px;
+        padding-left:
+          14px;
+
+        padding-right:
+          14px;
       }
+
 
       .headline-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns:
+          1fr;
       }
+
 
       .matchup-row {
-        display: block;
+        display:
+          block;
       }
+
 
       .matchup-teams {
-        flex-wrap: wrap;
+        flex-wrap:
+          wrap;
       }
+
 
       .matchup-name {
-        font-size: 1.25rem;
+        font-size:
+          1.2rem;
       }
+
 
       .team-logo {
-        width: 34px;
-        height: 34px;
+        width:
+          34px;
+
+        height:
+          34px;
       }
 
-      .projection-table {
-        font-size: 0.8rem;
+
+      .live-team-score {
+        font-size:
+          2rem;
       }
+
+
+      .projection-table {
+        font-size:
+          0.8rem;
+      }
+
     }
+
   </style>
 </head>
 
+
 <body>
 
+
 <header>
+
   <div class="header-inner">
 
     <h1 class="header-title">
@@ -496,14 +995,16 @@
     </h1>
 
     <div class="muted">
-      Pregame projections, market comparison, and live forecasts
+      Pregame projections, DraftKings market comparison, and live game tracking
     </div>
 
   </div>
+
 </header>
 
 
 <main>
+
 
   <div
     id="status"
@@ -511,6 +1012,7 @@
   >
     Loading prediction data...
   </div>
+
 
   <div id="games"></div>
 
@@ -527,33 +1029,60 @@
 
   </section>
 
+
 </main>
 
 
 <script>
 
-  /*
-   * ESPN's CDN is useful here because the URLs are static image assets.
-   *
-   * If a logo fails to load, the dashboard automatically falls back
-   * to the team abbreviation rather than breaking the card.
-   */
+
   const TEAM_LOGOS = {
-    ATL: "https://a.espncdn.com/i/teamlogos/wnba/500/atl.png",
-    CHI: "https://a.espncdn.com/i/teamlogos/wnba/500/chi.png",
-    CON: "https://a.espncdn.com/i/teamlogos/wnba/500/conn.png",
-    DAL: "https://a.espncdn.com/i/teamlogos/wnba/500/dal.png",
-    GS:  "https://a.espncdn.com/i/teamlogos/wnba/500/gs.png",
-    IND: "https://a.espncdn.com/i/teamlogos/wnba/500/ind.png",
-    LA:  "https://a.espncdn.com/i/teamlogos/wnba/500/la.png",
-    LV:  "https://a.espncdn.com/i/teamlogos/wnba/500/lv.png",
-    MIN: "https://a.espncdn.com/i/teamlogos/wnba/500/min.png",
-    NY:  "https://a.espncdn.com/i/teamlogos/wnba/500/ny.png",
-    PHX: "https://a.espncdn.com/i/teamlogos/wnba/500/phx.png",
-    POR: "https://a.espncdn.com/i/teamlogos/wnba/500/por.png",
-    SEA: "https://a.espncdn.com/i/teamlogos/wnba/500/sea.png",
-    TOR: "https://a.espncdn.com/i/teamlogos/wnba/500/tor.png",
-    WSH: "https://a.espncdn.com/i/teamlogos/wnba/500/was.png"
+
+    ATL:
+      "https://a.espncdn.com/i/teamlogos/wnba/500/atl.png",
+
+    CHI:
+      "https://a.espncdn.com/i/teamlogos/wnba/500/chi.png",
+
+    CON:
+      "https://a.espncdn.com/i/teamlogos/wnba/500/conn.png",
+
+    DAL:
+      "https://a.espncdn.com/i/teamlogos/wnba/500/dal.png",
+
+    GS:
+      "https://a.espncdn.com/i/teamlogos/wnba/500/gs.png",
+
+    IND:
+      "https://a.espncdn.com/i/teamlogos/wnba/500/ind.png",
+
+    LA:
+      "https://a.espncdn.com/i/teamlogos/wnba/500/la.png",
+
+    LV:
+      "https://a.espncdn.com/i/teamlogos/wnba/500/lv.png",
+
+    MIN:
+      "https://a.espncdn.com/i/teamlogos/wnba/500/min.png",
+
+    NY:
+      "https://a.espncdn.com/i/teamlogos/wnba/500/ny.png",
+
+    PHX:
+      "https://a.espncdn.com/i/teamlogos/wnba/500/phx.png",
+
+    POR:
+      "https://a.espncdn.com/i/teamlogos/wnba/500/por.png",
+
+    SEA:
+      "https://a.espncdn.com/i/teamlogos/wnba/500/sea.png",
+
+    TOR:
+      "https://a.espncdn.com/i/teamlogos/wnba/500/tor.png",
+
+    WSH:
+      "https://a.espncdn.com/i/teamlogos/wnba/500/was.png"
+
   };
 
 
@@ -561,22 +1090,33 @@
     path,
     fallback
   ) {
+
     try {
 
-      const response = await fetch(
-        path + "?t=" + Date.now(),
-        {
-          cache: "no-store"
-        }
-      );
+      const response =
+        await fetch(
+          path +
+          "?t=" +
+          Date.now(),
+          {
+            cache:
+              "no-store"
+          }
+        );
 
-      if (!response.ok) {
+
+      if (
+        !response.ok
+      ) {
         return fallback;
       }
 
+
       return await response.json();
 
-    } catch (error) {
+    } catch (
+      error
+    ) {
 
       console.error(
         "Failed loading",
@@ -586,42 +1126,72 @@
 
       return fallback;
     }
+
   }
 
 
-  function exists(value) {
+  function exists(
+    value
+  ) {
 
     return (
       value !== null &&
       value !== undefined &&
-      !Number.isNaN(Number(value))
+      value !== "" &&
+      !Number.isNaN(
+        Number(
+          value
+        )
+      )
     );
+
   }
 
 
-  /*
-   * All dashboard numeric values are shown with
-   * one decimal maximum.
-   */
-  function num(value) {
+  function num(
+    value
+  ) {
 
-    if (!exists(value)) {
+    if (
+      !exists(
+        value
+      )
+    ) {
       return "—";
     }
 
-    return Number(value).toFixed(1);
+
+    return Number(
+      value
+    ).toFixed(
+      1
+    );
+
   }
 
 
-  function probability(value) {
+  function probability(
+    value
+  ) {
 
-    if (!exists(value)) {
+    if (
+      !exists(
+        value
+      )
+    ) {
       return "—";
     }
+
 
     return (
-      Number(value) * 100
-    ).toFixed(1) + "%";
+      Number(
+        value
+      ) *
+      100
+    ).toFixed(
+      1
+    ) + "%";
+
   }
 
 
@@ -632,10 +1202,12 @@
 
     return (
       game[
-        side + "_abbr"
+        side +
+        "_abbr"
       ] ||
       side.toUpperCase()
     );
+
   }
 
 
@@ -646,57 +1218,50 @@
 
     return (
       game[
-        side + "_team"
+        side +
+        "_team"
       ] ||
       teamAbbr(
         game,
         side
       )
     );
-  }
 
-
-  function logoURL(abbr) {
-
-    return (
-      TEAM_LOGOS[
-        String(abbr).toUpperCase()
-      ] ||
-      null
-    );
   }
 
 
   function teamLogo(
-    abbr,
-    small = false
+    abbr
   ) {
 
-    const url = logoURL(abbr);
+    const url =
+      TEAM_LOGOS[
+        String(
+          abbr
+        ).toUpperCase()
+      ];
 
-    if (!url) {
+
+    if (
+      !url
+    ) {
 
       return `
+
         <span
           class="team-fallback"
-          style="${
-            small
-              ? "width:25px;height:25px;font-size:.55rem;"
-              : ""
-          }"
         >
           ${abbr}
         </span>
+
       `;
     }
 
+
     return `
+
       <img
-        class="${
-          small
-            ? "team-logo-small"
-            : "team-logo"
-        }"
+        class="team-logo"
 
         src="${url}"
 
@@ -708,54 +1273,263 @@
           this.style.display='none';
         "
       >
+
     `;
+
   }
 
 
-  function cleanStatus(status) {
-
-    if (!status) {
-      return "Scheduled";
-    }
-
-    const map = {
-      STATUS_SCHEDULED: "Scheduled",
-      STATUS_IN_PROGRESS: "Live",
-      STATUS_HALFTIME: "Halftime",
-      STATUS_FINAL: "Final",
-      STATUS_POSTPONED: "Postponed"
-    };
+  function currentStatus(
+    game
+  ) {
 
     return (
-      map[status] ||
-      String(status)
-        .replace(
-          "STATUS_",
-          ""
-        )
-        .replaceAll(
-          "_",
-          " "
-        )
+      game.live_status ||
+      game.status ||
+      "STATUS_SCHEDULED"
     );
+
   }
 
 
-  /*
-   * Model margin is home score - away score.
-   *
-   * Positive:
-   * home team is favored.
-   *
-   * Negative:
-   * away team is favored.
-   *
-   * We convert it into sportsbook-like notation:
-   *
-   * NY -7.0
-   * ATL -7.9
-   */
-  function modelSpread(game) {
+  function isLive(
+    game
+  ) {
+
+    const status =
+      String(
+        currentStatus(
+          game
+        )
+      ).toUpperCase();
+
+
+    return (
+      status.includes(
+        "IN_PROGRESS"
+      ) ||
+      status.includes(
+        "HALFTIME"
+      )
+    );
+
+  }
+
+
+  function isFinal(
+    game
+  ) {
+
+    return String(
+      currentStatus(
+        game
+      )
+    )
+    .toUpperCase()
+    .includes(
+      "FINAL"
+    );
+
+  }
+
+
+  function cleanStatus(
+    game
+  ) {
+
+    const status =
+      currentStatus(
+        game
+      );
+
+
+    const map = {
+
+      STATUS_SCHEDULED:
+        "Scheduled",
+
+      STATUS_IN_PROGRESS:
+        "Live",
+
+      STATUS_HALFTIME:
+        "Halftime",
+
+      STATUS_FINAL:
+        "Final",
+
+      STATUS_FINAL_OT:
+        "Final / OT",
+
+      STATUS_POSTPONED:
+        "Postponed"
+
+    };
+
+
+    return (
+      map[
+        status
+      ] ||
+      String(
+        status
+      )
+      .replace(
+        "STATUS_",
+        ""
+      )
+      .replaceAll(
+        "_",
+        " "
+      )
+    );
+
+  }
+
+
+  function statusClass(
+    game
+  ) {
+
+    if (
+      isLive(
+        game
+      )
+    ) {
+      return "status live";
+    }
+
+
+    if (
+      isFinal(
+        game
+      )
+    ) {
+      return "status final";
+    }
+
+
+    return "status";
+
+  }
+
+
+  function periodLabel(
+    game
+  ) {
+
+    const status =
+      String(
+        currentStatus(
+          game
+        )
+      );
+
+
+    if (
+      status.includes(
+        "HALFTIME"
+      )
+    ) {
+      return "HALFTIME";
+    }
+
+
+    const period =
+      Number(
+        game.live_period
+      );
+
+
+    if (
+      !Number.isFinite(
+        period
+      ) ||
+      period <= 0
+    ) {
+      return "";
+    }
+
+
+    if (
+      period <= 4
+    ) {
+      return (
+        "Q" +
+        period
+      );
+    }
+
+
+    return (
+      "OT" +
+      (
+        period -
+        4
+      )
+    );
+
+  }
+
+
+  function liveClockText(
+    game
+  ) {
+
+    if (
+      !isLive(
+        game
+      )
+    ) {
+      return "";
+    }
+
+
+    const period =
+      periodLabel(
+        game
+      );
+
+
+    let clock =
+      game.live_clock;
+
+
+    if (
+      clock === null ||
+      clock === undefined ||
+      clock === "" ||
+      clock === 0 ||
+      clock === 0.0 ||
+      clock === "0.0"
+    ) {
+      clock = "";
+    }
+
+
+    if (
+      period &&
+      clock
+    ) {
+      return (
+        period +
+        " • " +
+        clock
+      );
+    }
+
+
+    return (
+      period ||
+      clock ||
+      "Live"
+    );
+
+  }
+
+
+  function modelSpread(
+    game
+  ) {
 
     if (
       !exists(
@@ -765,17 +1539,27 @@
       return "—";
     }
 
-    const margin = Number(
-      game.predicted_margin
-    );
+
+    const margin =
+      Number(
+        game.predicted_margin
+      );
+
 
     if (
-      Math.abs(margin) < 0.05
+      Math.abs(
+        margin
+      ) <
+      0.05
     ) {
       return "PK";
     }
 
-    if (margin > 0) {
+
+    if (
+      margin >
+      0
+    ) {
 
       return (
         teamAbbr(
@@ -785,9 +1569,13 @@
         " -" +
         Math.abs(
           margin
-        ).toFixed(1)
+        ).toFixed(
+          1
+        )
       );
+
     }
+
 
     return (
       teamAbbr(
@@ -797,12 +1585,17 @@
       " -" +
       Math.abs(
         margin
-      ).toFixed(1)
+      ).toFixed(
+        1
+      )
     );
+
   }
 
 
-  function projectedWinner(game) {
+  function projectedWinner(
+    game
+  ) {
 
     if (
       !exists(
@@ -812,22 +1605,22 @@
       return "—";
     }
 
-    if (
+
+    return (
       Number(
         game.home_win_probability
-      ) >= 0.5
-    ) {
+      ) >=
+      0.5
+    )
+      ? teamAbbr(
+          game,
+          "home"
+        )
+      : teamAbbr(
+          game,
+          "away"
+        );
 
-      return teamAbbr(
-        game,
-        "home"
-      );
-    }
-
-    return teamAbbr(
-      game,
-      "away"
-    );
   }
 
 
@@ -846,6 +1639,7 @@
       return "—";
     }
 
+
     return probability(
       Math.max(
         Number(
@@ -856,10 +1650,56 @@
         )
       )
     );
+
   }
 
 
-  function marketAvailable(game) {
+  function signedOdds(
+    value
+  ) {
+
+    if (
+      value === null ||
+      value === undefined ||
+      value === ""
+    ) {
+      return "—";
+    }
+
+
+    const numberValue =
+      Number(
+        value
+      );
+
+
+    if (
+      Number.isNaN(
+        numberValue
+      )
+    ) {
+      return String(
+        value
+      );
+    }
+
+
+    return (
+      numberValue >
+      0
+        ? "+"
+        : ""
+    ) +
+    numberValue.toFixed(
+      0
+    );
+
+  }
+
+
+  function marketAvailable(
+    game
+  ) {
 
     return (
       exists(
@@ -875,95 +1715,77 @@
         game.market_away_moneyline
       )
     );
+
   }
 
 
-  function signedOdds(value) {
+  function marketSpread(
+    game
+  ) {
 
     if (
-      value === null ||
-      value === undefined ||
-      value === ""
+      !exists(
+        game.market_home_spread
+      )
     ) {
       return "—";
     }
 
-    const numberValue =
-      Number(value);
 
-    if (
-      Number.isNaN(numberValue)
-    ) {
-      return String(value);
-    }
-
-    return (
-      numberValue > 0
-        ? "+"
-        : ""
-    ) + numberValue.toFixed(0);
-  }
-
-
-  function marketSpread(game) {
-
-    if (
-      exists(
-        game.market_home_spread
-      )
-    ) {
-
-      const spread = Number(
+    const spread =
+      Number(
         game.market_home_spread
       );
 
-      if (spread < 0) {
 
-        return (
-          teamAbbr(
-            game,
-            "home"
-          ) +
-          " " +
-          spread.toFixed(1)
-        );
-      }
+    if (
+      spread <
+      0
+    ) {
 
-      if (spread > 0) {
+      return (
+        teamAbbr(
+          game,
+          "home"
+        ) +
+        " " +
+        spread.toFixed(
+          1
+        )
+      );
 
-        return (
-          teamAbbr(
-            game,
-            "away"
-          ) +
-          " -" +
-          Math.abs(
-            spread
-          ).toFixed(1)
-        );
-      }
-
-      return "PK";
     }
 
-    return "—";
+
+    if (
+      spread >
+      0
+    ) {
+
+      return (
+        teamAbbr(
+          game,
+          "away"
+        ) +
+        " -" +
+        Math.abs(
+          spread
+        ).toFixed(
+          1
+        )
+      );
+
+    }
+
+
+    return "PK";
+
   }
 
 
-  /*
-   * MODEL VS MARKET EDGE
-   *
-   * Convert both model margin and market home spread into
-   * home-team margin conventions.
-   *
-   * Example:
-   *
-   * Model predicts NY +7 margin.
-   * Market says NY -5.5.
-   *
-   * Model edge = +7 - +5.5 = +1.5 points.
-   */
-  function spreadEdge(game) {
+  function spreadEdge(
+    game
+  ) {
 
     if (
       !exists(
@@ -976,31 +1798,30 @@
       return null;
     }
 
+
     const modelHomeMargin =
       Number(
         game.predicted_margin
       );
 
-    /*
-     * Sportsbook home spread:
-     *
-     * NY -5.5 means expected home margin +5.5.
-     *
-     * Therefore invert the spread sign.
-     */
+
     const marketHomeMargin =
       -Number(
         game.market_home_spread
       );
 
+
     return (
       modelHomeMargin -
       marketHomeMargin
     );
+
   }
 
 
-  function totalEdge(game) {
+  function totalEdge(
+    game
+  ) {
 
     if (
       !exists(
@@ -1012,6 +1833,7 @@
     ) {
       return null;
     }
+
 
     return (
       Number(
@@ -1021,23 +1843,142 @@
         game.market_total
       )
     );
+
   }
 
 
-  function edgeClass(value) {
+  function edgeClass(
+    value
+  ) {
 
     if (
       value === null ||
-      Math.abs(value) < 0.5
+      Math.abs(
+        value
+      ) <
+      0.5
     ) {
       return "edge-neutral";
     }
 
+
     return (
-      value > 0
+      value >
+      0
         ? "edge-positive"
         : "edge-negative"
     );
+
+  }
+
+
+  function spreadEdgeText(
+    game
+  ) {
+
+    const value =
+      spreadEdge(
+        game
+      );
+
+
+    if (
+      value === null
+    ) {
+      return "—";
+    }
+
+
+    const home =
+      teamAbbr(
+        game,
+        "home"
+      );
+
+
+    const away =
+      teamAbbr(
+        game,
+        "away"
+      );
+
+
+    if (
+      value >
+      0
+    ) {
+
+      return (
+        home +
+        " +" +
+        Math.abs(
+          value
+        ).toFixed(
+          1
+        ) +
+        " pts"
+      );
+
+    }
+
+
+    return (
+      away +
+      " +" +
+      Math.abs(
+        value
+      ).toFixed(
+        1
+      ) +
+      " pts"
+    );
+
+  }
+
+
+  function totalEdgeText(
+    game
+  ) {
+
+    const value =
+      totalEdge(
+        game
+      );
+
+
+    if (
+      value === null
+    ) {
+      return "—";
+    }
+
+
+    if (
+      value >
+      0
+    ) {
+
+      return (
+        "OVER +" +
+        Math.abs(
+          value
+        ).toFixed(
+          1
+        )
+      );
+
+    }
+
+
+    return (
+      "UNDER +" +
+      Math.abs(
+        value
+      ).toFixed(
+        1
+      )
+    );
+
   }
 
 
@@ -1050,6 +1991,7 @@
   ) {
 
     return `
+
       <tr>
 
         <td>
@@ -1057,40 +1999,180 @@
         </td>
 
         <td>
-          ${num(away)}
+          ${num(
+            away
+          )}
         </td>
 
         <td>
-          ${num(home)}
+          ${num(
+            home
+          )}
         </td>
 
         <td>
-          ${num(margin)}
+          ${num(
+            margin
+          )}
         </td>
 
         <td>
-          ${num(total)}
+          ${num(
+            total
+          )}
         </td>
 
       </tr>
+
     `;
+
   }
 
 
-  function modelMarketHTML(game) {
+  function livePanel(
+    game
+  ) {
 
     if (
-      !marketAvailable(game)
+      !isLive(
+        game
+      ) &&
+      !isFinal(
+        game
+      )
+    ) {
+      return "";
+    }
+
+
+    const away =
+      teamAbbr(
+        game,
+        "away"
+      );
+
+
+    const home =
+      teamAbbr(
+        game,
+        "home"
+      );
+
+
+    const clock =
+      liveClockText(
+        game
+      );
+
+
+    return `
+
+      <div class="live-score-panel">
+
+        <div class="live-score-header">
+
+          <div class="live-label">
+
+            ${
+              isFinal(
+                game
+              )
+                ? "Final Score"
+                : "Live Score"
+            }
+
+          </div>
+
+
+          <div class="live-clock">
+
+            ${
+              isFinal(
+                game
+              )
+                ? cleanStatus(
+                    game
+                  )
+                : clock
+            }
+
+          </div>
+
+        </div>
+
+
+        <div class="live-score-grid">
+
+
+          <div class="live-team">
+
+            <div class="live-team-abbr">
+              ${away}
+            </div>
+
+            <div class="live-team-score">
+
+              ${num(
+                game.live_away_score
+              )}
+
+            </div>
+
+          </div>
+
+
+          <div class="live-score-divider">
+            –
+          </div>
+
+
+          <div class="live-team">
+
+            <div class="live-team-abbr">
+              ${home}
+            </div>
+
+            <div class="live-team-score">
+
+              ${num(
+                game.live_home_score
+              )}
+
+            </div>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    `;
+
+  }
+
+
+  function modelMarketHTML(
+    game
+  ) {
+
+    if (
+      !marketAvailable(
+        game
+      )
     ) {
 
       return `
+
         <div class="market-section">
+
 
           <div class="market-panel">
 
             <div class="market-panel-title">
               Model
             </div>
+
 
             <div class="market-line">
 
@@ -1099,10 +2181,15 @@
               </span>
 
               <span class="market-value">
-                ${modelSpread(game)}
+
+                ${modelSpread(
+                  game
+                )}
+
               </span>
 
             </div>
+
 
             <div class="market-line">
 
@@ -1111,26 +2198,11 @@
               </span>
 
               <span class="market-value">
+
                 ${num(
                   game.predicted_total
                 )}
-              </span>
 
-            </div>
-
-            <div class="market-line">
-
-              <span class="market-label">
-                Win probability
-              </span>
-
-              <span class="market-value">
-                ${
-                  projectedWinner(game)
-                }
-                ${
-                  favoriteProbability(game)
-                }
               </span>
 
             </div>
@@ -1146,33 +2218,37 @@
 
             <div class="market-placeholder">
 
-              Market odds are not connected yet.
-
-              <br><br>
-
-              The next step will automatically
-              populate DraftKings spread,
-              total, and moneyline here every
-              time predictions are refreshed.
+              Current market data
+              is not available.
 
             </div>
 
           </div>
 
+
         </div>
+
       `;
+
     }
 
 
-    const spreadEdgeValue =
-      spreadEdge(game);
+    const spreadValue =
+      spreadEdge(
+        game
+      );
 
-    const totalEdgeValue =
-      totalEdge(game);
+
+    const totalValue =
+      totalEdge(
+        game
+      );
 
 
     return `
+
       <div class="market-section">
+
 
         <div class="market-panel">
 
@@ -1188,7 +2264,11 @@
             </span>
 
             <span class="market-value">
-              ${modelSpread(game)}
+
+              ${modelSpread(
+                game
+              )}
+
             </span>
 
           </div>
@@ -1201,9 +2281,11 @@
             </span>
 
             <span class="market-value">
+
               ${num(
                 game.predicted_total
               )}
+
             </span>
 
           </div>
@@ -1216,12 +2298,15 @@
             </span>
 
             <span class="market-value">
-              ${
-                projectedWinner(game)
-              }
-              ${
-                favoriteProbability(game)
-              }
+
+              ${projectedWinner(
+                game
+              )}
+
+              ${favoriteProbability(
+                game
+              )}
+
             </span>
 
           </div>
@@ -1248,7 +2333,11 @@
             </span>
 
             <span class="market-value">
-              ${marketSpread(game)}
+
+              ${marketSpread(
+                game
+              )}
+
             </span>
 
           </div>
@@ -1261,9 +2350,11 @@
             </span>
 
             <span class="market-value">
+
               ${num(
                 game.market_total
               )}
+
             </span>
 
           </div>
@@ -1272,18 +2363,22 @@
           <div class="market-line">
 
             <span class="market-label">
+
               ${
                 teamAbbr(
                   game,
                   "away"
                 )
               } ML
+
             </span>
 
             <span class="market-value">
+
               ${signedOdds(
                 game.market_away_moneyline
               )}
+
             </span>
 
           </div>
@@ -1292,18 +2387,22 @@
           <div class="market-line">
 
             <span class="market-label">
+
               ${
                 teamAbbr(
                   game,
                   "home"
                 )
               } ML
+
             </span>
 
             <span class="market-value">
+
               ${signedOdds(
                 game.market_home_moneyline
               )}
+
             </span>
 
           </div>
@@ -1321,31 +2420,21 @@
           <div class="market-line">
 
             <span class="market-label">
-              Spread difference
+              Spread
             </span>
 
             <span
               class="
                 market-value
-                ${
-                  edgeClass(
-                    spreadEdgeValue
-                  )
-                }
+                ${edgeClass(
+                  spreadValue
+                )}
               "
             >
 
-              ${
-                spreadEdgeValue === null
-                  ? "—"
-                  : (
-                      spreadEdgeValue > 0
-                        ? "+"
-                        : ""
-                    ) +
-                    spreadEdgeValue.toFixed(1) +
-                    " pts"
-              }
+              ${spreadEdgeText(
+                game
+              )}
 
             </span>
 
@@ -1355,31 +2444,21 @@
           <div class="market-line">
 
             <span class="market-label">
-              Total difference
+              Total
             </span>
 
             <span
               class="
                 market-value
-                ${
-                  edgeClass(
-                    totalEdgeValue
-                  )
-                }
+                ${edgeClass(
+                  totalValue
+                )}
               "
             >
 
-              ${
-                totalEdgeValue === null
-                  ? "—"
-                  : (
-                      totalEdgeValue > 0
-                        ? "+"
-                        : ""
-                    ) +
-                    totalEdgeValue.toFixed(1) +
-                    " pts"
-              }
+              ${totalEdgeText(
+                game
+              )}
 
             </span>
 
@@ -1398,7 +2477,16 @@
                 game.market_updated_at
                   ? new Date(
                       game.market_updated_at
-                    ).toLocaleTimeString()
+                    ).toLocaleTimeString(
+                      [],
+                      {
+                        hour:
+                          "numeric",
+
+                        minute:
+                          "2-digit"
+                      }
+                    )
                   : "—"
               }
 
@@ -1408,59 +2496,68 @@
 
         </div>
 
+
       </div>
+
     `;
+
   }
 
 
-  function gameCard(game) {
+  function gameCard(
+    game
+  ) {
 
-    const awayAbbr =
+    const away =
       teamAbbr(
         game,
         "away"
       );
 
-    const homeAbbr =
+
+    const home =
       teamAbbr(
         game,
         "home"
       );
 
 
-    const awayScore =
-      exists(
-        game.away_score
+    const liveClass =
+      isLive(
+        game
       )
-        ? game.away_score
-        : game.predicted_away_score;
-
-
-    const homeScore =
-      exists(
-        game.home_score
-      )
-        ? game.home_score
-        : game.predicted_home_score;
+        ? "game-card live-game"
+        : "game-card";
 
 
     return `
 
-      <section class="game-card">
+      <section
+        class="${liveClass}"
+      >
 
 
         <div class="game-header">
 
-          <div class="status">
+
+          <div
+            class="${statusClass(
+              game
+            )}"
+          >
+
             ${cleanStatus(
-              game.status
+              game
             )}
+
           </div>
 
 
           <div class="matchup-row">
 
+
             <div>
+
 
               <div class="matchup-teams">
 
@@ -1468,14 +2565,16 @@
                 <div class="team-block">
 
                   ${teamLogo(
-                    awayAbbr
+                    away
                   )}
 
                   <span class="matchup-name">
+
                     ${teamName(
                       game,
                       "away"
                     )}
+
                   </span>
 
                 </div>
@@ -1489,14 +2588,16 @@
                 <div class="team-block">
 
                   ${teamLogo(
-                    homeAbbr
+                    home
                   )}
 
                   <span class="matchup-name">
+
                     ${teamName(
                       game,
                       "home"
                     )}
+
                   </span>
 
                 </div>
@@ -1524,12 +2625,26 @@
 
             </div>
 
+
           </div>
+
 
         </div>
 
 
         <div class="game-body">
+
+
+          ${livePanel(
+            game
+          )}
+
+
+          <div class="pregame-heading">
+
+            Pregame Model
+
+          </div>
 
 
           <div class="headline-grid">
@@ -1544,16 +2659,19 @@
 
               <div class="score-grid">
 
+
                 <div class="score-side">
 
                   <div class="score-abbr">
-                    ${awayAbbr}
+                    ${away}
                   </div>
 
                   <div class="score-number">
+
                     ${num(
-                      awayScore
+                      game.away_score
                     )}
+
                   </div>
 
                 </div>
@@ -1567,16 +2685,19 @@
                 <div class="score-side">
 
                   <div class="score-abbr">
-                    ${homeAbbr}
+                    ${home}
                   </div>
 
                   <div class="score-number">
+
                     ${num(
-                      homeScore
+                      game.home_score
                     )}
+
                   </div>
 
                 </div>
+
 
               </div>
 
@@ -1590,7 +2711,11 @@
               </div>
 
               <div class="metric-value">
-                ${modelSpread(game)}
+
+                ${modelSpread(
+                  game
+                )}
+
               </div>
 
             </div>
@@ -1656,7 +2781,7 @@
             <div class="metric">
 
               <div class="metric-label">
-                ${awayAbbr} Win
+                ${away} Win
               </div>
 
               <div class="metric-value">
@@ -1673,7 +2798,7 @@
             <div class="metric">
 
               <div class="metric-label">
-                ${homeAbbr} Win
+                ${home} Win
               </div>
 
               <div class="metric-value">
@@ -1716,7 +2841,9 @@
           </h3>
 
 
-          ${modelMarketHTML(game)}
+          ${modelMarketHTML(
+            game
+          )}
 
 
           <h3 class="section-title">
@@ -1726,9 +2853,12 @@
 
           <div class="projection-table-wrap">
 
+
             <table class="projection-table">
 
+
               <thead>
+
 
                 <tr>
 
@@ -1737,11 +2867,11 @@
                   </th>
 
                   <th>
-                    ${awayAbbr}
+                    ${away}
                   </th>
 
                   <th>
-                    ${homeAbbr}
+                    ${home}
                   </th>
 
                   <th>
@@ -1753,6 +2883,7 @@
                   </th>
 
                 </tr>
+
 
               </thead>
 
@@ -1816,146 +2947,46 @@
 
               </tbody>
 
+
             </table>
+
 
           </div>
 
 
         </div>
 
+
       </section>
+
     `;
+
   }
 
 
-  async function render() {
-
-    const latest =
-      await loadJSON(
-        "latest.json",
-        {}
-      );
-
-
-    const historyPayload =
-      await loadJSON(
-        "history.json",
-        {
-          events: []
-        }
-      );
-
-
-    const status =
-      document.getElementById(
-        "status"
-      );
-
-
-    const gamesContainer =
-      document.getElementById(
-        "games"
-      );
-
-
-    const historyContainer =
-      document.getElementById(
-        "history"
-      );
-
-
-    const games =
-      Array.isArray(
-        latest
-      )
-        ? latest
-        : Array.isArray(
-            latest.games
-          )
-          ? latest.games
-          : [];
-
-
-    if (!games.length) {
-
-      status.innerHTML = `
-
-        <strong>
-          Dashboard online
-        </strong>
-
-        <div class="muted">
-          No predictions are currently available.
-        </div>
-
-      `;
-
-
-      gamesContainer.innerHTML =
-        "";
-
-    } else {
-
-      const updatedText =
-        latest.generated_at_utc
-          ? (
-              " · Updated " +
-              new Date(
-                latest.generated_at_utc
-              ).toLocaleString()
-            )
-          : "";
-
-
-      status.innerHTML = `
-
-        <strong>
-          Today's WNBA Predictions
-        </strong>
-
-        <div class="muted">
-
-          ${games.length}
-
-          game${
-            games.length === 1
-              ? ""
-              : "s"
-          }
-
-          available
-
-          ${updatedText}
-
-        </div>
-
-      `;
-
-
-      gamesContainer.innerHTML =
-        games
-          .map(
-            gameCard
-          )
-          .join("");
-    }
-
+  function historyHTML(
+    historyPayload
+  ) {
 
     const history =
       Array.isArray(
         historyPayload
       )
         ? historyPayload
+
         : Array.isArray(
             historyPayload.events
           )
           ? historyPayload.events
+
           : [];
 
 
-    if (!history.length) {
+    if (
+      !history.length
+    ) {
 
-      historyContainer.innerHTML = `
+      return `
 
         <div class="muted">
           No prediction history yet.
@@ -1963,15 +2994,16 @@
 
       `;
 
-      return;
     }
 
 
-    historyContainer.innerHTML = `
+    return `
 
       <div class="history-table-wrap">
 
+
         <table class="history-table">
+
 
           <thead>
 
@@ -1990,7 +3022,7 @@
               </th>
 
               <th>
-                Model Spread
+                Spread
               </th>
 
               <th>
@@ -2053,27 +3085,15 @@
 
                     <td>
 
-                      ${
-                        exists(
-                          row.away_score
-                        )
-                          ? num(
-                              row.away_score
-                            )
-                          : "—"
-                      }
+                      ${num(
+                        row.away_score
+                      )}
 
                       –
 
-                      ${
-                        exists(
-                          row.home_score
-                        )
-                          ? num(
-                              row.home_score
-                            )
-                          : "—"
-                      }
+                      ${num(
+                        row.home_score
+                      )}
 
                     </td>
 
@@ -2087,7 +3107,8 @@
                           ? (
                               Number(
                                 row.predicted_margin
-                              ) >= 0
+                              ) >=
+                              0
                                 ? (
                                     (
                                       row.home_abbr ||
@@ -2098,7 +3119,9 @@
                                       Number(
                                         row.predicted_margin
                                       )
-                                    ).toFixed(1)
+                                    ).toFixed(
+                                      1
+                                    )
                                   )
                                 : (
                                     (
@@ -2110,7 +3133,9 @@
                                       Number(
                                         row.predicted_margin
                                       )
-                                    ).toFixed(1)
+                                    ).toFixed(
+                                      1
+                                    )
                                   )
                             )
                           : "—"
@@ -2148,23 +3173,185 @@
 
           </tbody>
 
+
         </table>
+
 
       </div>
 
     `;
+
+  }
+
+
+  async function render() {
+
+
+    const latest =
+      await loadJSON(
+        "latest.json",
+        {}
+      );
+
+
+    const historyPayload =
+      await loadJSON(
+        "history.json",
+        {
+          events: []
+        }
+      );
+
+
+    const status =
+      document.getElementById(
+        "status"
+      );
+
+
+    const gamesContainer =
+      document.getElementById(
+        "games"
+      );
+
+
+    const historyContainer =
+      document.getElementById(
+        "history"
+      );
+
+
+    const games =
+      Array.isArray(
+        latest
+      )
+        ? latest
+
+        : Array.isArray(
+            latest.games
+          )
+          ? latest.games
+
+          : [];
+
+
+    if (
+      !games.length
+    ) {
+
+
+      status.innerHTML = `
+
+        <strong>
+          Dashboard online
+        </strong>
+
+        <div class="muted">
+          No predictions are currently available.
+        </div>
+
+      `;
+
+
+      gamesContainer.innerHTML =
+        "";
+
+
+    } else {
+
+
+      const liveGames =
+        games.filter(
+          game =>
+            isLive(
+              game
+            )
+        ).length;
+
+
+      const generated =
+        latest.last_live_update_utc ||
+        latest.generated_at_utc;
+
+
+      status.innerHTML = `
+
+        <strong>
+
+          ${
+            liveGames >
+            0
+              ? `${liveGames} live game${liveGames === 1 ? "" : "s"}`
+              : "Today's WNBA Predictions"
+          }
+
+        </strong>
+
+
+        <div class="muted">
+
+          ${games.length}
+
+          game${
+            games.length ===
+            1
+              ? ""
+              : "s"
+          }
+
+          available
+
+          ${
+            generated
+              ? " · Updated " +
+                new Date(
+                  generated
+                ).toLocaleString()
+              : ""
+          }
+
+        </div>
+
+      `;
+
+
+      gamesContainer.innerHTML =
+        games
+          .map(
+            gameCard
+          )
+          .join("");
+
+    }
+
+
+    historyContainer.innerHTML =
+      historyHTML(
+        historyPayload
+      );
+
   }
 
 
   render();
 
 
+  /*
+   * Reload live JSON every 30 seconds.
+   *
+   * GitHub Pages itself will only change when Actions publishes a
+   * new docs/latest.json, but the phone/browser will see the update
+   * automatically once the new file is deployed.
+   */
   setInterval(
     render,
-    60000
+    30000
   );
+
 
 </script>
 
+
 </body>
+
 </html>
