@@ -289,12 +289,14 @@ def _migrate_legacy_seen(
         if legacy_id not in seen:
             continue
         key = candidate["lifecycle_key"]
+        first_seen = seen[legacy_id].get("first_seen_at_utc", now_iso)
         migrated[key] = {
             **candidate,
             "active": True,
-            "first_seen_at_utc": seen[legacy_id].get("first_seen_at_utc", now_iso),
+            "first_seen_at_utc": first_seen,
             "last_seen_at_utc": now_iso,
-            "last_notified_at_utc": seen[legacy_id].get("first_seen_at_utc", now_iso),
+            "last_notified_at_utc": first_seen,
+            "last_notified_edge": candidate["edge"],
         }
     return migrated
 
@@ -360,8 +362,10 @@ def build_opportunity_alerts(
             ):
                 event = _event(candidate, "downgraded", now_iso, previous)
             else:
-                previous_edge = _number(previous.get("edge")) or 0.0
-                edge_change = abs(candidate["edge"] - previous_edge)
+                baseline_edge = _number(previous.get("last_notified_edge"))
+                if baseline_edge is None:
+                    baseline_edge = _number(previous.get("edge")) or 0.0
+                edge_change = abs(candidate["edge"] - baseline_edge)
                 material = edge_change >= MATERIAL_EDGE_CHANGE[candidate["market"]]
                 last_notified = _parse_time(previous.get("last_notified_at_utc"))
                 cooldown_ok = (
@@ -377,22 +381,27 @@ def build_opportunity_alerts(
                         reason=f"edge_changed_by_{edge_change:.2f}",
                     )
 
-            first_seen = (
-                previous.get("first_seen_at_utc")
-                if previous
-                else now_iso
-            )
-            last_notified = (
+            first_seen = previous.get("first_seen_at_utc") if previous else now_iso
+            event_notifies = bool(event and event.get("notify"))
+            last_notified_at = (
                 now_iso
-                if event and event.get("notify")
+                if event_notifies
                 else (previous or {}).get("last_notified_at_utc")
             )
+            last_notified_edge = (
+                candidate["edge"]
+                if event_notifies
+                else (previous or {}).get("last_notified_edge")
+            )
+            if last_notified_edge is None:
+                last_notified_edge = candidate["edge"]
             opportunities[key] = {
                 **candidate,
                 "active": True,
                 "first_seen_at_utc": first_seen,
                 "last_seen_at_utc": now_iso,
-                "last_notified_at_utc": last_notified,
+                "last_notified_at_utc": last_notified_at,
+                "last_notified_edge": last_notified_edge,
             }
             active_record = {**candidate, "evaluated_at_utc": now_iso}
             active_record["is_new"] = bool(event and event["event_type"] == "new")
@@ -415,6 +424,11 @@ def build_opportunity_alerts(
                 "last_seen_at_utc": now_iso,
                 "last_notified_at_utc": (
                     now_iso if event else (previous or {}).get("last_notified_at_utc")
+                ),
+                "last_notified_edge": (
+                    candidate["edge"]
+                    if event
+                    else (previous or {}).get("last_notified_edge")
                 ),
                 "resolved_at_utc": now_iso if event else (previous or {}).get("resolved_at_utc"),
             }
@@ -447,6 +461,7 @@ def build_opportunity_alerts(
                 "active": False,
                 "last_seen_at_utc": now_iso,
                 "last_notified_at_utc": now_iso,
+                "last_notified_edge": previous.get("edge"),
                 "resolved_at_utc": now_iso,
             }
 
