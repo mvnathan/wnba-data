@@ -4,15 +4,19 @@
     "last_seen_clock": "0.0",
     "last_home_score": 0,
     "last_away_score": 0,
+    "last_status": "STATUS_SCHEDULED",
+    "last_status_detail": "Fri, August 14th at 7:30 PM EDT",
     "last_event_type": "PREGAME",
-    "last_prediction_timestamp": "2026-08-14T11:10:17.835581+00:00"
+    "last_prediction_timestamp": "2026-08-14T11:54:44.251969+00:00"
   },
   "401857144": {
     "last_seen_period": null,
     "last_seen_clock": "0.0",
     "last_home_score": 0,
     "last_away_score": 0,
+    "last_status": "STATUS_SCHEDULED",
+    "last_status_detail": "Fri, August 14th at 10:00 PM EDT",
     "last_event_type": "PREGAME",
-    "last_prediction_timestamp": "2026-08-14T11:10:17.835601+00:00"
+    "last_prediction_timestamp": "2026-08-14T11:54:44.251969+00:00"
   }
 }

@@ -53,7 +53,7 @@
       "live_clock": "0.0",
       "live_home_score": 0,
       "live_away_score": 0,
-      "live_updated_at": "2026-08-14T11:13:16.593490+00:00"
+      "live_updated_at": "2026-08-14T11:54:44.284643+00:00"
     },
     {
       "game_id": "401857144",
@@ -106,7 +106,7 @@
       "live_clock": "0.0",
       "live_home_score": 0,
       "live_away_score": 0,
-      "live_updated_at": "2026-08-14T11:13:16.593490+00:00"
+      "live_updated_at": "2026-08-14T11:54:44.284643+00:00"
     }
   ],
   "uncertainty": {
@@ -121,6 +121,6 @@
       "p90": 89.4581478350092
     }
   },
-  "live_generated_at_utc": "2026-08-14T11:13:16.593490+00:00",
-  "last_live_update_utc": "2026-08-14T11:13:16.593490+00:00"
+  "live_generated_at_utc": "2026-08-14T11:54:44.284643+00:00",
+  "last_live_update_utc": "2026-08-14T11:54:44.284643+00:00"
 }
