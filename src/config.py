@@ -19,6 +19,7 @@ LIVE_STATE_PATH = DATA_DIR / "live_state.json"
 LIVE_SNAPSHOTS_PATH = DATA_DIR / "live_snapshots.parquet"
 LAST_UPDATE_PATH = DATA_DIR / "last_update.json"
 BACKFILL_PROGRESS_PATH = DATA_DIR / "backfill_progress.json"
+ALERT_STATE_PATH = DATA_DIR / "alert_state.json"
 FEATURES_PATH = FEATURES_DIR / "model_features.parquet"
 PRODUCTION_MODEL_PATH = MODELS_DIR / "production_model.joblib"
 MODEL_METADATA_PATH = MODELS_DIR / "model_metadata.json"
@@ -29,11 +30,17 @@ PREDICTION_HISTORY_PATH = PREDICTIONS_DIR / "prediction_history.parquet"
 PERFORMANCE_HISTORY_PATH = (
     PREDICTIONS_DIR / "performance_history.parquet"
 )
+OPPORTUNITY_ALERTS_PATH = (
+    PREDICTIONS_DIR / "opportunity_alerts.json"
+)
 QUARTER_EVENTS_PATH = PREDICTIONS_DIR / "quarter_events.parquet"
 DOCS_LATEST_JSON = DOCS_DIR / "latest.json"
 DOCS_HISTORY_JSON = DOCS_DIR / "history.json"
 DOCS_PERFORMANCE_JSON = (
     DOCS_DIR / "performance.json"
+)
+DOCS_OPPORTUNITIES_JSON = (
+    DOCS_DIR / "opportunities.json"
 )
 
 ESPN_SCOREBOARD_URL = "https://site.api.espn.com/apis/site/v2/sports/basketball/wnba/scoreboard"
