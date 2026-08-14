@@ -1,26 +1,18 @@
 {
-  "401857140": {
-    "last_seen_period": 4,
-    "last_seen_clock": "10:00",
-    "last_home_score": 69,
-    "last_away_score": 104,
-    "last_event_type": "FINAL",
-    "last_prediction_timestamp": "2026-08-14T03:21:00.242074+00:00"
-  },
-  "401857141": {
-    "last_seen_period": 4,
-    "last_seen_clock": "10:00",
-    "last_home_score": 85,
-    "last_away_score": 81,
-    "last_event_type": "FINAL",
-    "last_prediction_timestamp": "2026-08-14T03:21:00.242092+00:00"
-  },
-  "401857142": {
-    "last_seen_period": 3,
-    "last_seen_clock": "6:02",
-    "last_home_score": 42,
-    "last_away_score": 41,
+  "401857143": {
+    "last_seen_period": null,
+    "last_seen_clock": "0.0",
+    "last_home_score": 0,
+    "last_away_score": 0,
     "last_event_type": "PREGAME",
-    "last_prediction_timestamp": "2026-08-14T03:21:00.242100+00:00"
+    "last_prediction_timestamp": "2026-08-14T05:10:17.170570+00:00"
+  },
+  "401857144": {
+    "last_seen_period": null,
+    "last_seen_clock": "0.0",
+    "last_home_score": 0,
+    "last_away_score": 0,
+    "last_event_type": "PREGAME",
+    "last_prediction_timestamp": "2026-08-14T05:10:17.170586+00:00"
   }
 }
