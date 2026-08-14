@@ -74,14 +74,13 @@ def test_alert_lifecycle_dedupes_escalates_resolves_and_reactivates(tmp_path):
 def test_material_change_respects_cooldown(tmp_path):
     now = datetime(2026, 8, 14, 20, 0, tzinfo=timezone.utc)
 
-    # Start with a strong DAL spread edge of 5.0 points.
-    _run(tmp_path, _game(margin=3.0, spread=-8.0), now)
+    # Start with a strong DAL spread edge of 4.2 points.
+    _run(tmp_path, _game(margin=3.8, spread=-8.0), now)
 
-    # Move to a still-strong 6.5-point edge inside the cooldown. This is not
-    # enough to trigger the 2-point material-change threshold anyway.
+    # Move to 5.7 inside the cooldown. The move is 1.5 points, so no event.
     during_cooldown = _run(
         tmp_path,
-        _game(margin=1.5, spread=-8.0),
+        _game(margin=2.3, spread=-8.0),
         now + timedelta(minutes=10),
     )
     assert not [
@@ -89,11 +88,11 @@ def test_material_change_respects_cooldown(tmp_path):
         if e["market"] == "spread" and e["event_type"] == "material_change"
     ]
 
-    # After the cooldown, move to a still-strong 6.9-point edge. Relative to
-    # the last-notified 5.0 baseline this is only 1.9, so still no event.
+    # After the cooldown, 6.1 is still in the strong bucket and is only 1.9
+    # points from the last-notified 4.2 baseline, so there is still no event.
     below_threshold = _run(
         tmp_path,
-        _game(margin=1.1, spread=-8.0),
+        _game(margin=1.9, spread=-8.0),
         now + timedelta(minutes=31),
     )
     assert not [
@@ -101,11 +100,12 @@ def test_material_change_respects_cooldown(tmp_path):
         if e["market"] == "spread" and e["event_type"] == "material_change"
     ]
 
-    # A 2.1-point move from the last-notified baseline, while remaining in the
-    # same strength bucket, should now produce a material-change event.
+    # A 2.1-point move from the 4.2 last-notified baseline yields a 6.3 edge,
+    # still below the 7.0 very-strong threshold, so this is a material change
+    # rather than an escalation.
     after_cooldown = _run(
         tmp_path,
-        _game(margin=0.9, spread=-8.0),
+        _game(margin=1.7, spread=-8.0),
         now + timedelta(minutes=32),
     )
     spread = [
