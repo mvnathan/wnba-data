@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-08-15T03:59:33.738852+00:00",
+  "generated_at_utc": "2026-08-15T04:32:00.751429+00:00",
   "source_generated_at_utc": "2026-08-14T15:03:54.631117+00:00",
   "active_opportunities": [
     {
@@ -25,7 +25,7 @@
       "market_updated_at": "2026-08-14T15:03:09Z",
       "home_win_probability": 0.7161237842392134,
       "away_win_probability": 0.2838762157607866,
-      "evaluated_at_utc": "2026-08-15T03:59:33.738852+00:00",
+      "evaluated_at_utc": "2026-08-15T04:32:00.751429+00:00",
       "is_new": false,
       "lifecycle_event": null
     },
@@ -52,62 +52,13 @@
       "market_updated_at": "2026-08-14T15:03:09Z",
       "home_win_probability": 0.7161237842392134,
       "away_win_probability": 0.2838762157607866,
-      "evaluated_at_utc": "2026-08-15T03:59:33.738852+00:00",
+      "evaluated_at_utc": "2026-08-15T04:32:00.751429+00:00",
       "is_new": false,
       "lifecycle_event": null
     }
   ],
   "new_alerts": [],
-  "notification_events": [
-    {
-      "event_id": "b7e217365d1294d7549f",
-      "event_type": "resolved",
-      "notify": true,
-      "occurred_at_utc": "2026-08-15T03:59:33.738852+00:00",
-      "game_id": "401857144",
-      "phase": "live",
-      "market": "spread",
-      "side": "SEA",
-      "level": "neutral",
-      "edge": 1.7071021997121534,
-      "away_abbr": "POR",
-      "home_abbr": "SEA",
-      "live_period": 4,
-      "live_clock": "38.1",
-      "live_away_score": 82,
-      "live_home_score": 79,
-      "market_bookmaker": "DraftKings",
-      "market_updated_at": "2026-08-14T15:03:09Z",
-      "reason": "edge_below_alert_threshold",
-      "previous_side": "POR",
-      "previous_level": "very_strong",
-      "previous_edge": 10.453872027541905
-    },
-    {
-      "event_id": "8f79e3202f069455fb15",
-      "event_type": "resolved",
-      "notify": true,
-      "occurred_at_utc": "2026-08-15T03:59:33.738852+00:00",
-      "game_id": "401857144",
-      "phase": "live",
-      "market": "total",
-      "side": "UNDER",
-      "level": "moderate",
-      "edge": 4.082897800287867,
-      "away_abbr": "POR",
-      "home_abbr": "SEA",
-      "live_period": 4,
-      "live_clock": "38.1",
-      "live_away_score": 82,
-      "live_home_score": 79,
-      "market_bookmaker": "DraftKings",
-      "market_updated_at": "2026-08-14T15:03:09Z",
-      "reason": "edge_below_alert_threshold",
-      "previous_side": "UNDER",
-      "previous_level": "very_strong",
-      "previous_edge": 25.413862554118936
-    }
-  ],
+  "notification_events": [],
   "recent_events": [
     {
       "event_id": "b7e217365d1294d7549f",
@@ -496,7 +447,7 @@
   ],
   "summary": {
     "active_count": 2,
-    "notification_event_count": 2,
+    "notification_event_count": 0,
     "new_count": 0,
     "very_strong_count": 2,
     "strong_count": 0
