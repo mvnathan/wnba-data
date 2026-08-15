@@ -17,7 +17,7 @@ def _game_elapsed_fraction(
     except (TypeError, ValueError):
         return 0.0
 
-    # Any overtime period means regulation is complete.  The current
+    # Any overtime period means regulation is complete. The current
     # scoreboard score is therefore already at least the regulation final.
     if period_number > 4:
         return 1.0
@@ -27,24 +27,22 @@ def _game_elapsed_fraction(
 
     text = str(clock).strip()
 
-    # ESPN occasionally supplies 0.0 before tip rather than MM:SS.
-    if ":" not in text:
-        return 0.0
-
     try:
-        minutes_text, seconds_text = text.split(":", 1)
-        minutes = int(minutes_text)
-        seconds = int(float(seconds_text))
+        if ":" in text:
+            minutes_text, seconds_text = text.split(":", 1)
+            minutes = int(minutes_text)
+            seconds = float(seconds_text)
+            clock_seconds = minutes * 60 + seconds
+        else:
+            # ESPN can return decimal-second clocks such as "38.1" or "0.0".
+            clock_seconds = float(text)
     except (TypeError, ValueError):
         return 0.0
 
     period_seconds = 10 * 60
     clock_seconds = max(
-        0,
-        min(
-            period_seconds,
-            minutes * 60 + seconds,
-        ),
+        0.0,
+        min(period_seconds, clock_seconds),
     )
 
     elapsed_in_period = period_seconds - clock_seconds
@@ -85,7 +83,7 @@ def _blend_final_score(
     """
     Blend the pregame scoring rate with the scoring pace observed so far.
 
-    Early in a game the pregame forecast dominates.  As more game time is
+    Early in a game the pregame forecast dominates. As more game time is
     observed, the in-game scoring pace receives progressively more weight.
     The current score is always a hard lower bound on the projected final.
     """
@@ -163,16 +161,37 @@ def project_live_game(
     pregame: dict[str, Any],
 ) -> dict[str, float]:
     """Create a live final-score and win-probability projection."""
-    fraction = _game_elapsed_fraction(
-        game_state.get("period"),
-        game_state.get("clock"),
-    )
-
     current_home = _safe_float(
         game_state.get("home_score"),
     )
     current_away = _safe_float(
         game_state.get("away_score"),
+    )
+
+    status = str(game_state.get("status") or "").upper()
+    if "FINAL" in status:
+        current_margin = current_home - current_away
+        home_win_probability = (
+            1.0
+            if current_margin > 0
+            else 0.0
+            if current_margin < 0
+            else 0.5
+        )
+
+        return {
+            "elapsed_fraction": 1.0,
+            "home_final": current_home,
+            "away_final": current_away,
+            "final_margin": current_margin,
+            "final_total": current_home + current_away,
+            "home_win_probability": home_win_probability,
+            "away_win_probability": 1.0 - home_win_probability,
+        }
+
+    fraction = _game_elapsed_fraction(
+        game_state.get("period"),
+        game_state.get("clock"),
     )
 
     pregame_home = _safe_float(
