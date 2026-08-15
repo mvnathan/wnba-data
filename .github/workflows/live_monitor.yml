@@ -3,15 +3,16 @@ name: Live WNBA Game Monitor
 on:
   workflow_dispatch:
   schedule:
-    - cron: '*/5 * * * *'
+    - cron: '*/15 * * * *'
 
 concurrency:
   group: wnba-live-monitor
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   live:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     permissions:
       contents: write
     env:
@@ -26,20 +27,35 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-      - name: Monitor live games
+      - name: Poll live games and publish dashboard
+        shell: bash
         run: |
-          python scripts/monitor_live_games.py
-      - name: Evaluate opportunity alerts
-        run: |
-          python scripts/build_opportunity_alerts.py
-      - name: Build dashboard
-        run: |
-          python scripts/build_dashboard.py
-      - name: Commit outputs
-        run: |
+          set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/live_state.json data/live_snapshots.parquet data/alert_state.json predictions/ docs/
-          git diff --quiet --cached || git commit -m "Update live monitor state, snapshots, alerts, and dashboard"
-          git pull --rebase
-          git push
+
+          # GitHub cron starts can be delayed, so keep each scheduled job alive
+          # and poll the live source repeatedly instead of relying on a new job
+          # being started every few minutes. Twenty 45-second cycles cover about
+          # 15 minutes, and the next scheduled run takes over from there.
+          for iteration in $(seq 1 20); do
+            echo "Live poll ${iteration}/20"
+
+            python scripts/monitor_live_games.py
+            python scripts/build_opportunity_alerts.py
+            python scripts/build_dashboard.py
+
+            git add data/live_state.json data/live_snapshots.parquet data/alert_state.json predictions/ docs/
+
+            if ! git diff --quiet --cached; then
+              git commit -m "Update live dashboard (${iteration}/20)"
+              git pull --rebase
+              git push
+            else
+              echo "No live-data changes to publish"
+            fi
+
+            if [ "${iteration}" -lt 20 ]; then
+              sleep 45
+            fi
+          done
