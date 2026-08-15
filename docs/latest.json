@@ -68,7 +68,7 @@
       "live_clock": "0.0",
       "live_home_score": 75,
       "live_away_score": 82,
-      "live_updated_at": "2026-08-15T21:09:45.682694+00:00",
+      "live_updated_at": "2026-08-15T21:33:25.742287+00:00",
       "live_projected_home_score": 75.0,
       "live_projected_away_score": 82.0,
       "live_predicted_margin": -7.0,
@@ -76,7 +76,7 @@
       "live_home_win_probability": 0.0,
       "live_away_win_probability": 1.0,
       "live_elapsed_fraction": 1.0,
-      "live_projection_updated_at": "2026-08-15T21:09:45.682694+00:00",
+      "live_projection_updated_at": "2026-08-15T21:33:25.742287+00:00",
       "live_projected_winner_side": "away",
       "live_projected_winner_abbr": "NY"
     },
@@ -146,7 +146,7 @@
       "live_clock": "0.0",
       "live_home_score": 0,
       "live_away_score": 0,
-      "live_updated_at": "2026-08-15T21:09:45.682694+00:00"
+      "live_updated_at": "2026-08-15T21:33:25.742287+00:00"
     },
     {
       "game_id": "401857147",
@@ -214,7 +214,7 @@
       "live_clock": "0.0",
       "live_home_score": 0,
       "live_away_score": 0,
-      "live_updated_at": "2026-08-15T21:09:45.682694+00:00"
+      "live_updated_at": "2026-08-15T21:33:25.742287+00:00"
     }
   ],
   "uncertainty": {
@@ -229,6 +229,6 @@
       "p90": 93.28360133189125
     }
   },
-  "live_generated_at_utc": "2026-08-15T21:09:45.682694+00:00",
-  "last_live_update_utc": "2026-08-15T21:09:45.682694+00:00"
+  "live_generated_at_utc": "2026-08-15T21:33:25.742287+00:00",
+  "last_live_update_utc": "2026-08-15T21:33:25.742287+00:00"
 }
