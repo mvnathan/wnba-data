@@ -1,14 +1,14 @@
 {
-  "generated_at_utc": "2026-08-15T23:55:08.182276+00:00",
+  "generated_at_utc": "2026-08-15T23:55:56.302698+00:00",
   "source_generated_at_utc": "2026-08-15T14:34:03.682969+00:00",
   "active_opportunities": [
     {
       "market": "spread",
-      "level": "strong",
+      "level": "very_strong",
       "side": "LA",
-      "edge": 4.91586411285607,
-      "signed_edge_home": -4.91586411285607,
-      "model_margin": 1.5841358871439297,
+      "edge": 8.992407985107008,
+      "signed_edge_home": -8.992407985107008,
+      "model_margin": -2.4924079851070076,
       "market_home_spread": -6.5,
       "game_id": "401857146",
       "phase": "live",
@@ -18,16 +18,16 @@
       "game_date_utc": "2026-08-15 23:30:00+00:00",
       "status": "STATUS_IN_PROGRESS",
       "live_period": 2,
-      "live_clock": "9:38",
-      "live_away_score": 24,
+      "live_clock": "8:49",
+      "live_away_score": 26,
       "live_home_score": 24,
       "market_bookmaker": "DraftKings",
       "market_updated_at": "2026-08-15T14:33:21Z",
-      "home_win_probability": 0.6625775803292433,
-      "away_win_probability": 0.3374224196707567,
-      "evaluated_at_utc": "2026-08-15T23:55:08.182276+00:00",
+      "home_win_probability": 0.6130157476521955,
+      "away_win_probability": 0.38698425234780454,
+      "evaluated_at_utc": "2026-08-15T23:55:56.302698+00:00",
       "is_new": false,
-      "lifecycle_event": "reactivated"
+      "lifecycle_event": "escalated"
     },
     {
       "market": "spread",
@@ -52,7 +52,7 @@
       "market_updated_at": "2026-08-15T14:33:21Z",
       "home_win_probability": 0.31016167386973975,
       "away_win_probability": 0.6898383261302603,
-      "evaluated_at_utc": "2026-08-15T23:55:08.182276+00:00",
+      "evaluated_at_utc": "2026-08-15T23:55:56.302698+00:00",
       "is_new": false,
       "lifecycle_event": null
     },
@@ -79,7 +79,7 @@
       "market_updated_at": "2026-08-15T14:33:21Z",
       "home_win_probability": 0.31016167386973975,
       "away_win_probability": 0.6898383261302603,
-      "evaluated_at_utc": "2026-08-15T23:55:08.182276+00:00",
+      "evaluated_at_utc": "2026-08-15T23:55:56.302698+00:00",
       "is_new": false,
       "lifecycle_event": null
     }
@@ -87,30 +87,53 @@
   "new_alerts": [],
   "notification_events": [
     {
-      "event_id": "47ad497c4989c58e8256",
-      "event_type": "reactivated",
+      "event_id": "cb2e66f1ed1f6f716d13",
+      "event_type": "escalated",
       "notify": true,
-      "occurred_at_utc": "2026-08-15T23:55:08.182276+00:00",
+      "occurred_at_utc": "2026-08-15T23:55:56.302698+00:00",
       "game_id": "401857146",
       "phase": "live",
       "market": "spread",
       "side": "LA",
-      "level": "strong",
-      "edge": 4.91586411285607,
+      "level": "very_strong",
+      "edge": 8.992407985107008,
       "away_abbr": "LA",
       "home_abbr": "WSH",
       "live_period": 2,
-      "live_clock": "9:38",
-      "live_away_score": 24,
+      "live_clock": "8:49",
+      "live_away_score": 26,
       "live_home_score": 24,
       "market_bookmaker": "DraftKings",
       "market_updated_at": "2026-08-15T14:33:21Z",
-      "previous_side": "WSH",
-      "previous_level": "neutral",
-      "previous_edge": 1.3100943185726095
+      "previous_side": "LA",
+      "previous_level": "strong",
+      "previous_edge": 4.91586411285607
     }
   ],
   "recent_events": [
+    {
+      "event_id": "cb2e66f1ed1f6f716d13",
+      "event_type": "escalated",
+      "notify": true,
+      "occurred_at_utc": "2026-08-15T23:55:56.302698+00:00",
+      "game_id": "401857146",
+      "phase": "live",
+      "market": "spread",
+      "side": "LA",
+      "level": "very_strong",
+      "edge": 8.992407985107008,
+      "away_abbr": "LA",
+      "home_abbr": "WSH",
+      "live_period": 2,
+      "live_clock": "8:49",
+      "live_away_score": 26,
+      "live_home_score": 24,
+      "market_bookmaker": "DraftKings",
+      "market_updated_at": "2026-08-15T14:33:21Z",
+      "previous_side": "LA",
+      "previous_level": "strong",
+      "previous_edge": 4.91586411285607
+    },
     {
       "event_id": "47ad497c4989c58e8256",
       "event_type": "reactivated",
@@ -788,8 +811,8 @@
     "active_count": 3,
     "notification_event_count": 1,
     "new_count": 0,
-    "very_strong_count": 1,
-    "strong_count": 2
+    "very_strong_count": 2,
+    "strong_count": 1
   },
   "policy": {
     "spread_thresholds": {
