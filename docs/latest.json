@@ -68,7 +68,7 @@
       "live_clock": "0.0",
       "live_home_score": 75,
       "live_away_score": 82,
-      "live_updated_at": "2026-08-15T23:57:32.066237+00:00",
+      "live_updated_at": "2026-08-15T23:58:20.171911+00:00",
       "live_projected_home_score": 75.0,
       "live_projected_away_score": 82.0,
       "live_predicted_margin": -7.0,
@@ -76,7 +76,7 @@
       "live_home_win_probability": 0.0,
       "live_away_win_probability": 1.0,
       "live_elapsed_fraction": 1.0,
-      "live_projection_updated_at": "2026-08-15T23:57:32.066237+00:00",
+      "live_projection_updated_at": "2026-08-15T23:58:20.171911+00:00",
       "live_projected_winner_side": "away",
       "live_projected_winner_abbr": "NY"
     },
@@ -90,7 +90,7 @@
       "home_abbr": "WSH",
       "away_abbr": "LA",
       "status": "STATUS_IN_PROGRESS",
-      "status_detail": "7:20 - 2nd Quarter",
+      "status_detail": "7:15 - 2nd Quarter",
       "venue": "CareFirst Arena",
       "home_win": 0.7291439992380117,
       "home_score": 84.87807841316257,
@@ -141,20 +141,20 @@
       "market_away_moneyline": 220,
       "market_updated_at": "2026-08-15T14:33:21Z",
       "live_status": "STATUS_IN_PROGRESS",
-      "live_status_detail": "7:20 - 2nd Quarter",
+      "live_status_detail": "7:15 - 2nd Quarter",
       "live_period": 2,
-      "live_clock": "7:20",
+      "live_clock": "7:15",
       "live_home_score": 30,
       "live_away_score": 26,
-      "live_updated_at": "2026-08-15T23:57:32.066237+00:00",
-      "live_projected_home_score": 90.84387116986956,
-      "live_projected_away_score": 81.87415786575079,
-      "live_predicted_margin": 8.96971330411877,
-      "live_predicted_total": 172.71802903562036,
-      "live_home_win_probability": 0.7368734495604999,
-      "live_away_win_probability": 0.26312655043950006,
-      "live_elapsed_fraction": 0.31666666666666665,
-      "live_projection_updated_at": "2026-08-15T23:57:32.066237+00:00",
+      "live_updated_at": "2026-08-15T23:58:20.171911+00:00",
+      "live_projected_home_score": 90.49340361668791,
+      "live_projected_away_score": 81.54955321417539,
+      "live_predicted_margin": 8.943850402512524,
+      "live_predicted_total": 172.04295683086332,
+      "live_home_win_probability": 0.7367933526835104,
+      "live_away_win_probability": 0.2632066473164896,
+      "live_elapsed_fraction": 0.31875,
+      "live_projection_updated_at": "2026-08-15T23:58:20.171911+00:00",
       "live_projected_winner_side": "home",
       "live_projected_winner_abbr": "WSH"
     },
@@ -224,7 +224,7 @@
       "live_clock": "0.0",
       "live_home_score": 0,
       "live_away_score": 0,
-      "live_updated_at": "2026-08-15T23:57:32.066237+00:00"
+      "live_updated_at": "2026-08-15T23:58:20.171911+00:00"
     }
   ],
   "uncertainty": {
@@ -239,6 +239,6 @@
       "p90": 93.28360133189125
     }
   },
-  "live_generated_at_utc": "2026-08-15T23:57:32.066237+00:00",
-  "last_live_update_utc": "2026-08-15T23:57:32.066237+00:00"
+  "live_generated_at_utc": "2026-08-15T23:58:20.171911+00:00",
+  "last_live_update_utc": "2026-08-15T23:58:20.171911+00:00"
 }

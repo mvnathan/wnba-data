@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-08-15T23:57:32.605990+00:00",
+  "generated_at_utc": "2026-08-15T23:58:20.718126+00:00",
   "source_generated_at_utc": "2026-08-15T14:34:03.682969+00:00",
   "active_opportunities": [
     {
@@ -25,7 +25,7 @@
       "market_updated_at": "2026-08-15T14:33:21Z",
       "home_win_probability": 0.31016167386973975,
       "away_win_probability": 0.6898383261302603,
-      "evaluated_at_utc": "2026-08-15T23:57:32.605990+00:00",
+      "evaluated_at_utc": "2026-08-15T23:58:20.718126+00:00",
       "is_new": false,
       "lifecycle_event": null
     },
@@ -52,38 +52,13 @@
       "market_updated_at": "2026-08-15T14:33:21Z",
       "home_win_probability": 0.31016167386973975,
       "away_win_probability": 0.6898383261302603,
-      "evaluated_at_utc": "2026-08-15T23:57:32.605990+00:00",
+      "evaluated_at_utc": "2026-08-15T23:58:20.718126+00:00",
       "is_new": false,
       "lifecycle_event": null
     }
   ],
   "new_alerts": [],
-  "notification_events": [
-    {
-      "event_id": "dce201c52cb79916e67f",
-      "event_type": "resolved",
-      "notify": true,
-      "occurred_at_utc": "2026-08-15T23:57:32.605990+00:00",
-      "game_id": "401857146",
-      "phase": "live",
-      "market": "spread",
-      "side": "WSH",
-      "level": "moderate",
-      "edge": 2.4697133041187698,
-      "away_abbr": "LA",
-      "home_abbr": "WSH",
-      "live_period": 2,
-      "live_clock": "7:20",
-      "live_away_score": 26,
-      "live_home_score": 30,
-      "market_bookmaker": "DraftKings",
-      "market_updated_at": "2026-08-15T14:33:21Z",
-      "reason": "edge_below_alert_threshold",
-      "previous_side": "LA",
-      "previous_level": "strong",
-      "previous_edge": 5.083884329248406
-    }
-  ],
+  "notification_events": [],
   "recent_events": [
     {
       "event_id": "dce201c52cb79916e67f",
@@ -830,7 +805,7 @@
   ],
   "summary": {
     "active_count": 2,
-    "notification_event_count": 1,
+    "notification_event_count": 0,
     "new_count": 0,
     "very_strong_count": 1,
     "strong_count": 1
