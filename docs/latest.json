@@ -61,7 +61,14 @@
       "market_under_price": -110,
       "market_home_moneyline": 310,
       "market_away_moneyline": -395,
-      "market_updated_at": "2026-08-15T14:33:21Z"
+      "market_updated_at": "2026-08-15T14:33:21Z",
+      "live_status": "STATUS_SCHEDULED",
+      "live_status_detail": "Sat, August 15th at 1:00 PM EDT",
+      "live_period": null,
+      "live_clock": "0.0",
+      "live_home_score": 0,
+      "live_away_score": 0,
+      "live_updated_at": "2026-08-15T14:40:54.694333+00:00"
     },
     {
       "game_id": "401857146",
@@ -122,7 +129,14 @@
       "market_under_price": -110,
       "market_home_moneyline": -270,
       "market_away_moneyline": 220,
-      "market_updated_at": "2026-08-15T14:33:21Z"
+      "market_updated_at": "2026-08-15T14:33:21Z",
+      "live_status": "STATUS_SCHEDULED",
+      "live_status_detail": "Sat, August 15th at 7:30 PM EDT",
+      "live_period": null,
+      "live_clock": "0.0",
+      "live_home_score": 0,
+      "live_away_score": 0,
+      "live_updated_at": "2026-08-15T14:40:54.694333+00:00"
     },
     {
       "game_id": "401857147",
@@ -183,7 +197,14 @@
       "market_under_price": -115,
       "market_home_moneyline": 110,
       "market_away_moneyline": -130,
-      "market_updated_at": "2026-08-15T14:33:21Z"
+      "market_updated_at": "2026-08-15T14:33:21Z",
+      "live_status": "STATUS_SCHEDULED",
+      "live_status_detail": "Sat, August 15th at 8:00 PM EDT",
+      "live_period": null,
+      "live_clock": "0.0",
+      "live_home_score": 0,
+      "live_away_score": 0,
+      "live_updated_at": "2026-08-15T14:40:54.694333+00:00"
     }
   ],
   "uncertainty": {
@@ -197,5 +218,7 @@
       "median": 84.87807841316257,
       "p90": 93.28360133189125
     }
-  }
+  },
+  "live_generated_at_utc": "2026-08-15T14:40:54.694333+00:00",
+  "last_live_update_utc": "2026-08-15T14:40:54.694333+00:00"
 }
