@@ -11,8 +11,8 @@
       "away_team": "Liberty",
       "home_abbr": "CON",
       "away_abbr": "NY",
-      "status": "STATUS_HALFTIME",
-      "status_detail": "Halftime",
+      "status": "STATUS_IN_PROGRESS",
+      "status_detail": "7:04 - 4th Quarter",
       "venue": "Mohegan Sun Arena",
       "home_win": 0.24353474691588126,
       "home_score": 81.14601331848576,
@@ -62,21 +62,21 @@
       "market_home_moneyline": 310,
       "market_away_moneyline": -395,
       "market_updated_at": "2026-08-15T14:33:21Z",
-      "live_status": "STATUS_HALFTIME",
-      "live_status_detail": "Halftime",
-      "live_period": 2,
-      "live_clock": "0.0",
-      "live_home_score": 37,
-      "live_away_score": 46,
-      "live_updated_at": "2026-08-15T18:01:24.871484+00:00",
-      "live_projected_home_score": 75.44848418868101,
-      "live_projected_away_score": 91.35643314753341,
-      "live_predicted_margin": -15.907948958852401,
-      "live_predicted_total": 166.80491733621443,
-      "live_home_win_probability": 0.15543742301462246,
-      "live_away_win_probability": 0.8445625769853775,
-      "live_elapsed_fraction": 0.5,
-      "live_projection_updated_at": "2026-08-15T18:01:24.871484+00:00",
+      "live_status": "STATUS_IN_PROGRESS",
+      "live_status_detail": "7:04 - 4th Quarter",
+      "live_period": 4,
+      "live_clock": "7:04",
+      "live_home_score": 62,
+      "live_away_score": 63,
+      "live_updated_at": "2026-08-15T18:37:39.525743+00:00",
+      "live_projected_home_score": 75.4436712893673,
+      "live_projected_away_score": 76.81318260982792,
+      "live_predicted_margin": -1.3695113204606173,
+      "live_predicted_total": 152.25685389919522,
+      "live_home_win_probability": 0.39541674461354176,
+      "live_away_win_probability": 0.6045832553864583,
+      "live_elapsed_fraction": 0.8233333333333334,
+      "live_projection_updated_at": "2026-08-15T18:37:39.525743+00:00",
       "live_projected_winner_side": "away",
       "live_projected_winner_abbr": "NY"
     },
@@ -146,7 +146,7 @@
       "live_clock": "0.0",
       "live_home_score": 0,
       "live_away_score": 0,
-      "live_updated_at": "2026-08-15T18:01:24.871484+00:00"
+      "live_updated_at": "2026-08-15T18:37:39.525743+00:00"
     },
     {
       "game_id": "401857147",
@@ -214,7 +214,7 @@
       "live_clock": "0.0",
       "live_home_score": 0,
       "live_away_score": 0,
-      "live_updated_at": "2026-08-15T18:01:24.871484+00:00"
+      "live_updated_at": "2026-08-15T18:37:39.525743+00:00"
     }
   ],
   "uncertainty": {
@@ -229,6 +229,6 @@
       "p90": 93.28360133189125
     }
   },
-  "live_generated_at_utc": "2026-08-15T18:01:24.871484+00:00",
-  "last_live_update_utc": "2026-08-15T18:01:24.871484+00:00"
+  "live_generated_at_utc": "2026-08-15T18:37:39.525743+00:00",
+  "last_live_update_utc": "2026-08-15T18:37:39.525743+00:00"
 }
