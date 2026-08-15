@@ -68,7 +68,7 @@
       "live_clock": "10:00",
       "live_home_score": 98,
       "live_away_score": 87,
-      "live_updated_at": "2026-08-15T03:23:03.825491+00:00",
+      "live_updated_at": "2026-08-15T03:59:33.154664+00:00",
       "live_projected_home_score": 128.5127472124352,
       "live_projected_away_score": 114.56483348437632,
       "live_predicted_margin": 13.947913728058865,
@@ -76,7 +76,7 @@
       "live_home_win_probability": 0.8982525143180451,
       "live_away_win_probability": 0.10174748568195491,
       "live_elapsed_fraction": 0.75,
-      "live_projection_updated_at": "2026-08-15T03:23:03.825491+00:00",
+      "live_projection_updated_at": "2026-08-15T03:59:33.154664+00:00",
       "live_projected_winner_side": "home",
       "live_projected_winner_abbr": "IND"
     },
@@ -90,7 +90,7 @@
       "home_abbr": "SEA",
       "away_abbr": "POR",
       "status": "STATUS_IN_PROGRESS",
-      "status_detail": "4:10 - 3rd Quarter",
+      "status_detail": "38.1 - 4th Quarter",
       "venue": "Climate Pledge Arena",
       "home_win": 0.31142805462371626,
       "home_score": 89.81210219971214,
@@ -141,22 +141,22 @@
       "market_away_moneyline": 120,
       "market_updated_at": "2026-08-14T15:03:09Z",
       "live_status": "STATUS_IN_PROGRESS",
-      "live_status_detail": "4:10 - 3rd Quarter",
-      "live_period": 3,
-      "live_clock": "4:10",
-      "live_home_score": 46,
-      "live_away_score": 52,
-      "live_updated_at": "2026-08-15T03:23:03.825491+00:00",
-      "live_projected_home_score": 73.06613270916958,
-      "live_projected_away_score": 81.02000473671148,
-      "live_predicted_margin": -7.953872027541905,
-      "live_predicted_total": 154.08613744588106,
-      "live_home_win_probability": 0.23697562903627328,
-      "live_away_win_probability": 0.7630243709637268,
-      "live_elapsed_fraction": 0.6458333333333334,
-      "live_projection_updated_at": "2026-08-15T03:23:03.825491+00:00",
-      "live_projected_winner_side": "away",
-      "live_projected_winner_abbr": "POR"
+      "live_status_detail": "38.1 - 4th Quarter",
+      "live_period": 4,
+      "live_clock": "38.1",
+      "live_home_score": 79,
+      "live_away_score": 82,
+      "live_updated_at": "2026-08-15T03:59:33.154664+00:00",
+      "live_projected_home_score": 89.81210219971214,
+      "live_projected_away_score": 85.60499999999999,
+      "live_predicted_margin": 4.207102199712153,
+      "live_predicted_total": 175.41710219971213,
+      "live_home_win_probability": 0.31142805462371626,
+      "live_away_win_probability": 0.6885719453762837,
+      "live_elapsed_fraction": 0.0,
+      "live_projection_updated_at": "2026-08-15T03:59:33.154664+00:00",
+      "live_projected_winner_side": "home",
+      "live_projected_winner_abbr": "SEA"
     }
   ],
   "uncertainty": {
@@ -171,6 +171,6 @@
       "p90": 103.6961478350092
     }
   },
-  "live_generated_at_utc": "2026-08-15T03:23:03.825491+00:00",
-  "last_live_update_utc": "2026-08-15T03:23:03.825491+00:00"
+  "live_generated_at_utc": "2026-08-15T03:59:33.154664+00:00",
+  "last_live_update_utc": "2026-08-15T03:59:33.154664+00:00"
 }
