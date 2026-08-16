@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-08-16T02:20:05.886407+00:00",
+  "generated_at_utc": "2026-08-16T02:20:53.688349+00:00",
   "source_generated_at_utc": "2026-08-15T14:34:03.682969+00:00",
   "active_opportunities": [
     {
@@ -18,14 +18,14 @@
       "game_date_utc": "2026-08-16 00:00:00+00:00",
       "status": "STATUS_FINAL",
       "live_period": 4,
-      "live_clock": "0.0",
+      "live_clock": "10:00",
       "live_away_score": 92,
       "live_home_score": 87,
       "market_bookmaker": "DraftKings",
       "market_updated_at": "2026-08-15T14:33:21Z",
       "home_win_probability": 0.31016167386973975,
       "away_win_probability": 0.6898383261302603,
-      "evaluated_at_utc": "2026-08-16T02:20:05.886407+00:00",
+      "evaluated_at_utc": "2026-08-16T02:20:53.688349+00:00",
       "is_new": false,
       "lifecycle_event": null
     },
@@ -45,14 +45,14 @@
       "game_date_utc": "2026-08-16 00:00:00+00:00",
       "status": "STATUS_FINAL",
       "live_period": 4,
-      "live_clock": "0.0",
+      "live_clock": "10:00",
       "live_away_score": 92,
       "live_home_score": 87,
       "market_bookmaker": "DraftKings",
       "market_updated_at": "2026-08-15T14:33:21Z",
       "home_win_probability": 0.31016167386973975,
       "away_win_probability": 0.6898383261302603,
-      "evaluated_at_utc": "2026-08-16T02:20:05.886407+00:00",
+      "evaluated_at_utc": "2026-08-16T02:20:53.688349+00:00",
       "is_new": false,
       "lifecycle_event": null
     }
