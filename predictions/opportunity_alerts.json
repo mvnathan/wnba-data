@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-08-16T23:27:42.108503+00:00",
+  "generated_at_utc": "2026-08-16T23:28:30.156578+00:00",
   "source_generated_at_utc": "2026-08-16T15:20:36.670643+00:00",
   "active_opportunities": [
     {
@@ -25,7 +25,7 @@
       "market_updated_at": "2026-08-16T15:20:16Z",
       "home_win_probability": 0.0,
       "away_win_probability": 1.0,
-      "evaluated_at_utc": "2026-08-16T23:27:42.108503+00:00",
+      "evaluated_at_utc": "2026-08-16T23:28:30.156578+00:00",
       "is_new": false,
       "lifecycle_event": null
     },
@@ -52,7 +52,7 @@
       "market_updated_at": "2026-08-16T15:20:16Z",
       "home_win_probability": 0.0,
       "away_win_probability": 1.0,
-      "evaluated_at_utc": "2026-08-16T23:27:42.108503+00:00",
+      "evaluated_at_utc": "2026-08-16T23:28:30.156578+00:00",
       "is_new": false,
       "lifecycle_event": null
     },
@@ -60,9 +60,9 @@
       "market": "total",
       "level": "very_strong",
       "side": "UNDER",
-      "edge": 18.25957251849246,
-      "signed_edge": -18.25957251849246,
-      "model_total": 160.24042748150754,
+      "edge": 19.852338104364378,
+      "signed_edge": -19.852338104364378,
+      "model_total": 158.64766189563562,
       "market_total": 178.5,
       "game_id": "401857149",
       "phase": "live",
@@ -72,14 +72,14 @@
       "game_date_utc": "2026-08-16 23:00:00+00:00",
       "status": "STATUS_IN_PROGRESS",
       "live_period": 1,
-      "live_clock": "14.3",
+      "live_clock": "3.0",
       "live_away_score": 18,
       "live_home_score": 19,
       "market_bookmaker": "DraftKings",
       "market_updated_at": "2026-08-16T15:20:16Z",
-      "home_win_probability": 0.6359017183416552,
-      "away_win_probability": 0.3640982816583448,
-      "evaluated_at_utc": "2026-08-16T23:27:42.108503+00:00",
+      "home_win_probability": 0.6354304195083559,
+      "away_win_probability": 0.3645695804916441,
+      "evaluated_at_utc": "2026-08-16T23:28:30.156578+00:00",
       "is_new": false,
       "lifecycle_event": null
     }
