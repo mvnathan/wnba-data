@@ -12,7 +12,7 @@
       "home_abbr": "SEA",
       "away_abbr": "CHI",
       "status": "STATUS_IN_PROGRESS",
-      "status_detail": "9:58 - 1st Quarter",
+      "status_detail": "9:15 - 1st Quarter",
       "venue": "Climate Pledge Arena",
       "home_win": 0.4172720410389582,
       "home_score": 86.41472828302452,
@@ -72,20 +72,20 @@
       "market_no_vig_home_win_probability": 0.43650793650793646,
       "market_moneyline_weight": 0.25,
       "live_status": "STATUS_IN_PROGRESS",
-      "live_status_detail": "9:58 - 1st Quarter",
+      "live_status_detail": "9:15 - 1st Quarter",
       "live_period": 1,
-      "live_clock": "9:58",
+      "live_clock": "9:15",
       "live_home_score": 0,
       "live_away_score": 0,
-      "live_updated_at": "2026-08-16T21:03:31.057838+00:00",
-      "live_projected_home_score": 85.91922931357068,
-      "live_projected_away_score": 85.72064626539648,
-      "live_predicted_margin": 0.19858304817419992,
-      "live_predicted_total": 171.63987557896718,
-      "live_home_win_probability": 0.4224875447737527,
-      "live_away_win_probability": 0.5775124552262473,
-      "live_elapsed_fraction": 0.0008333333333333334,
-      "live_projection_updated_at": "2026-08-16T21:03:31.057838+00:00",
+      "live_updated_at": "2026-08-16T21:04:19.177719+00:00",
+      "live_projected_home_score": 80.49791674615219,
+      "live_projected_away_score": 80.31186384732106,
+      "live_predicted_margin": 0.18605289883112164,
+      "live_predicted_total": 160.80978059347325,
+      "live_home_win_probability": 0.4262670869645056,
+      "live_away_win_probability": 0.5737329130354945,
+      "live_elapsed_fraction": 0.01875,
+      "live_projection_updated_at": "2026-08-16T21:04:19.177719+00:00",
       "live_projected_winner_side": "home",
       "live_projected_winner_abbr": "SEA"
     },
@@ -164,7 +164,7 @@
       "live_clock": "0.0",
       "live_home_score": 0,
       "live_away_score": 0,
-      "live_updated_at": "2026-08-16T21:03:31.057838+00:00"
+      "live_updated_at": "2026-08-16T21:04:19.177719+00:00"
     },
     {
       "game_id": "401857149",
@@ -241,7 +241,7 @@
       "live_clock": "0.0",
       "live_home_score": 0,
       "live_away_score": 0,
-      "live_updated_at": "2026-08-16T21:03:31.057838+00:00"
+      "live_updated_at": "2026-08-16T21:04:19.177719+00:00"
     }
   ],
   "uncertainty": {
@@ -256,6 +256,6 @@
       "p90": 86.34986586245819
     }
   },
-  "live_generated_at_utc": "2026-08-16T21:03:31.057838+00:00",
-  "last_live_update_utc": "2026-08-16T21:03:31.057838+00:00"
+  "live_generated_at_utc": "2026-08-16T21:04:19.177719+00:00",
+  "last_live_update_utc": "2026-08-16T21:04:19.177719+00:00"
 }
