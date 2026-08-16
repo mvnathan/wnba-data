@@ -88,13 +88,51 @@ jobs:
           PY
 
       - name: Commit outputs
+        shell: bash
         run: |
+          set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-          git add predictions/ docs/ data/alert_state.json
+          published=false
+          for publish_attempt in $(seq 1 5); do
+            echo "Publish attempt ${publish_attempt}/5"
 
-          git diff --quiet --cached || \
+            if [ "${publish_attempt}" -gt 1 ]; then
+              git fetch origin main
+              git reset --hard origin/main
+
+              # Another workflow updated generated dashboard/live-state files.
+              # Regenerate pregame outputs from the newest main branch rather than
+              # rebasing or merging generated JSON/parquet state.
+              python scripts/build_features.py
+              python scripts/predict_today.py
+              python scripts/build_opportunity_alerts.py
+              python scripts/build_dashboard.py
+            fi
+
+            git add predictions/ docs/ data/alert_state.json
+
+            if git diff --quiet --cached; then
+              echo "No pregame output changes to publish"
+              published=true
+              break
+            fi
+
             git commit -m "Update pregame predictions and dashboard"
 
-          git push
+            if git push origin HEAD:main; then
+              published=true
+              break
+            fi
+
+            echo "Main changed before push; rebuilding from latest main"
+            if [ "${publish_attempt}" -lt 5 ]; then
+              sleep 2
+            fi
+          done
+
+          if [ "${published}" != true ]; then
+            echo "Failed to publish pregame outputs after 5 attempts" >&2
+            exit 1
+          fi
