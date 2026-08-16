@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-08-16T22:16:32.464860+00:00",
+  "generated_at_utc": "2026-08-16T22:17:20.821005+00:00",
   "source_generated_at_utc": "2026-08-16T15:20:36.670643+00:00",
   "active_opportunities": [
     {
@@ -25,7 +25,7 @@
       "market_updated_at": "2026-08-16T15:20:16Z",
       "home_win_probability": 0.1625116103462898,
       "away_win_probability": 0.8374883896537102,
-      "evaluated_at_utc": "2026-08-16T22:16:32.464860+00:00",
+      "evaluated_at_utc": "2026-08-16T22:17:20.821005+00:00",
       "is_new": false,
       "lifecycle_event": null
     },
@@ -52,7 +52,7 @@
       "market_updated_at": "2026-08-16T15:20:16Z",
       "home_win_probability": 0.1625116103462898,
       "away_win_probability": 0.8374883896537102,
-      "evaluated_at_utc": "2026-08-16T22:16:32.464860+00:00",
+      "evaluated_at_utc": "2026-08-16T22:17:20.821005+00:00",
       "is_new": false,
       "lifecycle_event": null
     },
@@ -79,7 +79,7 @@
       "market_updated_at": "2026-08-16T15:20:16Z",
       "home_win_probability": 0.4187242542057005,
       "away_win_probability": 0.5812757457942995,
-      "evaluated_at_utc": "2026-08-16T22:16:32.464860+00:00",
+      "evaluated_at_utc": "2026-08-16T22:17:20.821005+00:00",
       "is_new": false,
       "lifecycle_event": null
     },
@@ -106,7 +106,7 @@
       "market_updated_at": "2026-08-16T15:20:16Z",
       "home_win_probability": 0.6539299446131568,
       "away_win_probability": 0.3460700553868432,
-      "evaluated_at_utc": "2026-08-16T22:16:32.464860+00:00",
+      "evaluated_at_utc": "2026-08-16T22:17:20.821005+00:00",
       "is_new": false,
       "lifecycle_event": null
     }
