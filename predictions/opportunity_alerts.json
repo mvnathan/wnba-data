@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-08-16T23:18:52.371004+00:00",
+  "generated_at_utc": "2026-08-16T23:19:40.479097+00:00",
   "source_generated_at_utc": "2026-08-16T15:20:36.670643+00:00",
   "active_opportunities": [
     {
@@ -25,9 +25,9 @@
       "market_updated_at": "2026-08-16T15:20:16Z",
       "home_win_probability": 0.0,
       "away_win_probability": 1.0,
-      "evaluated_at_utc": "2026-08-16T23:18:52.371004+00:00",
+      "evaluated_at_utc": "2026-08-16T23:19:40.479097+00:00",
       "is_new": false,
-      "lifecycle_event": "reactivated"
+      "lifecycle_event": null
     },
     {
       "market": "total",
@@ -52,7 +52,7 @@
       "market_updated_at": "2026-08-16T15:20:16Z",
       "home_win_probability": 0.0,
       "away_win_probability": 1.0,
-      "evaluated_at_utc": "2026-08-16T23:18:52.371004+00:00",
+      "evaluated_at_utc": "2026-08-16T23:19:40.479097+00:00",
       "is_new": false,
       "lifecycle_event": null
     },
@@ -79,37 +79,13 @@
       "market_updated_at": "2026-08-16T15:20:16Z",
       "home_win_probability": 0.6718177284408486,
       "away_win_probability": 0.32818227155915136,
-      "evaluated_at_utc": "2026-08-16T23:18:52.371004+00:00",
+      "evaluated_at_utc": "2026-08-16T23:19:40.479097+00:00",
       "is_new": false,
       "lifecycle_event": null
     }
   ],
   "new_alerts": [],
-  "notification_events": [
-    {
-      "event_id": "4cc05eb6ebf716f312bd",
-      "event_type": "reactivated",
-      "notify": true,
-      "occurred_at_utc": "2026-08-16T23:18:52.371004+00:00",
-      "game_id": "401857150",
-      "phase": "live",
-      "market": "spread",
-      "side": "IND",
-      "level": "strong",
-      "edge": 5.5,
-      "away_abbr": "IND",
-      "home_abbr": "ATL",
-      "live_period": 5,
-      "live_clock": "2:57",
-      "live_away_score": 87,
-      "live_home_score": 83,
-      "market_bookmaker": "DraftKings",
-      "market_updated_at": "2026-08-16T15:20:16Z",
-      "previous_side": "IND",
-      "previous_level": "moderate",
-      "previous_edge": 3.5
-    }
-  ],
+  "notification_events": [],
   "recent_events": [
     {
       "event_id": "4cc05eb6ebf716f312bd",
@@ -3408,7 +3384,7 @@
   ],
   "summary": {
     "active_count": 3,
-    "notification_event_count": 1,
+    "notification_event_count": 0,
     "new_count": 0,
     "very_strong_count": 1,
     "strong_count": 2
