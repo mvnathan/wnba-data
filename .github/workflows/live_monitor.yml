@@ -41,18 +41,45 @@ jobs:
           for iteration in $(seq 1 30); do
             echo "Live poll ${iteration}/30"
 
-            python scripts/monitor_live_games.py
-            python scripts/build_opportunity_alerts.py
-            python scripts/build_dashboard.py
+            # Generated live-state files are also written by other workflows.
+            # Always build from the newest main branch, and if another writer wins
+            # the push race, discard this generated commit and rebuild on top of
+            # that newer state instead of rebasing/merging generated files.
+            published=false
+            for publish_attempt in $(seq 1 5); do
+              echo "Publish attempt ${publish_attempt}/5"
 
-            git add data/live_state.json data/live_snapshots.parquet data/alert_state.json predictions/ docs/
+              git fetch origin main
+              git reset --hard origin/main
 
-            if ! git diff --quiet --cached; then
+              python scripts/monitor_live_games.py
+              python scripts/build_opportunity_alerts.py
+              python scripts/build_dashboard.py
+
+              git add data/live_state.json data/live_snapshots.parquet data/alert_state.json predictions/ docs/
+
+              if git diff --quiet --cached; then
+                echo "No live-data changes to publish"
+                published=true
+                break
+              fi
+
               git commit -m "Update live dashboard (${iteration}/30)"
-              git pull --rebase
-              git push
-            else
-              echo "No live-data changes to publish"
+
+              if git push origin HEAD:main; then
+                published=true
+                break
+              fi
+
+              echo "Main changed before push; rebuilding from latest main"
+              if [ "${publish_attempt}" -lt 5 ]; then
+                sleep 2
+              fi
+            done
+
+            if [ "${published}" != true ]; then
+              echo "Failed to publish live dashboard after 5 attempts" >&2
+              exit 1
             fi
 
             if [ "${iteration}" -lt 30 ]; then
