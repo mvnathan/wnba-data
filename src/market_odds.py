@@ -214,6 +214,10 @@ def _apply_market_anchor(row: dict[str, Any]) -> dict[str, Any]:
     home_spread = row.get("market_home_spread")
     if model_margin is not None:
         row["model_predicted_margin"] = model_margin
+
+    # A sportsbook home spread of -N means the home team is favored by N,
+    # which corresponds to a home-minus-away market margin of +N. Conversely,
+    # a home spread of +N implies a market margin of -N.
     try:
         market_margin = -float(home_spread)
     except (TypeError, ValueError):

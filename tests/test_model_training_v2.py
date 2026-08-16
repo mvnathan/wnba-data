@@ -55,3 +55,35 @@ def test_market_anchor_preserves_model_values_and_blends_forecasts():
     assert row["model_home_win_probability"] == 0.70
     assert 0.0 < row["home_win_probability"] < 1.0
     assert row["home_win_probability"] + row["away_win_probability"] == 1.0
+
+
+def test_market_spread_sign_matches_home_minus_away_margin_convention():
+    home_favorite = _apply_market_anchor(
+        {
+            "home_abbr": "CON",
+            "away_abbr": "IND",
+            "predicted_margin": 5.25,
+            "predicted_total": 165.0,
+            "home_win_probability": 0.65,
+            "away_win_probability": 0.35,
+            "market_home_spread": -10.5,
+        }
+    )
+    assert home_favorite["market_implied_margin"] == 10.5
+    assert home_favorite["predicted_margin"] > 5.25
+    assert home_favorite["projected_winner_abbr"] == "CON"
+
+    home_underdog = _apply_market_anchor(
+        {
+            "home_abbr": "SEA",
+            "away_abbr": "CHI",
+            "predicted_margin": 0.2,
+            "predicted_total": 173.0,
+            "home_win_probability": 0.42,
+            "away_win_probability": 0.58,
+            "market_home_spread": 2.5,
+        }
+    )
+    assert home_underdog["market_implied_margin"] == -2.5
+    assert home_underdog["predicted_margin"] < 0
+    assert home_underdog["projected_winner_abbr"] == "CHI"
