@@ -11,8 +11,8 @@
       "away_team": "Sky",
       "home_abbr": "SEA",
       "away_abbr": "CHI",
-      "status": "STATUS_END_PERIOD",
-      "status_detail": "End of 1st Quarter",
+      "status": "STATUS_IN_PROGRESS",
+      "status_detail": "10:00 - 2nd Quarter",
       "venue": "Climate Pledge Arena",
       "home_win": 0.4172720410389582,
       "home_score": 86.41472828302452,
@@ -71,13 +71,13 @@
       "model_home_win_probability": 0.4172720410389582,
       "market_no_vig_home_win_probability": 0.43650793650793646,
       "market_moneyline_weight": 0.25,
-      "live_status": "STATUS_END_PERIOD",
-      "live_status_detail": "End of 1st Quarter",
-      "live_period": 1,
-      "live_clock": "0.0",
+      "live_status": "STATUS_IN_PROGRESS",
+      "live_status_detail": "10:00 - 2nd Quarter",
+      "live_period": 2,
+      "live_clock": "10:00",
       "live_home_score": 11,
       "live_away_score": 23,
-      "live_updated_at": "2026-08-16T21:25:18.569183+00:00",
+      "live_updated_at": "2026-08-16T21:26:06.460048+00:00",
       "live_projected_home_score": 64.56414296560159,
       "live_projected_away_score": 89.19522977343657,
       "live_predicted_margin": -24.631086807834976,
@@ -85,7 +85,7 @@
       "live_home_win_probability": 0.2922927437859945,
       "live_away_win_probability": 0.7077072562140054,
       "live_elapsed_fraction": 0.25,
-      "live_projection_updated_at": "2026-08-16T21:25:18.569183+00:00",
+      "live_projection_updated_at": "2026-08-16T21:26:06.460048+00:00",
       "live_projected_winner_side": "away",
       "live_projected_winner_abbr": "CHI"
     },
@@ -164,7 +164,7 @@
       "live_clock": "0.0",
       "live_home_score": 21,
       "live_away_score": 21,
-      "live_updated_at": "2026-08-16T21:25:18.569183+00:00",
+      "live_updated_at": "2026-08-16T21:26:06.460048+00:00",
       "live_projected_home_score": 83.22750620882744,
       "live_projected_away_score": 85.54904768779086,
       "live_predicted_margin": -2.321541478963425,
@@ -172,7 +172,7 @@
       "live_home_win_probability": 0.42590519994525483,
       "live_away_win_probability": 0.5740948000547452,
       "live_elapsed_fraction": 0.25,
-      "live_projection_updated_at": "2026-08-16T21:25:18.569183+00:00",
+      "live_projection_updated_at": "2026-08-16T21:26:06.460048+00:00",
       "live_projected_winner_side": "away",
       "live_projected_winner_abbr": "IND"
     },
@@ -251,7 +251,7 @@
       "live_clock": "0.0",
       "live_home_score": 0,
       "live_away_score": 0,
-      "live_updated_at": "2026-08-16T21:25:18.569183+00:00"
+      "live_updated_at": "2026-08-16T21:26:06.460048+00:00"
     }
   ],
   "uncertainty": {
@@ -266,6 +266,6 @@
       "p90": 86.34986586245819
     }
   },
-  "live_generated_at_utc": "2026-08-16T21:25:18.569183+00:00",
-  "last_live_update_utc": "2026-08-16T21:25:18.569183+00:00"
+  "live_generated_at_utc": "2026-08-16T21:26:06.460048+00:00",
+  "last_live_update_utc": "2026-08-16T21:26:06.460048+00:00"
 }
