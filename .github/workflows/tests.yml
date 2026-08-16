@@ -6,19 +6,67 @@ on:
   pull_request:
     branches: [main]
 
+permissions:
+  contents: read
+
+concurrency:
+  group: tests-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   test:
+    name: Unit tests
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
       - name: Set up Python
         uses: actions/setup-python@v6
         with:
           python-version: '3.12'
+          cache: pip
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-      - name: Run tests
+          pip check
+      - name: Show test environment
         run: |
-          pytest --cov=src --cov-report=term-missing
+          python --version
+          pytest --version
+      - name: Run tests
+        run: pytest -q
+
+  model-validation:
+    name: Model training smoke test
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    needs: test
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+          cache: pip
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip check
+      - name: Train models without publishing
+        run: python scripts/train_models.py
+      - name: Verify training artifacts
+        run: |
+          test -s models/production_model.joblib
+          test -s models/model_metadata.json
+          test -s models/model_leaderboard.csv
+      - name: Upload validation reports
+        uses: actions/upload-artifact@v4
+        with:
+          name: model-validation-reports
+          path: |
+            models/model_metadata.json
+            models/model_leaderboard.csv
+          if-no-files-found: error
+          retention-days: 7
