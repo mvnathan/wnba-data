@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-08-16T23:49:22.685605+00:00",
+  "generated_at_utc": "2026-08-16T23:50:10.356490+00:00",
   "source_generated_at_utc": "2026-08-16T15:20:36.670643+00:00",
   "active_opportunities": [
     {
@@ -25,7 +25,7 @@
       "market_updated_at": "2026-08-16T15:20:16Z",
       "home_win_probability": 0.42181636756697466,
       "away_win_probability": 0.5781836324330254,
-      "evaluated_at_utc": "2026-08-16T23:49:22.685605+00:00",
+      "evaluated_at_utc": "2026-08-16T23:50:10.356490+00:00",
       "is_new": false,
       "lifecycle_event": null
     },
@@ -52,7 +52,7 @@
       "market_updated_at": "2026-08-16T15:20:16Z",
       "home_win_probability": 0.42181636756697466,
       "away_win_probability": 0.5781836324330254,
-      "evaluated_at_utc": "2026-08-16T23:49:22.685605+00:00",
+      "evaluated_at_utc": "2026-08-16T23:50:10.356490+00:00",
       "is_new": false,
       "lifecycle_event": null
     },
@@ -60,9 +60,9 @@
       "market": "total",
       "level": "very_strong",
       "side": "UNDER",
-      "edge": 16.85943999944169,
-      "signed_edge": -16.85943999944169,
-      "model_total": 161.6405600005583,
+      "edge": 15.02102782907511,
+      "signed_edge": -15.02102782907511,
+      "model_total": 163.4789721709249,
       "market_total": 178.5,
       "game_id": "401857149",
       "phase": "live",
@@ -72,14 +72,14 @@
       "game_date_utc": "2026-08-16 23:00:00+00:00",
       "status": "STATUS_IN_PROGRESS",
       "live_period": 2,
-      "live_clock": "3:22",
-      "live_away_score": 31,
+      "live_clock": "2:54",
+      "live_away_score": 34,
       "live_home_score": 35,
       "market_bookmaker": "DraftKings",
       "market_updated_at": "2026-08-16T15:20:16Z",
-      "home_win_probability": 0.6956712349719882,
-      "away_win_probability": 0.30432876502801176,
-      "evaluated_at_utc": "2026-08-16T23:49:22.685605+00:00",
+      "home_win_probability": 0.6165154265795498,
+      "away_win_probability": 0.38348457342045017,
+      "evaluated_at_utc": "2026-08-16T23:50:10.356490+00:00",
       "is_new": false,
       "lifecycle_event": null
     }
