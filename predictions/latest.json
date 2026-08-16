@@ -77,7 +77,7 @@
       "live_clock": "37.4",
       "live_home_score": 76,
       "live_away_score": 79,
-      "live_updated_at": "2026-08-16T23:02:36.078807+00:00",
+      "live_updated_at": "2026-08-16T23:03:23.884839+00:00",
       "live_projected_home_score": 77.21743616752292,
       "live_projected_away_score": 80.25986597227984,
       "live_predicted_margin": -3.042429804756921,
@@ -85,7 +85,7 @@
       "live_home_win_probability": 0.23815033702666114,
       "live_away_win_probability": 0.7618496629733389,
       "live_elapsed_fraction": 0.9844166666666666,
-      "live_projection_updated_at": "2026-08-16T23:02:36.078807+00:00",
+      "live_projection_updated_at": "2026-08-16T23:03:23.884839+00:00",
       "live_projected_winner_side": "away",
       "live_projected_winner_abbr": "CHI"
     },
@@ -99,7 +99,7 @@
       "home_abbr": "ATL",
       "away_abbr": "IND",
       "status": "STATUS_IN_PROGRESS",
-      "status_detail": "1:05 - 4th Quarter",
+      "status_detail": "53.0 - 4th Quarter",
       "venue": "State Farm Arena",
       "home_win": 0.3849326459334554,
       "home_score": 82.40668710056552,
@@ -159,22 +159,22 @@
       "market_no_vig_home_win_probability": 0.5324675324675325,
       "market_moneyline_weight": 0.25,
       "live_status": "STATUS_IN_PROGRESS",
-      "live_status_detail": "1:05 - 4th Quarter",
+      "live_status_detail": "53.0 - 4th Quarter",
       "live_period": 4,
-      "live_clock": "1:05",
+      "live_clock": "53.0",
       "live_home_score": 81,
-      "live_away_score": 78,
-      "live_updated_at": "2026-08-16T23:02:36.078807+00:00",
-      "live_projected_home_score": 83.25252096600086,
-      "live_projected_away_score": 80.1903287138651,
-      "live_predicted_margin": 3.062192252135759,
-      "live_predicted_total": 163.44284967986596,
-      "live_home_win_probability": 0.7553654401155474,
-      "live_away_win_probability": 0.2446345598844526,
-      "live_elapsed_fraction": 0.9729166666666667,
-      "live_projection_updated_at": "2026-08-16T23:02:36.078807+00:00",
-      "live_projected_winner_side": "home",
-      "live_projected_winner_abbr": "ATL"
+      "live_away_score": 81,
+      "live_updated_at": "2026-08-16T23:03:23.884839+00:00",
+      "live_projected_home_score": 82.82821066281647,
+      "live_projected_away_score": 82.83878485380272,
+      "live_predicted_margin": -0.010574190986247345,
+      "live_predicted_total": 165.66699551661918,
+      "live_home_win_probability": 0.49508627173228004,
+      "live_away_win_probability": 0.50491372826772,
+      "live_elapsed_fraction": 0.9779166666666667,
+      "live_projection_updated_at": "2026-08-16T23:03:23.884839+00:00",
+      "live_projected_winner_side": "away",
+      "live_projected_winner_abbr": "IND"
     },
     {
       "game_id": "401857149",
@@ -251,7 +251,7 @@
       "live_clock": "0.0",
       "live_home_score": 0,
       "live_away_score": 0,
-      "live_updated_at": "2026-08-16T23:02:36.078807+00:00"
+      "live_updated_at": "2026-08-16T23:03:23.884839+00:00"
     }
   ],
   "uncertainty": {
@@ -266,6 +266,6 @@
       "p90": 86.34986586245819
     }
   },
-  "live_generated_at_utc": "2026-08-16T23:02:36.078807+00:00",
-  "last_live_update_utc": "2026-08-16T23:02:36.078807+00:00"
+  "live_generated_at_utc": "2026-08-16T23:03:23.884839+00:00",
+  "last_live_update_utc": "2026-08-16T23:03:23.884839+00:00"
 }
