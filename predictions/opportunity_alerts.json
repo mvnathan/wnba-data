@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-08-16T22:09:18.572507+00:00",
+  "generated_at_utc": "2026-08-16T22:10:06.821731+00:00",
   "source_generated_at_utc": "2026-08-16T15:20:36.670643+00:00",
   "active_opportunities": [
     {
@@ -25,7 +25,7 @@
       "market_updated_at": "2026-08-16T15:20:16Z",
       "home_win_probability": 0.1578566791250742,
       "away_win_probability": 0.8421433208749258,
-      "evaluated_at_utc": "2026-08-16T22:09:18.572507+00:00",
+      "evaluated_at_utc": "2026-08-16T22:10:06.821731+00:00",
       "is_new": false,
       "lifecycle_event": null
     },
@@ -52,7 +52,7 @@
       "market_updated_at": "2026-08-16T15:20:16Z",
       "home_win_probability": 0.1578566791250742,
       "away_win_probability": 0.8421433208749258,
-      "evaluated_at_utc": "2026-08-16T22:09:18.572507+00:00",
+      "evaluated_at_utc": "2026-08-16T22:10:06.821731+00:00",
       "is_new": false,
       "lifecycle_event": null
     },
@@ -70,16 +70,16 @@
       "away_abbr": "IND",
       "home_abbr": "ATL",
       "game_date_utc": "2026-08-16 21:00:00+00:00",
-      "status": "STATUS_HALFTIME",
-      "live_period": 2,
-      "live_clock": "0.0",
+      "status": "STATUS_IN_PROGRESS",
+      "live_period": 3,
+      "live_clock": "10:00",
       "live_away_score": 40,
       "live_home_score": 44,
       "market_bookmaker": "DraftKings",
       "market_updated_at": "2026-08-16T15:20:16Z",
       "home_win_probability": 0.5767551199364636,
       "away_win_probability": 0.42324488006353644,
-      "evaluated_at_utc": "2026-08-16T22:09:18.572507+00:00",
+      "evaluated_at_utc": "2026-08-16T22:10:06.821731+00:00",
       "is_new": false,
       "lifecycle_event": null
     },
@@ -106,7 +106,7 @@
       "market_updated_at": "2026-08-16T15:20:16Z",
       "home_win_probability": 0.6539299446131568,
       "away_win_probability": 0.3460700553868432,
-      "evaluated_at_utc": "2026-08-16T22:09:18.572507+00:00",
+      "evaluated_at_utc": "2026-08-16T22:10:06.821731+00:00",
       "is_new": false,
       "lifecycle_event": null
     }
