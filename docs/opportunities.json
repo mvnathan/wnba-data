@@ -1,14 +1,14 @@
 {
-  "generated_at_utc": "2026-08-16T22:54:38.566463+00:00",
+  "generated_at_utc": "2026-08-16T22:55:26.300952+00:00",
   "source_generated_at_utc": "2026-08-16T15:20:36.670643+00:00",
   "active_opportunities": [
     {
       "market": "total",
       "level": "very_strong",
       "side": "UNDER",
-      "edge": 18.971289889557312,
-      "signed_edge": -18.971289889557312,
-      "model_total": 158.5287101104427,
+      "edge": 20.751182980099372,
+      "signed_edge": -20.751182980099372,
+      "model_total": 156.74881701990063,
       "market_total": 177.5,
       "game_id": "401857148",
       "phase": "live",
@@ -18,14 +18,14 @@
       "game_date_utc": "2026-08-16 21:00:00+00:00",
       "status": "STATUS_IN_PROGRESS",
       "live_period": 4,
-      "live_clock": "1:38",
+      "live_clock": "1:12",
       "live_away_score": 78,
       "live_home_score": 74,
       "market_bookmaker": "DraftKings",
       "market_updated_at": "2026-08-16T15:20:16Z",
-      "home_win_probability": 0.17275339721400812,
-      "away_win_probability": 0.8272466027859919,
-      "evaluated_at_utc": "2026-08-16T22:54:38.566463+00:00",
+      "home_win_probability": 0.17489128291989162,
+      "away_win_probability": 0.8251087170801084,
+      "evaluated_at_utc": "2026-08-16T22:55:26.300952+00:00",
       "is_new": false,
       "lifecycle_event": null
     },
@@ -52,7 +52,7 @@
       "market_updated_at": "2026-08-16T15:20:16Z",
       "home_win_probability": 0.40500690342941575,
       "away_win_probability": 0.5949930965705843,
-      "evaluated_at_utc": "2026-08-16T22:54:38.566463+00:00",
+      "evaluated_at_utc": "2026-08-16T22:55:26.300952+00:00",
       "is_new": false,
       "lifecycle_event": null
     },
@@ -79,7 +79,7 @@
       "market_updated_at": "2026-08-16T15:20:16Z",
       "home_win_probability": 0.6539299446131568,
       "away_win_probability": 0.3460700553868432,
-      "evaluated_at_utc": "2026-08-16T22:54:38.566463+00:00",
+      "evaluated_at_utc": "2026-08-16T22:55:26.300952+00:00",
       "is_new": false,
       "lifecycle_event": null
     }
