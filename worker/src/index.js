@@ -2,14 +2,15 @@ const STATIC_BASE = "https://mvnathan.github.io/wnba-data";
 const ESPN_SCOREBOARD = "https://site.api.espn.com/apis/site/v2/sports/basketball/wnba/scoreboard";
 const SPORTRADAR_BASE = "https://api.sportradar.com/wnba";
 
-const SCHEDULE_TTL_MS = 10 * 60 * 1000;
-const LIVE_BOXSCORE_TTL_MS = 20 * 1000;
-const FINAL_BOXSCORE_TTL_MS = 6 * 60 * 60 * 1000;
-const LIVE_PAYLOAD_TTL_MS = 15 * 1000;
+const SCHEDULE_TTL_SECONDS = 600;
+const LIVE_BOXSCORE_TTL_SECONDS = 20;
+const FINAL_BOXSCORE_TTL_SECONDS = 21600;
+const LIVE_PAYLOAD_TTL_SECONDS = 15;
+const SPORTRADAR_MIN_INTERVAL_MS = 1100;
 
-let scheduleCache = { key: null, expires: 0, data: null, access: null };
-const boxscoreCache = new Map();
-let livePayloadCache = { expires: 0, data: null, inFlight: null };
+let scheduleMemory = { key: null, expires: 0, data: null, access: null };
+let livePayloadMemory = { expires: 0, data: null, inFlight: null };
+let lastSportradarRequestAt = 0;
 
 function chicagoDateParts() {
   const parts = new Intl.DateTimeFormat("en-CA", {
@@ -35,6 +36,16 @@ function nullableNumber(value) {
   if (value === null || value === undefined || value === "") return null;
   const n = Number(value);
   return Number.isFinite(n) ? n : null;
+}
+
+function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+async function throttleSportradar() {
+  const wait = SPORTRADAR_MIN_INTERVAL_MS - (Date.now() - lastSportradarRequestAt);
+  if (wait > 0) await sleep(wait);
+  lastSportradarRequestAt = Date.now();
 }
 
 function elapsedFraction(period, clock) {
@@ -144,13 +155,9 @@ function scheduleGameMatches(prediction, game) {
     teamMatches(prediction.away_team, prediction.away_abbr, game?.away);
 }
 
-function shouldFetchBoxscore(game) {
+function needsLiveBoxscore(game) {
   const status = String(game?.status || "").toLowerCase();
-  if (["inprogress", "halftime", "complete", "closed"].includes(status)) return true;
-  const scheduled = Date.parse(game?.scheduled || "");
-  if (!Number.isFinite(scheduled)) return false;
-  const delta = Date.now() - scheduled;
-  return delta > -15 * 60 * 1000 && delta < 5 * 60 * 60 * 1000;
+  return ["inprogress", "halftime"].includes(status);
 }
 
 async function fetchJson(url, options = {}) {
@@ -174,11 +181,37 @@ async function fetchEspnScoreboard() {
   });
 }
 
+async function edgeCacheGet(key) {
+  try {
+    const response = await caches.default.match(new Request(`https://cache.local/${key}`));
+    return response ? await response.json() : null;
+  } catch {
+    return null;
+  }
+}
+
+async function edgeCachePut(key, data, ttlSeconds) {
+  try {
+    const request = new Request(`https://cache.local/${key}`);
+    const response = new Response(JSON.stringify(data), {
+      headers: {
+        "content-type": "application/json",
+        "cache-control": `public, max-age=${ttlSeconds}`,
+      },
+    });
+    await caches.default.put(request, response);
+  } catch {
+    // Memory cache still provides a best-effort fallback when Cache API is unavailable.
+  }
+}
+
 async function sportradarRequest(pathBuilder, apiKey, preferredAccess = null) {
   if (!apiKey) throw new Error("SPORTRADAR_API_KEY is not configured in the Worker");
   const levels = preferredAccess ? [preferredAccess, preferredAccess === "trial" ? "production" : "trial"] : ["trial", "production"];
   let lastError = null;
+
   for (const access of levels) {
+    await throttleSportradar();
     const url = `${SPORTRADAR_BASE}/${access}/v8/en/${pathBuilder(access)}`;
     const response = await fetch(url, {
       headers: { "x-api-key": apiKey, "Cache-Control": "no-cache" },
@@ -194,51 +227,66 @@ async function sportradarRequest(pathBuilder, apiKey, preferredAccess = null) {
 async function fetchSportradarSchedule(apiKey) {
   const p = chicagoDateParts();
   const key = `${p.year}-${p.month}-${p.day}`;
-  if (scheduleCache.key === key && scheduleCache.data && scheduleCache.expires > Date.now()) return scheduleCache;
+  if (scheduleMemory.key === key && scheduleMemory.data && scheduleMemory.expires > Date.now()) return scheduleMemory;
+
+  const edgeKey = `wnba-schedule-${key}`;
+  const edge = await edgeCacheGet(edgeKey);
+  if (edge?.data) {
+    scheduleMemory = { key, expires: Date.now() + SCHEDULE_TTL_SECONDS * 1000, data: edge.data, access: edge.access || "trial", cache: "edge" };
+    return scheduleMemory;
+  }
 
   try {
     const result = await sportradarRequest(
       () => `games/${p.year}/${p.month}/${p.day}/schedule.json`,
       apiKey,
-      scheduleCache.access,
+      scheduleMemory.access,
     );
-    scheduleCache = { key, expires: Date.now() + SCHEDULE_TTL_MS, data: result.data, access: result.access };
-    return scheduleCache;
+    scheduleMemory = { key, expires: Date.now() + SCHEDULE_TTL_SECONDS * 1000, data: result.data, access: result.access, cache: "miss" };
+    await edgeCachePut(edgeKey, { data: result.data, access: result.access }, SCHEDULE_TTL_SECONDS);
+    return scheduleMemory;
   } catch (error) {
-    if (scheduleCache.key === key && scheduleCache.data) return scheduleCache;
+    if (scheduleMemory.key === key && scheduleMemory.data) return { ...scheduleMemory, cache: "stale" };
     throw error;
   }
 }
 
 async function fetchSportradarBoxscore(game, apiKey, access) {
   const gameId = String(game?.id || "");
-  const cached = boxscoreCache.get(gameId);
-  if (cached && cached.expires > Date.now()) return cached.value;
+  const status = String(game?.status || "").toLowerCase();
+  const ttl = ["closed", "complete"].includes(status) ? FINAL_BOXSCORE_TTL_SECONDS : LIVE_BOXSCORE_TTL_SECONDS;
+  const edgeKey = `wnba-boxscore-${gameId}`;
+  const edge = await edgeCacheGet(edgeKey);
+  if (edge?.data) return { data: edge.data, access: edge.access || access, cache: "edge" };
 
-  try {
-    const result = await sportradarRequest(() => `games/${gameId}/boxscore.json`, apiKey, access);
-    const status = String(result.data?.game?.status || result.data?.status || game?.status || "").toLowerCase();
-    const isFinal = ["closed", "complete"].includes(status);
-    const ttl = isFinal ? FINAL_BOXSCORE_TTL_MS : LIVE_BOXSCORE_TTL_MS;
-    const value = { ...result, cache: "miss" };
-    boxscoreCache.set(gameId, { value, expires: Date.now() + ttl });
-    return value;
-  } catch (error) {
-    if (cached?.value) return { ...cached.value, cache: "stale" };
-    throw error;
-  }
+  const result = await sportradarRequest(() => `games/${gameId}/boxscore.json`, apiKey, access);
+  await edgeCachePut(edgeKey, { data: result.data, access: result.access }, ttl);
+  return { ...result, cache: "miss" };
+}
+
+function parseSportradarScheduleGame(game) {
+  const homeScore = nullableNumber(game?.home_points);
+  const awayScore = nullableNumber(game?.away_points);
+  if (homeScore === null || awayScore === null) return null;
+  return {
+    status: normalizeSportradarStatus(game.status),
+    status_detail: String(game.status || ""),
+    period: null,
+    clock: "",
+    home_score: homeScore,
+    away_score: awayScore,
+  };
 }
 
 function parseSportradarBoxscore(data) {
   const game = data?.game || data || {};
   const home = game.home || data?.home || {};
   const away = game.away || data?.away || {};
-  const status = normalizeSportradarStatus(game.status);
   const homeScore = nullableNumber(home.points ?? game.home_points);
   const awayScore = nullableNumber(away.points ?? game.away_points);
   if (homeScore === null || awayScore === null) return null;
   return {
-    status,
+    status: normalizeSportradarStatus(game.status),
     status_detail: String(game.status || ""),
     period: nullableNumber(game.quarter),
     clock: game.clock_decimal || game.clock || "",
@@ -250,14 +298,15 @@ function parseSportradarBoxscore(data) {
 function applyLiveState(prediction, live, now, source) {
   prediction.live_status = live.status;
   prediction.live_status_detail = live.status_detail;
-  prediction.live_period = live.period;
-  prediction.live_clock = live.clock;
+  if (live.period !== null && live.period !== undefined) prediction.live_period = live.period;
+  if (live.clock) prediction.live_clock = live.clock;
   prediction.live_home_score = live.home_score;
   prediction.live_away_score = live.away_score;
   prediction.live_updated_at = now;
   prediction.status = live.status || prediction.status;
   prediction.status_detail = live.status_detail || prediction.status_detail;
   prediction.live_source = source;
+
   if (isLiveOrFinal(live.status)) {
     const projection = projectLiveGame(live, prediction);
     prediction.live_projected_home_score = projection.home_final;
@@ -274,22 +323,26 @@ function applyLiveState(prediction, live, now, source) {
 }
 
 async function overlaySportradar(latest, apiKey) {
-  const cache = await fetchSportradarSchedule(apiKey);
-  const scheduleGames = Array.isArray(cache.data?.games) ? cache.data.games : [];
+  const schedule = await fetchSportradarSchedule(apiKey);
+  const scheduleGames = Array.isArray(schedule.data?.games) ? schedule.data.games : [];
   const now = new Date().toISOString();
   let matched = 0;
   let refreshed = 0;
-  let cachedBoxes = 0;
+  let boxscoreRequests = 0;
 
   for (const prediction of latest.games || []) {
     const scheduledGame = scheduleGames.find((g) => scheduleGameMatches(prediction, g));
     if (!scheduledGame) continue;
     matched += 1;
-    if (!shouldFetchBoxscore(scheduledGame)) continue;
 
-    const box = await fetchSportradarBoxscore(scheduledGame, apiKey, cache.access);
-    if (box.cache !== "miss") cachedBoxes += 1;
-    const live = parseSportradarBoxscore(box.data);
+    let live = parseSportradarScheduleGame(scheduledGame);
+
+    if (needsLiveBoxscore(scheduledGame)) {
+      const box = await fetchSportradarBoxscore(scheduledGame, apiKey, schedule.access);
+      if (box.cache === "miss") boxscoreRequests += 1;
+      live = parseSportradarBoxscore(box.data) || live;
+    }
+
     if (!live) continue;
     applyLiveState(prediction, live, now, "Sportradar via Cloudflare Worker");
     refreshed += 1;
@@ -302,7 +355,8 @@ async function overlaySportradar(latest, apiKey) {
   latest.live_source_status = matched ? "fresh" : "no-matches";
   latest.live_source_matched_games = matched;
   latest.live_source_refreshed_games = refreshed;
-  latest.live_source_cached_boxscores = cachedBoxes;
+  latest.live_source_schedule_cache = schedule.cache || "memory";
+  latest.live_source_boxscore_requests = boxscoreRequests;
   delete latest.live_source_error;
   return latest;
 }
@@ -362,24 +416,32 @@ async function buildLivePayloadUncached(env) {
 }
 
 async function buildLivePayload(env) {
-  if (livePayloadCache.data && livePayloadCache.expires > Date.now()) {
-    return { ...livePayloadCache.data, live_response_cache: "hit" };
+  if (livePayloadMemory.data && livePayloadMemory.expires > Date.now()) {
+    return { ...livePayloadMemory.data, live_response_cache: "memory-hit" };
   }
 
-  if (livePayloadCache.inFlight) return livePayloadCache.inFlight;
+  const edgeKey = `wnba-live-payload-${chicagoDateStamp()}`;
+  const edge = await edgeCacheGet(edgeKey);
+  if (edge?.data) {
+    livePayloadMemory = { data: edge.data, expires: Date.now() + LIVE_PAYLOAD_TTL_SECONDS * 1000, inFlight: null };
+    return { ...edge.data, live_response_cache: "edge-hit" };
+  }
 
-  livePayloadCache.inFlight = (async () => {
+  if (livePayloadMemory.inFlight) return livePayloadMemory.inFlight;
+
+  livePayloadMemory.inFlight = (async () => {
     try {
       const data = await buildLivePayloadUncached(env);
-      livePayloadCache.data = data;
-      livePayloadCache.expires = Date.now() + LIVE_PAYLOAD_TTL_MS;
+      livePayloadMemory.data = data;
+      livePayloadMemory.expires = Date.now() + LIVE_PAYLOAD_TTL_SECONDS * 1000;
+      await edgeCachePut(edgeKey, { data }, LIVE_PAYLOAD_TTL_SECONDS);
       return { ...data, live_response_cache: "miss" };
     } finally {
-      livePayloadCache.inFlight = null;
+      livePayloadMemory.inFlight = null;
     }
   })();
 
-  return livePayloadCache.inFlight;
+  return livePayloadMemory.inFlight;
 }
 
 async function diagnostics(env) {
@@ -388,11 +450,11 @@ async function diagnostics(env) {
     service: "wnba-live-dashboard",
     now: new Date().toISOString(),
     cache: {
-      schedule_ttl_seconds: SCHEDULE_TTL_MS / 1000,
-      live_boxscore_ttl_seconds: LIVE_BOXSCORE_TTL_MS / 1000,
-      final_boxscore_ttl_seconds: FINAL_BOXSCORE_TTL_MS / 1000,
-      live_payload_ttl_seconds: LIVE_PAYLOAD_TTL_MS / 1000,
-      boxscores_cached: boxscoreCache.size,
+      schedule_ttl_seconds: SCHEDULE_TTL_SECONDS,
+      live_boxscore_ttl_seconds: LIVE_BOXSCORE_TTL_SECONDS,
+      final_boxscore_ttl_seconds: FINAL_BOXSCORE_TTL_SECONDS,
+      live_payload_ttl_seconds: LIVE_PAYLOAD_TTL_SECONDS,
+      sportradar_min_interval_ms: SPORTRADAR_MIN_INTERVAL_MS,
     },
     static_latest: { ok: false },
     sportradar: { ok: false },
@@ -413,18 +475,20 @@ async function diagnostics(env) {
   }
 
   try {
-    const cache = await fetchSportradarSchedule(env?.SPORTRADAR_API_KEY);
+    const schedule = await fetchSportradarSchedule(env?.SPORTRADAR_API_KEY);
     result.sportradar = {
       ok: true,
-      access: cache.access,
-      games: Array.isArray(cache.data?.games) ? cache.data.games.length : 0,
-      date: cache.key,
-      schedule_cache_expires_in_seconds: Math.max(0, Math.round((cache.expires - Date.now()) / 1000)),
+      access: schedule.access,
+      games: Array.isArray(schedule.data?.games) ? schedule.data.games.length : 0,
+      date: schedule.key,
+      schedule_cache: schedule.cache || "memory",
+      schedule_cache_expires_in_seconds: Math.max(0, Math.round((schedule.expires - Date.now()) / 1000)),
     };
   } catch (error) {
     result.sportradar = { ok: false, error: String(error?.message || error) };
   }
 
+  // ESPN is intentionally diagnostic-only and is no longer needed for the primary live path.
   try {
     const scoreboard = await fetchEspnScoreboard();
     result.espn = { ok: true, events: Array.isArray(scoreboard.events) ? scoreboard.events.length : 0, date: chicagoDateStamp() };
