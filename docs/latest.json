@@ -11,8 +11,8 @@
       "away_team": "Sky",
       "home_abbr": "SEA",
       "away_abbr": "CHI",
-      "status": "STATUS_HALFTIME",
-      "status_detail": "Halftime",
+      "status": "STATUS_IN_PROGRESS",
+      "status_detail": "9:35 - 3rd Quarter",
       "venue": "Climate Pledge Arena",
       "home_win": 0.4172720410389582,
       "home_score": 86.41472828302452,
@@ -71,21 +71,21 @@
       "model_home_win_probability": 0.4172720410389582,
       "market_no_vig_home_win_probability": 0.43650793650793646,
       "market_moneyline_weight": 0.25,
-      "live_status": "STATUS_HALFTIME",
-      "live_status_detail": "Halftime",
-      "live_period": 2,
-      "live_clock": "0.0",
+      "live_status": "STATUS_IN_PROGRESS",
+      "live_status_detail": "9:35 - 3rd Quarter",
+      "live_period": 3,
+      "live_clock": "9:35",
       "live_home_score": 29,
       "live_away_score": 46,
-      "live_updated_at": "2026-08-16T22:02:51.993965+00:00",
-      "live_projected_home_score": 63.7596148802518,
-      "live_projected_away_score": 90.82739079007268,
-      "live_predicted_margin": -27.06777590982088,
-      "live_predicted_total": 154.5870056703245,
-      "live_home_win_probability": 0.183769701621626,
-      "live_away_win_probability": 0.816230298378374,
-      "live_elapsed_fraction": 0.5,
-      "live_projection_updated_at": "2026-08-16T22:02:51.993965+00:00",
+      "live_updated_at": "2026-08-16T22:03:40.263391+00:00",
+      "live_projected_home_score": 62.55659684519862,
+      "live_projected_away_score": 89.3646440963777,
+      "live_predicted_margin": -26.808047251179083,
+      "live_predicted_total": 151.92124094157631,
+      "live_home_win_probability": 0.18001312875287828,
+      "live_away_win_probability": 0.8199868712471217,
+      "live_elapsed_fraction": 0.5104166666666666,
+      "live_projection_updated_at": "2026-08-16T22:03:40.263391+00:00",
       "live_projected_winner_side": "away",
       "live_projected_winner_abbr": "CHI"
     },
@@ -164,7 +164,7 @@
       "live_clock": "0.0",
       "live_home_score": 44,
       "live_away_score": 40,
-      "live_updated_at": "2026-08-16T22:02:51.993965+00:00",
+      "live_updated_at": "2026-08-16T22:03:40.263391+00:00",
       "live_projected_home_score": 86.86624542439375,
       "live_projected_away_score": 81.45841370188886,
       "live_predicted_margin": 5.407831722504895,
@@ -172,7 +172,7 @@
       "live_home_win_probability": 0.5767551199364636,
       "live_away_win_probability": 0.42324488006353644,
       "live_elapsed_fraction": 0.5,
-      "live_projection_updated_at": "2026-08-16T22:02:51.993965+00:00",
+      "live_projection_updated_at": "2026-08-16T22:03:40.263391+00:00",
       "live_projected_winner_side": "home",
       "live_projected_winner_abbr": "ATL"
     },
@@ -251,7 +251,7 @@
       "live_clock": "0.0",
       "live_home_score": 0,
       "live_away_score": 0,
-      "live_updated_at": "2026-08-16T22:02:51.993965+00:00"
+      "live_updated_at": "2026-08-16T22:03:40.263391+00:00"
     }
   ],
   "uncertainty": {
@@ -266,6 +266,6 @@
       "p90": 86.34986586245819
     }
   },
-  "live_generated_at_utc": "2026-08-16T22:02:51.993965+00:00",
-  "last_live_update_utc": "2026-08-16T22:02:51.993965+00:00"
+  "live_generated_at_utc": "2026-08-16T22:03:40.263391+00:00",
+  "last_live_update_utc": "2026-08-16T22:03:40.263391+00:00"
 }
