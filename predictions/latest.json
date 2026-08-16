@@ -77,7 +77,7 @@
       "live_clock": "0.0",
       "live_home_score": 80,
       "live_away_score": 82,
-      "live_updated_at": "2026-08-16T23:53:29.384268+00:00",
+      "live_updated_at": "2026-08-16T23:54:17.456301+00:00",
       "live_projected_home_score": 80.0,
       "live_projected_away_score": 82.0,
       "live_predicted_margin": -2.0,
@@ -85,7 +85,7 @@
       "live_home_win_probability": 0.0,
       "live_away_win_probability": 1.0,
       "live_elapsed_fraction": 1.0,
-      "live_projection_updated_at": "2026-08-16T23:53:29.384268+00:00",
+      "live_projection_updated_at": "2026-08-16T23:54:17.456301+00:00",
       "live_projected_winner_side": "away",
       "live_projected_winner_abbr": "CHI"
     },
@@ -164,7 +164,7 @@
       "live_clock": "0.0",
       "live_home_score": 91,
       "live_away_score": 95,
-      "live_updated_at": "2026-08-16T23:53:29.384268+00:00",
+      "live_updated_at": "2026-08-16T23:54:17.456301+00:00",
       "live_projected_home_score": 91.0,
       "live_projected_away_score": 95.0,
       "live_predicted_margin": -4.0,
@@ -172,7 +172,7 @@
       "live_home_win_probability": 0.0,
       "live_away_win_probability": 1.0,
       "live_elapsed_fraction": 1.0,
-      "live_projection_updated_at": "2026-08-16T23:53:29.384268+00:00",
+      "live_projection_updated_at": "2026-08-16T23:54:17.456301+00:00",
       "live_projected_winner_side": "away",
       "live_projected_winner_abbr": "IND"
     },
@@ -186,7 +186,7 @@
       "home_abbr": "PHX",
       "away_abbr": "POR",
       "status": "STATUS_IN_PROGRESS",
-      "status_detail": "2:54 - 2nd Quarter",
+      "status_detail": "1:57 - 2nd Quarter",
       "venue": "Mortgage Matchup Center",
       "home_win": 0.6569968665507981,
       "home_score": 86.09041618019285,
@@ -246,22 +246,22 @@
       "market_no_vig_home_win_probability": 0.644729178800233,
       "market_moneyline_weight": 0.25,
       "live_status": "STATUS_IN_PROGRESS",
-      "live_status_detail": "2:54 - 2nd Quarter",
+      "live_status_detail": "1:57 - 2nd Quarter",
       "live_period": 2,
-      "live_clock": "2:54",
+      "live_clock": "1:57",
       "live_home_score": 35,
-      "live_away_score": 34,
-      "live_updated_at": "2026-08-16T23:53:29.384268+00:00",
-      "live_projected_home_score": 83.00975287618712,
-      "live_projected_away_score": 80.46921929473777,
-      "live_predicted_margin": 2.5405335814493526,
-      "live_predicted_total": 163.4789721709249,
-      "live_home_win_probability": 0.6165154265795498,
-      "live_away_win_probability": 0.38348457342045017,
-      "live_elapsed_fraction": 0.4275,
-      "live_projection_updated_at": "2026-08-16T23:53:29.384268+00:00",
-      "live_projected_winner_side": "home",
-      "live_projected_winner_abbr": "PHX"
+      "live_away_score": 36,
+      "live_updated_at": "2026-08-16T23:54:17.456301+00:00",
+      "live_projected_home_score": 79.66556226240198,
+      "live_projected_away_score": 80.57415346329621,
+      "live_predicted_margin": -0.9085912008942358,
+      "live_predicted_total": 160.2397157256982,
+      "live_home_win_probability": 0.5523193965502379,
+      "live_away_win_probability": 0.4476806034497621,
+      "live_elapsed_fraction": 0.45125,
+      "live_projection_updated_at": "2026-08-16T23:54:17.456301+00:00",
+      "live_projected_winner_side": "away",
+      "live_projected_winner_abbr": "POR"
     }
   ],
   "uncertainty": {
@@ -276,6 +276,6 @@
       "p90": 86.34986586245819
     }
   },
-  "live_generated_at_utc": "2026-08-16T23:53:29.384268+00:00",
-  "last_live_update_utc": "2026-08-16T23:53:29.384268+00:00"
+  "live_generated_at_utc": "2026-08-16T23:54:17.456301+00:00",
+  "last_live_update_utc": "2026-08-16T23:54:17.456301+00:00"
 }
