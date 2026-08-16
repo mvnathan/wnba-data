@@ -5,34 +5,95 @@ on:
   schedule:
     - cron: '0 10 * * 1'
 
+concurrency:
+  group: wnba-model-training
+  cancel-in-progress: false
+
 jobs:
   train:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+    env:
+      PYTHONPATH: ${{ github.workspace }}
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - name: Set up Python
         uses: actions/setup-python@v6
         with:
           python-version: '3.12'
+          cache: pip
       - name: Install dependencies
         run: |
-          PYTHONPATH=. python -m pip install --upgrade pip
+          python -m pip install --upgrade pip
           pip install -r requirements.txt
+          pip check
       - name: Run daily update
-        run: |
-          PYTHONPATH=. python scripts/run_daily_update.py
+        run: python scripts/run_daily_update.py
       - name: Build features
-        run: |
-          PYTHONPATH=. python scripts/build_features.py
+        run: python scripts/build_features.py
       - name: Train models
+        run: python scripts/train_models.py
+      - name: Verify training artifacts
         run: |
-          PYTHONPATH=. python scripts/train_models.py
+          test -s models/production_model.joblib
+          test -s models/model_metadata.json
+          test -s models/model_leaderboard.csv
       - name: Commit model outputs
+        shell: bash
         run: |
+          set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add models/ features/ .
-          git diff --quiet --cached || git commit -m "Update production model and features"
-          git push || true
+
+          published=false
+          for publish_attempt in $(seq 1 5); do
+            echo "Publish attempt ${publish_attempt}/5"
+
+            if [ "${publish_attempt}" -gt 1 ]; then
+              git fetch origin main
+              git reset --hard origin/main
+
+              # Generated state can change while a long training job is running.
+              # Rebuild from the newest main branch instead of rebasing generated
+              # parquet/model files, which are not safely mergeable.
+              python scripts/run_daily_update.py
+              python scripts/build_features.py
+              python scripts/train_models.py
+            fi
+
+            git add \
+              data/games.parquet \
+              data/quarter_scores.parquet \
+              data/team_games.parquet \
+              data/last_update.json \
+              features/model_features.parquet \
+              models/production_model.joblib \
+              models/model_metadata.json \
+              models/model_leaderboard.csv
+
+            if git diff --quiet --cached; then
+              echo "No model or feature changes to publish"
+              published=true
+              break
+            fi
+
+            git commit -m "Update production model and features"
+
+            if git push origin HEAD:main; then
+              published=true
+              break
+            fi
+
+            echo "Main changed before push; rebuilding from latest main"
+            if [ "${publish_attempt}" -lt 5 ]; then
+              sleep 2
+            fi
+          done
+
+          if [ "${published}" != true ]; then
+            echo "Failed to publish model outputs after 5 attempts" >&2
+            exit 1
+          fi
