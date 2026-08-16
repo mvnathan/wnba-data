@@ -1,0 +1,4 @@
+name = "wnba-live-dashboard"
+main = "src/index.js"
+compatibility_date = "2026-08-15"
+workers_dev = true
