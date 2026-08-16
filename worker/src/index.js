@@ -2,7 +2,14 @@ const STATIC_BASE = "https://mvnathan.github.io/wnba-data";
 const ESPN_SCOREBOARD = "https://site.api.espn.com/apis/site/v2/sports/basketball/wnba/scoreboard";
 const SPORTRADAR_BASE = "https://api.sportradar.com/wnba";
 
+const SCHEDULE_TTL_MS = 10 * 60 * 1000;
+const LIVE_BOXSCORE_TTL_MS = 20 * 1000;
+const FINAL_BOXSCORE_TTL_MS = 6 * 60 * 60 * 1000;
+const LIVE_PAYLOAD_TTL_MS = 15 * 1000;
+
 let scheduleCache = { key: null, expires: 0, data: null, access: null };
+const boxscoreCache = new Map();
+let livePayloadCache = { expires: 0, data: null, inFlight: null };
 
 function chicagoDateParts() {
   const parts = new Intl.DateTimeFormat("en-CA", {
@@ -123,10 +130,7 @@ function cleanTeamName(value) {
 function teamMatches(predictionName, predictionAbbr, team) {
   const targetName = cleanTeamName(predictionName);
   const targetAbbr = cleanTeamName(predictionAbbr);
-  const candidates = [team?.name, team?.market, team?.alias]
-    .map(cleanTeamName)
-    .filter(Boolean);
-
+  const candidates = [team?.name, team?.market, team?.alias].map(cleanTeamName).filter(Boolean);
   return candidates.some((candidate) =>
     candidate === targetName ||
     candidate === targetAbbr ||
@@ -191,17 +195,38 @@ async function fetchSportradarSchedule(apiKey) {
   const p = chicagoDateParts();
   const key = `${p.year}-${p.month}-${p.day}`;
   if (scheduleCache.key === key && scheduleCache.data && scheduleCache.expires > Date.now()) return scheduleCache;
-  const result = await sportradarRequest(
-    () => `games/${p.year}/${p.month}/${p.day}/schedule.json`,
-    apiKey,
-    scheduleCache.access,
-  );
-  scheduleCache = { key, expires: Date.now() + 5 * 60 * 1000, data: result.data, access: result.access };
-  return scheduleCache;
+
+  try {
+    const result = await sportradarRequest(
+      () => `games/${p.year}/${p.month}/${p.day}/schedule.json`,
+      apiKey,
+      scheduleCache.access,
+    );
+    scheduleCache = { key, expires: Date.now() + SCHEDULE_TTL_MS, data: result.data, access: result.access };
+    return scheduleCache;
+  } catch (error) {
+    if (scheduleCache.key === key && scheduleCache.data) return scheduleCache;
+    throw error;
+  }
 }
 
-async function fetchSportradarBoxscore(gameId, apiKey, access) {
-  return sportradarRequest(() => `games/${gameId}/boxscore.json`, apiKey, access);
+async function fetchSportradarBoxscore(game, apiKey, access) {
+  const gameId = String(game?.id || "");
+  const cached = boxscoreCache.get(gameId);
+  if (cached && cached.expires > Date.now()) return cached.value;
+
+  try {
+    const result = await sportradarRequest(() => `games/${gameId}/boxscore.json`, apiKey, access);
+    const status = String(result.data?.game?.status || result.data?.status || game?.status || "").toLowerCase();
+    const isFinal = ["closed", "complete"].includes(status);
+    const ttl = isFinal ? FINAL_BOXSCORE_TTL_MS : LIVE_BOXSCORE_TTL_MS;
+    const value = { ...result, cache: "miss" };
+    boxscoreCache.set(gameId, { value, expires: Date.now() + ttl });
+    return value;
+  } catch (error) {
+    if (cached?.value) return { ...cached.value, cache: "stale" };
+    throw error;
+  }
 }
 
 function parseSportradarBoxscore(data) {
@@ -254,17 +279,22 @@ async function overlaySportradar(latest, apiKey) {
   const now = new Date().toISOString();
   let matched = 0;
   let refreshed = 0;
+  let cachedBoxes = 0;
+
   for (const prediction of latest.games || []) {
     const scheduledGame = scheduleGames.find((g) => scheduleGameMatches(prediction, g));
     if (!scheduledGame) continue;
     matched += 1;
     if (!shouldFetchBoxscore(scheduledGame)) continue;
-    const box = await fetchSportradarBoxscore(scheduledGame.id, apiKey, cache.access);
+
+    const box = await fetchSportradarBoxscore(scheduledGame, apiKey, cache.access);
+    if (box.cache !== "miss") cachedBoxes += 1;
     const live = parseSportradarBoxscore(box.data);
     if (!live) continue;
     applyLiveState(prediction, live, now, "Sportradar via Cloudflare Worker");
     refreshed += 1;
   }
+
   latest.live_generated_at_utc = now;
   latest.last_live_update_utc = refreshed ? now : latest.last_live_update_utc;
   latest.live_delivery = "cloudflare-worker";
@@ -272,6 +302,7 @@ async function overlaySportradar(latest, apiKey) {
   latest.live_source_status = matched ? "fresh" : "no-matches";
   latest.live_source_matched_games = matched;
   latest.live_source_refreshed_games = refreshed;
+  latest.live_source_cached_boxscores = cachedBoxes;
   delete latest.live_source_error;
   return latest;
 }
@@ -306,15 +337,17 @@ async function overlayEspn(latest) {
   return latest;
 }
 
-async function buildLivePayload(env) {
+async function buildLivePayloadUncached(env) {
   const latest = await fetchStaticLatest();
   latest.games = Array.isArray(latest.games) ? latest.games : [];
   let sportradarError = null;
+
   try {
     return await overlaySportradar(latest, env?.SPORTRADAR_API_KEY);
   } catch (error) {
     sportradarError = String(error?.message || error);
   }
+
   try {
     const result = await overlayEspn(latest);
     result.live_source_error = `Sportradar failed: ${sportradarError}`;
@@ -328,15 +361,44 @@ async function buildLivePayload(env) {
   }
 }
 
+async function buildLivePayload(env) {
+  if (livePayloadCache.data && livePayloadCache.expires > Date.now()) {
+    return { ...livePayloadCache.data, live_response_cache: "hit" };
+  }
+
+  if (livePayloadCache.inFlight) return livePayloadCache.inFlight;
+
+  livePayloadCache.inFlight = (async () => {
+    try {
+      const data = await buildLivePayloadUncached(env);
+      livePayloadCache.data = data;
+      livePayloadCache.expires = Date.now() + LIVE_PAYLOAD_TTL_MS;
+      return { ...data, live_response_cache: "miss" };
+    } finally {
+      livePayloadCache.inFlight = null;
+    }
+  })();
+
+  return livePayloadCache.inFlight;
+}
+
 async function diagnostics(env) {
   const result = {
     ok: true,
     service: "wnba-live-dashboard",
     now: new Date().toISOString(),
+    cache: {
+      schedule_ttl_seconds: SCHEDULE_TTL_MS / 1000,
+      live_boxscore_ttl_seconds: LIVE_BOXSCORE_TTL_MS / 1000,
+      final_boxscore_ttl_seconds: FINAL_BOXSCORE_TTL_MS / 1000,
+      live_payload_ttl_seconds: LIVE_PAYLOAD_TTL_MS / 1000,
+      boxscores_cached: boxscoreCache.size,
+    },
     static_latest: { ok: false },
     sportradar: { ok: false },
     espn: { ok: false },
   };
+
   try {
     const latest = await fetchStaticLatest();
     result.static_latest = {
@@ -349,6 +411,7 @@ async function diagnostics(env) {
     result.ok = false;
     result.static_latest = { ok: false, error: String(error?.message || error) };
   }
+
   try {
     const cache = await fetchSportradarSchedule(env?.SPORTRADAR_API_KEY);
     result.sportradar = {
@@ -356,16 +419,19 @@ async function diagnostics(env) {
       access: cache.access,
       games: Array.isArray(cache.data?.games) ? cache.data.games.length : 0,
       date: cache.key,
+      schedule_cache_expires_in_seconds: Math.max(0, Math.round((cache.expires - Date.now()) / 1000)),
     };
   } catch (error) {
     result.sportradar = { ok: false, error: String(error?.message || error) };
   }
+
   try {
     const scoreboard = await fetchEspnScoreboard();
     result.espn = { ok: true, events: Array.isArray(scoreboard.events) ? scoreboard.events.length : 0, date: chicagoDateStamp() };
   } catch (error) {
     result.espn = { ok: false, error: String(error?.message || error), date: chicagoDateStamp() };
   }
+
   return result;
 }
 
@@ -391,6 +457,7 @@ async function proxyStatic(pathname) {
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
+
     if (request.method === "OPTIONS") {
       return new Response(null, {
         status: 204,
@@ -401,9 +468,11 @@ export default {
         },
       });
     }
+
     if (request.method !== "GET") return jsonResponse({ error: "Method not allowed" }, 405);
     if (url.pathname === "/health") return jsonResponse({ ok: true, service: "wnba-live-dashboard", now: new Date().toISOString() });
     if (url.pathname === "/diagnostics") return jsonResponse(await diagnostics(env));
+
     if (url.pathname === "/latest.json" || url.pathname === "/api/live") {
       try {
         return jsonResponse(await buildLivePayload(env));
@@ -411,6 +480,7 @@ export default {
         return jsonResponse({ error: "Static dashboard data unavailable", detail: String(error?.message || error) }, 502);
       }
     }
+
     return proxyStatic(url.pathname);
   },
 };
