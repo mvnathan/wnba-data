@@ -132,52 +132,113 @@ async function fetchJson(url) {
   return response.json();
 }
 
-async function buildLivePayload() {
-  const stamp = chicagoDateStamp();
-  const staticUrl = `${STATIC_BASE}/latest.json?t=${Date.now()}`;
-  const espnUrl = `${ESPN_SCOREBOARD}?dates=${stamp}&_=${Date.now()}`;
-  const [latest, scoreboard] = await Promise.all([fetchJson(staticUrl), fetchJson(espnUrl)]);
+async function fetchStaticLatest() {
+  return fetchJson(`${STATIC_BASE}/latest.json?t=${Date.now()}`);
+}
 
-  const events = Array.isArray(scoreboard.events) ? scoreboard.events.map(parseEvent).filter(Boolean) : [];
-  const byId = new Map(events.map((g) => [String(g.game_id), g]));
+async function fetchEspnScoreboard() {
+  const stamp = chicagoDateStamp();
+  return fetchJson(`${ESPN_SCOREBOARD}?dates=${stamp}&_=${Date.now()}`);
+}
+
+async function buildLivePayload() {
+  const latest = await fetchStaticLatest();
   const now = new Date().toISOString();
   const games = Array.isArray(latest.games) ? latest.games : [];
 
-  for (const prediction of games) {
-    const live = byId.get(String(prediction.game_id || ""));
-    if (!live) continue;
+  let scoreboard = null;
+  let espnError = null;
+  try {
+    scoreboard = await fetchEspnScoreboard();
+  } catch (error) {
+    espnError = String(error?.message || error);
+  }
 
-    prediction.live_status = live.status;
-    prediction.live_status_detail = live.status_detail;
-    prediction.live_period = live.period;
-    prediction.live_clock = live.clock;
-    prediction.live_home_score = live.home_score;
-    prediction.live_away_score = live.away_score;
-    prediction.live_updated_at = now;
-    prediction.status = live.status || prediction.status;
-    prediction.status_detail = live.status_detail || prediction.status_detail;
-    prediction.live_source = "ESPN via Cloudflare Worker";
+  if (scoreboard) {
+    const events = Array.isArray(scoreboard.events)
+      ? scoreboard.events.map(parseEvent).filter(Boolean)
+      : [];
+    const byId = new Map(events.map((g) => [String(g.game_id), g]));
 
-    if (isLiveOrFinal(live.status)) {
-      const projection = projectLiveGame(live, prediction);
-      prediction.live_projected_home_score = projection.home_final;
-      prediction.live_projected_away_score = projection.away_final;
-      prediction.live_predicted_margin = projection.final_margin;
-      prediction.live_predicted_total = projection.final_total;
-      prediction.live_home_win_probability = projection.home_win_probability;
-      prediction.live_away_win_probability = projection.away_win_probability;
-      prediction.live_elapsed_fraction = projection.elapsed_fraction;
-      prediction.live_projection_updated_at = now;
-      prediction.live_projected_winner_side = projection.final_margin > 0 ? "home" : projection.final_margin < 0 ? "away" : "pickem";
-      prediction.live_projected_winner_abbr = projection.final_margin > 0 ? prediction.home_abbr : projection.final_margin < 0 ? prediction.away_abbr : "PK";
+    for (const prediction of games) {
+      const live = byId.get(String(prediction.game_id || ""));
+      if (!live) continue;
+
+      prediction.live_status = live.status;
+      prediction.live_status_detail = live.status_detail;
+      prediction.live_period = live.period;
+      prediction.live_clock = live.clock;
+      prediction.live_home_score = live.home_score;
+      prediction.live_away_score = live.away_score;
+      prediction.live_updated_at = now;
+      prediction.status = live.status || prediction.status;
+      prediction.status_detail = live.status_detail || prediction.status_detail;
+      prediction.live_source = "ESPN via Cloudflare Worker";
+
+      if (isLiveOrFinal(live.status)) {
+        const projection = projectLiveGame(live, prediction);
+        prediction.live_projected_home_score = projection.home_final;
+        prediction.live_projected_away_score = projection.away_final;
+        prediction.live_predicted_margin = projection.final_margin;
+        prediction.live_predicted_total = projection.final_total;
+        prediction.live_home_win_probability = projection.home_win_probability;
+        prediction.live_away_win_probability = projection.away_win_probability;
+        prediction.live_elapsed_fraction = projection.elapsed_fraction;
+        prediction.live_projection_updated_at = now;
+        prediction.live_projected_winner_side = projection.final_margin > 0 ? "home" : projection.final_margin < 0 ? "away" : "pickem";
+        prediction.live_projected_winner_abbr = projection.final_margin > 0 ? prediction.home_abbr : projection.final_margin < 0 ? prediction.away_abbr : "PK";
+      }
     }
+
+    latest.live_generated_at_utc = now;
+    latest.last_live_update_utc = now;
+    latest.live_delivery = "cloudflare-worker";
+    latest.live_source_status = "fresh";
+    delete latest.live_source_error;
+  } else {
+    latest.live_delivery = "cloudflare-worker-fallback";
+    latest.live_source_status = "fallback";
+    latest.live_source_error = espnError || "ESPN scoreboard unavailable";
   }
 
   latest.games = games;
-  latest.live_generated_at_utc = now;
-  latest.last_live_update_utc = now;
-  latest.live_delivery = "cloudflare-worker";
   return latest;
+}
+
+async function diagnostics() {
+  const result = {
+    ok: true,
+    service: "wnba-live-dashboard",
+    now: new Date().toISOString(),
+    static_latest: { ok: false },
+    espn: { ok: false },
+  };
+
+  try {
+    const latest = await fetchStaticLatest();
+    result.static_latest = {
+      ok: true,
+      games: Array.isArray(latest.games) ? latest.games.length : 0,
+      target_date: latest.target_date || null,
+      last_live_update_utc: latest.last_live_update_utc || null,
+    };
+  } catch (error) {
+    result.ok = false;
+    result.static_latest = { ok: false, error: String(error?.message || error) };
+  }
+
+  try {
+    const scoreboard = await fetchEspnScoreboard();
+    result.espn = {
+      ok: true,
+      events: Array.isArray(scoreboard.events) ? scoreboard.events.length : 0,
+      date: chicagoDateStamp(),
+    };
+  } catch (error) {
+    result.espn = { ok: false, error: String(error?.message || error), date: chicagoDateStamp() };
+  }
+
+  return result;
 }
 
 function jsonResponse(data, status = 200) {
@@ -220,11 +281,15 @@ export default {
       return jsonResponse({ ok: true, service: "wnba-live-dashboard", now: new Date().toISOString() });
     }
 
+    if (url.pathname === "/diagnostics") {
+      return jsonResponse(await diagnostics());
+    }
+
     if (url.pathname === "/latest.json" || url.pathname === "/api/live") {
       try {
         return jsonResponse(await buildLivePayload());
       } catch (error) {
-        return jsonResponse({ error: "Live feed unavailable", detail: String(error?.message || error) }, 502);
+        return jsonResponse({ error: "Static dashboard data unavailable", detail: String(error?.message || error) }, 502);
       }
     }
 
