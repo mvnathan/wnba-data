@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-08-16T23:25:17.719622+00:00",
+  "generated_at_utc": "2026-08-16T23:26:05.909883+00:00",
   "source_generated_at_utc": "2026-08-16T15:20:36.670643+00:00",
   "active_opportunities": [
     {
@@ -25,7 +25,7 @@
       "market_updated_at": "2026-08-16T15:20:16Z",
       "home_win_probability": 0.0,
       "away_win_probability": 1.0,
-      "evaluated_at_utc": "2026-08-16T23:25:17.719622+00:00",
+      "evaluated_at_utc": "2026-08-16T23:26:05.909883+00:00",
       "is_new": false,
       "lifecycle_event": null
     },
@@ -52,7 +52,7 @@
       "market_updated_at": "2026-08-16T15:20:16Z",
       "home_win_probability": 0.0,
       "away_win_probability": 1.0,
-      "evaluated_at_utc": "2026-08-16T23:25:17.719622+00:00",
+      "evaluated_at_utc": "2026-08-16T23:26:05.909883+00:00",
       "is_new": false,
       "lifecycle_event": null
     },
@@ -60,9 +60,9 @@
       "market": "total",
       "level": "very_strong",
       "side": "UNDER",
-      "edge": 19.696837775490394,
-      "signed_edge": -19.696837775490394,
-      "model_total": 158.8031622245096,
+      "edge": 21.363069593115938,
+      "signed_edge": -21.363069593115938,
+      "model_total": 157.13693040688406,
       "market_total": 178.5,
       "game_id": "401857149",
       "phase": "live",
@@ -72,14 +72,14 @@
       "game_date_utc": "2026-08-16 23:00:00+00:00",
       "status": "STATUS_IN_PROGRESS",
       "live_period": 1,
-      "live_clock": "1:03",
+      "live_clock": "51.4",
       "live_away_score": 15,
       "live_home_score": 18,
       "market_bookmaker": "DraftKings",
       "market_updated_at": "2026-08-16T15:20:16Z",
-      "home_win_probability": 0.6730283304860756,
-      "away_win_probability": 0.3269716695139244,
-      "evaluated_at_utc": "2026-08-16T23:25:17.719622+00:00",
+      "home_win_probability": 0.6730542864750815,
+      "away_win_probability": 0.3269457135249185,
+      "evaluated_at_utc": "2026-08-16T23:26:05.909883+00:00",
       "is_new": false,
       "lifecycle_event": null
     }
