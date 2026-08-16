@@ -55,6 +55,8 @@ jobs:
           pip install -r requirements.txt
           pip check
       - name: Train models without publishing
+        env:
+          PYTHONPATH: ${{ github.workspace }}
         run: python scripts/train_models.py
       - name: Verify training artifacts
         run: |
