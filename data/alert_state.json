@@ -1,5 +1,5 @@
 {
-  "updated_at_utc": "2026-08-16T16:02:04.926349+00:00",
+  "updated_at_utc": "2026-08-16T16:02:52.734684+00:00",
   "opportunities": {
     "401857143|pregame|spread": {
       "market": "spread",
@@ -622,7 +622,7 @@
       "away_win_probability": 0.5779189850937971,
       "active": false,
       "first_seen_at_utc": null,
-      "last_seen_at_utc": "2026-08-16T16:02:04.926349+00:00",
+      "last_seen_at_utc": "2026-08-16T16:02:52.734684+00:00",
       "last_notified_at_utc": null,
       "last_notified_edge": null,
       "resolved_at_utc": null
@@ -652,7 +652,7 @@
       "away_win_probability": 0.5779189850937971,
       "active": false,
       "first_seen_at_utc": null,
-      "last_seen_at_utc": "2026-08-16T16:02:04.926349+00:00",
+      "last_seen_at_utc": "2026-08-16T16:02:52.734684+00:00",
       "last_notified_at_utc": null,
       "last_notified_edge": null,
       "resolved_at_utc": null
@@ -682,7 +682,7 @@
       "away_win_probability": 0.5781836324330254,
       "active": true,
       "first_seen_at_utc": "2026-08-16T14:34:57.540622+00:00",
-      "last_seen_at_utc": "2026-08-16T16:02:04.926349+00:00",
+      "last_seen_at_utc": "2026-08-16T16:02:52.734684+00:00",
       "last_notified_at_utc": "2026-08-16T15:20:42.130784+00:00",
       "last_notified_edge": 4.087403384632408
     },
@@ -711,7 +711,7 @@
       "away_win_probability": 0.5781836324330254,
       "active": true,
       "first_seen_at_utc": "2026-08-16T14:34:57.540622+00:00",
-      "last_seen_at_utc": "2026-08-16T16:02:04.926349+00:00",
+      "last_seen_at_utc": "2026-08-16T16:02:52.734684+00:00",
       "last_notified_at_utc": "2026-08-16T15:20:42.130784+00:00",
       "last_notified_edge": 11.63390338463239
     },
@@ -740,7 +740,7 @@
       "away_win_probability": 0.3460700553868432,
       "active": false,
       "first_seen_at_utc": null,
-      "last_seen_at_utc": "2026-08-16T16:02:04.926349+00:00",
+      "last_seen_at_utc": "2026-08-16T16:02:52.734684+00:00",
       "last_notified_at_utc": null,
       "last_notified_edge": null,
       "resolved_at_utc": null
@@ -770,7 +770,7 @@
       "away_win_probability": 0.3460700553868432,
       "active": true,
       "first_seen_at_utc": "2026-08-16T14:34:57.540622+00:00",
-      "last_seen_at_utc": "2026-08-16T16:02:04.926349+00:00",
+      "last_seen_at_utc": "2026-08-16T16:02:52.734684+00:00",
       "last_notified_at_utc": "2026-08-16T15:20:42.130784+00:00",
       "last_notified_edge": 6.112979482874664
     }
