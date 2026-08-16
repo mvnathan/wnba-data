@@ -120,16 +120,29 @@ function cleanTeamName(value) {
   return String(value || "").toLowerCase().replace(/[^a-z0-9]/g, "");
 }
 
+function teamMatches(predictionName, predictionAbbr, team) {
+  const targetName = cleanTeamName(predictionName);
+  const targetAbbr = cleanTeamName(predictionAbbr);
+  const candidates = [team?.name, team?.market, team?.alias]
+    .map(cleanTeamName)
+    .filter(Boolean);
+
+  return candidates.some((candidate) =>
+    candidate === targetName ||
+    candidate === targetAbbr ||
+    candidate.endsWith(targetName) ||
+    targetName.endsWith(candidate)
+  );
+}
+
 function scheduleGameMatches(prediction, game) {
-  const homeName = cleanTeamName(game?.home?.name || game?.home?.market || "");
-  const awayName = cleanTeamName(game?.away?.name || game?.away?.market || "");
-  return homeName === cleanTeamName(prediction.home_team) && awayName === cleanTeamName(prediction.away_team);
+  return teamMatches(prediction.home_team, prediction.home_abbr, game?.home) &&
+    teamMatches(prediction.away_team, prediction.away_abbr, game?.away);
 }
 
 function shouldFetchBoxscore(game) {
   const status = String(game?.status || "").toLowerCase();
-  if (["inprogress", "halftime", "complete"].includes(status)) return true;
-  if (status === "closed") return false;
+  if (["inprogress", "halftime", "complete", "closed"].includes(status)) return true;
   const scheduled = Date.parse(game?.scheduled || "");
   if (!Number.isFinite(scheduled)) return false;
   const delta = Date.now() - scheduled;
@@ -256,7 +269,7 @@ async function overlaySportradar(latest, apiKey) {
   latest.last_live_update_utc = refreshed ? now : latest.last_live_update_utc;
   latest.live_delivery = "cloudflare-worker";
   latest.live_source = "sportradar";
-  latest.live_source_status = "fresh";
+  latest.live_source_status = matched ? "fresh" : "no-matches";
   latest.live_source_matched_games = matched;
   latest.live_source_refreshed_games = refreshed;
   delete latest.live_source_error;
