@@ -77,7 +77,7 @@
       "live_clock": "0.0",
       "live_home_score": 29,
       "live_away_score": 46,
-      "live_updated_at": "2026-08-16T22:02:03.787994+00:00",
+      "live_updated_at": "2026-08-16T22:02:51.993965+00:00",
       "live_projected_home_score": 63.7596148802518,
       "live_projected_away_score": 90.82739079007268,
       "live_predicted_margin": -27.06777590982088,
@@ -85,7 +85,7 @@
       "live_home_win_probability": 0.183769701621626,
       "live_away_win_probability": 0.816230298378374,
       "live_elapsed_fraction": 0.5,
-      "live_projection_updated_at": "2026-08-16T22:02:03.787994+00:00",
+      "live_projection_updated_at": "2026-08-16T22:02:51.993965+00:00",
       "live_projected_winner_side": "away",
       "live_projected_winner_abbr": "CHI"
     },
@@ -164,7 +164,7 @@
       "live_clock": "0.0",
       "live_home_score": 44,
       "live_away_score": 40,
-      "live_updated_at": "2026-08-16T22:02:03.787994+00:00",
+      "live_updated_at": "2026-08-16T22:02:51.993965+00:00",
       "live_projected_home_score": 86.86624542439375,
       "live_projected_away_score": 81.45841370188886,
       "live_predicted_margin": 5.407831722504895,
@@ -172,7 +172,7 @@
       "live_home_win_probability": 0.5767551199364636,
       "live_away_win_probability": 0.42324488006353644,
       "live_elapsed_fraction": 0.5,
-      "live_projection_updated_at": "2026-08-16T22:02:03.787994+00:00",
+      "live_projection_updated_at": "2026-08-16T22:02:51.993965+00:00",
       "live_projected_winner_side": "home",
       "live_projected_winner_abbr": "ATL"
     },
@@ -251,7 +251,7 @@
       "live_clock": "0.0",
       "live_home_score": 0,
       "live_away_score": 0,
-      "live_updated_at": "2026-08-16T22:02:03.787994+00:00"
+      "live_updated_at": "2026-08-16T22:02:51.993965+00:00"
     }
   ],
   "uncertainty": {
@@ -266,6 +266,6 @@
       "p90": 86.34986586245819
     }
   },
-  "live_generated_at_utc": "2026-08-16T22:02:03.787994+00:00",
-  "last_live_update_utc": "2026-08-16T22:02:03.787994+00:00"
+  "live_generated_at_utc": "2026-08-16T22:02:51.993965+00:00",
+  "last_live_update_utc": "2026-08-16T22:02:51.993965+00:00"
 }
