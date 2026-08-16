@@ -175,6 +175,36 @@ def _blend_number(model_value: Any, market_value: Any, market_weight: float) -> 
     return (1.0 - market_weight) * model + market_weight * market
 
 
+def _refresh_directional_fields(row: dict[str, Any]) -> None:
+    """Keep winner/spread/coherence labels aligned with the final forecast."""
+    try:
+        margin = float(row.get("predicted_margin"))
+    except (TypeError, ValueError):
+        return
+
+    if abs(margin) < 0.5:
+        row["projected_winner_side"] = "pick"
+        row["projected_winner_abbr"] = None
+        row["projected_spread"] = 0.0
+        row["prediction_coherent"] = None
+        return
+
+    margin_home_pick = margin > 0
+    row["projected_winner_side"] = "home" if margin_home_pick else "away"
+    row["projected_winner_abbr"] = (
+        row.get("home_abbr") if margin_home_pick else row.get("away_abbr")
+    )
+    row["projected_spread"] = -abs(margin)
+
+    try:
+        home_probability = float(row.get("home_win_probability"))
+    except (TypeError, ValueError):
+        row["prediction_coherent"] = None
+        return
+
+    row["prediction_coherent"] = (home_probability >= 0.5) == margin_home_pick
+
+
 def _apply_market_anchor(row: dict[str, Any]) -> dict[str, Any]:
     """Blend model-only forecasts with market priors while preserving both."""
     row = dict(row)
@@ -223,6 +253,7 @@ def _apply_market_anchor(row: dict[str, Any]) -> dict[str, Any]:
             row["away_win_probability"] = 1.0 - blended_probability
             row["market_moneyline_weight"] = MARKET_MONEYLINE_WEIGHT
 
+    _refresh_directional_fields(row)
     return row
 
 
