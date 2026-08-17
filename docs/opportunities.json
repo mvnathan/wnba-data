@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-08-17T01:08:17.097685+00:00",
+  "generated_at_utc": "2026-08-17T01:09:04.947018+00:00",
   "source_generated_at_utc": "2026-08-16T15:20:36.670643+00:00",
   "active_opportunities": [
     {
@@ -25,7 +25,7 @@
       "market_updated_at": "2026-08-16T15:20:16Z",
       "home_win_probability": 0.42181636756697466,
       "away_win_probability": 0.5781836324330254,
-      "evaluated_at_utc": "2026-08-17T01:08:17.097685+00:00",
+      "evaluated_at_utc": "2026-08-17T01:09:04.947018+00:00",
       "is_new": false,
       "lifecycle_event": null
     },
@@ -52,17 +52,17 @@
       "market_updated_at": "2026-08-16T15:20:16Z",
       "home_win_probability": 0.42181636756697466,
       "away_win_probability": 0.5781836324330254,
-      "evaluated_at_utc": "2026-08-17T01:08:17.097685+00:00",
+      "evaluated_at_utc": "2026-08-17T01:09:04.947018+00:00",
       "is_new": false,
       "lifecycle_event": null
     },
     {
       "market": "total",
-      "level": "strong",
+      "level": "very_strong",
       "side": "UNDER",
-      "edge": 9.153529444285368,
-      "signed_edge": -9.153529444285368,
-      "model_total": 169.34647055571463,
+      "edge": 10.830031035148693,
+      "signed_edge": -10.830031035148693,
+      "model_total": 167.6699689648513,
       "market_total": 178.5,
       "game_id": "401857149",
       "phase": "live",
@@ -72,21 +72,68 @@
       "game_date_utc": "2026-08-16 23:00:00+00:00",
       "status": "STATUS_IN_PROGRESS",
       "live_period": 4,
-      "live_clock": "2:55",
-      "live_away_score": 77,
+      "live_clock": "2:04",
+      "live_away_score": 79,
       "live_home_score": 80,
       "market_bookmaker": "DraftKings",
       "market_updated_at": "2026-08-16T15:20:16Z",
-      "home_win_probability": 0.7618556177642131,
-      "away_win_probability": 0.23814438223578693,
-      "evaluated_at_utc": "2026-08-17T01:08:17.097685+00:00",
+      "home_win_probability": 0.6073663972257597,
+      "away_win_probability": 0.3926336027742403,
+      "evaluated_at_utc": "2026-08-17T01:09:04.947018+00:00",
       "is_new": false,
-      "lifecycle_event": null
+      "lifecycle_event": "escalated"
     }
   ],
   "new_alerts": [],
-  "notification_events": [],
+  "notification_events": [
+    {
+      "event_id": "cbfeef1a2584af6efdaf",
+      "event_type": "escalated",
+      "notify": true,
+      "occurred_at_utc": "2026-08-17T01:09:04.947018+00:00",
+      "game_id": "401857149",
+      "phase": "live",
+      "market": "total",
+      "side": "UNDER",
+      "level": "very_strong",
+      "edge": 10.830031035148693,
+      "away_abbr": "POR",
+      "home_abbr": "PHX",
+      "live_period": 4,
+      "live_clock": "2:04",
+      "live_away_score": 79,
+      "live_home_score": 80,
+      "market_bookmaker": "DraftKings",
+      "market_updated_at": "2026-08-16T15:20:16Z",
+      "previous_side": "UNDER",
+      "previous_level": "strong",
+      "previous_edge": 9.153529444285368
+    }
+  ],
   "recent_events": [
+    {
+      "event_id": "cbfeef1a2584af6efdaf",
+      "event_type": "escalated",
+      "notify": true,
+      "occurred_at_utc": "2026-08-17T01:09:04.947018+00:00",
+      "game_id": "401857149",
+      "phase": "live",
+      "market": "total",
+      "side": "UNDER",
+      "level": "very_strong",
+      "edge": 10.830031035148693,
+      "away_abbr": "POR",
+      "home_abbr": "PHX",
+      "live_period": 4,
+      "live_clock": "2:04",
+      "live_away_score": 79,
+      "live_home_score": 80,
+      "market_bookmaker": "DraftKings",
+      "market_updated_at": "2026-08-16T15:20:16Z",
+      "previous_side": "UNDER",
+      "previous_level": "strong",
+      "previous_edge": 9.153529444285368
+    },
     {
       "event_id": "fe438cd067d86a3fb871",
       "event_type": "downgraded",
@@ -4063,10 +4110,10 @@
   ],
   "summary": {
     "active_count": 3,
-    "notification_event_count": 0,
+    "notification_event_count": 1,
     "new_count": 0,
-    "very_strong_count": 1,
-    "strong_count": 2
+    "very_strong_count": 2,
+    "strong_count": 1
   },
   "policy": {
     "spread_thresholds": {
