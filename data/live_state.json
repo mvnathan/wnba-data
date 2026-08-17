@@ -57,7 +57,7 @@
     "last_status": "STATUS_FINAL",
     "last_status_detail": "Final",
     "last_event_type": "FINAL",
-    "last_prediction_timestamp": "2026-08-17T03:25:30.334361+00:00"
+    "last_prediction_timestamp": "2026-08-17T03:26:18.815476+00:00"
   },
   "401857150": {
     "last_seen_period": 5,
@@ -67,7 +67,7 @@
     "last_status": "STATUS_FINAL",
     "last_status_detail": "Final/OT",
     "last_event_type": "FINAL",
-    "last_prediction_timestamp": "2026-08-17T03:25:30.334361+00:00"
+    "last_prediction_timestamp": "2026-08-17T03:26:18.815476+00:00"
   },
   "401857149": {
     "last_seen_period": 4,
@@ -77,6 +77,6 @@
     "last_status": "STATUS_FINAL",
     "last_status_detail": "Final",
     "last_event_type": "FINAL",
-    "last_prediction_timestamp": "2026-08-17T03:25:30.334361+00:00"
+    "last_prediction_timestamp": "2026-08-17T03:26:18.815476+00:00"
   }
 }
