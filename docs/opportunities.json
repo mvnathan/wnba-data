@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-08-17T00:01:30.223616+00:00",
+  "generated_at_utc": "2026-08-17T00:02:18.262929+00:00",
   "source_generated_at_utc": "2026-08-16T15:20:36.670643+00:00",
   "active_opportunities": [
     {
@@ -25,7 +25,7 @@
       "market_updated_at": "2026-08-16T15:20:16Z",
       "home_win_probability": 0.42181636756697466,
       "away_win_probability": 0.5781836324330254,
-      "evaluated_at_utc": "2026-08-17T00:01:30.223616+00:00",
+      "evaluated_at_utc": "2026-08-17T00:02:18.262929+00:00",
       "is_new": false,
       "lifecycle_event": null
     },
@@ -52,7 +52,7 @@
       "market_updated_at": "2026-08-16T15:20:16Z",
       "home_win_probability": 0.42181636756697466,
       "away_win_probability": 0.5781836324330254,
-      "evaluated_at_utc": "2026-08-17T00:01:30.223616+00:00",
+      "evaluated_at_utc": "2026-08-17T00:02:18.262929+00:00",
       "is_new": false,
       "lifecycle_event": null
     },
@@ -70,7 +70,7 @@
       "away_abbr": "POR",
       "home_abbr": "PHX",
       "game_date_utc": "2026-08-16 23:00:00+00:00",
-      "status": "STATUS_IN_PROGRESS",
+      "status": "STATUS_HALFTIME",
       "live_period": 2,
       "live_clock": "0.0",
       "live_away_score": 36,
@@ -79,7 +79,7 @@
       "market_updated_at": "2026-08-16T15:20:16Z",
       "home_win_probability": 0.7459500496438443,
       "away_win_probability": 0.25404995035615574,
-      "evaluated_at_utc": "2026-08-17T00:01:30.223616+00:00",
+      "evaluated_at_utc": "2026-08-17T00:02:18.262929+00:00",
       "is_new": false,
       "lifecycle_event": null
     },
@@ -97,7 +97,7 @@
       "away_abbr": "POR",
       "home_abbr": "PHX",
       "game_date_utc": "2026-08-16 23:00:00+00:00",
-      "status": "STATUS_IN_PROGRESS",
+      "status": "STATUS_HALFTIME",
       "live_period": 2,
       "live_clock": "0.0",
       "live_away_score": 36,
@@ -106,7 +106,7 @@
       "market_updated_at": "2026-08-16T15:20:16Z",
       "home_win_probability": 0.7459500496438443,
       "away_win_probability": 0.25404995035615574,
-      "evaluated_at_utc": "2026-08-17T00:01:30.223616+00:00",
+      "evaluated_at_utc": "2026-08-17T00:02:18.262929+00:00",
       "is_new": false,
       "lifecycle_event": null
     }
