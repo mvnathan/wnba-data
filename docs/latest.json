@@ -12,7 +12,7 @@
       "home_abbr": "CON",
       "away_abbr": "LA",
       "status": "STATUS_IN_PROGRESS",
-      "status_detail": "9:58 - 1st Quarter",
+      "status_detail": "9:12 - 1st Quarter",
       "venue": "TD Garden",
       "home_win": 0.37098241556613465,
       "home_score": 84.95700453887909,
@@ -72,20 +72,20 @@
       "market_no_vig_home_win_probability": 0.4739134147382802,
       "market_moneyline_weight": 0.25,
       "live_status": "STATUS_IN_PROGRESS",
-      "live_status_detail": "9:58 - 1st Quarter",
+      "live_status_detail": "9:12 - 1st Quarter",
       "live_period": 1,
-      "live_clock": "9:58",
-      "live_home_score": 0,
-      "live_away_score": 0,
-      "live_updated_at": "2026-08-18T23:03:52.381422+00:00",
-      "live_projected_home_score": 84.46986410537536,
-      "live_projected_away_score": 82.57379426249697,
-      "live_predicted_margin": 1.89606984287839,
-      "live_predicted_total": 167.04365836787235,
-      "live_home_win_probability": 0.3974536426206098,
-      "live_away_win_probability": 0.6025463573793902,
-      "live_elapsed_fraction": 0.0008333333333333334,
-      "live_projection_updated_at": "2026-08-18T23:03:52.381422+00:00",
+      "live_clock": "9:12",
+      "live_home_score": 2,
+      "live_away_score": 2,
+      "live_updated_at": "2026-08-18T23:04:40.597651+00:00",
+      "live_projected_home_score": 86.04189483828019,
+      "live_projected_away_score": 84.27242213144152,
+      "live_predicted_margin": 1.7694727068386698,
+      "live_predicted_total": 170.3143169697217,
+      "live_home_win_probability": 0.40457838144575037,
+      "live_away_win_probability": 0.5954216185542496,
+      "live_elapsed_fraction": 0.02,
+      "live_projection_updated_at": "2026-08-18T23:04:40.597651+00:00",
       "live_projected_winner_side": "home",
       "live_projected_winner_abbr": "CON"
     },
@@ -98,8 +98,8 @@
       "away_team": "Fever",
       "home_abbr": "TOR",
       "away_abbr": "IND",
-      "status": "STATUS_SCHEDULED",
-      "status_detail": "Tue, August 18th at 7:00 PM EDT",
+      "status": "STATUS_IN_PROGRESS",
+      "status_detail": "9:46 - 1st Quarter",
       "venue": "Scotiabank Arena",
       "home_win": 0.2991385503387861,
       "home_score": 84.14563546791015,
@@ -158,13 +158,23 @@
       "model_home_win_probability": 0.2991385503387861,
       "market_no_vig_home_win_probability": 0.2042241228835748,
       "market_moneyline_weight": 0.25,
-      "live_status": "STATUS_SCHEDULED",
-      "live_status_detail": "Tue, August 18th at 7:00 PM EDT",
-      "live_period": null,
-      "live_clock": "0.0",
+      "live_status": "STATUS_IN_PROGRESS",
+      "live_status_detail": "9:46 - 1st Quarter",
+      "live_period": 1,
+      "live_clock": "9:46",
       "live_home_score": 0,
       "live_away_score": 0,
-      "live_updated_at": "2026-08-18T23:03:52.381422+00:00"
+      "live_updated_at": "2026-08-18T23:04:40.597651+00:00",
+      "live_projected_home_score": 81.88903929113326,
+      "live_projected_away_score": 84.47221975263433,
+      "live_predicted_margin": -2.5831804615010725,
+      "live_predicted_total": 166.36125904376757,
+      "live_home_win_probability": 0.2787909747083426,
+      "live_away_win_probability": 0.7212090252916574,
+      "live_elapsed_fraction": 0.005833333333333334,
+      "live_projection_updated_at": "2026-08-18T23:04:40.597651+00:00",
+      "live_projected_winner_side": "away",
+      "live_projected_winner_abbr": "IND"
     },
     {
       "game_id": "401857154",
@@ -241,7 +251,7 @@
       "live_clock": "0.0",
       "live_home_score": 0,
       "live_away_score": 0,
-      "live_updated_at": "2026-08-18T23:03:52.381422+00:00"
+      "live_updated_at": "2026-08-18T23:04:40.597651+00:00"
     },
     {
       "game_id": "401857155",
@@ -318,7 +328,7 @@
       "live_clock": "0.0",
       "live_home_score": 0,
       "live_away_score": 0,
-      "live_updated_at": "2026-08-18T23:03:52.381422+00:00"
+      "live_updated_at": "2026-08-18T23:04:40.597651+00:00"
     }
   ],
   "uncertainty": {
@@ -333,6 +343,6 @@
       "p90": 84.7135938175884
     }
   },
-  "live_generated_at_utc": "2026-08-18T23:03:52.381422+00:00",
-  "last_live_update_utc": "2026-08-18T23:03:52.381422+00:00"
+  "live_generated_at_utc": "2026-08-18T23:04:40.597651+00:00",
+  "last_live_update_utc": "2026-08-18T23:04:40.597651+00:00"
 }
