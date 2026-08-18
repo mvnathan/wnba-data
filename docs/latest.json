@@ -11,8 +11,8 @@
       "away_team": "Wings",
       "home_abbr": "GS",
       "away_abbr": "DAL",
-      "status": "STATUS_END_PERIOD",
-      "status_detail": "End of 3rd Quarter",
+      "status": "STATUS_IN_PROGRESS",
+      "status_detail": "9:05 - 3rd Quarter",
       "venue": "Chase Center",
       "home_win": 0.8276457782364102,
       "home_score": 84.93000167471983,
@@ -71,21 +71,21 @@
       "model_home_win_probability": 0.8276457782364102,
       "market_no_vig_home_win_probability": 0.6853932584269663,
       "market_moneyline_weight": 0.25,
-      "live_status": "STATUS_END_PERIOD",
-      "live_status_detail": "End of 3rd Quarter",
+      "live_status": "STATUS_IN_PROGRESS",
+      "live_status_detail": "9:05 - 3rd Quarter",
       "live_period": 3,
-      "live_clock": "9:24",
+      "live_clock": "9:05",
       "live_home_score": 44,
       "live_away_score": 31,
-      "live_updated_at": "2026-08-18T03:14:54.942913+00:00",
-      "live_projected_home_score": 85.34050641279826,
-      "live_projected_away_score": 63.596163419150535,
-      "live_predicted_margin": 21.744342993647727,
-      "live_predicted_total": 148.9366698319488,
-      "live_home_win_probability": 0.8928297620583994,
-      "live_away_win_probability": 0.10717023794160063,
-      "live_elapsed_fraction": 0.515,
-      "live_projection_updated_at": "2026-08-18T03:14:54.942913+00:00",
+      "live_updated_at": "2026-08-18T03:15:42.983121+00:00",
+      "live_projected_home_score": 84.28792913506834,
+      "live_projected_away_score": 62.737033848317125,
+      "live_predicted_margin": 21.550895286751214,
+      "live_predicted_total": 147.02496298338548,
+      "live_home_win_probability": 0.8939341401960899,
+      "live_away_win_probability": 0.10606585980391015,
+      "live_elapsed_fraction": 0.5229166666666667,
+      "live_projection_updated_at": "2026-08-18T03:15:42.983121+00:00",
       "live_projected_winner_side": "home",
       "live_projected_winner_abbr": "GS"
     }
@@ -102,6 +102,6 @@
       "p90": 84.93000167471983
     }
   },
-  "live_generated_at_utc": "2026-08-18T03:14:54.942913+00:00",
-  "last_live_update_utc": "2026-08-18T03:14:54.942913+00:00"
+  "live_generated_at_utc": "2026-08-18T03:15:42.983121+00:00",
+  "last_live_update_utc": "2026-08-18T03:15:42.983121+00:00"
 }
