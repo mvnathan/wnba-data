@@ -12,7 +12,7 @@ concurrency:
 jobs:
   live:
     runs-on: ubuntu-latest
-    timeout-minutes: 25
+    timeout-minutes: 350
     permissions:
       contents: write
     env:
@@ -34,12 +34,13 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-          # Keep a monitor alive long enough to bridge delayed GitHub cron starts.
-          # A normally scheduled replacement starts every 5 minutes and cancels
-          # this run. If GitHub delays the replacement, this job continues polling.
-          # Thirty 45-second cycles provide about 22.5 minutes of coverage.
-          for iteration in $(seq 1 30); do
-            echo "Live poll ${iteration}/30"
+          # GitHub scheduled starts can be delayed well beyond the nominal 5-minute
+          # cadence. Keep the current monitor alive for roughly five hours so live
+          # projections do not go stale while waiting for a replacement run. A
+          # normally scheduled replacement still cancels this run and takes over.
+          max_polls=400
+          for iteration in $(seq 1 "${max_polls}"); do
+            echo "Live poll ${iteration}/${max_polls}"
 
             # Generated live-state files are also written by other workflows.
             # Always build from the newest main branch, and if another writer wins
@@ -64,7 +65,7 @@ jobs:
                 break
               fi
 
-              git commit -m "Update live dashboard (${iteration}/30)"
+              git commit -m "Update live dashboard (${iteration}/${max_polls})"
 
               if git push origin HEAD:main; then
                 published=true
@@ -82,7 +83,7 @@ jobs:
               exit 1
             fi
 
-            if [ "${iteration}" -lt 30 ]; then
+            if [ "${iteration}" -lt "${max_polls}" ]; then
               sleep 45
             fi
           done
