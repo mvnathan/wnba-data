@@ -1,5 +1,5 @@
 {
-  "updated_at_utc": "2026-08-18T03:24:31.151179+00:00",
+  "updated_at_utc": "2026-08-18T03:25:19.158127+00:00",
   "opportunities": {
     "401857143|pregame|spread": {
       "market": "spread",
@@ -1039,7 +1039,7 @@
       "away_win_probability": 0.08949372475347861,
       "active": true,
       "first_seen_at_utc": null,
-      "last_seen_at_utc": "2026-08-18T03:24:31.151179+00:00",
+      "last_seen_at_utc": "2026-08-18T03:25:19.158127+00:00",
       "last_notified_at_utc": "2026-08-18T03:15:43.386341+00:00",
       "last_notified_edge": 16.050895286751214
     },
@@ -1068,7 +1068,7 @@
       "away_win_probability": 0.08949372475347861,
       "active": true,
       "first_seen_at_utc": null,
-      "last_seen_at_utc": "2026-08-18T03:24:31.151179+00:00",
+      "last_seen_at_utc": "2026-08-18T03:25:19.158127+00:00",
       "last_notified_at_utc": "2026-08-18T03:15:43.386341+00:00",
       "last_notified_edge": 15.475037016614522
     }
