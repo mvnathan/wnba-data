@@ -12,7 +12,7 @@
       "home_abbr": "GS",
       "away_abbr": "DAL",
       "status": "STATUS_IN_PROGRESS",
-      "status_detail": "3:27 - 1st Quarter",
+      "status_detail": "5:55 - 2nd Quarter",
       "venue": "Chase Center",
       "home_win": 0.8276457782364102,
       "home_score": 84.93000167471983,
@@ -72,22 +72,22 @@
       "market_no_vig_home_win_probability": 0.6853932584269663,
       "market_moneyline_weight": 0.25,
       "live_status": "STATUS_IN_PROGRESS",
-      "live_status_detail": "3:27 - 1st Quarter",
-      "live_period": 1,
-      "live_clock": "3:27",
-      "live_home_score": 8,
-      "live_away_score": 15,
-      "live_updated_at": "2026-08-18T02:21:29.325667+00:00",
-      "live_projected_home_score": 71.2570438948903,
-      "live_projected_away_score": 83.20853623696449,
-      "live_predicted_margin": -11.95149234207419,
-      "live_predicted_total": 154.46558013185478,
-      "live_home_win_probability": 0.6430173927706246,
-      "live_away_win_probability": 0.35698260722937536,
-      "live_elapsed_fraction": 0.16375,
-      "live_projection_updated_at": "2026-08-18T02:21:29.325667+00:00",
-      "live_projected_winner_side": "away",
-      "live_projected_winner_abbr": "DAL"
+      "live_status_detail": "5:55 - 2nd Quarter",
+      "live_period": 2,
+      "live_clock": "5:55",
+      "live_home_score": 26,
+      "live_away_score": 25,
+      "live_updated_at": "2026-08-18T02:42:57.841156+00:00",
+      "live_projected_home_score": 77.74514618051326,
+      "live_projected_away_score": 73.49614349228679,
+      "live_predicted_margin": 4.249002688226469,
+      "live_predicted_total": 151.24128967280006,
+      "live_home_win_probability": 0.7175359692532005,
+      "live_away_win_probability": 0.2824640307467995,
+      "live_elapsed_fraction": 0.35208333333333336,
+      "live_projection_updated_at": "2026-08-18T02:42:57.841156+00:00",
+      "live_projected_winner_side": "home",
+      "live_projected_winner_abbr": "GS"
     }
   ],
   "uncertainty": {
@@ -102,6 +102,6 @@
       "p90": 84.93000167471983
     }
   },
-  "live_generated_at_utc": "2026-08-18T02:21:29.325667+00:00",
-  "last_live_update_utc": "2026-08-18T02:21:29.325667+00:00"
+  "live_generated_at_utc": "2026-08-18T02:42:57.841156+00:00",
+  "last_live_update_utc": "2026-08-18T02:42:57.841156+00:00"
 }
