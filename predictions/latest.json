@@ -11,8 +11,8 @@
       "away_team": "Wings",
       "home_abbr": "GS",
       "away_abbr": "DAL",
-      "status": "STATUS_SCHEDULED",
-      "status_detail": "Mon, August 17th at 10:00 PM EDT",
+      "status": "STATUS_IN_PROGRESS",
+      "status_detail": "9:41 - 1st Quarter",
       "venue": "Chase Center",
       "home_win": 0.8276457782364102,
       "home_score": 84.93000167471983,
@@ -71,13 +71,23 @@
       "model_home_win_probability": 0.8276457782364102,
       "market_no_vig_home_win_probability": 0.6853932584269663,
       "market_moneyline_weight": 0.25,
-      "live_status": "STATUS_SCHEDULED",
-      "live_status_detail": "Mon, August 17th at 10:00 PM EDT",
-      "live_period": null,
-      "live_clock": "0.0",
+      "live_status": "STATUS_IN_PROGRESS",
+      "live_status_detail": "9:41 - 1st Quarter",
+      "live_period": 1,
+      "live_clock": "9:41",
       "live_home_score": 0,
       "live_away_score": 0,
-      "live_updated_at": "2026-08-18T02:13:25.816309+00:00"
+      "live_updated_at": "2026-08-18T02:14:14.044856+00:00",
+      "live_projected_home_score": 82.0214112914083,
+      "live_projected_away_score": 75.41082979391975,
+      "live_predicted_margin": 6.610581497488553,
+      "live_predicted_total": 157.43224108532803,
+      "live_home_win_probability": 0.7885794874143884,
+      "live_away_win_probability": 0.21142051258561156,
+      "live_elapsed_fraction": 0.007916666666666667,
+      "live_projection_updated_at": "2026-08-18T02:14:14.044856+00:00",
+      "live_projected_winner_side": "home",
+      "live_projected_winner_abbr": "GS"
     }
   ],
   "uncertainty": {
@@ -92,6 +102,6 @@
       "p90": 84.93000167471983
     }
   },
-  "live_generated_at_utc": "2026-08-18T02:13:25.816309+00:00",
-  "last_live_update_utc": "2026-08-18T02:13:25.816309+00:00"
+  "live_generated_at_utc": "2026-08-18T02:14:14.044856+00:00",
+  "last_live_update_utc": "2026-08-18T02:14:14.044856+00:00"
 }
