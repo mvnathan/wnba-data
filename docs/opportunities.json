@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-08-18T03:54:28.293944+00:00",
+  "generated_at_utc": "2026-08-18T03:55:16.480306+00:00",
   "source_generated_at_utc": "2026-08-17T14:39:19.457095+00:00",
   "active_opportunities": [
     {
@@ -25,7 +25,7 @@
       "market_updated_at": "2026-08-17T14:38:35Z",
       "home_win_probability": 0.960843193916734,
       "away_win_probability": 0.039156806083265994,
-      "evaluated_at_utc": "2026-08-18T03:54:28.293944+00:00",
+      "evaluated_at_utc": "2026-08-18T03:55:16.480306+00:00",
       "is_new": false,
       "lifecycle_event": null
     },
@@ -52,7 +52,7 @@
       "market_updated_at": "2026-08-17T14:38:35Z",
       "home_win_probability": 0.960843193916734,
       "away_win_probability": 0.039156806083265994,
-      "evaluated_at_utc": "2026-08-18T03:54:28.293944+00:00",
+      "evaluated_at_utc": "2026-08-18T03:55:16.480306+00:00",
       "is_new": false,
       "lifecycle_event": null
     }
