@@ -11,8 +11,8 @@
       "away_team": "Wings",
       "home_abbr": "GS",
       "away_abbr": "DAL",
-      "status": "STATUS_IN_PROGRESS",
-      "status_detail": "10.1 - 3rd Quarter",
+      "status": "STATUS_END_PERIOD",
+      "status_detail": "End of 3rd Quarter",
       "venue": "Chase Center",
       "home_win": 0.8276457782364102,
       "home_score": 84.93000167471983,
@@ -71,21 +71,21 @@
       "model_home_win_probability": 0.8276457782364102,
       "market_no_vig_home_win_probability": 0.6853932584269663,
       "market_moneyline_weight": 0.25,
-      "live_status": "STATUS_IN_PROGRESS",
-      "live_status_detail": "10.1 - 3rd Quarter",
+      "live_status": "STATUS_END_PERIOD",
+      "live_status_detail": "End of 3rd Quarter",
       "live_period": 3,
-      "live_clock": "10.1",
+      "live_clock": "0.0",
       "live_home_score": 62,
       "live_away_score": 46,
-      "live_updated_at": "2026-08-18T03:34:05.137451+00:00",
-      "live_projected_home_score": 83.22333435238536,
-      "live_projected_away_score": 62.502944687190194,
-      "live_predicted_margin": 20.72038966519517,
-      "live_predicted_total": 145.72627903957556,
-      "live_home_win_probability": 0.9459833766765439,
-      "live_away_win_probability": 0.05401662332345614,
-      "live_elapsed_fraction": 0.7457916666666667,
-      "live_projection_updated_at": "2026-08-18T03:34:05.137451+00:00",
+      "live_updated_at": "2026-08-18T03:34:52.912813+00:00",
+      "live_projected_home_score": 82.77647946643668,
+      "live_projected_away_score": 62.146093004762996,
+      "live_predicted_margin": 20.630386461673687,
+      "live_predicted_total": 144.9225724711997,
+      "live_home_win_probability": 0.9468431349173734,
+      "live_away_win_probability": 0.053156865082626625,
+      "live_elapsed_fraction": 0.75,
+      "live_projection_updated_at": "2026-08-18T03:34:52.912813+00:00",
       "live_projected_winner_side": "home",
       "live_projected_winner_abbr": "GS"
     }
@@ -102,6 +102,6 @@
       "p90": 84.93000167471983
     }
   },
-  "live_generated_at_utc": "2026-08-18T03:34:05.137451+00:00",
-  "last_live_update_utc": "2026-08-18T03:34:05.137451+00:00"
+  "live_generated_at_utc": "2026-08-18T03:34:52.912813+00:00",
+  "last_live_update_utc": "2026-08-18T03:34:52.912813+00:00"
 }
