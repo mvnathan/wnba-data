@@ -1,14 +1,14 @@
 {
-  "generated_at_utc": "2026-08-18T23:24:13.938363+00:00",
+  "generated_at_utc": "2026-08-18T23:25:01.973160+00:00",
   "source_generated_at_utc": "2026-08-18T14:47:19.743156+00:00",
   "active_opportunities": [
     {
       "market": "spread",
       "level": "very_strong",
       "side": "IND",
-      "edge": 18.628383846078307,
-      "signed_edge_home": -18.628383846078307,
-      "model_margin": -29.128383846078307,
+      "edge": 18.21582058990188,
+      "signed_edge_home": -18.21582058990188,
+      "model_margin": -28.71582058990188,
       "market_home_spread": 10.5,
       "game_id": "401857153",
       "phase": "live",
@@ -18,14 +18,14 @@
       "game_date_utc": "2026-08-18 23:00:00+00:00",
       "status": "STATUS_IN_PROGRESS",
       "live_period": 1,
-      "live_clock": "1:07",
+      "live_clock": "41.5",
       "live_away_score": 31,
       "live_home_score": 18,
       "market_bookmaker": "DraftKings",
       "market_updated_at": "2026-08-18T14:46:39Z",
-      "home_win_probability": 0.1977915343204068,
-      "away_win_probability": 0.8022084656795931,
-      "evaluated_at_utc": "2026-08-18T23:24:13.938363+00:00",
+      "home_win_probability": 0.19530472765548468,
+      "away_win_probability": 0.8046952723445153,
+      "evaluated_at_utc": "2026-08-18T23:25:01.973160+00:00",
       "is_new": false,
       "lifecycle_event": null
     },
@@ -52,7 +52,7 @@
       "market_updated_at": "2026-08-18T14:46:39Z",
       "home_win_probability": 0.2162201621748839,
       "away_win_probability": 0.7837798378251161,
-      "evaluated_at_utc": "2026-08-18T23:24:13.938363+00:00",
+      "evaluated_at_utc": "2026-08-18T23:25:01.973160+00:00",
       "is_new": false,
       "lifecycle_event": null
     },
@@ -79,7 +79,7 @@
       "market_updated_at": "2026-08-18T14:46:39Z",
       "home_win_probability": 0.5357946076646497,
       "away_win_probability": 0.4642053923353503,
-      "evaluated_at_utc": "2026-08-18T23:24:13.938363+00:00",
+      "evaluated_at_utc": "2026-08-18T23:25:01.973160+00:00",
       "is_new": false,
       "lifecycle_event": null
     }
