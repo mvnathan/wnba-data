@@ -12,7 +12,7 @@
       "home_abbr": "GS",
       "away_abbr": "DAL",
       "status": "STATUS_IN_PROGRESS",
-      "status_detail": "3:58 - 2nd Quarter",
+      "status_detail": "3:21 - 2nd Quarter",
       "venue": "Chase Center",
       "home_win": 0.8276457782364102,
       "home_score": 84.93000167471983,
@@ -72,20 +72,20 @@
       "market_no_vig_home_win_probability": 0.6853932584269663,
       "market_moneyline_weight": 0.25,
       "live_status": "STATUS_IN_PROGRESS",
-      "live_status_detail": "3:58 - 2nd Quarter",
+      "live_status_detail": "3:21 - 2nd Quarter",
       "live_period": 2,
-      "live_clock": "3:58",
+      "live_clock": "3:21",
       "live_home_score": 33,
       "live_away_score": 25,
-      "live_updated_at": "2026-08-18T02:51:50.912828+00:00",
-      "live_projected_home_score": 83.10199474984196,
-      "live_projected_away_score": 67.04260092920438,
-      "live_predicted_margin": 16.05939382063758,
-      "live_predicted_total": 150.14459567904635,
-      "live_home_win_probability": 0.8406133280157035,
-      "live_away_win_probability": 0.15938667198429646,
-      "live_elapsed_fraction": 0.4008333333333333,
-      "live_projection_updated_at": "2026-08-18T02:51:50.912828+00:00",
+      "live_updated_at": "2026-08-18T02:52:39.321648+00:00",
+      "live_projected_home_score": 80.86847725610332,
+      "live_projected_away_score": 65.12935847543442,
+      "live_predicted_margin": 15.739118780668903,
+      "live_predicted_total": 145.99783573153775,
+      "live_home_win_probability": 0.8412470770701637,
+      "live_away_win_probability": 0.15875292292983634,
+      "live_elapsed_fraction": 0.41625,
+      "live_projection_updated_at": "2026-08-18T02:52:39.321648+00:00",
       "live_projected_winner_side": "home",
       "live_projected_winner_abbr": "GS"
     }
@@ -102,6 +102,6 @@
       "p90": 84.93000167471983
     }
   },
-  "live_generated_at_utc": "2026-08-18T02:51:50.912828+00:00",
-  "last_live_update_utc": "2026-08-18T02:51:50.912828+00:00"
+  "live_generated_at_utc": "2026-08-18T02:52:39.321648+00:00",
+  "last_live_update_utc": "2026-08-18T02:52:39.321648+00:00"
 }
