@@ -81,12 +81,12 @@
   },
   "401857151": {
     "last_seen_period": 1,
-    "last_seen_clock": "8:01",
+    "last_seen_clock": "7:30",
     "last_home_score": 3,
-    "last_away_score": 5,
+    "last_away_score": 7,
     "last_status": "STATUS_IN_PROGRESS",
-    "last_status_detail": "8:01 - 1st Quarter",
+    "last_status_detail": "7:30 - 1st Quarter",
     "last_event_type": "START",
-    "last_prediction_timestamp": "2026-08-18T02:15:50.802757+00:00"
+    "last_prediction_timestamp": "2026-08-18T02:16:39.123051+00:00"
   }
 }
