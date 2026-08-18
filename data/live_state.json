@@ -80,13 +80,13 @@
     "last_prediction_timestamp": "2026-08-17T04:59:34.893520+00:00"
   },
   "401857151": {
-    "last_seen_period": 2,
-    "last_seen_clock": "0.0",
+    "last_seen_period": 3,
+    "last_seen_clock": "9:24",
     "last_home_score": 44,
-    "last_away_score": 28,
-    "last_status": "STATUS_HALFTIME",
-    "last_status_detail": "Halftime",
+    "last_away_score": 31,
+    "last_status": "STATUS_END_PERIOD",
+    "last_status_detail": "End of 3rd Quarter",
     "last_event_type": "START",
-    "last_prediction_timestamp": "2026-08-18T03:14:06.919272+00:00"
+    "last_prediction_timestamp": "2026-08-18T03:14:54.915258+00:00"
   }
 }
