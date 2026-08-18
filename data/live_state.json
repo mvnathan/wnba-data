@@ -81,12 +81,12 @@
   },
   "401857151": {
     "last_seen_period": 4,
-    "last_seen_clock": "0.0",
+    "last_seen_clock": "10:00",
     "last_home_score": 78,
     "last_away_score": 70,
     "last_status": "STATUS_FINAL",
     "last_status_detail": "Final",
     "last_event_type": "FINAL",
-    "last_prediction_timestamp": "2026-08-18T04:39:45.808686+00:00"
+    "last_prediction_timestamp": "2026-08-18T04:40:33.840891+00:00"
   }
 }

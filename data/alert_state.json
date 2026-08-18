@@ -1,5 +1,5 @@
 {
-  "updated_at_utc": "2026-08-18T04:39:46.264662+00:00",
+  "updated_at_utc": "2026-08-18T04:40:34.309577+00:00",
   "opportunities": {
     "401857143|pregame|spread": {
       "market": "spread",
@@ -970,7 +970,7 @@
       "game_date_utc": "2026-08-18 02:00:00+00:00",
       "status": "STATUS_FINAL",
       "live_period": 4,
-      "live_clock": "0.0",
+      "live_clock": "10:00",
       "live_away_score": 70,
       "live_home_score": 78,
       "market_bookmaker": "DraftKings",
@@ -979,7 +979,7 @@
       "away_win_probability": 0.20791735171595072,
       "active": false,
       "first_seen_at_utc": null,
-      "last_seen_at_utc": "2026-08-18T04:39:46.264662+00:00",
+      "last_seen_at_utc": "2026-08-18T04:40:34.309577+00:00",
       "last_notified_at_utc": null,
       "last_notified_edge": null,
       "resolved_at_utc": null
@@ -1000,7 +1000,7 @@
       "game_date_utc": "2026-08-18 02:00:00+00:00",
       "status": "STATUS_FINAL",
       "live_period": 4,
-      "live_clock": "0.0",
+      "live_clock": "10:00",
       "live_away_score": 70,
       "live_home_score": 78,
       "market_bookmaker": "DraftKings",
@@ -1009,7 +1009,7 @@
       "away_win_probability": 0.20791735171595072,
       "active": false,
       "first_seen_at_utc": null,
-      "last_seen_at_utc": "2026-08-18T04:39:46.264662+00:00",
+      "last_seen_at_utc": "2026-08-18T04:40:34.309577+00:00",
       "last_notified_at_utc": null,
       "last_notified_edge": null,
       "resolved_at_utc": null
