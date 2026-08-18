@@ -2,6 +2,11 @@ name: Live WNBA Game Monitor
 
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - '.github/workflows/live_monitor.yml'
   schedule:
     - cron: '*/5 * * * *'
 
