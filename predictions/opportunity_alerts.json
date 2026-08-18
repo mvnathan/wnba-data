@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-08-18T02:59:07.393250+00:00",
+  "generated_at_utc": "2026-08-18T02:59:55.805529+00:00",
   "source_generated_at_utc": "2026-08-17T14:39:19.457095+00:00",
   "active_opportunities": [
     {
@@ -16,7 +16,7 @@
       "away_abbr": "DAL",
       "home_abbr": "GS",
       "game_date_utc": "2026-08-18 02:00:00+00:00",
-      "status": "STATUS_IN_PROGRESS",
+      "status": "STATUS_HALFTIME",
       "live_period": 2,
       "live_clock": "0.0",
       "live_away_score": 28,
@@ -25,7 +25,7 @@
       "market_updated_at": "2026-08-17T14:38:35Z",
       "home_win_probability": 0.90275616196535,
       "away_win_probability": 0.09724383803464998,
-      "evaluated_at_utc": "2026-08-18T02:59:07.393250+00:00",
+      "evaluated_at_utc": "2026-08-18T02:59:55.805529+00:00",
       "is_new": false,
       "lifecycle_event": null
     },
@@ -43,7 +43,7 @@
       "away_abbr": "DAL",
       "home_abbr": "GS",
       "game_date_utc": "2026-08-18 02:00:00+00:00",
-      "status": "STATUS_IN_PROGRESS",
+      "status": "STATUS_HALFTIME",
       "live_period": 2,
       "live_clock": "0.0",
       "live_away_score": 28,
@@ -52,7 +52,7 @@
       "market_updated_at": "2026-08-17T14:38:35Z",
       "home_win_probability": 0.90275616196535,
       "away_win_probability": 0.09724383803464998,
-      "evaluated_at_utc": "2026-08-18T02:59:07.393250+00:00",
+      "evaluated_at_utc": "2026-08-18T02:59:55.805529+00:00",
       "is_new": false,
       "lifecycle_event": null
     }
