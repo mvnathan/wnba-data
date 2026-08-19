@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-08-19T23:41:40.501428+00:00",
+  "generated_at_utc": "2026-08-19T23:42:28.797374+00:00",
   "source_generated_at_utc": "2026-08-19T14:47:50.833730+00:00",
   "active_opportunities": [
     {
@@ -25,9 +25,9 @@
       "market_updated_at": "2026-08-19T14:47:26Z",
       "home_win_probability": 0.8147089126188205,
       "away_win_probability": 0.1852910873811795,
-      "evaluated_at_utc": "2026-08-19T23:41:40.501428+00:00",
+      "evaluated_at_utc": "2026-08-19T23:42:28.797374+00:00",
       "is_new": false,
-      "lifecycle_event": "escalated"
+      "lifecycle_event": null
     },
     {
       "market": "total",
@@ -52,37 +52,13 @@
       "market_updated_at": "2026-08-19T14:47:26Z",
       "home_win_probability": 0.8147089126188205,
       "away_win_probability": 0.1852910873811795,
-      "evaluated_at_utc": "2026-08-19T23:41:40.501428+00:00",
+      "evaluated_at_utc": "2026-08-19T23:42:28.797374+00:00",
       "is_new": false,
       "lifecycle_event": null
     }
   ],
   "new_alerts": [],
-  "notification_events": [
-    {
-      "event_id": "42725c90961ae102de80",
-      "event_type": "escalated",
-      "notify": true,
-      "occurred_at_utc": "2026-08-19T23:41:40.501428+00:00",
-      "game_id": "401857156",
-      "phase": "live",
-      "market": "spread",
-      "side": "WSH",
-      "level": "very_strong",
-      "edge": 11.089181845022452,
-      "away_abbr": "TOR",
-      "home_abbr": "WSH",
-      "live_period": 1,
-      "live_clock": "4:36",
-      "live_away_score": 12,
-      "live_home_score": 19,
-      "market_bookmaker": "DraftKings",
-      "market_updated_at": "2026-08-19T14:47:26Z",
-      "previous_side": "WSH",
-      "previous_level": "strong",
-      "previous_edge": 4.286455564958899
-    }
-  ],
+  "notification_events": [],
   "recent_events": [
     {
       "event_id": "42725c90961ae102de80",
@@ -4750,7 +4726,7 @@
   ],
   "summary": {
     "active_count": 2,
-    "notification_event_count": 1,
+    "notification_event_count": 0,
     "new_count": 0,
     "very_strong_count": 2,
     "strong_count": 0
