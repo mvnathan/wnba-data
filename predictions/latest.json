@@ -76,16 +76,16 @@
       "live_period": 4,
       "live_clock": "8.7",
       "live_home_score": 85,
-      "live_away_score": 76,
-      "live_updated_at": "2026-08-19T01:01:46.175536+00:00",
+      "live_away_score": 77,
+      "live_updated_at": "2026-08-19T01:02:34.582097+00:00",
       "live_projected_home_score": 85.30911832927518,
-      "live_projected_away_score": 76.27895771382197,
-      "live_predicted_margin": 9.030160615453212,
-      "live_predicted_total": 161.58807604309715,
-      "live_home_win_probability": 0.9448636472927873,
-      "live_away_win_probability": 0.05513635270721273,
+      "live_projected_away_score": 77.28223208341173,
+      "live_predicted_margin": 8.026886245863452,
+      "live_predicted_total": 162.5913504126869,
+      "live_home_win_probability": 0.9330108971206896,
+      "live_away_win_probability": 0.06698910287931037,
       "live_elapsed_fraction": 0.9963750000000001,
-      "live_projection_updated_at": "2026-08-19T01:01:46.175536+00:00",
+      "live_projection_updated_at": "2026-08-19T01:02:34.582097+00:00",
       "live_projected_winner_side": "home",
       "live_projected_winner_abbr": "CON"
     },
@@ -164,7 +164,7 @@
       "live_clock": "1:25",
       "live_home_score": 87,
       "live_away_score": 97,
-      "live_updated_at": "2026-08-19T01:01:46.175536+00:00",
+      "live_updated_at": "2026-08-19T01:02:34.582097+00:00",
       "live_projected_home_score": 90.17296179660184,
       "live_projected_away_score": 100.51281623470122,
       "live_predicted_margin": -10.33985443809938,
@@ -172,7 +172,7 @@
       "live_home_win_probability": 0.0287197162640144,
       "live_away_win_probability": 0.9712802837359856,
       "live_elapsed_fraction": 0.9645833333333333,
-      "live_projection_updated_at": "2026-08-19T01:01:46.175536+00:00",
+      "live_projection_updated_at": "2026-08-19T01:02:34.582097+00:00",
       "live_projected_winner_side": "away",
       "live_projected_winner_abbr": "IND"
     },
@@ -251,7 +251,7 @@
       "live_clock": "0.0",
       "live_home_score": 0,
       "live_away_score": 0,
-      "live_updated_at": "2026-08-19T01:01:46.175536+00:00"
+      "live_updated_at": "2026-08-19T01:02:34.582097+00:00"
     },
     {
       "game_id": "401857155",
@@ -328,7 +328,7 @@
       "live_clock": "0.0",
       "live_home_score": 0,
       "live_away_score": 0,
-      "live_updated_at": "2026-08-19T01:01:46.175536+00:00"
+      "live_updated_at": "2026-08-19T01:02:34.582097+00:00"
     }
   ],
   "uncertainty": {
@@ -343,6 +343,6 @@
       "p90": 84.7135938175884
     }
   },
-  "live_generated_at_utc": "2026-08-19T01:01:46.175536+00:00",
-  "last_live_update_utc": "2026-08-19T01:01:46.175536+00:00"
+  "live_generated_at_utc": "2026-08-19T01:02:34.582097+00:00",
+  "last_live_update_utc": "2026-08-19T01:02:34.582097+00:00"
 }
