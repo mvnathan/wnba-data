@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-08-19T00:18:08.657034+00:00",
+  "generated_at_utc": "2026-08-19T00:18:57.171199+00:00",
   "source_generated_at_utc": "2026-08-18T14:47:19.743156+00:00",
   "active_opportunities": [
     {
@@ -25,7 +25,7 @@
       "market_updated_at": "2026-08-18T14:46:39Z",
       "home_win_probability": 0.7495846187373146,
       "away_win_probability": 0.25041538126268537,
-      "evaluated_at_utc": "2026-08-19T00:18:08.657034+00:00",
+      "evaluated_at_utc": "2026-08-19T00:18:57.171199+00:00",
       "is_new": false,
       "lifecycle_event": null
     },
@@ -52,7 +52,7 @@
       "market_updated_at": "2026-08-18T14:46:39Z",
       "home_win_probability": 0.14675802989847514,
       "away_win_probability": 0.8532419701015248,
-      "evaluated_at_utc": "2026-08-19T00:18:08.657034+00:00",
+      "evaluated_at_utc": "2026-08-19T00:18:57.171199+00:00",
       "is_new": false,
       "lifecycle_event": null
     },
@@ -79,7 +79,7 @@
       "market_updated_at": "2026-08-18T14:46:39Z",
       "home_win_probability": 0.14675802989847514,
       "away_win_probability": 0.8532419701015248,
-      "evaluated_at_utc": "2026-08-19T00:18:08.657034+00:00",
+      "evaluated_at_utc": "2026-08-19T00:18:57.171199+00:00",
       "is_new": false,
       "lifecycle_event": null
     },
@@ -106,7 +106,7 @@
       "market_updated_at": "2026-08-18T14:46:39Z",
       "home_win_probability": 0.2162201621748839,
       "away_win_probability": 0.7837798378251161,
-      "evaluated_at_utc": "2026-08-19T00:18:08.657034+00:00",
+      "evaluated_at_utc": "2026-08-19T00:18:57.171199+00:00",
       "is_new": false,
       "lifecycle_event": null
     },
@@ -133,7 +133,7 @@
       "market_updated_at": "2026-08-18T14:46:39Z",
       "home_win_probability": 0.5357946076646497,
       "away_win_probability": 0.4642053923353503,
-      "evaluated_at_utc": "2026-08-19T00:18:08.657034+00:00",
+      "evaluated_at_utc": "2026-08-19T00:18:57.171199+00:00",
       "is_new": false,
       "lifecycle_event": null
     }
