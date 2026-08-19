@@ -77,7 +77,7 @@
       "live_clock": "1:31",
       "live_home_score": 72,
       "live_away_score": 53,
-      "live_updated_at": "2026-08-19T00:30:15.818083+00:00",
+      "live_updated_at": "2026-08-19T00:31:04.454324+00:00",
       "live_projected_home_score": 100.06603626064367,
       "live_projected_away_score": 74.98751121060755,
       "live_predicted_margin": 25.07852505003612,
@@ -85,7 +85,7 @@
       "live_home_win_probability": 0.8571939848509097,
       "live_away_win_probability": 0.1428060151490903,
       "live_elapsed_fraction": 0.7120833333333333,
-      "live_projection_updated_at": "2026-08-19T00:30:15.818083+00:00",
+      "live_projection_updated_at": "2026-08-19T00:31:04.454324+00:00",
       "live_projected_winner_side": "home",
       "live_projected_winner_abbr": "CON"
     },
@@ -99,7 +99,7 @@
       "home_abbr": "TOR",
       "away_abbr": "IND",
       "status": "STATUS_IN_PROGRESS",
-      "status_detail": "1:07 - 3rd Quarter",
+      "status_detail": "24.0 - 3rd Quarter",
       "venue": "Scotiabank Arena",
       "home_win": 0.2991385503387861,
       "home_score": 84.14563546791015,
@@ -159,20 +159,20 @@
       "market_no_vig_home_win_probability": 0.2042241228835748,
       "market_moneyline_weight": 0.25,
       "live_status": "STATUS_IN_PROGRESS",
-      "live_status_detail": "1:07 - 3rd Quarter",
+      "live_status_detail": "24.0 - 3rd Quarter",
       "live_period": 3,
-      "live_clock": "1:07",
-      "live_home_score": 67,
-      "live_away_score": 78,
-      "live_updated_at": "2026-08-19T00:30:15.818083+00:00",
-      "live_projected_home_score": 92.26670129320762,
-      "live_projected_away_score": 106.74289340439674,
-      "live_predicted_margin": -14.476192111189121,
-      "live_predicted_total": 199.00959469760437,
-      "live_home_win_probability": 0.10692065406695372,
-      "live_away_win_probability": 0.8930793459330463,
-      "live_elapsed_fraction": 0.7220833333333333,
-      "live_projection_updated_at": "2026-08-19T00:30:15.818083+00:00",
+      "live_clock": "24.0",
+      "live_home_score": 69,
+      "live_away_score": 81,
+      "live_updated_at": "2026-08-19T00:31:04.454324+00:00",
+      "live_projected_home_score": 92.76509311555805,
+      "live_projected_away_score": 108.26852842556782,
+      "live_predicted_margin": -15.503435310009777,
+      "live_predicted_total": 201.03362154112585,
+      "live_home_win_probability": 0.09207936802494002,
+      "live_away_win_probability": 0.90792063197506,
+      "live_elapsed_fraction": 0.74,
+      "live_projection_updated_at": "2026-08-19T00:31:04.454324+00:00",
       "live_projected_winner_side": "away",
       "live_projected_winner_abbr": "IND"
     },
@@ -251,7 +251,7 @@
       "live_clock": "0.0",
       "live_home_score": 0,
       "live_away_score": 0,
-      "live_updated_at": "2026-08-19T00:30:15.818083+00:00"
+      "live_updated_at": "2026-08-19T00:31:04.454324+00:00"
     },
     {
       "game_id": "401857155",
@@ -328,7 +328,7 @@
       "live_clock": "0.0",
       "live_home_score": 0,
       "live_away_score": 0,
-      "live_updated_at": "2026-08-19T00:30:15.818083+00:00"
+      "live_updated_at": "2026-08-19T00:31:04.454324+00:00"
     }
   ],
   "uncertainty": {
@@ -343,6 +343,6 @@
       "p90": 84.7135938175884
     }
   },
-  "live_generated_at_utc": "2026-08-19T00:30:15.818083+00:00",
-  "last_live_update_utc": "2026-08-19T00:30:15.818083+00:00"
+  "live_generated_at_utc": "2026-08-19T00:31:04.454324+00:00",
+  "last_live_update_utc": "2026-08-19T00:31:04.454324+00:00"
 }
