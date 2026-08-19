@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-08-19T01:58:21.379970+00:00",
+  "generated_at_utc": "2026-08-19T01:59:09.637309+00:00",
   "source_generated_at_utc": "2026-08-18T14:47:19.743156+00:00",
   "active_opportunities": [
     {
@@ -25,7 +25,7 @@
       "market_updated_at": "2026-08-18T14:46:39Z",
       "home_win_probability": 0.27540994347498327,
       "away_win_probability": 0.7245900565250167,
-      "evaluated_at_utc": "2026-08-19T01:58:21.379970+00:00",
+      "evaluated_at_utc": "2026-08-19T01:59:09.637309+00:00",
       "is_new": false,
       "lifecycle_event": null
     },
@@ -52,7 +52,7 @@
       "market_updated_at": "2026-08-18T14:46:39Z",
       "home_win_probability": 0.27540994347498327,
       "away_win_probability": 0.7245900565250167,
-      "evaluated_at_utc": "2026-08-19T01:58:21.379970+00:00",
+      "evaluated_at_utc": "2026-08-19T01:59:09.637309+00:00",
       "is_new": false,
       "lifecycle_event": null
     },
@@ -79,7 +79,7 @@
       "market_updated_at": "2026-08-18T14:46:39Z",
       "home_win_probability": 0.6195927283797523,
       "away_win_probability": 0.3804072716202477,
-      "evaluated_at_utc": "2026-08-19T01:58:21.379970+00:00",
+      "evaluated_at_utc": "2026-08-19T01:59:09.637309+00:00",
       "is_new": false,
       "lifecycle_event": null
     },
@@ -106,7 +106,7 @@
       "market_updated_at": "2026-08-18T14:46:39Z",
       "home_win_probability": 0.6195927283797523,
       "away_win_probability": 0.3804072716202477,
-      "evaluated_at_utc": "2026-08-19T01:58:21.379970+00:00",
+      "evaluated_at_utc": "2026-08-19T01:59:09.637309+00:00",
       "is_new": false,
       "lifecycle_event": null
     },
@@ -133,38 +133,13 @@
       "market_updated_at": "2026-08-18T14:46:39Z",
       "home_win_probability": 0.3246662964703828,
       "away_win_probability": 0.6753337035296172,
-      "evaluated_at_utc": "2026-08-19T01:58:21.379970+00:00",
+      "evaluated_at_utc": "2026-08-19T01:59:09.637309+00:00",
       "is_new": false,
       "lifecycle_event": null
     }
   ],
   "new_alerts": [],
-  "notification_events": [
-    {
-      "event_id": "740fba2c5eca7c5d802b",
-      "event_type": "resolved",
-      "notify": true,
-      "occurred_at_utc": "2026-08-19T01:58:21.379970+00:00",
-      "game_id": "401857155",
-      "phase": "live",
-      "market": "total",
-      "side": "OVER",
-      "level": "moderate",
-      "edge": 3.6448282782844785,
-      "away_abbr": "ATL",
-      "home_abbr": "LV",
-      "live_period": 2,
-      "live_clock": "47.9",
-      "live_away_score": 48,
-      "live_home_score": 41,
-      "market_bookmaker": "DraftKings",
-      "market_updated_at": "2026-08-18T14:46:39Z",
-      "reason": "edge_below_alert_threshold",
-      "previous_side": "OVER",
-      "previous_level": "strong",
-      "previous_edge": 7.733273335538115
-    }
-  ],
+  "notification_events": [],
   "recent_events": [
     {
       "event_id": "740fba2c5eca7c5d802b",
@@ -4813,7 +4788,7 @@
   ],
   "summary": {
     "active_count": 5,
-    "notification_event_count": 1,
+    "notification_event_count": 0,
     "new_count": 0,
     "very_strong_count": 4,
     "strong_count": 1
