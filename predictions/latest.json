@@ -77,7 +77,7 @@
       "live_clock": "0.0",
       "live_home_score": 46,
       "live_away_score": 40,
-      "live_updated_at": "2026-08-19T00:08:24.662346+00:00",
+      "live_updated_at": "2026-08-19T00:09:13.085838+00:00",
       "live_projected_home_score": 90.57239734776375,
       "live_projected_away_score": 80.61822957481043,
       "live_predicted_margin": 9.954167772953326,
@@ -85,7 +85,7 @@
       "live_home_win_probability": 0.6385361474391791,
       "live_away_win_probability": 0.3614638525608209,
       "live_elapsed_fraction": 0.5,
-      "live_projection_updated_at": "2026-08-19T00:08:24.662346+00:00",
+      "live_projection_updated_at": "2026-08-19T00:09:13.085838+00:00",
       "live_projected_winner_side": "home",
       "live_projected_winner_abbr": "CON"
     },
@@ -164,7 +164,7 @@
       "live_clock": "0.0",
       "live_home_score": 49,
       "live_away_score": 57,
-      "live_updated_at": "2026-08-19T00:08:24.662346+00:00",
+      "live_updated_at": "2026-08-19T00:09:13.085838+00:00",
       "live_projected_home_score": 95.19174495280572,
       "live_projected_away_score": 108.4866083820185,
       "live_predicted_margin": -13.294863429212782,
@@ -172,7 +172,7 @@
       "live_home_win_probability": 0.1903569764996868,
       "live_away_win_probability": 0.8096430235003131,
       "live_elapsed_fraction": 0.5,
-      "live_projection_updated_at": "2026-08-19T00:08:24.662346+00:00",
+      "live_projection_updated_at": "2026-08-19T00:09:13.085838+00:00",
       "live_projected_winner_side": "away",
       "live_projected_winner_abbr": "IND"
     },
@@ -251,7 +251,7 @@
       "live_clock": "0.0",
       "live_home_score": 0,
       "live_away_score": 0,
-      "live_updated_at": "2026-08-19T00:08:24.662346+00:00"
+      "live_updated_at": "2026-08-19T00:09:13.085838+00:00"
     },
     {
       "game_id": "401857155",
@@ -328,7 +328,7 @@
       "live_clock": "0.0",
       "live_home_score": 0,
       "live_away_score": 0,
-      "live_updated_at": "2026-08-19T00:08:24.662346+00:00"
+      "live_updated_at": "2026-08-19T00:09:13.085838+00:00"
     }
   ],
   "uncertainty": {
@@ -343,6 +343,6 @@
       "p90": 84.7135938175884
     }
   },
-  "live_generated_at_utc": "2026-08-19T00:08:24.662346+00:00",
-  "last_live_update_utc": "2026-08-19T00:08:24.662346+00:00"
+  "live_generated_at_utc": "2026-08-19T00:09:13.085838+00:00",
+  "last_live_update_utc": "2026-08-19T00:09:13.085838+00:00"
 }
