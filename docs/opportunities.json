@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-08-19T03:19:56.538560+00:00",
+  "generated_at_utc": "2026-08-19T03:20:44.835466+00:00",
   "source_generated_at_utc": "2026-08-18T14:47:19.743156+00:00",
   "active_opportunities": [
     {
@@ -25,7 +25,7 @@
       "market_updated_at": "2026-08-18T14:46:39Z",
       "home_win_probability": 0.27540994347498327,
       "away_win_probability": 0.7245900565250167,
-      "evaluated_at_utc": "2026-08-19T03:19:56.538560+00:00",
+      "evaluated_at_utc": "2026-08-19T03:20:44.835466+00:00",
       "is_new": false,
       "lifecycle_event": null
     },
@@ -52,7 +52,7 @@
       "market_updated_at": "2026-08-18T14:46:39Z",
       "home_win_probability": 0.27540994347498327,
       "away_win_probability": 0.7245900565250167,
-      "evaluated_at_utc": "2026-08-19T03:19:56.538560+00:00",
+      "evaluated_at_utc": "2026-08-19T03:20:44.835466+00:00",
       "is_new": false,
       "lifecycle_event": null
     },
@@ -79,7 +79,7 @@
       "market_updated_at": "2026-08-18T14:46:39Z",
       "home_win_probability": 0.2162201621748839,
       "away_win_probability": 0.7837798378251161,
-      "evaluated_at_utc": "2026-08-19T03:19:56.538560+00:00",
+      "evaluated_at_utc": "2026-08-19T03:20:44.835466+00:00",
       "is_new": false,
       "lifecycle_event": null
     },
@@ -87,9 +87,9 @@
       "market": "spread",
       "level": "very_strong",
       "side": "ATL",
-      "edge": 16.60258603473173,
-      "signed_edge_home": -16.60258603473173,
-      "model_margin": -13.10258603473173,
+      "edge": 18.618322416708864,
+      "signed_edge_home": -18.618322416708864,
+      "model_margin": -15.118322416708864,
       "market_home_spread": -3.5,
       "game_id": "401857155",
       "phase": "live",
@@ -100,13 +100,13 @@
       "status": "STATUS_IN_PROGRESS",
       "live_period": 4,
       "live_clock": "20.8",
-      "live_away_score": 95,
+      "live_away_score": 97,
       "live_home_score": 82,
       "market_bookmaker": "DraftKings",
       "market_updated_at": "2026-08-18T14:46:39Z",
-      "home_win_probability": 0.0317932758862222,
-      "away_win_probability": 0.9682067241137778,
-      "evaluated_at_utc": "2026-08-19T03:19:56.538560+00:00",
+      "home_win_probability": 0.029030393014848457,
+      "away_win_probability": 0.9709696069851516,
+      "evaluated_at_utc": "2026-08-19T03:20:44.835466+00:00",
       "is_new": false,
       "lifecycle_event": null
     }
