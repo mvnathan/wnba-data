@@ -1,10 +1,100 @@
 {
-  "generated_at_utc": "2026-08-19T23:32:52.245210+00:00",
+  "generated_at_utc": "2026-08-19T23:33:40.299632+00:00",
   "source_generated_at_utc": "2026-08-19T14:47:50.833730+00:00",
-  "active_opportunities": [],
-  "new_alerts": [],
-  "notification_events": [],
+  "active_opportunities": [
+    {
+      "market": "total",
+      "level": "strong",
+      "side": "OVER",
+      "edge": 9.277356530532899,
+      "signed_edge": 9.277356530532899,
+      "model_total": 179.7773565305329,
+      "market_total": 170.5,
+      "game_id": "401857156",
+      "phase": "live",
+      "lifecycle_key": "401857156|live|total",
+      "away_abbr": "TOR",
+      "home_abbr": "WSH",
+      "game_date_utc": "2026-08-19 23:30:00+00:00",
+      "status": "STATUS_IN_PROGRESS",
+      "live_period": 1,
+      "live_clock": "9:37",
+      "live_away_score": 2,
+      "live_home_score": 3,
+      "market_bookmaker": "DraftKings",
+      "market_updated_at": "2026-08-19T14:47:26Z",
+      "home_win_probability": 0.7844472622500825,
+      "away_win_probability": 0.21555273774991746,
+      "evaluated_at_utc": "2026-08-19T23:33:40.299632+00:00",
+      "is_new": true,
+      "lifecycle_event": "new"
+    }
+  ],
+  "new_alerts": [
+    {
+      "event_id": "5b1a05134a09f4f7a483",
+      "event_type": "new",
+      "notify": true,
+      "occurred_at_utc": "2026-08-19T23:33:40.299632+00:00",
+      "game_id": "401857156",
+      "phase": "live",
+      "market": "total",
+      "side": "OVER",
+      "level": "strong",
+      "edge": 9.277356530532899,
+      "away_abbr": "TOR",
+      "home_abbr": "WSH",
+      "live_period": 1,
+      "live_clock": "9:37",
+      "live_away_score": 2,
+      "live_home_score": 3,
+      "market_bookmaker": "DraftKings",
+      "market_updated_at": "2026-08-19T14:47:26Z"
+    }
+  ],
+  "notification_events": [
+    {
+      "event_id": "5b1a05134a09f4f7a483",
+      "event_type": "new",
+      "notify": true,
+      "occurred_at_utc": "2026-08-19T23:33:40.299632+00:00",
+      "game_id": "401857156",
+      "phase": "live",
+      "market": "total",
+      "side": "OVER",
+      "level": "strong",
+      "edge": 9.277356530532899,
+      "away_abbr": "TOR",
+      "home_abbr": "WSH",
+      "live_period": 1,
+      "live_clock": "9:37",
+      "live_away_score": 2,
+      "live_home_score": 3,
+      "market_bookmaker": "DraftKings",
+      "market_updated_at": "2026-08-19T14:47:26Z"
+    }
+  ],
   "recent_events": [
+    {
+      "event_id": "5b1a05134a09f4f7a483",
+      "event_type": "new",
+      "notify": true,
+      "occurred_at_utc": "2026-08-19T23:33:40.299632+00:00",
+      "game_id": "401857156",
+      "phase": "live",
+      "market": "total",
+      "side": "OVER",
+      "level": "strong",
+      "edge": 9.277356530532899,
+      "away_abbr": "TOR",
+      "home_abbr": "WSH",
+      "live_period": 1,
+      "live_clock": "9:37",
+      "live_away_score": 2,
+      "live_home_score": 3,
+      "market_bookmaker": "DraftKings",
+      "market_updated_at": "2026-08-19T14:47:26Z"
+    },
     {
       "event_id": "21602e6304ed5f216b13",
       "event_type": "reactivated",
@@ -4632,34 +4722,14 @@
       "live_home_score": null,
       "market_bookmaker": "DraftKings",
       "market_updated_at": "2026-08-18T14:46:39Z"
-    },
-    {
-      "event_id": "019a657d955fa6417169",
-      "event_type": "new",
-      "notify": true,
-      "occurred_at_utc": "2026-08-18T14:47:26.340120+00:00",
-      "game_id": "401857155",
-      "phase": "pregame",
-      "market": "total",
-      "side": "UNDER",
-      "level": "strong",
-      "edge": 7.433163910258969,
-      "away_abbr": "ATL",
-      "home_abbr": "LV",
-      "live_period": null,
-      "live_clock": null,
-      "live_away_score": null,
-      "live_home_score": null,
-      "market_bookmaker": "DraftKings",
-      "market_updated_at": "2026-08-18T14:46:39Z"
     }
   ],
   "summary": {
-    "active_count": 0,
-    "notification_event_count": 0,
-    "new_count": 0,
+    "active_count": 1,
+    "notification_event_count": 1,
+    "new_count": 1,
     "very_strong_count": 0,
-    "strong_count": 0
+    "strong_count": 1
   },
   "policy": {
     "spread_thresholds": {
