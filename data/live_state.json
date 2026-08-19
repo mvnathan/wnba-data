@@ -97,36 +97,36 @@
     "last_status": "STATUS_FINAL",
     "last_status_detail": "Final",
     "last_event_type": "FINAL",
-    "last_prediction_timestamp": "2026-08-19T01:10:38.712386+00:00"
+    "last_prediction_timestamp": "2026-08-19T01:11:27.060796+00:00"
   },
   "401857153": {
     "last_seen_period": 4,
-    "last_seen_clock": "11.0",
+    "last_seen_clock": "0.0",
     "last_home_score": 95,
-    "last_away_score": 99,
-    "last_status": "STATUS_IN_PROGRESS",
-    "last_status_detail": "11.0 - 4th Quarter",
-    "last_event_type": "START",
-    "last_prediction_timestamp": "2026-08-19T01:10:38.712386+00:00"
+    "last_away_score": 101,
+    "last_status": "STATUS_FINAL",
+    "last_status_detail": "Final",
+    "last_event_type": "FINAL",
+    "last_prediction_timestamp": "2026-08-19T01:11:27.060796+00:00"
   },
   "401857154": {
     "last_seen_period": 1,
     "last_seen_clock": "6:12",
-    "last_home_score": 9,
+    "last_home_score": 11,
     "last_away_score": 12,
     "last_status": "STATUS_IN_PROGRESS",
     "last_status_detail": "6:12 - 1st Quarter",
     "last_event_type": "START",
-    "last_prediction_timestamp": "2026-08-19T01:10:38.712386+00:00"
+    "last_prediction_timestamp": "2026-08-19T01:11:27.060796+00:00"
   },
   "401857155": {
-    "last_seen_period": null,
-    "last_seen_clock": "0.0",
+    "last_seen_period": 1,
+    "last_seen_clock": "9:58",
     "last_home_score": 0,
     "last_away_score": 0,
-    "last_status": "STATUS_SCHEDULED",
-    "last_status_detail": "Tue, August 18th at 9:00 PM EDT",
-    "last_event_type": "PREGAME",
-    "last_prediction_timestamp": "2026-08-19T01:10:38.712386+00:00"
+    "last_status": "STATUS_IN_PROGRESS",
+    "last_status_detail": "9:58 - 1st Quarter",
+    "last_event_type": "START",
+    "last_prediction_timestamp": "2026-08-19T01:11:27.060796+00:00"
   }
 }
