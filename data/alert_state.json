@@ -1,5 +1,5 @@
 {
-  "updated_at_utc": "2026-08-19T02:00:46.181688+00:00",
+  "updated_at_utc": "2026-08-19T02:01:34.455067+00:00",
   "opportunities": {
     "401857143|pregame|spread": {
       "market": "spread",
@@ -1099,7 +1099,7 @@
       "away_win_probability": 0.6032848346408289,
       "active": false,
       "first_seen_at_utc": null,
-      "last_seen_at_utc": "2026-08-19T02:00:46.181688+00:00",
+      "last_seen_at_utc": "2026-08-19T02:01:34.455067+00:00",
       "last_notified_at_utc": null,
       "last_notified_edge": null,
       "resolved_at_utc": null
@@ -1129,7 +1129,7 @@
       "away_win_probability": 0.6032848346408289,
       "active": false,
       "first_seen_at_utc": null,
-      "last_seen_at_utc": "2026-08-19T02:00:46.181688+00:00",
+      "last_seen_at_utc": "2026-08-19T02:01:34.455067+00:00",
       "last_notified_at_utc": null,
       "last_notified_edge": null,
       "resolved_at_utc": null
@@ -1159,7 +1159,7 @@
       "away_win_probability": 0.7245900565250167,
       "active": true,
       "first_seen_at_utc": "2026-08-18T14:47:26.340120+00:00",
-      "last_seen_at_utc": "2026-08-19T02:00:46.181688+00:00",
+      "last_seen_at_utc": "2026-08-19T02:01:34.455067+00:00",
       "last_notified_at_utc": "2026-08-19T01:11:27.615147+00:00",
       "last_notified_edge": 5.099663054141592
     },
@@ -1188,7 +1188,7 @@
       "away_win_probability": 0.7245900565250167,
       "active": true,
       "first_seen_at_utc": "2026-08-18T14:47:26.340120+00:00",
-      "last_seen_at_utc": "2026-08-19T02:00:46.181688+00:00",
+      "last_seen_at_utc": "2026-08-19T02:01:34.455067+00:00",
       "last_notified_at_utc": "2026-08-19T01:11:27.615147+00:00",
       "last_notified_edge": 12.060336945858381
     },
@@ -1457,7 +1457,7 @@
       "away_win_probability": 0.3804072716202477,
       "active": true,
       "first_seen_at_utc": "2026-08-19T01:04:11.834172+00:00",
-      "last_seen_at_utc": "2026-08-19T02:00:46.181688+00:00",
+      "last_seen_at_utc": "2026-08-19T02:01:34.455067+00:00",
       "last_notified_at_utc": "2026-08-19T01:40:34.420670+00:00",
       "last_notified_edge": 16.727197090771355
     },
@@ -1486,7 +1486,7 @@
       "away_win_probability": 0.3804072716202477,
       "active": true,
       "first_seen_at_utc": null,
-      "last_seen_at_utc": "2026-08-19T02:00:46.181688+00:00",
+      "last_seen_at_utc": "2026-08-19T02:01:34.455067+00:00",
       "last_notified_at_utc": "2026-08-19T01:50:18.076463+00:00",
       "last_notified_edge": 10.690500719156915
     },
@@ -1515,7 +1515,7 @@
       "away_win_probability": 0.6753337035296172,
       "active": true,
       "first_seen_at_utc": null,
-      "last_seen_at_utc": "2026-08-19T02:00:46.181688+00:00",
+      "last_seen_at_utc": "2026-08-19T02:01:34.455067+00:00",
       "last_notified_at_utc": "2026-08-19T01:46:16.303300+00:00",
       "last_notified_edge": 10.826335900422677
     },
@@ -1544,7 +1544,7 @@
       "away_win_probability": 0.6753337035296172,
       "active": false,
       "first_seen_at_utc": "2026-08-19T01:11:27.615147+00:00",
-      "last_seen_at_utc": "2026-08-19T02:00:46.181688+00:00",
+      "last_seen_at_utc": "2026-08-19T02:01:34.455067+00:00",
       "last_notified_at_utc": "2026-08-19T01:58:21.379970+00:00",
       "last_notified_edge": 3.6448282782844785,
       "resolved_at_utc": "2026-08-19T01:58:21.379970+00:00"
