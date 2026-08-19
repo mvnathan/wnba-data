@@ -11,8 +11,8 @@
       "away_team": "Sparks",
       "home_abbr": "CON",
       "away_abbr": "LA",
-      "status": "STATUS_IN_PROGRESS",
-      "status_detail": "31.0 - 3rd Quarter",
+      "status": "STATUS_END_PERIOD",
+      "status_detail": "End of 3rd Quarter",
       "venue": "TD Garden",
       "home_win": 0.37098241556613465,
       "home_score": 84.95700453887909,
@@ -71,21 +71,21 @@
       "model_home_win_probability": 0.37098241556613465,
       "market_no_vig_home_win_probability": 0.4739134147382802,
       "market_moneyline_weight": 0.25,
-      "live_status": "STATUS_IN_PROGRESS",
-      "live_status_detail": "31.0 - 3rd Quarter",
+      "live_status": "STATUS_END_PERIOD",
+      "live_status_detail": "End of 3rd Quarter",
       "live_period": 3,
-      "live_clock": "31.0",
+      "live_clock": "0.0",
       "live_home_score": 72,
       "live_away_score": 55,
-      "live_updated_at": "2026-08-19T00:33:30.283551+00:00",
-      "live_projected_home_score": 96.99809518100328,
-      "live_projected_away_score": 75.07177535709668,
-      "live_predicted_margin": 21.926319823906596,
-      "live_predicted_total": 172.06987053809996,
-      "live_home_win_probability": 0.865722880303721,
-      "live_away_win_probability": 0.13427711969627898,
-      "live_elapsed_fraction": 0.7370833333333333,
-      "live_projection_updated_at": "2026-08-19T00:33:30.283551+00:00",
+      "live_updated_at": "2026-08-19T00:34:18.697187+00:00",
+      "live_projected_home_score": 95.46421442467934,
+      "live_projected_away_score": 73.80476790545899,
+      "live_predicted_margin": 21.659446519220353,
+      "live_predicted_total": 169.26898233013833,
+      "live_home_win_probability": 0.8724643179833834,
+      "live_away_win_probability": 0.12753568201661658,
+      "live_elapsed_fraction": 0.75,
+      "live_projection_updated_at": "2026-08-19T00:34:18.697187+00:00",
       "live_projected_winner_side": "home",
       "live_projected_winner_abbr": "CON"
     },
@@ -164,7 +164,7 @@
       "live_clock": "0.0",
       "live_home_score": 69,
       "live_away_score": 81,
-      "live_updated_at": "2026-08-19T00:33:30.283551+00:00",
+      "live_updated_at": "2026-08-19T00:34:18.697187+00:00",
       "live_projected_home_score": 91.61892085943347,
       "live_projected_away_score": 106.97141547899858,
       "live_predicted_margin": -15.352494619565107,
@@ -172,7 +172,7 @@
       "live_home_win_probability": 0.0891848823279996,
       "live_away_win_probability": 0.9108151176720004,
       "live_elapsed_fraction": 0.75,
-      "live_projection_updated_at": "2026-08-19T00:33:30.283551+00:00",
+      "live_projection_updated_at": "2026-08-19T00:34:18.697187+00:00",
       "live_projected_winner_side": "away",
       "live_projected_winner_abbr": "IND"
     },
@@ -251,7 +251,7 @@
       "live_clock": "0.0",
       "live_home_score": 0,
       "live_away_score": 0,
-      "live_updated_at": "2026-08-19T00:33:30.283551+00:00"
+      "live_updated_at": "2026-08-19T00:34:18.697187+00:00"
     },
     {
       "game_id": "401857155",
@@ -328,7 +328,7 @@
       "live_clock": "0.0",
       "live_home_score": 0,
       "live_away_score": 0,
-      "live_updated_at": "2026-08-19T00:33:30.283551+00:00"
+      "live_updated_at": "2026-08-19T00:34:18.697187+00:00"
     }
   ],
   "uncertainty": {
@@ -343,6 +343,6 @@
       "p90": 84.7135938175884
     }
   },
-  "live_generated_at_utc": "2026-08-19T00:33:30.283551+00:00",
-  "last_live_update_utc": "2026-08-19T00:33:30.283551+00:00"
+  "live_generated_at_utc": "2026-08-19T00:34:18.697187+00:00",
+  "last_live_update_utc": "2026-08-19T00:34:18.697187+00:00"
 }
