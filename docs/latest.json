@@ -70,7 +70,14 @@
       "market_total_weight": 0.35,
       "model_home_win_probability": 0.7758138205680523,
       "market_no_vig_home_win_probability": 0.8118668596237336,
-      "market_moneyline_weight": 0.25
+      "market_moneyline_weight": 0.25,
+      "live_status": "STATUS_SCHEDULED",
+      "live_status_detail": "Wed, August 19th at 7:30 PM EDT",
+      "live_period": null,
+      "live_clock": "0.0",
+      "live_home_score": 0,
+      "live_away_score": 0,
+      "live_updated_at": "2026-08-19T14:48:21.188363+00:00"
     },
     {
       "game_id": "401857157",
@@ -140,7 +147,14 @@
       "market_total_weight": 0.35,
       "model_home_win_probability": 0.464856162413654,
       "market_no_vig_home_win_probability": 0.42794036443953615,
-      "market_moneyline_weight": 0.25
+      "market_moneyline_weight": 0.25,
+      "live_status": "STATUS_SCHEDULED",
+      "live_status_detail": "Wed, August 19th at 10:00 PM EDT",
+      "live_period": null,
+      "live_clock": "0.0",
+      "live_home_score": 0,
+      "live_away_score": 0,
+      "live_updated_at": "2026-08-19T14:48:21.188363+00:00"
     }
   ],
   "uncertainty": {
@@ -154,5 +168,7 @@
       "median": 86.60871776269593,
       "p90": 86.87690694882048
     }
-  }
+  },
+  "live_generated_at_utc": "2026-08-19T14:48:21.188363+00:00",
+  "last_live_update_utc": "2026-08-19T14:48:21.188363+00:00"
 }
