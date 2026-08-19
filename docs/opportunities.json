@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-08-19T02:02:22.754060+00:00",
+  "generated_at_utc": "2026-08-19T02:03:11.078877+00:00",
   "source_generated_at_utc": "2026-08-18T14:47:19.743156+00:00",
   "active_opportunities": [
     {
@@ -25,7 +25,7 @@
       "market_updated_at": "2026-08-18T14:46:39Z",
       "home_win_probability": 0.27540994347498327,
       "away_win_probability": 0.7245900565250167,
-      "evaluated_at_utc": "2026-08-19T02:02:22.754060+00:00",
+      "evaluated_at_utc": "2026-08-19T02:03:11.078877+00:00",
       "is_new": false,
       "lifecycle_event": null
     },
@@ -52,7 +52,7 @@
       "market_updated_at": "2026-08-18T14:46:39Z",
       "home_win_probability": 0.27540994347498327,
       "away_win_probability": 0.7245900565250167,
-      "evaluated_at_utc": "2026-08-19T02:02:22.754060+00:00",
+      "evaluated_at_utc": "2026-08-19T02:03:11.078877+00:00",
       "is_new": false,
       "lifecycle_event": null
     },
@@ -79,7 +79,7 @@
       "market_updated_at": "2026-08-18T14:46:39Z",
       "home_win_probability": 0.6195927283797523,
       "away_win_probability": 0.3804072716202477,
-      "evaluated_at_utc": "2026-08-19T02:02:22.754060+00:00",
+      "evaluated_at_utc": "2026-08-19T02:03:11.078877+00:00",
       "is_new": false,
       "lifecycle_event": null
     },
@@ -106,7 +106,7 @@
       "market_updated_at": "2026-08-18T14:46:39Z",
       "home_win_probability": 0.6195927283797523,
       "away_win_probability": 0.3804072716202477,
-      "evaluated_at_utc": "2026-08-19T02:02:22.754060+00:00",
+      "evaluated_at_utc": "2026-08-19T02:03:11.078877+00:00",
       "is_new": false,
       "lifecycle_event": null
     },
@@ -114,9 +114,9 @@
       "market": "spread",
       "level": "very_strong",
       "side": "ATL",
-      "edge": 21.155166363212174,
-      "signed_edge_home": -21.155166363212174,
-      "model_margin": -17.655166363212174,
+      "edge": 21.110699094035596,
+      "signed_edge_home": -21.110699094035596,
+      "model_margin": -17.610699094035596,
       "market_home_spread": -3.5,
       "game_id": "401857155",
       "phase": "live",
@@ -124,16 +124,16 @@
       "away_abbr": "ATL",
       "home_abbr": "LV",
       "game_date_utc": "2026-08-19 01:00:00+00:00",
-      "status": "STATUS_IN_PROGRESS",
+      "status": "STATUS_HALFTIME",
       "live_period": 2,
-      "live_clock": "6.4",
+      "live_clock": "0.0",
       "live_away_score": 52,
       "live_home_score": 41,
       "market_bookmaker": "DraftKings",
       "market_updated_at": "2026-08-18T14:46:39Z",
-      "home_win_probability": 0.2638185740854259,
-      "away_win_probability": 0.736181425914574,
-      "evaluated_at_utc": "2026-08-19T02:02:22.754060+00:00",
+      "home_win_probability": 0.2627111513617046,
+      "away_win_probability": 0.7372888486382954,
+      "evaluated_at_utc": "2026-08-19T02:03:11.078877+00:00",
       "is_new": false,
       "lifecycle_event": null
     }
