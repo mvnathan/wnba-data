@@ -1,14 +1,14 @@
 {
-  "generated_at_utc": "2026-08-19T23:44:53.465862+00:00",
+  "generated_at_utc": "2026-08-19T23:45:41.458103+00:00",
   "source_generated_at_utc": "2026-08-19T14:47:50.833730+00:00",
   "active_opportunities": [
     {
       "market": "total",
       "level": "very_strong",
       "side": "OVER",
-      "edge": 23.332723405426975,
-      "signed_edge": 23.332723405426975,
-      "model_total": 193.83272340542698,
+      "edge": 17.458745815292673,
+      "signed_edge": 17.458745815292673,
+      "model_total": 187.95874581529267,
       "market_total": 170.5,
       "game_id": "401857156",
       "phase": "live",
@@ -18,45 +18,20 @@
       "game_date_utc": "2026-08-19 23:30:00+00:00",
       "status": "STATUS_IN_PROGRESS",
       "live_period": 1,
-      "live_clock": "4:36",
+      "live_clock": "4:04",
       "live_away_score": 15,
       "live_home_score": 19,
       "market_bookmaker": "DraftKings",
       "market_updated_at": "2026-08-19T14:47:26Z",
-      "home_win_probability": 0.7967454847506781,
-      "away_win_probability": 0.20325451524932192,
-      "evaluated_at_utc": "2026-08-19T23:44:53.465862+00:00",
+      "home_win_probability": 0.7965449961957835,
+      "away_win_probability": 0.20345500380421655,
+      "evaluated_at_utc": "2026-08-19T23:45:41.458103+00:00",
       "is_new": false,
       "lifecycle_event": null
     }
   ],
   "new_alerts": [],
-  "notification_events": [
-    {
-      "event_id": "39234db80e5c6f4abb9d",
-      "event_type": "resolved",
-      "notify": true,
-      "occurred_at_utc": "2026-08-19T23:44:53.465862+00:00",
-      "game_id": "401857156",
-      "phase": "live",
-      "market": "spread",
-      "side": "WSH",
-      "level": "moderate",
-      "edge": 3.8080961617010587,
-      "away_abbr": "TOR",
-      "home_abbr": "WSH",
-      "live_period": 1,
-      "live_clock": "4:36",
-      "live_away_score": 15,
-      "live_home_score": 19,
-      "market_bookmaker": "DraftKings",
-      "market_updated_at": "2026-08-19T14:47:26Z",
-      "reason": "edge_below_alert_threshold",
-      "previous_side": "WSH",
-      "previous_level": "very_strong",
-      "previous_edge": 11.089181845022452
-    }
-  ],
+  "notification_events": [],
   "recent_events": [
     {
       "event_id": "39234db80e5c6f4abb9d",
@@ -4725,7 +4700,7 @@
   ],
   "summary": {
     "active_count": 1,
-    "notification_event_count": 1,
+    "notification_event_count": 0,
     "new_count": 0,
     "very_strong_count": 1,
     "strong_count": 0
