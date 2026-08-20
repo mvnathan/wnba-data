@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>WNBA Quarter Forecast</title>
+<style>
+:root{color-scheme:dark;--bg:#080b10;--panel:#121821;--border:#27303d;--text:#f5f7fb;--muted:#98a3b3;--accent:#84a9ff;--live:#ff6b72;--good:#68d99d}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,sans-serif}main{max-width:760px;margin:auto;padding:14px}.top{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-bottom:12px}.title{font-size:1.1rem;font-weight:900}.muted{color:var(--muted);font-size:.75rem}.card{background:var(--panel);border:1px solid var(--border);border-radius:16px;padding:14px;margin-bottom:12px}.live{border-color:rgba(255,107,114,.55)}.head{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}.match{font-size:1.15rem;font-weight:950}.badge{font-size:.65rem;font-weight:900;padding:5px 8px;border-radius:999px;background:#26303d}.badge.live{color:#ff959a;border:1px solid rgba(255,107,114,.5);background:rgba(255,107,114,.12)}.score{font-size:1.55rem;font-weight:950;text-align:center;margin:14px 0 4px}.clock{text-align:center;color:var(--muted);font-size:.8rem}.forecast{margin-top:13px;padding:14px;border:1px solid rgba(132,169,255,.45);border-radius:14px;background:#101724}.forecast .label{color:#b5c9ff;font-size:.72rem;font-weight:900;letter-spacing:.08em;text-transform:uppercase}.qt{font-size:1.85rem;font-weight:950;text-align:center;margin:10px 0}.grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}.metric{border:1px solid var(--border);border-radius:10px;padding:10px}.k{font-size:.62rem;color:var(--muted)}.v{font-size:1rem;font-weight:900;margin-top:3px}.fresh{color:var(--good)}a{color:var(--accent)}@media(max-width:520px){.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<main>
+<div class="top"><div><div class="title">WNBA Quarter Forecast</div><div class="muted">Auto-refreshes with the live score</div></div><a href="./">Main dashboard</a></div>
+<div id="status" class="muted">Loading latest data…</div>
+<div id="games"></div>
+</main>
+<script>
+const E=v=>v!==null&&v!==undefined&&v!==''&&!Number.isNaN(Number(v));
+const N=(v,d=1)=>E(v)?Number(v).toFixed(d):'—';
+const I=v=>E(v)?String(Math.round(Number(v))):'—';
+const S=g=>String(g.live_status||g.status||'STATUS_SCHEDULED');
+const live=g=>S(g).includes('IN_PROGRESS')||S(g).includes('HALFTIME');
+const final=g=>S(g).includes('FINAL');
+function ago(v){if(!v)return'unknown';const s=Math.max(0,Math.floor((Date.now()-new Date(v))/1000));if(s<60)return s+'s ago';if(s<3600)return Math.floor(s/60)+'m ago';return Math.floor(s/3600)+'h ago'}
+function qlabel(g){const q=Number(g.next_quarter_period);return q?`Q${q} prediction`:'No next-quarter forecast'}
+function spread(g){if(!E(g.next_quarter_margin))return'—';const m=Number(g.next_quarter_margin);if(Math.abs(m)<.05)return'PK';return m>0?`${g.home_abbr} -${Math.abs(m).toFixed(1)}`:`${g.away_abbr} -${Math.abs(m).toFixed(1)}`}
+function card(g){const lp=live(g),f=final(g),hasQ=E(g.next_quarter_home_score)&&E(g.next_quarter_away_score);return `<article class="card ${lp?'live':''}"><div class="head"><div><div class="match">${g.away_abbr} @ ${g.home_abbr}</div><div class="muted">${g.live_status_detail||g.status_detail||''}</div></div><div class="badge ${lp?'live':''}">${lp?'LIVE':f?'FINAL':'UPCOMING'}</div></div>${lp||f?`<div class="score">${g.away_abbr} ${I(g.live_away_score)} – ${g.home_abbr} ${I(g.live_home_score)}</div><div class="clock">${f?'Final':`Q${g.live_period||''} ${g.live_clock||''}`}</div>`:''}${hasQ?`<div class="forecast"><div class="label">${qlabel(g)}</div><div class="qt">${g.away_abbr} ${N(g.next_quarter_away_score)} – ${g.home_abbr} ${N(g.next_quarter_home_score)}</div><div class="grid"><div class="metric"><div class="k">Quarter spread</div><div class="v">${spread(g)}</div></div><div class="metric"><div class="k">Quarter total</div><div class="v">${N(g.next_quarter_total)}</div></div></div><div class="muted" style="margin-top:9px">${g.next_quarter_basis==='pregame_quarter_model'?'Pregame quarter model':'Adjusted with live scoring pace'} · updated <span class="fresh">${ago(g.next_quarter_updated_at)}</span></div></div>`:''}</article>`}
+async function load(){try{const r=await fetch(`latest.json?t=${Date.now()}`,{cache:'no-store'});const d=await r.json();const games=d.games||[];document.getElementById('games').innerHTML=games.map(card).join('');document.getElementById('status').textContent=`Latest feed: ${ago(d.last_live_update_utc||d.quarter_projection_updated_at||d.generated_at_utc)}`;}catch(e){document.getElementById('status').textContent='Could not load latest feed. Retrying…';}}
+load();setInterval(load,15000);
+</script>
+</body>
+</html>
