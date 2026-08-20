@@ -1,5 +1,5 @@
 {
-  "updated_at_utc": "2026-08-20T04:11:48.811058+00:00",
+  "updated_at_utc": "2026-08-20T04:12:37.254360+00:00",
   "opportunities": {
     "401857143|pregame|spread": {
       "market": "spread",
@@ -1575,7 +1575,7 @@
       "away_win_probability": 0.22418617943194774,
       "active": false,
       "first_seen_at_utc": null,
-      "last_seen_at_utc": "2026-08-20T04:11:48.811058+00:00",
+      "last_seen_at_utc": "2026-08-20T04:12:37.254360+00:00",
       "last_notified_at_utc": null,
       "last_notified_edge": null,
       "resolved_at_utc": null
@@ -1605,7 +1605,7 @@
       "away_win_probability": 0.22418617943194774,
       "active": false,
       "first_seen_at_utc": null,
-      "last_seen_at_utc": "2026-08-20T04:11:48.811058+00:00",
+      "last_seen_at_utc": "2026-08-20T04:12:37.254360+00:00",
       "last_notified_at_utc": null,
       "last_notified_edge": null,
       "resolved_at_utc": null
@@ -1734,9 +1734,9 @@
       "market": "spread",
       "level": "neutral",
       "side": "MIN",
-      "edge": 0.6142400077705901,
-      "signed_edge_home": -0.6142400077705901,
-      "model_margin": -10.11424000777059,
+      "edge": 1.6260941111140568,
+      "signed_edge_home": -1.6260941111140568,
+      "model_margin": -11.126094111114057,
       "market_home_spread": 9.5,
       "game_id": "401857157",
       "phase": "live",
@@ -1747,15 +1747,15 @@
       "status": "STATUS_IN_PROGRESS",
       "live_period": 4,
       "live_clock": "31.2",
-      "live_away_score": 76,
+      "live_away_score": 77,
       "live_home_score": 66,
       "market_bookmaker": "DraftKings",
       "market_updated_at": "2026-08-20T04:09:48Z",
-      "home_win_probability": 0.03957960071407503,
-      "away_win_probability": 0.9604203992859249,
+      "home_win_probability": 0.0342046299419407,
+      "away_win_probability": 0.9657953700580593,
       "active": false,
       "first_seen_at_utc": null,
-      "last_seen_at_utc": "2026-08-20T04:11:48.811058+00:00",
+      "last_seen_at_utc": "2026-08-20T04:12:37.254360+00:00",
       "last_notified_at_utc": "2026-08-20T03:56:25.781312+00:00",
       "last_notified_edge": 3.174596297414631,
       "resolved_at_utc": "2026-08-20T03:56:25.781312+00:00"
