@@ -1,15 +1,15 @@
 {
-  "generated_at_utc": "2026-08-20T04:14:14.268981+00:00",
+  "generated_at_utc": "2026-08-20T04:15:03.228503+00:00",
   "source_generated_at_utc": "2026-08-19T14:47:50.833730+00:00",
   "active_opportunities": [
     {
       "market": "spread",
       "level": "very_strong",
       "side": "GS",
-      "edge": 8.325512832026185,
-      "signed_edge_home": 8.325512832026185,
-      "model_margin": -1.1744871679738158,
-      "market_home_spread": 9.5,
+      "edge": 9.625512832026185,
+      "signed_edge_home": 9.625512832026185,
+      "model_margin": -1.8744871679738155,
+      "market_home_spread": 11.5,
       "game_id": "401857157",
       "phase": "pregame",
       "lifecycle_key": "401857157|pregame|spread",
@@ -22,10 +22,10 @@
       "live_away_score": 77,
       "live_home_score": 66,
       "market_bookmaker": "DraftKings",
-      "market_updated_at": "2026-08-20T04:09:48Z",
+      "market_updated_at": "2026-08-20T04:11:45Z",
       "home_win_probability": 0.464856162413654,
       "away_win_probability": 0.535143837586346,
-      "evaluated_at_utc": "2026-08-20T04:14:14.268981+00:00",
+      "evaluated_at_utc": "2026-08-20T04:15:03.228503+00:00",
       "is_new": false,
       "lifecycle_event": null
     }
