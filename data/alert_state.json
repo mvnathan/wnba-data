@@ -1,5 +1,5 @@
 {
-  "updated_at_utc": "2026-08-20T02:05:57.071895+00:00",
+  "updated_at_utc": "2026-08-20T02:06:46.253008+00:00",
   "opportunities": {
     "401857143|pregame|spread": {
       "market": "spread",
@@ -1566,7 +1566,7 @@
       "game_date_utc": "2026-08-19 23:30:00+00:00",
       "status": "STATUS_FINAL",
       "live_period": 4,
-      "live_clock": "0.0",
+      "live_clock": "10:00",
       "live_away_score": 82,
       "live_home_score": 93,
       "market_bookmaker": "DraftKings",
@@ -1575,7 +1575,7 @@
       "away_win_probability": 0.22418617943194774,
       "active": false,
       "first_seen_at_utc": null,
-      "last_seen_at_utc": "2026-08-20T02:05:57.071895+00:00",
+      "last_seen_at_utc": "2026-08-20T02:06:46.253008+00:00",
       "last_notified_at_utc": null,
       "last_notified_edge": null,
       "resolved_at_utc": null
@@ -1596,7 +1596,7 @@
       "game_date_utc": "2026-08-19 23:30:00+00:00",
       "status": "STATUS_FINAL",
       "live_period": 4,
-      "live_clock": "0.0",
+      "live_clock": "10:00",
       "live_away_score": 82,
       "live_home_score": 93,
       "market_bookmaker": "DraftKings",
@@ -1605,7 +1605,7 @@
       "away_win_probability": 0.22418617943194774,
       "active": false,
       "first_seen_at_utc": null,
-      "last_seen_at_utc": "2026-08-20T02:05:57.071895+00:00",
+      "last_seen_at_utc": "2026-08-20T02:06:46.253008+00:00",
       "last_notified_at_utc": null,
       "last_notified_edge": null,
       "resolved_at_utc": null
@@ -1635,7 +1635,7 @@
       "away_win_probability": 0.5392181568688967,
       "active": false,
       "first_seen_at_utc": null,
-      "last_seen_at_utc": "2026-08-20T02:05:57.071895+00:00",
+      "last_seen_at_utc": "2026-08-20T02:06:46.253008+00:00",
       "last_notified_at_utc": null,
       "last_notified_edge": null,
       "resolved_at_utc": null
@@ -1665,7 +1665,7 @@
       "away_win_probability": 0.5392181568688967,
       "active": false,
       "first_seen_at_utc": null,
-      "last_seen_at_utc": "2026-08-20T02:05:57.071895+00:00",
+      "last_seen_at_utc": "2026-08-20T02:06:46.253008+00:00",
       "last_notified_at_utc": null,
       "last_notified_edge": null,
       "resolved_at_utc": null
