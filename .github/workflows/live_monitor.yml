@@ -22,6 +22,7 @@ jobs:
       contents: write
     env:
       PYTHONPATH: ${{ github.workspace }}
+      ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
     steps:
       - uses: actions/checkout@v4
       - name: Set up Python
@@ -59,6 +60,17 @@ jobs:
               git reset --hard origin/main
 
               python scripts/monitor_live_games.py
+              python scripts/enrich_quarter_projection.py
+
+              # Refresh DraftKings near-live without making the score pipeline
+              # depend on the odds provider. First poll refreshes immediately;
+              # thereafter every sixth 45-second poll is roughly every 4.5 minutes.
+              if [ "${iteration}" -eq 1 ] || [ $((iteration % 6)) -eq 0 ]; then
+                if ! python scripts/refresh_market_odds.py; then
+                  echo "Warning: market odds refresh failed; keeping prior quote" >&2
+                fi
+              fi
+
               python scripts/build_opportunity_alerts.py
               python scripts/build_dashboard.py
 
