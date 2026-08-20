@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-08-20T02:42:50.827752+00:00",
+  "generated_at_utc": "2026-08-20T02:43:39.859141+00:00",
   "source_generated_at_utc": "2026-08-19T14:47:50.833730+00:00",
   "active_opportunities": [
     {
@@ -23,9 +23,9 @@
       "live_home_score": 18,
       "market_bookmaker": "DraftKings",
       "market_updated_at": "2026-08-20T02:42:19Z",
-      "home_win_probability": 0.25179736940849184,
-      "away_win_probability": 0.7482026305915082,
-      "evaluated_at_utc": "2026-08-20T02:42:50.827752+00:00",
+      "home_win_probability": 0.24943617814138117,
+      "away_win_probability": 0.7505638218586188,
+      "evaluated_at_utc": "2026-08-20T02:43:39.859141+00:00",
       "is_new": false,
       "lifecycle_event": null
     }
