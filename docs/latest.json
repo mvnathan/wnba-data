@@ -75,17 +75,17 @@
       "live_status_detail": "7:47 - 4th Quarter",
       "live_period": 4,
       "live_clock": "7:47",
-      "live_home_score": 71,
+      "live_home_score": 73,
       "live_away_score": 60,
-      "live_updated_at": "2026-08-20T01:05:42.209311+00:00",
-      "live_projected_home_score": 88.11788149564214,
+      "live_updated_at": "2026-08-20T01:06:30.438984+00:00",
+      "live_projected_home_score": 90.52868153963985,
       "live_projected_away_score": 74.61568613826154,
-      "live_predicted_margin": 13.5021953573806,
-      "live_predicted_total": 162.73356763390368,
-      "live_home_win_probability": 0.9297200532430802,
-      "live_away_win_probability": 0.07027994675691984,
+      "live_predicted_margin": 15.91299540137831,
+      "live_predicted_total": 165.14436767790139,
+      "live_home_win_probability": 0.945315437003602,
+      "live_away_win_probability": 0.05468456299639801,
       "live_elapsed_fraction": 0.8054166666666667,
-      "live_projection_updated_at": "2026-08-20T01:05:42.209311+00:00",
+      "live_projection_updated_at": "2026-08-20T01:06:30.438984+00:00",
       "live_projected_winner_side": "home",
       "live_projected_winner_abbr": "WSH"
     },
@@ -164,7 +164,7 @@
       "live_clock": "0.0",
       "live_home_score": 0,
       "live_away_score": 0,
-      "live_updated_at": "2026-08-20T01:05:42.209311+00:00"
+      "live_updated_at": "2026-08-20T01:06:30.438984+00:00"
     }
   ],
   "uncertainty": {
@@ -179,6 +179,6 @@
       "p90": 86.87690694882048
     }
   },
-  "live_generated_at_utc": "2026-08-20T01:05:42.209311+00:00",
-  "last_live_update_utc": "2026-08-20T01:05:42.209311+00:00"
+  "live_generated_at_utc": "2026-08-20T01:06:30.438984+00:00",
+  "last_live_update_utc": "2026-08-20T01:06:30.438984+00:00"
 }
