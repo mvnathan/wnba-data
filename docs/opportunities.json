@@ -1,14 +1,14 @@
 {
-  "generated_at_utc": "2026-08-20T01:16:07.558264+00:00",
+  "generated_at_utc": "2026-08-20T01:16:55.598710+00:00",
   "source_generated_at_utc": "2026-08-19T14:47:50.833730+00:00",
   "active_opportunities": [
     {
       "market": "spread",
       "level": "very_strong",
       "side": "WSH",
-      "edge": 9.047513150098311,
-      "signed_edge_home": 9.047513150098311,
-      "model_margin": 20.54751315009831,
+      "edge": 7.763841136888942,
+      "signed_edge_home": 7.763841136888942,
+      "model_margin": 19.263841136888942,
       "market_home_spread": -11.5,
       "game_id": "401857156",
       "phase": "live",
@@ -18,44 +18,20 @@
       "game_date_utc": "2026-08-19 23:30:00+00:00",
       "status": "STATUS_IN_PROGRESS",
       "live_period": 4,
-      "live_clock": "5:14",
-      "live_away_score": 65,
+      "live_clock": "4:57",
+      "live_away_score": 66,
       "live_home_score": 83,
       "market_bookmaker": "DraftKings",
       "market_updated_at": "2026-08-19T14:47:26Z",
-      "home_win_probability": 0.9754602343617136,
-      "away_win_probability": 0.024539765638286415,
-      "evaluated_at_utc": "2026-08-20T01:16:07.558264+00:00",
+      "home_win_probability": 0.975928153684518,
+      "away_win_probability": 0.02407184631548198,
+      "evaluated_at_utc": "2026-08-20T01:16:55.598710+00:00",
       "is_new": false,
-      "lifecycle_event": "escalated"
+      "lifecycle_event": null
     }
   ],
   "new_alerts": [],
-  "notification_events": [
-    {
-      "event_id": "d77b59614628cbc2b275",
-      "event_type": "escalated",
-      "notify": true,
-      "occurred_at_utc": "2026-08-20T01:16:07.558264+00:00",
-      "game_id": "401857156",
-      "phase": "live",
-      "market": "spread",
-      "side": "WSH",
-      "level": "very_strong",
-      "edge": 9.047513150098311,
-      "away_abbr": "TOR",
-      "home_abbr": "WSH",
-      "live_period": 4,
-      "live_clock": "5:14",
-      "live_away_score": 65,
-      "live_home_score": 83,
-      "market_bookmaker": "DraftKings",
-      "market_updated_at": "2026-08-19T14:47:26Z",
-      "previous_side": "WSH",
-      "previous_level": "strong",
-      "previous_edge": 5.79040817629901
-    }
-  ],
+  "notification_events": [],
   "recent_events": [
     {
       "event_id": "d77b59614628cbc2b275",
@@ -4720,7 +4696,7 @@
   ],
   "summary": {
     "active_count": 1,
-    "notification_event_count": 1,
+    "notification_event_count": 0,
     "new_count": 0,
     "very_strong_count": 1,
     "strong_count": 0
