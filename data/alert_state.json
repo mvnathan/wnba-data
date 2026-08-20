@@ -1,5 +1,5 @@
 {
-  "updated_at_utc": "2026-08-20T04:43:05.336343+00:00",
+  "updated_at_utc": "2026-08-20T04:43:54.191993+00:00",
   "opportunities": {
     "401857143|pregame|spread": {
       "market": "spread",
@@ -1575,7 +1575,7 @@
       "away_win_probability": 0.22418617943194774,
       "active": false,
       "first_seen_at_utc": null,
-      "last_seen_at_utc": "2026-08-20T04:43:05.336343+00:00",
+      "last_seen_at_utc": "2026-08-20T04:43:54.191993+00:00",
       "last_notified_at_utc": null,
       "last_notified_edge": null,
       "resolved_at_utc": null
@@ -1605,7 +1605,7 @@
       "away_win_probability": 0.22418617943194774,
       "active": false,
       "first_seen_at_utc": null,
-      "last_seen_at_utc": "2026-08-20T04:43:05.336343+00:00",
+      "last_seen_at_utc": "2026-08-20T04:43:54.191993+00:00",
       "last_notified_at_utc": null,
       "last_notified_edge": null,
       "resolved_at_utc": null
@@ -1635,9 +1635,9 @@
       "away_win_probability": 0.535143837586346,
       "active": true,
       "first_seen_at_utc": null,
-      "last_seen_at_utc": "2026-08-20T04:43:05.336343+00:00",
-      "last_notified_at_utc": "2026-08-20T04:13:25.777207+00:00",
-      "last_notified_edge": 8.325512832026185
+      "last_seen_at_utc": "2026-08-20T04:43:54.191993+00:00",
+      "last_notified_at_utc": "2026-08-20T04:43:54.191993+00:00",
+      "last_notified_edge": 14.808481280040283
     },
     "401857157|pregame|total": {
       "market": "total",
@@ -1791,6 +1791,30 @@
     }
   },
   "recent_events": [
+    {
+      "event_id": "bc1090e0f94fc770e6cf",
+      "event_type": "material_change",
+      "notify": true,
+      "occurred_at_utc": "2026-08-20T04:43:54.191993+00:00",
+      "game_id": "401857157",
+      "phase": "pregame",
+      "market": "spread",
+      "side": "GS",
+      "level": "very_strong",
+      "edge": 14.808481280040283,
+      "away_abbr": "MIN",
+      "home_abbr": "GS",
+      "live_period": 4,
+      "live_clock": "0.0",
+      "live_away_score": 77,
+      "live_home_score": 66,
+      "market_bookmaker": "DraftKings",
+      "market_updated_at": "2026-08-20T04:11:45Z",
+      "reason": "edge_changed_by_6.48",
+      "previous_side": "GS",
+      "previous_level": "very_strong",
+      "previous_edge": 14.808481280040283
+    },
     {
       "event_id": "7765d81356f4b8c0f20e",
       "event_type": "reactivated",
@@ -6429,30 +6453,6 @@
       "previous_side": "UNDER",
       "previous_level": "strong",
       "previous_edge": 9.246570345890689
-    },
-    {
-      "event_id": "82e0ba69f7ae1a39b571",
-      "event_type": "resolved",
-      "notify": true,
-      "occurred_at_utc": "2026-08-19T01:12:15.926486+00:00",
-      "game_id": "401857154",
-      "phase": "live",
-      "market": "spread",
-      "side": "NY",
-      "level": "neutral",
-      "edge": 1.4892912945705064,
-      "away_abbr": "NY",
-      "home_abbr": "CHI",
-      "live_period": 1,
-      "live_clock": "5:29",
-      "live_away_score": 12,
-      "live_home_score": 13,
-      "market_bookmaker": "DraftKings",
-      "market_updated_at": "2026-08-18T14:46:39Z",
-      "reason": "edge_below_alert_threshold",
-      "previous_side": "NY",
-      "previous_level": "very_strong",
-      "previous_edge": 7.077314856030867
     }
   ]
 }
