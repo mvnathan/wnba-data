@@ -137,7 +137,7 @@
     "last_status": "STATUS_FINAL",
     "last_status_detail": "Final",
     "last_event_type": "FINAL",
-    "last_prediction_timestamp": "2026-08-20T02:56:40.727424+00:00"
+    "last_prediction_timestamp": "2026-08-20T02:57:29.495224+00:00"
   },
   "401857157": {
     "last_seen_period": 2,
@@ -147,6 +147,6 @@
     "last_status": "STATUS_HALFTIME",
     "last_status_detail": "Halftime",
     "last_event_type": "START",
-    "last_prediction_timestamp": "2026-08-20T02:56:40.727424+00:00"
+    "last_prediction_timestamp": "2026-08-20T02:57:29.495224+00:00"
   }
 }
