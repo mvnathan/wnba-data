@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-08-20T03:15:32.547834+00:00",
+  "generated_at_utc": "2026-08-20T03:16:21.183904+00:00",
   "source_generated_at_utc": "2026-08-19T14:47:50.833730+00:00",
   "active_opportunities": [
     {
@@ -25,7 +25,7 @@
       "market_updated_at": "2026-08-20T03:14:41Z",
       "home_win_probability": 0.13925461401842082,
       "away_win_probability": 0.8607453859815792,
-      "evaluated_at_utc": "2026-08-20T03:15:32.547834+00:00",
+      "evaluated_at_utc": "2026-08-20T03:16:21.183904+00:00",
       "is_new": false,
       "lifecycle_event": null
     }
