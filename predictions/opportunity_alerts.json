@@ -1,14 +1,14 @@
 {
-  "generated_at_utc": "2026-08-20T03:34:58.001752+00:00",
+  "generated_at_utc": "2026-08-20T03:35:46.491240+00:00",
   "source_generated_at_utc": "2026-08-19T14:47:50.833730+00:00",
   "active_opportunities": [
     {
       "market": "spread",
       "level": "strong",
       "side": "MIN",
-      "edge": 6.966650706724835,
-      "signed_edge_home": -6.966650706724835,
-      "model_margin": -19.466650706724835,
+      "edge": 6.911874696345436,
+      "signed_edge_home": -6.911874696345436,
+      "model_margin": -19.411874696345436,
       "market_home_spread": 12.5,
       "game_id": "401857157",
       "phase": "live",
@@ -18,44 +18,20 @@
       "game_date_utc": "2026-08-20 02:00:00+00:00",
       "status": "STATUS_IN_PROGRESS",
       "live_period": 3,
-      "live_clock": "1:28",
+      "live_clock": "1:20",
       "live_away_score": 54,
       "live_home_score": 39,
       "market_bookmaker": "DraftKings",
       "market_updated_at": "2026-08-20T03:33:39Z",
-      "home_win_probability": 0.10133397589308069,
-      "away_win_probability": 0.8986660241069193,
-      "evaluated_at_utc": "2026-08-20T03:34:58.001752+00:00",
+      "home_win_probability": 0.10020106788463984,
+      "away_win_probability": 0.8997989321153601,
+      "evaluated_at_utc": "2026-08-20T03:35:46.491240+00:00",
       "is_new": false,
-      "lifecycle_event": "downgraded"
+      "lifecycle_event": null
     }
   ],
   "new_alerts": [],
-  "notification_events": [
-    {
-      "event_id": "42a2b7a399db09838d0c",
-      "event_type": "downgraded",
-      "notify": true,
-      "occurred_at_utc": "2026-08-20T03:34:58.001752+00:00",
-      "game_id": "401857157",
-      "phase": "live",
-      "market": "spread",
-      "side": "MIN",
-      "level": "strong",
-      "edge": 6.966650706724835,
-      "away_abbr": "MIN",
-      "home_abbr": "GS",
-      "live_period": 3,
-      "live_clock": "1:28",
-      "live_away_score": 54,
-      "live_home_score": 39,
-      "market_bookmaker": "DraftKings",
-      "market_updated_at": "2026-08-20T03:33:39Z",
-      "previous_side": "MIN",
-      "previous_level": "very_strong",
-      "previous_edge": 7.110898087802653
-    }
-  ],
+  "notification_events": [],
   "recent_events": [
     {
       "event_id": "42a2b7a399db09838d0c",
@@ -4719,7 +4695,7 @@
   ],
   "summary": {
     "active_count": 1,
-    "notification_event_count": 1,
+    "notification_event_count": 0,
     "new_count": 0,
     "very_strong_count": 0,
     "strong_count": 1
