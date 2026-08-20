@@ -77,7 +77,7 @@
       "live_clock": "0.0",
       "live_home_score": 93,
       "live_away_score": 82,
-      "live_updated_at": "2026-08-20T02:07:34.134423+00:00",
+      "live_updated_at": "2026-08-20T02:08:23.126870+00:00",
       "live_projected_home_score": 93.0,
       "live_projected_away_score": 82.0,
       "live_predicted_margin": 11.0,
@@ -85,10 +85,10 @@
       "live_home_win_probability": 1.0,
       "live_away_win_probability": 0.0,
       "live_elapsed_fraction": 1.0,
-      "live_projection_updated_at": "2026-08-20T02:07:34.134423+00:00",
+      "live_projection_updated_at": "2026-08-20T02:08:23.126870+00:00",
       "live_projected_winner_side": "home",
       "live_projected_winner_abbr": "WSH",
-      "market_refresh_attempted_at": "2026-08-20T02:03:29.739148+00:00",
+      "market_refresh_attempted_at": "2026-08-20T02:08:24.365250+00:00",
       "market_refresh_status": "current_quote_returned"
     },
     {
@@ -150,7 +150,7 @@
       "market_under_price": -112,
       "market_home_moneyline": 114,
       "market_away_moneyline": -135,
-      "market_updated_at": "2026-08-20T02:03:21Z",
+      "market_updated_at": "2026-08-20T02:08:18Z",
       "market_blend_version": "market_anchor_v1",
       "model_predicted_margin": 3.308481280040283,
       "market_implied_margin": -1.5,
@@ -166,15 +166,15 @@
       "live_clock": "0.0",
       "live_home_score": 0,
       "live_away_score": 0,
-      "live_updated_at": "2026-08-20T02:07:34.134423+00:00",
+      "live_updated_at": "2026-08-20T02:08:23.126870+00:00",
       "next_quarter_period": 1,
       "next_quarter_home_score": 25.858481280040284,
       "next_quarter_away_score": 21.005,
       "next_quarter_margin": 4.853481280040285,
       "next_quarter_total": 46.86348128004028,
-      "next_quarter_updated_at": "2026-08-20T02:07:34.686004+00:00",
+      "next_quarter_updated_at": "2026-08-20T02:08:23.673210+00:00",
       "next_quarter_basis": "pregame_quarter_model",
-      "market_refresh_attempted_at": "2026-08-20T02:03:29.739148+00:00",
+      "market_refresh_attempted_at": "2026-08-20T02:08:24.365250+00:00",
       "market_refresh_status": "updated"
     }
   ],
@@ -190,8 +190,8 @@
       "p90": 86.87690694882048
     }
   },
-  "live_generated_at_utc": "2026-08-20T02:07:34.134423+00:00",
-  "last_live_update_utc": "2026-08-20T02:07:34.134423+00:00",
-  "quarter_projection_updated_at": "2026-08-20T02:07:34.686004+00:00",
-  "market_refresh_attempted_at": "2026-08-20T02:03:29.739148+00:00"
+  "live_generated_at_utc": "2026-08-20T02:08:23.126870+00:00",
+  "last_live_update_utc": "2026-08-20T02:08:23.126870+00:00",
+  "quarter_projection_updated_at": "2026-08-20T02:08:23.673210+00:00",
+  "market_refresh_attempted_at": "2026-08-20T02:08:24.365250+00:00"
 }
