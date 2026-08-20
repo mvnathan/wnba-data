@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-08-20T04:31:14.881804+00:00",
+  "generated_at_utc": "2026-08-20T04:32:03.457663+00:00",
   "source_generated_at_utc": "2026-08-19T14:47:50.833730+00:00",
   "active_opportunities": [
     {
@@ -18,14 +18,14 @@
       "game_date_utc": "2026-08-20 02:00:00+00:00",
       "status": "STATUS_FINAL",
       "live_period": 4,
-      "live_clock": "10:00",
+      "live_clock": "0.0",
       "live_away_score": 77,
       "live_home_score": 66,
       "market_bookmaker": "DraftKings",
       "market_updated_at": "2026-08-20T04:11:45Z",
       "home_win_probability": 0.464856162413654,
       "away_win_probability": 0.535143837586346,
-      "evaluated_at_utc": "2026-08-20T04:31:14.881804+00:00",
+      "evaluated_at_utc": "2026-08-20T04:32:03.457663+00:00",
       "is_new": false,
       "lifecycle_event": null
     }
