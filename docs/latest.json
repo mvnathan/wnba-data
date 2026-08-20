@@ -11,8 +11,8 @@
       "away_team": "Tempo",
       "home_abbr": "WSH",
       "away_abbr": "TOR",
-      "status": "STATUS_IN_PROGRESS",
-      "status_detail": "15.1 - 3rd Quarter",
+      "status": "STATUS_END_PERIOD",
+      "status_detail": "End of 3rd Quarter",
       "venue": "CareFirst Arena",
       "home_win": 0.7758138205680523,
       "home_score": 86.9439542453516,
@@ -71,21 +71,21 @@
       "model_home_win_probability": 0.7758138205680523,
       "market_no_vig_home_win_probability": 0.8118668596237336,
       "market_moneyline_weight": 0.25,
-      "live_status": "STATUS_IN_PROGRESS",
-      "live_status_detail": "15.1 - 3rd Quarter",
+      "live_status": "STATUS_END_PERIOD",
+      "live_status_detail": "End of 3rd Quarter",
       "live_period": 3,
-      "live_clock": "15.1",
+      "live_clock": "0.0",
       "live_home_score": 69,
       "live_away_score": 56,
-      "live_updated_at": "2026-08-20T00:59:17.933508+00:00",
-      "live_projected_home_score": 92.48052093828686,
-      "live_projected_away_score": 75.46761891632377,
-      "live_predicted_margin": 17.012902021963086,
-      "live_predicted_total": 167.94813985461064,
-      "live_home_win_probability": 0.9302791167459973,
-      "live_away_win_probability": 0.06972088325400272,
-      "live_elapsed_fraction": 0.7437083333333334,
-      "live_projection_updated_at": "2026-08-20T00:59:17.933508+00:00",
+      "live_updated_at": "2026-08-20T01:00:05.967679+00:00",
+      "live_projected_home_score": 91.75469007543839,
+      "live_projected_away_score": 74.8582324473469,
+      "live_predicted_margin": 16.896457628091497,
+      "live_predicted_total": 166.61292252278528,
+      "live_home_win_probability": 0.9316863699148012,
+      "live_away_win_probability": 0.06831363008519875,
+      "live_elapsed_fraction": 0.75,
+      "live_projection_updated_at": "2026-08-20T01:00:05.967679+00:00",
       "live_projected_winner_side": "home",
       "live_projected_winner_abbr": "WSH"
     },
@@ -164,7 +164,7 @@
       "live_clock": "0.0",
       "live_home_score": 0,
       "live_away_score": 0,
-      "live_updated_at": "2026-08-20T00:59:17.933508+00:00"
+      "live_updated_at": "2026-08-20T01:00:05.967679+00:00"
     }
   ],
   "uncertainty": {
@@ -179,6 +179,6 @@
       "p90": 86.87690694882048
     }
   },
-  "live_generated_at_utc": "2026-08-20T00:59:17.933508+00:00",
-  "last_live_update_utc": "2026-08-20T00:59:17.933508+00:00"
+  "live_generated_at_utc": "2026-08-20T01:00:05.967679+00:00",
+  "last_live_update_utc": "2026-08-20T01:00:05.967679+00:00"
 }
