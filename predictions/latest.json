@@ -88,7 +88,7 @@
       "live_projection_updated_at": "2026-08-20T04:59:20.159901+00:00",
       "live_projected_winner_side": "home",
       "live_projected_winner_abbr": "WSH",
-      "market_refresh_attempted_at": "2026-08-20T08:38:33.745944+00:00",
+      "market_refresh_attempted_at": "2026-08-20T08:50:58.063991+00:00",
       "market_refresh_status": "current_quote_returned"
     },
     {
@@ -167,7 +167,7 @@
       "live_home_score": 66,
       "live_away_score": 77,
       "live_updated_at": "2026-08-20T04:59:20.159901+00:00",
-      "market_refresh_attempted_at": "2026-08-20T08:38:33.745944+00:00",
+      "market_refresh_attempted_at": "2026-08-20T08:50:58.063991+00:00",
       "market_refresh_status": "current_quote_returned",
       "live_projected_home_score": 66.0,
       "live_projected_away_score": 77.0,
@@ -195,6 +195,6 @@
   },
   "live_generated_at_utc": "2026-08-20T04:59:20.159901+00:00",
   "last_live_update_utc": "2026-08-20T04:59:20.159901+00:00",
-  "quarter_projection_updated_at": "2026-08-20T08:40:10.711213+00:00",
-  "market_refresh_attempted_at": "2026-08-20T08:38:33.745944+00:00"
+  "quarter_projection_updated_at": "2026-08-20T08:50:57.413160+00:00",
+  "market_refresh_attempted_at": "2026-08-20T08:50:58.063991+00:00"
 }
