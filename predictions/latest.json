@@ -77,7 +77,7 @@
       "live_clock": "0.0",
       "live_home_score": 93,
       "live_away_score": 82,
-      "live_updated_at": "2026-08-20T04:20:42.209689+00:00",
+      "live_updated_at": "2026-08-20T04:21:30.591563+00:00",
       "live_projected_home_score": 93.0,
       "live_projected_away_score": 82.0,
       "live_predicted_margin": 11.0,
@@ -85,7 +85,7 @@
       "live_home_win_probability": 1.0,
       "live_away_win_probability": 0.0,
       "live_elapsed_fraction": 1.0,
-      "live_projection_updated_at": "2026-08-20T04:20:42.209689+00:00",
+      "live_projection_updated_at": "2026-08-20T04:21:30.591563+00:00",
       "live_projected_winner_side": "home",
       "live_projected_winner_abbr": "WSH",
       "market_refresh_attempted_at": "2026-08-20T04:19:54.331347+00:00",
@@ -166,7 +166,7 @@
       "live_clock": "0.0",
       "live_home_score": 66,
       "live_away_score": 77,
-      "live_updated_at": "2026-08-20T04:20:42.209689+00:00",
+      "live_updated_at": "2026-08-20T04:21:30.591563+00:00",
       "market_refresh_attempted_at": "2026-08-20T04:19:54.331347+00:00",
       "market_refresh_status": "current_quote_returned",
       "live_projected_home_score": 66.0,
@@ -176,7 +176,7 @@
       "live_home_win_probability": 0.0,
       "live_away_win_probability": 1.0,
       "live_elapsed_fraction": 1.0,
-      "live_projection_updated_at": "2026-08-20T04:20:42.209689+00:00",
+      "live_projection_updated_at": "2026-08-20T04:21:30.591563+00:00",
       "live_projected_winner_side": "away",
       "live_projected_winner_abbr": "MIN"
     }
@@ -193,8 +193,8 @@
       "p90": 86.87690694882048
     }
   },
-  "live_generated_at_utc": "2026-08-20T04:20:42.209689+00:00",
-  "last_live_update_utc": "2026-08-20T04:20:42.209689+00:00",
-  "quarter_projection_updated_at": "2026-08-20T04:20:42.717902+00:00",
+  "live_generated_at_utc": "2026-08-20T04:21:30.591563+00:00",
+  "last_live_update_utc": "2026-08-20T04:21:30.591563+00:00",
+  "quarter_projection_updated_at": "2026-08-20T04:21:31.106378+00:00",
   "market_refresh_attempted_at": "2026-08-20T04:19:54.331347+00:00"
 }
