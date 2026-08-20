@@ -1,14 +1,14 @@
 {
-  "generated_at_utc": "2026-08-20T04:28:48.754276+00:00",
+  "generated_at_utc": "2026-08-20T04:29:37.985936+00:00",
   "source_generated_at_utc": "2026-08-19T14:47:50.833730+00:00",
   "active_opportunities": [
     {
       "market": "spread",
       "level": "very_strong",
       "side": "GS",
-      "edge": 9.625512832026185,
-      "signed_edge_home": 9.625512832026185,
-      "model_margin": -1.8744871679738155,
+      "edge": 14.808481280040283,
+      "signed_edge_home": 14.808481280040283,
+      "model_margin": 3.308481280040283,
       "market_home_spread": 11.5,
       "game_id": "401857157",
       "phase": "pregame",
@@ -18,14 +18,14 @@
       "game_date_utc": "2026-08-20 02:00:00+00:00",
       "status": "STATUS_FINAL",
       "live_period": 4,
-      "live_clock": "0.0",
+      "live_clock": "10:00",
       "live_away_score": 77,
       "live_home_score": 66,
       "market_bookmaker": "DraftKings",
       "market_updated_at": "2026-08-20T04:11:45Z",
       "home_win_probability": 0.464856162413654,
       "away_win_probability": 0.535143837586346,
-      "evaluated_at_utc": "2026-08-20T04:28:48.754276+00:00",
+      "evaluated_at_utc": "2026-08-20T04:29:37.985936+00:00",
       "is_new": false,
       "lifecycle_event": null
     }
