@@ -57,13 +57,13 @@
       "live_clock": "0.0",
       "live_home_score": 0,
       "live_away_score": 0,
-      "live_updated_at": "2026-08-21T14:59:16.131096+00:00",
+      "live_updated_at": "2026-08-21T15:00:04.384502+00:00",
       "next_quarter_period": 1,
       "next_quarter_home_score": 21.16730867652753,
       "next_quarter_away_score": 20.73,
       "next_quarter_margin": 0.4373086765275289,
       "next_quarter_total": 41.89730867652753,
-      "next_quarter_updated_at": "2026-08-21T14:59:16.526532+00:00",
+      "next_quarter_updated_at": "2026-08-21T15:00:04.770009+00:00",
       "next_quarter_basis": "pregame_quarter_model"
     },
     {
@@ -121,13 +121,13 @@
       "live_clock": "0.0",
       "live_home_score": 0,
       "live_away_score": 0,
-      "live_updated_at": "2026-08-21T14:59:16.131096+00:00",
+      "live_updated_at": "2026-08-21T15:00:04.384502+00:00",
       "next_quarter_period": 1,
       "next_quarter_home_score": 20.544366212126302,
       "next_quarter_away_score": 22.16,
       "next_quarter_margin": -1.6156337878736977,
       "next_quarter_total": 42.7043662121263,
-      "next_quarter_updated_at": "2026-08-21T14:59:16.526532+00:00",
+      "next_quarter_updated_at": "2026-08-21T15:00:04.770009+00:00",
       "next_quarter_basis": "pregame_quarter_model"
     },
     {
@@ -185,13 +185,13 @@
       "live_clock": "0.0",
       "live_home_score": 0,
       "live_away_score": 0,
-      "live_updated_at": "2026-08-21T14:59:16.131096+00:00",
+      "live_updated_at": "2026-08-21T15:00:04.384502+00:00",
       "next_quarter_period": 1,
       "next_quarter_home_score": 22.247937146695442,
       "next_quarter_away_score": 20.565,
       "next_quarter_margin": 1.6829371466954406,
       "next_quarter_total": 42.81293714669545,
-      "next_quarter_updated_at": "2026-08-21T14:59:16.526532+00:00",
+      "next_quarter_updated_at": "2026-08-21T15:00:04.770009+00:00",
       "next_quarter_basis": "pregame_quarter_model"
     }
   ],
@@ -207,7 +207,7 @@
       "p90": 86.69322295978162
     }
   },
-  "live_generated_at_utc": "2026-08-21T14:59:16.131096+00:00",
-  "last_live_update_utc": "2026-08-21T14:59:16.131096+00:00",
-  "quarter_projection_updated_at": "2026-08-21T14:59:16.526532+00:00"
+  "live_generated_at_utc": "2026-08-21T15:00:04.384502+00:00",
+  "last_live_update_utc": "2026-08-21T15:00:04.384502+00:00",
+  "quarter_projection_updated_at": "2026-08-21T15:00:04.770009+00:00"
 }
