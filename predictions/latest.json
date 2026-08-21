@@ -50,7 +50,21 @@
       "projected_winner_side": "away",
       "projected_winner_abbr": "MIN",
       "projected_spread": -3.7976913234724634,
-      "prediction_coherent": true
+      "prediction_coherent": true,
+      "live_status": "STATUS_SCHEDULED",
+      "live_status_detail": "Fri, August 21st at 7:30 PM EDT",
+      "live_period": null,
+      "live_clock": "0.0",
+      "live_home_score": 0,
+      "live_away_score": 0,
+      "live_updated_at": "2026-08-21T14:49:35.724944+00:00",
+      "next_quarter_period": 1,
+      "next_quarter_home_score": 21.16730867652753,
+      "next_quarter_away_score": 20.73,
+      "next_quarter_margin": 0.4373086765275289,
+      "next_quarter_total": 41.89730867652753,
+      "next_quarter_updated_at": "2026-08-21T14:49:36.084171+00:00",
+      "next_quarter_basis": "pregame_quarter_model"
     },
     {
       "game_id": "401857162",
@@ -100,7 +114,21 @@
       "projected_winner_side": "away",
       "projected_winner_abbr": "GS",
       "projected_spread": -8.3856337878737,
-      "prediction_coherent": true
+      "prediction_coherent": true,
+      "live_status": "STATUS_SCHEDULED",
+      "live_status_detail": "Fri, August 21st at 7:30 PM EDT",
+      "live_period": null,
+      "live_clock": "0.0",
+      "live_home_score": 0,
+      "live_away_score": 0,
+      "live_updated_at": "2026-08-21T14:49:35.724944+00:00",
+      "next_quarter_period": 1,
+      "next_quarter_home_score": 20.544366212126302,
+      "next_quarter_away_score": 22.16,
+      "next_quarter_margin": -1.6156337878736977,
+      "next_quarter_total": 42.7043662121263,
+      "next_quarter_updated_at": "2026-08-21T14:49:36.084171+00:00",
+      "next_quarter_basis": "pregame_quarter_model"
     },
     {
       "game_id": "401857163",
@@ -150,7 +178,21 @@
       "projected_winner_side": "home",
       "projected_winner_abbr": "TOR",
       "projected_spread": -1.1279371466954444,
-      "prediction_coherent": false
+      "prediction_coherent": false,
+      "live_status": "STATUS_SCHEDULED",
+      "live_status_detail": "Fri, August 21st at 10:00 PM EDT",
+      "live_period": null,
+      "live_clock": "0.0",
+      "live_home_score": 0,
+      "live_away_score": 0,
+      "live_updated_at": "2026-08-21T14:49:35.724944+00:00",
+      "next_quarter_period": 1,
+      "next_quarter_home_score": 22.247937146695442,
+      "next_quarter_away_score": 20.565,
+      "next_quarter_margin": 1.6829371466954406,
+      "next_quarter_total": 42.81293714669545,
+      "next_quarter_updated_at": "2026-08-21T14:49:36.084171+00:00",
+      "next_quarter_basis": "pregame_quarter_model"
     }
   ],
   "uncertainty": {
@@ -164,5 +206,8 @@
       "median": 80.0943662121263,
       "p90": 86.69322295978162
     }
-  }
+  },
+  "live_generated_at_utc": "2026-08-21T14:49:35.724944+00:00",
+  "last_live_update_utc": "2026-08-21T14:49:35.724944+00:00",
+  "quarter_projection_updated_at": "2026-08-21T14:49:36.084171+00:00"
 }
