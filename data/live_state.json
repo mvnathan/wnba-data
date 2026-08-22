@@ -187,7 +187,7 @@
     "last_status": "STATUS_IN_PROGRESS",
     "last_status_detail": "5:57 - 4th Quarter",
     "last_event_type": "START",
-    "last_prediction_timestamp": "2026-08-22T01:08:26.786552+00:00"
+    "last_prediction_timestamp": "2026-08-22T01:09:15.388719+00:00"
   },
   "401857162": {
     "last_seen_period": 4,
@@ -197,7 +197,7 @@
     "last_status": "STATUS_IN_PROGRESS",
     "last_status_detail": "8:28 - 4th Quarter",
     "last_event_type": "START",
-    "last_prediction_timestamp": "2026-08-22T01:08:26.786552+00:00"
+    "last_prediction_timestamp": "2026-08-22T01:09:15.388719+00:00"
   },
   "401857163": {
     "last_seen_period": null,
@@ -207,6 +207,6 @@
     "last_status": "STATUS_SCHEDULED",
     "last_status_detail": "Fri, August 21st at 10:00 PM EDT",
     "last_event_type": "PREGAME",
-    "last_prediction_timestamp": "2026-08-22T01:08:26.786552+00:00"
+    "last_prediction_timestamp": "2026-08-22T01:09:15.388719+00:00"
   }
 }
