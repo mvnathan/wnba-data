@@ -50,7 +50,21 @@
       "projected_winner_side": "home",
       "projected_winner_abbr": "MIN",
       "projected_spread": -5.270034144939132,
-      "prediction_coherent": true
+      "prediction_coherent": true,
+      "live_status": "STATUS_SCHEDULED",
+      "live_status_detail": "Mon, August 24th at 8:00 PM EDT",
+      "live_period": null,
+      "live_clock": "0.0",
+      "live_home_score": 0,
+      "live_away_score": 0,
+      "live_updated_at": "2026-08-24T14:55:25.479542+00:00",
+      "next_quarter_period": 1,
+      "next_quarter_home_score": 24.545034144939113,
+      "next_quarter_away_score": 21.14,
+      "next_quarter_margin": 3.405034144939112,
+      "next_quarter_total": 45.68503414493911,
+      "next_quarter_updated_at": "2026-08-24T14:55:26.011305+00:00",
+      "next_quarter_basis": "pregame_quarter_model"
     },
     {
       "game_id": "401857172",
@@ -100,7 +114,21 @@
       "projected_winner_side": "away",
       "projected_winner_abbr": "ATL",
       "projected_spread": -0.9072600650945617,
-      "prediction_coherent": true
+      "prediction_coherent": true,
+      "live_status": "STATUS_SCHEDULED",
+      "live_status_detail": "Mon, August 24th at 10:00 PM EDT",
+      "live_period": null,
+      "live_clock": "0.0",
+      "live_home_score": 0,
+      "live_away_score": 0,
+      "live_updated_at": "2026-08-24T14:55:25.479542+00:00",
+      "next_quarter_period": 1,
+      "next_quarter_home_score": 24.722739934905455,
+      "next_quarter_away_score": 22.605,
+      "next_quarter_margin": 2.1177399349054546,
+      "next_quarter_total": 47.32773993490545,
+      "next_quarter_updated_at": "2026-08-24T14:55:26.011305+00:00",
+      "next_quarter_basis": "pregame_quarter_model"
     }
   ],
   "uncertainty": {
@@ -114,5 +142,8 @@
       "median": 81.45888703992227,
       "p90": 84.5659693559088
     }
-  }
+  },
+  "live_generated_at_utc": "2026-08-24T14:55:25.479542+00:00",
+  "last_live_update_utc": "2026-08-24T14:55:25.479542+00:00",
+  "quarter_projection_updated_at": "2026-08-24T14:55:26.011305+00:00"
 }
