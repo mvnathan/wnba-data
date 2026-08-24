@@ -40,40 +40,35 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-          # GitHub scheduled starts can be delayed well beyond the nominal 5-minute
-          # cadence. Keep the current monitor alive for roughly five hours so live
-          # projections do not go stale while waiting for a replacement run. A
-          # normally scheduled replacement still cancels this run and takes over.
           max_polls=400
           for iteration in $(seq 1 "${max_polls}"); do
             echo "Live poll ${iteration}/${max_polls}"
-
-            # Generated live-state files are also written by other workflows.
-            # Always build from the newest main branch, and if another writer wins
-            # the push race, discard this generated commit and rebuild on top of
-            # that newer state instead of rebasing/merging generated files.
             published=false
             for publish_attempt in $(seq 1 5); do
               echo "Publish attempt ${publish_attempt}/5"
-
               git fetch origin main
               git reset --hard origin/main
 
               python scripts/monitor_live_games.py
               python scripts/enrich_quarter_projection.py
 
-              # Refresh DraftKings near-live without making the score pipeline
-              # depend on the odds provider. First poll refreshes immediately;
-              # thereafter every sixth 45-second poll is roughly every 4.5 minutes.
               if [ "${iteration}" -eq 1 ] || [ $((iteration % 6)) -eq 0 ]; then
                 if ! python scripts/refresh_market_odds.py; then
                   echo "Warning: market odds refresh failed; keeping prior quote" >&2
                 fi
               fi
 
+              # Referee analysis is experimental and must never block live scoring.
+              # Run it on the first poll so tonight's pregame forecast can be
+              # compared with the production forecast without replacing it.
+              if [ "${iteration}" -eq 1 ]; then
+                if ! python scripts/referee_experiment.py; then
+                  echo "Warning: referee experiment failed; production forecast unchanged" >&2
+                fi
+              fi
+
               python scripts/build_opportunity_alerts.py
               python scripts/build_dashboard.py
-
               git add data/live_state.json data/live_snapshots.parquet data/alert_state.json predictions/ docs/
 
               if git diff --quiet --cached; then
@@ -81,26 +76,17 @@ jobs:
                 published=true
                 break
               fi
-
               git commit -m "Update live dashboard (${iteration}/${max_polls})"
-
               if git push origin HEAD:main; then
                 published=true
                 break
               fi
-
               echo "Main changed before push; rebuilding from latest main"
-              if [ "${publish_attempt}" -lt 5 ]; then
-                sleep 2
-              fi
+              if [ "${publish_attempt}" -lt 5 ]; then sleep 2; fi
             done
-
             if [ "${published}" != true ]; then
               echo "Failed to publish live dashboard after 5 attempts" >&2
               exit 1
             fi
-
-            if [ "${iteration}" -lt "${max_polls}" ]; then
-              sleep 45
-            fi
+            if [ "${iteration}" -lt "${max_polls}" ]; then sleep 45; fi
           done
