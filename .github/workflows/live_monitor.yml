@@ -58,12 +58,15 @@ jobs:
                 fi
               fi
 
-              # Referee analysis is experimental and must never block live scoring.
-              # Run it on the first poll so tonight's pregame forecast can be
-              # compared with the production forecast without replacing it.
               if [ "${iteration}" -eq 1 ]; then
-                if ! python scripts/referee_experiment.py; then
+                rm -f predictions/referee_experiment_error.txt
+                if python scripts/referee_experiment.py > /tmp/referee_experiment.log 2>&1; then
+                  echo "Referee experiment completed"
+                  rm -f predictions/referee_experiment_error.txt
+                else
                   echo "Warning: referee experiment failed; production forecast unchanged" >&2
+                  cat /tmp/referee_experiment.log >&2
+                  cp /tmp/referee_experiment.log predictions/referee_experiment_error.txt
                 fi
               fi
 
