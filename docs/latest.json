@@ -55,17 +55,17 @@
       "live_status_detail": "4:15 - 4th Quarter",
       "live_period": 4,
       "live_clock": "4:15",
-      "live_home_score": 57,
+      "live_home_score": 58,
       "live_away_score": 71,
-      "live_updated_at": "2026-08-25T01:58:26.124055+00:00",
-      "live_projected_home_score": 64.00868613639138,
+      "live_updated_at": "2026-08-25T01:59:14.868800+00:00",
+      "live_projected_home_score": 65.11567914338438,
       "live_projected_away_score": 79.45059412150349,
-      "live_predicted_margin": -15.44190798511211,
-      "live_predicted_total": 143.45928025789487,
-      "live_home_win_probability": 0.049340158540238765,
-      "live_away_win_probability": 0.9506598414597612,
+      "live_predicted_margin": -14.334914978119102,
+      "live_predicted_total": 144.56627326488785,
+      "live_home_win_probability": 0.052529588729887784,
+      "live_away_win_probability": 0.9474704112701122,
       "live_elapsed_fraction": 0.89375,
-      "live_projection_updated_at": "2026-08-25T01:58:26.124055+00:00",
+      "live_projection_updated_at": "2026-08-25T01:59:14.868800+00:00",
       "live_projected_winner_side": "away",
       "live_projected_winner_abbr": "GS"
     },
@@ -124,13 +124,13 @@
       "live_clock": "0.0",
       "live_home_score": 0,
       "live_away_score": 0,
-      "live_updated_at": "2026-08-25T01:58:26.124055+00:00",
+      "live_updated_at": "2026-08-25T01:59:14.868800+00:00",
       "next_quarter_period": 1,
       "next_quarter_home_score": 24.722739934905455,
       "next_quarter_away_score": 22.605,
       "next_quarter_margin": 2.1177399349054546,
       "next_quarter_total": 47.32773993490545,
-      "next_quarter_updated_at": "2026-08-25T01:58:26.671686+00:00",
+      "next_quarter_updated_at": "2026-08-25T01:59:15.422722+00:00",
       "next_quarter_basis": "pregame_quarter_model"
     }
   ],
@@ -146,7 +146,7 @@
       "p90": 84.5659693559088
     }
   },
-  "live_generated_at_utc": "2026-08-25T01:58:26.124055+00:00",
-  "last_live_update_utc": "2026-08-25T01:58:26.124055+00:00",
-  "quarter_projection_updated_at": "2026-08-25T01:58:26.671686+00:00"
+  "live_generated_at_utc": "2026-08-25T01:59:14.868800+00:00",
+  "last_live_update_utc": "2026-08-25T01:59:14.868800+00:00",
+  "quarter_projection_updated_at": "2026-08-25T01:59:15.422722+00:00"
 }
