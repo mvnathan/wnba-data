@@ -282,12 +282,12 @@
   "401857171": {
     "last_seen_period": 1,
     "last_seen_clock": "7:10",
-    "last_home_score": 4,
+    "last_home_score": 5,
     "last_away_score": 0,
     "last_status": "STATUS_IN_PROGRESS",
     "last_status_detail": "7:10 - 1st Quarter",
     "last_event_type": "START",
-    "last_prediction_timestamp": "2026-08-25T00:11:12.009923+00:00"
+    "last_prediction_timestamp": "2026-08-25T00:12:00.957449+00:00"
   },
   "401857172": {
     "last_seen_period": null,
@@ -297,6 +297,6 @@
     "last_status": "STATUS_SCHEDULED",
     "last_status_detail": "Mon, August 24th at 10:00 PM EDT",
     "last_event_type": "PREGAME",
-    "last_prediction_timestamp": "2026-08-25T00:11:12.009923+00:00"
+    "last_prediction_timestamp": "2026-08-25T00:12:00.957449+00:00"
   }
 }
