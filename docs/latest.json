@@ -57,13 +57,13 @@
       "live_clock": "0.0",
       "live_home_score": 0,
       "live_away_score": 0,
-      "live_updated_at": "2026-08-26T15:08:47.957642+00:00",
+      "live_updated_at": "2026-08-26T15:09:36.658742+00:00",
       "next_quarter_period": 1,
       "next_quarter_home_score": 19.118271959287824,
       "next_quarter_away_score": 20.68,
       "next_quarter_margin": -1.5617280407121754,
       "next_quarter_total": 39.798271959287824,
-      "next_quarter_updated_at": "2026-08-26T15:08:48.456736+00:00",
+      "next_quarter_updated_at": "2026-08-26T15:09:37.153177+00:00",
       "next_quarter_basis": "pregame_quarter_model"
     },
     {
@@ -121,13 +121,13 @@
       "live_clock": "0.0",
       "live_home_score": 0,
       "live_away_score": 0,
-      "live_updated_at": "2026-08-26T15:08:47.957642+00:00",
+      "live_updated_at": "2026-08-26T15:09:36.658742+00:00",
       "next_quarter_period": 1,
       "next_quarter_home_score": 25.087903008793635,
       "next_quarter_away_score": 20.925,
       "next_quarter_margin": 4.162903008793634,
       "next_quarter_total": 46.012903008793636,
-      "next_quarter_updated_at": "2026-08-26T15:08:48.456736+00:00",
+      "next_quarter_updated_at": "2026-08-26T15:09:37.153177+00:00",
       "next_quarter_basis": "pregame_quarter_model"
     }
   ],
@@ -143,7 +143,7 @@
       "p90": 78.92293990384306
     }
   },
-  "live_generated_at_utc": "2026-08-26T15:08:47.957642+00:00",
-  "last_live_update_utc": "2026-08-26T15:08:47.957642+00:00",
-  "quarter_projection_updated_at": "2026-08-26T15:08:48.456736+00:00"
+  "live_generated_at_utc": "2026-08-26T15:09:36.658742+00:00",
+  "last_live_update_utc": "2026-08-26T15:09:36.658742+00:00",
+  "quarter_projection_updated_at": "2026-08-26T15:09:37.153177+00:00"
 }
