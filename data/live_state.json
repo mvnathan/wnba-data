@@ -301,23 +301,23 @@
   },
   "401857173": {
     "last_seen_period": 4,
-    "last_seen_clock": "9:08",
-    "last_home_score": 71,
-    "last_away_score": 56,
+    "last_seen_clock": "8:48",
+    "last_home_score": 74,
+    "last_away_score": 58,
     "last_status": "STATUS_IN_PROGRESS",
-    "last_status_detail": "9:08 - 4th Quarter",
+    "last_status_detail": "8:48 - 4th Quarter",
     "last_event_type": "START",
-    "last_prediction_timestamp": "2026-08-26T00:37:25.277442+00:00"
+    "last_prediction_timestamp": "2026-08-26T00:38:14.171103+00:00"
   },
   "401857174": {
     "last_seen_period": 2,
-    "last_seen_clock": "3:44",
-    "last_home_score": 39,
+    "last_seen_clock": "2:54",
+    "last_home_score": 41,
     "last_away_score": 30,
     "last_status": "STATUS_IN_PROGRESS",
-    "last_status_detail": "3:44 - 2nd Quarter",
+    "last_status_detail": "2:54 - 2nd Quarter",
     "last_event_type": "START",
-    "last_prediction_timestamp": "2026-08-26T00:37:25.277442+00:00"
+    "last_prediction_timestamp": "2026-08-26T00:38:14.171103+00:00"
   },
   "401857175": {
     "last_seen_period": null,
@@ -327,6 +327,6 @@
     "last_status": "STATUS_SCHEDULED",
     "last_status_detail": "Tue, August 25th at 10:00 PM EDT",
     "last_event_type": "PREGAME",
-    "last_prediction_timestamp": "2026-08-26T00:37:25.277442+00:00"
+    "last_prediction_timestamp": "2026-08-26T00:38:14.171103+00:00"
   }
 }
