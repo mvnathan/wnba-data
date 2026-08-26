@@ -57,7 +57,7 @@
       "live_clock": "0.0",
       "live_home_score": 87,
       "live_away_score": 81,
-      "live_updated_at": "2026-08-26T01:09:19.033311+00:00",
+      "live_updated_at": "2026-08-26T01:10:08.614800+00:00",
       "live_projected_home_score": 87.0,
       "live_projected_away_score": 81.0,
       "live_predicted_margin": 6.0,
@@ -65,7 +65,7 @@
       "live_home_win_probability": 1.0,
       "live_away_win_probability": 0.0,
       "live_elapsed_fraction": 1.0,
-      "live_projection_updated_at": "2026-08-26T01:09:19.033311+00:00",
+      "live_projection_updated_at": "2026-08-26T01:10:08.614800+00:00",
       "live_projected_winner_side": "home",
       "live_projected_winner_abbr": "CON"
     },
@@ -124,13 +124,13 @@
       "live_clock": "6:22",
       "live_home_score": 59,
       "live_away_score": 41,
-      "live_updated_at": "2026-08-26T01:09:19.033311+00:00",
+      "live_updated_at": "2026-08-26T01:10:08.614800+00:00",
       "next_quarter_period": 4,
       "next_quarter_home_score": 22.87010648801128,
       "next_quarter_away_score": 17.73610789844852,
       "next_quarter_margin": 5.133998589562761,
       "next_quarter_total": 40.6062143864598,
-      "next_quarter_updated_at": "2026-08-26T01:09:19.557557+00:00",
+      "next_quarter_updated_at": "2026-08-26T01:10:09.144079+00:00",
       "next_quarter_basis": "pregame_plus_live_scoring_pace",
       "live_projected_home_score": 98.20438595375128,
       "live_projected_away_score": 70.78001876392477,
@@ -139,7 +139,7 @@
       "live_home_win_probability": 0.809365188449644,
       "live_away_win_probability": 0.190634811550356,
       "live_elapsed_fraction": 0.5908333333333333,
-      "live_projection_updated_at": "2026-08-26T01:09:19.033311+00:00",
+      "live_projection_updated_at": "2026-08-26T01:10:08.614800+00:00",
       "live_projected_winner_side": "home",
       "live_projected_winner_abbr": "DAL"
     },
@@ -198,13 +198,13 @@
       "live_clock": "0.0",
       "live_home_score": 0,
       "live_away_score": 0,
-      "live_updated_at": "2026-08-26T01:09:19.033311+00:00",
+      "live_updated_at": "2026-08-26T01:10:08.614800+00:00",
       "next_quarter_period": 1,
       "next_quarter_home_score": 24.83817556354791,
       "next_quarter_away_score": 22.505,
       "next_quarter_margin": 2.3331755635479112,
       "next_quarter_total": 47.34317556354791,
-      "next_quarter_updated_at": "2026-08-26T01:09:19.557557+00:00",
+      "next_quarter_updated_at": "2026-08-26T01:10:09.144079+00:00",
       "next_quarter_basis": "pregame_quarter_model"
     }
   ],
@@ -220,7 +220,7 @@
       "p90": 102.92404047308686
     }
   },
-  "live_generated_at_utc": "2026-08-26T01:09:19.033311+00:00",
-  "last_live_update_utc": "2026-08-26T01:09:19.033311+00:00",
-  "quarter_projection_updated_at": "2026-08-26T01:09:19.557557+00:00"
+  "live_generated_at_utc": "2026-08-26T01:10:08.614800+00:00",
+  "last_live_update_utc": "2026-08-26T01:10:08.614800+00:00",
+  "quarter_projection_updated_at": "2026-08-26T01:10:09.144079+00:00"
 }
