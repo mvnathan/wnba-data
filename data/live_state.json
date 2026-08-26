@@ -337,7 +337,7 @@
     "last_status": "STATUS_SCHEDULED",
     "last_status_detail": "Wed, August 26th at 7:00 PM EDT",
     "last_event_type": "PREGAME",
-    "last_prediction_timestamp": "2026-08-26T16:01:46.670721+00:00"
+    "last_prediction_timestamp": "2026-08-26T16:02:35.702634+00:00"
   },
   "401857177": {
     "last_seen_period": null,
@@ -347,6 +347,6 @@
     "last_status": "STATUS_SCHEDULED",
     "last_status_detail": "Wed, August 26th at 10:00 PM EDT",
     "last_event_type": "PREGAME",
-    "last_prediction_timestamp": "2026-08-26T16:01:46.670721+00:00"
+    "last_prediction_timestamp": "2026-08-26T16:02:35.702634+00:00"
   }
 }
