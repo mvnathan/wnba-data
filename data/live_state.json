@@ -337,7 +337,7 @@
     "last_status": "STATUS_FINAL",
     "last_status_detail": "Final",
     "last_event_type": "FINAL",
-    "last_prediction_timestamp": "2026-08-27T03:52:26.945534+00:00"
+    "last_prediction_timestamp": "2026-08-27T03:53:16.084125+00:00"
   },
   "401857177": {
     "last_seen_period": 4,
@@ -347,6 +347,6 @@
     "last_status": "STATUS_IN_PROGRESS",
     "last_status_detail": "3:47 - 4th Quarter",
     "last_event_type": "START",
-    "last_prediction_timestamp": "2026-08-27T03:52:26.945534+00:00"
+    "last_prediction_timestamp": "2026-08-27T03:53:16.084125+00:00"
   }
 }
