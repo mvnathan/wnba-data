@@ -337,7 +337,7 @@
     "last_status": "STATUS_HALFTIME",
     "last_status_detail": "Halftime",
     "last_event_type": "START",
-    "last_prediction_timestamp": "2026-08-27T00:06:52.798506+00:00"
+    "last_prediction_timestamp": "2026-08-27T00:07:42.485056+00:00"
   },
   "401857177": {
     "last_seen_period": null,
@@ -347,6 +347,6 @@
     "last_status": "STATUS_SCHEDULED",
     "last_status_detail": "Wed, August 26th at 10:00 PM EDT",
     "last_event_type": "PREGAME",
-    "last_prediction_timestamp": "2026-08-27T00:06:52.798506+00:00"
+    "last_prediction_timestamp": "2026-08-27T00:07:42.485056+00:00"
   }
 }
