@@ -50,7 +50,21 @@
       "projected_winner_side": "home",
       "projected_winner_abbr": "LV",
       "projected_spread": -9.482435610419955,
-      "prediction_coherent": true
+      "prediction_coherent": true,
+      "live_status": "STATUS_SCHEDULED",
+      "live_status_detail": "Fri, August 28th at 10:00 PM EDT",
+      "live_period": null,
+      "live_clock": "0.0",
+      "live_home_score": 0,
+      "live_away_score": 0,
+      "live_updated_at": "2026-08-28T23:32:37.586154+00:00",
+      "next_quarter_period": 1,
+      "next_quarter_home_score": 27.502435610419944,
+      "next_quarter_away_score": 20.14,
+      "next_quarter_margin": 7.3624356104199435,
+      "next_quarter_total": 47.642435610419945,
+      "next_quarter_updated_at": "2026-08-28T23:32:38.106832+00:00",
+      "next_quarter_basis": "pregame_quarter_model"
     },
     {
       "game_id": "401857183",
@@ -100,7 +114,21 @@
       "projected_winner_side": "away",
       "projected_winner_abbr": "WSH",
       "projected_spread": -4.735373990003225,
-      "prediction_coherent": true
+      "prediction_coherent": true,
+      "live_status": "STATUS_SCHEDULED",
+      "live_status_detail": "Fri, August 28th at 10:00 PM EDT",
+      "live_period": null,
+      "live_clock": "0.0",
+      "live_home_score": 0,
+      "live_away_score": 0,
+      "live_updated_at": "2026-08-28T23:32:37.586154+00:00",
+      "next_quarter_period": 1,
+      "next_quarter_home_score": 19.084626009996775,
+      "next_quarter_away_score": 21.295,
+      "next_quarter_margin": -2.2103739900032267,
+      "next_quarter_total": 40.37962600999678,
+      "next_quarter_updated_at": "2026-08-28T23:32:38.106832+00:00",
+      "next_quarter_basis": "pregame_quarter_model"
     }
   ],
   "uncertainty": {
@@ -114,5 +142,8 @@
       "median": 85.61103081020836,
       "p90": 90.41215465037763
     }
-  }
+  },
+  "live_generated_at_utc": "2026-08-28T23:32:37.586154+00:00",
+  "last_live_update_utc": "2026-08-28T23:32:37.586154+00:00",
+  "quarter_projection_updated_at": "2026-08-28T23:32:38.106832+00:00"
 }
