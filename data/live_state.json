@@ -350,14 +350,14 @@
     "last_prediction_timestamp": "2026-08-27T04:59:05.126841+00:00"
   },
   "401857178": {
-    "last_seen_period": 3,
-    "last_seen_clock": "0.0",
+    "last_seen_period": 4,
+    "last_seen_clock": "9:43",
     "last_home_score": 47,
     "last_away_score": 59,
-    "last_status": "STATUS_END_PERIOD",
-    "last_status_detail": "End of 3rd Quarter",
+    "last_status": "STATUS_IN_PROGRESS",
+    "last_status_detail": "9:43 - 4th Quarter",
     "last_event_type": "PREGAME",
-    "last_prediction_timestamp": "2026-08-28T01:39:31.089519+00:00"
+    "last_prediction_timestamp": "2026-08-28T01:40:20.105648+00:00"
   },
   "401857179": {
     "last_seen_period": null,
@@ -367,6 +367,6 @@
     "last_status": "STATUS_SCHEDULED",
     "last_status_detail": "Thu, August 27th at 10:00 PM EDT",
     "last_event_type": "PREGAME",
-    "last_prediction_timestamp": "2026-08-28T01:39:31.089519+00:00"
+    "last_prediction_timestamp": "2026-08-28T01:40:20.105648+00:00"
   }
 }
