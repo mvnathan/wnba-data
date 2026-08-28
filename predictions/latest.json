@@ -57,7 +57,7 @@
       "live_clock": "10:00",
       "live_home_score": 60,
       "live_away_score": 79,
-      "live_updated_at": "2026-08-28T04:06:20.094883+00:00",
+      "live_updated_at": "2026-08-28T04:07:09.435003+00:00",
       "live_projected_home_score": 60.0,
       "live_projected_away_score": 79.0,
       "live_predicted_margin": -19.0,
@@ -65,7 +65,7 @@
       "live_home_win_probability": 0.0,
       "live_away_win_probability": 1.0,
       "live_elapsed_fraction": 1.0,
-      "live_projection_updated_at": "2026-08-28T04:06:20.094883+00:00",
+      "live_projection_updated_at": "2026-08-28T04:07:09.435003+00:00",
       "live_projected_winner_side": "away",
       "live_projected_winner_abbr": "GS"
     },
@@ -124,7 +124,7 @@
       "live_clock": "1:00",
       "live_home_score": 73,
       "live_away_score": 78,
-      "live_updated_at": "2026-08-28T04:06:20.094883+00:00",
+      "live_updated_at": "2026-08-28T04:07:09.435003+00:00",
       "live_projected_home_score": 74.88865683266805,
       "live_projected_away_score": 80.0124875,
       "live_predicted_margin": -5.1238306673319585,
@@ -132,7 +132,7 @@
       "live_home_win_probability": 0.12503459662496735,
       "live_away_win_probability": 0.8749654033750327,
       "live_elapsed_fraction": 0.975,
-      "live_projection_updated_at": "2026-08-28T04:06:20.094883+00:00",
+      "live_projection_updated_at": "2026-08-28T04:07:09.435003+00:00",
       "live_projected_winner_side": "away",
       "live_projected_winner_abbr": "WSH"
     }
@@ -149,7 +149,7 @@
       "p90": 81.1140270913625
     }
   },
-  "live_generated_at_utc": "2026-08-28T04:06:20.094883+00:00",
-  "last_live_update_utc": "2026-08-28T04:06:20.094883+00:00",
-  "quarter_projection_updated_at": "2026-08-28T04:06:20.597637+00:00"
+  "live_generated_at_utc": "2026-08-28T04:07:09.435003+00:00",
+  "last_live_update_utc": "2026-08-28T04:07:09.435003+00:00",
+  "quarter_projection_updated_at": "2026-08-28T04:07:09.943471+00:00"
 }
