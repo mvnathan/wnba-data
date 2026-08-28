@@ -357,7 +357,7 @@
     "last_status": "STATUS_IN_PROGRESS",
     "last_status_detail": "4:16 - 3rd Quarter",
     "last_event_type": "PREGAME",
-    "last_prediction_timestamp": "2026-08-28T01:22:21.854087+00:00"
+    "last_prediction_timestamp": "2026-08-28T01:23:10.629626+00:00"
   },
   "401857179": {
     "last_seen_period": null,
@@ -367,6 +367,6 @@
     "last_status": "STATUS_SCHEDULED",
     "last_status_detail": "Thu, August 27th at 10:00 PM EDT",
     "last_event_type": "PREGAME",
-    "last_prediction_timestamp": "2026-08-28T01:22:21.854087+00:00"
+    "last_prediction_timestamp": "2026-08-28T01:23:10.629626+00:00"
   }
 }
