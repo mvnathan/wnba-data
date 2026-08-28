@@ -357,16 +357,16 @@
     "last_status": "STATUS_FINAL",
     "last_status_detail": "Final",
     "last_event_type": "FINAL",
-    "last_prediction_timestamp": "2026-08-28T03:19:44.376908+00:00"
+    "last_prediction_timestamp": "2026-08-28T03:20:33.315121+00:00"
   },
   "401857179": {
     "last_seen_period": 3,
-    "last_seen_clock": "5:51",
+    "last_seen_clock": "5:01",
     "last_home_score": 44,
     "last_away_score": 47,
     "last_status": "STATUS_IN_PROGRESS",
-    "last_status_detail": "5:51 - 3rd Quarter",
+    "last_status_detail": "5:01 - 3rd Quarter",
     "last_event_type": "START",
-    "last_prediction_timestamp": "2026-08-28T03:19:44.376908+00:00"
+    "last_prediction_timestamp": "2026-08-28T03:20:33.315121+00:00"
   }
 }
