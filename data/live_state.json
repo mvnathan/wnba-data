@@ -350,14 +350,14 @@
     "last_prediction_timestamp": "2026-08-27T04:59:05.126841+00:00"
   },
   "401857178": {
-    "last_seen_period": null,
+    "last_seen_period": 2,
     "last_seen_clock": "0.0",
-    "last_home_score": 0,
-    "last_away_score": 0,
-    "last_status": "STATUS_SCHEDULED",
-    "last_status_detail": "Thu, August 27th at 8:00 PM EDT",
+    "last_home_score": 30,
+    "last_away_score": 42,
+    "last_status": "STATUS_HALFTIME",
+    "last_status_detail": "Halftime",
     "last_event_type": "PREGAME",
-    "last_prediction_timestamp": "2026-08-27T17:07:20.898165+00:00"
+    "last_prediction_timestamp": "2026-08-28T01:01:52.072884+00:00"
   },
   "401857179": {
     "last_seen_period": null,
@@ -367,6 +367,6 @@
     "last_status": "STATUS_SCHEDULED",
     "last_status_detail": "Thu, August 27th at 10:00 PM EDT",
     "last_event_type": "PREGAME",
-    "last_prediction_timestamp": "2026-08-27T17:07:20.898165+00:00"
+    "last_prediction_timestamp": "2026-08-28T01:01:52.072884+00:00"
   }
 }
