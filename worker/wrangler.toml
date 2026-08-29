@@ -1,4 +1,15 @@
 name = "wnba-live-dashboard"
-main = "src/index.js"
+main = "src/stateful_index.js"
 compatibility_date = "2026-08-15"
 workers_dev = true
+
+[triggers]
+crons = ["*/1 * * * *"]
+
+[[durable_objects.bindings]]
+name = "LIVE_SNAPSHOT"
+class_name = "LiveSnapshotStore"
+
+[[migrations]]
+tag = "v1-live-snapshot"
+new_sqlite_classes = ["LiveSnapshotStore"]
