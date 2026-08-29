@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import numpy as np
 
-from src.market_odds import _apply_market_anchor
+from src.market_odds import _attach_market_benchmark
 from src.model_training_v2 import ProbabilityCalibratedClassifier
 
 
@@ -29,8 +29,8 @@ def test_probability_calibrated_classifier_preserves_probability_shape():
     assert model.predict(np.asarray([[0.2], [0.8]])).tolist() == [0, 1]
 
 
-def test_market_anchor_preserves_model_values_and_blends_forecasts():
-    row = _apply_market_anchor(
+def test_market_benchmark_preserves_independent_model_forecasts():
+    row = _attach_market_benchmark(
         {
             "predicted_margin": 8.0,
             "predicted_total": 170.0,
@@ -43,22 +43,31 @@ def test_market_anchor_preserves_model_values_and_blends_forecasts():
         }
     )
 
+    assert row["market_used_in_prediction"] is False
+    assert row["market_blend_version"] == "independent_model_v1"
+
     assert row["model_predicted_margin"] == 8.0
     assert row["market_implied_margin"] == 4.0
-    assert row["predicted_margin"] < 8.0
-    assert row["predicted_margin"] > 4.0
+    assert row["predicted_margin"] == 8.0
+    assert row["model_market_margin_edge"] == 4.0
 
     assert row["model_predicted_total"] == 170.0
-    assert row["predicted_total"] < 170.0
-    assert row["predicted_total"] > 166.0
+    assert row["predicted_total"] == 170.0
+    assert row["model_market_total_edge"] == 4.0
 
     assert row["model_home_win_probability"] == 0.70
-    assert 0.0 < row["home_win_probability"] < 1.0
-    assert row["home_win_probability"] + row["away_win_probability"] == 1.0
+    assert row["home_win_probability"] == 0.70
+    assert row["away_win_probability"] == 0.30
+    assert 0.0 < row["market_no_vig_home_win_probability"] < 1.0
+    assert row["model_market_home_win_edge"] is not None
+
+    assert row["market_spread_weight"] == 0.0
+    assert row["market_total_weight"] == 0.0
+    assert row["market_moneyline_weight"] == 0.0
 
 
-def test_market_spread_sign_matches_home_minus_away_margin_convention():
-    home_favorite = _apply_market_anchor(
+def test_market_spread_sign_matches_home_minus_away_margin_convention_without_anchor():
+    home_favorite = _attach_market_benchmark(
         {
             "home_abbr": "CON",
             "away_abbr": "IND",
@@ -70,10 +79,10 @@ def test_market_spread_sign_matches_home_minus_away_margin_convention():
         }
     )
     assert home_favorite["market_implied_margin"] == 10.5
-    assert home_favorite["predicted_margin"] > 5.25
-    assert home_favorite["projected_winner_abbr"] == "CON"
+    assert home_favorite["predicted_margin"] == 5.25
+    assert home_favorite["model_market_margin_edge"] == -5.25
 
-    home_underdog = _apply_market_anchor(
+    home_underdog = _attach_market_benchmark(
         {
             "home_abbr": "SEA",
             "away_abbr": "CHI",
@@ -85,5 +94,5 @@ def test_market_spread_sign_matches_home_minus_away_margin_convention():
         }
     )
     assert home_underdog["market_implied_margin"] == -2.5
-    assert home_underdog["predicted_margin"] < 0
-    assert home_underdog["projected_winner_abbr"] == "CHI"
+    assert home_underdog["predicted_margin"] == 0.2
+    assert home_underdog["model_market_margin_edge"] == 2.7
