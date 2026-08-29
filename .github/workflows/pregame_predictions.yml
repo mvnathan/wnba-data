@@ -34,6 +34,10 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
+      - name: Refresh travel possession and rotation features
+        run: |
+          python scripts/enrich_pregame_features.py
+
       - name: Build features
         run: |
           python scripts/build_features.py
@@ -57,17 +61,13 @@ jobs:
           from pathlib import Path
 
           path = Path("predictions/latest.json")
-
           if not path.exists():
-              raise SystemExit(
-                  "predictions/latest.json was not created"
-              )
+              raise SystemExit("predictions/latest.json was not created")
 
           with path.open() as f:
               data = json.load(f)
 
           games = data.get("games", [])
-
           print("Target date:", data.get("target_date"))
           print("Games:", len(games))
 
@@ -82,8 +82,12 @@ jobs:
                   game.get("projected_winner_abbr"),
                   "| coherent:",
                   game.get("prediction_coherent"),
-                  "| book:",
-                  game.get("market_bookmaker"),
+                  "| market used in prediction:",
+                  game.get("market_used_in_prediction"),
+                  "| margin edge:",
+                  game.get("model_market_margin_edge"),
+                  "| total edge:",
+                  game.get("model_market_total_edge"),
               )
           PY
 
@@ -102,16 +106,14 @@ jobs:
               git fetch origin main
               git reset --hard origin/main
 
-              # Another workflow updated generated dashboard/live-state files.
-              # Regenerate pregame outputs from the newest main branch rather than
-              # rebasing or merging generated JSON/parquet state.
+              python scripts/enrich_pregame_features.py
               python scripts/build_features.py
               python scripts/predict_today.py
               python scripts/build_opportunity_alerts.py
               python scripts/build_dashboard.py
             fi
 
-            git add predictions/ docs/ data/alert_state.json
+            git add predictions/ docs/ data/alert_state.json data/games.parquet
 
             if git diff --quiet --cached; then
               echo "No pregame output changes to publish"
