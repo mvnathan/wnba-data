@@ -12,13 +12,10 @@ ODDS_API_URL = (
     "sports/basketball_wnba/odds"
 )
 
-# Conservative initial shrinkage toward the market. These weights are explicit
-# and versioned so they can later be replaced by walk-forward learned weights
-# once prediction-history contains enough market snapshots.
-MARKET_SPREAD_WEIGHT = 0.35
-MARKET_TOTAL_WEIGHT = 0.35
-MARKET_MONEYLINE_WEIGHT = 0.25
-MARKET_BLEND_VERSION = "market_anchor_v1"
+# The market is deliberately NOT blended into the model forecast.
+# It is retained as an external benchmark so model-vs-market disagreement
+# remains visible and can be evaluated for repeatable edge.
+MARKET_BLEND_VERSION = "independent_model_v1"
 
 TEAM_NAME_TO_ABBR = {
     "atlanta dream": "ATL",
@@ -111,7 +108,9 @@ def _extract_markets(odds_game: dict[str, Any]) -> dict[str, Any]:
 
     book = bookmakers[0]
     result["market_bookmaker"] = book.get("title") or "DraftKings"
-    result["market_updated_at"] = book.get("last_update") or datetime.now(timezone.utc).isoformat()
+    result["market_updated_at"] = (
+        book.get("last_update") or datetime.now(timezone.utc).isoformat()
+    )
 
     for market in book.get("markets", []):
         market_key = market.get("key")
@@ -166,98 +165,67 @@ def _american_implied_probability(odds: Any) -> float | None:
     return 100.0 / (value + 100.0)
 
 
-def _blend_number(model_value: Any, market_value: Any, market_weight: float) -> float | None:
+def _as_float(value: Any) -> float | None:
     try:
-        model = float(model_value)
-        market = float(market_value)
+        number = float(value)
     except (TypeError, ValueError):
         return None
-    return (1.0 - market_weight) * model + market_weight * market
+    return number if number == number else None
 
 
-def _refresh_directional_fields(row: dict[str, Any]) -> None:
-    """Keep winner/spread/coherence labels aligned with the final forecast."""
-    try:
-        margin = float(row.get("predicted_margin"))
-    except (TypeError, ValueError):
-        return
-
-    if abs(margin) < 0.5:
-        row["projected_winner_side"] = "pick"
-        row["projected_winner_abbr"] = None
-        row["projected_spread"] = 0.0
-        row["prediction_coherent"] = None
-        return
-
-    margin_home_pick = margin > 0
-    row["projected_winner_side"] = "home" if margin_home_pick else "away"
-    row["projected_winner_abbr"] = (
-        row.get("home_abbr") if margin_home_pick else row.get("away_abbr")
-    )
-    row["projected_spread"] = -abs(margin)
-
-    try:
-        home_probability = float(row.get("home_win_probability"))
-    except (TypeError, ValueError):
-        row["prediction_coherent"] = None
-        return
-
-    row["prediction_coherent"] = (home_probability >= 0.5) == margin_home_pick
-
-
-def _apply_market_anchor(row: dict[str, Any]) -> dict[str, Any]:
-    """Blend model-only forecasts with market priors while preserving both."""
+def _attach_market_benchmark(row: dict[str, Any]) -> dict[str, Any]:
+    """Preserve pure model outputs and add market-comparison fields only."""
     row = dict(row)
     row["market_blend_version"] = MARKET_BLEND_VERSION
+    row["market_used_in_prediction"] = False
 
-    model_margin = row.get("predicted_margin")
-    home_spread = row.get("market_home_spread")
-    if model_margin is not None:
-        row["model_predicted_margin"] = model_margin
+    model_margin = _as_float(row.get("predicted_margin"))
+    model_total = _as_float(row.get("predicted_total"))
+    model_home_probability = _as_float(row.get("home_win_probability"))
+    market_home_spread = _as_float(row.get("market_home_spread"))
+    market_total = _as_float(row.get("market_total"))
 
-    # A sportsbook home spread of -N means the home team is favored by N,
-    # which corresponds to a home-minus-away market margin of +N. Conversely,
-    # a home spread of +N implies a market margin of -N.
-    try:
-        market_margin = -float(home_spread)
-    except (TypeError, ValueError):
-        market_margin = None
+    row["model_predicted_margin"] = model_margin
+    row["model_predicted_total"] = model_total
+    row["model_home_win_probability"] = model_home_probability
+
+    # Home spread -5 corresponds to market-implied home margin +5.
+    market_margin = -market_home_spread if market_home_spread is not None else None
     row["market_implied_margin"] = market_margin
-    blended_margin = _blend_number(model_margin, market_margin, MARKET_SPREAD_WEIGHT)
-    if blended_margin is not None:
-        row["predicted_margin"] = blended_margin
-        row["market_spread_weight"] = MARKET_SPREAD_WEIGHT
 
-    model_total = row.get("predicted_total")
-    market_total = row.get("market_total")
-    if model_total is not None:
-        row["model_predicted_total"] = model_total
-    blended_total = _blend_number(model_total, market_total, MARKET_TOTAL_WEIGHT)
-    if blended_total is not None:
-        row["predicted_total"] = blended_total
-        row["market_total_weight"] = MARKET_TOTAL_WEIGHT
+    if model_margin is not None and market_margin is not None:
+        row["model_market_margin_edge"] = model_margin - market_margin
+    else:
+        row["model_market_margin_edge"] = None
 
-    model_home_probability = row.get("home_win_probability")
-    if model_home_probability is not None:
-        row["model_home_win_probability"] = model_home_probability
+    if model_total is not None and market_total is not None:
+        row["model_market_total_edge"] = model_total - market_total
+    else:
+        row["model_market_total_edge"] = None
 
     home_implied = _american_implied_probability(row.get("market_home_moneyline"))
     away_implied = _american_implied_probability(row.get("market_away_moneyline"))
-    if home_implied is not None and away_implied is not None and (home_implied + away_implied) > 0:
+    if (
+        home_implied is not None
+        and away_implied is not None
+        and (home_implied + away_implied) > 0
+    ):
         no_vig_home = home_implied / (home_implied + away_implied)
         row["market_no_vig_home_win_probability"] = no_vig_home
-        blended_probability = _blend_number(
-            model_home_probability,
-            no_vig_home,
-            MARKET_MONEYLINE_WEIGHT,
+        row["model_market_home_win_edge"] = (
+            model_home_probability - no_vig_home
+            if model_home_probability is not None
+            else None
         )
-        if blended_probability is not None:
-            blended_probability = min(1.0, max(0.0, blended_probability))
-            row["home_win_probability"] = blended_probability
-            row["away_win_probability"] = 1.0 - blended_probability
-            row["market_moneyline_weight"] = MARKET_MONEYLINE_WEIGHT
+    else:
+        row["market_no_vig_home_win_probability"] = None
+        row["model_market_home_win_edge"] = None
 
-    _refresh_directional_fields(row)
+    # Explicitly clear old blend weights if a row is refreshed from an older
+    # market-anchored prediction payload.
+    row["market_spread_weight"] = 0.0
+    row["market_total_weight"] = 0.0
+    row["market_moneyline_weight"] = 0.0
     return row
 
 
@@ -265,7 +233,7 @@ def attach_market_odds(
     games: list[dict[str, Any]],
     odds_data: list[dict[str, Any]],
 ) -> list[dict[str, Any]]:
-    """Attach DraftKings markets and apply the conservative market anchor."""
+    """Attach DraftKings markets without changing the independent model forecast."""
     lookup = _build_lookup(odds_data)
     enriched: list[dict[str, Any]] = []
     matched = 0
@@ -278,11 +246,13 @@ def attach_market_odds(
 
         if odds_game is None:
             print("Warning: no DraftKings match for", away_abbr, "@", home_abbr)
+            row["market_blend_version"] = MARKET_BLEND_VERSION
+            row["market_used_in_prediction"] = False
             enriched.append(row)
             continue
 
         row.update(_extract_markets(odds_game))
-        row = _apply_market_anchor(row)
+        row = _attach_market_benchmark(row)
         matched += 1
         enriched.append(row)
 
