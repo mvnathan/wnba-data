@@ -79,6 +79,12 @@ def _parse_live_games(payload: dict[str, Any]) -> list[dict[str, Any]]:
                 "game_id": str(game["game_id"]),
                 "home_team_id": str(game["home_team_id"]),
                 "away_team_id": str(game["away_team_id"]),
+                "game_date_utc": game.get("game_date_utc"),
+                "home_team": game.get("home_team"),
+                "away_team": game.get("away_team"),
+                "home_abbr": game.get("home_abbr"),
+                "away_abbr": game.get("away_abbr"),
+                "venue": game.get("venue"),
                 "status": game.get("status"),
                 "status_detail": game.get("status_detail"),
                 "period": game.get("period"),
@@ -91,7 +97,10 @@ def _parse_live_games(payload: dict[str, Any]) -> list[dict[str, Any]]:
 
 
 def _snapshot_game(game: dict[str, Any]) -> dict[str, Any]:
-    return {"timestamp": _utc_now_iso(), **game}
+    snapshot = {"timestamp": _utc_now_iso(), **game}
+    if isinstance(snapshot.get("game_date_utc"), datetime):
+        snapshot["game_date_utc"] = snapshot["game_date_utc"].isoformat()
+    return snapshot
 
 
 def _load_latest_predictions() -> dict[str, Any]:
@@ -119,13 +128,31 @@ def _is_live_or_final(status: Any) -> bool:
     )
 
 
+def _schedule_only_prediction(live: dict[str, Any]) -> dict[str, Any]:
+    game_date = live.get("game_date_utc")
+    if isinstance(game_date, datetime):
+        game_date = game_date.isoformat()
+    return {
+        "game_id": str(live.get("game_id", "")),
+        "home_team_id": str(live.get("home_team_id", "")),
+        "away_team_id": str(live.get("away_team_id", "")),
+        "game_date_utc": game_date,
+        "home_team": live.get("home_team"),
+        "away_team": live.get("away_team"),
+        "home_abbr": live.get("home_abbr"),
+        "away_abbr": live.get("away_abbr"),
+        "venue": live.get("venue"),
+        "status": live.get("status"),
+        "status_detail": live.get("status_detail"),
+        "schedule_only": True,
+        "prediction_available": False,
+    }
+
+
 def _update_latest_predictions_with_live_state(
     live_games: list[dict[str, Any]],
 ) -> dict[str, Any]:
-    """
-    Merge ESPN state and a continuously refreshed live model projection into
-    predictions/latest.json while preserving every original pregame field.
-    """
+    """Merge live state into today's dashboard without dropping schedule games."""
     latest = _load_latest_predictions()
     if not latest:
         return {
@@ -139,6 +166,20 @@ def _update_latest_predictions_with_live_state(
             "updated": 0,
             "reason": "latest prediction payload contains no games list",
         }
+
+    existing_ids = {
+        str(game.get("game_id", ""))
+        for game in prediction_games
+        if isinstance(game, dict)
+    }
+    appended_count = 0
+    for live in live_games:
+        game_id = str(live.get("game_id", ""))
+        if not game_id or game_id in existing_ids:
+            continue
+        prediction_games.append(_schedule_only_prediction(live))
+        existing_ids.add(game_id)
+        appended_count += 1
 
     live_lookup = {
         str(game["game_id"]): game
@@ -169,7 +210,7 @@ def _update_latest_predictions_with_live_state(
         if live.get("status_detail") is not None:
             prediction["status_detail"] = live["status_detail"]
 
-        if _is_live_or_final(live.get("status")):
+        if _is_live_or_final(live.get("status")) and not prediction.get("schedule_only"):
             projection = project_live_game(live, prediction)
             prediction["live_projected_home_score"] = projection["home_final"]
             prediction["live_projected_away_score"] = projection["away_final"]
@@ -207,8 +248,10 @@ def _update_latest_predictions_with_live_state(
             "reason": "no live ESPN games matched prediction game ids",
         }
 
+    prediction_games.sort(key=lambda game: (str(game.get("game_date_utc") or ""), str(game.get("game_id") or "")))
     latest["live_generated_at_utc"] = live_timestamp
     latest["last_live_update_utc"] = live_timestamp
+    latest["schedule_games_added"] = appended_count
 
     PREDICTION_LATEST_JSON.parent.mkdir(parents=True, exist_ok=True)
     with open(PREDICTION_LATEST_JSON, "w", encoding="utf-8") as handle:
@@ -222,6 +265,7 @@ def _update_latest_predictions_with_live_state(
 
     return {
         "updated": updated_count,
+        "schedule_games_added": appended_count,
         "live_projections_updated": projected_count,
         "live_updated_at": live_timestamp,
     }
