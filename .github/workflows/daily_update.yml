@@ -38,6 +38,14 @@ jobs:
         run: |
           python scripts/run_daily_update.py
 
+      - name: Collect team and player box-score data
+        run: |
+          python scripts/backfill_advanced_data.py
+
+      - name: Build possession travel and rotation features
+        run: |
+          python scripts/enrich_pregame_features.py
+
       - name: Evaluate completed predictions
         run: |
           python scripts/evaluate_predictions.py
@@ -49,92 +57,30 @@ jobs:
           from pathlib import Path
 
           path = Path("docs/performance.json")
-
           if not path.exists():
-              raise SystemExit(
-                  "docs/performance.json was not created"
-              )
+              raise SystemExit("docs/performance.json was not created")
 
           with path.open() as f:
               data = json.load(f)
-
-          summary = data.get(
-              "summary",
-              {}
-          )
-
-          print(
-              "Games evaluated:",
-              summary.get(
-                  "games_evaluated"
-              )
-          )
-
-          print(
-              "Winner accuracy:",
-              summary.get(
-                  "winner_accuracy"
-              )
-          )
-
-          print(
-              "Margin MAE:",
-              summary.get(
-                  "margin_mae"
-              )
-          )
-
-          print(
-              "Total MAE:",
-              summary.get(
-                  "total_mae"
-              )
-          )
-
-          print(
-              "Brier score:",
-              summary.get(
-                  "brier_score"
-              )
-          )
-
-          print(
-              "ATS direction accuracy:",
-              summary.get(
-                  "ats_direction_accuracy"
-              )
-          )
-
-          print(
-              "O/U direction accuracy:",
-              summary.get(
-                  "total_direction_accuracy"
-              )
-          )
-
-          print(
-              "Performance rows:",
-              len(
-                  data.get(
-                      "games",
-                      []
-                  )
-              )
-          )
+          summary = data.get("summary", {})
+          print("Games evaluated:", summary.get("games_evaluated"))
+          print("Winner accuracy:", summary.get("winner_accuracy"))
+          print("Margin MAE:", summary.get("margin_mae"))
+          print("Total MAE:", summary.get("total_mae"))
+          print("Brier score:", summary.get("brier_score"))
+          print("ATS direction accuracy:", summary.get("ats_direction_accuracy"))
+          print("O/U direction accuracy:", summary.get("total_direction_accuracy"))
+          print("Performance rows:", len(data.get("games", [])))
           PY
 
       - name: Show data changes
         run: |
           echo "Data files:"
           find data -maxdepth 2 -type f -print
-
           echo ""
-          echo "Performance files:"
-          ls -lh \
-            predictions/performance_history.parquet \
-            docs/performance.json \
-            2>/dev/null || true
-
+          echo "Advanced feature status:"
+          cat models/advanced_data_status.json 2>/dev/null || true
+          cat models/advanced_feature_status.json 2>/dev/null || true
           echo ""
           echo "Git changes:"
           git status --short
@@ -147,11 +93,11 @@ jobs:
           git add -f data/
           git add predictions/performance_history.parquet
           git add docs/performance.json
+          git add models/advanced_data_status.json models/advanced_feature_status.json
 
           if git diff --cached --quiet; then
             echo "No new WNBA data or performance results to commit."
           else
-            git commit -m "Update WNBA data and prediction performance"
+            git commit -m "Update WNBA data and advanced features"
             git push
           fi
-          
