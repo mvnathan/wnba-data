@@ -9,7 +9,7 @@ on:
   schedule:
     - cron: '12 14 * * *'
 
-# Manual consensus market refresh trigger: 2026-08-30T20:14Z
+# Manual consensus market refresh trigger: 2026-08-30T22:12Z
 
 concurrency:
   group: wnba-pregame-predictions
@@ -18,119 +18,67 @@ concurrency:
 jobs:
   predict:
     runs-on: ubuntu-latest
-
     permissions:
       contents: write
-
     env:
       PYTHONPATH: ${{ github.workspace }}
       ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
-
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
-
       - name: Set up Python
         uses: actions/setup-python@v6
         with:
           python-version: '3.12'
-
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-
       - name: Refresh travel possession and rotation features
-        run: |
-          python scripts/enrich_pregame_features.py
-
+        run: python scripts/enrich_pregame_features.py
       - name: Build features
-        run: |
-          python scripts/build_features.py
-
+        run: python scripts/build_features.py
       - name: Generate predictions
-        run: |
-          python scripts/predict_today.py
-
+        run: python scripts/predict_today.py
       - name: Evaluate opportunity alerts
-        run: |
-          python scripts/build_opportunity_alerts.py
-
+        run: python scripts/build_opportunity_alerts.py
       - name: Build dashboard
         run: |
           python scripts/build_dashboard.py
           python scripts/update_dashboard_independent_model.py || true
           python scripts/update_dashboard_decision_first.py || true
-
       - name: Verify prediction output
         run: |
           python - <<'PY'
           import json
           from pathlib import Path
-
-          path = Path("predictions/latest.json")
-          if not path.exists():
-              raise SystemExit("predictions/latest.json was not created")
-
-          with path.open() as f:
-              data = json.load(f)
-
-          games = data.get("games", [])
-          print("Target date:", data.get("target_date"))
-          print("Games:", len(games))
-
-          if not games:
-              raise SystemExit("No games in predictions/latest.json")
-
-          missing = []
-          for game in games:
-              print(
-                  game.get("away_abbr"),
-                  "@",
-                  game.get("home_abbr"),
-                  "| margin:",
-                  game.get("predicted_margin"),
-                  "| market version:",
-                  game.get("market_blend_version"),
-                  "| DK spread:",
-                  game.get("market_home_spread"),
-                  "| consensus spread:",
-                  game.get("consensus_home_spread"),
-                  "| DK total:",
-                  game.get("market_total"),
-                  "| consensus total:",
-                  game.get("consensus_total"),
-                  "| books:",
-                  game.get("market_book_count"),
-              )
-              if game.get("market_blend_version") != "independent_model_v3_consensus":
-                  missing.append((game.get("game_id"), "market_blend_version"))
-              if game.get("market_book_count") is None:
-                  missing.append((game.get("game_id"), "market_book_count"))
-              if game.get("consensus_home_spread") is None:
-                  missing.append((game.get("game_id"), "consensus_home_spread"))
-              if game.get("consensus_total") is None:
-                  missing.append((game.get("game_id"), "consensus_total"))
-
-          if missing:
-              raise SystemExit(f"Consensus market fields missing: {missing}")
+          path = Path('predictions/latest.json')
+          if not path.exists(): raise SystemExit('predictions/latest.json was not created')
+          data = json.loads(path.read_text())
+          games = data.get('games', [])
+          print('Target date:', data.get('target_date')); print('Games:', len(games))
+          if not games: raise SystemExit('No games in predictions/latest.json')
+          missing=[]
+          for g in games:
+              print(g.get('away_abbr'),'@',g.get('home_abbr'),'| version:',g.get('market_blend_version'),'| book:',g.get('market_bookmaker'),'| books:',g.get('market_book_count'),'| consensus spread:',g.get('consensus_home_spread'),'| consensus total:',g.get('consensus_total'))
+              if g.get('market_blend_version') != 'independent_model_v3_consensus': missing.append((g.get('game_id'),'market_blend_version'))
+              if g.get('market_book_count') is None: missing.append((g.get('game_id'),'market_book_count'))
+              if g.get('consensus_home_spread') is None: missing.append((g.get('game_id'),'consensus_home_spread'))
+              if g.get('consensus_total') is None: missing.append((g.get('game_id'),'consensus_total'))
+          if missing: raise SystemExit(f'Consensus market fields missing: {missing}')
           PY
-
       - name: Commit outputs
         shell: bash
         run: |
           set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-
           published=false
           for publish_attempt in $(seq 1 5); do
             echo "Publish attempt ${publish_attempt}/5"
-
             if [ "${publish_attempt}" -gt 1 ]; then
               git fetch origin main
               git reset --hard origin/main
-
               python scripts/enrich_pregame_features.py
               python scripts/build_features.py
               python scripts/predict_today.py
@@ -139,29 +87,10 @@ jobs:
               python scripts/update_dashboard_independent_model.py || true
               python scripts/update_dashboard_decision_first.py || true
             fi
-
             git add predictions/ docs/ data/alert_state.json data/games.parquet
-
-            if git diff --quiet --cached; then
-              echo "No pregame output changes to publish"
-              published=true
-              break
-            fi
-
+            if git diff --quiet --cached; then echo "No pregame output changes to publish"; published=true; break; fi
             git commit -m "Update pregame predictions and dashboard"
-
-            if git push origin HEAD:main; then
-              published=true
-              break
-            fi
-
-            echo "Main changed before push; rebuilding from latest main"
-            if [ "${publish_attempt}" -lt 5 ]; then
-              sleep 2
-            fi
+            if git push origin HEAD:main; then published=true; break; fi
+            if [ "${publish_attempt}" -lt 5 ]; then sleep 2; fi
           done
-
-          if [ "${published}" != true ]; then
-            echo "Failed to publish pregame outputs after 5 attempts" >&2
-            exit 1
-          fi
+          if [ "${published}" != true ]; then exit 1; fi
