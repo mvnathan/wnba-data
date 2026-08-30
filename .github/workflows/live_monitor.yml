@@ -43,6 +43,7 @@ jobs:
           git fetch origin main
           git reset --hard origin/main
 
+          # monitor_live_games.py now stringifies datetime-like values for logging.
           python scripts/monitor_live_games.py
           python scripts/enrich_quarter_projection.py
 
