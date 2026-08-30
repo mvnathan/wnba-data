@@ -6,4 +6,4 @@ from src.live_monitor import monitor_live_games
 
 if __name__ == "__main__":
     result = monitor_live_games()
-    print(json.dumps(result, indent=2))
+    print(json.dumps(result, indent=2, default=str))
