@@ -1,4 +1,5 @@
 const STATIC_BASE = "https://mvnathan.github.io/wnba-data";
+const RAW_LATEST_URL = "https://raw.githubusercontent.com/mvnathan/wnba-data/main/docs/latest.json";
 const ESPN_SCOREBOARD = "https://site.api.espn.com/apis/site/v2/sports/basketball/wnba/scoreboard";
 const SPORTRADAR_BASE = "https://api.sportradar.com/wnba";
 
@@ -167,7 +168,10 @@ async function fetchJson(url, options = {}) {
 }
 
 async function fetchStaticLatest() {
-  return fetchJson(`${STATIC_BASE}/latest.json?t=${Date.now()}`, {
+  // Pull the canonical snapshot directly from the main branch. GitHub Pages can
+  // lag behind a successful prediction commit, which previously allowed the
+  // Durable Object to keep refreshing itself with yesterday's data.
+  return fetchJson(`${RAW_LATEST_URL}?t=${Date.now()}`, {
     headers: { "Cache-Control": "no-cache" },
     cf: { cacheTtl: 0, cacheEverything: false },
   });
@@ -182,73 +186,66 @@ async function fetchEspnScoreboard() {
 }
 
 async function edgeCacheGet(key) {
+  const cache = caches.default;
+  const response = await cache.match(new Request(`https://cache.local/${key}`));
+  if (!response) return null;
   try {
-    const response = await caches.default.match(new Request(`https://cache.local/${key}`));
-    return response ? await response.json() : null;
+    return await response.json();
   } catch {
     return null;
   }
 }
 
-async function edgeCachePut(key, data, ttlSeconds) {
-  try {
-    const request = new Request(`https://cache.local/${key}`);
-    const response = new Response(JSON.stringify(data), {
-      headers: {
-        "content-type": "application/json",
-        "cache-control": `public, max-age=${ttlSeconds}`,
-      },
-    });
-    await caches.default.put(request, response);
-  } catch {
-    // Memory cache still provides a best-effort fallback when Cache API is unavailable.
-  }
+async function edgeCachePut(key, value, ttl) {
+  const response = new Response(JSON.stringify(value), {
+    headers: { "Cache-Control": `max-age=${ttl}` },
+  });
+  await caches.default.put(new Request(`https://cache.local/${key}`), response);
 }
 
 async function sportradarRequest(pathBuilder, apiKey, preferredAccess = null) {
-  if (!apiKey) throw new Error("SPORTRADAR_API_KEY is not configured in the Worker");
-  const levels = preferredAccess ? [preferredAccess, preferredAccess === "trial" ? "production" : "trial"] : ["trial", "production"];
+  if (!apiKey) throw new Error("SPORTRADAR_API_KEY is not configured in Worker secrets");
+  const accessOrder = preferredAccess === "trial" ? ["trial"] : preferredAccess === "production" ? ["production"] : ["production", "trial"];
   let lastError = null;
-
-  for (const access of levels) {
-    await throttleSportradar();
-    const url = `${SPORTRADAR_BASE}/${access}/v8/en/${pathBuilder(access)}`;
-    const response = await fetch(url, {
-      headers: { "x-api-key": apiKey, "Cache-Control": "no-cache" },
-      cf: { cacheTtl: 0, cacheEverything: false },
-    });
-    if (response.ok) return { data: await response.json(), access };
-    lastError = new Error(`${response.status} from Sportradar ${access}`);
-    if (![401, 403].includes(response.status)) throw lastError;
+  for (const access of accessOrder) {
+    try {
+      await throttleSportradar();
+      const path = pathBuilder(access);
+      const url = `${SPORTRADAR_BASE}/${access}/v8/en/${path}?api_key=${encodeURIComponent(apiKey)}`;
+      const data = await fetchJson(url, { cf: { cacheTtl: 0, cacheEverything: false } });
+      return { data, access };
+    } catch (error) {
+      lastError = error;
+    }
   }
   throw lastError || new Error("Sportradar request failed");
 }
 
 async function fetchSportradarSchedule(apiKey) {
-  const p = chicagoDateParts();
-  const key = `${p.year}-${p.month}-${p.day}`;
-  if (scheduleMemory.key === key && scheduleMemory.data && scheduleMemory.expires > Date.now()) return scheduleMemory;
-
+  const key = chicagoDateStamp();
+  if (scheduleMemory.key === key && scheduleMemory.data && scheduleMemory.expires > Date.now()) {
+    return { data: scheduleMemory.data, access: scheduleMemory.access, cache: "memory", key, expires: scheduleMemory.expires };
+  }
   const edgeKey = `wnba-schedule-${key}`;
   const edge = await edgeCacheGet(edgeKey);
   if (edge?.data) {
-    scheduleMemory = { key, expires: Date.now() + SCHEDULE_TTL_SECONDS * 1000, data: edge.data, access: edge.access || "trial", cache: "edge" };
-    return scheduleMemory;
+    scheduleMemory = {
+      key,
+      data: edge.data,
+      access: edge.access,
+      expires: Date.now() + SCHEDULE_TTL_SECONDS * 1000,
+    };
+    return { ...scheduleMemory, cache: "edge" };
   }
 
-  try {
-    const result = await sportradarRequest(
-      () => `games/${p.year}/${p.month}/${p.day}/schedule.json`,
-      apiKey,
-      scheduleMemory.access,
-    );
-    scheduleMemory = { key, expires: Date.now() + SCHEDULE_TTL_SECONDS * 1000, data: result.data, access: result.access, cache: "miss" };
-    await edgeCachePut(edgeKey, { data: result.data, access: result.access }, SCHEDULE_TTL_SECONDS);
-    return scheduleMemory;
-  } catch (error) {
-    if (scheduleMemory.key === key && scheduleMemory.data) return { ...scheduleMemory, cache: "stale" };
-    throw error;
-  }
+  const yyyy = key.slice(0, 4);
+  const mm = key.slice(4, 6);
+  const dd = key.slice(6, 8);
+  const result = await sportradarRequest((access) => `games/${yyyy}/${mm}/${dd}/schedule.json`, apiKey);
+  const expires = Date.now() + SCHEDULE_TTL_SECONDS * 1000;
+  scheduleMemory = { key, data: result.data, access: result.access, expires };
+  await edgeCachePut(edgeKey, { data: result.data, access: result.access }, SCHEDULE_TTL_SECONDS);
+  return { ...scheduleMemory, cache: "miss" };
 }
 
 async function fetchSportradarBoxscore(game, apiKey, access) {
@@ -408,7 +405,7 @@ async function buildLivePayloadUncached(env) {
     return result;
   } catch (error) {
     latest.live_delivery = "cloudflare-worker-fallback";
-    latest.live_source = "github-pages";
+    latest.live_source = "github-raw";
     latest.live_source_status = "fallback";
     latest.live_source_error = `Sportradar failed: ${sportradarError}; ESPN failed: ${String(error?.message || error)}`;
     return latest;
@@ -468,6 +465,7 @@ async function diagnostics(env) {
       games: Array.isArray(latest.games) ? latest.games.length : 0,
       target_date: latest.target_date || null,
       last_live_update_utc: latest.last_live_update_utc || null,
+      source: "github-raw",
     };
   } catch (error) {
     result.ok = false;
@@ -518,8 +516,114 @@ async function proxyStatic(pathname) {
   return new Response(upstream.body, { status: upstream.status, headers });
 }
 
+const SNAPSHOT_KEY = "latest";
+const SNAPSHOT_STALE_MS = 90 * 1000;
+
+function latestGameStartMs(latest) {
+  const starts = (latest?.games || [])
+    .map((game) => Date.parse(game?.game_date_utc || ""))
+    .filter(Number.isFinite);
+  return starts.length ? Math.max(...starts) : null;
+}
+
+function firstGameStartMs(latest) {
+  const starts = (latest?.games || [])
+    .map((game) => Date.parse(game?.game_date_utc || ""))
+    .filter(Number.isFinite);
+  return starts.length ? Math.min(...starts) : null;
+}
+
+function withinLiveWindow(latest, nowMs = Date.now()) {
+  const first = firstGameStartMs(latest);
+  const last = latestGameStartMs(latest);
+  if (first === null || last === null) return false;
+  return nowMs >= first - 45 * 60 * 1000 && nowMs <= last + 4 * 60 * 60 * 1000;
+}
+
+function decorateStoredSnapshot(payload, storedAt, source) {
+  const now = Date.now();
+  return {
+    ...payload,
+    cloudflare_snapshot_stored_at_utc: storedAt,
+    cloudflare_snapshot_source: source,
+    cloudflare_snapshot_age_seconds: Math.max(0, Math.round((now - Date.parse(storedAt)) / 1000)),
+    cloudflare_snapshot_stale: now - Date.parse(storedAt) > SNAPSHOT_STALE_MS,
+  };
+}
+
+export class LiveSnapshotStore {
+  constructor(state, env) {
+    this.state = state;
+    this.env = env;
+  }
+
+  async getSnapshot() {
+    return this.state.storage.get(SNAPSHOT_KEY);
+  }
+
+  async refresh(forceLive = false) {
+    const staticLatest = await fetchStaticLatest();
+    staticLatest.games = Array.isArray(staticLatest.games) ? staticLatest.games : [];
+    let payload;
+    let source;
+
+    if (forceLive || withinLiveWindow(staticLatest)) {
+      payload = await buildLivePayloadUncached(this.env);
+      source = payload.live_source || "live-overlay";
+    } else {
+      payload = {
+        ...staticLatest,
+        live_delivery: "cloudflare-snapshot-idle",
+        live_source_status: "pregame",
+      };
+      source = "github-raw-pregame";
+    }
+
+    const record = {
+      payload,
+      stored_at_utc: new Date().toISOString(),
+      source,
+    };
+    await this.state.storage.put(SNAPSHOT_KEY, record);
+    return record;
+  }
+
+  async fetch(request) {
+    const url = new URL(request.url);
+    if (request.method === "POST" && url.pathname === "/refresh") {
+      const forceLive = url.searchParams.get("forceLive") === "1";
+      const record = await this.refresh(forceLive);
+      return jsonResponse(decorateStoredSnapshot(record.payload, record.stored_at_utc, record.source));
+    }
+
+    let record = await this.getSnapshot();
+    if (!record) record = await this.refresh(false);
+    return jsonResponse(decorateStoredSnapshot(record.payload, record.stored_at_utc, record.source));
+  }
+}
+
+function snapshotStub(env) {
+  const id = env.LIVE_SNAPSHOT.idFromName("global");
+  return env.LIVE_SNAPSHOT.get(id);
+}
+
+async function refreshStoredSnapshot(env, forceLive = false) {
+  const stub = snapshotStub(env);
+  return stub.fetch(`https://snapshot.internal/refresh?forceLive=${forceLive ? "1" : "0"}`, { method: "POST" });
+}
+
+async function readStoredSnapshot(env, ctx) {
+  const stub = snapshotStub(env);
+  const response = await stub.fetch("https://snapshot.internal/latest");
+  const data = await response.json();
+  if (data.cloudflare_snapshot_stale && ctx) {
+    ctx.waitUntil(refreshStoredSnapshot(env, false));
+  }
+  return data;
+}
+
 export default {
-  async fetch(request, env) {
+  async fetch(request, env, ctx) {
     const url = new URL(request.url);
 
     if (request.method === "OPTIONS") {
@@ -539,12 +643,16 @@ export default {
 
     if (url.pathname === "/latest.json" || url.pathname === "/api/live") {
       try {
-        return jsonResponse(await buildLivePayload(env));
+        return jsonResponse(await readStoredSnapshot(env, ctx));
       } catch (error) {
-        return jsonResponse({ error: "Static dashboard data unavailable", detail: String(error?.message || error) }, 502);
+        return jsonResponse({ error: "Live snapshot unavailable", detail: String(error?.message || error) }, 502);
       }
     }
 
     return proxyStatic(url.pathname);
+  },
+
+  async scheduled(controller, env, ctx) {
+    ctx.waitUntil(refreshStoredSnapshot(env, false));
   },
 };
