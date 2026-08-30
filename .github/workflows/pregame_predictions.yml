@@ -9,7 +9,7 @@ on:
   schedule:
     - cron: '12 14 * * *'
 
-# Manual consensus market refresh trigger: 2026-08-30T22:12Z
+# Manual repaired consensus refresh trigger: 2026-08-30T22:16Z
 
 concurrency:
   group: wnba-pregame-predictions
