@@ -7,6 +7,7 @@ on:
     paths:
       - '.github/workflows/edge_research.yml'
       - 'scripts/analyze_market_edges.py'
+      - 'scripts/update_dashboard_decision_first.py'
       - 'predictions/performance_history.parquet'
   schedule:
     - cron: '30 7 * * *'
@@ -31,17 +32,19 @@ jobs:
           pip install -r requirements.txt
       - name: Analyze model disagreement with market
         run: python scripts/analyze_market_edges.py
-      - name: Publish edge performance
+      - name: Update decision-first dashboard
+        run: python scripts/update_dashboard_decision_first.py
+      - name: Publish edge performance and dashboard
         shell: bash
         run: |
           set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add docs/edge_performance.json
+          git add docs/edge_performance.json docs/index.html
           if git diff --cached --quiet; then
-            echo "No edge-performance changes"
+            echo "No edge-performance or dashboard changes"
             exit 0
           fi
-          git commit -m "Update market edge performance"
+          git commit -m "Update market edge performance and dashboard"
           git pull --rebase origin main
           git push origin HEAD:main
