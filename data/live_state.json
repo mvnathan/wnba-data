@@ -437,7 +437,7 @@
     "last_status": "STATUS_SCHEDULED",
     "last_status_detail": "Sun, August 30th at 3:00 PM EDT",
     "last_event_type": "PREGAME",
-    "last_prediction_timestamp": "2026-08-30T15:02:47.906378+00:00"
+    "last_prediction_timestamp": "2026-08-30T17:21:02.297282+00:00"
   },
   "401857187": {
     "last_seen_period": null,
@@ -447,7 +447,7 @@
     "last_status": "STATUS_SCHEDULED",
     "last_status_detail": "Sun, August 30th at 5:00 PM EDT",
     "last_event_type": "PREGAME",
-    "last_prediction_timestamp": "2026-08-30T15:02:47.906378+00:00"
+    "last_prediction_timestamp": "2026-08-30T17:21:02.297282+00:00"
   },
   "401857188": {
     "last_seen_period": null,
@@ -457,7 +457,7 @@
     "last_status": "STATUS_SCHEDULED",
     "last_status_detail": "Sun, August 30th at 7:00 PM EDT",
     "last_event_type": "PREGAME",
-    "last_prediction_timestamp": "2026-08-30T15:02:47.906378+00:00"
+    "last_prediction_timestamp": "2026-08-30T17:21:02.297282+00:00"
   },
   "401857189": {
     "last_seen_period": null,
@@ -467,6 +467,6 @@
     "last_status": "STATUS_SCHEDULED",
     "last_status_detail": "Sun, August 30th at 8:30 PM EDT",
     "last_event_type": "PREGAME",
-    "last_prediction_timestamp": "2026-08-30T15:02:47.906378+00:00"
+    "last_prediction_timestamp": "2026-08-30T17:21:02.297282+00:00"
   }
 }
