@@ -1,0 +1,11 @@
+{
+  "generated_at": "2026-08-30T15:02:51.803118+00:00",
+  "validation": {
+    "available": false,
+    "reason": "2026 validation load failed: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))"
+  },
+  "baseline": {
+    "baseline_total": 163.64409722222223,
+    "baseline_margin": 1.9739583333333333
+  }
+}
