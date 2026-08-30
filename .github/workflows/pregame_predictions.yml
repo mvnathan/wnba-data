@@ -9,7 +9,7 @@ on:
   schedule:
     - cron: '12 14 * * *'
 
-# Manual pipeline verification trigger: 2026-08-30
+# Manual consensus market refresh trigger: 2026-08-30T20:14Z
 
 concurrency:
   group: wnba-pregame-predictions
@@ -59,6 +59,8 @@ jobs:
       - name: Build dashboard
         run: |
           python scripts/build_dashboard.py
+          python scripts/update_dashboard_independent_model.py || true
+          python scripts/update_dashboard_decision_first.py || true
 
       - name: Verify prediction output
         run: |
@@ -77,6 +79,10 @@ jobs:
           print("Target date:", data.get("target_date"))
           print("Games:", len(games))
 
+          if not games:
+              raise SystemExit("No games in predictions/latest.json")
+
+          missing = []
           for game in games:
               print(
                   game.get("away_abbr"),
@@ -84,17 +90,30 @@ jobs:
                   game.get("home_abbr"),
                   "| margin:",
                   game.get("predicted_margin"),
-                  "| winner:",
-                  game.get("projected_winner_abbr"),
-                  "| coherent:",
-                  game.get("prediction_coherent"),
-                  "| market used in prediction:",
-                  game.get("market_used_in_prediction"),
-                  "| margin edge:",
-                  game.get("model_market_margin_edge"),
-                  "| total edge:",
-                  game.get("model_market_total_edge"),
+                  "| market version:",
+                  game.get("market_blend_version"),
+                  "| DK spread:",
+                  game.get("market_home_spread"),
+                  "| consensus spread:",
+                  game.get("consensus_home_spread"),
+                  "| DK total:",
+                  game.get("market_total"),
+                  "| consensus total:",
+                  game.get("consensus_total"),
+                  "| books:",
+                  game.get("market_book_count"),
               )
+              if game.get("market_blend_version") != "independent_model_v3_consensus":
+                  missing.append((game.get("game_id"), "market_blend_version"))
+              if game.get("market_book_count") is None:
+                  missing.append((game.get("game_id"), "market_book_count"))
+              if game.get("consensus_home_spread") is None:
+                  missing.append((game.get("game_id"), "consensus_home_spread"))
+              if game.get("consensus_total") is None:
+                  missing.append((game.get("game_id"), "consensus_total"))
+
+          if missing:
+              raise SystemExit(f"Consensus market fields missing: {missing}")
           PY
 
       - name: Commit outputs
@@ -117,6 +136,8 @@ jobs:
               python scripts/predict_today.py
               python scripts/build_opportunity_alerts.py
               python scripts/build_dashboard.py
+              python scripts/update_dashboard_independent_model.py || true
+              python scripts/update_dashboard_decision_first.py || true
             fi
 
             git add predictions/ docs/ data/alert_state.json data/games.parquet
