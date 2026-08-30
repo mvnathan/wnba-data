@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import math
 import os
 from datetime import datetime, timezone
 from typing import Any
@@ -15,7 +16,7 @@ ODDS_API_URL = (
 # The market is deliberately NOT blended into the model forecast.
 # It is retained as an external benchmark so model-vs-market disagreement
 # remains visible and can be evaluated for repeatable edge.
-MARKET_BLEND_VERSION = "independent_model_v1"
+MARKET_BLEND_VERSION = "independent_model_v2"
 
 TEAM_NAME_TO_ABBR = {
     "atlanta dream": "ATL",
@@ -173,6 +174,73 @@ def _as_float(value: Any) -> float | None:
     return number if number == number else None
 
 
+def _margin_probability(margin: float) -> float:
+    """Map an independent projected margin to a smooth win probability."""
+    return 1.0 / (1.0 + math.exp(-margin / 6.5))
+
+
+def _reconcile_probability(row: dict[str, Any], model_margin: float | None) -> None:
+    """Make displayed winner probability coherent with the score/margin model.
+
+    The raw classifier output is preserved. No sportsbook information is used.
+    If the classifier and score model disagree on the winning side, use the
+    margin-derived probability for the public decision view rather than showing
+    contradictory recommendations.
+    """
+    raw_home = _as_float(row.get("home_win_probability"))
+    row["raw_model_home_win_probability"] = raw_home
+    row["raw_model_away_win_probability"] = (
+        1.0 - raw_home if raw_home is not None else None
+    )
+    row["probability_reconciled"] = False
+
+    if model_margin is None:
+        return
+
+    margin_home = _margin_probability(model_margin)
+    row["margin_implied_home_win_probability"] = margin_home
+
+    if raw_home is None:
+        coherent = margin_home
+        row["probability_reconciled"] = True
+    else:
+        side_disagrees = (model_margin > 0 and raw_home < 0.5) or (
+            model_margin < 0 and raw_home > 0.5
+        )
+        if side_disagrees:
+            coherent = margin_home
+            row["probability_reconciled"] = True
+        else:
+            coherent = raw_home
+
+    row["home_win_probability"] = coherent
+    row["away_win_probability"] = 1.0 - coherent
+    row["home_win"] = coherent
+
+
+def _edge_confidence(
+    edge: float | None,
+    *,
+    scale: float,
+    coherent_probability: float | None = None,
+) -> float | None:
+    """Preliminary transparent confidence score pending learned edge model.
+
+    This is not a claim of historical profitability. It is a ranking score that
+    rewards larger independent disagreement and, for spreads, stronger model
+    directional conviction. The research workflow will later replace/calibrate
+    this with walk-forward empirical probabilities.
+    """
+    if edge is None:
+        return None
+    edge_component = 1.0 - math.exp(-abs(edge) / scale)
+    if coherent_probability is None:
+        return max(0.0, min(1.0, edge_component))
+    directional = abs(coherent_probability - 0.5) * 2.0
+    score = 0.7 * edge_component + 0.3 * directional
+    return max(0.0, min(1.0, score))
+
+
 def _attach_market_benchmark(row: dict[str, Any]) -> dict[str, Any]:
     """Preserve pure model outputs and add market-comparison fields only."""
     row = dict(row)
@@ -181,6 +249,8 @@ def _attach_market_benchmark(row: dict[str, Any]) -> dict[str, Any]:
 
     model_margin = _as_float(row.get("predicted_margin"))
     model_total = _as_float(row.get("predicted_total"))
+
+    _reconcile_probability(row, model_margin)
     model_home_probability = _as_float(row.get("home_win_probability"))
     market_home_spread = _as_float(row.get("market_home_spread"))
     market_total = _as_float(row.get("market_total"))
@@ -193,15 +263,18 @@ def _attach_market_benchmark(row: dict[str, Any]) -> dict[str, Any]:
     market_margin = -market_home_spread if market_home_spread is not None else None
     row["market_implied_margin"] = market_margin
 
-    if model_margin is not None and market_margin is not None:
-        row["model_market_margin_edge"] = model_margin - market_margin
-    else:
-        row["model_market_margin_edge"] = None
-
-    if model_total is not None and market_total is not None:
-        row["model_market_total_edge"] = model_total - market_total
-    else:
-        row["model_market_total_edge"] = None
+    margin_edge = (
+        model_margin - market_margin
+        if model_margin is not None and market_margin is not None
+        else None
+    )
+    total_edge = (
+        model_total - market_total
+        if model_total is not None and market_total is not None
+        else None
+    )
+    row["model_market_margin_edge"] = margin_edge
+    row["model_market_total_edge"] = total_edge
 
     home_implied = _american_implied_probability(row.get("market_home_moneyline"))
     away_implied = _american_implied_probability(row.get("market_away_moneyline"))
@@ -221,11 +294,19 @@ def _attach_market_benchmark(row: dict[str, Any]) -> dict[str, Any]:
         row["market_no_vig_home_win_probability"] = None
         row["model_market_home_win_edge"] = None
 
+    row["spread_edge_confidence"] = _edge_confidence(
+        margin_edge,
+        scale=6.0,
+        coherent_probability=model_home_probability,
+    )
+    row["total_edge_confidence"] = _edge_confidence(total_edge, scale=9.0)
+
     # Explicitly clear old blend weights if a row is refreshed from an older
     # market-anchored prediction payload.
     row["market_spread_weight"] = 0.0
     row["market_total_weight"] = 0.0
     row["market_moneyline_weight"] = 0.0
+    row["market_display_mode"] = "pure_model_vs_market"
     return row
 
 
@@ -248,6 +329,7 @@ def attach_market_odds(
             print("Warning: no DraftKings match for", away_abbr, "@", home_abbr)
             row["market_blend_version"] = MARKET_BLEND_VERSION
             row["market_used_in_prediction"] = False
+            _reconcile_probability(row, _as_float(row.get("predicted_margin")))
             enriched.append(row)
             continue
 
