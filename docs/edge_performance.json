@@ -1,0 +1,117 @@
+{
+  "available": true,
+  "method": "historical pregame model-vs-market disagreement; flat -110 reference ROI; descriptive until sample sizes are sufficient",
+  "games": 29,
+  "spread": [
+    {
+      "threshold": 0.5,
+      "bets": 17,
+      "wins": 10,
+      "losses": 7,
+      "win_rate": 0.5882352941176471,
+      "roi_at_minus_110": 0.12299465240641705,
+      "mean_edge": 3.188472274076065
+    },
+    {
+      "threshold": 2.0,
+      "bets": 12,
+      "wins": 6,
+      "losses": 6,
+      "win_rate": 0.5,
+      "roi_at_minus_110": -0.04545454545454549,
+      "mean_edge": 3.9562678950027377
+    },
+    {
+      "threshold": 4.0,
+      "bets": 5,
+      "wins": 3,
+      "losses": 2,
+      "win_rate": 0.6,
+      "roi_at_minus_110": 0.14545454545454542,
+      "mean_edge": 5.4744655653648975
+    },
+    {
+      "threshold": 6.0,
+      "bets": 1,
+      "wins": 0,
+      "losses": 1,
+      "win_rate": 0.0,
+      "roi_at_minus_110": -1.0,
+      "mean_edge": 8.647441447317249
+    },
+    {
+      "threshold": 8.0,
+      "bets": 1,
+      "wins": 0,
+      "losses": 1,
+      "win_rate": 0.0,
+      "roi_at_minus_110": -1.0,
+      "mean_edge": 8.647441447317249
+    },
+    {
+      "threshold": 10.0,
+      "bets": 0,
+      "wins": 0,
+      "losses": 0,
+      "win_rate": null,
+      "roi_at_minus_110": null,
+      "mean_edge": null
+    }
+  ],
+  "total": [
+    {
+      "threshold": 0.5,
+      "bets": 17,
+      "wins": 12,
+      "losses": 5,
+      "win_rate": 0.7058823529411765,
+      "roi_at_minus_110": 0.3475935828877005,
+      "mean_edge": 7.132092864796535
+    },
+    {
+      "threshold": 2.0,
+      "bets": 15,
+      "wins": 10,
+      "losses": 5,
+      "win_rate": 0.6666666666666666,
+      "roi_at_minus_110": 0.27272727272727265,
+      "mean_edge": 7.873076331353218
+    },
+    {
+      "threshold": 4.0,
+      "bets": 12,
+      "wins": 9,
+      "losses": 3,
+      "win_rate": 0.75,
+      "roi_at_minus_110": 0.4318181818181818,
+      "mean_edge": 8.999064648476383
+    },
+    {
+      "threshold": 6.0,
+      "bets": 9,
+      "wins": 7,
+      "losses": 2,
+      "win_rate": 0.7777777777777778,
+      "roi_at_minus_110": 0.4848484848484848,
+      "mean_edge": 10.384017154698293
+    },
+    {
+      "threshold": 8.0,
+      "bets": 5,
+      "wins": 4,
+      "losses": 1,
+      "win_rate": 0.8,
+      "roi_at_minus_110": 0.5272727272727272,
+      "mean_edge": 13.385619050091275
+    },
+    {
+      "threshold": 10.0,
+      "bets": 5,
+      "wins": 4,
+      "losses": 1,
+      "win_rate": 0.8,
+      "roi_at_minus_110": 0.5272727272727272,
+      "mean_edge": 13.385619050091275
+    }
+  ]
+}
