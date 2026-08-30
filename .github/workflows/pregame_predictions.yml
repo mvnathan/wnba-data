@@ -9,6 +9,8 @@ on:
   schedule:
     - cron: '12 14 * * *'
 
+# Manual pipeline verification trigger: 2026-08-30
+
 concurrency:
   group: wnba-pregame-predictions
   cancel-in-progress: false
