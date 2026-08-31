@@ -55,9 +55,9 @@ def test_market_benchmark_preserves_independent_model_forecasts():
     assert row["predicted_total"] == 170.0
     assert row["model_market_total_edge"] == 4.0
 
-    assert row["model_home_win_probability"] == 0.70
-    assert row["home_win_probability"] == 0.70
-    assert row["away_win_probability"] == 0.30
+    assert np.isclose(row["model_home_win_probability"], 0.70)
+    assert np.isclose(row["home_win_probability"], 0.70)
+    assert np.isclose(row["away_win_probability"], 0.30)
     assert 0.0 < row["market_no_vig_home_win_probability"] < 1.0
     assert row["model_market_home_win_edge"] is not None
 
