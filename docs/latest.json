@@ -264,7 +264,7 @@
       "next_quarter_away_score": 19.510537500000005,
       "next_quarter_margin": 2.8413112499999933,
       "next_quarter_total": 41.86238625,
-      "next_quarter_updated_at": "2026-08-31T00:43:48.888079+00:00",
+      "next_quarter_updated_at": "2026-08-31T06:16:15.673731+00:00",
       "next_quarter_basis": "pregame_plus_live_scoring_pace",
       "live_projected_home_score": 92.2768139906702,
       "live_projected_away_score": 77.03953599532171,
@@ -293,5 +293,5 @@
   "live_generated_at_utc": "2026-08-31T00:43:48.387867+00:00",
   "last_live_update_utc": "2026-08-31T00:43:48.387867+00:00",
   "schedule_games_added": 0,
-  "quarter_projection_updated_at": "2026-08-31T00:43:48.888079+00:00"
+  "quarter_projection_updated_at": "2026-08-31T06:16:15.673731+00:00"
 }
