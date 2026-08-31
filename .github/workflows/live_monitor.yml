@@ -7,6 +7,11 @@ on:
       - main
     paths:
       - '.github/workflows/live_monitor.yml'
+      - 'scripts/monitor_live_games.py'
+      - 'scripts/enrich_quarter_projection.py'
+      - 'src/live_monitor.py'
+      - 'src/live_predict.py'
+      - 'src/quarter_detector.py'
   schedule:
     - cron: '*/5 * * * *'
 
@@ -43,7 +48,6 @@ jobs:
           git fetch origin main
           git reset --hard origin/main
 
-          # monitor_live_games.py now stringifies datetime-like values for logging.
           python scripts/monitor_live_games.py
           python scripts/enrich_quarter_projection.py
 
