@@ -1,7 +1,7 @@
 {
   "available": true,
   "method": "historical pregame model-vs-market disagreement; flat -110 reference ROI; Wilson 95% confidence intervals; thresholds are research-only until minimum sample and confidence criteria pass",
-  "games": 29,
+  "games": 33,
   "break_even_win_rate_minus_110": 0.5238095238095238,
   "minimum_validation_bets": 30,
   "validation_rule": "validated only when bets >= minimum_validation_bets and the Wilson 95% lower confidence bound exceeds -110 break-even",
