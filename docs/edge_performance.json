@@ -1,7 +1,12 @@
 {
   "available": true,
-  "method": "historical pregame model-vs-market disagreement; flat -110 reference ROI; descriptive until sample sizes are sufficient",
+  "method": "historical pregame model-vs-market disagreement; flat -110 reference ROI; Wilson 95% confidence intervals; thresholds are research-only until minimum sample and confidence criteria pass",
   "games": 29,
+  "break_even_win_rate_minus_110": 0.5238095238095238,
+  "minimum_validation_bets": 30,
+  "validation_rule": "validated only when bets >= minimum_validation_bets and the Wilson 95% lower confidence bound exceeds -110 break-even",
+  "any_validated_spread_threshold": false,
+  "any_validated_total_threshold": false,
   "spread": [
     {
       "threshold": 0.5,
@@ -9,8 +14,14 @@
       "wins": 10,
       "losses": 7,
       "win_rate": 0.5882352941176471,
+      "win_rate_ci95_low": 0.3600544264299978,
+      "win_rate_ci95_high": 0.7838894320978518,
+      "break_even_win_rate_minus_110": 0.5238095238095238,
+      "excess_win_rate_vs_minus_110": 0.06442577030812324,
       "roi_at_minus_110": 0.12299465240641705,
-      "mean_edge": 3.188472274076065
+      "mean_edge": 3.188472274076065,
+      "validated": false,
+      "validation_reason": "sample below 30 bets"
     },
     {
       "threshold": 2.0,
@@ -18,8 +29,14 @@
       "wins": 6,
       "losses": 6,
       "win_rate": 0.5,
+      "win_rate_ci95_low": 0.2537815976337061,
+      "win_rate_ci95_high": 0.7462184023662939,
+      "break_even_win_rate_minus_110": 0.5238095238095238,
+      "excess_win_rate_vs_minus_110": -0.023809523809523836,
       "roi_at_minus_110": -0.04545454545454549,
-      "mean_edge": 3.9562678950027377
+      "mean_edge": 3.9562678950027377,
+      "validated": false,
+      "validation_reason": "sample below 30 bets"
     },
     {
       "threshold": 4.0,
@@ -27,8 +44,14 @@
       "wins": 3,
       "losses": 2,
       "win_rate": 0.6,
+      "win_rate_ci95_low": 0.2307242812760128,
+      "win_rate_ci95_high": 0.882379225767352,
+      "break_even_win_rate_minus_110": 0.5238095238095238,
+      "excess_win_rate_vs_minus_110": 0.07619047619047614,
       "roi_at_minus_110": 0.14545454545454542,
-      "mean_edge": 5.4744655653648975
+      "mean_edge": 5.4744655653648975,
+      "validated": false,
+      "validation_reason": "sample below 30 bets"
     },
     {
       "threshold": 6.0,
@@ -36,8 +59,14 @@
       "wins": 0,
       "losses": 1,
       "win_rate": 0.0,
+      "win_rate_ci95_low": 0.0,
+      "win_rate_ci95_high": 0.7934506856227626,
+      "break_even_win_rate_minus_110": 0.5238095238095238,
+      "excess_win_rate_vs_minus_110": -0.5238095238095238,
       "roi_at_minus_110": -1.0,
-      "mean_edge": 8.647441447317249
+      "mean_edge": 8.647441447317249,
+      "validated": false,
+      "validation_reason": "sample below 30 bets"
     },
     {
       "threshold": 8.0,
@@ -45,8 +74,14 @@
       "wins": 0,
       "losses": 1,
       "win_rate": 0.0,
+      "win_rate_ci95_low": 0.0,
+      "win_rate_ci95_high": 0.7934506856227626,
+      "break_even_win_rate_minus_110": 0.5238095238095238,
+      "excess_win_rate_vs_minus_110": -0.5238095238095238,
       "roi_at_minus_110": -1.0,
-      "mean_edge": 8.647441447317249
+      "mean_edge": 8.647441447317249,
+      "validated": false,
+      "validation_reason": "sample below 30 bets"
     },
     {
       "threshold": 10.0,
@@ -54,8 +89,13 @@
       "wins": 0,
       "losses": 0,
       "win_rate": null,
+      "win_rate_ci95_low": null,
+      "win_rate_ci95_high": null,
+      "break_even_win_rate_minus_110": 0.5238095238095238,
       "roi_at_minus_110": null,
-      "mean_edge": null
+      "mean_edge": null,
+      "validated": false,
+      "validation_reason": "no qualifying historical bets"
     }
   ],
   "total": [
@@ -65,8 +105,14 @@
       "wins": 12,
       "losses": 5,
       "win_rate": 0.7058823529411765,
+      "win_rate_ci95_low": 0.4686688993346016,
+      "win_rate_ci95_high": 0.8672001038970478,
+      "break_even_win_rate_minus_110": 0.5238095238095238,
+      "excess_win_rate_vs_minus_110": 0.18207282913165268,
       "roi_at_minus_110": 0.3475935828877005,
-      "mean_edge": 7.132092864796535
+      "mean_edge": 7.132092864796535,
+      "validated": false,
+      "validation_reason": "sample below 30 bets"
     },
     {
       "threshold": 2.0,
@@ -74,8 +120,14 @@
       "wins": 10,
       "losses": 5,
       "win_rate": 0.6666666666666666,
+      "win_rate_ci95_low": 0.41713547738519774,
+      "win_rate_ci95_high": 0.8482367556028526,
+      "break_even_win_rate_minus_110": 0.5238095238095238,
+      "excess_win_rate_vs_minus_110": 0.1428571428571428,
       "roi_at_minus_110": 0.27272727272727265,
-      "mean_edge": 7.873076331353218
+      "mean_edge": 7.873076331353218,
+      "validated": false,
+      "validation_reason": "sample below 30 bets"
     },
     {
       "threshold": 4.0,
@@ -83,8 +135,14 @@
       "wins": 9,
       "losses": 3,
       "win_rate": 0.75,
+      "win_rate_ci95_low": 0.46769466506643426,
+      "win_rate_ci95_high": 0.9110583316059453,
+      "break_even_win_rate_minus_110": 0.5238095238095238,
+      "excess_win_rate_vs_minus_110": 0.22619047619047616,
       "roi_at_minus_110": 0.4318181818181818,
-      "mean_edge": 8.999064648476383
+      "mean_edge": 8.999064648476383,
+      "validated": false,
+      "validation_reason": "sample below 30 bets"
     },
     {
       "threshold": 6.0,
@@ -92,8 +150,14 @@
       "wins": 7,
       "losses": 2,
       "win_rate": 0.7777777777777778,
+      "win_rate_ci95_low": 0.45258896910698887,
+      "win_rate_ci95_high": 0.9367748928821533,
+      "break_even_win_rate_minus_110": 0.5238095238095238,
+      "excess_win_rate_vs_minus_110": 0.25396825396825395,
       "roi_at_minus_110": 0.4848484848484848,
-      "mean_edge": 10.384017154698293
+      "mean_edge": 10.384017154698293,
+      "validated": false,
+      "validation_reason": "sample below 30 bets"
     },
     {
       "threshold": 8.0,
@@ -101,8 +165,14 @@
       "wins": 4,
       "losses": 1,
       "win_rate": 0.8,
+      "win_rate_ci95_low": 0.37553462976252533,
+      "win_rate_ci95_high": 0.9637758913675698,
+      "break_even_win_rate_minus_110": 0.5238095238095238,
+      "excess_win_rate_vs_minus_110": 0.2761904761904762,
       "roi_at_minus_110": 0.5272727272727272,
-      "mean_edge": 13.385619050091275
+      "mean_edge": 13.385619050091275,
+      "validated": false,
+      "validation_reason": "sample below 30 bets"
     },
     {
       "threshold": 10.0,
@@ -110,8 +180,14 @@
       "wins": 4,
       "losses": 1,
       "win_rate": 0.8,
+      "win_rate_ci95_low": 0.37553462976252533,
+      "win_rate_ci95_high": 0.9637758913675698,
+      "break_even_win_rate_minus_110": 0.5238095238095238,
+      "excess_win_rate_vs_minus_110": 0.2761904761904762,
       "roi_at_minus_110": 0.5272727272727272,
-      "mean_edge": 13.385619050091275
+      "mean_edge": 13.385619050091275,
+      "validated": false,
+      "validation_reason": "sample below 30 bets"
     }
   ]
 }
