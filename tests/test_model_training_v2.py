@@ -44,7 +44,7 @@ def test_market_benchmark_preserves_independent_model_forecasts():
     )
 
     assert row["market_used_in_prediction"] is False
-    assert row["market_blend_version"] == "independent_model_v1"
+    assert row["market_blend_version"] == "independent_model_v3_consensus"
 
     assert row["model_predicted_margin"] == 8.0
     assert row["market_implied_margin"] == 4.0
@@ -88,11 +88,11 @@ def test_market_spread_sign_matches_home_minus_away_margin_convention_without_an
             "away_abbr": "CHI",
             "predicted_margin": 0.2,
             "predicted_total": 173.0,
-            "home_win_probability": 0.42,
-            "away_win_probability": 0.58,
-            "market_home_spread": 2.5,
+            "home_win_probability": 0.51,
+            "away_win_probability": 0.49,
+            "market_home_spread": 4.5,
         }
     )
-    assert home_underdog["market_implied_margin"] == -2.5
+    assert home_underdog["market_implied_margin"] == -4.5
     assert home_underdog["predicted_margin"] == 0.2
-    assert home_underdog["model_market_margin_edge"] == 2.7
+    assert home_underdog["model_market_margin_edge"] == 4.7
