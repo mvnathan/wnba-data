@@ -1,12 +1,12 @@
 {
-  "updated_at_utc": "2026-08-30T11:23:51.260266Z",
+  "updated_at_utc": "2026-08-31T12:53:29.544936Z",
   "min_season": 2024,
   "max_season": 2026,
   "games_rows": 953,
-  "completed_games": 904,
-  "quarter_rows": 1808,
-  "team_game_rows": 1808,
-  "missing_completed_quarter_games": 2,
+  "completed_games": 908,
+  "quarter_rows": 1816,
+  "team_game_rows": 1816,
+  "missing_completed_quarter_games": 4,
   "latest_game_date": "2026-09-25T02:00:00+00:00",
   "source": "ESPN public endpoints",
   "schema_version": "1.0.0"
