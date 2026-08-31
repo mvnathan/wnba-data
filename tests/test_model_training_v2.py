@@ -63,6 +63,7 @@ def test_market_benchmark_preserves_independent_model_forecasts():
     assert np.isclose(row["home_win_probability"], 0.70)
     assert np.isclose(row["away_win_probability"], 0.30)
     assert np.isclose(row["model_consensus_home_win_edge"], 0.10)
+    assert row["market_display_mode"] == "pure_model_vs_dk_and_consensus"
 
     assert row["market_spread_weight"] == 0.0
     assert row["market_total_weight"] == 0.0
@@ -98,5 +99,4 @@ def test_market_spread_sign_matches_home_minus_away_margin_convention_without_an
     )
     assert home_underdog["market_implied_margin"] == -4.5
     assert home_underdog["predicted_margin"] == 0.2
-    assert row["market_display_mode"] == "pure_model_vs_dk_and_consensus"
     assert home_underdog["model_market_margin_edge"] == 4.7
