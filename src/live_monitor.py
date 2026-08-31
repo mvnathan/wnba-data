@@ -33,6 +33,15 @@ def _today_chicago_date() -> str:
     return pd.Timestamp.now(tz=CHICAGO).strftime("%Y%m%d")
 
 
+def _scoreboard_dates() -> list[str]:
+    """Poll today and yesterday so late games are not orphaned at midnight."""
+    now = pd.Timestamp.now(tz=CHICAGO)
+    return [
+        now.strftime("%Y%m%d"),
+        (now - pd.Timedelta(days=1)).strftime("%Y%m%d"),
+    ]
+
+
 def _load_live_state() -> dict[str, Any]:
     if not LIVE_STATE_PATH.exists():
         return {}
@@ -94,6 +103,37 @@ def _parse_live_games(payload: dict[str, Any]) -> list[dict[str, Any]]:
             }
         )
     return results
+
+
+def _fetch_relevant_games() -> tuple[list[dict[str, Any]], list[str]]:
+    """Fetch current and prior Chicago dates, tolerating one upstream failure."""
+    by_id: dict[str, dict[str, Any]] = {}
+    fetched_dates: list[str] = []
+    errors: list[str] = []
+
+    # Yesterday is fetched first so today's listing wins if ESPN exposes a game
+    # on both date pages during a boundary transition.
+    for date_str in reversed(_scoreboard_dates()):
+        try:
+            payload = _fetch_scoreboard(date_str)
+        except Exception as exc:
+            errors.append(f"{date_str}: {exc}")
+            logger.warning("Could not fetch ESPN scoreboard for %s: %s", date_str, exc)
+            continue
+        fetched_dates.append(date_str)
+        for game in _parse_live_games(payload):
+            game_id = str(game.get("game_id") or "")
+            if game_id:
+                by_id[game_id] = game
+
+    if not fetched_dates:
+        raise RuntimeError("Could not fetch any relevant ESPN scoreboard date: " + "; ".join(errors))
+
+    games = sorted(
+        by_id.values(),
+        key=lambda game: (str(game.get("game_date_utc") or ""), str(game.get("game_id") or "")),
+    )
+    return games, fetched_dates
 
 
 def _snapshot_game(game: dict[str, Any]) -> dict[str, Any]:
@@ -322,8 +362,7 @@ def _append_quarter_events(quarter_events: list[dict[str, Any]]) -> int:
 
 def monitor_live_games() -> dict[str, Any]:
     today = _today_chicago_date()
-    payload = _fetch_scoreboard(today)
-    games = _parse_live_games(payload)
+    games, fetched_dates = _fetch_relevant_games()
     previous_state = _load_live_state()
 
     snapshots: list[dict[str, Any]] = []
@@ -377,6 +416,7 @@ def monitor_live_games() -> dict[str, Any]:
 
     return {
         "date": today,
+        "scoreboard_dates": fetched_dates,
         "games": games,
         "games_seen": len(games),
         "snapshot_rows": snapshot_rows,
