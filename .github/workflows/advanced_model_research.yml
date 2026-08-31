@@ -2,6 +2,14 @@ name: Advanced WNBA Model Research
 
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/advanced_model_research.yml'
+      - 'scripts/backfill_advanced_data.py'
+      - 'scripts/enrich_pregame_features.py'
+      - 'scripts/build_features.py'
+      - 'scripts/run_feature_ablation.py'
   schedule:
     - cron: '30 7 * * 1'
 
