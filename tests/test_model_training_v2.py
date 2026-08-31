@@ -38,8 +38,9 @@ def test_market_benchmark_preserves_independent_model_forecasts():
             "away_win_probability": 0.30,
             "market_home_spread": -4.0,
             "market_total": 166.0,
-            "market_home_moneyline": -150,
-            "market_away_moneyline": 130,
+            "consensus_home_spread": -5.0,
+            "consensus_total": 167.0,
+            "consensus_no_vig_home_win_probability": 0.60,
         }
     )
 
@@ -48,18 +49,20 @@ def test_market_benchmark_preserves_independent_model_forecasts():
 
     assert row["model_predicted_margin"] == 8.0
     assert row["market_implied_margin"] == 4.0
+    assert row["consensus_implied_margin"] == 5.0
     assert row["predicted_margin"] == 8.0
     assert row["model_market_margin_edge"] == 4.0
+    assert row["model_consensus_margin_edge"] == 3.0
 
     assert row["model_predicted_total"] == 170.0
     assert row["predicted_total"] == 170.0
     assert row["model_market_total_edge"] == 4.0
+    assert row["model_consensus_total_edge"] == 3.0
 
     assert np.isclose(row["model_home_win_probability"], 0.70)
     assert np.isclose(row["home_win_probability"], 0.70)
     assert np.isclose(row["away_win_probability"], 0.30)
-    assert 0.0 < row["market_no_vig_home_win_probability"] < 1.0
-    assert row["model_market_home_win_edge"] is not None
+    assert np.isclose(row["model_consensus_home_win_edge"], 0.10)
 
     assert row["market_spread_weight"] == 0.0
     assert row["market_total_weight"] == 0.0
@@ -95,4 +98,5 @@ def test_market_spread_sign_matches_home_minus_away_margin_convention_without_an
     )
     assert home_underdog["market_implied_margin"] == -4.5
     assert home_underdog["predicted_margin"] == 0.2
+    assert row["market_display_mode"] == "pure_model_vs_dk_and_consensus"
     assert home_underdog["model_market_margin_edge"] == 4.7
