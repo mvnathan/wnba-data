@@ -57,7 +57,7 @@
       "live_clock": "10:00",
       "live_home_score": 89,
       "live_away_score": 81,
-      "live_updated_at": "2026-08-31T23:45:07.273089+00:00",
+      "live_updated_at": "2026-09-01T02:05:11.689860+00:00",
       "live_projected_home_score": 89.0,
       "live_projected_away_score": 81.0,
       "live_predicted_margin": 8.0,
@@ -65,9 +65,17 @@
       "live_home_win_probability": 1.0,
       "live_away_win_probability": 0.0,
       "live_elapsed_fraction": 1.0,
-      "live_projection_updated_at": "2026-08-31T23:45:07.273089+00:00",
+      "live_projection_updated_at": "2026-09-01T02:05:11.689860+00:00",
       "live_projected_winner_side": "home",
-      "live_projected_winner_abbr": "ATL"
+      "live_projected_winner_abbr": "ATL",
+      "market_blend_version": "independent_model_v3_consensus",
+      "market_used_in_prediction": false,
+      "raw_model_home_win_probability": 0.24775709843281782,
+      "raw_model_away_win_probability": 0.7522429015671822,
+      "probability_reconciled": false,
+      "margin_implied_home_win_probability": 0.2872257608018223,
+      "market_refresh_attempted_at": "2026-09-01T02:05:12.909763+00:00",
+      "market_refresh_status": "no_current_quote"
     },
     {
       "game_id": "401857187",
@@ -81,7 +89,7 @@
       "status": "STATUS_FINAL",
       "status_detail": "Final",
       "venue": "Climate Pledge Arena",
-      "home_win": 0.4832934777201937,
+      "home_win": 0.5447804407137355,
       "home_score": 86.15241951282543,
       "away_score": 84.985,
       "full_margin": 1.1674195128254325,
@@ -110,8 +118,8 @@
       "away_q4": 20.7,
       "q4_margin": 0.6750000000000007,
       "q4_total": 42.075,
-      "home_win_probability": 0.4832934777201937,
-      "away_win_probability": 0.5167065222798063,
+      "home_win_probability": 0.5447804407137355,
+      "away_win_probability": 0.45521955928626445,
       "predicted_margin": 1.1674195128254325,
       "predicted_total": 171.13741951282543,
       "projected_winner_side": "home",
@@ -124,7 +132,7 @@
       "live_clock": "0.0",
       "live_home_score": 74,
       "live_away_score": 90,
-      "live_updated_at": "2026-08-31T23:45:07.273089+00:00",
+      "live_updated_at": "2026-09-01T02:05:11.689860+00:00",
       "live_projected_home_score": 74.0,
       "live_projected_away_score": 90.0,
       "live_predicted_margin": -16.0,
@@ -132,9 +140,17 @@
       "live_home_win_probability": 0.0,
       "live_away_win_probability": 1.0,
       "live_elapsed_fraction": 1.0,
-      "live_projection_updated_at": "2026-08-31T23:45:07.273089+00:00",
+      "live_projection_updated_at": "2026-09-01T02:05:11.689860+00:00",
       "live_projected_winner_side": "away",
-      "live_projected_winner_abbr": "LA"
+      "live_projected_winner_abbr": "LA",
+      "market_blend_version": "independent_model_v3_consensus",
+      "market_used_in_prediction": false,
+      "raw_model_home_win_probability": 0.4832934777201937,
+      "raw_model_away_win_probability": 0.5167065222798063,
+      "probability_reconciled": true,
+      "margin_implied_home_win_probability": 0.5447804407137355,
+      "market_refresh_attempted_at": "2026-09-01T02:05:12.909763+00:00",
+      "market_refresh_status": "no_current_quote"
     },
     {
       "game_id": "401857188",
@@ -191,7 +207,7 @@
       "live_clock": "0.0",
       "live_home_score": 69,
       "live_away_score": 86,
-      "live_updated_at": "2026-08-31T23:45:07.273089+00:00",
+      "live_updated_at": "2026-09-01T02:05:11.689860+00:00",
       "live_projected_home_score": 69.0,
       "live_projected_away_score": 86.0,
       "live_predicted_margin": -17.0,
@@ -199,9 +215,17 @@
       "live_home_win_probability": 0.0,
       "live_away_win_probability": 1.0,
       "live_elapsed_fraction": 1.0,
-      "live_projection_updated_at": "2026-08-31T23:45:07.273089+00:00",
+      "live_projection_updated_at": "2026-09-01T02:05:11.689860+00:00",
       "live_projected_winner_side": "away",
-      "live_projected_winner_abbr": "GS"
+      "live_projected_winner_abbr": "GS",
+      "market_blend_version": "independent_model_v3_consensus",
+      "market_used_in_prediction": false,
+      "raw_model_home_win_probability": 0.22851005829839227,
+      "raw_model_away_win_probability": 0.7714899417016077,
+      "probability_reconciled": false,
+      "margin_implied_home_win_probability": 0.29787351272486123,
+      "market_refresh_attempted_at": "2026-09-01T02:05:12.909763+00:00",
+      "market_refresh_status": "no_current_quote"
     },
     {
       "game_id": "401857189",
@@ -258,7 +282,7 @@
       "live_clock": "0.0",
       "live_home_score": 97,
       "live_away_score": 71,
-      "live_updated_at": "2026-08-31T23:45:07.273089+00:00",
+      "live_updated_at": "2026-09-01T02:05:11.689860+00:00",
       "live_projected_home_score": 97.0,
       "live_projected_away_score": 71.0,
       "live_predicted_margin": 26.0,
@@ -266,9 +290,17 @@
       "live_home_win_probability": 1.0,
       "live_away_win_probability": 0.0,
       "live_elapsed_fraction": 1.0,
-      "live_projection_updated_at": "2026-08-31T23:45:07.273089+00:00",
+      "live_projection_updated_at": "2026-09-01T02:05:11.689860+00:00",
       "live_projected_winner_side": "home",
-      "live_projected_winner_abbr": "DAL"
+      "live_projected_winner_abbr": "DAL",
+      "market_blend_version": "independent_model_v3_consensus",
+      "market_used_in_prediction": false,
+      "raw_model_home_win_probability": 0.8709820691677574,
+      "raw_model_away_win_probability": 0.12901793083224256,
+      "probability_reconciled": false,
+      "margin_implied_home_win_probability": 0.7893248709592839,
+      "market_refresh_attempted_at": "2026-09-01T02:05:12.909763+00:00",
+      "market_refresh_status": "no_current_quote"
     }
   ],
   "uncertainty": {
@@ -283,8 +315,9 @@
       "p90": 85.9703720477604
     }
   },
-  "live_generated_at_utc": "2026-08-31T23:45:07.273089+00:00",
-  "last_live_update_utc": "2026-08-31T23:45:07.273089+00:00",
+  "live_generated_at_utc": "2026-09-01T02:05:11.689860+00:00",
+  "last_live_update_utc": "2026-09-01T02:05:11.689860+00:00",
   "schedule_games_added": 0,
-  "quarter_projection_updated_at": "2026-08-31T23:45:07.763772+00:00"
+  "quarter_projection_updated_at": "2026-09-01T02:05:12.229636+00:00",
+  "market_refresh_attempted_at": "2026-09-01T02:05:12.909763+00:00"
 }
