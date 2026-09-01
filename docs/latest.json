@@ -74,7 +74,7 @@
       "raw_model_away_win_probability": 0.7522429015671822,
       "probability_reconciled": false,
       "margin_implied_home_win_probability": 0.2872257608018223,
-      "market_refresh_attempted_at": "2026-09-01T16:59:27.458853+00:00",
+      "market_refresh_attempted_at": "2026-09-01T19:51:25.251069+00:00",
       "market_refresh_status": "no_current_quote"
     },
     {
@@ -149,7 +149,7 @@
       "raw_model_away_win_probability": 0.45521955928626445,
       "probability_reconciled": false,
       "margin_implied_home_win_probability": 0.5447804407137355,
-      "market_refresh_attempted_at": "2026-09-01T16:59:27.458853+00:00",
+      "market_refresh_attempted_at": "2026-09-01T19:51:25.251069+00:00",
       "market_refresh_status": "no_current_quote"
     },
     {
@@ -224,7 +224,7 @@
       "raw_model_away_win_probability": 0.7714899417016077,
       "probability_reconciled": false,
       "margin_implied_home_win_probability": 0.29787351272486123,
-      "market_refresh_attempted_at": "2026-09-01T16:59:27.458853+00:00",
+      "market_refresh_attempted_at": "2026-09-01T19:51:25.251069+00:00",
       "market_refresh_status": "no_current_quote"
     },
     {
@@ -299,7 +299,7 @@
       "raw_model_away_win_probability": 0.12901793083224256,
       "probability_reconciled": false,
       "margin_implied_home_win_probability": 0.7893248709592839,
-      "market_refresh_attempted_at": "2026-09-01T16:59:27.458853+00:00",
+      "market_refresh_attempted_at": "2026-09-01T19:51:25.251069+00:00",
       "market_refresh_status": "no_current_quote"
     }
   ],
@@ -318,6 +318,6 @@
   "live_generated_at_utc": "2026-09-01T02:05:11.689860+00:00",
   "last_live_update_utc": "2026-09-01T02:05:11.689860+00:00",
   "schedule_games_added": 0,
-  "quarter_projection_updated_at": "2026-09-01T16:59:26.762970+00:00",
-  "market_refresh_attempted_at": "2026-09-01T16:59:27.458853+00:00"
+  "quarter_projection_updated_at": "2026-09-01T19:51:24.554849+00:00",
+  "market_refresh_attempted_at": "2026-09-01T19:51:25.251069+00:00"
 }
