@@ -1,5 +1,8 @@
 {
-  "trained_at_utc": "2026-08-13T13:51:30.462297Z",
+  "trained_at_utc": "2026-09-02T21:06:17.009165+00:00",
+  "trainer_version": 2,
+  "validation": "walk_forward_time_series",
+  "max_walk_forward_splits": 5,
   "model_count": 29,
   "targets": [
     "home_win",
@@ -35,21 +38,21 @@
   "selected_models": {
     "home_win": "catboost",
     "home_score": "extra_trees",
-    "away_score": "hist_gb",
-    "full_margin": "extra_trees",
-    "full_total": "hist_gb",
-    "home_first_half": "hist_gb",
-    "away_first_half": "hist_gb",
+    "away_score": "extra_trees",
+    "full_margin": "catboost",
+    "full_total": "extra_trees",
+    "home_first_half": "extra_trees",
+    "away_first_half": "extra_trees",
     "first_half_margin": "extra_trees",
-    "first_half_total": "catboost",
-    "home_second_half": "hist_gb",
-    "away_second_half": "catboost",
+    "first_half_total": "extra_trees",
+    "home_second_half": "extra_trees",
+    "away_second_half": "extra_trees",
     "second_half_margin": "extra_trees",
-    "second_half_total": "hist_gb",
-    "home_q1": "catboost",
+    "second_half_total": "extra_trees",
+    "home_q1": "extra_trees",
     "away_q1": "extra_trees",
     "q1_margin": "extra_trees",
-    "q1_total": "hist_gb",
+    "q1_total": "extra_trees",
     "home_q2": "extra_trees",
     "away_q2": "extra_trees",
     "q2_margin": "extra_trees",
@@ -61,10 +64,231 @@
     "home_q4": "extra_trees",
     "away_q4": "extra_trees",
     "q4_margin": "extra_trees",
-    "q4_total": "lightgbm"
+    "q4_total": "extra_trees"
   },
+  "walk_forward_metrics": {
+    "home_win": {
+      "accuracy": 0.6516556291390728,
+      "balanced_accuracy": 0.6457722567232026,
+      "brier_score": 0.21755568308655096,
+      "f1": 0.6933139003246065,
+      "log_loss": 0.6274756370315171,
+      "roc_auc": 0.7080244618212187,
+      "folds": 5.0
+    },
+    "home_score": {
+      "mae": 9.10796688741722,
+      "rmse": 11.641026372430003,
+      "folds": 5.0
+    },
+    "away_score": {
+      "mae": 9.180894039735099,
+      "rmse": 11.944558951730148,
+      "folds": 5.0
+    },
+    "full_margin": {
+      "mae": 10.74103574589655,
+      "rmse": 13.775359973506374,
+      "folds": 5.0
+    },
+    "full_total": {
+      "mae": 14.76880794701987,
+      "rmse": 18.915861247866513,
+      "folds": 5.0
+    },
+    "home_first_half": {
+      "mae": 6.107165562913908,
+      "rmse": 7.718432659114271,
+      "folds": 5.0
+    },
+    "away_first_half": {
+      "mae": 6.016092715231788,
+      "rmse": 7.665992678657787,
+      "folds": 5.0
+    },
+    "first_half_margin": {
+      "mae": 8.368145695364237,
+      "rmse": 10.342985448268951,
+      "folds": 5.0
+    },
+    "first_half_total": {
+      "mae": 9.007185430463576,
+      "rmse": 11.432247332004696,
+      "folds": 5.0
+    },
+    "home_second_half": {
+      "mae": 6.249622516556292,
+      "rmse": 7.926697083149648,
+      "folds": 5.0
+    },
+    "away_second_half": {
+      "mae": 6.52205298013245,
+      "rmse": 8.155703313277247,
+      "folds": 5.0
+    },
+    "second_half_margin": {
+      "mae": 7.985046357615895,
+      "rmse": 9.911293941687505,
+      "folds": 5.0
+    },
+    "second_half_total": {
+      "mae": 9.927218543046356,
+      "rmse": 12.561530005803842,
+      "folds": 5.0
+    },
+    "home_q1": {
+      "mae": 4.420887417218543,
+      "rmse": 5.511677841862786,
+      "folds": 5.0
+    },
+    "away_q1": {
+      "mae": 4.363033112582781,
+      "rmse": 5.481232765290865,
+      "folds": 5.0
+    },
+    "q1_margin": {
+      "mae": 6.028536423841059,
+      "rmse": 7.5505371684201465,
+      "folds": 5.0
+    },
+    "q1_total": {
+      "mae": 6.36141059602649,
+      "rmse": 8.048220076514761,
+      "folds": 5.0
+    },
+    "home_q2": {
+      "mae": 4.47294701986755,
+      "rmse": 5.527945657377276,
+      "folds": 5.0
+    },
+    "away_q2": {
+      "mae": 4.268417218543046,
+      "rmse": 5.29317564755222,
+      "folds": 5.0
+    },
+    "q2_margin": {
+      "mae": 6.200960264900662,
+      "rmse": 7.716399114263359,
+      "folds": 5.0
+    },
+    "q2_total": {
+      "mae": 6.072218543046358,
+      "rmse": 7.582651516616684,
+      "folds": 5.0
+    },
+    "home_q3": {
+      "mae": 4.269900662251656,
+      "rmse": 5.3347798258805215,
+      "folds": 5.0
+    },
+    "away_q3": {
+      "mae": 4.51517880794702,
+      "rmse": 5.673155105844383,
+      "folds": 5.0
+    },
+    "q3_margin": {
+      "mae": 5.941231788079471,
+      "rmse": 7.438708939769539,
+      "folds": 5.0
+    },
+    "q3_total": {
+      "mae": 6.376463576158941,
+      "rmse": 8.016839700957359,
+      "folds": 5.0
+    },
+    "home_q4": {
+      "mae": 4.6828344370860915,
+      "rmse": 5.734002408722992,
+      "folds": 5.0
+    },
+    "away_q4": {
+      "mae": 4.47517880794702,
+      "rmse": 5.602038772862326,
+      "folds": 5.0
+    },
+    "q4_margin": {
+      "mae": 5.895443708609272,
+      "rmse": 7.317717873324108,
+      "folds": 5.0
+    },
+    "q4_total": {
+      "mae": 6.888827814569535,
+      "rmse": 8.641471989976843,
+      "folds": 5.0
+    }
+  },
+  "probability_calibration": "isotonic_on_oof_predictions",
+  "uncertainty_residuals": "out_of_fold_only",
   "feature_columns": [
     "neutral_site",
+    "home_travel_miles_since_last_game",
+    "home_road_trip_game_number",
+    "home_home_after_road_trip",
+    "away_travel_miles_since_last_game",
+    "away_road_trip_game_number",
+    "away_home_after_road_trip",
+    "home_possessions_season_avg",
+    "home_possessions_rolling_5",
+    "home_possessions_rolling_10",
+    "home_offensive_rating_season_avg",
+    "home_offensive_rating_rolling_5",
+    "home_offensive_rating_rolling_10",
+    "home_defensive_rating_season_avg",
+    "home_defensive_rating_rolling_5",
+    "home_defensive_rating_rolling_10",
+    "home_effective_fg_pct_season_avg",
+    "home_effective_fg_pct_rolling_5",
+    "home_effective_fg_pct_rolling_10",
+    "home_turnover_rate_season_avg",
+    "home_turnover_rate_rolling_5",
+    "home_turnover_rate_rolling_10",
+    "home_offensive_rebound_rate_season_avg",
+    "home_offensive_rebound_rate_rolling_5",
+    "home_offensive_rebound_rate_rolling_10",
+    "home_free_throw_rate_season_avg",
+    "home_free_throw_rate_rolling_5",
+    "home_free_throw_rate_rolling_10",
+    "home_three_point_attempt_rate_season_avg",
+    "home_three_point_attempt_rate_rolling_5",
+    "home_three_point_attempt_rate_rolling_10",
+    "away_possessions_season_avg",
+    "away_possessions_rolling_5",
+    "away_possessions_rolling_10",
+    "away_offensive_rating_season_avg",
+    "away_offensive_rating_rolling_5",
+    "away_offensive_rating_rolling_10",
+    "away_defensive_rating_season_avg",
+    "away_defensive_rating_rolling_5",
+    "away_defensive_rating_rolling_10",
+    "away_effective_fg_pct_season_avg",
+    "away_effective_fg_pct_rolling_5",
+    "away_effective_fg_pct_rolling_10",
+    "away_turnover_rate_season_avg",
+    "away_turnover_rate_rolling_5",
+    "away_turnover_rate_rolling_10",
+    "away_offensive_rebound_rate_season_avg",
+    "away_offensive_rebound_rate_rolling_5",
+    "away_offensive_rebound_rate_rolling_10",
+    "away_free_throw_rate_season_avg",
+    "away_free_throw_rate_rolling_5",
+    "away_free_throw_rate_rolling_10",
+    "away_three_point_attempt_rate_season_avg",
+    "away_three_point_attempt_rate_rolling_5",
+    "away_three_point_attempt_rate_rolling_10",
+    "diff_offensive_rating_season_avg",
+    "diff_offensive_rating_rolling_5",
+    "diff_offensive_rating_rolling_10",
+    "diff_defensive_rating_season_avg",
+    "diff_defensive_rating_rolling_5",
+    "diff_defensive_rating_rolling_10",
+    "home_rotation_top8_minutes_share_last5",
+    "home_rotation_core_overlap_last_game",
+    "home_starter_continuity_last5",
+    "home_players_used_last_game",
+    "away_rotation_top8_minutes_share_last5",
+    "away_rotation_core_overlap_last_game",
+    "away_starter_continuity_last5",
+    "away_players_used_last_game",
     "home_season_game_number",
     "home_games_before",
     "home_season_points",
@@ -241,6 +465,31 @@
     "head_fh_last_3_margin",
     "head_fh_last_3_total",
     "diff_team_id",
+    "diff_travel_miles_since_last_game",
+    "diff_road_trip_game_number",
+    "diff_home_after_road_trip",
+    "diff_possessions_season_avg",
+    "diff_possessions_rolling_5",
+    "diff_possessions_rolling_10",
+    "diff_effective_fg_pct_season_avg",
+    "diff_effective_fg_pct_rolling_5",
+    "diff_effective_fg_pct_rolling_10",
+    "diff_turnover_rate_season_avg",
+    "diff_turnover_rate_rolling_5",
+    "diff_turnover_rate_rolling_10",
+    "diff_offensive_rebound_rate_season_avg",
+    "diff_offensive_rebound_rate_rolling_5",
+    "diff_offensive_rebound_rate_rolling_10",
+    "diff_free_throw_rate_season_avg",
+    "diff_free_throw_rate_rolling_5",
+    "diff_free_throw_rate_rolling_10",
+    "diff_three_point_attempt_rate_season_avg",
+    "diff_three_point_attempt_rate_rolling_5",
+    "diff_three_point_attempt_rate_rolling_10",
+    "diff_rotation_top8_minutes_share_last5",
+    "diff_rotation_core_overlap_last_game",
+    "diff_starter_continuity_last5",
+    "diff_players_used_last_game",
     "diff_season_game_number",
     "diff_games_before",
     "diff_season_points",
