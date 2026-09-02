@@ -6,6 +6,7 @@ on:
     branches: [main]
     paths:
       - '.github/workflows/pregame_predictions.yml'
+      - 'src/predict_pregame.py'
   schedule:
     - cron: '12 14 * * *'
 

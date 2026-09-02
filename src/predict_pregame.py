@@ -50,6 +50,17 @@ def _load_production_model() -> dict[str, Any]:
     )
 
 
+def _write_latest_prediction_outputs(output: dict[str, Any]) -> None:
+    """Persist the current slate, including a valid empty off-season slate."""
+    PREDICTION_LATEST_JSON.parent.mkdir(parents=True, exist_ok=True)
+    PREDICTION_LATEST_CSV.parent.mkdir(parents=True, exist_ok=True)
+    PREDICTION_LATEST_JSON.write_text(
+        json.dumps(output, indent=2),
+        encoding="utf-8",
+    )
+    pd.DataFrame(output["games"]).to_csv(PREDICTION_LATEST_CSV, index=False)
+
+
 def _build_pregame_data(
     target_date: date,
 ) -> pd.DataFrame:
@@ -839,7 +850,7 @@ def predict_today(
     # No eligible games
     # ---------------------------------------------------------
     if schedule.empty:
-        return {
+        output = {
             "generated_at_utc": (
                 generated_at_utc
             ),
@@ -860,6 +871,8 @@ def predict_today(
                 },
             },
         }
+        _write_latest_prediction_outputs(output)
+        return output
 
     # ---------------------------------------------------------
     # Load production models
@@ -1187,35 +1200,7 @@ def predict_today(
     # ---------------------------------------------------------
     # Latest prediction JSON / CSV
     # ---------------------------------------------------------
-    PREDICTION_LATEST_JSON.parent.mkdir(
-        parents=True,
-        exist_ok=True,
-    )
-
-    PREDICTION_LATEST_CSV.parent.mkdir(
-        parents=True,
-        exist_ok=True,
-    )
-
-    with open(
-        PREDICTION_LATEST_JSON,
-        "w",
-        encoding="utf-8",
-    ) as handle:
-        json.dump(
-            output,
-            handle,
-            indent=2,
-        )
-
-    pd.DataFrame(
-        output[
-            "games"
-        ]
-    ).to_csv(
-        PREDICTION_LATEST_CSV,
-        index=False,
-    )
+    _write_latest_prediction_outputs(output)
 
     # ---------------------------------------------------------
     # Prediction history

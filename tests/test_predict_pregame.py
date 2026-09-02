@@ -38,3 +38,19 @@ def test_predict_today_writes_outputs(tmp_path, monkeypatch):
     assert latest_json.exists()
     assert latest_csv.exists()
     assert history_path.exists()
+
+
+def test_predict_today_writes_empty_offseason_slate(tmp_path, monkeypatch):
+    latest_json = tmp_path / "latest.json"
+    latest_csv = tmp_path / "latest.csv"
+
+    monkeypatch.setattr("src.predict_pregame.PREDICTION_LATEST_JSON", latest_json)
+    monkeypatch.setattr("src.predict_pregame.PREDICTION_LATEST_CSV", latest_csv)
+    monkeypatch.setattr("src.predict_pregame.build_model_features", lambda *_: pd.DataFrame())
+
+    result = predict_today(date(2026, 9, 2))
+
+    assert result["target_date"] == "2026-09-02"
+    assert result["games"] == []
+    assert json.loads(latest_json.read_text()) == result
+    assert latest_csv.exists()
