@@ -61,6 +61,10 @@ jobs:
           data = json.loads(Path('/tmp/worker-health.json').read_text())
           if data.get('ok') is not True:
               raise SystemExit(f'Worker health check failed: {data}')
+          if data.get('snapshot_source') == 'github-pages-pregame':
+              raise SystemExit(f'Worker is still serving the legacy Pages-backed snapshot: {data}')
+          if not data.get('target_date'):
+              raise SystemExit(f'Worker health response is missing target_date: {data}')
           print('Health OK:', data)
           PY
 

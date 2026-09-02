@@ -129,10 +129,9 @@ export default {
 
     if (url.pathname === "/health") {
       try {
-        let record = await readSnapshot(env);
-        if (!record || snapshotAgeMs(record) > SNAPSHOT_STALE_MS) {
-          record = await refreshSnapshot(env);
-        }
+        // Force a current-version refresh. A merely fresh Durable Object record
+        // could have been written by the Worker version we just replaced.
+        const record = await refreshSnapshot(env);
         const ageSeconds = Math.round(snapshotAgeMs(record) / 1000);
         const ok = ageSeconds <= Math.ceil(SNAPSHOT_STALE_MS / 1000);
         return jsonResponse({
