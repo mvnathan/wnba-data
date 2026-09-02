@@ -1,6 +1,6 @@
 import liveApp from "./index.js";
 
-const STATIC_LATEST = "https://mvnathan.github.io/wnba-data/latest.json";
+const STATIC_LATEST = "https://raw.githubusercontent.com/mvnathan/wnba-data/main/docs/latest.json";
 const SNAPSHOT_NAME = "wnba-live-singleton";
 const SNAPSHOT_KEY = "latest";
 const LIVE_WINDOW_BEFORE_MS = 45 * 60 * 1000;
@@ -76,7 +76,7 @@ async function refreshSnapshot(env) {
   if (!shouldPollLive(staticLatest)) {
     staticLatest.live_delivery = staticLatest.live_delivery || "cloudflare-snapshot-idle";
     staticLatest.live_source_status = staticLatest.live_source_status || "pregame";
-    const record = await writeSnapshot(env, staticLatest, "github-pages-pregame");
+    const record = await writeSnapshot(env, staticLatest, "github-raw-pregame");
     return { ...record, live_poll: false };
   }
 
@@ -126,6 +126,31 @@ export class LiveSnapshotStore {
 export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
+
+    if (url.pathname === "/health") {
+      try {
+        let record = await readSnapshot(env);
+        if (!record || snapshotAgeMs(record) > SNAPSHOT_STALE_MS) {
+          record = await refreshSnapshot(env);
+        }
+        const ageSeconds = Math.round(snapshotAgeMs(record) / 1000);
+        const ok = ageSeconds <= Math.ceil(SNAPSHOT_STALE_MS / 1000);
+        return jsonResponse({
+          ok,
+          service: "wnba-live-dashboard",
+          now: new Date().toISOString(),
+          snapshot_age_seconds: ageSeconds,
+          snapshot_source: record.source,
+          target_date: record.data?.target_date || null,
+        }, ok ? 200 : 503);
+      } catch (error) {
+        return jsonResponse({
+          ok: false,
+          service: "wnba-live-dashboard",
+          error: String(error?.message || error),
+        }, 503);
+      }
+    }
 
     if (url.pathname === "/snapshot-status") {
       const record = await readSnapshot(env);
@@ -190,3 +215,5 @@ export default {
     );
   },
 };
+
+export { shouldPollLive };

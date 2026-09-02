@@ -21,6 +21,11 @@ jobs:
       - name: Install Worker dependencies
         working-directory: worker
         run: npm install
+      - name: Test Worker
+        working-directory: worker
+        run: |
+          npm run check
+          npm test
       - name: Deploy Cloudflare Worker
         working-directory: worker
         env:
@@ -70,6 +75,10 @@ jobs:
           data = json.loads(Path('/tmp/worker-diagnostics.json').read_text())
           if data.get('service') != 'wnba-live-dashboard':
               raise SystemExit(f'Unexpected diagnostics response: {data}')
+          if data.get('static_latest', {}).get('ok') is not True:
+              raise SystemExit(f'Worker cannot read the canonical snapshot: {data}')
+          if data.get('sportradar', {}).get('ok') is not True:
+              raise SystemExit(f'Worker cannot reach primary Sportradar data: {data}')
           print('Diagnostics service OK')
           print('Sportradar:', data.get('sportradar'))
           print('Static latest:', data.get('static_latest'))
@@ -87,6 +96,12 @@ jobs:
           games = data.get('games')
           if not isinstance(games, list):
               raise SystemExit(f'latest.json missing games list: {data}')
+          if not str(data.get('live_delivery', '')).startswith('cloudflare'):
+              raise SystemExit(f'latest.json is not Cloudflare-managed: {data}')
+          if data.get('cloudflare_snapshot_stale') is not False:
+              raise SystemExit(f'Cloudflare snapshot is stale: {data}')
+          if not data.get('target_date'):
+              raise SystemExit(f'latest.json missing target_date: {data}')
           print('Latest snapshot OK')
           print('Games:', len(games))
           print('Target date:', data.get('target_date'))

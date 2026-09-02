@@ -1,5 +1,7 @@
 name: Live WNBA Game Monitor
 
+# Cloudflare's one-minute cron owns repetitive production polling. This
+# workflow remains available for manual fallback and code-change validation.
 on:
   workflow_dispatch:
   push:
@@ -12,9 +14,6 @@ on:
       - 'src/live_monitor.py'
       - 'src/live_predict.py'
       - 'src/quarter_detector.py'
-  schedule:
-    - cron: '*/5 * * * *'
-
 concurrency:
   group: wnba-live-monitor
   cancel-in-progress: true

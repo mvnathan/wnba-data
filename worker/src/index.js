@@ -9,23 +9,32 @@ const FINAL_BOXSCORE_TTL_SECONDS = 21600;
 const LIVE_PAYLOAD_TTL_SECONDS = 15;
 const SPORTRADAR_MIN_INTERVAL_MS = 1100;
 
-let scheduleMemory = { key: null, expires: 0, data: null, access: null };
+const scheduleMemory = new Map();
 let livePayloadMemory = { expires: 0, data: null, inFlight: null };
 let lastSportradarRequestAt = 0;
 
-function chicagoDateParts() {
+function chicagoDateParts(value = new Date()) {
   const parts = new Intl.DateTimeFormat("en-CA", {
     timeZone: "America/Chicago",
     year: "numeric",
     month: "2-digit",
     day: "2-digit",
-  }).formatToParts(new Date());
+  }).formatToParts(value);
   return Object.fromEntries(parts.map((p) => [p.type, p.value]));
 }
 
-function chicagoDateStamp() {
-  const p = chicagoDateParts();
+function chicagoDateStamp(value = new Date()) {
+  const p = chicagoDateParts(value);
   return `${p.year}${p.month}${p.day}`;
+}
+
+function predictionDateStamps(latest) {
+  const stamps = [chicagoDateStamp()];
+  for (const game of latest?.games || []) {
+    const value = new Date(String(game?.game_date_utc || ""));
+    if (!Number.isNaN(value.getTime())) stamps.push(chicagoDateStamp(value));
+  }
+  return [...new Set(stamps)];
 }
 
 function finiteNumber(value, fallback = 0) {
@@ -177,8 +186,7 @@ async function fetchStaticLatest() {
   });
 }
 
-async function fetchEspnScoreboard() {
-  const stamp = chicagoDateStamp();
+async function fetchEspnScoreboard(stamp = chicagoDateStamp()) {
   return fetchJson(`${ESPN_SCOREBOARD}?dates=${stamp}&_=${Date.now()}`, {
     headers: { "User-Agent": "wnba-live-dashboard/1.0", "Cache-Control": "no-cache" },
     cf: { cacheTtl: 0, cacheEverything: false },
@@ -221,21 +229,22 @@ async function sportradarRequest(pathBuilder, apiKey, preferredAccess = null) {
   throw lastError || new Error("Sportradar request failed");
 }
 
-async function fetchSportradarSchedule(apiKey) {
-  const key = chicagoDateStamp();
-  if (scheduleMemory.key === key && scheduleMemory.data && scheduleMemory.expires > Date.now()) {
-    return { data: scheduleMemory.data, access: scheduleMemory.access, cache: "memory", key, expires: scheduleMemory.expires };
+async function fetchSportradarSchedule(apiKey, key = chicagoDateStamp()) {
+  const memory = scheduleMemory.get(key);
+  if (memory?.data && memory.expires > Date.now()) {
+    return { ...memory, cache: "memory", key };
   }
   const edgeKey = `wnba-schedule-${key}`;
   const edge = await edgeCacheGet(edgeKey);
   if (edge?.data) {
-    scheduleMemory = {
+    const cached = {
       key,
       data: edge.data,
       access: edge.access,
       expires: Date.now() + SCHEDULE_TTL_SECONDS * 1000,
     };
-    return { ...scheduleMemory, cache: "edge" };
+    scheduleMemory.set(key, cached);
+    return { ...cached, cache: "edge" };
   }
 
   const yyyy = key.slice(0, 4);
@@ -243,9 +252,10 @@ async function fetchSportradarSchedule(apiKey) {
   const dd = key.slice(6, 8);
   const result = await sportradarRequest((access) => `games/${yyyy}/${mm}/${dd}/schedule.json`, apiKey);
   const expires = Date.now() + SCHEDULE_TTL_SECONDS * 1000;
-  scheduleMemory = { key, data: result.data, access: result.access, expires };
+  const cached = { key, data: result.data, access: result.access, expires };
+  scheduleMemory.set(key, cached);
   await edgeCachePut(edgeKey, { data: result.data, access: result.access }, SCHEDULE_TTL_SECONDS);
-  return { ...scheduleMemory, cache: "miss" };
+  return { ...cached, cache: "miss" };
 }
 
 async function fetchSportradarBoxscore(game, apiKey, access) {
@@ -320,16 +330,29 @@ function applyLiveState(prediction, live, now, source) {
 }
 
 async function overlaySportradar(latest, apiKey) {
-  const schedule = await fetchSportradarSchedule(apiKey);
-  const scheduleGames = Array.isArray(schedule.data?.games) ? schedule.data.games : [];
+  const schedules = [];
+  let lastScheduleError = null;
+  for (const stamp of predictionDateStamps(latest)) {
+    try {
+      schedules.push(await fetchSportradarSchedule(apiKey, stamp));
+    } catch (error) {
+      lastScheduleError = error;
+    }
+  }
+  if (!schedules.length) throw lastScheduleError || new Error("No Sportradar schedules available");
+
+  const scheduleGames = schedules.flatMap((schedule) =>
+    (Array.isArray(schedule.data?.games) ? schedule.data.games : []).map((game) => ({ game, schedule }))
+  );
   const now = new Date().toISOString();
   let matched = 0;
   let refreshed = 0;
   let boxscoreRequests = 0;
 
   for (const prediction of latest.games || []) {
-    const scheduledGame = scheduleGames.find((g) => scheduleGameMatches(prediction, g));
-    if (!scheduledGame) continue;
+    const match = scheduleGames.find(({ game }) => scheduleGameMatches(prediction, game));
+    if (!match) continue;
+    const { game: scheduledGame, schedule } = match;
     matched += 1;
 
     let live = parseSportradarScheduleGame(scheduledGame);
@@ -352,15 +375,27 @@ async function overlaySportradar(latest, apiKey) {
   latest.live_source_status = matched ? "fresh" : "no-matches";
   latest.live_source_matched_games = matched;
   latest.live_source_refreshed_games = refreshed;
-  latest.live_source_schedule_cache = schedule.cache || "memory";
+  latest.live_source_schedule_cache = schedules.map((schedule) => `${schedule.key}:${schedule.cache || "memory"}`).join(",");
+  latest.live_source_schedule_dates = schedules.map((schedule) => schedule.key);
   latest.live_source_boxscore_requests = boxscoreRequests;
   delete latest.live_source_error;
   return latest;
 }
 
 async function overlayEspn(latest) {
-  const scoreboard = await fetchEspnScoreboard();
-  const events = Array.isArray(scoreboard.events) ? scoreboard.events : [];
+  const events = [];
+  let successfulDates = 0;
+  let lastError = null;
+  for (const stamp of predictionDateStamps(latest)) {
+    try {
+      const scoreboard = await fetchEspnScoreboard(stamp);
+      events.push(...(Array.isArray(scoreboard.events) ? scoreboard.events : []));
+      successfulDates += 1;
+    } catch (error) {
+      lastError = error;
+    }
+  }
+  if (!successfulDates) throw lastError || new Error("No ESPN scoreboards available");
   const now = new Date().toISOString();
   for (const event of events) {
     const competition = Array.isArray(event?.competitions) ? event.competitions[0] : null;
@@ -656,3 +691,5 @@ export default {
     ctx.waitUntil(refreshStoredSnapshot(env, false));
   },
 };
+
+export { chicagoDateStamp, elapsedFraction, predictionDateStamps, projectLiveGame };
