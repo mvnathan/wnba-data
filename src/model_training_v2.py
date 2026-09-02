@@ -261,7 +261,10 @@ def train_models() -> dict[str, Any]:
             "out_of_fold_residuals": out_of_fold_residuals,
         },
         PRODUCTION_MODEL_PATH,
-        compress=3,
+        # Tree ensembles grow with the historical dataset.  Use LZMA so the
+        # production bundle remains comfortably below GitHub's 100 MiB file
+        # limit while remaining transparently loadable by joblib.
+        compress=("xz", 3),
     )
 
     return {

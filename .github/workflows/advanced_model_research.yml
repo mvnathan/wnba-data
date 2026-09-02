@@ -74,14 +74,44 @@ jobs:
           set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -f data/team_box_stats.parquet data/player_box_stats.parquet data/games.parquet features/model_features.parquet
-          git add models/feature_ablation.json models/feature_ablation.csv models/advanced_data_status.json models/advanced_feature_status.json
+          published=false
+          for publish_attempt in $(seq 1 3); do
+            echo "Publish attempt ${publish_attempt}/3"
 
-          if git diff --cached --quiet; then
-            echo "No research changes to publish"
-            exit 0
+            if [ "${publish_attempt}" -gt 1 ]; then
+              git fetch origin main
+              git reset --hard origin/main
+
+              # Rebuild on the newest generated state. This avoids rebasing
+              # binary parquet files while live-monitor commits are landing.
+              python scripts/backfill_advanced_data.py
+              python scripts/enrich_pregame_features.py
+              python scripts/build_features.py
+              python scripts/run_feature_ablation.py
+            fi
+
+            git add -f data/team_box_stats.parquet data/player_box_stats.parquet data/games.parquet features/model_features.parquet
+            git add models/feature_ablation.json models/feature_ablation.csv models/advanced_data_status.json models/advanced_feature_status.json
+
+            if git diff --cached --quiet; then
+              echo "No research changes to publish"
+              published=true
+              break
+            fi
+
+            git commit -m "Update advanced model research"
+
+            # Generated files outside the publish list may also change. Drop
+            # those unstaged copies so they cannot block the next retry.
+            git reset --hard HEAD
+
+            if git push origin HEAD:main; then
+              published=true
+              break
+            fi
+          done
+
+          if [ "${published}" != true ]; then
+            echo "Failed to publish advanced research after 3 attempts" >&2
+            exit 1
           fi
-
-          git commit -m "Update advanced model research"
-          git pull --rebase origin main
-          git push origin HEAD:main

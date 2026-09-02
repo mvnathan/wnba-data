@@ -57,7 +57,10 @@ jobs:
           data = json.loads(path.read_text())
           games = data.get('games', [])
           print('Target date:', data.get('target_date')); print('Games:', len(games))
-          if not games: raise SystemExit('No games in predictions/latest.json')
+          if not data.get('target_date'): raise SystemExit('target_date is missing from predictions/latest.json')
+          if not isinstance(games, list): raise SystemExit('games must be a list in predictions/latest.json')
+          if not games:
+              print('No eligible games today; empty prediction output is valid')
           missing=[]
           for g in games:
               print(g.get('away_abbr'),'@',g.get('home_abbr'),'| version:',g.get('market_blend_version'),'| book:',g.get('market_bookmaker'),'| books:',g.get('market_book_count'),'| consensus spread:',g.get('consensus_home_spread'),'| consensus total:',g.get('consensus_total'))

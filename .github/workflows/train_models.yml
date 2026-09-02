@@ -2,6 +2,11 @@ name: Train WNBA Prediction Models
 
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/train_models.yml'
+      - 'src/model_training_v2.py'
   schedule:
     - cron: '0 10 * * 1'
 
@@ -41,6 +46,19 @@ jobs:
           test -s models/production_model.joblib
           test -s models/model_metadata.json
           test -s models/model_leaderboard.csv
+          python - <<'PY'
+          from pathlib import Path
+          import joblib
+
+          path = Path('models/production_model.joblib')
+          size_mib = path.stat().st_size / (1024 * 1024)
+          print(f'Production model size: {size_mib:.2f} MiB')
+          if size_mib >= 95:
+              raise SystemExit('Production model must remain below the 95 MiB repository safety limit')
+          payload = joblib.load(path)
+          if not payload.get('models') or not payload.get('feature_columns'):
+              raise SystemExit('Production model bundle is incomplete')
+          PY
       - name: Commit model outputs
         shell: bash
         run: |

@@ -30,15 +30,59 @@ jobs:
       ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
     steps:
       - uses: actions/checkout@v4
+      - name: Check whether live monitoring is needed
+        id: schedule_check
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json
+          import os
+          import urllib.request
+          from datetime import datetime, timedelta, timezone
+          from zoneinfo import ZoneInfo
+
+          now = datetime.now(timezone.utc)
+          chicago = now.astimezone(ZoneInfo('America/Chicago'))
+          dates = [(chicago.date() - timedelta(days=1)).strftime('%Y%m%d'), chicago.strftime('%Y%m%d')]
+          should_run = False
+
+          try:
+              for date_text in dates:
+                  url = f'https://site.api.espn.com/apis/site/v2/sports/basketball/wnba/scoreboard?dates={date_text}'
+                  with urllib.request.urlopen(url, timeout=15) as response:
+                      payload = json.load(response)
+                  for event in payload.get('events', []):
+                      competition = (event.get('competitions') or [{}])[0]
+                      state = competition.get('status', {}).get('type', {}).get('state')
+                      start_text = event.get('date') or competition.get('date')
+                      start = datetime.fromisoformat(start_text.replace('Z', '+00:00')) if start_text else None
+                      if state == 'in':
+                          should_run = True
+                      elif state == 'pre' and start and -timedelta(hours=1) <= start - now <= timedelta(hours=1):
+                          should_run = True
+                      elif state == 'post' and start and now - start <= timedelta(hours=5):
+                          should_run = True
+          except Exception as exc:
+              # A schedule-check outage must never prevent live coverage.
+              print(f'Schedule check failed; running monitor as a safeguard: {exc}')
+              should_run = True
+
+          print(f'Live monitoring needed: {should_run}')
+          with open(os.environ['GITHUB_OUTPUT'], 'a', encoding='utf-8') as output:
+              output.write(f'should_run={str(should_run).lower()}\n')
+          PY
       - name: Set up Python
+        if: steps.schedule_check.outputs.should_run == 'true'
         uses: actions/setup-python@v6
         with:
           python-version: '3.12'
       - name: Install dependencies
+        if: steps.schedule_check.outputs.should_run == 'true'
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
       - name: Refresh live snapshot and dashboard once
+        if: steps.schedule_check.outputs.should_run == 'true'
         shell: bash
         run: |
           set -euo pipefail
