@@ -1,6 +1,7 @@
 import liveApp from "./index.js";
 
 const STATIC_LATEST = "https://raw.githubusercontent.com/mvnathan/wnba-data/main/docs/latest.json";
+const TENNIS_LATEST = "https://raw.githubusercontent.com/mvnathan/wnba-data/main/docs/tennis-latest.json";
 const SNAPSHOT_NAME = "wnba-live-singleton";
 const SNAPSHOT_KEY = "latest";
 const LIVE_WINDOW_BEFORE_MS = 45 * 60 * 1000;
@@ -51,6 +52,15 @@ async function fetchStaticLatest() {
     cf: { cacheTtl: 0, cacheEverything: false },
   });
   if (!response.ok) throw new Error(`Static latest returned ${response.status}`);
+  return response.json();
+}
+
+async function fetchTennisLatest() {
+  const response = await fetch(`${TENNIS_LATEST}?t=${Date.now()}`, {
+    headers: { "cache-control": "no-cache" },
+    cf: { cacheTtl: 0, cacheEverything: false },
+  });
+  if (!response.ok) throw new Error(`Tennis latest returned ${response.status}`);
   return response.json();
 }
 
@@ -126,6 +136,30 @@ export class LiveSnapshotStore {
 export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
+
+    if (url.pathname === "/tennis/latest.json" || url.pathname === "/api/tennis") {
+      try {
+        const data = await fetchTennisLatest();
+        return jsonResponse({ ...data, cloudflare_delivery: "tennis-static-proxy" });
+      } catch (error) {
+        return jsonResponse({ ok: false, service: "tennis-predictions", error: String(error?.message || error) }, 503);
+      }
+    }
+
+    if (url.pathname === "/tennis/health") {
+      try {
+        const data = await fetchTennisLatest();
+        return jsonResponse({
+          ok: Boolean(data?.target_date && Array.isArray(data?.matches)),
+          service: "tennis-predictions",
+          target_date: data?.target_date || null,
+          matches: Array.isArray(data?.matches) ? data.matches.length : 0,
+          generated_at_utc: data?.generated_at_utc || null,
+        });
+      } catch (error) {
+        return jsonResponse({ ok: false, service: "tennis-predictions", error: String(error?.message || error) }, 503);
+      }
+    }
 
     if (url.pathname === "/health") {
       try {

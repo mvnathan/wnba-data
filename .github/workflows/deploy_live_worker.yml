@@ -113,3 +113,19 @@ jobs:
           print('Live source:', data.get('live_source'))
           print('Snapshot generated:', data.get('live_generated_at_utc'))
           PY
+
+          echo "Checking tennis prediction endpoint"
+          curl --fail --silent --show-error --retry 5 --retry-delay 2 \
+            "${BASE_URL}/tennis/health?t=$(date +%s)" \
+            | tee /tmp/tennis-health.json
+
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          data = json.loads(Path('/tmp/tennis-health.json').read_text())
+          if data.get('ok') is not True or data.get('service') != 'tennis-predictions':
+              raise SystemExit(f'Tennis endpoint health check failed: {data}')
+          if not data.get('target_date'):
+              raise SystemExit(f'Tennis endpoint target date missing: {data}')
+          print('Tennis prediction endpoint OK:', data)
+          PY
