@@ -2,6 +2,7 @@ import liveApp from "./index.js";
 
 const STATIC_LATEST = "https://raw.githubusercontent.com/mvnathan/wnba-data/main/docs/latest.json";
 const TENNIS_LATEST = "https://raw.githubusercontent.com/mvnathan/wnba-data/main/docs/tennis-latest.json";
+const LIVESCORE_TENNIS = "https://prod-public-api.livescore.com/v1/api/app/date/tennis";
 const SNAPSHOT_NAME = "wnba-live-singleton";
 const SNAPSHOT_KEY = "latest";
 const LIVE_WINDOW_BEFORE_MS = 45 * 60 * 1000;
@@ -62,6 +63,114 @@ async function fetchTennisLatest() {
   });
   if (!response.ok) throw new Error(`Tennis latest returned ${response.status}`);
   return response.json();
+}
+
+function tennisNameKey(value) {
+  return String(value || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase().replace(/[^a-z0-9]/g, "");
+}
+
+function tennisStatus(event) {
+  const code = String(event?.Eps || "");
+  if (code === "FT") return { label: "Final", state: "post" };
+  if (code === "NS") return { label: "Scheduled", state: "pre" };
+  if (code === "Canc.") return { label: "Cancelled", state: "post" };
+  if (code === "Postp.") return { label: "Postponed", state: "pre" };
+  if (/^S\d+$/.test(code)) return { label: `Set ${code.slice(1)}`, state: "in" };
+  return { label: code || "Scheduled", state: "in" };
+}
+
+function normalizeTennisEvent(event) {
+  const player1 = event?.T1?.[0]?.Nm;
+  const player2 = event?.T2?.[0]?.Nm;
+  if (!player1 || !player2 || event.T1.length !== 1 || event.T2.length !== 1) return null;
+  const sets = [];
+  for (let set = 1; set <= 5; set += 1) {
+    const one = event[`Tr1S${set}`];
+    const two = event[`Tr2S${set}`];
+    if (one === undefined && two === undefined) continue;
+    sets.push({
+      set,
+      player_1: one ?? null,
+      player_2: two ?? null,
+      player_1_tiebreak: event[`Tr1S${set}T`] ?? null,
+      player_2_tiebreak: event[`Tr2S${set}T`] ?? null,
+    });
+  }
+  const status = tennisStatus(event);
+  return {
+    live_event_id: String(event.Eid || ""),
+    player_1: player1,
+    player_2: player2,
+    player_1_sets: Number(event.Tr1 || 0),
+    player_2_sets: Number(event.Tr2 || 0),
+    player_1_game_points: event.Tr1G ?? null,
+    player_2_game_points: event.Tr2G ?? null,
+    serving_player: Number(event.Esrv || 0) || null,
+    set_scores: sets,
+    live_status: status.label,
+    live_state: status.state,
+  };
+}
+
+async function fetchLiveScoreTennis(date) {
+  const stamp = String(date || "").replaceAll("-", "");
+  const request = new Request(`${LIVESCORE_TENNIS}/${stamp}/0.00`, {
+    headers: { "accept": "application/json", "user-agent": "Mozilla/5.0" },
+  });
+  const cache = caches.default;
+  let response = await cache.match(request);
+  if (!response) {
+    response = await fetch(request, { cf: { cacheTtl: 10, cacheEverything: true } });
+    if (!response.ok) throw new Error(`LiveScore tennis returned ${response.status}`);
+    response = new Response(response.body, response);
+    response.headers.set("cache-control", "public, max-age=10");
+    await cache.put(request, response.clone());
+  }
+  const payload = await response.json();
+  const events = [];
+  for (const stage of payload?.Stages || []) {
+    if (!String(stage?.Scd || "").includes("singles")) continue;
+    for (const raw of stage?.Events || []) {
+      const event = normalizeTennisEvent(raw);
+      if (event) events.push(event);
+    }
+  }
+  return {
+    generated_at_utc: Number(payload?.Ts) ? new Date(Number(payload.Ts) * 1000).toISOString() : new Date().toISOString(),
+    events,
+  };
+}
+
+function mergeTennisScores(predictions, live) {
+  const events = live?.events || [];
+  return (predictions || []).map((match) => {
+    const one = tennisNameKey(match.player_1);
+    const two = tennisNameKey(match.player_2);
+    let event = events.find((candidate) => tennisNameKey(candidate.player_1) === one && tennisNameKey(candidate.player_2) === two);
+    let reversed = false;
+    if (!event) {
+      event = events.find((candidate) => tennisNameKey(candidate.player_1) === two && tennisNameKey(candidate.player_2) === one);
+      reversed = Boolean(event);
+    }
+    if (!event) return match;
+    if (!reversed) return { ...match, ...event };
+    return {
+      ...match,
+      live_event_id: event.live_event_id,
+      player_1_sets: event.player_2_sets,
+      player_2_sets: event.player_1_sets,
+      player_1_game_points: event.player_2_game_points,
+      player_2_game_points: event.player_1_game_points,
+      serving_player: event.serving_player === 1 ? 2 : event.serving_player === 2 ? 1 : null,
+      set_scores: event.set_scores.map((set) => ({
+        set: set.set, player_1: set.player_2, player_2: set.player_1,
+        player_1_tiebreak: set.player_2_tiebreak, player_2_tiebreak: set.player_1_tiebreak,
+      })),
+      live_status: event.live_status,
+      live_state: event.live_state,
+    };
+  });
 }
 
 function gameStartMillis(game) {
@@ -140,7 +249,23 @@ export default {
     if (url.pathname === "/tennis/latest.json" || url.pathname === "/api/tennis") {
       try {
         const data = await fetchTennisLatest();
-        return jsonResponse({ ...data, cloudflare_delivery: "tennis-static-proxy" });
+        try {
+          const live = await fetchLiveScoreTennis(data.target_date);
+          return jsonResponse({
+            ...data,
+            matches: mergeTennisScores(data.matches, live),
+            live_score_generated_at_utc: live.generated_at_utc,
+            live_score_source: "LiveScore",
+            cloudflare_delivery: "tennis-live-overlay",
+          });
+        } catch (liveError) {
+          return jsonResponse({
+            ...data,
+            live_score_error: String(liveError?.message || liveError),
+            live_score_source: "prediction-feed-fallback",
+            cloudflare_delivery: "tennis-static-proxy",
+          });
+        }
       } catch (error) {
         return jsonResponse({ ok: false, service: "tennis-predictions", error: String(error?.message || error) }, 503);
       }
@@ -249,4 +374,4 @@ export default {
   },
 };
 
-export { shouldPollLive };
+export { mergeTennisScores, normalizeTennisEvent, shouldPollLive, tennisNameKey };
