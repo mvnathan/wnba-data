@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 from pathlib import Path
 
-path = Path("docs/index.html")
+path = Path("docs/wnba.html")
 text = path.read_text(encoding="utf-8")
 replacements = {
     "Actionable edges first · market-adjusted forecast · pure model shown separately": "Independent model · market is benchmark only · actionable disagreement highlighted",

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 from pathlib import Path
 
-path = Path("docs/index.html")
+path = Path("docs/wnba.html")
 text = path.read_text(encoding="utf-8")
 
 text = text.replace('<h2>Actionable Opportunities</h2>', '<h2>Best Model-vs-Market Signals</h2>')

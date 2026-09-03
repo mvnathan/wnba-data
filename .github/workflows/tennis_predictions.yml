@@ -1,0 +1,51 @@
+name: Generate ATP and WTA Predictions
+on:
+  workflow_dispatch: {}
+  schedule:
+    - cron: '0 12 * * *'
+    - cron: '0 16 * * *'
+  push:
+    branches: [main]
+    paths: ['src/tennis_model.py','scripts/run_tennis_pipeline.py','docs/tennis.html','.github/workflows/tennis_predictions.yml']
+permissions:
+  contents: write
+concurrency:
+  group: tennis-predictions
+  cancel-in-progress: false
+jobs:
+  predict:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      PYTHONPATH: ${{ github.workspace }}
+    steps:
+      - uses: actions/checkout@v4
+        with: {fetch-depth: 0}
+      - uses: actions/setup-python@v6
+        with: {python-version: '3.12', cache: pip}
+      - run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      - name: Train and publish tennis predictions
+        run: python scripts/run_tennis_pipeline.py
+      - name: Verify output
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          data=json.loads(Path('docs/tennis-latest.json').read_text())
+          assert data.get('target_date') and isinstance(data.get('matches'), list)
+          assert {m['tour'] for m in data['model_performance']} == {'ATP','WTA'}
+          print(data['target_date'], len(data['matches']), 'eligible matches')
+          PY
+      - name: Commit refreshed predictions and models
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/tennis-latest.json predictions/tennis/ models/tennis/
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Update ATP and WTA predictions"
+          git pull --rebase origin main
+          git push origin HEAD:main
