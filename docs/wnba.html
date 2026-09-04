@@ -51,5 +51,6 @@ async function render(){const [l,o,p,h]=await Promise.all([liveLatest(),j('oppor
 document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>{document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('active',x===b));document.querySelectorAll('.panel').forEach(x=>x.classList.toggle('active',x.id===b.dataset.tab))});
 render();setInterval(render,15000);
 </script>
+<script src="push.js"></script>
 </body>
 </html>

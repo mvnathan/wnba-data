@@ -8,6 +8,8 @@ import {
   projectLiveGame,
 } from "../src/index.js";
 import { mergeTennisScores, normalizeTennisEvent, shouldPollLive } from "../src/stateful_index.js";
+import { buildAlerts } from "../src/alerts.js";
+import { createVapidKeys } from "../src/push.js";
 
 test("Chicago date stamping keeps late games on the prior date", () => {
   assert.equal(chicagoDateStamp(new Date("2026-08-31T04:30:00Z")), "20260830");
@@ -51,4 +53,18 @@ test("tennis score overlay preserves set and serving state", () => {
   assert.equal(merged.player_1_sets, 1);
   assert.equal(merged.player_1_game_points, "30");
   assert.equal(merged.serving_player, 1);
+});
+
+test("balanced alert thresholds select meaningful market gaps", () => {
+  const alerts = buildAlerts(
+    { games: [{ game_id: "w1", away_abbr: "NY", home_abbr: "MIN", model_market_total_edge: 6.5, model_predicted_total: 166.5, market_total: 160 }] },
+    { matches: [{ match_id: "t1", tour: "ATP", player_1: "A", player_2: "B", predicted_game_margin_player_1: 5, market_margin_player_1: 0.5, predicted_total_games: 35, market_total_games: 33, player_1_win_probability: .7, market_player_1_probability: .52 }] },
+  );
+  assert.deepEqual(alerts.map(alert => alert.id).sort(), ["tennis:t1:spread", "tennis:t1:winner", "wnba:w1:total"]);
+});
+
+test("VAPID keys are generated in browser push format", async () => {
+  const keys = await createVapidKeys();
+  assert.equal(keys.publicKey.length, 87);
+  assert.equal(keys.privateJwk.crv, "P-256");
 });

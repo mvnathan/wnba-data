@@ -1,4 +1,6 @@
 import liveApp from "./index.js";
+import { buildAlerts, enrichTennisMarkets } from "./alerts.js";
+import { createVapidKeys, sendWebPush } from "./push.js";
 
 const STATIC_LATEST = "https://raw.githubusercontent.com/mvnathan/wnba-data/main/docs/latest.json";
 const TENNIS_LATEST = "https://raw.githubusercontent.com/mvnathan/wnba-data/main/docs/tennis-latest.json";
@@ -23,6 +25,17 @@ function jsonResponse(data, status = 200) {
 function snapshotStub(env) {
   const id = env.LIVE_SNAPSHOT.idFromName(SNAPSHOT_NAME);
   return env.LIVE_SNAPSHOT.get(id);
+}
+
+async function dispatchOpportunityAlerts(env) {
+  const [wnba, tennisBase] = await Promise.all([fetchStaticLatest(), fetchTennisLatest()]);
+  const tennis = await enrichTennisMarkets(tennisBase, env.ODDS_API_KEY);
+  const alerts = buildAlerts(wnba, tennis);
+  const response = await snapshotStub(env).fetch("https://snapshot.internal/push/dispatch", {
+    method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ alerts }),
+  });
+  if (!response.ok) throw new Error(`Push dispatch returned ${response.status}`);
+  return response.json();
 }
 
 async function readSnapshot(env) {
@@ -225,6 +238,58 @@ export class LiveSnapshotStore {
 
   async fetch(request) {
     const url = new URL(request.url);
+
+    if (url.pathname === "/push/public-key" && request.method === "GET") {
+      let keys = await this.state.storage.get("push-vapid-keys");
+      if (!keys) { keys = await createVapidKeys(); await this.state.storage.put("push-vapid-keys", keys); }
+      return jsonResponse({ publicKey: keys.publicKey });
+    }
+
+    if (url.pathname === "/push/subscribe" && request.method === "POST") {
+      const subscription = await request.json();
+      if (!subscription?.endpoint || !subscription?.keys?.p256dh || !subscription?.keys?.auth) return jsonResponse({ ok: false, error: "Invalid push subscription" }, 400);
+      const subscriptions = (await this.state.storage.get("push-subscriptions")) || [];
+      if (subscriptions.length >= 25 && !subscriptions.some((item) => item.endpoint === subscription.endpoint)) return jsonResponse({ ok: false, error: "Subscription limit reached" }, 429);
+      const next = subscriptions.filter((item) => item.endpoint !== subscription.endpoint);
+      next.push(subscription); await this.state.storage.put("push-subscriptions", next);
+      return jsonResponse({ ok: true, subscribers: next.length });
+    }
+
+    if (url.pathname === "/push/unsubscribe" && request.method === "POST") {
+      const { endpoint } = await request.json();
+      const subscriptions = (await this.state.storage.get("push-subscriptions")) || [];
+      const next = subscriptions.filter((item) => item.endpoint !== endpoint);
+      await this.state.storage.put("push-subscriptions", next);
+      return jsonResponse({ ok: true, subscribers: next.length });
+    }
+
+    if (url.pathname === "/push/dispatch" && request.method === "POST") {
+      const { alerts = [] } = await request.json();
+      let subscriptions = (await this.state.storage.get("push-subscriptions")) || [];
+      const keys = await this.state.storage.get("push-vapid-keys");
+      const state = (await this.state.storage.get("push-alert-state")) || {};
+      if (!keys || !subscriptions.length || !alerts.length) return jsonResponse({ ok: true, sent: 0, subscribers: subscriptions.length, alerts: alerts.length });
+      let sent = 0; const expired = new Set();
+      for (const subscription of subscriptions) {
+        const prior = state[subscription.endpoint] || {};
+        for (const alert of alerts) {
+          const previous = Number(prior[alert.id]);
+          if (Number.isFinite(previous) && Number(alert.score) < previous + 2) continue;
+          try {
+            const response = await sendWebPush(subscription, alert, keys);
+            if (response.status === 404 || response.status === 410) { expired.add(subscription.endpoint); break; }
+            if (response.ok) { prior[alert.id] = Number(alert.score); sent += 1; }
+          } catch (error) { console.error("Push delivery failed", error); }
+        }
+        state[subscription.endpoint] = prior;
+      }
+      subscriptions = subscriptions.filter((item) => !expired.has(item.endpoint));
+      for (const endpoint of expired) delete state[endpoint];
+      await this.state.storage.put("push-subscriptions", subscriptions);
+      await this.state.storage.put("push-alert-state", state);
+      return jsonResponse({ ok: true, sent, subscribers: subscriptions.length, alerts: alerts.length });
+    }
+
     if (url.pathname !== "/value") return new Response("Not found", { status: 404 });
 
     if (request.method === "GET") {
@@ -246,9 +311,19 @@ export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
 
+    if (request.method === "OPTIONS" && url.pathname.startsWith("/push/")) {
+      return new Response(null, { status: 204, headers: { "access-control-allow-origin": "*", "access-control-allow-methods": "GET,POST,OPTIONS", "access-control-allow-headers": "content-type" } });
+    }
+
+    if (["/push/public-key", "/push/subscribe", "/push/unsubscribe"].includes(url.pathname)) {
+      const origin = request.headers.get("origin");
+      if (request.method === "POST" && origin !== "https://mvnathan.github.io") return jsonResponse({ ok: false, error: "Origin not allowed" }, 403);
+      return snapshotStub(env).fetch(new Request(`https://snapshot.internal${url.pathname}`, request));
+    }
+
     if (url.pathname === "/tennis/latest.json" || url.pathname === "/api/tennis") {
       try {
-        const data = await fetchTennisLatest();
+        const data = await enrichTennisMarkets(await fetchTennisLatest(), env.ODDS_API_KEY);
         try {
           const live = await fetchLiveScoreTennis(data.target_date);
           return jsonResponse({
@@ -366,12 +441,11 @@ export default {
   },
 
   async scheduled(controller, env, ctx) {
-    ctx.waitUntil(
-      refreshSnapshot(env).catch((error) => {
-        console.error("Scheduled live snapshot refresh failed", error);
-      }),
-    );
+    ctx.waitUntil(Promise.allSettled([
+      refreshSnapshot(env).catch((error) => console.error("Scheduled live snapshot refresh failed", error)),
+      dispatchOpportunityAlerts(env).catch((error) => console.error("Opportunity push dispatch failed", error)),
+    ]));
   },
 };
 
-export { mergeTennisScores, normalizeTennisEvent, shouldPollLive, tennisNameKey };
+export { dispatchOpportunityAlerts, mergeTennisScores, normalizeTennisEvent, shouldPollLive, tennisNameKey };

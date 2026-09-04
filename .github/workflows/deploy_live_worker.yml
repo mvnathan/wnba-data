@@ -41,6 +41,15 @@ jobs:
         run: |
           test -n "$SPORTRADAR_API_KEY"
           printf '%s' "$SPORTRADAR_API_KEY" | npx wrangler secret put SPORTRADAR_API_KEY
+      - name: Sync market odds API key
+        working-directory: worker
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
+        run: |
+          test -n "$ODDS_API_KEY"
+          printf '%s' "$ODDS_API_KEY" | npx wrangler secret put ODDS_API_KEY
       - name: Verify deployed Worker endpoints
         shell: bash
         run: |
@@ -128,4 +137,18 @@ jobs:
           if not data.get('target_date'):
               raise SystemExit(f'Tennis endpoint target date missing: {data}')
           print('Tennis prediction endpoint OK:', data)
+          PY
+
+          echo "Checking web-push registration endpoint"
+          curl --fail --silent --show-error --retry 8 --retry-delay 2 --retry-all-errors \
+            "${BASE_URL}/push/public-key?t=$(date +%s)" \
+            | tee /tmp/push-key.json
+
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          data = json.loads(Path('/tmp/push-key.json').read_text())
+          if len(data.get('publicKey', '')) != 87:
+              raise SystemExit(f'Invalid web-push public key: {data}')
+          print('Web-push registration endpoint OK')
           PY
