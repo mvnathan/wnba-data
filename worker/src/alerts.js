@@ -61,7 +61,7 @@ export async function enrichTennisMarkets(payload, apiKey) {
     return response.ok ? response.json() : [];
   }));
   const odds = results.flat();
-  return { ...payload, market_data_status: diagnostics, market_events: odds.length, matches: (payload.matches || []).map((match) => ({ ...match, ...tennisMarket(match, matchOdds(match, odds)) })) };
+  return { ...payload, market_data_status: diagnostics, market_events: odds.length, market_event_names: odds.map((game) => [game.home_team, game.away_team]), matches: (payload.matches || []).map((match) => ({ ...match, ...tennisMarket(match, matchOdds(match, odds)) })) };
 }
 
 export function buildAlerts(wnba, tennis) {
