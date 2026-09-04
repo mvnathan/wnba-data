@@ -83,6 +83,19 @@ function tennisNameKey(value) {
     .toLowerCase().replace(/[^a-z0-9]/g, "");
 }
 
+function tennisNameParts(value) {
+  return String(value || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase().replace(/[^a-z0-9 ]/g, " ").trim().split(/\s+/).filter(Boolean);
+}
+
+function tennisNamesMatch(left, right) {
+  if (tennisNameKey(left) === tennisNameKey(right)) return true;
+  const a = tennisNameParts(left);
+  const b = tennisNameParts(right);
+  if (a.length < 2 || b.length < 2) return false;
+  return a[0] === b[0] && a[a.length - 1] === b[b.length - 1];
+}
+
 function tennisStatus(event) {
   const code = String(event?.Eps || "");
   if (code === "FT") return { label: "Final", state: "post" };
@@ -158,12 +171,10 @@ async function fetchLiveScoreTennis(date) {
 function mergeTennisScores(predictions, live) {
   const events = live?.events || [];
   return (predictions || []).map((match) => {
-    const one = tennisNameKey(match.player_1);
-    const two = tennisNameKey(match.player_2);
-    let event = events.find((candidate) => tennisNameKey(candidate.player_1) === one && tennisNameKey(candidate.player_2) === two);
+    let event = events.find((candidate) => tennisNamesMatch(candidate.player_1, match.player_1) && tennisNamesMatch(candidate.player_2, match.player_2));
     let reversed = false;
     if (!event) {
-      event = events.find((candidate) => tennisNameKey(candidate.player_1) === two && tennisNameKey(candidate.player_2) === one);
+      event = events.find((candidate) => tennisNamesMatch(candidate.player_1, match.player_2) && tennisNamesMatch(candidate.player_2, match.player_1));
       reversed = Boolean(event);
     }
     if (!event) return match;
