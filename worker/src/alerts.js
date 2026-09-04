@@ -49,17 +49,19 @@ function tennisMarket(prediction, game) {
 }
 
 export async function enrichTennisMarkets(payload, apiKey) {
-  if (!apiKey) return payload;
+  if (!apiKey) return { ...payload, market_data_status: [{ status: 503, error: "ODDS_API_KEY not configured" }] };
   const sports = ["tennis_atp_us_open", "tennis_wta_us_open"];
+  const diagnostics = [];
   const results = await Promise.all(sports.map(async (sport) => {
     const url = new URL(`${ODDS_ROOT}/${sport}/odds`);
     url.searchParams.set("apiKey", apiKey); url.searchParams.set("regions", "us");
     url.searchParams.set("markets", "h2h,spreads,totals"); url.searchParams.set("oddsFormat", "decimal");
     const response = await fetch(url, { cf: { cacheTtl: 120, cacheEverything: true } });
+    diagnostics.push({ sport, status: response.status, remaining_requests: response.headers.get("x-requests-remaining") });
     return response.ok ? response.json() : [];
   }));
   const odds = results.flat();
-  return { ...payload, matches: (payload.matches || []).map((match) => ({ ...match, ...tennisMarket(match, matchOdds(match, odds)) })) };
+  return { ...payload, market_data_status: diagnostics, market_events: odds.length, matches: (payload.matches || []).map((match) => ({ ...match, ...tennisMarket(match, matchOdds(match, odds)) })) };
 }
 
 export function buildAlerts(wnba, tennis) {
