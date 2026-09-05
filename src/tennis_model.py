@@ -261,7 +261,7 @@ def train_tour(tour: str, as_of: date) -> tuple[dict[str, Any], dict[str, Player
     pred_margin = margin_model.predict(x[split:]); pred_total = total_model.predict(x_total[split:])
     prob, pred_margin, pred_total = _symmetrize_pairs(prob, pred_margin, pred_total)
     metrics = {
-        "tour": tour, "training_matches": int(len(x)), "holdout_matches": int(len(x) - split),
+        "tour": tour, "training_matches": int(len(x) // 2), "holdout_matches": int((len(x) - split) // 2),
         "holdout_start": dates[split].date().isoformat(), "holdout_end": dates[-1].date().isoformat(),
         "winner_accuracy": round(float(accuracy_score(y_win[split:], prob >= 0.5)), 4),
         "winner_auc": round(float(roc_auc_score(y_win[split:], prob)), 4),
@@ -367,6 +367,7 @@ def run_pipeline(root: Path, as_of: date | None = None) -> dict[str, Any]:
     generated = datetime.now(timezone.utc).isoformat().replace("+00:00", "Z")
     payload = {
         "generated_at_utc": generated, "target_date": as_of.isoformat(),
+        "model_version": "tennis-v2-calibrated-recency-symmetric",
         "eligibility": "At least one player ranked in the top 150",
         "training_window": f"{(as_of - timedelta(days=730)).isoformat()} through {(as_of - timedelta(days=1)).isoformat()}",
         "data_source": "TennisMyLife historical results; ESPN schedule",
