@@ -16,16 +16,43 @@ import numpy as np
 import pandas as pd
 import requests
 from sklearn.ensemble import HistGradientBoostingClassifier, HistGradientBoostingRegressor
-from sklearn.metrics import accuracy_score, log_loss, mean_absolute_error, roc_auc_score
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import accuracy_score, brier_score_loss, log_loss, mean_absolute_error, roc_auc_score
 
 
 DATA_ROOT = "https://stats.tennismylife.org/data"
 ESPN_ROOT = "https://site.api.espn.com/apis/site/v2/sports/tennis"
 FEATURES = [
     "rank_log_diff", "rank_points_diff", "elo_diff", "surface_elo_diff",
-    "win_rate_diff", "game_diff_form", "serve_form_diff", "experience_diff",
+    "win_rate_5_diff", "win_rate_20_diff", "game_form_5_diff", "game_form_20_diff",
+    "serve_form_diff", "quality_form_diff", "rest_diff", "workload_14_diff", "experience_diff",
     "surface_hard", "surface_clay", "surface_grass", "best_of_five",
 ]
+TOTAL_FEATURE_INDICES = [0, 1, 2, 3, 5, 7, 8, 12, 13, 14, 15, 16]
+
+
+@dataclass
+class CalibratedWinnerModel:
+    model: Any
+    calibrator: Any
+
+    def predict_proba(self, x: np.ndarray) -> np.ndarray:
+        raw = np.clip(self.model.predict_proba(x)[:, 1], 1e-6, 1 - 1e-6)
+        logit = np.log(raw / (1 - raw)).reshape(-1, 1)
+        calibrated = self.calibrator.predict_proba(logit)[:, 1]
+        return np.column_stack([1 - calibrated, calibrated])
+
+
+def _symmetrize_pairs(prob: np.ndarray, margin: np.ndarray, total: np.ndarray) -> tuple[np.ndarray, np.ndarray, np.ndarray]:
+    prob, margin, total = prob.copy(), margin.copy(), total.copy()
+    for i in range(0, len(prob) - 1, 2):
+        p = (prob[i] + (1 - prob[i + 1])) / 2
+        m = (margin[i] - margin[i + 1]) / 2
+        t = (total[i] + total[i + 1]) / 2
+        prob[i], prob[i + 1] = p, 1 - p
+        margin[i], margin[i + 1] = m, -m
+        total[i] = total[i + 1] = t
+    return prob, margin, total
 
 
 def _name(value: Any) -> str:
@@ -67,6 +94,8 @@ class PlayerState:
     outcomes: deque = field(default_factory=lambda: deque(maxlen=20))
     game_diffs: deque = field(default_factory=lambda: deque(maxlen=20))
     serve_points: deque = field(default_factory=lambda: deque(maxlen=20))
+    quality_results: deque = field(default_factory=lambda: deque(maxlen=20))
+    match_dates: deque = field(default_factory=lambda: deque(maxlen=30))
     matches: int = 0
     rank: float = np.nan
     rank_points: float = np.nan
@@ -75,17 +104,32 @@ class PlayerState:
     def surface_rating(self, surface: str) -> float:
         return self.surface_elo.get(surface, 1500.0)
 
-    def win_rate(self) -> float:
-        return float(np.mean(self.outcomes)) if self.outcomes else 0.5
+    def win_rate(self, window: int = 20) -> float:
+        values = list(self.outcomes)[-window:]
+        return float(np.mean(values)) if values else 0.5
 
-    def game_form(self) -> float:
-        return float(np.mean(self.game_diffs)) if self.game_diffs else 0.0
+    def game_form(self, window: int = 20) -> float:
+        values = list(self.game_diffs)[-window:]
+        return float(np.mean(values)) if values else 0.0
 
     def serve_form(self) -> float:
         return float(np.mean(self.serve_points)) if self.serve_points else 0.60
 
+    def quality_form(self) -> float:
+        return float(np.mean(self.quality_results)) if self.quality_results else 0.0
 
-def _features(a: PlayerState, b: PlayerState, surface: str, best_of: int) -> list[float]:
+    def rest_days(self, match_date: datetime | None) -> float:
+        if match_date is None or not self.match_dates:
+            return 7.0
+        return float(np.clip((match_date - self.match_dates[-1]).days, 0, 21))
+
+    def workload(self, match_date: datetime | None, days: int = 14) -> float:
+        if match_date is None:
+            return 0.0
+        return float(sum(0 <= (match_date - played).days <= days for played in self.match_dates))
+
+
+def _features(a: PlayerState, b: PlayerState, surface: str, best_of: int, match_date: datetime | None = None) -> list[float]:
     rank_a = a.rank if math.isfinite(a.rank) else 300.0
     rank_b = b.rank if math.isfinite(b.rank) else 300.0
     points_a = a.rank_points if math.isfinite(a.rank_points) else 0.0
@@ -95,9 +139,14 @@ def _features(a: PlayerState, b: PlayerState, surface: str, best_of: int) -> lis
         math.log1p(points_a) - math.log1p(points_b),
         (a.elo - b.elo) / 400.0,
         (a.surface_rating(surface) - b.surface_rating(surface)) / 400.0,
-        a.win_rate() - b.win_rate(),
-        (a.game_form() - b.game_form()) / 10.0,
+        a.win_rate(5) - b.win_rate(5),
+        a.win_rate(20) - b.win_rate(20),
+        (a.game_form(5) - b.game_form(5)) / 10.0,
+        (a.game_form(20) - b.game_form(20)) / 10.0,
         a.serve_form() - b.serve_form(),
+        a.quality_form() - b.quality_form(),
+        (a.rest_days(match_date) - b.rest_days(match_date)) / 21.0,
+        (a.workload(match_date) - b.workload(match_date)) / 6.0,
         math.log1p(a.matches) - math.log1p(b.matches),
         float(surface == "Hard"), float(surface == "Clay"), float(surface == "Grass"),
         float(best_of == 5),
@@ -162,14 +211,21 @@ def build_training(data: pd.DataFrame) -> tuple[np.ndarray, np.ndarray, np.ndarr
         best_of = int(_number(row.get("best_of"), 3))
         flip = ((i + int(_number(row.get("match_num"), 0))) % 2) == 1
         a, b = (l, w) if flip else (w, l)
-        x_rows.append(_features(a, b, surface, best_of))
-        y_win.append(0 if flip else 1)
-        y_margin.append(float(-(wg - lg) if flip else (wg - lg)))
-        y_total.append(float(wg + lg))
-        dates.append(row.match_date.to_pydatetime())
+        played_at = row.match_date.to_pydatetime()
+        feature_row = _features(a, b, surface, best_of, played_at)
+        label = 0 if flip else 1
+        margin = float(-(wg - lg) if flip else (wg - lg))
+        x_rows.extend([feature_row, _features(b, a, surface, best_of, played_at)])
+        y_win.extend([label, 1 - label])
+        y_margin.extend([margin, -margin])
+        y_total.extend([float(wg + lg), float(wg + lg)])
+        dates.extend([played_at, played_at])
+        expected = 1 / (1 + 10 ** ((l.elo - w.elo) / 400))
         w.outcomes.append(1); l.outcomes.append(0)
         w.game_diffs.append(wg - lg); l.game_diffs.append(lg - wg)
         w.serve_points.append(_serve_rate(row, "w")); l.serve_points.append(_serve_rate(row, "l"))
+        w.quality_results.append(1 - expected); l.quality_results.append(-(1 - expected))
+        w.match_dates.append(played_at); l.match_dates.append(played_at)
         w.matches += 1; l.matches += 1
         _update_elo(w, l, surface)
     return np.asarray(x_rows), np.asarray(y_win), np.asarray(y_margin), np.asarray(y_total), dates, states
@@ -180,25 +236,46 @@ def train_tour(tour: str, as_of: date) -> tuple[dict[str, Any], dict[str, Player
     x, y_win, y_margin, y_total, dates, states = build_training(data)
     if len(x) < 300:
         raise RuntimeError(f"Insufficient {tour} training data: {len(x)} matches")
-    split = max(1, int(len(x) * 0.80))
+    split = max(2, (int(len(x) * 0.80) // 2) * 2)
+    calibration_split = max(2, (int(split * 0.875) // 2) * 2)
+    newest = max(dates)
+    age_days = np.asarray([(newest - played).days for played in dates], dtype=float)
+    sample_weight = np.power(0.5, age_days / 180.0)
+    sample_weight = np.clip(sample_weight, 0.12, 1.0)
+    x_total = x[:, TOTAL_FEATURE_INDICES]
     classifier = HistGradientBoostingClassifier(max_iter=180, learning_rate=0.055, max_leaf_nodes=15, l2_regularization=1.0, random_state=42)
     margin_model = HistGradientBoostingRegressor(loss="absolute_error", max_iter=180, learning_rate=0.055, max_leaf_nodes=15, l2_regularization=1.0, random_state=43)
     total_model = HistGradientBoostingRegressor(loss="absolute_error", max_iter=180, learning_rate=0.055, max_leaf_nodes=15, l2_regularization=1.0, random_state=44)
-    classifier.fit(x[:split], y_win[:split]); margin_model.fit(x[:split], y_margin[:split]); total_model.fit(x[:split], y_total[:split])
-    prob = classifier.predict_proba(x[split:])[:, 1]
-    pred_margin = margin_model.predict(x[split:]); pred_total = total_model.predict(x[split:])
+    classifier.fit(x[:calibration_split], y_win[:calibration_split], sample_weight=sample_weight[:calibration_split])
+    calibration_raw = np.clip(classifier.predict_proba(x[calibration_split:split])[:, 1], 1e-6, 1 - 1e-6)
+    calibrator = LogisticRegression(C=1.0, random_state=45).fit(
+        np.log(calibration_raw / (1 - calibration_raw)).reshape(-1, 1), y_win[calibration_split:split],
+        sample_weight=sample_weight[calibration_split:split],
+    )
+    calibrated_classifier = CalibratedWinnerModel(classifier, calibrator)
+    margin_model.fit(x[:split], y_margin[:split], sample_weight=sample_weight[:split])
+    # Total length is structurally steadier than winner strength, so retain the
+    # stable long-window feature subset instead of forcing short-term form into it.
+    total_model.fit(x_total[:split], y_total[:split])
+    prob = calibrated_classifier.predict_proba(x[split:])[:, 1]
+    pred_margin = margin_model.predict(x[split:]); pred_total = total_model.predict(x_total[split:])
+    prob, pred_margin, pred_total = _symmetrize_pairs(prob, pred_margin, pred_total)
     metrics = {
         "tour": tour, "training_matches": int(len(x)), "holdout_matches": int(len(x) - split),
         "holdout_start": dates[split].date().isoformat(), "holdout_end": dates[-1].date().isoformat(),
         "winner_accuracy": round(float(accuracy_score(y_win[split:], prob >= 0.5)), 4),
         "winner_auc": round(float(roc_auc_score(y_win[split:], prob)), 4),
         "winner_log_loss": round(float(log_loss(y_win[split:], prob)), 4),
+        "winner_brier_score": round(float(brier_score_loss(y_win[split:], prob)), 4),
         "spread_mae_games": round(float(mean_absolute_error(y_margin[split:], pred_margin)), 3),
         "total_mae_games": round(float(mean_absolute_error(y_total[split:], pred_total)), 3),
     }
     # Production fits use every chronologically eligible match after honest holdout scoring.
-    classifier.fit(x, y_win); margin_model.fit(x, y_margin); total_model.fit(x, y_total)
-    return {"winner": classifier, "margin": margin_model, "total": total_model, "features": FEATURES}, states, metrics
+    classifier.fit(x, y_win, sample_weight=sample_weight)
+    margin_model.fit(x, y_margin, sample_weight=sample_weight)
+    total_model.fit(x_total, y_total)
+    production_classifier = CalibratedWinnerModel(classifier, calibrator)
+    return {"winner": production_classifier, "margin": margin_model, "total": total_model, "features": FEATURES, "total_feature_indices": TOTAL_FEATURE_INDICES}, states, metrics
 
 
 def fetch_schedule(as_of: date) -> list[dict[str, Any]]:
@@ -251,11 +328,17 @@ def predict_schedule(schedule: list[dict[str, Any]], bundles: dict[str, dict[str
         eligible = (rank_a is not None and rank_a <= 150) or (rank_b is not None and rank_b <= 150)
         if not eligible:
             continue
-        x = np.asarray([_features(a, b, match["surface"], match["best_of"])])
+        match_date = datetime.fromisoformat(match["start_time_utc"].replace("Z", "+00:00")).replace(tzinfo=None)
+        x = np.asarray([_features(a, b, match["surface"], match["best_of"], match_date)])
+        reverse_x = np.asarray([_features(b, a, match["surface"], match["best_of"], match_date)])
         bundle = bundles[tour]
-        p1 = float(bundle["winner"].predict_proba(x)[0, 1])
-        margin = float(bundle["margin"].predict(x)[0])
-        total = max(12.0, float(bundle["total"].predict(x)[0]))
+        p_forward = float(bundle["winner"].predict_proba(x)[0, 1])
+        p_reverse = float(bundle["winner"].predict_proba(reverse_x)[0, 1])
+        p1 = (p_forward + 1 - p_reverse) / 2
+        margin = (float(bundle["margin"].predict(x)[0]) - float(bundle["margin"].predict(reverse_x)[0])) / 2
+        total_x = x[:, bundle.get("total_feature_indices", list(range(x.shape[1])))]
+        reverse_total_x = reverse_x[:, bundle.get("total_feature_indices", list(range(reverse_x.shape[1])))]
+        total = max(12.0, (float(bundle["total"].predict(total_x)[0]) + float(bundle["total"].predict(reverse_total_x)[0])) / 2)
         match.update({
             "player_1_rank": rank_a, "player_2_rank": rank_b,
             "player_1_win_probability": round(p1, 4), "player_2_win_probability": round(1 - p1, 4),
