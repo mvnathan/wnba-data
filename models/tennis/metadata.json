@@ -1,29 +1,31 @@
 {
-  "generated_at_utc": "2026-09-04T22:13:37.648202Z",
+  "generated_at_utc": "2026-09-05T01:26:32.233806Z",
   "metrics": [
     {
       "tour": "ATP",
-      "training_matches": 5103,
-      "holdout_matches": 1021,
+      "training_matches": 10206,
+      "holdout_matches": 2042,
       "holdout_start": "2026-04-17",
       "holdout_end": "2026-08-30",
-      "winner_accuracy": 0.6024,
-      "winner_auc": 0.6755,
-      "winner_log_loss": 0.6724,
-      "spread_mae_games": 4.365,
-      "total_mae_games": 5.72
+      "winner_accuracy": 0.6386,
+      "winner_auc": 0.6933,
+      "winner_log_loss": 0.6345,
+      "winner_brier_score": 0.2219,
+      "spread_mae_games": 4.229,
+      "total_mae_games": 5.734
     },
     {
       "tour": "WTA",
-      "training_matches": 4626,
-      "holdout_matches": 926,
+      "training_matches": 9252,
+      "holdout_matches": 1852,
       "holdout_start": "2026-04-13",
       "holdout_end": "2026-08-24",
-      "winner_accuracy": 0.6458,
-      "winner_auc": 0.701,
-      "winner_log_loss": 0.6422,
-      "spread_mae_games": 4.439,
-      "total_mae_games": 4.646
+      "winner_accuracy": 0.6533,
+      "winner_auc": 0.7347,
+      "winner_log_loss": 0.6,
+      "winner_brier_score": 0.2074,
+      "spread_mae_games": 4.25,
+      "total_mae_games": 4.619
     }
   ],
   "features": [
@@ -31,9 +33,14 @@
     "rank_points_diff",
     "elo_diff",
     "surface_elo_diff",
-    "win_rate_diff",
-    "game_diff_form",
+    "win_rate_5_diff",
+    "win_rate_20_diff",
+    "game_form_5_diff",
+    "game_form_20_diff",
     "serve_form_diff",
+    "quality_form_diff",
+    "rest_diff",
+    "workload_14_diff",
     "experience_diff",
     "surface_hard",
     "surface_clay",
