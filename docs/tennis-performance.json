@@ -1,16 +1,16 @@
 {
-  "generated_at_utc": "2026-09-09T16:27:09.976925Z",
+  "generated_at_utc": "2026-09-09T18:55:21.900670Z",
   "method": "Earliest committed pre-match forecast joined to ESPN final scores by match ID",
   "summary": {
-    "matches_evaluated": 80,
-    "winner_accuracy": 0.675,
-    "winner_auc": 0.7680703959773726,
-    "winner_log_loss": 0.5807283430027514,
-    "winner_brier_score": 0.196715901875,
-    "spread_mae_games": 4.6362499999999995,
-    "spread_bias_games": -0.45375000000000015,
-    "total_mae_games": 6.46625,
-    "total_bias_games": -3.43125
+    "matches_evaluated": 81,
+    "winner_accuracy": 0.6790123456790124,
+    "winner_auc": 0.773561811505508,
+    "winner_log_loss": 0.5751567035513651,
+    "winner_brier_score": 0.19446926061728392,
+    "spread_mae_games": 4.611111111111111,
+    "spread_bias_games": -0.48024691358024707,
+    "total_mae_games": 6.493827160493828,
+    "total_bias_games": -3.496296296296296
   },
   "by_tour": {
     "ATP": {
@@ -25,15 +25,15 @@
       "total_bias_games": -3.791891891891892
     },
     "WTA": {
-      "matches_evaluated": 43,
-      "winner_accuracy": 0.6976744186046512,
-      "winner_auc": 0.7916666666666666,
-      "winner_log_loss": 0.535605310074302,
-      "winner_brier_score": 0.17905907093023254,
-      "spread_mae_games": 3.799999999999999,
-      "spread_bias_games": 0.46976744186046504,
-      "total_mae_games": 5.516279069767442,
-      "total_bias_games": -3.12093023255814
+      "matches_evaluated": 44,
+      "winner_accuracy": 0.7045454545454546,
+      "winner_auc": 0.8020833333333334,
+      "winner_log_loss": 0.5263739518326237,
+      "winner_brier_score": 0.17532450022727272,
+      "spread_mae_games": 3.7727272727272716,
+      "spread_bias_games": 0.39999999999999986,
+      "total_mae_games": 5.588636363636364,
+      "total_bias_games": -3.247727272727273
     }
   },
   "by_day": [
@@ -108,6 +108,18 @@
       "spread_bias_games": 3.6100000000000003,
       "total_mae_games": 6.57,
       "total_bias_games": -1.3899999999999995
+    },
+    {
+      "date": "2026-09-09",
+      "matches_evaluated": 1,
+      "winner_accuracy": 1.0,
+      "winner_auc": null,
+      "winner_log_loss": 0.1294255474404578,
+      "winner_brier_score": 0.014737959999999994,
+      "spread_mae_games": 2.5999999999999996,
+      "spread_bias_games": -2.5999999999999996,
+      "total_mae_games": 8.7,
+      "total_bias_games": -8.7
     }
   ],
   "matches": [
@@ -2830,6 +2842,40 @@
       "absolute_margin_error": 5.1,
       "total_error": 4.600000000000001,
       "absolute_total_error": 4.600000000000001
+    },
+    {
+      "match_id": "182576",
+      "target_date": "2026-09-09",
+      "start_time_utc": "2026-09-09T15:30Z",
+      "tour": "WTA",
+      "tournament": "US Open",
+      "round": "Quarterfinal",
+      "player_1": "Zheng Qinwen",
+      "player_2": "Elena Rybakina",
+      "player_1_rank": null,
+      "player_2_rank": 2,
+      "model_version": "tennis-v3-tournament-context",
+      "prediction_issued_at": "2026-09-09T12:41:27.161412+00:00",
+      "prediction_commit": "0b4c4b6a",
+      "player_1_win_probability": 0.1214,
+      "predicted_winner": "Elena Rybakina",
+      "predicted_game_margin_player_1": -6.6,
+      "predicted_total_games": 17.3,
+      "actual_player_1": "Zheng Qinwen",
+      "actual_player_2": "Elena Rybakina",
+      "actual_player_1_games": 11.0,
+      "actual_player_2_games": 15.0,
+      "actual_margin_player_1": -4.0,
+      "actual_total_games": 26.0,
+      "actual_winner_player_1": false,
+      "final_status": "Final",
+      "winner_correct": true,
+      "brier_score": 0.014737959999999998,
+      "log_loss": 0.1294255474404578,
+      "margin_error": -2.5999999999999996,
+      "absolute_margin_error": 2.5999999999999996,
+      "total_error": -8.7,
+      "absolute_total_error": 8.7
     }
   ]
 }
