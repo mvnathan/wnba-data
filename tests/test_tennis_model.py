@@ -16,7 +16,7 @@ def test_names_are_stable_across_accents_and_punctuation():
 
 def test_feature_vector_is_complete():
     states = defaultdict(PlayerState)
-    assert len(_features(states["a"], states["b"], "Hard", 5)) == 17
+    assert len(_features(states["a"], states["b"], "Hard", 5)) == 19
 
 
 def test_player_difference_features_are_antisymmetric():
@@ -25,4 +25,4 @@ def test_player_difference_features_are_antisymmetric():
     states["b"].elo = 1450
     forward = _features(states["a"], states["b"], "Hard", 3)
     reverse = _features(states["b"], states["a"], "Hard", 3)
-    assert all(abs(a + b) < 1e-12 for a, b in zip(forward[:-4], reverse[:-4]))
+    assert all(abs(a + b) < 1e-12 for a, b in zip(forward[:-6], reverse[:-6]))

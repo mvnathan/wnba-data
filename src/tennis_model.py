@@ -26,9 +26,9 @@ FEATURES = [
     "rank_log_diff", "rank_points_diff", "elo_diff", "surface_elo_diff",
     "win_rate_5_diff", "win_rate_20_diff", "game_form_5_diff", "game_form_20_diff",
     "serve_form_diff", "quality_form_diff", "rest_diff", "workload_14_diff", "experience_diff",
-    "surface_hard", "surface_clay", "surface_grass", "best_of_five",
+    "surface_hard", "surface_clay", "surface_grass", "best_of_five", "grand_slam", "round_progress",
 ]
-TOTAL_FEATURE_INDICES = [0, 1, 2, 3, 5, 7, 8, 12, 13, 14, 15, 16]
+TOTAL_FEATURE_INDICES = [0, 1, 2, 3, 5, 7, 8, 12, 13, 14, 15, 16, 17, 18]
 
 
 @dataclass
@@ -129,7 +129,24 @@ class PlayerState:
         return float(sum(0 <= (match_date - played).days <= days for played in self.match_dates))
 
 
-def _features(a: PlayerState, b: PlayerState, surface: str, best_of: int, match_date: datetime | None = None) -> list[float]:
+def _round_progress(value: Any) -> float:
+    key = re.sub(r"[^a-z0-9]", "", str(value or "").lower())
+    mapping = {
+        "r128": 0.0, "roundof128": 0.0, "firstround": 0.0,
+        "r64": 1 / 6, "roundof64": 1 / 6, "secondround": 1 / 6,
+        "r32": 2 / 6, "roundof32": 2 / 6, "thirdround": 2 / 6,
+        "r16": 3 / 6, "roundof16": 3 / 6, "fourthround": 3 / 6,
+        "qf": 4 / 6, "quarterfinal": 4 / 6, "quarterfinals": 4 / 6,
+        "sf": 5 / 6, "semifinal": 5 / 6, "semifinals": 5 / 6,
+        "f": 1.0, "final": 1.0,
+    }
+    return mapping.get(key, 0.25)
+
+
+def _features(
+    a: PlayerState, b: PlayerState, surface: str, best_of: int,
+    match_date: datetime | None = None, major: bool = False, round_name: Any = None,
+) -> list[float]:
     rank_a = a.rank if math.isfinite(a.rank) else 300.0
     rank_b = b.rank if math.isfinite(b.rank) else 300.0
     points_a = a.rank_points if math.isfinite(a.rank_points) else 0.0
@@ -150,6 +167,7 @@ def _features(a: PlayerState, b: PlayerState, surface: str, best_of: int, match_
         math.log1p(a.matches) - math.log1p(b.matches),
         float(surface == "Hard"), float(surface == "Clay"), float(surface == "Grass"),
         float(best_of == 5),
+        float(major), _round_progress(round_name),
     ]
 
 
@@ -212,10 +230,12 @@ def build_training(data: pd.DataFrame) -> tuple[np.ndarray, np.ndarray, np.ndarr
         flip = ((i + int(_number(row.get("match_num"), 0))) % 2) == 1
         a, b = (l, w) if flip else (w, l)
         played_at = row.match_date.to_pydatetime()
-        feature_row = _features(a, b, surface, best_of, played_at)
+        major = str(row.get("tourney_level") or "").upper() == "G"
+        round_name = row.get("round")
+        feature_row = _features(a, b, surface, best_of, played_at, major, round_name)
         label = 0 if flip else 1
         margin = float(-(wg - lg) if flip else (wg - lg))
-        x_rows.extend([feature_row, _features(b, a, surface, best_of, played_at)])
+        x_rows.extend([feature_row, _features(b, a, surface, best_of, played_at, major, round_name)])
         y_win.extend([label, 1 - label])
         y_margin.extend([margin, -margin])
         y_total.extend([float(wg + lg), float(wg + lg)])
@@ -301,7 +321,7 @@ def fetch_schedule(as_of: date) -> list[dict[str, Any]]:
                     seen.add(comp.get("id"))
                     players = sorted(competitors, key=lambda c: c.get("order", 99))
                     matches.append({
-                        "match_id": str(comp.get("id")), "tour": tour,
+                        "match_id": str(comp.get("id")), "tour": tour, "major": bool(event.get("major")),
                         "tournament": event.get("name"), "round": (comp.get("round") or {}).get("displayName"),
                         "start_time_utc": start_text, "status": ((comp.get("status") or {}).get("type") or {}).get("description"),
                         "status_state": ((comp.get("status") or {}).get("type") or {}).get("state"),
@@ -329,8 +349,8 @@ def predict_schedule(schedule: list[dict[str, Any]], bundles: dict[str, dict[str
         if not eligible:
             continue
         match_date = datetime.fromisoformat(match["start_time_utc"].replace("Z", "+00:00")).replace(tzinfo=None)
-        x = np.asarray([_features(a, b, match["surface"], match["best_of"], match_date)])
-        reverse_x = np.asarray([_features(b, a, match["surface"], match["best_of"], match_date)])
+        x = np.asarray([_features(a, b, match["surface"], match["best_of"], match_date, match.get("major", False), match.get("round"))])
+        reverse_x = np.asarray([_features(b, a, match["surface"], match["best_of"], match_date, match.get("major", False), match.get("round"))])
         bundle = bundles[tour]
         p_forward = float(bundle["winner"].predict_proba(x)[0, 1])
         p_reverse = float(bundle["winner"].predict_proba(reverse_x)[0, 1])
@@ -367,7 +387,7 @@ def run_pipeline(root: Path, as_of: date | None = None) -> dict[str, Any]:
     generated = datetime.now(timezone.utc).isoformat().replace("+00:00", "Z")
     payload = {
         "generated_at_utc": generated, "target_date": as_of.isoformat(),
-        "model_version": "tennis-v2-calibrated-recency-symmetric",
+        "model_version": "tennis-v3-tournament-context",
         "eligibility": "At least one player ranked in the top 150",
         "training_window": f"{(as_of - timedelta(days=730)).isoformat()} through {(as_of - timedelta(days=1)).isoformat()}",
         "data_source": "TennisMyLife historical results; ESPN schedule",

@@ -11,9 +11,10 @@
 <header><div class="head"><div class="topline"><a class="back" href="index.html">← Model hub</a><span class="sub">Independent forecast</span></div><h1>ATP + WTA Decision Dashboard</h1><div class="sub">Live scores · winner · game spread · total games · top-150 eligible matches</div></div><nav class="tabs"><button class="tab active" data-tab="today">Today</button><button class="tab" data-tab="performance">Performance</button><button class="tab" data-tab="method">Method</button></nav></header>
 <main>
 <section id="today" class="panel active"><div id="status" class="status">Loading today’s matches…</div><div class="filterrow"><button class="chip active" data-tour="ALL">All</button><button class="chip" data-tour="LIVE">Live</button><button class="chip" data-tour="ATP">ATP</button><button class="chip" data-tour="WTA">WTA</button></div><div id="games"></div></section>
-<section id="performance" class="panel"><div class="section"><h2>Chronological holdout performance</h2><div id="metrics" class="metrics"></div><div class="foot">Performance is measured on the newest 20% of historical matches after training on the earlier 80%. Spread error is measured against final game differential; total error is measured against total games played.</div></div></section>
+<section id="performance" class="panel"><div class="section"><h2>Issued-prediction performance</h2><div class="foot" style="margin-top:0">Move from one settled match through the complete production history. These graphs evaluate forecasts actually published before match start.</div><div id="tennis-performance-explorer"></div></div><div class="section"><h2>Chronological model backtest</h2><div id="metrics" class="metrics"></div><div class="foot">The backtest uses the newest 20% of historical matches as an untouched holdout. It is separate from the live production record above.</div></div></section>
 <section id="method" class="panel"><div class="section"><h2>Model and score delivery</h2><div class="foot" style="font-size:.78rem">Separate ATP and WTA models use the most recent 730 days of eligible matches. LiveScore supplies the near-real-time scoring overlay through Cloudflare; pregame predictions remain available if that overlay is temporarily unavailable. The page refreshes every 15 seconds.</div><div class="foot">The spread is Player 1 games minus Player 2 games. Positive values favor Player 1; negative values favor Player 2. Predictions are estimates, not guarantees.</div></div></section>
 </main>
+<script src="performance-charts.js"></script>
 <script>
 const API='https://wnba-live-dashboard.mvnathan.workers.dev/api/tennis';
 const N=(v,d=1)=>v===null||v===undefined||Number.isNaN(Number(v))?'—':Number(v).toFixed(d);
@@ -48,7 +49,7 @@ function render(){
 async function refresh(){try{const response=await fetch(API+'?t='+Date.now(),{cache:'no-store'});if(!response.ok)throw Error('score feed unavailable');data=await response.json();render()}catch(error){if(!data.matches?.length){const response=await fetch('tennis-latest.json?t='+Date.now(),{cache:'no-store'});data=await response.json();render()}}}
 document.querySelectorAll('.chip').forEach(button=>button.onclick=()=>{filter=button.dataset.tour;document.querySelectorAll('.chip').forEach(x=>x.classList.toggle('active',x===button));render()});
 document.querySelectorAll('.tab').forEach(button=>button.onclick=()=>{document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('active',x===button));document.querySelectorAll('.panel').forEach(x=>x.classList.toggle('active',x.id===button.dataset.tab))});
-refresh();setInterval(refresh,15000);
+refresh();setInterval(refresh,15000);mountPerformanceExplorer({rootId:'tennis-performance-explorer',url:'tennis-performance.json',sport:'tennis'});
 </script>
 <script src="push.js"></script>
 </body></html>
