@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-09-10T16:17:02.493944Z",
+  "generated_at_utc": "2026-09-10T18:47:43.723835Z",
   "target_date": "2026-09-10",
   "model_version": "tennis-v3-tournament-context",
   "eligibility": "At least one player ranked in the top 150",
@@ -157,7 +157,7 @@
       "major": false,
       "tournament": "Montreux Nestl\u00e9 Open",
       "round": "Round 2",
-      "start_time_utc": "2026-09-10T16:30Z",
+      "start_time_utc": "2026-09-10T18:50Z",
       "status": "Scheduled",
       "status_state": "pre",
       "court": "Center Court",
