@@ -1,5 +1,5 @@
 {
-  "trained_at_utc": "2026-09-07T15:54:23.288145+00:00",
+  "trained_at_utc": "2026-09-14T16:32:07.928060+00:00",
   "trainer_version": 2,
   "validation": "walk_forward_time_series",
   "max_walk_forward_splits": 5,
