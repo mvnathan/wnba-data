@@ -1,16 +1,16 @@
 {
-  "generated_at_utc": "2026-09-14T18:01:30.304903Z",
+  "generated_at_utc": "2026-09-14T20:00:58.087572Z",
   "method": "Earliest committed pre-match forecast joined to ESPN final scores by match ID",
   "summary": {
-    "matches_evaluated": 105,
-    "winner_accuracy": 0.7047619047619048,
-    "winner_auc": 0.7814327485380116,
-    "winner_log_loss": 0.5712303219284757,
-    "winner_brier_score": 0.19235612476190478,
-    "spread_mae_games": 4.417142857142856,
-    "spread_bias_games": -0.2704761904761906,
-    "total_mae_games": 6.153333333333332,
-    "total_bias_games": -3.3742857142857146
+    "matches_evaluated": 106,
+    "winner_accuracy": 0.6981132075471698,
+    "winner_auc": 0.7776584317937701,
+    "winner_log_loss": 0.5739648714518806,
+    "winner_brier_score": 0.19368555084905661,
+    "spread_mae_games": 4.494339622641509,
+    "spread_bias_games": -0.14905660377358504,
+    "total_mae_games": 6.148113207547169,
+    "total_bias_games": -3.289622641509434
   },
   "by_tour": {
     "ATP": {
@@ -25,15 +25,15 @@
       "total_bias_games": -3.325
     },
     "WTA": {
-      "matches_evaluated": 65,
-      "winner_accuracy": 0.7230769230769231,
-      "winner_auc": 0.8066666666666666,
-      "winner_log_loss": 0.5384691582379589,
-      "winner_brier_score": 0.17939474369230768,
-      "spread_mae_games": 3.736923076923077,
-      "spread_bias_games": 0.6384615384615384,
-      "total_mae_games": 5.349230769230769,
-      "total_bias_games": -3.4046153846153846
+      "matches_evaluated": 66,
+      "winner_accuracy": 0.7121212121212122,
+      "winner_auc": 0.8027649769585254,
+      "winner_log_loss": 0.5433573917708595,
+      "winner_brier_score": 0.1817262671212121,
+      "spread_mae_games": 3.871212121212121,
+      "spread_bias_games": 0.8196969696969697,
+      "total_mae_games": 5.3530303030303035,
+      "total_bias_games": -3.2681818181818185
     }
   },
   "by_day": [
@@ -156,6 +156,18 @@
       "spread_bias_games": -0.6499999999999999,
       "total_mae_games": 4.933333333333334,
       "total_bias_games": -3.366666666666667
+    },
+    {
+      "date": "2026-09-14",
+      "matches_evaluated": 1,
+      "winner_accuracy": 0.0,
+      "winner_auc": null,
+      "winner_log_loss": 0.8610925714093929,
+      "winner_brier_score": 0.33327529000000006,
+      "spread_mae_games": 12.6,
+      "spread_bias_games": 12.6,
+      "total_mae_games": 5.600000000000001,
+      "total_bias_games": 5.600000000000001
     }
   ],
   "matches": [
@@ -3728,6 +3740,40 @@
       "absolute_margin_error": 1.4,
       "total_error": 1.3000000000000007,
       "absolute_total_error": 1.3000000000000007
+    },
+    {
+      "match_id": "183702",
+      "target_date": "2026-09-14",
+      "start_time_utc": "2026-09-14T18:30Z",
+      "tour": "WTA",
+      "tournament": "Caldas da Rainha Ladies Open",
+      "round": "Round 1",
+      "player_1": "Sinja Kraus",
+      "player_2": "Mia Pohankova",
+      "player_1_rank": 90,
+      "player_2_rank": 253,
+      "model_version": "tennis-v3-tournament-context",
+      "prediction_issued_at": "2026-09-14T18:01:25.190209+00:00",
+      "prediction_commit": "5d9e09ee",
+      "player_1_win_probability": 0.5773,
+      "predicted_winner": "Sinja Kraus",
+      "predicted_game_margin_player_1": 2.6,
+      "predicted_total_games": 19.6,
+      "actual_player_1": "Sinja Kraus",
+      "actual_player_2": "Mia Pohankova",
+      "actual_player_1_games": 2.0,
+      "actual_player_2_games": 12.0,
+      "actual_margin_player_1": -10.0,
+      "actual_total_games": 14.0,
+      "actual_winner_player_1": false,
+      "final_status": "Final",
+      "winner_correct": false,
+      "brier_score": 0.33327529000000006,
+      "log_loss": 0.8610925714093929,
+      "margin_error": 12.6,
+      "absolute_margin_error": 12.6,
+      "total_error": 5.600000000000001,
+      "absolute_total_error": 5.600000000000001
     }
   ]
 }
