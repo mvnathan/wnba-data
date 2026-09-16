@@ -1,18 +1,18 @@
 {
-  "generated_at_utc": "2026-09-15T19:21:06.024531Z",
+  "generated_at_utc": "2026-09-16T16:40:53.571710Z",
   "metrics": [
     {
       "tour": "ATP",
-      "training_matches": 5050,
-      "holdout_matches": 1010,
+      "training_matches": 5042,
+      "holdout_matches": 1009,
       "holdout_start": "2026-04-22",
       "holdout_end": "2026-08-30",
-      "winner_accuracy": 0.6356,
-      "winner_auc": 0.6879,
-      "winner_log_loss": 0.6377,
-      "winner_brier_score": 0.2234,
-      "spread_mae_games": 4.246,
-      "total_mae_games": 5.775
+      "winner_accuracy": 0.6442,
+      "winner_auc": 0.6899,
+      "winner_log_loss": 0.6365,
+      "winner_brier_score": 0.2229,
+      "spread_mae_games": 4.234,
+      "total_mae_games": 5.777
     },
     {
       "tour": "WTA",
