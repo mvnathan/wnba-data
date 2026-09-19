@@ -1,16 +1,16 @@
 {
-  "generated_at_utc": "2026-09-19T08:49:20.308033Z",
+  "generated_at_utc": "2026-09-19T15:54:10.270115Z",
   "method": "Earliest committed pre-match forecast joined to ESPN final scores by match ID",
   "summary": {
-    "matches_evaluated": 148,
-    "winner_accuracy": 0.7027027027027027,
-    "winner_auc": 0.7802448830409358,
-    "winner_log_loss": 0.5685540050853515,
-    "winner_brier_score": 0.19128316702702702,
-    "spread_mae_games": 4.393918918918919,
-    "spread_bias_games": 0.09662162162162151,
-    "total_mae_games": 5.903378378378378,
-    "total_bias_games": -2.6966216216216212
+    "matches_evaluated": 149,
+    "winner_accuracy": 0.7046979865771812,
+    "winner_auc": 0.7816330209084356,
+    "winner_log_loss": 0.5679227278332256,
+    "winner_brier_score": 0.19095732590604028,
+    "spread_mae_games": 4.37248322147651,
+    "spread_bias_games": 0.1040268456375838,
+    "total_mae_games": 5.945637583892617,
+    "total_bias_games": -2.760402684563758
   },
   "by_tour": {
     "ATP": {
@@ -25,15 +25,15 @@
       "total_bias_games": -3.325
     },
     "WTA": {
-      "matches_evaluated": 108,
-      "winner_accuracy": 0.7129629629629629,
-      "winner_auc": 0.801896551724138,
-      "winner_log_loss": 0.5478454095889761,
-      "winner_brier_score": 0.18308494407407408,
-      "spread_mae_games": 3.975925925925926,
-      "spread_bias_games": 0.7796296296296296,
-      "total_mae_games": 5.326851851851853,
-      "total_bias_games": -2.463888888888889
+      "matches_evaluated": 109,
+      "winner_accuracy": 0.7155963302752294,
+      "winner_auc": 0.8034144692359704,
+      "winner_log_loss": 0.5471724580745689,
+      "winner_brier_score": 0.18271474128440368,
+      "spread_mae_games": 3.95045871559633,
+      "spread_bias_games": 0.78348623853211,
+      "total_mae_games": 5.389908256880735,
+      "total_bias_games": -2.553211009174312
     }
   },
   "by_day": [
@@ -219,15 +219,15 @@
     },
     {
       "date": "2026-09-19",
-      "matches_evaluated": 2,
-      "winner_accuracy": 0.5,
-      "winner_auc": 0.0,
-      "winner_log_loss": 0.7225167695016791,
-      "winner_brier_score": 0.26426905,
-      "spread_mae_games": 6.4,
-      "spread_bias_games": 0.6999999999999997,
-      "total_mae_games": 2.799999999999999,
-      "total_bias_games": 2.4000000000000004
+      "matches_evaluated": 3,
+      "winner_accuracy": 0.6666666666666666,
+      "winner_auc": 0.5,
+      "winner_log_loss": 0.6398424111739861,
+      "winner_brier_score": 0.22375698000000002,
+      "spread_mae_games": 4.666666666666667,
+      "spread_bias_games": 0.8666666666666663,
+      "total_mae_games": 5.933333333333333,
+      "total_bias_games": -2.4666666666666663
     }
   ],
   "matches": [
@@ -5228,6 +5228,40 @@
       "absolute_margin_error": 7.1,
       "total_error": -0.3999999999999986,
       "absolute_total_error": 0.3999999999999986
+    },
+    {
+      "match_id": "186065",
+      "target_date": "2026-09-19",
+      "start_time_utc": "2026-09-19T05:00Z",
+      "tour": "WTA",
+      "tournament": "Korea Open",
+      "round": "Qualifying 1st Round",
+      "player_1": "Tamara Zidansek",
+      "player_2": "Boyoung Jeong",
+      "player_1_rank": 146,
+      "player_2_rank": null,
+      "model_version": "tennis-v3-tournament-context",
+      "prediction_issued_at": "2026-09-19T00:32:16.839282+00:00",
+      "prediction_commit": "c5147e26",
+      "player_1_win_probability": 0.6222,
+      "predicted_winner": "Tamara Zidansek",
+      "predicted_game_margin_player_1": 1.2,
+      "predicted_total_games": 19.8,
+      "actual_player_1": "Miho Kuramochi",
+      "actual_player_2": "Boyoung Jeong",
+      "actual_player_1_games": 16.0,
+      "actual_player_2_games": 16.0,
+      "actual_margin_player_1": 0.0,
+      "actual_total_games": 32.0,
+      "actual_winner_player_1": true,
+      "final_status": "Final",
+      "winner_correct": true,
+      "brier_score": 0.14273284000000003,
+      "log_loss": 0.47449369451860046,
+      "margin_error": 1.2,
+      "absolute_margin_error": 1.2,
+      "total_error": -12.2,
+      "absolute_total_error": 12.2
     },
     {
       "match_id": "186081",
