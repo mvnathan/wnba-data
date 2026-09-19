@@ -8,7 +8,7 @@ on:
       - '.github/workflows/pregame_predictions.yml'
       - 'src/predict_pregame.py'
   schedule:
-    - cron: '12 14 * * *'
+    - cron: '12 14,18,22 * * *'
 
 # Manual repaired consensus refresh trigger: 2026-08-30T22:16Z
 
@@ -62,14 +62,16 @@ jobs:
           if not isinstance(games, list): raise SystemExit('games must be a list in predictions/latest.json')
           if not games:
               print('No eligible games today; empty prediction output is valid')
-          missing=[]
+          missing_required=[]
+          missing_market=[]
           for g in games:
               print(g.get('away_abbr'),'@',g.get('home_abbr'),'| version:',g.get('market_blend_version'),'| book:',g.get('market_bookmaker'),'| books:',g.get('market_book_count'),'| consensus spread:',g.get('consensus_home_spread'),'| consensus total:',g.get('consensus_total'))
-              if g.get('market_blend_version') != 'independent_model_v3_consensus': missing.append((g.get('game_id'),'market_blend_version'))
-              if g.get('market_book_count') is None: missing.append((g.get('game_id'),'market_book_count'))
-              if g.get('consensus_home_spread') is None: missing.append((g.get('game_id'),'consensus_home_spread'))
-              if g.get('consensus_total') is None: missing.append((g.get('game_id'),'consensus_total'))
-          if missing: raise SystemExit(f'Consensus market fields missing: {missing}')
+              for field in ('home_win_probability','predicted_margin','predicted_total','home_score','away_score'):
+                  if g.get(field) is None: missing_required.append((g.get('game_id'),field))
+              for field in ('market_book_count','consensus_home_spread','consensus_total'):
+                  if g.get(field) is None: missing_market.append((g.get('game_id'),field))
+          if missing_required: raise SystemExit(f'Required independent-model fields missing: {missing_required}')
+          if missing_market: print(f'Warning: market comparison fields unavailable; publishing independent-model predictions: {missing_market}')
           PY
       - name: Commit outputs
         shell: bash

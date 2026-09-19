@@ -61,6 +61,26 @@ def _write_latest_prediction_outputs(output: dict[str, Any]) -> None:
     pd.DataFrame(output["games"]).to_csv(PREDICTION_LATEST_CSV, index=False)
 
 
+def _retain_published_same_day_games(output: dict[str, Any]) -> dict[str, Any]:
+    """Keep valid pregame forecasts after tipoff during same-day refreshes."""
+    if not PREDICTION_LATEST_JSON.exists():
+        return output
+    try:
+        previous = json.loads(PREDICTION_LATEST_JSON.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return output
+    if previous.get("target_date") != output.get("target_date"):
+        return output
+    current_games = output.get("games") or []
+    seen = {str(game.get("game_id")) for game in current_games}
+    retained = [
+        game for game in previous.get("games", [])
+        if str(game.get("game_id")) not in seen
+    ]
+    output["games"] = current_games + retained
+    return output
+
+
 def _build_pregame_data(
     target_date: date,
 ) -> pd.DataFrame:
@@ -871,6 +891,7 @@ def predict_today(
                 },
             },
         }
+        output = _retain_published_same_day_games(output)
         _write_latest_prediction_outputs(output)
         return output
 
@@ -1200,6 +1221,7 @@ def predict_today(
     # ---------------------------------------------------------
     # Latest prediction JSON / CSV
     # ---------------------------------------------------------
+    output = _retain_published_same_day_games(output)
     _write_latest_prediction_outputs(output)
 
     # ---------------------------------------------------------

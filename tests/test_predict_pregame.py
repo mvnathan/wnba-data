@@ -54,3 +54,20 @@ def test_predict_today_writes_empty_offseason_slate(tmp_path, monkeypatch):
     assert result["games"] == []
     assert json.loads(latest_json.read_text()) == result
     assert latest_csv.exists()
+
+
+def test_same_day_refresh_retains_started_game_predictions(tmp_path, monkeypatch):
+    latest_json = tmp_path / "latest.json"
+    latest_csv = tmp_path / "latest.csv"
+    latest_json.write_text(json.dumps({
+        "target_date": "2026-09-18",
+        "games": [{"game_id": "started", "predicted_total": 165.0}],
+    }))
+
+    monkeypatch.setattr("src.predict_pregame.PREDICTION_LATEST_JSON", latest_json)
+    monkeypatch.setattr("src.predict_pregame.PREDICTION_LATEST_CSV", latest_csv)
+    monkeypatch.setattr("src.predict_pregame.build_model_features", lambda *_: pd.DataFrame())
+
+    result = predict_today(date(2026, 9, 18))
+
+    assert [game["game_id"] for game in result["games"]] == ["started"]
