@@ -1,16 +1,16 @@
 {
-  "generated_at_utc": "2026-09-19T15:54:10.270115Z",
+  "generated_at_utc": "2026-09-19T18:37:18.716351Z",
   "method": "Earliest committed pre-match forecast joined to ESPN final scores by match ID",
   "summary": {
-    "matches_evaluated": 149,
-    "winner_accuracy": 0.7046979865771812,
-    "winner_auc": 0.7816330209084356,
-    "winner_log_loss": 0.5679227278332256,
-    "winner_brier_score": 0.19095732590604028,
-    "spread_mae_games": 4.37248322147651,
-    "spread_bias_games": 0.1040268456375838,
-    "total_mae_games": 5.945637583892617,
-    "total_bias_games": -2.760402684563758
+    "matches_evaluated": 150,
+    "winner_accuracy": 0.7066666666666667,
+    "winner_auc": 0.7831614509246089,
+    "winner_log_loss": 0.5672062390906102,
+    "winner_brier_score": 0.19059201706666665,
+    "spread_mae_games": 4.358666666666666,
+    "spread_bias_games": 0.11866666666666656,
+    "total_mae_games": 5.954,
+    "total_bias_games": -2.79
   },
   "by_tour": {
     "ATP": {
@@ -25,15 +25,15 @@
       "total_bias_games": -3.325
     },
     "WTA": {
-      "matches_evaluated": 109,
-      "winner_accuracy": 0.7155963302752294,
-      "winner_auc": 0.8034144692359704,
-      "winner_log_loss": 0.5471724580745689,
-      "winner_brier_score": 0.18271474128440368,
-      "spread_mae_games": 3.95045871559633,
-      "spread_bias_games": 0.78348623853211,
-      "total_mae_games": 5.389908256880735,
-      "total_bias_games": -2.553211009174312
+      "matches_evaluated": 110,
+      "winner_accuracy": 0.7181818181818181,
+      "winner_auc": 0.8052055702917771,
+      "winner_log_loss": 0.5463840667869904,
+      "winner_brier_score": 0.1822915254545455,
+      "spread_mae_games": 3.935454545454545,
+      "spread_bias_games": 0.7972727272727271,
+      "total_mae_games": 5.406363636363638,
+      "total_bias_games": -2.5954545454545452
     }
   },
   "by_day": [
@@ -219,15 +219,15 @@
     },
     {
       "date": "2026-09-19",
-      "matches_evaluated": 3,
-      "winner_accuracy": 0.6666666666666666,
-      "winner_auc": 0.5,
-      "winner_log_loss": 0.6398424111739861,
-      "winner_brier_score": 0.22375698000000002,
-      "spread_mae_games": 4.666666666666667,
-      "spread_bias_games": 0.8666666666666663,
-      "total_mae_games": 5.933333333333333,
-      "total_bias_games": -2.4666666666666663
+      "matches_evaluated": 4,
+      "winner_accuracy": 0.75,
+      "winner_auc": 0.6666666666666666,
+      "winner_log_loss": 0.5949941624907206,
+      "winner_brier_score": 0.20185798500000002,
+      "spread_mae_games": 4.075,
+      "spread_bias_games": 1.2249999999999996,
+      "total_mae_games": 6.249999999999999,
+      "total_bias_games": -3.6499999999999995
     }
   ],
   "matches": [
@@ -5296,6 +5296,40 @@
       "absolute_margin_error": 5.7,
       "total_error": 5.199999999999999,
       "absolute_total_error": 5.199999999999999
+    },
+    {
+      "match_id": "183856",
+      "target_date": "2026-09-19",
+      "start_time_utc": "2026-09-19T16:00Z",
+      "tour": "WTA",
+      "tournament": "SP Open",
+      "round": "Semifinal",
+      "player_1": "Kaitlin Quevedo",
+      "player_2": "Anna Blinkova",
+      "player_1_rank": 107,
+      "player_2_rank": 95,
+      "model_version": "tennis-v3-tournament-context",
+      "prediction_issued_at": "2026-09-19T00:32:16.839282+00:00",
+      "prediction_commit": "c5147e26",
+      "player_1_win_probability": 0.631,
+      "predicted_winner": "Kaitlin Quevedo",
+      "predicted_game_margin_player_1": 2.3,
+      "predicted_total_games": 20.8,
+      "actual_player_1": "Kaitlin Quevedo",
+      "actual_player_2": "Anna Blinkova",
+      "actual_player_1_games": 14.0,
+      "actual_player_2_games": 14.0,
+      "actual_margin_player_1": 0.0,
+      "actual_total_games": 28.0,
+      "actual_winner_player_1": true,
+      "final_status": "Final",
+      "winner_correct": true,
+      "brier_score": 0.136161,
+      "log_loss": 0.4604494164409239,
+      "margin_error": 2.3,
+      "absolute_margin_error": 2.3,
+      "total_error": -7.199999999999999,
+      "absolute_total_error": 7.199999999999999
     }
   ]
 }
