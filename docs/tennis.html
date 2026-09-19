@@ -10,7 +10,7 @@
 <body>
 <header><div class="head"><div class="topline"><a class="back" href="index.html">← Model hub</a><span class="sub">Independent forecast</span></div><h1>ATP + WTA Decision Dashboard</h1><div class="sub">Live scores · winner · game spread · total games · top-150 eligible matches</div></div><nav class="tabs"><button class="tab active" data-tab="today">Today</button><button class="tab" data-tab="performance">Performance</button><button class="tab" data-tab="method">Method</button></nav></header>
 <main>
-<section id="today" class="panel active"><div id="status" class="status">Loading today’s matches…</div><div class="filterrow"><button class="chip active" data-tour="ALL">All</button><button class="chip" data-tour="LIVE">Live</button><button class="chip" data-tour="ATP">ATP</button><button class="chip" data-tour="WTA">WTA</button></div><div id="games"></div></section>
+<section id="today" class="panel active"><div id="status" class="status">Loading today’s matches…</div><div class="filterrow"><button class="chip active" data-tour="ALL">All</button><button class="chip" data-tour="LIVE">Live</button><button class="chip" data-tour="ATP">ATP</button><button class="chip" data-tour="WTA">WTA</button><button class="chip" id="refresh-now" type="button">Refresh data</button></div><div id="games"></div></section>
 <section id="performance" class="panel"><div class="section"><h2>Issued-prediction performance</h2><div class="foot" style="margin-top:0">Move from one settled match through the complete production history. These graphs evaluate forecasts actually published before match start.</div><div id="tennis-performance-explorer"></div></div><div class="section"><h2>Chronological model backtest</h2><div id="metrics" class="metrics"></div><div class="foot">The backtest uses the newest 20% of historical matches as an untouched holdout. It is separate from the live production record above.</div></div></section>
 <section id="method" class="panel"><div class="section"><h2>Model and score delivery</h2><div class="foot" style="font-size:.78rem">Separate ATP and WTA models use the most recent 730 days of eligible matches. LiveScore supplies the near-real-time scoring overlay through Cloudflare; pregame predictions remain available if that overlay is temporarily unavailable. The page refreshes every 15 seconds.</div><div class="foot">The spread is Player 1 games minus Player 2 games. Positive values favor Player 1; negative values favor Player 2. Predictions are estimates, not guarantees.</div></div></section>
 </main>
@@ -20,7 +20,7 @@ const API='https://wnba-live-dashboard.mvnathan.workers.dev/api/tennis';
 const N=(v,d=1)=>v===null||v===undefined||Number.isNaN(Number(v))?'—':Number(v).toFixed(d);
 const P=v=>N(Number(v)*100,1)+'%';
 const R=v=>v?new Date(v).toLocaleString([], {month:'short',day:'numeric',hour:'numeric',minute:'2-digit'}):'TBD';
-let data={matches:[]},filter='ALL';
+let data={matches:[]},filter='ALL',feedWarning='';
 function isLive(m){return m.live_state==='in'}
 function scoreBoard(m){
   if(!m.set_scores?.length)return '';
@@ -41,13 +41,27 @@ function card(m){
 function render(){
   const all=data.matches||[];
   const matches=all.filter(m=>filter==='ALL'||(filter==='LIVE'&&isLive(m))||m.tour===filter).sort((a,b)=>Number(isLive(b))-Number(isLive(a))||String(a.start_time_utc).localeCompare(String(b.start_time_utc)));
-  document.getElementById('games').innerHTML=matches.length?matches.map(m=>card(m).replace('<div class="forecast">',marketPanel(m)+'<div class="forecast">')).join(''):'<div class="empty">No matches meet this filter.</div>';
+  document.getElementById('games').innerHTML=matches.length?matches.map(m=>card(m).replace('<div class="forecast">',marketPanel(m)+'<div class="forecast">')).join(''):`<div class="empty">${filter==='ALL'?'No eligible matches are currently published. Tap Refresh data to check both feeds.':'No matches meet this filter.'}</div>`;
   const live=all.filter(isLive).length,age=data.live_score_generated_at_utc?Math.max(0,Math.floor((Date.now()-new Date(data.live_score_generated_at_utc))/1000)):null;
-  document.getElementById('status').innerHTML=`<b>${live?live+' live match'+(live===1?'':'es'):data.target_date+' · '+all.length+' eligible matches'}</b><span class="note"> · ATP ${all.filter(m=>m.tour==='ATP').length} · WTA ${all.filter(m=>m.tour==='WTA').length}${age!==null?' · scores '+age+'s ago':''} · ${data.live_score_source||'score feed loading'}</span>`;
+  document.getElementById('status').innerHTML=`<b>${live?live+' live match'+(live===1?'':'es'):(data.target_date||'Latest slate')+' · '+all.length+' eligible matches'}</b><span class="note"> · ATP ${all.filter(m=>m.tour==='ATP').length} · WTA ${all.filter(m=>m.tour==='WTA').length}${age!==null?' · scores '+age+'s ago':''} · ${data.live_score_source||'GitHub prediction feed'}${feedWarning?' · <span class="warn">'+feedWarning+'</span>':''}</span>`;
   document.getElementById('metrics').innerHTML=(data.model_performance||[]).map(m=>`<div class="metric"><div class="tour ${m.tour.toLowerCase()}">${m.tour} · ${m.holdout_matches} holdout matches</div><div class="k" style="margin-top:10px">Winner AUC / accuracy</div><div class="v">${N(m.winner_auc,3)} / ${P(m.winner_accuracy)}</div><div class="note">Spread MAE ${N(m.spread_mae_games)} games<br>Total MAE ${N(m.total_mae_games)} games</div></div>`).join('');
 }
-async function refresh(){try{const response=await fetch(API+'?t='+Date.now(),{cache:'no-store'});if(!response.ok)throw Error('score feed unavailable');data=await response.json();render()}catch(error){if(!data.matches?.length){const response=await fetch('tennis-latest.json?t='+Date.now(),{cache:'no-store'});data=await response.json();render()}}}
+async function loadJson(url){const response=await fetch(url+(url.includes('?')?'&':'?')+'t='+Date.now(),{cache:'no-store'});if(!response.ok)throw Error(response.status);const payload=await response.json();if(!payload||!Array.isArray(payload.matches))throw Error('invalid payload');return payload}
+async function refresh(){
+  const button=document.getElementById('refresh-now');button.disabled=true;button.textContent='Refreshing…';
+  const [liveResult,staticResult]=await Promise.allSettled([loadJson(API),loadJson('tennis-latest.json')]);
+  const livePayload=liveResult.status==='fulfilled'?liveResult.value:null,staticPayload=staticResult.status==='fulfilled'?staticResult.value:null;
+  const valid=[livePayload,staticPayload].filter(payload=>payload&&payload.matches.length);
+  if(valid.length){
+    const liveIsValid=livePayload&&livePayload.matches.length;
+    data=liveIsValid?livePayload:valid.sort((a,b)=>String(b.generated_at_utc||'').localeCompare(String(a.generated_at_utc||'')))[0];
+    feedWarning=liveIsValid?'':'live scores unavailable; showing saved predictions';
+  }else if(data.matches?.length){feedWarning='feeds temporarily unavailable; retaining last valid predictions'}
+  else{data=livePayload||staticPayload||{matches:[]};feedWarning='prediction feeds unavailable; retrying automatically'}
+  render();button.disabled=false;button.textContent='Refresh data';
+}
 document.querySelectorAll('.chip').forEach(button=>button.onclick=()=>{filter=button.dataset.tour;document.querySelectorAll('.chip').forEach(x=>x.classList.toggle('active',x===button));render()});
+document.getElementById('refresh-now').onclick=refresh;
 document.querySelectorAll('.tab').forEach(button=>button.onclick=()=>{document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('active',x===button));document.querySelectorAll('.panel').forEach(x=>x.classList.toggle('active',x.id===button.dataset.tab))});
 refresh();setInterval(refresh,15000);mountPerformanceExplorer({rootId:'tennis-performance-explorer',url:'tennis-performance.json',sport:'tennis'});
 </script>
