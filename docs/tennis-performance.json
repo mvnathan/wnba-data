@@ -1,16 +1,16 @@
 {
-  "generated_at_utc": "2026-09-20T04:55:08.319141Z",
+  "generated_at_utc": "2026-09-20T13:04:04.815801Z",
   "method": "Earliest committed pre-match forecast joined to ESPN final scores by match ID",
   "summary": {
-    "matches_evaluated": 152,
-    "winner_accuracy": 0.7039473684210527,
-    "winner_auc": 0.781038961038961,
-    "winner_log_loss": 0.5695719211338295,
-    "winner_brier_score": 0.19171264118421052,
-    "spread_mae_games": 4.376973684210526,
-    "spread_bias_games": 0.06381578947368413,
-    "total_mae_games": 5.90328947368421,
-    "total_bias_games": -2.725657894736842
+    "matches_evaluated": 153,
+    "winner_accuracy": 0.7058823529411765,
+    "winner_auc": 0.782552973342447,
+    "winner_log_loss": 0.5688825692544784,
+    "winner_brier_score": 0.19136068725490196,
+    "spread_mae_games": 4.355555555555556,
+    "spread_bias_games": 0.056209150326797346,
+    "total_mae_games": 5.879738562091504,
+    "total_bias_games": -2.69281045751634
   },
   "by_tour": {
     "ATP": {
@@ -25,15 +25,15 @@
       "total_bias_games": -3.325
     },
     "WTA": {
-      "matches_evaluated": 112,
-      "winner_accuracy": 0.7142857142857143,
-      "winner_auc": 0.8015669971218421,
-      "winner_log_loss": 0.5499664597796382,
-      "winner_brier_score": 0.18396059553571428,
-      "spread_mae_games": 3.9678571428571425,
-      "spread_bias_games": 0.7107142857142857,
-      "total_mae_games": 5.347321428571428,
-      "total_bias_games": -2.511607142857143
+      "matches_evaluated": 113,
+      "winner_accuracy": 0.7168141592920354,
+      "winner_auc": 0.8033584431889517,
+      "winner_log_loss": 0.5492065891939168,
+      "winner_brier_score": 0.18355265831858408,
+      "spread_mae_games": 3.9424778761061945,
+      "spread_bias_games": 0.6946902654867257,
+      "total_mae_games": 5.320353982300884,
+      "total_bias_games": -2.4690265486725664
     }
   },
   "by_day": [
@@ -228,6 +228,18 @@
       "spread_bias_games": -0.5333333333333337,
       "total_mae_games": 4.866666666666666,
       "total_bias_games": -1.7333333333333325
+    },
+    {
+      "date": "2026-09-20",
+      "matches_evaluated": 1,
+      "winner_accuracy": 1.0,
+      "winner_auc": null,
+      "winner_log_loss": 0.4641010835931216,
+      "winner_brier_score": 0.13786368999999998,
+      "spread_mae_games": 1.1,
+      "spread_bias_games": -1.1,
+      "total_mae_games": 2.3000000000000007,
+      "total_bias_games": 2.3000000000000007
     }
   ],
   "matches": [
@@ -5398,6 +5410,40 @@
       "absolute_margin_error": 1.7000000000000002,
       "total_error": 3.1000000000000014,
       "absolute_total_error": 3.1000000000000014
+    },
+    {
+      "match_id": "186086",
+      "target_date": "2026-09-20",
+      "start_time_utc": "2026-09-20T05:30Z",
+      "tour": "WTA",
+      "tournament": "Singapore Tennis Open presented by BNP Paribas",
+      "round": "Qualifying Final",
+      "player_1": "Joanna Garland",
+      "player_2": "Viktoria Morvayova",
+      "player_1_rank": 132,
+      "player_2_rank": 289,
+      "model_version": "tennis-v3-tournament-context",
+      "prediction_issued_at": "2026-09-20T04:54:57.772498+00:00",
+      "prediction_commit": "719f0662",
+      "player_1_win_probability": 0.6287,
+      "predicted_winner": "Joanna Garland",
+      "predicted_game_margin_player_1": 3.9,
+      "predicted_total_games": 21.3,
+      "actual_player_1": "Joanna Garland",
+      "actual_player_2": "Viktoria Morvayova",
+      "actual_player_1_games": 12.0,
+      "actual_player_2_games": 7.0,
+      "actual_margin_player_1": 5.0,
+      "actual_total_games": 19.0,
+      "actual_winner_player_1": true,
+      "final_status": "Final",
+      "winner_correct": true,
+      "brier_score": 0.13786368999999998,
+      "log_loss": 0.4641010835931216,
+      "margin_error": -1.1,
+      "absolute_margin_error": 1.1,
+      "total_error": 2.3000000000000007,
+      "absolute_total_error": 2.3000000000000007
     }
   ]
 }
