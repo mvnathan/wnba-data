@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-09-20T18:48:22.890707Z",
+  "generated_at_utc": "2026-09-20T22:27:16.267844Z",
   "target_date": "2026-09-20",
   "model_version": "tennis-v3-tournament-context",
   "eligibility": "At least one player ranked in the top 150",
@@ -41,7 +41,7 @@
       "major": false,
       "tournament": "SP Open",
       "round": "Final",
-      "start_time_utc": "2026-09-20T19:50Z",
+      "start_time_utc": "2026-09-20T23:00Z",
       "status": "Scheduled",
       "status_state": "pre",
       "court": "Quadra Central Maria Esther Bueno",
