@@ -1,0 +1,54 @@
+name: Generate MLB V2 Candidate
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '30 13,17,21 * * *'
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/mlb_v2.yml'
+      - 'scripts/generate_mlb_v2.py'
+      - 'scripts/generate_mlb_predictions.py'
+
+concurrency:
+  group: sportsmodelhub-mlb-v2
+  cancel-in-progress: true
+
+jobs:
+  candidate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    env:
+      PYTHONPATH: ${{ github.workspace }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - name: Install dependencies
+        run: pip install requests curl_cffi pandas
+      - name: Generate MLB v2 candidate
+        run: python scripts/generate_mlb_v2.py
+      - name: Validate candidate
+        run: |
+          python - <<'PY'
+          import json
+          d=json.load(open("predictions/mlb-v2-latest.json"))
+          assert d["model_status"]=="candidate_not_promoted"
+          for g in d["games"]:
+              assert g["predicted_winner"]
+              assert 0 <= g["home_win_probability"] <= 1
+              assert g["predicted_home_runs"] > 0 and g["predicted_away_runs"] > 0
+          print("Validated",len(d["games"]),"MLB v2 candidate games")
+          PY
+      - name: Publish candidate
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add predictions/mlb-v2-latest.json docs/mlb-v2-latest.json
+          if git diff --quiet --cached; then exit 0; fi
+          git commit -m "Update MLB v2 candidate"
+          git pull --rebase origin main
+          git push origin HEAD:main
