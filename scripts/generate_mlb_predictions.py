@@ -41,7 +41,7 @@ def _schedule(start: date, end: date) -> list[dict[str, Any]]:
             "sportId": 1,
             "startDate": start.isoformat(),
             "endDate": end.isoformat(),
-            "hydrate": "team,linescore",
+            "hydrate": "team,linescore,probablePitcher,venue",
         },
     )
     games: list[dict[str, Any]] = []
@@ -206,6 +206,9 @@ def build_predictions(target_date: date | None = None) -> dict[str, Any]:
 
     games = []
     for game in todays:
+        status_detail = str(game.get("status", {}).get("detailedState") or "")
+        if status_detail.lower() in {"postponed", "cancelled", "canceled"}:
+            continue
         home_team = game.get("teams", {}).get("home", {}).get("team", {})
         away_team = game.get("teams", {}).get("away", {}).get("team", {})
         hid, aid = _team_id(home_team), _team_id(away_team)
@@ -229,6 +232,9 @@ def build_predictions(target_date: date | None = None) -> dict[str, Any]:
 
         start = str(game.get("gameDate") or "")
         status = game.get("status", {})
+        double_header = str(game.get("doubleHeader") or "N")
+        game_number = game.get("gameNumber")
+        scheduled_innings = game.get("scheduledInnings")
         games.append({
             "game_id": str(game.get("gamePk") or ""),
             "game_date_utc": start,
@@ -236,6 +242,9 @@ def build_predictions(target_date: date | None = None) -> dict[str, Any]:
             "away_team": away_name,
             "status": status.get("detailedState"),
             "status_state": status.get("abstractGameState"),
+            "doubleheader": double_header != "N",
+            "game_number": game_number,
+            "scheduled_innings": scheduled_innings,
             "predicted_home_runs": round(home_runs, 2),
             "predicted_away_runs": round(away_runs, 2),
             "predicted_total_runs": round(home_runs + away_runs, 2),
@@ -265,6 +274,8 @@ def build_predictions(target_date: date | None = None) -> dict[str, Any]:
             "and independent Poisson score distributions. Market data is display-only."
         ),
         "games": games,
+        "market_event_count": len(dk),
+        "market_status": "available" if dk else "unavailable",
     }
 
 
