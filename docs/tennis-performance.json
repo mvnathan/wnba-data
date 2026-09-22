@@ -1,16 +1,16 @@
 {
-  "generated_at_utc": "2026-09-22T19:45:55.848451Z",
+  "generated_at_utc": "2026-09-22T22:57:42.836764Z",
   "method": "Earliest committed pre-match forecast joined to ESPN final scores by match ID",
   "summary": {
-    "matches_evaluated": 187,
-    "winner_accuracy": 0.7272727272727273,
-    "winner_auc": 0.7831615120274915,
-    "winner_log_loss": 0.5672413172833062,
-    "winner_brier_score": 0.19050627470588233,
-    "spread_mae_games": 4.259893048128343,
-    "spread_bias_games": 0.04278074866310164,
-    "total_mae_games": 6.081818181818183,
-    "total_bias_games": -2.8668449197860966
+    "matches_evaluated": 188,
+    "winner_accuracy": 0.7287234042553191,
+    "winner_auc": 0.7844114648238361,
+    "winner_log_loss": 0.5669474431037035,
+    "winner_brier_score": 0.19034698861702132,
+    "spread_mae_games": 4.238829787234043,
+    "spread_bias_games": 0.04095744680851069,
+    "total_mae_games": 6.113297872340427,
+    "total_bias_games": -2.915425531914894
   },
   "by_tour": {
     "ATP": {
@@ -25,15 +25,15 @@
       "total_bias_games": -3.302173913043479
     },
     "WTA": {
-      "matches_evaluated": 141,
-      "winner_accuracy": 0.7304964539007093,
-      "winner_auc": 0.7921529175050303,
-      "winner_log_loss": 0.5554251256663973,
-      "winner_brier_score": 0.1862310429787234,
-      "spread_mae_games": 3.9673758865248225,
-      "spread_bias_games": 0.6453900709219859,
-      "total_mae_games": 5.601418439716312,
-      "total_bias_games": -2.7248226950354613
+      "matches_evaluated": 142,
+      "winner_accuracy": 0.7323943661971831,
+      "winner_auc": 0.7938492063492064,
+      "winner_log_loss": 0.5551192654259157,
+      "winner_brier_score": 0.18605026443661973,
+      "spread_mae_games": 3.941549295774648,
+      "spread_bias_games": 0.6387323943661973,
+      "total_mae_games": 5.646478873239436,
+      "total_bias_games": -2.790140845070423
     }
   },
   "by_day": [
@@ -255,15 +255,15 @@
     },
     {
       "date": "2026-09-22",
-      "matches_evaluated": 23,
-      "winner_accuracy": 0.782608695652174,
-      "winner_auc": 0.5357142857142857,
-      "winner_log_loss": 0.6112720870758046,
-      "winner_brier_score": 0.20947677086956518,
-      "spread_mae_games": 4.252173913043478,
-      "spread_bias_games": 0.14782608695652172,
-      "total_mae_games": 6.591304347826085,
-      "total_bias_games": -2.42608695652174
+      "matches_evaluated": 24,
+      "winner_accuracy": 0.7916666666666666,
+      "winner_auc": 0.59375,
+      "winner_log_loss": 0.6071354572608961,
+      "winner_brier_score": 0.2074385925,
+      "spread_mae_games": 4.0874999999999995,
+      "spread_bias_games": 0.12916666666666657,
+      "total_mae_games": 6.816666666666666,
+      "total_bias_games": -2.8250000000000006
     }
   ],
   "matches": [
@@ -6624,6 +6624,40 @@
       "absolute_margin_error": 5.8,
       "total_error": -5.600000000000001,
       "absolute_total_error": 5.600000000000001
+    },
+    {
+      "match_id": "183883",
+      "target_date": "2026-09-22",
+      "start_time_utc": "2026-09-22T18:00Z",
+      "tour": "WTA",
+      "tournament": "Delta Motors Tolentino Open",
+      "round": "Round 1",
+      "player_1": "Jennifer Ruggeri",
+      "player_2": "Julia Grabher",
+      "player_1_rank": 265,
+      "player_2_rank": 112,
+      "model_version": "tennis-v3-tournament-context",
+      "prediction_issued_at": "2026-09-22T04:55:51.469091+00:00",
+      "prediction_commit": "8531615f",
+      "player_1_win_probability": 0.4007,
+      "predicted_winner": "Julia Grabher",
+      "predicted_game_margin_player_1": -3.3,
+      "predicted_total_games": 19.0,
+      "actual_player_1": "Jennifer Ruggeri",
+      "actual_player_2": "Julia Grabher",
+      "actual_player_1_games": 14.0,
+      "actual_player_2_games": 17.0,
+      "actual_margin_player_1": -3.0,
+      "actual_total_games": 31.0,
+      "actual_winner_player_1": false,
+      "final_status": "Final",
+      "winner_correct": true,
+      "brier_score": 0.16056049,
+      "log_loss": 0.5119929715179976,
+      "margin_error": -0.2999999999999998,
+      "absolute_margin_error": 0.2999999999999998,
+      "total_error": -12.0,
+      "absolute_total_error": 12.0
     }
   ]
 }

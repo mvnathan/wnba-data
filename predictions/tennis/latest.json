@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-09-22T19:45:49.365407Z",
+  "generated_at_utc": "2026-09-22T22:57:36.598895Z",
   "target_date": "2026-09-22",
   "model_version": "tennis-v3-tournament-context",
   "eligibility": "At least one player ranked in the top 150",
@@ -796,8 +796,8 @@
       "tournament": "Delta Motors Tolentino Open",
       "round": "Round 1",
       "start_time_utc": "2026-09-22T18:05Z",
-      "status": "In Progress",
-      "status_state": "in",
+      "status": "Final",
+      "status_state": "post",
       "court": "Center Court",
       "venue": "Tolentino, Italy",
       "broadcast": "",
