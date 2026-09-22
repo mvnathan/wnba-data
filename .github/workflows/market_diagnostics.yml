@@ -6,6 +6,8 @@ on:
     branches: [main]
     paths:
       - '.github/workflows/market_diagnostics.yml'
+      - 'src/draftkings_direct.py'
+      - 'src/market_odds.py'
 
 jobs:
   diagnose:
@@ -21,7 +23,7 @@ jobs:
         with:
           python-version: '3.12'
       - name: Install minimal dependencies
-        run: pip install requests
+        run: pip install requests curl_cffi
       - name: Capture sanitized market diagnostics
         run: |
           python - <<'PY'
