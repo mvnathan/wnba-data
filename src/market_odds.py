@@ -32,21 +32,130 @@ def _team_abbr_from_name(name: str | None) -> str:
     return TEAM_NAME_TO_ABBR.get(_normalize_text(name), "")
 
 
+def _read_market_cache() -> dict[str, Any] | None:
+    if not MARKET_CACHE_PATH.exists():
+        return None
+    try:
+        payload = json.loads(MARKET_CACHE_PATH.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return None
+    return payload if isinstance(payload, dict) else None
+
+
+def _cache_age_seconds(cache: dict[str, Any] | None) -> float | None:
+    if not cache:
+        return None
+    fetched_at = cache.get("fetched_at_utc")
+    if not fetched_at:
+        return None
+    try:
+        stamp = datetime.fromisoformat(str(fetched_at).replace("Z", "+00:00"))
+    except ValueError:
+        return None
+    if stamp.tzinfo is None:
+        stamp = stamp.replace(tzinfo=timezone.utc)
+    return max(0.0, (datetime.now(timezone.utc) - stamp).total_seconds())
+
+
+def _cached_events(cache: dict[str, Any] | None) -> list[dict[str, Any]] | None:
+    events = cache.get("events") if cache else None
+    return events if isinstance(events, list) else None
+
+
 def fetch_draftkings_wnba_odds() -> list[dict[str, Any]]:
-    """Fetch current WNBA markets from DK plus major comparison books."""
+    """Fetch WNBA spread/total markets with aggressive quota-preserving cache reuse.
+
+    The free The Odds API plan charges per market. SportsModelHub only needs
+    spread and total lines for the decision board, so routine WNBA requests use
+    two markets (2 credits) instead of h2h+spread+total (3 credits).
+
+    A repository-backed cache is reused for 20 minutes. If the API is
+    unavailable or the saved quota metadata says fewer than two credits remain,
+    the most recent cache may be reused for up to eight hours; the dashboard
+    still displays the bookmaker timestamp so stale lines remain visibly stale.
+    """
+    cache = _read_market_cache()
+    age = _cache_age_seconds(cache)
+    cached = _cached_events(cache)
+
+    if cached is not None and age is not None and age <= MARKET_CACHE_FRESH_SECONDS:
+        print(f"Using cached WNBA market snapshot ({age:.0f}s old); no API credits used")
+        return cached
+
+    remaining = cache.get("requests_remaining") if cache else None
+    cache_month = str(cache.get("fetched_at_utc") or "")[:7] if cache else ""
+    current_month = datetime.now(timezone.utc).strftime("%Y-%m")
+    try:
+        remaining_int = int(remaining) if remaining is not None else None
+    except (TypeError, ValueError):
+        remaining_int = None
+
+    if (
+        cached is not None
+        and age is not None
+        and age <= MARKET_CACHE_STALE_IF_ERROR_SECONDS
+        and cache_month == current_month
+        and remaining_int is not None
+        and remaining_int < MARKET_REQUEST_COST
+    ):
+        print(
+            "Skipping The Odds API refresh because cached quota metadata shows "
+            f"{remaining_int} credit(s) remaining; reusing stale market snapshot"
+        )
+        return cached
+
     api_key = os.environ.get("ODDS_API_KEY")
     if not api_key:
+        if cached is not None and age is not None and age <= MARKET_CACHE_STALE_IF_ERROR_SECONDS:
+            print("ODDS_API_KEY not configured; reusing cached WNBA market snapshot")
+            return cached
         raise RuntimeError("ODDS_API_KEY environment variable is not set")
-    response = requests.get(
-        ODDS_API_URL,
-        params={"apiKey": api_key, "bookmakers": BOOKMAKERS, "markets": "h2h,spreads,totals", "oddsFormat": "american"},
-        timeout=30,
-    )
-    response.raise_for_status()
-    payload = response.json()
-    if not isinstance(payload, list):
-        raise RuntimeError("Unexpected odds API response format")
-    return payload
+
+    try:
+        response = requests.get(
+            ODDS_API_URL,
+            params={
+                "apiKey": api_key,
+                "bookmakers": BOOKMAKERS,
+                "markets": MARKETS,
+                "oddsFormat": "american",
+            },
+            timeout=30,
+        )
+        response.raise_for_status()
+        payload = response.json()
+        if not isinstance(payload, list):
+            raise RuntimeError("Unexpected odds API response format")
+
+        MARKET_CACHE_PATH.parent.mkdir(parents=True, exist_ok=True)
+        cache_payload = {
+            "fetched_at_utc": datetime.now(timezone.utc).isoformat(),
+            "provider": "The Odds API",
+            "sport": "basketball_wnba",
+            "markets": MARKETS.split(","),
+            "bookmakers": BOOKMAKERS.split(","),
+            "requests_remaining": response.headers.get("x-requests-remaining"),
+            "requests_used": response.headers.get("x-requests-used"),
+            "requests_last": response.headers.get("x-requests-last"),
+            "events": payload,
+        }
+        MARKET_CACHE_PATH.write_text(
+            json.dumps(cache_payload, indent=2, allow_nan=False),
+            encoding="utf-8",
+        )
+        print(
+            "Fetched fresh WNBA market snapshot; credits last/remaining: "
+            f"{cache_payload['requests_last']}/{cache_payload['requests_remaining']}"
+        )
+        return payload
+    except Exception as exc:
+        if cached is not None and age is not None and age <= MARKET_CACHE_STALE_IF_ERROR_SECONDS:
+            print(
+                f"Market refresh failed ({exc}); reusing cached WNBA snapshot "
+                f"({age / 60:.1f} minutes old)"
+            )
+            return cached
+        raise
 
 
 def _build_lookup(odds_data: list[dict[str, Any]]) -> dict[tuple[str, str], dict[str, Any]]:
