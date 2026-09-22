@@ -29,7 +29,7 @@ jobs:
         with:
           python-version: '3.12'
       - name: Install dependencies
-        run: pip install requests curl_cffi
+        run: pip install requests curl_cffi pandas
       - name: Generate MLB winner and score predictions
         run: python scripts/generate_mlb_predictions.py
       - name: Validate MLB output
