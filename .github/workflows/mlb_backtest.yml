@@ -1,0 +1,33 @@
+name: Backtest MLB V1 vs V2
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/mlb_backtest.yml'
+      - 'scripts/backtest_mlb_models.py'
+      - 'scripts/generate_mlb_v2.py'
+jobs:
+  backtest:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    env:
+      PYTHONPATH: ${{ github.workspace }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - run: pip install requests curl_cffi pandas
+      - name: Run chronological comparison
+        run: python scripts/backtest_mlb_models.py --start 2026-09-01 --end 2026-09-21
+      - name: Publish results
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/mlb_model_comparison.json
+          if git diff --quiet --cached; then exit 0; fi
+          git commit -m "Update MLB v1 vs v2 validation"
+          git pull --rebase origin main
+          git push origin HEAD:main
