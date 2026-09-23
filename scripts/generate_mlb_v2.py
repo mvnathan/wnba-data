@@ -43,13 +43,16 @@ def _pitcher_name(game: dict[str, Any], side: str) -> str | None:
     return p.get("fullName") or p.get("name")
 
 
-def _pitcher_recent(person_id: int | None) -> dict[str, float | None]:
+def _pitcher_recent(person_id: int | None, as_of: date) -> dict[str, float | None]:
+    # Leakage-safe pitcher stats through the day before the target game.
     if not person_id:
         return {"era": None, "whip": None, "ip": None}
     try:
+        start = date(as_of.year, 3, 1)
+        end = as_of - timedelta(days=1)
         data = _get_json(
             PEOPLE_STATS.format(person_id=person_id),
-            {"stats": "season", "group": "pitching"},
+            {"stats": "byDateRange", "group": "pitching", "startDate": start.isoformat(), "endDate": end.isoformat()},
         )
         splits = ((data.get("stats") or [{}])[0].get("splits") or [])
         stat = (splits[0].get("stat") if splits else {}) or {}
@@ -59,7 +62,6 @@ def _pitcher_recent(person_id: int | None) -> dict[str, float | None]:
         return {"era": num("era"), "whip": num("whip"), "ip": num("inningsPitched")}
     except Exception:
         return {"era": None, "whip": None, "ip": None}
-
 
 def _bullpen_workload(history: list[dict[str, Any]], target: date) -> dict[int, float]:
     # Proxy available from schedule data: team games played in the prior 3 days,
@@ -138,7 +140,7 @@ def build_v2(target_date: date | None = None) -> dict[str, Any]:
         base_away = 0.52 * away_off + 0.48 * home_def - home_adv / 2
 
         hpid, apid = _pitcher_id(game, "home"), _pitcher_id(game, "away")
-        hp, ap = _pitcher_recent(hpid), _pitcher_recent(apid)
+        hp, ap = _pitcher_recent(hpid, target_date), _pitcher_recent(apid, target_date)
         # A strong home starter suppresses away runs and vice versa.
         home_starter = _starter_adjustment(hp, league)
         away_starter = _starter_adjustment(ap, league)
@@ -184,6 +186,7 @@ def build_v2(target_date: date | None = None) -> dict[str, Any]:
         "sport": "MLB",
         "model_version": "mlb-runs-v2-candidate",
         "model_status": "candidate_not_promoted",
+        "pitcher_stats_as_of": (target_date - timedelta(days=1)).isoformat(),
         "features": ["recent offense", "recent run prevention", "probable starter ERA/WHIP", "3-day bullpen workload proxy", "venue run factor", "home advantage"],
         "games": games,
     }
