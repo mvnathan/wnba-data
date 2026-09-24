@@ -28,6 +28,8 @@ from scripts.generate_mlb_predictions import (
 PEOPLE_STATS = "https://statsapi.mlb.com/api/v1/people/{person_id}/stats"
 OUT = Path("predictions/mlb-v2-latest.json")
 DOCS_OUT = Path("docs/mlb-v2-latest.json")
+PRODUCTION_OUT = Path("predictions/mlb-latest.json")
+PRODUCTION_DOCS_OUT = Path("docs/mlb-latest.json")
 
 
 def _pitcher_id(game: dict[str, Any], side: str) -> int | None:
@@ -185,7 +187,7 @@ def build_v2(target_date: date | None = None) -> dict[str, Any]:
         "target_date": target_date.isoformat(),
         "sport": "MLB",
         "model_version": "mlb-runs-v2-candidate",
-        "model_status": "candidate_not_promoted",
+        "model_status": "production",
         "pitcher_stats_as_of": (target_date - timedelta(days=1)).isoformat(),
         "features": ["recent offense", "recent run prevention", "probable starter ERA/WHIP", "3-day bullpen workload proxy", "venue run factor", "home advantage"],
         "games": games,
@@ -197,6 +199,7 @@ def main():
     OUT.parent.mkdir(parents=True, exist_ok=True); DOCS_OUT.parent.mkdir(parents=True, exist_ok=True)
     text = json.dumps(payload, indent=2, allow_nan=False)
     OUT.write_text(text, encoding="utf-8"); DOCS_OUT.write_text(text, encoding="utf-8")
+    PRODUCTION_OUT.write_text(text, encoding="utf-8"); PRODUCTION_DOCS_OUT.write_text(text, encoding="utf-8")
     print(json.dumps({"model": payload["model_version"], "games": len(payload["games"]), "target_date": payload["target_date"]}, indent=2))
 
 
