@@ -1,0 +1,30 @@
+name: Analyze MLB V2 Features
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/mlb_ablation.yml'
+      - 'scripts/ablate_mlb_v2.py'
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    env:
+      PYTHONPATH: ${{ github.workspace }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - run: pip install requests curl_cffi pandas
+      - run: python scripts/ablate_mlb_v2.py --start 2026-09-01 --end 2026-09-21
+      - name: Publish
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/mlb_v2_ablation.json
+          git commit -m "Update MLB v2 feature analysis" || exit 0
+          git pull --rebase origin main
+          git push origin HEAD:main
