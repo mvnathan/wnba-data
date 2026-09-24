@@ -102,8 +102,21 @@ def fetch_draftkings_wnba_odds() -> list[dict[str, Any]]:
     except Exception as exc:
         print(f"Free DraftKings feed unavailable: {exc}")
 
+    # Secondary free source: ESPN's public scoreboard feed, which exposes
+    # DraftKings game markets. This is intentionally before any paid fallback.
+    try:
+        from src.espn_market_odds import fetch_espn_draftkings
+
+        espn_dk = fetch_espn_draftkings("wnba")
+        if espn_dk:
+            _write_market_cache(espn_dk, "ESPN DraftKings (free)")
+            print(f"Fetched {len(espn_dk)} WNBA DraftKings events from ESPN; no API credits used")
+            return espn_dk
+    except Exception as exc:
+        print(f"ESPN DraftKings feed unavailable: {exc}")
+
     # Preserve a recent quote instead of spending paid credits just because the
-    # unofficial feed had a transient failure.
+    # free feeds had a transient failure.
     if cached is not None and age is not None and age <= MARKET_CACHE_FRESH_SECONDS:
         print(f"Using cached WNBA market snapshot ({age:.0f}s old); no API credits used")
         return cached
