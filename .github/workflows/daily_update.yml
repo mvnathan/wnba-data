@@ -50,6 +50,10 @@ jobs:
         run: |
           python scripts/evaluate_predictions.py
 
+      - name: Audit issued WNBA model performance
+        run: |
+          python scripts/audit_wnba_model.py
+
       - name: Verify performance output
         run: |
           python - <<'PY'
@@ -92,7 +96,7 @@ jobs:
 
           git add -f data/
           git add predictions/performance_history.parquet
-          git add docs/performance.json
+          git add docs/performance.json docs/wnba-model-audit.json
           git add models/advanced_data_status.json models/advanced_feature_status.json
 
           if git diff --cached --quiet; then
