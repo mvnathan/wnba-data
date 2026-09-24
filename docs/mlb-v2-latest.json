@@ -1,9 +1,9 @@
 {
-  "generated_at_utc": "2026-09-23T23:49:54.384604+00:00",
+  "generated_at_utc": "2026-09-24T00:11:04.157700+00:00",
   "target_date": "2026-09-23",
   "sport": "MLB",
   "model_version": "mlb-runs-v2-candidate",
-  "model_status": "candidate_not_promoted",
+  "model_status": "production",
   "pitcher_stats_as_of": "2026-09-22",
   "features": [
     "recent offense",
@@ -350,7 +350,7 @@
       "home_team": "Texas Rangers",
       "away_team": "New York Mets",
       "venue": "Globe Life Field",
-      "status": "Warmup",
+      "status": "In Progress",
       "predicted_home_runs": 4.08,
       "predicted_away_runs": 4.55,
       "predicted_total_runs": 8.63,
