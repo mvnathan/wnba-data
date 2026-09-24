@@ -8,6 +8,7 @@ on:
       - '.github/workflows/market_diagnostics.yml'
       - 'src/draftkings_direct.py'
       - 'src/market_odds.py'
+      - 'src/espn_market_odds.py'
 
 jobs:
   diagnose:
@@ -23,7 +24,7 @@ jobs:
         with:
           python-version: '3.12'
       - name: Install minimal dependencies
-        run: pip install requests curl_cffi
+        run: pip install requests curl_cffi pandas
       - name: Capture sanitized market diagnostics
         run: |
           python - <<'PY'
