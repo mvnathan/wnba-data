@@ -71,7 +71,7 @@ def main()->None:
     users={str(u["id"]):u for u in ((payload.get("includes") or {}).get("users") or [])}
     cfg_by={a["username"].lower():a for a in accounts}
     seen={str(p.get("post_id")) for p in ledger.get("picks",[])}
-    added=[]; ids=[]
+    added=[]; candidate_posts=[]; ids=[]
     for post in payload.get("data") or []:
         pid=str(post.get("id"))
         try:ids.append(int(pid))
@@ -80,8 +80,11 @@ def main()->None:
         user=users.get(str(post.get("author_id")),{})
         username=str(user.get("username") or "").lower(); ac=cfg_by.get(username)
         if not ac:continue
-        parsed=parse_pick(str(post.get("text") or ""))
-        if not parsed:continue
+        raw_text=str(post.get("text") or "")
+        parsed=parse_pick(raw_text)
+        if not parsed:
+            candidate_posts.append({"post_id":pid,"source":"@"+str(user.get("username") or ac["username"]),"published_at_utc":post.get("created_at"),"text":raw_text,"url":f"https://x.com/{user.get('username')}/status/{pid}"})
+            continue
         row={"post_id":pid,"source":"@"+str(user.get("username") or ac["username"]),"account_tier":ac.get("tier","candidate"),"sports":ac.get("sports",[]),"published_at_utc":post.get("created_at"),"captured_at_utc":datetime.now(timezone.utc).isoformat(),"text":post.get("text"),"url":f"https://x.com/{user.get('username')}/status/{pid}",**parsed,"status":"ungraded","closing_line":None,"closing_odds":None,"clv":None,"result":None,"profit_units":None}
         ledger.setdefault("picks",[]).append(row);added.append(row)
     newest=str(max(ids)) if ids else state.get("newest_id")
@@ -94,7 +97,7 @@ def main()->None:
         profit=sum(float(p.get("profit_units") or 0) for p in graded)
         clv=[float(p["clv"]) for p in graded if p.get("clv") is not None]
         stats[name]={"tier":ac.get("tier","candidate"),"captured_picks":len(rows),"graded_picks":len(graded),"profit_units":round(profit,3),"roi":round(profit/len(graded),4) if graded else None,"mean_clv":round(sum(clv)/len(clv),4) if clv else None,"model_weight":0.0,"promotion_eligible":False}
-    out={"generated_at_utc":datetime.now(timezone.utc).isoformat(),"status":"ok","production_adjustment_enabled":False,"new_posts_seen":len(payload.get("data") or []),"new_picks_parsed":len(added),"ledger_size":len(ledger.get("picks",[])),"since_id_used":params.get("since_id"),"newest_id":newest,"accounts":stats,"new_picks":added[:50],"promotion_thresholds":cfg.get("promotion_thresholds"),"promotion_rule":"No account receives nonzero model weight until our prospectively graded ledger meets the configured sample, ROI and CLV thresholds and a leakage-safe shadow comparison improves predictive metrics."}
+    out={"generated_at_utc":datetime.now(timezone.utc).isoformat(),"status":"ok","production_adjustment_enabled":False,"new_posts_seen":len(payload.get("data") or []),"new_picks_parsed":len(added),"ledger_size":len(ledger.get("picks",[])),"since_id_used":params.get("since_id"),"newest_id":newest,"accounts":stats,"new_picks":added[:50],"candidate_posts":candidate_posts[:100],"promotion_thresholds":cfg.get("promotion_thresholds"),"promotion_rule":"No account receives nonzero model weight until our prospectively graded ledger meets the configured sample, ROI and CLV thresholds and a leakage-safe shadow comparison improves predictive metrics."}
     save(DOCS,out); print(json.dumps(out,indent=2))
 
 if __name__=="__main__":main()
