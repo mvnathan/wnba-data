@@ -7,6 +7,7 @@ const TENNIS_LATEST = "https://raw.githubusercontent.com/mvnathan/wnba-data/main
 const MLB_LATEST = "https://raw.githubusercontent.com/mvnathan/wnba-data/main/docs/mlb-latest.json";
 const NFL_LATEST = "https://raw.githubusercontent.com/mvnathan/wnba-data/main/docs/nfl-latest.json";
 const NFL_SCOREBOARD = "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard";
+const NFLVERSE_GAMES = "https://raw.githubusercontent.com/nflverse/nfldata/master/data/games.csv";
 const MLB_SCHEDULE = "https://statsapi.mlb.com/api/v1/schedule";
 const LIVESCORE_TENNIS = "https://prod-public-api.livescore.com/v1/api/app/date/tennis";
 const SNAPSHOT_NAME = "wnba-live-singleton";
@@ -101,39 +102,43 @@ async function fetchNFLLatest() {
 }
 
 async function fetchNFLLive(season, week) {
-  const url = `${NFL_SCOREBOARD}?dates=${encodeURIComponent(season)}&seasontype=2&week=${encodeURIComponent(week)}`;
-  const request = new Request(url, { headers: { "accept": "application/json", "user-agent": "SportsModelHub/1.0" } });
-  const cache = caches.default;
-  let response = await cache.match(request);
-  if (!response) {
-    response = await fetch(request, { cf: { cacheTtl: 10, cacheEverything: true } });
-    if (!response.ok) throw new Error(`NFL scoreboard returned ${response.status}`);
-    response = new Response(response.body, response);
-    response.headers.set("cache-control", "public, max-age=10");
-    await cache.put(request, response.clone());
+  const response = await fetch(`${NFLVERSE_GAMES}?t=${Date.now()}`, {
+    headers: { "cache-control": "no-cache" },
+    cf: { cacheTtl: 0, cacheEverything: false },
+  });
+  if (!response.ok) throw new Error(`nflverse schedule returned ${response.status}`);
+  const text = await response.text();
+  const rows = [];
+  for (const line of text.split("\n").slice(1)) {
+    if (!line) continue;
+    const p = line.split(",");
+    if (p.length < 11) continue;
+    const [game_id, yr, game_type, wk, gameday, weekday, gametime, away_team, away_score, home_team, home_score] = p;
+    if (String(yr) !== String(season) || game_type !== "REG" || Number(wk) !== Number(week)) continue;
+    rows.push({
+      game_id, gameday, gametime, away_team, home_team,
+      away_score: away_score === "" ? null : Number(away_score),
+      home_score: home_score === "" ? null : Number(home_score),
+    });
   }
-  return response.json();
+  return { rows, source: "nflverse games.csv" };
 }
 
 function mergeNFLScores(predictions, live) {
-  const map = new Map((live?.events || []).map((event) => [String(event.id), event]));
+  const map = new Map((live?.rows || []).map((row) => [String(row.game_id), row]));
   return (predictions || []).map((game) => {
-    const event = map.get(String(game.game_id));
-    if (!event) return game;
-    const comp = (event.competitions || [])[0] || {};
-    const competitors = comp.competitors || [];
-    const home = competitors.find((x) => x.homeAway === "home");
-    const away = competitors.find((x) => x.homeAway === "away");
-    const status = event.status || {};
+    const row = map.get(String(game.game_id));
+    if (!row) return game;
+    const hasScore = row.home_score !== null || row.away_score !== null;
     return {
       ...game,
-      live_home_score: home?.score ?? null,
-      live_away_score: away?.score ?? null,
-      live_status: status?.type?.description || status?.type?.detail || null,
-      live_state: status?.type?.state || null,
-      live_period: status?.period ?? null,
-      live_clock: status?.displayClock || null,
-      possession: competitors.find((x) => x.possession)?.team?.abbreviation || null,
+      live_home_score: row.home_score,
+      live_away_score: row.away_score,
+      live_status: hasScore ? "Score updated" : game.live_status || game.status || "Scheduled",
+      live_state: hasScore ? "post" : "pre",
+      live_period: null,
+      live_clock: null,
+      possession: null,
     };
   });
 }
