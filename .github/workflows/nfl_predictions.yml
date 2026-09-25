@@ -1,0 +1,57 @@
+name: Generate NFL Predictions
+
+on:
+  workflow_dispatch: {}
+  schedule:
+    - cron: '10 14 * * 0,1,4,5'
+    - cron: '10 18 * * 0'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: nfl-predictions
+  cancel-in-progress: true
+
+jobs:
+  nfl:
+    runs-on: ubuntu-latest
+    env:
+      PYTHONPATH: ${{ github.workspace }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - name: Install dependencies
+        run: pip install requests
+      - name: Generate NFL predictions
+        run: python scripts/generate_nfl_predictions.py
+      - name: Validate NFL output
+        run: |
+          python - <<'PY'
+          import json
+          d=json.load(open("docs/nfl-latest.json"))
+          assert d["model_status"]=="beta"
+          assert d["model_version"]=="nfl-v1-beta"
+          for g in d["games"]:
+              assert 0 <= g["home_win_probability"] <= 1
+              assert g["predicted_home_points"] > 0
+              assert g["predicted_away_points"] > 0
+          print("Validated",len(d["games"]),"NFL games")
+          PY
+      - name: Publish NFL feed
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add predictions/nfl-latest.json docs/nfl-latest.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Update NFL predictions"
+          for attempt in 1 2 3; do
+            if git push origin HEAD:main; then exit 0; fi
+            git fetch origin main
+            git rebase origin/main || { git rebase --abort || true; exit 1; }
+          done
+          exit 1
