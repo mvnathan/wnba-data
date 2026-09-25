@@ -2,15 +2,6 @@ name: Market Edge Research
 
 on:
   workflow_dispatch:
-  push:
-    branches: [main]
-    paths:
-      - '.github/workflows/edge_research.yml'
-      - 'scripts/analyze_market_edges.py'
-      - 'scripts/update_dashboard_decision_first.py'
-      - 'predictions/performance_history.parquet'
-  schedule:
-    - cron: '30 7 * * *'
 
 permissions:
   contents: write
