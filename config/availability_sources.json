@@ -23,13 +23,35 @@
       "name": "MLB Probable Pitchers",
       "url": "https://www.mlb.com/probable-pitchers",
       "tier": "official"
+    },
+    {
+      "sport": "WNBA",
+      "name": "ESPN WNBA Injuries",
+      "url": "https://www.espn.com/wnba/injuries",
+      "tier": "trusted_media"
     }
   ],
   "trusted_x_accounts": [
-    {"sport": "NFL", "username": "AdamSchefter", "tier": "trusted_media"},
-    {"sport": "NFL", "username": "RapSheet", "tier": "trusted_media"},
-    {"sport": "MLB", "username": "JeffPassan", "tier": "trusted_media"},
-    {"sport": "WNBA", "username": "alexaphilippou", "tier": "trusted_media"}
+    {
+      "sport": "NFL",
+      "username": "AdamSchefter",
+      "tier": "trusted_media"
+    },
+    {
+      "sport": "NFL",
+      "username": "RapSheet",
+      "tier": "trusted_media"
+    },
+    {
+      "sport": "MLB",
+      "username": "JeffPassan",
+      "tier": "trusted_media"
+    },
+    {
+      "sport": "WNBA",
+      "username": "alexaphilippou",
+      "tier": "trusted_media"
+    }
   ],
   "keywords": [
     "out",
