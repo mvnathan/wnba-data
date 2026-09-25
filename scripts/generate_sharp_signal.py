@@ -101,3 +101,5 @@ def main()->None:
     save(DOCS,out); print(json.dumps(out,indent=2))
 
 if __name__=="__main__":main()
+
+# Initial candidate recapture trigger: 2026-09-25
