@@ -76,6 +76,7 @@ TEAM_ALIASES = {
     "KC":["chiefs","kansas city"],
     "LAC":["chargers","los angeles chargers"],
     "LAR":["rams","los angeles rams"],
+    "LA":["rams","los angeles rams"],
     "LV":["raiders","las vegas"],
     "MIA":["dolphins","miami"],
     "MIN":["vikings","minnesota"],
@@ -196,6 +197,19 @@ def availability_adjustments(prod: dict[str,Any], avail: dict[str,Any]) -> dict[
     return by_game
 
 def apply_availability(g: dict[str,Any], items: list[dict[str,Any]]) -> dict[str,Any]:
+    if not items:
+        return {
+            "predicted_home_points":g.get("predicted_home_points"),
+            "predicted_away_points":g.get("predicted_away_points"),
+            "predicted_margin":g.get("predicted_margin"),
+            "predicted_total":g.get("predicted_total"),
+            "home_win_probability":g.get("home_win_probability"),
+            "away_win_probability":g.get("away_win_probability"),
+            "predicted_winner":g.get("predicted_winner"),
+            "availability_margin_delta":0.0,
+            "availability_total_delta":0.0,
+            "signals_applied":[],
+        }
     hp=float(g["predicted_home_points"])
     ap=float(g["predicted_away_points"])
     h=str(g.get("home_abbr")); a=str(g.get("away_abbr"))
@@ -217,6 +231,19 @@ def apply_availability(g: dict[str,Any], items: list[dict[str,Any]]) -> dict[str
         if before!=(hp,ap):
             applied.append(x)
     hp=max(6.0,hp); ap=max(6.0,ap)
+    if not applied:
+        return {
+            "predicted_home_points":g.get("predicted_home_points"),
+            "predicted_away_points":g.get("predicted_away_points"),
+            "predicted_margin":g.get("predicted_margin"),
+            "predicted_total":g.get("predicted_total"),
+            "home_win_probability":g.get("home_win_probability"),
+            "away_win_probability":g.get("away_win_probability"),
+            "predicted_winner":g.get("predicted_winner"),
+            "availability_margin_delta":0.0,
+            "availability_total_delta":0.0,
+            "signals_applied":[],
+        }
     margin=hp-ap; total=hp+ap
     p=logistic_prob(margin)
     return {
