@@ -102,6 +102,19 @@ def fetch_draftkings_wnba_odds() -> list[dict[str, Any]]:
     except Exception as exc:
         print(f"Free DraftKings feed unavailable: {exc}")
 
+    # Secondary free source: SportsBookReview public odds pages. These include
+    # book-specific rows, including DraftKings, without consuming Odds API credits.
+    try:
+        from src.sbr_market_odds import fetch_sbr_draftkings
+
+        sbr_dk = fetch_sbr_draftkings("wnba")
+        if sbr_dk:
+            _write_market_cache(sbr_dk, "SportsBookReview DraftKings (free)")
+            print(f"Fetched {len(sbr_dk)} WNBA DraftKings events from SportsBookReview; no API credits used")
+            return sbr_dk
+    except Exception as exc:
+        print(f"SportsBookReview DraftKings feed unavailable: {exc}")
+
     # Secondary free source: ESPN's public scoreboard feed, which exposes
     # DraftKings game markets. This is intentionally before any paid fallback.
     try:
