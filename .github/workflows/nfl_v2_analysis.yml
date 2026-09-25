@@ -1,0 +1,58 @@
+name: NFL V2 Candidate Analysis
+
+on:
+  workflow_dispatch: {}
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/backtest_nfl_models.py'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: nfl-v2-analysis
+  cancel-in-progress: true
+
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    env:
+      PYTHONPATH: ${{ github.workspace }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - name: Install dependencies
+        run: pip install pandas requests
+      - name: Generate NFL v2 candidate
+        run: python scripts/generate_nfl_v2.py
+      - name: Backtest NFL v1 vs v2
+        run: python scripts/backtest_nfl_models.py
+      - name: Validate
+        run: |
+          python - <<'PY'
+          import json
+          v2=json.load(open("docs/nfl-v2-latest.json"))
+          cmp=json.load(open("data/nfl_model_comparison.json"))
+          assert v2["model_status"]=="candidate_not_promoted"
+          assert cmp["metrics"]["v1"]["n_games"] > 100
+          assert cmp["metrics"]["full"]["n_games"] == cmp["metrics"]["v1"]["n_games"]
+          print(cmp["metrics"])
+          PY
+      - name: Publish candidate analysis
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add docs/nfl-v2-latest.json predictions/nfl-v2-latest.json data/nfl_model_comparison.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Update NFL v2 candidate analysis"
+          for attempt in 1 2 3; do
+            if git push origin HEAD:main; then exit 0; fi
+            git fetch origin main
+            git rebase origin/main || { git rebase --abort || true; exit 1; }
+          done
+          exit 1
