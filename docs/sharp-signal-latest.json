@@ -1,0 +1,70 @@
+{
+  "generated_at_utc": "2026-09-25T18:34:59.585104+00:00",
+  "status": "ok",
+  "production_adjustment_enabled": false,
+  "new_posts_seen": 35,
+  "new_picks_parsed": 0,
+  "ledger_size": 0,
+  "since_id_used": null,
+  "newest_id": "2103513002775384097",
+  "accounts": {
+    "@RufusPeabody": {
+      "tier": "established_professional",
+      "captured_picks": 0,
+      "graded_picks": 0,
+      "profit_units": 0,
+      "roi": null,
+      "mean_clv": null,
+      "model_weight": 0.0,
+      "promotion_eligible": false
+    },
+    "@capjack2000": {
+      "tier": "established_professional",
+      "captured_picks": 0,
+      "graded_picks": 0,
+      "profit_units": 0,
+      "roi": null,
+      "mean_clv": null,
+      "model_weight": 0.0,
+      "promotion_eligible": false
+    },
+    "@FezzikSports": {
+      "tier": "established_professional",
+      "captured_picks": 0,
+      "graded_picks": 0,
+      "profit_units": 0,
+      "roi": null,
+      "mean_clv": null,
+      "model_weight": 0.0,
+      "promotion_eligible": false
+    },
+    "@wheatonbrando": {
+      "tier": "externally_tracked_analyst",
+      "captured_picks": 0,
+      "graded_picks": 0,
+      "profit_units": 0,
+      "roi": null,
+      "mean_clv": null,
+      "model_weight": 0.0,
+      "promotion_eligible": false
+    },
+    "@iamrahstradamus": {
+      "tier": "externally_tracked_analyst",
+      "captured_picks": 0,
+      "graded_picks": 0,
+      "profit_units": 0,
+      "roi": null,
+      "mean_clv": null,
+      "model_weight": 0.0,
+      "promotion_eligible": false
+    }
+  },
+  "new_picks": [],
+  "promotion_thresholds": {
+    "minimum_graded_picks": 100,
+    "minimum_positive_clv_rate": 0.52,
+    "minimum_roi": 0.01,
+    "requires_shadow_model_improvement": true
+  },
+  "promotion_rule": "No account receives nonzero model weight until our prospectively graded ledger meets the configured sample, ROI and CLV thresholds and a leakage-safe shadow comparison improves predictive metrics."
+}
