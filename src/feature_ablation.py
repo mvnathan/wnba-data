@@ -252,3 +252,5 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+
+# Postseason context validation trigger: 2026-09-25
