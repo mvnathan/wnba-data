@@ -13,7 +13,7 @@ from src.nfl_v2_core import predict_row
 
 URL="https://raw.githubusercontent.com/nflverse/nfldata/master/data/games.csv"
 OUT=Path("data/nfl_model_comparison.json")
-VARIANTS=("v1","base","rest","qb","division","full")
+VARIANTS=("v1","base","rest","qb","division","full","hybrid")
 
 
 def load():
@@ -65,16 +65,19 @@ def main():
     for _,row in eval_df.iterrows():
         rec={"game_id":str(row.game_id),"season":int(row.season),"week":int(row.week),"actual_home":float(row.home_score),"actual_away":float(row.away_score)}
         rec["v1"]=v1_predict(df,row)
-        for v in VARIANTS[1:]:rec[v]=predict_row(df,row,v)
+        for v in ("base","rest","qb","division","full"):rec[v]=predict_row(df,row,v)
+        rec["hybrid"]=rec["full"] if int(row.week)<=4 else rec["v1"]
         rows.append(rec)
-    out={"evaluation":"leakage-safe chronological regular-season backtest; each prediction uses only games from earlier weeks","seasons":sorted({r["season"] for r in rows}),"metrics":{v:metrics(rows,v) for v in VARIANTS},"delta_full_minus_v1":{}}
+    out={"evaluation":"leakage-safe chronological regular-season backtest; each prediction uses only games from earlier weeks","seasons":sorted({r["season"] for r in rows}),"metrics":{v:metrics(rows,v) for v in VARIANTS},"delta_full_minus_v1":{},"delta_hybrid_minus_v1":{}}
     a=out["metrics"]["v1"];b=out["metrics"]["full"]
     for k in ("winner_accuracy","brier_score","margin_mae","total_mae","team_score_mae"):out["delta_full_minus_v1"][k]=round(b[k]-a[k],4)
+    h=out["metrics"]["hybrid"]
+    for k in ("winner_accuracy","brier_score","margin_mae","total_mae","team_score_mae"):out["delta_hybrid_minus_v1"][k]=round(h[k]-a[k],4)
 
     out["by_season"]={}
     for season in out["seasons"]:
         subset=[r for r in rows if r["season"]==season]
-        out["by_season"][str(season)]={"v1":metrics(subset,"v1"),"full_v2":metrics(subset,"full")}
+        out["by_season"][str(season)]={"v1":metrics(subset,"v1"),"full_v2":metrics(subset,"full"),"hybrid_v2":metrics(subset,"hybrid")}
     early=[r for r in rows if r["week"]<=4]
     later=[r for r in rows if r["week"]>=5]
     out["by_season_phase"]={
