@@ -422,3 +422,5 @@ def run_pipeline(root: Path, as_of: date | None = None) -> dict[str, Any]:
         joblib.dump(bundles[tour], root / "models" / "tennis" / f"{tour.lower()}_model.joblib", compress=3)
     (root / "models" / "tennis" / "metadata.json").write_text(json.dumps({"generated_at_utc": generated, "metrics": metrics, "features": FEATURES}, indent=2), encoding="utf-8")
     return payload
+
+# Competitive context refresh trigger: 2026-09-25
