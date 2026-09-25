@@ -31,7 +31,7 @@ jobs:
         with:
           python-version: '3.12'
       - name: Install dependencies
-        run: pip install requests beautifulsoup4
+        run: pip install requests beautifulsoup4 pandas
       - name: Build availability intelligence
         run: python scripts/generate_availability_intelligence.py
       - name: Validate output
