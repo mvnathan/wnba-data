@@ -20,7 +20,7 @@ from zoneinfo import ZoneInfo
 
 import requests
 
-from src.competitive_context import build_context, bounded_effort_adjustment, mlb_groups
+from src.competitive_context import build_division_context, bounded_effort_adjustment, mlb_groups, mlb_divisions
 
 from scripts.generate_mlb_predictions import (
     CHICAGO, MLB_SCHEDULE, _completed, _date_of_game, _get_json, _league_and_team_rates,
@@ -133,7 +133,7 @@ def _season_competitive_context(target_date: date):
         hs,aws=_score(g,"home"),_score(g,"away")
         if ha and aa and hs is not None and aws is not None:
             rows.append({"home":ha,"away":aa,"home_score":hs,"away_score":aws})
-    return build_context(rows,total_games=162,playoff_slots=6,groups=mlb_groups(),late_season_threshold=.72)
+    return build_division_context(rows,total_games=162,conferences=mlb_groups(),divisions=mlb_divisions(),wildcard_slots=3,late_season_threshold=.72)
 
 
 def build_v2(target_date: date | None = None, use_competitive_context: bool = False) -> dict[str, Any]:
