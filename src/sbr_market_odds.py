@@ -34,14 +34,14 @@ def _rows(url: str) -> list[dict[str, Any]]:
     data = _next_data(url)
     props = data.get("props", {}).get("pageProps", {})
     tables = props.get("oddsTables") or []
-    if not tables:
-        return []
-    model = tables[0].get("oddsTableModel") or {}
-    sportsbooks = model.get("sportsbooks") or []
-    rows = model.get("gameRows") or []
-    for row in rows:
-        if isinstance(row, dict):
-            row["_sportsbooks"] = sportsbooks
+    rows: list[dict[str, Any]] = []
+    for table in tables:
+        model = (table or {}).get("oddsTableModel") or {}
+        sportsbooks = model.get("sportsbooks") or []
+        for row in model.get("gameRows") or []:
+            if isinstance(row, dict):
+                row["_sportsbooks"] = sportsbooks
+                rows.append(row)
     return rows
 
 
