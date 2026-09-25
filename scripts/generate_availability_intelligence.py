@@ -90,6 +90,69 @@ def official_web_evidence(cfg: dict[str, Any]) -> tuple[list[Any], list[dict[str
     return evidence, diagnostics
 
 
+def sportradar_wnba_evidence() -> tuple[list[Any], dict[str, Any]]:
+    key = os.getenv("SPORTRADAR_API_KEY")
+    if not key:
+        return [], {"status": "disabled", "reason": "SPORTRADAR_API_KEY not configured"}
+    url = "https://api.sportradar.com/wnba/trial/v8/en/league/injuries.json"
+    try:
+        r = requests.get(url, headers={"x-api-key": key}, timeout=30)
+        r.raise_for_status()
+        data = r.json()
+    except Exception as exc:
+        return [], {"status": "error", "error": str(exc)}
+
+    evidence = []
+    seen = set()
+
+    def walk(node: Any, team: str | None = None) -> None:
+        if isinstance(node, dict):
+            team_name = team
+            if isinstance(node.get("team"), dict):
+                team_name = node["team"].get("name") or node["team"].get("market") or team_name
+            elif node.get("team_name"):
+                team_name = str(node.get("team_name"))
+
+            player = None
+            for key_name in ("player", "athlete"):
+                if isinstance(node.get(key_name), dict):
+                    p = node[key_name]
+                    player = p.get("full_name") or p.get("name")
+                    if not player:
+                        player = " ".join(x for x in [p.get("first_name"), p.get("last_name")] if x)
+                    break
+            player = player or node.get("player_name") or node.get("full_name")
+
+            status = node.get("status") or node.get("participation") or node.get("game_status")
+            desc = node.get("desc") or node.get("description") or node.get("comment") or node.get("injury")
+            if isinstance(desc, dict):
+                desc = desc.get("description") or desc.get("type") or desc.get("name")
+            if player and (status or desc):
+                text = compact(f"{player} {status or ''} {desc or ''}")
+                sig = text.lower()
+                if sig not in seen:
+                    seen.add(sig)
+                    evidence.append(
+                        make_evidence(
+                            sport="WNBA",
+                            team=team_name,
+                            player=str(player),
+                            source="Sportradar WNBA Injuries",
+                            source_tier="official",
+                            text=text,
+                            url=url,
+                        )
+                    )
+            for value in node.values():
+                walk(value, team_name)
+        elif isinstance(node, list):
+            for value in node:
+                walk(value, team)
+
+    walk(data)
+    return evidence, {"status": "ok", "records": len(evidence), "source": "Sportradar WNBA v8 injuries"}
+
+
 def x_query(accounts: list[dict[str, Any]], keywords: list[str]) -> str:
     handles = " OR ".join(f"from:{x['username']}" for x in accounts)
     terms = [
@@ -185,8 +248,9 @@ def raw_signals(evidence: list[Any]) -> list[dict[str, Any]]:
 def main() -> None:
     cfg = load_config()
     official, web_diag = official_web_evidence(cfg)
+    wnba_items, wnba_diag = sportradar_wnba_evidence()
     x_items, x_diag = x_evidence(cfg)
-    all_items = official + x_items
+    all_items = official + wnba_items + x_items
 
     structured = aggregate([e for e in all_items if e.player or e.team])
     payload = {
@@ -201,6 +265,7 @@ def main() -> None:
             "secondary": "context only",
         },
         "official_source_diagnostics": web_diag,
+        "wnba_structured_source_diagnostics": wnba_diag,
         "x_source_diagnostics": {k: v for k, v in x_diag.items() if k != "raw_posts"},
         "signals": raw_signals(all_items)[:250],
         "structured": structured,
@@ -214,6 +279,7 @@ def main() -> None:
     DATA_OUT.write_text(text, encoding="utf-8")
     print(json.dumps({
         "official_signals": len(official),
+        "wnba_structured_signals": len(wnba_items),
         "x_signals": len(x_items),
         "output_signals": len(payload["signals"]),
         "x_status": x_diag.get("status"),
