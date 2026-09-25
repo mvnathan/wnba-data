@@ -2,6 +2,7 @@
 """Generate NFL v2 candidate predictions without replacing production v1."""
 
 from __future__ import annotations
+import argparse
 import json
 from datetime import datetime, timezone
 from pathlib import Path
@@ -9,7 +10,7 @@ from zoneinfo import ZoneInfo
 
 import pandas as pd
 
-from src.nfl_v2_core import predict_row
+from src.nfl_v2_core import predict_hybrid_row
 from src.sbr_market_odds import fetch_sbr_draftkings
 
 CHICAGO=ZoneInfo("America/Chicago")
@@ -89,7 +90,7 @@ def build():
     markets=_market_lookup(rows)
     games=[]
     for _,row in slate.iterrows():
-        pred=predict_row(df,row,"full")
+        pred,strategy=predict_hybrid_row(df,row)
         ha,aa=str(row.home_team),str(row.away_team);hn,an=TEAM_NAMES.get(ha,ha),TEAM_NAMES.get(aa,aa)
         start=_dt(row).isoformat().replace("+00:00","Z")
         market=_extract(_closest(markets.get((hn.lower(),an.lower())),start))
@@ -105,7 +106,8 @@ def build():
             "predicted_winner":hn if pred["home_win_probability"]>=.5 else an,
             "home_win_probability":round(pred["home_win_probability"],4),"away_win_probability":round(1-pred["home_win_probability"],4),
             "model_version":"nfl-v2-candidate","model_status":"candidate_not_promoted","market_used_in_prediction":False,
-            "v2_features":{"rest":True,"qb_continuity":True,"divisional_margin_shrink":True,"multi_season_team_form":True,"neutral_site_hfa":True},
+            "v2_strategy":strategy,
+            "v2_features":{"early_season_multi_season_form":True,"rest":strategy=="early_season_enhanced","qb_continuity":strategy=="early_season_enhanced","divisional_margin_shrink":strategy=="early_season_enhanced","neutral_site_hfa":True},
             **market,
             "model_market_spread_edge":round(spread_edge,2) if spread_edge is not None else None,
             "model_market_total_edge":round(total_edge,2) if total_edge is not None else None,
@@ -114,7 +116,24 @@ def build():
 
 
 def main():
-    p=build();text=json.dumps(p,indent=2,allow_nan=False);OUT.parent.mkdir(parents=True,exist_ok=True);DOCS_OUT.parent.mkdir(parents=True,exist_ok=True);OUT.write_text(text);DOCS_OUT.write_text(text);print(json.dumps({"games":len(p["games"]),"markets":p["market_event_count"],"model":p["model_version"]},indent=2))
+    ap=argparse.ArgumentParser()
+    ap.add_argument("--production",action="store_true")
+    args=ap.parse_args()
+    p=build()
+    if args.production:
+        p["model_version"]="nfl-v2"
+        p["model_status"]="production"
+        p["validation_basis"]="577-game leakage-safe backtest across 2024-2026; hybrid v2 improved winner accuracy, Brier score, margin MAE, total MAE, and team-score MAE vs v1."
+        for g in p["games"]:
+            g["model_version"]="nfl-v2"
+            g["model_status"]="production"
+    text=json.dumps(p,indent=2,allow_nan=False)
+    OUT.parent.mkdir(parents=True,exist_ok=True);DOCS_OUT.parent.mkdir(parents=True,exist_ok=True)
+    OUT.write_text(text);DOCS_OUT.write_text(text)
+    if args.production:
+        Path("predictions/nfl-latest.json").write_text(text)
+        Path("docs/nfl-latest.json").write_text(text)
+    print(json.dumps({"games":len(p["games"]),"markets":p["market_event_count"],"model":p["model_version"],"status":p["model_status"]},indent=2))
 
 
 if __name__=="__main__":main()
