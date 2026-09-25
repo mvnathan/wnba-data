@@ -5,6 +5,8 @@ import { createVapidKeys, sendWebPush } from "./push.js";
 const STATIC_LATEST = "https://raw.githubusercontent.com/mvnathan/wnba-data/main/docs/latest.json";
 const TENNIS_LATEST = "https://raw.githubusercontent.com/mvnathan/wnba-data/main/docs/tennis-latest.json";
 const MLB_LATEST = "https://raw.githubusercontent.com/mvnathan/wnba-data/main/docs/mlb-latest.json";
+const NFL_LATEST = "https://raw.githubusercontent.com/mvnathan/wnba-data/main/docs/nfl-latest.json";
+const NFL_SCOREBOARD = "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard";
 const MLB_SCHEDULE = "https://statsapi.mlb.com/api/v1/schedule";
 const LIVESCORE_TENNIS = "https://prod-public-api.livescore.com/v1/api/app/date/tennis";
 const SNAPSHOT_NAME = "wnba-live-singleton";
@@ -87,6 +89,53 @@ async function fetchMLBLatest() {
   });
   if (!response.ok) throw new Error(`MLB latest returned ${response.status}`);
   return response.json();
+}
+
+async function fetchNFLLatest() {
+  const response = await fetch(`${NFL_LATEST}?t=${Date.now()}`, {
+    headers: { "cache-control": "no-cache" },
+    cf: { cacheTtl: 0, cacheEverything: false },
+  });
+  if (!response.ok) throw new Error(`NFL latest returned ${response.status}`);
+  return response.json();
+}
+
+async function fetchNFLLive(season, week) {
+  const url = `${NFL_SCOREBOARD}?dates=${encodeURIComponent(season)}&seasontype=2&week=${encodeURIComponent(week)}`;
+  const request = new Request(url, { headers: { "accept": "application/json", "user-agent": "SportsModelHub/1.0" } });
+  const cache = caches.default;
+  let response = await cache.match(request);
+  if (!response) {
+    response = await fetch(request, { cf: { cacheTtl: 10, cacheEverything: true } });
+    if (!response.ok) throw new Error(`NFL scoreboard returned ${response.status}`);
+    response = new Response(response.body, response);
+    response.headers.set("cache-control", "public, max-age=10");
+    await cache.put(request, response.clone());
+  }
+  return response.json();
+}
+
+function mergeNFLScores(predictions, live) {
+  const map = new Map((live?.events || []).map((event) => [String(event.id), event]));
+  return (predictions || []).map((game) => {
+    const event = map.get(String(game.game_id));
+    if (!event) return game;
+    const comp = (event.competitions || [])[0] || {};
+    const competitors = comp.competitors || [];
+    const home = competitors.find((x) => x.homeAway === "home");
+    const away = competitors.find((x) => x.homeAway === "away");
+    const status = event.status || {};
+    return {
+      ...game,
+      live_home_score: home?.score ?? null,
+      live_away_score: away?.score ?? null,
+      live_status: status?.type?.description || status?.type?.detail || null,
+      live_state: status?.type?.state || null,
+      live_period: status?.period ?? null,
+      live_clock: status?.displayClock || null,
+      possession: competitors.find((x) => x.possession)?.team?.abbreviation || null,
+    };
+  });
 }
 
 async function fetchMLBLive(date) {
@@ -402,6 +451,31 @@ export default {
         }
       } catch (error) {
         return jsonResponse({ ok: false, service: "mlb-predictions", error: String(error?.message || error) }, 503);
+      }
+    }
+
+    if (url.pathname === "/nfl/latest.json" || url.pathname === "/api/nfl") {
+      try {
+        const data = await fetchNFLLatest();
+        try {
+          const live = await fetchNFLLive(data.season, data.week);
+          return jsonResponse({
+            ...data,
+            games: mergeNFLScores(data.games, live),
+            live_score_generated_at_utc: new Date().toISOString(),
+            live_score_source: "ESPN NFL scoreboard via Cloudflare",
+            cloudflare_delivery: "nfl-live-overlay",
+          });
+        } catch (liveError) {
+          return jsonResponse({
+            ...data,
+            live_score_error: String(liveError?.message || liveError),
+            live_score_source: "prediction-feed-fallback",
+            cloudflare_delivery: "nfl-static-proxy",
+          });
+        }
+      } catch (error) {
+        return jsonResponse({ ok: false, service: "nfl-predictions", error: String(error?.message || error) }, 503);
       }
     }
 
