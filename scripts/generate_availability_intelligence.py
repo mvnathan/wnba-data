@@ -14,7 +14,7 @@ from __future__ import annotations
 import json
 import os
 import re
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any
 
@@ -163,7 +163,61 @@ def x_query(accounts: list[dict[str, Any]], keywords: list[str]) -> str:
     return f"({handles}) ({' OR '.join(terms)}) -is:retweet lang:en"
 
 
-def x_evidence(cfg: dict[str, Any]) -> tuple[list[Any], dict[str, Any]]:
+def load_previous_state() -> dict[str, Any]:
+    for path in (DOCS_OUT, DATA_OUT):
+        try:
+            if path.exists():
+                return json.loads(path.read_text(encoding="utf-8"))
+        except Exception:
+            pass
+    return {}
+
+
+def previous_x_since_id(previous: dict[str, Any]) -> str | None:
+    diag = previous.get("x_source_diagnostics") or {}
+    if diag.get("newest_id"):
+        return str(diag["newest_id"])
+
+    ids = []
+    for row in previous.get("signals") or []:
+        url = str(row.get("url") or "")
+        source = str(row.get("source") or "")
+        if not source.startswith("@") or "/status/" not in url:
+            continue
+        try:
+            ids.append(int(url.rsplit("/status/", 1)[1].split("?", 1)[0]))
+        except Exception:
+            continue
+    return str(max(ids)) if ids else None
+
+
+def merge_recent_x_signals(
+    previous: dict[str, Any],
+    current: list[dict[str, Any]],
+    keep_hours: int = 48,
+) -> list[dict[str, Any]]:
+    cutoff = datetime.now(timezone.utc) - timedelta(hours=keep_hours)
+    seen_urls = {str(row.get("url") or "") for row in current}
+    carried = []
+
+    for row in previous.get("signals") or []:
+        source = str(row.get("source") or "")
+        url = str(row.get("url") or "")
+        published = row.get("published_at_utc")
+        if not source.startswith("@") or not url or url in seen_urls or not published:
+            continue
+        try:
+            dt = datetime.fromisoformat(str(published).replace("Z", "+00:00"))
+        except Exception:
+            continue
+        if dt >= cutoff:
+            carried.append(row)
+            seen_urls.add(url)
+
+    return current + carried
+
+
+def x_evidence(cfg: dict[str, Any], since_id: str | None = None) -> tuple[list[Any], dict[str, Any]]:
     token = os.getenv("X_BEARER_TOKEN") or os.getenv("TWITTER_BEARER_TOKEN")
     if not token:
         return [], {"status": "disabled", "reason": "X_BEARER_TOKEN not configured"}
@@ -180,6 +234,8 @@ def x_evidence(cfg: dict[str, Any]) -> tuple[list[Any], dict[str, Any]]:
         "expansions": "author_id",
         "user.fields": "username,name",
     }
+    if since_id:
+        params["since_id"] = since_id
     try:
         r = requests.get(X_URL, params=params, headers={"Authorization": f"Bearer {token}"}, timeout=30)
         if r.status_code in {401, 402, 403, 429}:
@@ -194,17 +250,30 @@ def x_evidence(cfg: dict[str, Any]) -> tuple[list[Any], dict[str, Any]]:
                 "http_status": r.status_code,
                 "reason": reason,
                 "query": query,
+                "since_id_used": since_id,
+                "newest_id": since_id,
             }
         r.raise_for_status()
         payload = r.json()
     except Exception as exc:
-        return [], {"status": "error", "reason": str(exc), "query": query}
+        return [], {
+            "status": "error",
+            "reason": str(exc),
+            "query": query,
+            "since_id_used": since_id,
+            "newest_id": since_id,
+        }
     users = {str(x["id"]): x for x in ((payload.get("includes") or {}).get("users") or [])}
     by_username = {x["username"].lower(): x for x in accounts}
 
     evidence = []
     raw_posts = []
+    post_ids = []
     for post in payload.get("data") or []:
+        try:
+            post_ids.append(int(post.get("id")))
+        except Exception:
+            pass
         user = users.get(str(post.get("author_id")), {})
         username = str(user.get("username") or "").lower()
         src_cfg = by_username.get(username)
@@ -233,10 +302,13 @@ def x_evidence(cfg: dict[str, Any]) -> tuple[list[Any], dict[str, Any]]:
             "url": ev.url,
         })
 
+    newest_id = str(max(post_ids)) if post_ids else since_id
     return evidence, {
         "status": "ok",
         "posts": len(raw_posts),
         "query": query,
+        "since_id_used": since_id,
+        "newest_id": newest_id,
         "raw_posts": raw_posts[:100],
     }
 
@@ -263,12 +335,17 @@ def raw_signals(evidence: list[Any]) -> list[dict[str, Any]]:
 
 def main() -> None:
     cfg = load_config()
+    previous = load_previous_state()
+    since_id = previous_x_since_id(previous)
+
     official, web_diag = official_web_evidence(cfg)
     wnba_items, wnba_diag = sportradar_wnba_evidence()
-    x_items, x_diag = x_evidence(cfg)
+    x_items, x_diag = x_evidence(cfg, since_id=since_id)
     all_items = official + wnba_items + x_items
 
     structured = aggregate([e for e in all_items if e.player or e.team])
+    current_signals = raw_signals(all_items)
+    merged_signals = merge_recent_x_signals(previous, current_signals)
     payload = {
         "generated_at_utc": datetime.now(timezone.utc).isoformat(),
         "status": "ok",
@@ -283,7 +360,7 @@ def main() -> None:
         "official_source_diagnostics": web_diag,
         "wnba_structured_source_diagnostics": wnba_diag,
         "x_source_diagnostics": {k: v for k, v in x_diag.items() if k != "raw_posts"},
-        "signals": raw_signals(all_items)[:250],
+        "signals": merged_signals[:250],
         "structured": structured,
         "next_validation_step": "Map signals to players/teams, backfill historical availability events, then test incremental Brier/accuracy/MAE before allowing direct model adjustments.",
     }
@@ -297,6 +374,8 @@ def main() -> None:
         "official_signals": len(official),
         "wnba_structured_signals": len(wnba_items),
         "x_signals": len(x_items),
+        "x_since_id_used": x_diag.get("since_id_used"),
+        "x_newest_id": x_diag.get("newest_id"),
         "output_signals": len(payload["signals"]),
         "x_status": x_diag.get("status"),
     }, indent=2))
