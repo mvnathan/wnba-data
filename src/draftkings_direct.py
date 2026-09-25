@@ -307,4 +307,9 @@ def fetch_draftkings_direct(sport: str) -> list[dict[str, Any]]:
             }
         )
 
-    return rows
+    if rows:
+        return rows
+    try:
+        return _fetch_v5_full_game(sport, league_id)
+    except Exception:
+        return []
