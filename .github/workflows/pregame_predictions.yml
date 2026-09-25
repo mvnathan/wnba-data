@@ -7,8 +7,12 @@ on:
     paths:
       - '.github/workflows/pregame_predictions.yml'
       - 'src/predict_pregame.py'
+      - 'src/market_odds.py'
+      - 'src/draftkings_direct.py'
+      - 'src/espn_market_odds.py'
   schedule:
-    - cron: '12 14,18,22 * * *'
+    - cron: '30 12,14,16,18,20,22 * * *'
+    - cron: '30 0,2 * * *'
 
 # Manual repaired consensus refresh trigger: 2026-08-30T22:16Z
 
