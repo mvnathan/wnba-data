@@ -323,3 +323,5 @@ def attach_market_odds(games: list[dict[str, Any]], odds_data: list[dict[str, An
             row["market_blend_version"] = MARKET_BLEND_VERSION; row["market_used_in_prediction"] = False; _reconcile_probability(row, _as_float(row.get("predicted_margin"))); enriched.append(row); continue
         row.update(_extract_markets(odds_game)); enriched.append(_attach_market_benchmark(row)); matched += 1
     print("Market matches:", matched, "/", len(games)); return enriched
+
+# DK source-order validation: 2026-09-25
