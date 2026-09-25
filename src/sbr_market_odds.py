@@ -36,11 +36,19 @@ def _rows(url: str) -> list[dict[str, Any]]:
     tables = props.get("oddsTables") or []
     if not tables:
         return []
-    return (tables[0].get("oddsTableModel") or {}).get("gameRows") or []
+    model = tables[0].get("oddsTableModel") or {}
+    sportsbooks = model.get("sportsbooks") or []
+    rows = model.get("gameRows") or []
+    for row in rows:
+        if isinstance(row, dict):
+            row["_sportsbooks"] = sportsbooks
+    return rows
 
 
 def _book_line(row: dict[str, Any], book: str = "draftkings") -> dict[str, Any] | None:
-    for view in row.get("oddsViews") or []:
+    views = row.get("oddsViews") or []
+    # Some SBR pages put the book name on each odds view.
+    for view in views:
         if not isinstance(view, dict):
             continue
         if str(view.get("sportsbook") or "").lower() != book:
@@ -48,6 +56,18 @@ def _book_line(row: dict[str, Any], book: str = "draftkings") -> dict[str, Any] 
         line = view.get("currentLine") or view.get("openingLine") or {}
         if isinstance(line, dict):
             return line
+
+    # Other pages use a table-level sportsbook array whose position matches
+    # the oddsViews array. NFL currently uses this representation.
+    sportsbooks = row.get("_sportsbooks") or []
+    for idx, sb in enumerate(sportsbooks):
+        machine = str((sb or {}).get("machineName") or (sb or {}).get("name") or "").lower()
+        if machine != book:
+            continue
+        if idx >= len(views) or not isinstance(views[idx], dict):
+            return None
+        line = views[idx].get("currentLine") or views[idx].get("openingLine") or {}
+        return line if isinstance(line, dict) else None
     return None
 
 
