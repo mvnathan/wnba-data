@@ -24,7 +24,7 @@ import requests
 from src.sbr_market_odds import fetch_sbr_draftkings
 
 CHICAGO = ZoneInfo("America/Chicago")
-ESPN = "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard"
+NFL_SCOREBOARD_PROXY = "https://wnba-live-dashboard.mvnathan.workers.dev/api/nfl/scoreboard"
 OUT = Path("predictions/nfl-latest.json")
 DOCS_OUT = Path("docs/nfl-latest.json")
 PRIOR_GAMES = 3.5
@@ -33,13 +33,13 @@ PROB_SCALE = 7.25
 
 
 def _get(params: dict[str, Any]) -> dict[str, Any]:
-    r = requests.get(ESPN, params=params, timeout=30, headers={"user-agent": "SportsModelHub/1.0"})
+    r = requests.get(NFL_SCOREBOARD_PROXY, params=params, timeout=30, headers={"user-agent": "SportsModelHub/1.0"})
     r.raise_for_status()
     return r.json()
 
 
 def _week_payload(week: int, season: int, season_type: int = 2) -> dict[str, Any]:
-    return _get({"week": week, "seasontype": season_type, "dates": season})
+    return _get({"week": week, "season": season})
 
 
 def _competition(event: dict[str, Any]) -> dict[str, Any]:
@@ -79,12 +79,16 @@ def _event_date(event: dict[str, Any]) -> datetime:
 
 
 def _current_week(season: int) -> int:
-    # ESPN's undated scoreboard tracks the league's active week.
-    data = _get({"dates": season, "seasontype": 2})
-    try:
-        return int((data.get("week") or {}).get("number") or 1)
-    except (TypeError, ValueError):
+    # NFL regular season starts on the Thursday after Labor Day.
+    # This avoids a separate provider-specific "current week" call.
+    sep1 = datetime(season, 9, 1, tzinfo=CHICAGO)
+    first_monday = sep1 + timedelta(days=(7 - sep1.weekday()) % 7)
+    labor_day = first_monday
+    kickoff = labor_day + timedelta(days=3)
+    now = datetime.now(CHICAGO)
+    if now < kickoff:
         return 1
+    return max(1, min(18, int((now - kickoff).days // 7) + 1))
 
 
 def _history_and_slate(season: int, week: int) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
