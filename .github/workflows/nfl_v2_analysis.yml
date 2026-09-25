@@ -2,10 +2,6 @@ name: NFL V2 Candidate Analysis
 
 on:
   workflow_dispatch: {}
-  push:
-    branches: [main]
-    paths:
-      - 'src/nfl_v2_core.py'
 
 permissions:
   contents: write
