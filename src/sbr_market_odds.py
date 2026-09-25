@@ -50,11 +50,12 @@ def _book_line(row: dict[str, Any], book: str = "draftkings") -> dict[str, Any] 
     return None
 
 
-def _key(row: dict[str, Any]) -> tuple[str, str] | None:
+def _key(row: dict[str, Any]) -> tuple[str, str, str] | None:
     gv = row.get("gameView") or {}
     home = ((gv.get("homeTeam") or {}).get("fullName") or "").strip()
     away = ((gv.get("awayTeam") or {}).get("fullName") or "").strip()
-    return (home, away) if home and away else None
+    start = str(gv.get("startDate") or "")
+    return (home, away, start) if home and away else None
 
 
 def fetch_sbr_draftkings(sport: str, date_str: str | None = None) -> list[dict[str, Any]]:
@@ -68,12 +69,12 @@ def fetch_sbr_draftkings(sport: str, date_str: str | None = None) -> list[dict[s
 
     base = f"https://www.sportsbookreview.com/betting-odds/{slug}"
     urls = {
-        "spreads": f"{base}/?date={date_str}",
+        "spreads": f"{base}/pointspread/full-game/?date={date_str}",
         "h2h": f"{base}/money-line/full-game/?date={date_str}",
         "totals": f"{base}/totals/full-game/?date={date_str}",
     }
 
-    by_market: dict[str, dict[tuple[str, str], dict[str, Any]]] = {}
+    by_market: dict[str, dict[tuple[str, str, str], dict[str, Any]]] = {}
     for market, url in urls.items():
         try:
             items = {}
@@ -92,21 +93,21 @@ def fetch_sbr_draftkings(sport: str, date_str: str | None = None) -> list[dict[s
     out: list[dict[str, Any]] = []
     sport_key = {"wnba": "basketball_wnba", "mlb": "baseball_mlb"}[sport]
 
-    for home, away in sorted(keys):
+    for home, away, start in sorted(keys):
         markets = []
-        ml = by_market["h2h"].get((home, away))
+        ml = by_market["h2h"].get((home, away, start))
         if ml:
             markets.append({"key": "h2h", "outcomes": [
                 {"name": home, "price": ml.get("homeOdds")},
                 {"name": away, "price": ml.get("awayOdds")},
             ]})
-        sp = by_market["spreads"].get((home, away))
+        sp = by_market["spreads"].get((home, away, start))
         if sp:
             markets.append({"key": "spreads", "outcomes": [
                 {"name": home, "point": sp.get("homeSpread"), "price": sp.get("homeOdds")},
                 {"name": away, "point": sp.get("awaySpread"), "price": sp.get("awayOdds")},
             ]})
-        tot = by_market["totals"].get((home, away))
+        tot = by_market["totals"].get((home, away, start))
         if tot:
             point = tot.get("total")
             if point is None:
@@ -119,7 +120,7 @@ def fetch_sbr_draftkings(sport: str, date_str: str | None = None) -> list[dict[s
             out.append({
                 "id": f"sbr-{sport}-{home}-{away}-{date_str}",
                 "sport_key": sport_key,
-                "commence_time": None,
+                "commence_time": start or None,
                 "home_team": home,
                 "away_team": away,
                 "bookmakers": [{
