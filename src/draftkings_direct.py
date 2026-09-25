@@ -20,6 +20,10 @@ BASE_URL = (
     "https://sportsbook-nash.draftkings.com/api/sportscontent/"
     "dkusnj/v1/leagues/{league_id}/categories/{category_id}"
 )
+V5_BASE_URL = (
+    "https://sportsbook-nash.draftkings.com/sites/US-SB/api/v5/"
+    "eventgroups/{league_id}?format=json"
+)
 
 WNBA_CANONICAL = {
     "dream": "Atlanta Dream",
@@ -102,6 +106,97 @@ def _fetch_json(url: str) -> dict[str, Any]:
     if not isinstance(data, dict):
         raise RuntimeError("Unexpected DraftKings response format")
     return data
+
+
+def _fetch_v5_full_game(sport: str, league_id: int) -> list[dict[str, Any]]:
+    """Fallback parser for DraftKings' v5 event-group feed."""
+    data = _fetch_json(V5_BASE_URL.format(league_id=league_id))
+    group = data.get("eventGroup") or data
+    events = {
+        str(e.get("eventId") or e.get("id")): e
+        for e in (group.get("events") or data.get("events") or [])
+    }
+    fetched_at = datetime.now(timezone.utc).isoformat()
+    by_event: dict[str, list[dict[str, Any]]] = {}
+
+    categories = group.get("offerCategories") or []
+    for cat in categories:
+        cat_name = str(cat.get("name") or "").lower()
+        for desc in cat.get("offerSubcategoryDescriptors", []) or []:
+            sub_name = str(desc.get("name") or "").lower()
+            sub = desc.get("offerSubcategory") or {}
+            offers = sub.get("offers") or []
+            for offer_group in offers:
+                group_offers = offer_group if isinstance(offer_group, list) else [offer_group]
+                for offer in group_offers:
+                    eid = str(offer.get("eventId") or "")
+                    if not eid:
+                        continue
+                    label = str(offer.get("label") or offer.get("name") or sub_name or cat_name).lower()
+                    key = None
+                    if "moneyline" in label or "money line" in label:
+                        key = "h2h"
+                    elif "spread" in label or "run line" in label:
+                        key = "spreads"
+                    elif label in {"total", "totals", "game total"} or "total runs" in label or "total points" in label:
+                        key = "totals"
+                    if key is None:
+                        continue
+                    ev = events.get(eid) or {}
+                    teams = _event_teams(ev, sport)
+                    if not teams:
+                        continue
+                    away_team, home_team = teams
+                    outcomes = []
+                    for out in offer.get("outcomes", []) or []:
+                        raw_label = str(out.get("label") or out.get("name") or out.get("participant") or "")
+                        price = _american(out.get("oddsAmerican") or out.get("americanOdds") or out.get("displayOdds") or out.get("odds"))
+                        point = out.get("line")
+                        if point is None:
+                            point = out.get("points")
+                        if key == "totals":
+                            low = raw_label.lower()
+                            name = "Over" if "over" in low else "Under" if "under" in low else None
+                        else:
+                            low = raw_label.lower()
+                            hlast = home_team.lower().split()[-1]
+                            alast = away_team.lower().split()[-1]
+                            name = home_team if hlast in low else away_team if alast in low else None
+                        if name:
+                            rec = {"name": name, "price": price}
+                            if point is not None:
+                                rec["point"] = point
+                            outcomes.append(rec)
+                    if outcomes:
+                        by_event.setdefault(eid, []).append({"key": key, "outcomes": outcomes})
+
+    rows = []
+    for eid, markets in by_event.items():
+        ev = events.get(eid) or {}
+        teams = _event_teams(ev, sport)
+        if not teams:
+            continue
+        away_team, home_team = teams
+        rows.append({
+            "id": eid,
+            "sport_key": {"wnba":"basketball_wnba","mlb":"baseball_mlb","nfl":"americanfootball_nfl"}[sport],
+            "commence_time": ev.get("startEventDate") or ev.get("startDate"),
+            "home_team": home_team,
+            "away_team": away_team,
+            "bookmakers": [{
+                "key": "draftkings",
+                "title": "DraftKings",
+                "last_update": fetched_at,
+                "markets": markets,
+            }],
+            "market_provider": "draftkings_v5_direct",
+        })
+    if rows:
+        return rows
+    try:
+        return _fetch_v5_full_game(sport, league_id)
+    except Exception:
+        return []
 
 
 def fetch_draftkings_direct(sport: str) -> list[dict[str, Any]]:
