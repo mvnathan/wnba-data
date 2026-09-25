@@ -148,6 +148,76 @@ def _win_probability(home_lam: float, away_lam: float) -> float:
     return max(0.0, min(1.0, home_win + 0.5 * tie))
 
 
+def _cached_mlb_market_rows() -> list[dict[str, Any]]:
+    """Rehydrate the most recent same-day published market snapshot.
+
+    This prevents a transient upstream block from blanking DK cells that were
+    already populated earlier the same day.
+    """
+    path = Path("docs/mlb-latest.json")
+    if not path.exists():
+        return []
+    try:
+        payload = json.loads(path.read_text(encoding="utf-8"))
+    except Exception:
+        return []
+    if str(payload.get("target_date") or "") != datetime.now(CHICAGO).date().isoformat():
+        return []
+    rows = []
+    now = datetime.now(timezone.utc)
+    for g in payload.get("games") or []:
+        if not (g.get("market_bookmaker") or g.get("market_total") is not None or g.get("market_home_moneyline") is not None):
+            continue
+        updated = g.get("market_updated_at")
+        if updated:
+            try:
+                stamp = datetime.fromisoformat(str(updated).replace("Z", "+00:00"))
+                if stamp.tzinfo is None:
+                    stamp = stamp.replace(tzinfo=timezone.utc)
+                if (now - stamp).total_seconds() > 12 * 3600:
+                    continue
+            except Exception:
+                pass
+        home, away = g.get("home_team"), g.get("away_team")
+        if not home or not away:
+            continue
+        markets = []
+        if g.get("market_home_moneyline") is not None or g.get("market_away_moneyline") is not None:
+            markets.append({"key": "h2h", "outcomes": [
+                {"name": home, "price": g.get("market_home_moneyline")},
+                {"name": away, "price": g.get("market_away_moneyline")},
+            ]})
+        if g.get("market_run_line_home") is not None:
+            point = g.get("market_run_line_home")
+            markets.append({"key": "spreads", "outcomes": [
+                {"name": home, "point": point, "price": None},
+                {"name": away, "point": -float(point), "price": None},
+            ]})
+        if g.get("market_total") is not None:
+            markets.append({"key": "totals", "outcomes": [
+                {"name": "Over", "point": g.get("market_total"), "price": None},
+                {"name": "Under", "point": g.get("market_total"), "price": None},
+            ]})
+        if markets:
+            rows.append({
+                "id": f"cached-{g.get('game_id')}",
+                "sport_key": "baseball_mlb",
+                "commence_time": g.get("game_date_utc"),
+                "home_team": home,
+                "away_team": away,
+                "bookmakers": [{
+                    "key": "draftkings",
+                    "title": "DraftKings",
+                    "last_update": updated,
+                    "markets": markets,
+                }],
+                "market_provider": "same_day_published_cache",
+            })
+    if rows:
+        print(f"Reusing {len(rows)} same-day published MLB DraftKings markets")
+    return rows
+
+
 def _dk_market_lookup() -> dict[tuple[str, str], list[dict[str, Any]]]:
     rows = []
     try:
@@ -156,6 +226,8 @@ def _dk_market_lookup() -> dict[tuple[str, str], list[dict[str, Any]]]:
             print(f"Fetched {len(rows)} MLB DraftKings events from SportsBookReview")
     except Exception as exc:
         print(f"SportsBookReview MLB DraftKings feed unavailable: {exc}")
+    if not rows:
+        rows = _cached_mlb_market_rows()
     if not rows:
         try:
             rows = fetch_draftkings_direct("mlb")
