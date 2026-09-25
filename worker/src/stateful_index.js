@@ -454,6 +454,18 @@ export default {
       }
     }
 
+    if (url.pathname === "/api/nfl/scoreboard") {
+      try {
+        const season = url.searchParams.get("season");
+        const week = url.searchParams.get("week");
+        if (!season || !week) return jsonResponse({ ok: false, error: "season and week required" }, 400);
+        const data = await fetchNFLLive(season, week);
+        return jsonResponse(data);
+      } catch (error) {
+        return jsonResponse({ ok: false, service: "nfl-scoreboard-proxy", error: String(error?.message || error) }, 503);
+      }
+    }
+
     if (url.pathname === "/nfl/latest.json" || url.pathname === "/api/nfl") {
       try {
         const data = await fetchNFLLatest();
