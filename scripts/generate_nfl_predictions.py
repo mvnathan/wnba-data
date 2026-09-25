@@ -361,3 +361,5 @@ if __name__ == "__main__":
     main()
 
 # Initial NFL pipeline validation: 2026-09-25
+
+# Retry after dependency fix: 2026-09-25
