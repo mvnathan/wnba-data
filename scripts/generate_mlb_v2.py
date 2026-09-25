@@ -28,6 +28,7 @@ from scripts.generate_mlb_predictions import (
 )
 
 PEOPLE_STATS = "https://statsapi.mlb.com/api/v1/people/{person_id}/stats"
+STANDINGS_URL = "https://statsapi.mlb.com/api/v1/standings"
 OUT = Path("predictions/mlb-v2-latest.json")
 DOCS_OUT = Path("docs/mlb-v2-latest.json")
 PRODUCTION_OUT = Path("predictions/mlb-latest.json")
@@ -121,6 +122,49 @@ def _team_abbr(team: dict[str, Any]) -> str:
     return str(team.get("abbreviation") or team.get("teamCode") or "").upper()
 
 
+def _official_standings_snapshot(target_date: date) -> dict[int, dict[str, Any]]:
+    """MLB's own standings snapshot as of the day before the game.
+
+    These fields improve interpretation of clinching/seeding context but are
+    not allowed to override a validated score model by themselves.
+    """
+    try:
+        snap_date=(target_date-timedelta(days=1)).isoformat()
+        data=_get_json(STANDINGS_URL,{
+            "leagueId":"103,104",
+            "season":target_date.year,
+            "standingsTypes":"regularSeason",
+            "date":snap_date,
+            "hydrate":"team,division",
+        })
+    except Exception:
+        return {}
+    out={}
+    for record in data.get("records") or []:
+        division=(record.get("division") or {}).get("name")
+        for tr in record.get("teamRecords") or []:
+            team=tr.get("team") or {}
+            try: tid=int(team.get("id"))
+            except (TypeError,ValueError): continue
+            out[tid]={
+                "wins":tr.get("wins"),
+                "losses":tr.get("losses"),
+                "winning_percentage":tr.get("winningPercentage"),
+                "division":division,
+                "division_rank":tr.get("divisionRank"),
+                "league_rank":tr.get("leagueRank"),
+                "wild_card_rank":tr.get("wildCardRank"),
+                "games_back":tr.get("gamesBack"),
+                "wild_card_games_back":tr.get("wildCardGamesBack"),
+                "magic_number":tr.get("magicNumber"),
+                "elimination_number":tr.get("eliminationNumber"),
+                "clinched":bool(tr.get("clinched")),
+                "last_ten":tr.get("records",{}).get("splitRecords") if isinstance(tr.get("records"),dict) else None,
+                "as_of":snap_date,
+            }
+    return out
+
+
 def _season_competitive_context(target_date: date):
     season_history=_schedule(date(target_date.year,3,1),target_date-timedelta(days=1))
     rows=[]
@@ -148,6 +192,7 @@ def build_v2(target_date: date | None = None, use_competitive_context: bool = Fa
     # interpretation. Only let it alter the score projection when explicitly
     # enabled and validated.
     competitive = _season_competitive_context(target_date)
+    official_standings = _official_standings_snapshot(target_date)
 
     games = []
     for game in todays:
@@ -184,6 +229,8 @@ def build_v2(target_date: date | None = None, use_competitive_context: bool = Fa
         ha, aa = _team_abbr(ht), _team_abbr(at)
         home_context = competitive.get(ha) if competitive else None
         away_context = competitive.get(aa) if competitive else None
+        home_official = official_standings.get(hid)
+        away_official = official_standings.get(aid)
         context_adjustment = bounded_effort_adjustment(home_context, away_context, .18) if use_competitive_context else 0.0
         home_runs += context_adjustment / 2
         away_runs -= context_adjustment / 2
@@ -217,6 +264,8 @@ def build_v2(target_date: date | None = None, use_competitive_context: bool = Fa
             "competitive_context_adjustment_runs": round(context_adjustment, 3),
             "home_competitive_context": home_context.to_dict() if home_context else None,
             "away_competitive_context": away_context.to_dict() if away_context else None,
+            "home_official_standings": home_official,
+            "away_official_standings": away_official,
             "availability_note": "Standings/urgency context cannot confirm a specific star will rest; actual lineup/inactive data should override the proxy when available.",
             "market_used_in_prediction": False,
             **market,
@@ -229,7 +278,7 @@ def build_v2(target_date: date | None = None, use_competitive_context: bool = Fa
         "model_status": "production",
         "pitcher_stats_as_of": (target_date - timedelta(days=1)).isoformat(),
         "features": ["recent offense", "recent run prevention", "probable starter ERA/WHIP", "3-day bullpen workload proxy", "venue run factor", "home advantage"],
-        "competitive_context_policy": "Standings/urgency/rotation-risk context is calculated for every game. Direct score adjustment remains disabled in production because the 273-game validation improved Brier only marginally while slightly reducing winner accuracy.",
+        "competitive_context_policy": "Official MLB standings plus leakage-safe urgency/rotation-risk context are calculated for every game. Direct score adjustment remains disabled in production because the 273-game validation improved Brier only marginally while slightly reducing winner accuracy. The context remains visible for edge reliability and lineup/rest review.",
         "games": games,
     }
 
