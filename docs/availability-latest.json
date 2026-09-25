@@ -1,0 +1,399 @@
+{
+  "generated_at_utc": "2026-09-25T17:07:12.513473+00:00",
+  "status": "ok",
+  "direct_model_adjustment_enabled": false,
+  "integration_stage": "context_and_edge_reliability_only",
+  "source_policy": {
+    "official": "highest trust; eligible for future hard availability override after player mapping validation",
+    "team_official": "high trust",
+    "trusted_media": "requires corroboration before hard use",
+    "secondary": "context only"
+  },
+  "official_source_diagnostics": [
+    {
+      "source": "NFL Official Injury Report",
+      "sport": "NFL",
+      "url": "https://www.nfl.com/injuries/",
+      "status": "ok",
+      "snippets": 26
+    },
+    {
+      "source": "WNBA Official Injury Report",
+      "sport": "WNBA",
+      "url": "https://www.wnba.com/wnba-injury-report",
+      "status": "error",
+      "snippets": 0,
+      "error": "403 Client Error: Forbidden for url: https://www.wnba.com/wnba-injury-report"
+    },
+    {
+      "source": "MLB Official Injury Report",
+      "sport": "MLB",
+      "url": "https://www.mlb.com/injury-report",
+      "status": "ok",
+      "snippets": 28
+    },
+    {
+      "source": "MLB Probable Pitchers",
+      "sport": "MLB",
+      "url": "https://www.mlb.com/probable-pitchers",
+      "status": "ok",
+      "snippets": 4
+    }
+  ],
+  "x_source_diagnostics": {
+    "status": "disabled",
+    "reason": "X_BEARER_TOKEN not configured"
+  },
+  "signals": [
+    {
+      "sport": "NFL",
+      "source": "NFL Official Injury Report",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-09-25T17:07:11.947667+00:00",
+      "status_signal": "out",
+      "tactical_flags": [],
+      "confidence": 0.65,
+      "text": "Samson Ebukam DE Hamstring Did Not Participate In Practice Out",
+      "url": "https://www.nfl.com/injuries/"
+    },
+    {
+      "sport": "NFL",
+      "source": "NFL Official Injury Report",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-09-25T17:07:11.947695+00:00",
+      "status_signal": "out",
+      "tactical_flags": [],
+      "confidence": 0.65,
+      "text": "Aaron Banks G Knee, Toe Did Not Participate In Practice Out",
+      "url": "https://www.nfl.com/injuries/"
+    },
+    {
+      "sport": "NFL",
+      "source": "NFL Official Injury Report",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-09-25T17:07:11.947717+00:00",
+      "status_signal": "out",
+      "tactical_flags": [],
+      "confidence": 0.65,
+      "text": "Warren Brinson DT Calf Did Not Participate In Practice Out",
+      "url": "https://www.nfl.com/injuries/"
+    },
+    {
+      "sport": "NFL",
+      "source": "NFL Official Injury Report",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-09-25T17:07:11.947790+00:00",
+      "status_signal": "out",
+      "tactical_flags": [],
+      "confidence": 0.65,
+      "text": "Jayden Reed WR Neck Did Not Participate In Practice Out",
+      "url": "https://www.nfl.com/injuries/"
+    },
+    {
+      "sport": "NFL",
+      "source": "NFL Official Injury Report",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-09-25T17:07:11.947814+00:00",
+      "status_signal": "out",
+      "tactical_flags": [],
+      "confidence": 0.65,
+      "text": "Zach Bako-Bewele T Knee Did Not Participate In Practice Out",
+      "url": "https://www.nfl.com/injuries/"
+    },
+    {
+      "sport": "NFL",
+      "source": "NFL Official Injury Report",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-09-25T17:07:11.947834+00:00",
+      "status_signal": "out",
+      "tactical_flags": [],
+      "confidence": 0.65,
+      "text": "Cobie Durant CB Hamstring Did Not Participate In Practice Out",
+      "url": "https://www.nfl.com/injuries/"
+    },
+    {
+      "sport": "NFL",
+      "source": "NFL Official Injury Report",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-09-25T17:07:11.947853+00:00",
+      "status_signal": "out",
+      "tactical_flags": [],
+      "confidence": 0.65,
+      "text": "Malik Hooker S Forearm Did Not Participate In Practice Out",
+      "url": "https://www.nfl.com/injuries/"
+    },
+    {
+      "sport": "NFL",
+      "source": "NFL Official Injury Report",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-09-25T17:07:11.947872+00:00",
+      "status_signal": "out",
+      "tactical_flags": [],
+      "confidence": 0.65,
+      "text": "P.J. Locke S Foot Did Not Participate In Practice Out",
+      "url": "https://www.nfl.com/injuries/"
+    },
+    {
+      "sport": "NFL",
+      "source": "NFL Official Injury Report",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-09-25T17:07:11.947892+00:00",
+      "status_signal": "out",
+      "tactical_flags": [],
+      "confidence": 0.65,
+      "text": "DeMarvion Overshown LB Hamstring Did Not Participate In Practice Out",
+      "url": "https://www.nfl.com/injuries/"
+    },
+    {
+      "sport": "NFL",
+      "source": "NFL Official Injury Report",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-09-25T17:07:11.948265+00:00",
+      "status_signal": "out",
+      "tactical_flags": [],
+      "confidence": 0.65,
+      "text": "NFL news roundup: Saints LT Kelvin Banks (ankle) out indefinitely; Lions' Avonte Maddox out for year",
+      "url": "https://www.nfl.com/injuries/"
+    },
+    {
+      "sport": "NFL",
+      "source": "NFL Official Injury Report",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-09-25T17:07:11.948316+00:00",
+      "status_signal": "out",
+      "tactical_flags": [],
+      "confidence": 0.65,
+      "text": "Vikings QB Kyler Murray (concussion) out Sunday vs. Bears; Carson Wentz to start",
+      "url": "https://www.nfl.com/injuries/"
+    },
+    {
+      "sport": "NFL",
+      "source": "NFL Official Injury Report",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-09-25T17:07:11.948434+00:00",
+      "status_signal": "out",
+      "tactical_flags": [],
+      "confidence": 0.65,
+      "text": "NFL Week 1 inactives: Players ruled out for Sunday's 13 games",
+      "url": "https://www.nfl.com/injuries/"
+    },
+    {
+      "sport": "NFL",
+      "source": "NFL Official Injury Report",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-09-25T17:07:11.948458+00:00",
+      "status_signal": "out",
+      "tactical_flags": [],
+      "confidence": 0.65,
+      "text": "NFL Network: 49ers rookie WR De'Zhaun Stribling out at least a month with ankle sprain",
+      "url": "https://www.nfl.com/injuries/"
+    },
+    {
+      "sport": "NFL",
+      "source": "NFL Official Injury Report",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-09-25T17:07:11.948483+00:00",
+      "status_signal": "out",
+      "tactical_flags": [],
+      "confidence": 0.65,
+      "text": "NFL Week 1 injuries to monitor for Sunday's games: Joey Porter Jr., Alvin Kamara inactive",
+      "url": "https://www.nfl.com/injuries/"
+    },
+    {
+      "sport": "MLB",
+      "source": "MLB Official Injury Report",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-09-25T17:07:12.326222+00:00",
+      "status_signal": "out",
+      "tactical_flags": [],
+      "confidence": 0.65,
+      "text": "Holliday placed on IL with wrist inflammation, to be out at least until Yankees series",
+      "url": "https://www.mlb.com/injury-report"
+    },
+    {
+      "sport": "MLB",
+      "source": "MLB Official Injury Report",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-09-25T17:07:12.326300+00:00",
+      "status_signal": "out",
+      "tactical_flags": [],
+      "confidence": 0.65,
+      "text": "Schmidt likely out for postseason after returning to IL with biceps injury",
+      "url": "https://www.mlb.com/injury-report"
+    },
+    {
+      "sport": "MLB",
+      "source": "MLB Official Injury Report",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-09-25T17:07:12.326379+00:00",
+      "status_signal": "out",
+      "tactical_flags": [],
+      "confidence": 0.65,
+      "text": "DeLauter, Mart\u00ednez remain out of lineup for Guardians' finale vs. White Sox",
+      "url": "https://www.mlb.com/injury-report"
+    },
+    {
+      "sport": "MLB",
+      "source": "MLB Official Injury Report",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-09-25T17:07:12.326426+00:00",
+      "status_signal": "out",
+      "tactical_flags": [],
+      "confidence": 0.65,
+      "text": "Flaherty strikes out two in first rehab outing, eyes end-of-year return",
+      "url": "https://www.mlb.com/injury-report"
+    },
+    {
+      "sport": "MLB",
+      "source": "MLB Official Injury Report",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-09-25T17:07:12.326640+00:00",
+      "status_signal": "out",
+      "tactical_flags": [],
+      "confidence": 0.65,
+      "text": "Young out for season, but avoids serious injury after 'terrifying' collision with McLean",
+      "url": "https://www.mlb.com/injury-report"
+    },
+    {
+      "sport": "MLB",
+      "source": "MLB Official Injury Report",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-09-25T17:07:12.326740+00:00",
+      "status_signal": "out",
+      "tactical_flags": [],
+      "confidence": 0.65,
+      "text": "Carroll (low back discomfort) out of lineup for 2nd straight night",
+      "url": "https://www.mlb.com/injury-report"
+    },
+    {
+      "sport": "MLB",
+      "source": "MLB Official Injury Report",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-09-25T17:07:12.326762+00:00",
+      "status_signal": "out",
+      "tactical_flags": [],
+      "confidence": 0.65,
+      "text": "'Running out of answers,' frustrated Musgrove still hoping to return -- in any role",
+      "url": "https://www.mlb.com/injury-report"
+    },
+    {
+      "sport": "MLB",
+      "source": "MLB Official Injury Report",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-09-25T17:07:12.326780+00:00",
+      "status_signal": "out",
+      "tactical_flags": [],
+      "confidence": 0.65,
+      "text": "Goodman (right thumb soreness) out again on Wednesday",
+      "url": "https://www.mlb.com/injury-report"
+    },
+    {
+      "sport": "NFL",
+      "source": "NFL Official Injury Report",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-09-25T17:07:11.947605+00:00",
+      "status_signal": "questionable",
+      "tactical_flags": [],
+      "confidence": 0.585,
+      "text": "Billy Bowman Jr. CB Achilles Full Participation in Practice Questionable",
+      "url": "https://www.nfl.com/injuries/"
+    },
+    {
+      "sport": "NFL",
+      "source": "NFL Official Injury Report",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-09-25T17:07:11.947743+00:00",
+      "status_signal": "questionable",
+      "tactical_flags": [],
+      "confidence": 0.585,
+      "text": "Anthony Campbell DT Ankle Limited Participation in Practice Questionable",
+      "url": "https://www.nfl.com/injuries/"
+    },
+    {
+      "sport": "NFL",
+      "source": "NFL Official Injury Report",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-09-25T17:07:11.947770+00:00",
+      "status_signal": "questionable",
+      "tactical_flags": [],
+      "confidence": 0.585,
+      "text": "Javon Hargrave DT Knee, Concussion Limited Participation in Practice Questionable",
+      "url": "https://www.nfl.com/injuries/"
+    },
+    {
+      "sport": "MLB",
+      "source": "MLB Official Injury Report",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-09-25T17:07:12.326071+00:00",
+      "status_signal": "probable",
+      "tactical_flags": [],
+      "confidence": 0.585,
+      "text": "News Probable Pitchers Awards Starting Lineups Transactions Injury Report World Baseball Classic MLB Draft All-Star Game AUSL MLB Pipeline Postseason History Podcasts International",
+      "url": "https://www.mlb.com/injury-report"
+    },
+    {
+      "sport": "MLB",
+      "source": "MLB Probable Pitchers",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-09-25T17:07:12.512466+00:00",
+      "status_signal": "probable",
+      "tactical_flags": [],
+      "confidence": 0.585,
+      "text": "News Probable Pitchers Awards Starting Lineups Transactions Injury Report World Baseball Classic MLB Draft All-Star Game AUSL MLB Pipeline Postseason History Podcasts International",
+      "url": "https://www.mlb.com/probable-pitchers"
+    },
+    {
+      "sport": "NFL",
+      "source": "NFL Official Injury Report",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-09-25T17:07:11.948203+00:00",
+      "status_signal": null,
+      "tactical_flags": [
+        "expected_to_start"
+      ],
+      "confidence": 0.4875,
+      "text": "Kyler Murray clears concussion protocol, will start for Vikings in Week 3 vs. Buccaneers",
+      "url": "https://www.nfl.com/injuries/"
+    }
+  ],
+  "structured": {
+    "generated_at_utc": "2026-09-25T17:07:12.513464+00:00",
+    "players": [],
+    "teams": {},
+    "policy": {
+      "official_sources_can_hard_override": true,
+      "trusted_media_requires_corroboration_for_hard_use": true,
+      "uncorroborated_media_is_context_only": true,
+      "market_data_is_not_a_source_of_availability_truth": true
+    }
+  },
+  "next_validation_step": "Map signals to players/teams, backfill historical availability events, then test incremental Brier/accuracy/MAE before allowing direct model adjustments."
+}
