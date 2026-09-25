@@ -20,6 +20,8 @@ from zoneinfo import ZoneInfo
 
 import requests
 
+from src.competitive_context import build_context, bounded_effort_adjustment, mlb_groups
+
 from scripts.generate_mlb_predictions import (
     CHICAGO, MLB_SCHEDULE, _completed, _date_of_game, _get_json, _league_and_team_rates,
     _schedule, _score, _team_id, _team_name, _win_probability, _dk_market_lookup, _extract_dk, _closest_market,
@@ -115,7 +117,26 @@ def _starter_adjustment(stats: dict[str, float | None], league_ra9: float) -> fl
     return max(-1.1, min(1.1, era_delta + whip_delta))
 
 
-def build_v2(target_date: date | None = None) -> dict[str, Any]:
+def _team_abbr(team: dict[str, Any]) -> str:
+    return str(team.get("abbreviation") or team.get("teamCode") or "").upper()
+
+
+def _season_competitive_context(target_date: date):
+    season_history=_schedule(date(target_date.year,3,1),target_date-timedelta(days=1))
+    rows=[]
+    for g in season_history:
+        if not _completed(g):
+            continue
+        ht=g.get("teams",{}).get("home",{}).get("team",{})
+        at=g.get("teams",{}).get("away",{}).get("team",{})
+        ha,aa=_team_abbr(ht),_team_abbr(at)
+        hs,aws=_score(g,"home"),_score(g,"away")
+        if ha and aa and hs is not None and aws is not None:
+            rows.append({"home":ha,"away":aa,"home_score":hs,"away_score":aws})
+    return build_context(rows,total_games=162,playoff_slots=6,groups=mlb_groups(),late_season_threshold=.72)
+
+
+def build_v2(target_date: date | None = None, use_competitive_context: bool = False) -> dict[str, Any]:
     target_date = target_date or datetime.now(CHICAGO).date()
     history = _schedule(target_date - timedelta(days=120), target_date - timedelta(days=1))
     todays = _schedule(target_date, target_date)
@@ -123,6 +144,7 @@ def build_v2(target_date: date | None = None) -> dict[str, Any]:
     bullpen = _bullpen_workload(history, target_date)
     parks = _venue_factors(history, league * 2)
     dk = _dk_market_lookup()
+    competitive = _season_competitive_context(target_date) if use_competitive_context else {}
 
     games = []
     for game in todays:
@@ -155,6 +177,14 @@ def build_v2(target_date: date | None = None) -> dict[str, Any]:
         park = parks.get(int(vid), 1.0) if vid else 1.0
         home_runs = (base_home - away_starter + away_pen) * park
         away_runs = (base_away - home_starter + home_pen) * park
+
+        ha, aa = _team_abbr(ht), _team_abbr(at)
+        home_context = competitive.get(ha) if competitive else None
+        away_context = competitive.get(aa) if competitive else None
+        context_adjustment = bounded_effort_adjustment(home_context, away_context, .18) if competitive else 0.0
+        home_runs += context_adjustment / 2
+        away_runs -= context_adjustment / 2
+
         home_runs = max(1.5, min(8.8, home_runs))
         away_runs = max(1.5, min(8.8, away_runs))
         hpct = _win_probability(home_runs, away_runs)
@@ -179,6 +209,11 @@ def build_v2(target_date: date | None = None) -> dict[str, Any]:
             "home_bullpen_workload_3d": round(bullpen.get(hid, 0.0), 2),
             "away_bullpen_workload_3d": round(bullpen.get(aid, 0.0), 2),
             "park_run_factor": round(park, 3),
+            "competitive_context_used": bool(use_competitive_context),
+            "competitive_context_adjustment_runs": round(context_adjustment, 3),
+            "home_competitive_context": home_context.to_dict() if home_context else None,
+            "away_competitive_context": away_context.to_dict() if away_context else None,
+            "availability_note": "Standings/urgency context cannot confirm a specific star will rest; actual lineup/inactive data should override the proxy when available.",
             "market_used_in_prediction": False,
             **market,
         })
@@ -189,7 +224,7 @@ def build_v2(target_date: date | None = None) -> dict[str, Any]:
         "model_version": "mlb-runs-v2",
         "model_status": "production",
         "pitcher_stats_as_of": (target_date - timedelta(days=1)).isoformat(),
-        "features": ["recent offense", "recent run prevention", "probable starter ERA/WHIP", "3-day bullpen workload proxy", "venue run factor", "home advantage"],
+        "features": ["recent offense", "recent run prevention", "probable starter ERA/WHIP", "3-day bullpen workload proxy", "venue run factor", "home advantage"] + (["postseason urgency / rotation-risk context"] if use_competitive_context else []),
         "games": games,
     }
 
