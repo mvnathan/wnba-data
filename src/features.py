@@ -1426,12 +1426,38 @@ def _build_wnba_competitive_context(
                     and gap > max(2.0, remaining * 0.45)
                 )
 
+                # A likely playoff berth does not mean wins stop mattering:
+                # teams may still be fighting for seed position/home court.
+                neighbors = []
+                if rank > 1:
+                    prev_team = standings[rank - 2]
+                    neighbors.append(abs(wins - record[prev_team]["wins"]))
+                if rank < len(standings):
+                    next_team = standings[rank]
+                    neighbors.append(abs(wins - record[next_team]["wins"]))
+                seed_gap = min(neighbors) if neighbors else remaining + 1.0
+                seed_pressure = late * max(
+                    0.0,
+                    1.0 - min(
+                        1.0,
+                        seed_gap / max(2.0, remaining * 0.30 + 1.0),
+                    ),
+                )
+                seed_locked = float(
+                    secure
+                    and seed_gap > max(2.0, remaining * 0.45)
+                )
+
                 urgency = late * (0.35 + 0.65 * proximity)
-                if secure or eliminated:
+                if eliminated:
                     urgency *= 0.25
+                elif secure:
+                    urgency = max(urgency * 0.25, seed_pressure * 0.65)
 
                 rotation_risk = late * (
                     0.70
+                    if seed_locked
+                    else 0.25
                     if secure
                     else 0.55
                     if eliminated
@@ -1446,6 +1472,8 @@ def _build_wnba_competitive_context(
                 result[f"{side}_wins_of_cushion_over_current_cutoff"] = float(max(0.0, gap))
                 result[f"{side}_postseason_urgency"] = float(urgency)
                 result[f"{side}_rotation_rest_risk"] = float(rotation_risk)
+                result[f"{side}_seed_pressure_score"] = float(seed_pressure)
+                result[f"{side}_seed_locked_proxy"] = float(seed_locked)
                 result[f"{side}_playoff_secure_proxy"] = secure
                 result[f"{side}_playoff_eliminated_proxy"] = eliminated
 
