@@ -1,12 +1,6 @@
 name: Backtest MLB V1 vs V2
 on:
   workflow_dispatch:
-  push:
-    branches: [main]
-    paths:
-      - '.github/workflows/mlb_backtest.yml'
-      - 'scripts/backtest_mlb_models.py'
-      - 'scripts/generate_mlb_v2.py'
 jobs:
   backtest:
     runs-on: ubuntu-latest
