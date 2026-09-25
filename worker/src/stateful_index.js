@@ -4,6 +4,8 @@ import { createVapidKeys, sendWebPush } from "./push.js";
 
 const STATIC_LATEST = "https://raw.githubusercontent.com/mvnathan/wnba-data/main/docs/latest.json";
 const TENNIS_LATEST = "https://raw.githubusercontent.com/mvnathan/wnba-data/main/docs/tennis-latest.json";
+const MLB_LATEST = "https://raw.githubusercontent.com/mvnathan/wnba-data/main/docs/mlb-latest.json";
+const MLB_SCHEDULE = "https://statsapi.mlb.com/api/v1/schedule";
 const LIVESCORE_TENNIS = "https://prod-public-api.livescore.com/v1/api/app/date/tennis";
 const SNAPSHOT_NAME = "wnba-live-singleton";
 const SNAPSHOT_KEY = "latest";
@@ -76,6 +78,52 @@ async function fetchTennisLatest() {
   });
   if (!response.ok) throw new Error(`Tennis latest returned ${response.status}`);
   return response.json();
+}
+
+async function fetchMLBLatest() {
+  const response = await fetch(`${MLB_LATEST}?t=${Date.now()}`, {
+    headers: { "cache-control": "no-cache" },
+    cf: { cacheTtl: 0, cacheEverything: false },
+  });
+  if (!response.ok) throw new Error(`MLB latest returned ${response.status}`);
+  return response.json();
+}
+
+async function fetchMLBLive(date) {
+  const request = new Request(`${MLB_SCHEDULE}?sportId=1&date=${encodeURIComponent(date)}&hydrate=linescore`, {
+    headers: { "accept": "application/json", "user-agent": "SportsModelHub/1.0" },
+  });
+  const cache = caches.default;
+  let response = await cache.match(request);
+  if (!response) {
+    response = await fetch(request, { cf: { cacheTtl: 10, cacheEverything: true } });
+    if (!response.ok) throw new Error(`MLB live schedule returned ${response.status}`);
+    response = new Response(response.body, response);
+    response.headers.set("cache-control", "public, max-age=10");
+    await cache.put(request, response.clone());
+  }
+  return response.json();
+}
+
+function mergeMLBScores(predictions, live) {
+  const map = new Map();
+  for (const day of live?.dates || []) {
+    for (const game of day?.games || []) map.set(String(game.gamePk), game);
+  }
+  return (predictions || []).map((game) => {
+    const liveGame = map.get(String(game.game_id));
+    if (!liveGame) return game;
+    return {
+      ...game,
+      live_home_score: liveGame?.teams?.home?.score ?? null,
+      live_away_score: liveGame?.teams?.away?.score ?? null,
+      live_status: liveGame?.status?.detailedState || null,
+      live_state: liveGame?.status?.abstractGameState || null,
+      live_inning: liveGame?.linescore?.currentInning ?? null,
+      live_inning_ordinal: liveGame?.linescore?.currentInningOrdinal ?? null,
+      live_inning_state: liveGame?.linescore?.inningState || liveGame?.linescore?.inningHalf || null,
+    };
+  });
 }
 
 function tennisNameKey(value) {
@@ -330,6 +378,31 @@ export default {
       const origin = request.headers.get("origin");
       if (request.method === "POST" && origin !== "https://mvnathan.github.io") return jsonResponse({ ok: false, error: "Origin not allowed" }, 403);
       return snapshotStub(env).fetch(new Request(`https://snapshot.internal${url.pathname}`, request));
+    }
+
+    if (url.pathname === "/mlb/latest.json" || url.pathname === "/api/mlb") {
+      try {
+        const data = await fetchMLBLatest();
+        try {
+          const live = await fetchMLBLive(data.target_date);
+          return jsonResponse({
+            ...data,
+            games: mergeMLBScores(data.games, live),
+            live_score_generated_at_utc: new Date().toISOString(),
+            live_score_source: "MLB Stats API via Cloudflare",
+            cloudflare_delivery: "mlb-live-overlay",
+          });
+        } catch (liveError) {
+          return jsonResponse({
+            ...data,
+            live_score_error: String(liveError?.message || liveError),
+            live_score_source: "prediction-feed-fallback",
+            cloudflare_delivery: "mlb-static-proxy",
+          });
+        }
+      } catch (error) {
+        return jsonResponse({ ok: false, service: "mlb-predictions", error: String(error?.message || error) }, 503);
+      }
     }
 
     if (url.pathname === "/tennis/latest.json" || url.pathname === "/api/tennis") {
