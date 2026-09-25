@@ -180,9 +180,25 @@ def x_evidence(cfg: dict[str, Any]) -> tuple[list[Any], dict[str, Any]]:
         "expansions": "author_id",
         "user.fields": "username,name",
     }
-    r = requests.get(X_URL, params=params, headers={"Authorization": f"Bearer {token}"}, timeout=30)
-    r.raise_for_status()
-    payload = r.json()
+    try:
+        r = requests.get(X_URL, params=params, headers={"Authorization": f"Bearer {token}"}, timeout=30)
+        if r.status_code in {401, 402, 403, 429}:
+            reason = {
+                401: "X token was rejected",
+                402: "X API plan/credits do not include recent-search access",
+                403: "X recent-search access is forbidden for this app",
+                429: "X API rate limit reached",
+            }[r.status_code]
+            return [], {
+                "status": "unavailable",
+                "http_status": r.status_code,
+                "reason": reason,
+                "query": query,
+            }
+        r.raise_for_status()
+        payload = r.json()
+    except Exception as exc:
+        return [], {"status": "error", "reason": str(exc), "query": query}
     users = {str(x["id"]): x for x in ((payload.get("includes") or {}).get("users") or [])}
     by_username = {x["username"].lower(): x for x in accounts}
 
