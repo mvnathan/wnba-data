@@ -2631,3 +2631,5 @@ def build_and_save(
         index=False,
     )
 # Postseason context retrain trigger: 2026-09-25
+
+# Seeding-aware WNBA validation trigger: 2026-09-25
