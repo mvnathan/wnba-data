@@ -79,7 +79,7 @@ def _key(row: dict[str, Any]) -> tuple[str, str, str] | None:
     return (home, away, start) if home and away else None
 
 
-def fetch_sbr_draftkings(sport: str, date_str: str | None = None) -> list[dict[str, Any]]:
+def fetch_sbr_draftkings(sport: str, date_str: str | None = None, week: int | None = None) -> list[dict[str, Any]]:
     """Fetch current DraftKings game lines from SportsBookReview's public odds pages."""
     sport = sport.lower()
     slug = SLUGS.get(sport)
@@ -89,10 +89,11 @@ def fetch_sbr_draftkings(sport: str, date_str: str | None = None) -> list[dict[s
         date_str = datetime.now(timezone.utc).date().isoformat()
 
     base = f"https://www.sportsbookreview.com/betting-odds/{slug}"
+    suffix = f"?date={date_str}" + (f"&week=Week{week}" if week is not None else "")
     urls = {
-        "spreads": f"{base}/pointspread/full-game/?date={date_str}",
-        "h2h": f"{base}/money-line/full-game/?date={date_str}",
-        "totals": f"{base}/totals/full-game/?date={date_str}",
+        "spreads": f"{base}/pointspread/full-game/{suffix}",
+        "h2h": f"{base}/money-line/full-game/{suffix}",
+        "totals": f"{base}/totals/full-game/{suffix}",
     }
 
     by_market: dict[str, dict[tuple[str, str, str], dict[str, Any]]] = {}
