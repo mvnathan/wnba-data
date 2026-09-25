@@ -2,10 +2,6 @@ name: Train WNBA Prediction Models
 
 on:
   workflow_dispatch:
-  push:
-    branches: [main]
-    paths:
-      - 'src/features.py'
   schedule:
     - cron: '0 10 * * 1'
 
