@@ -22,7 +22,7 @@ import requests
 
 from scripts.generate_mlb_predictions import (
     CHICAGO, MLB_SCHEDULE, _completed, _date_of_game, _get_json, _league_and_team_rates,
-    _schedule, _score, _team_id, _team_name, _win_probability, _dk_market_lookup, _extract_dk,
+    _schedule, _score, _team_id, _team_name, _win_probability, _dk_market_lookup, _extract_dk, _closest_market,
 )
 
 PEOPLE_STATS = "https://statsapi.mlb.com/api/v1/people/{person_id}/stats"
@@ -159,7 +159,7 @@ def build_v2(target_date: date | None = None) -> dict[str, Any]:
         away_runs = max(1.5, min(8.8, away_runs))
         hpct = _win_probability(home_runs, away_runs)
 
-        market = _extract_dk(dk.get((hn.lower(), an.lower())))
+        market = _extract_dk(_closest_market(dk.get((hn.lower(), an.lower())), str(game.get("gameDate") or "")))
         games.append({
             "game_id": str(game.get("gamePk") or ""),
             "game_date_utc": game.get("gameDate"),
