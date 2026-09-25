@@ -1,0 +1,10 @@
+{
+  "wnba": {
+    "league_id": 94682,
+    "error": "HTTPError: HTTP Error 403: "
+  },
+  "mlb": {
+    "league_id": 84240,
+    "error": "HTTPError: HTTP Error 403: "
+  }
+}
