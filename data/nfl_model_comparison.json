@@ -61,5 +61,159 @@
     "margin_mae": -0.108,
     "total_mae": -0.188,
     "team_score_mae": -0.072
+  },
+  "by_season": {
+    "2024": {
+      "v1": {
+        "n_games": 272,
+        "winner_accuracy": 0.6471,
+        "brier_score": 0.226,
+        "margin_mae": 10.394,
+        "total_mae": 10.026,
+        "team_score_mae": 7.468
+      },
+      "full_v2": {
+        "n_games": 272,
+        "winner_accuracy": 0.625,
+        "brier_score": 0.2312,
+        "margin_mae": 10.462,
+        "total_mae": 9.943,
+        "team_score_mae": 7.472
+      }
+    },
+    "2025": {
+      "v1": {
+        "n_games": 272,
+        "winner_accuracy": 0.5882,
+        "brier_score": 0.233,
+        "margin_mae": 10.521,
+        "total_mae": 10.834,
+        "team_score_mae": 7.628
+      },
+      "full_v2": {
+        "n_games": 272,
+        "winner_accuracy": 0.6287,
+        "brier_score": 0.2261,
+        "margin_mae": 10.325,
+        "total_mae": 10.676,
+        "team_score_mae": 7.521
+      }
+    },
+    "2026": {
+      "v1": {
+        "n_games": 33,
+        "winner_accuracy": 0.5152,
+        "brier_score": 0.2629,
+        "margin_mae": 13.007,
+        "total_mae": 13.564,
+        "team_score_mae": 9.325
+      },
+      "full_v2": {
+        "n_games": 33,
+        "winner_accuracy": 0.5758,
+        "brier_score": 0.2384,
+        "margin_mae": 12.163,
+        "total_mae": 12.248,
+        "team_score_mae": 8.928
+      }
+    }
+  },
+  "by_season_phase": {
+    "weeks_1_4": {
+      "v1": {
+        "n_games": 161,
+        "winner_accuracy": 0.5155,
+        "brier_score": 0.2518,
+        "margin_mae": 11.067,
+        "total_mae": 11.392,
+        "team_score_mae": 7.886
+      },
+      "full_v2": {
+        "n_games": 161,
+        "winner_accuracy": 0.5839,
+        "brier_score": 0.2363,
+        "margin_mae": 10.5,
+        "total_mae": 10.719,
+        "team_score_mae": 7.538
+      }
+    },
+    "weeks_5_plus": {
+      "v1": {
+        "n_games": 416,
+        "winner_accuracy": 0.649,
+        "brier_score": 0.2235,
+        "margin_mae": 10.424,
+        "total_mae": 10.306,
+        "team_score_mae": 7.558
+      },
+      "full_v2": {
+        "n_games": 416,
+        "winner_accuracy": 0.6394,
+        "brier_score": 0.2265,
+        "margin_mae": 10.493,
+        "total_mae": 10.305,
+        "team_score_mae": 7.594
+      }
+    }
+  },
+  "calibration": {
+    "v1": [
+      {
+        "band": "50-55%",
+        "n": 160,
+        "mean_confidence": 0.5253,
+        "observed_accuracy": 0.55
+      },
+      {
+        "band": "55-60%",
+        "n": 184,
+        "mean_confidence": 0.5712,
+        "observed_accuracy": 0.5815
+      },
+      {
+        "band": "60-70%",
+        "n": 178,
+        "mean_confidence": 0.6397,
+        "observed_accuracy": 0.6292
+      },
+      {
+        "band": "70-80%",
+        "n": 54,
+        "mean_confidence": 0.7392,
+        "observed_accuracy": 0.8333
+      },
+      {
+        "band": "80-100%",
+        "n": 1,
+        "mean_confidence": 0.8446,
+        "observed_accuracy": 1
+      }
+    ],
+    "full_v2": [
+      {
+        "band": "50-55%",
+        "n": 193,
+        "mean_confidence": 0.5254,
+        "observed_accuracy": 0.5699
+      },
+      {
+        "band": "55-60%",
+        "n": 149,
+        "mean_confidence": 0.5741,
+        "observed_accuracy": 0.5839
+      },
+      {
+        "band": "60-70%",
+        "n": 189,
+        "mean_confidence": 0.6398,
+        "observed_accuracy": 0.6561
+      },
+      {
+        "band": "70-80%",
+        "n": 46,
+        "mean_confidence": 0.7373,
+        "observed_accuracy": 0.8478
+      }
+    ]
   }
 }
