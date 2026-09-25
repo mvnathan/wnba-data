@@ -149,18 +149,18 @@ def _win_probability(home_lam: float, away_lam: float) -> float:
 
 
 def _dk_market_lookup() -> dict[tuple[str, str], dict[str, Any]]:
+    rows = []
     try:
-        rows = fetch_draftkings_direct("mlb")
+        rows = fetch_sbr_draftkings("mlb")
+        if rows:
+            print(f"Fetched {len(rows)} MLB DraftKings events from SportsBookReview")
     except Exception as exc:
-        print(f"DraftKings MLB direct feed unavailable: {exc}")
-        rows = []
+        print(f"SportsBookReview MLB DraftKings feed unavailable: {exc}")
     if not rows:
         try:
-            rows = fetch_sbr_draftkings("mlb")
-            if rows:
-                print(f"Fetched {len(rows)} MLB DraftKings events from SportsBookReview")
+            rows = fetch_draftkings_direct("mlb")
         except Exception as exc:
-            print(f"SportsBookReview MLB DraftKings feed unavailable: {exc}")
+            print(f"DraftKings MLB direct feed unavailable: {exc}")
             rows = []
     if not rows:
         return {}
