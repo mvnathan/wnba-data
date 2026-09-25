@@ -118,14 +118,17 @@ def _american_prob(v: Any) -> float | None:
     return (-x) / ((-x) + 100.0) if x < 0 else 100.0 / (x + 100.0)
 
 
-def _market_rows(date_strings: set[str]) -> list[dict[str, Any]]:
-    rows = []
-    for ds in sorted(date_strings):
-        try:
-            rows.extend(fetch_sbr_draftkings("nfl", ds))
-        except Exception as exc:
-            print(f"NFL DraftKings fetch failed for {ds}: {exc}")
-    return rows
+def _market_rows(date_strings: set[str], week: int) -> list[dict[str, Any]]:
+    if not date_strings:
+        return []
+    ds = sorted(date_strings)[0]
+    try:
+        rows = fetch_sbr_draftkings("nfl", ds, week=week)
+        print(f"Fetched {len(rows)} NFL DraftKings market rows for Week {week}")
+        return rows
+    except Exception as exc:
+        print(f"NFL DraftKings fetch failed for Week {week}: {exc}")
+        return []
 
 
 def _market_lookup(rows: list[dict[str, Any]]) -> dict[tuple[str,str], list[dict[str, Any]]]:
@@ -201,7 +204,7 @@ def build() -> dict[str, Any]:
     league, home_adv, offense, defense, counts = _rates(history, now)
 
     dates = {str(x) for x in slate["gameday"].dropna().tolist()}
-    markets = _market_lookup(_market_rows(dates))
+    markets = _market_lookup(_market_rows(dates, week))
 
     games = []
     for _, row in slate.iterrows():
