@@ -279,3 +279,5 @@ def bounded_effort_adjustment(home:TeamContext|None, away:TeamContext|None, scal
     aas=away.urgency_score-.65*away.rest_rotation_risk
     raw=(hs-aas)*scale
     return max(-scale,min(scale,raw))
+
+# Seeding-aware context validation: 2026-09-25
