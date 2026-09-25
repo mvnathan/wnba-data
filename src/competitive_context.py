@@ -49,6 +49,8 @@ class TeamContext:
     wins_of_cushion_over_current_cutoff: float
     urgency_score: float
     rest_rotation_risk: float
+    seed_pressure_score: float
+    seed_locked_proxy: float
     postseason_status: str
     context_confidence: float
 
@@ -111,14 +113,27 @@ def build_context(
             else:
                 status="chasing"
 
-            # Urgency peaks around the cutoff late in the season.
+            # Urgency peaks around the cutoff late in the season. A team can
+            # have a postseason berth effectively secure while still having a
+            # meaningful seeding incentive, so "secure" does not automatically
+            # imply low effort or high rest risk.
             proximity=max(0.0,1.0-min(1.0,abs(gap)/max(2.0,remain*.35+1)))
+            neighbors=[]
+            if idx>1: neighbors.append(abs(wins-items[idx-2][1]["wins"]))
+            if idx<len(items): neighbors.append(abs(wins-items[idx][1]["wins"]))
+            seed_gap=min(neighbors) if neighbors else remain+1.0
+            seed_pressure=late*max(0.0,1.0-min(1.0,seed_gap/max(2.0,remain*.30+1)))
+            seed_locked=float(effectively_secure and seed_gap>max(2.0,remain*.45))
             urgency=max(0.0,min(1.0,late*(.35+.65*proximity)))
-            if status in {"eliminated","secure"}:
+            if status=="eliminated":
                 urgency*=.25
+            elif status=="secure":
+                urgency=max(urgency*.25,seed_pressure*.65)
 
-            # Rotation/rest risk is an observable-risk proxy, not a claim of intent.
-            rest_risk=late*(.70 if status=="secure" else .55 if status=="eliminated" else .10)
+            # High rotation/rest risk requires more than a likely berth: the
+            # model also looks for relatively stable seeding. This avoids
+            # treating a clinched-but-still-seeding team like a no-stakes team.
+            rest_risk=late*(.70 if seed_locked else .25 if status=="secure" else .55 if status=="eliminated" else .10)
             confidence=max(0.25,min(1.0,games/max(8.0,total_games*.25)))
             out[team]=TeamContext(
                 wins=wins,losses=losses,games_played=games,win_pct=pct,games_remaining=remain,
@@ -126,6 +141,7 @@ def build_context(
                 wins_needed_to_current_cutoff=max(0.0,-gap+(1.0 if idx>playoff_slots else 0.0)),
                 wins_of_cushion_over_current_cutoff=max(0.0,gap),
                 urgency_score=urgency,rest_rotation_risk=rest_risk,
+                seed_pressure_score=seed_pressure,seed_locked_proxy=seed_locked,
                 postseason_status=status,context_confidence=confidence,
             )
     return out
@@ -193,10 +209,22 @@ def build_division_context(
             late=max(0.0,min(1.0,(progress-late_season_threshold)/max(.01,1-late_season_threshold)))
             distance=min(abs(division_gap),abs(wc_gap))
             proximity=max(0.0,1.0-min(1.0,distance/max(2.0,remain*.35+1)))
+
+            rank=ranks.get(team,len(items))
+            overall_wins=[x[1]["wins"] for x in overall]
+            seed_neighbors=[]
+            if rank>1: seed_neighbors.append(abs(wins-overall_wins[rank-2]))
+            if rank<len(overall_wins): seed_neighbors.append(abs(wins-overall_wins[rank]))
+            seed_gap=min(seed_neighbors) if seed_neighbors else remain+1.0
+            seed_pressure=late*max(0.0,1.0-min(1.0,seed_gap/max(2.0,remain*.30+1)))
+            seed_locked=float(secure and seed_gap>max(2.0,remain*.45))
+
             urgency=late*(.35+.65*proximity)
-            if secure or eliminated:
+            if eliminated:
                 urgency*=.25
-            rest_risk=late*(.70 if secure else .55 if eliminated else .10)
+            elif secure:
+                urgency=max(urgency*.25,seed_pressure*.65)
+            rest_risk=late*(.70 if seed_locked else .25 if secure else .55 if eliminated else .10)
 
             if eliminated: status="eliminated"
             elif secure: status="secure"
@@ -206,11 +234,12 @@ def build_division_context(
 
             out[team]=TeamContext(
                 wins=wins,losses=losses,games_played=games,win_pct=pct,games_remaining=remain,
-                rank_group=ranks.get(team,len(items)),playoff_cutoff_rank=len(leaders)+wildcard_slots,
+                rank_group=rank,playoff_cutoff_rank=len(leaders)+wildcard_slots,
                 gap_to_cutoff_wins=pathway_gap,
                 wins_needed_to_current_cutoff=max(0.0,-pathway_gap+(0.0 if (is_div_leader or is_wildcard) else 1.0)),
                 wins_of_cushion_over_current_cutoff=max(0.0,pathway_gap),
                 urgency_score=urgency,rest_rotation_risk=rest_risk,
+                seed_pressure_score=seed_pressure,seed_locked_proxy=seed_locked,
                 postseason_status=status,context_confidence=max(.25,min(1.0,games/max(8.0,total_games*.25))),
             )
     return out
