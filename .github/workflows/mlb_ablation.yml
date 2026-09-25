@@ -1,11 +1,6 @@
 name: Analyze MLB V2 Features
 on:
   workflow_dispatch:
-  push:
-    branches: [main]
-    paths:
-      - '.github/workflows/mlb_ablation.yml'
-      - 'scripts/ablate_mlb_v2.py'
 jobs:
   analyze:
     runs-on: ubuntu-latest
