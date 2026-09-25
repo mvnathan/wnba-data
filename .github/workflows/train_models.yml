@@ -4,10 +4,6 @@ on:
   workflow_dispatch:
   schedule:
     - cron: '0 10 * * 1'
-  push:
-    branches: [main]
-    paths:
-      - 'src/model_training_v2.py'
 
 concurrency:
   group: wnba-model-training
