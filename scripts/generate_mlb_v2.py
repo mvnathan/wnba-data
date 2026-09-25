@@ -144,7 +144,10 @@ def build_v2(target_date: date | None = None, use_competitive_context: bool = Fa
     bullpen = _bullpen_workload(history, target_date)
     parks = _venue_factors(history, league * 2)
     dk = _dk_market_lookup()
-    competitive = _season_competitive_context(target_date) if use_competitive_context else {}
+    # Always calculate objective postseason context for monitoring and edge
+    # interpretation. Only let it alter the score projection when explicitly
+    # enabled and validated.
+    competitive = _season_competitive_context(target_date)
 
     games = []
     for game in todays:
@@ -181,7 +184,7 @@ def build_v2(target_date: date | None = None, use_competitive_context: bool = Fa
         ha, aa = _team_abbr(ht), _team_abbr(at)
         home_context = competitive.get(ha) if competitive else None
         away_context = competitive.get(aa) if competitive else None
-        context_adjustment = bounded_effort_adjustment(home_context, away_context, .18) if competitive else 0.0
+        context_adjustment = bounded_effort_adjustment(home_context, away_context, .18) if use_competitive_context else 0.0
         home_runs += context_adjustment / 2
         away_runs -= context_adjustment / 2
 
@@ -209,7 +212,8 @@ def build_v2(target_date: date | None = None, use_competitive_context: bool = Fa
             "home_bullpen_workload_3d": round(bullpen.get(hid, 0.0), 2),
             "away_bullpen_workload_3d": round(bullpen.get(aid, 0.0), 2),
             "park_run_factor": round(park, 3),
-            "competitive_context_used": bool(use_competitive_context),
+            "competitive_context_used_in_score": bool(use_competitive_context),
+            "competitive_context_monitored": True,
             "competitive_context_adjustment_runs": round(context_adjustment, 3),
             "home_competitive_context": home_context.to_dict() if home_context else None,
             "away_competitive_context": away_context.to_dict() if away_context else None,
@@ -224,7 +228,8 @@ def build_v2(target_date: date | None = None, use_competitive_context: bool = Fa
         "model_version": "mlb-runs-v2",
         "model_status": "production",
         "pitcher_stats_as_of": (target_date - timedelta(days=1)).isoformat(),
-        "features": ["recent offense", "recent run prevention", "probable starter ERA/WHIP", "3-day bullpen workload proxy", "venue run factor", "home advantage"] + (["postseason urgency / rotation-risk context"] if use_competitive_context else []),
+        "features": ["recent offense", "recent run prevention", "probable starter ERA/WHIP", "3-day bullpen workload proxy", "venue run factor", "home advantage"],
+        "competitive_context_policy": "Standings/urgency/rotation-risk context is calculated for every game. Direct score adjustment remains disabled in production because the 273-game validation improved Brier only marginally while slightly reducing winner accuracy.",
         "games": games,
     }
 
