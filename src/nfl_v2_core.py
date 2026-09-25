@@ -7,6 +7,8 @@ from typing import Any
 
 import pandas as pd
 
+from src.competitive_context import build_context, bounded_effort_adjustment, nfl_groups
+
 PRIOR_GAMES = 4.0
 HOME_ADV_PRIOR = 1.7
 PROB_SCALE = 7.6
@@ -152,3 +154,39 @@ def predict_hybrid_row(df: pd.DataFrame, row: pd.Series) -> tuple[dict[str,float
     if week<=4:
         return predict_row(df,row,"full"), "early_season_enhanced"
     return predict_v1_row(df,row), "current_season_baseline"
+
+
+def _nfl_context(df: pd.DataFrame, row: pd.Series):
+    season=int(row["season"]); week=int(row["week"])
+    hist=df[(df["season"]==season)&(df["game_type"]=="REG")&(df["week"]<week)&df["home_score"].notna()&df["away_score"].notna()].copy()
+    rows=[]
+    for _,g in hist.iterrows():
+        rows.append({"home":str(g.home_team),"away":str(g.away_team),"home_score":float(g.home_score),"away_score":float(g.away_score)})
+    return build_context(rows,total_games=17,playoff_slots=7,groups=nfl_groups(),late_season_threshold=.64)
+
+
+def predict_hybrid_context_row(df: pd.DataFrame, row: pd.Series) -> tuple[dict[str,float], str, dict[str,Any]]:
+    pred,strategy=predict_hybrid_row(df,row)
+    week=int(row["week"])
+    context_map=_nfl_context(df,row)
+    home=str(row["home_team"]); away=str(row["away_team"])
+    hc=context_map.get(home); ac=context_map.get(away)
+    adjustment=0.0
+    # Keep early/mid-season unchanged. Late-season competitive context is bounded
+    # to less than one point until prospectively validated further.
+    if week>=12:
+        adjustment=bounded_effort_adjustment(hc,ac,.75)
+        pred=dict(pred)
+        pred["home_points"]+=adjustment/2
+        pred["away_points"]-=adjustment/2
+        pred["margin"]=pred["home_points"]-pred["away_points"]
+        pred["total"]=pred["home_points"]+pred["away_points"]
+        pred["home_win_probability"]=1/(1+math.exp(-pred["margin"]/PROB_SCALE))
+        strategy=strategy+"+postseason_context"
+    meta={
+        "home":hc.to_dict() if hc else None,
+        "away":ac.to_dict() if ac else None,
+        "score_adjustment_home_minus_away":round(adjustment,3),
+        "actual_player_availability_required_for_star_rest_confirmation":True,
+    }
+    return pred,strategy,meta
