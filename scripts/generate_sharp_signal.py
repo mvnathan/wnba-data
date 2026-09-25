@@ -103,3 +103,5 @@ def main()->None:
 if __name__=="__main__":main()
 
 # Initial candidate recapture trigger: 2026-09-25
+
+# Bootstrap candidate review rerun
