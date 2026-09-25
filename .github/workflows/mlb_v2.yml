@@ -45,11 +45,23 @@ jobs:
           print("Validated",len(d["games"]),"MLB v2 candidate games")
           PY
       - name: Publish production
+        shell: bash
         run: |
+          set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add predictions/mlb-v2-latest.json docs/mlb-v2-latest.json predictions/mlb-latest.json docs/mlb-latest.json
-          if git diff --quiet --cached; then exit 0; fi
-          git commit -m "Update production MLB v2 predictions"
-          git pull --rebase origin main
-          git push origin HEAD:main
+          published=false
+          for attempt in 1 2 3 4 5; do
+            if [ "$attempt" -gt 1 ]; then
+              git rebase --abort 2>/dev/null || true
+              git fetch origin main
+              git reset --hard origin/main
+              python scripts/generate_mlb_v2.py
+            fi
+            git add predictions/mlb-v2-latest.json docs/mlb-v2-latest.json predictions/mlb-latest.json docs/mlb-latest.json
+            if git diff --quiet --cached; then published=true; break; fi
+            git commit -m "Update production MLB v2 predictions"
+            if git push origin HEAD:main; then published=true; break; fi
+            sleep 2
+          done
+          [ "$published" = true ]
