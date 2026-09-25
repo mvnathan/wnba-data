@@ -7,7 +7,7 @@ from typing import Any
 
 import pandas as pd
 
-from src.competitive_context import build_context, bounded_effort_adjustment, nfl_groups
+from src.competitive_context import build_division_context, bounded_effort_adjustment, nfl_groups, nfl_divisions
 
 PRIOR_GAMES = 4.0
 HOME_ADV_PRIOR = 1.7
@@ -162,7 +162,7 @@ def _nfl_context(df: pd.DataFrame, row: pd.Series):
     rows=[]
     for _,g in hist.iterrows():
         rows.append({"home":str(g.home_team),"away":str(g.away_team),"home_score":float(g.home_score),"away_score":float(g.away_score)})
-    return build_context(rows,total_games=17,playoff_slots=7,groups=nfl_groups(),late_season_threshold=.64)
+    return build_division_context(rows,total_games=17,conferences=nfl_groups(),divisions=nfl_divisions(),wildcard_slots=3,late_season_threshold=.64)
 
 
 def predict_hybrid_context_row(df: pd.DataFrame, row: pd.Series) -> tuple[dict[str,float], str, dict[str,Any]]:
