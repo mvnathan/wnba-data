@@ -148,7 +148,7 @@ def _win_probability(home_lam: float, away_lam: float) -> float:
     return max(0.0, min(1.0, home_win + 0.5 * tie))
 
 
-def _dk_market_lookup() -> dict[tuple[str, str], dict[str, Any]]:
+def _dk_market_lookup() -> dict[tuple[str, str], list[dict[str, Any]]]:
     rows = []
     try:
         rows = fetch_sbr_draftkings("mlb")
@@ -162,12 +162,33 @@ def _dk_market_lookup() -> dict[tuple[str, str], dict[str, Any]]:
         except Exception as exc:
             print(f"DraftKings MLB direct feed unavailable: {exc}")
             rows = []
+    lookup: dict[tuple[str, str], list[dict[str, Any]]] = {}
+    for row in rows:
+        key = (str(row.get("home_team", "")).lower(), str(row.get("away_team", "")).lower())
+        lookup.setdefault(key, []).append(row)
+    return lookup
+
+
+def _closest_market(rows: list[dict[str, Any]] | None, game_start: str) -> dict[str, Any] | None:
     if not rows:
-        return {}
-    return {
-        (str(row.get("home_team", "")).lower(), str(row.get("away_team", "")).lower()): row
-        for row in rows
-    }
+        return None
+    if len(rows) == 1:
+        return rows[0]
+    try:
+        target = datetime.fromisoformat(game_start.replace("Z", "+00:00"))
+    except Exception:
+        return rows[0]
+    best = None
+    best_delta = float("inf")
+    for row in rows:
+        try:
+            stamp = datetime.fromisoformat(str(row.get("commence_time") or "").replace("Z", "+00:00"))
+            delta = abs((stamp - target).total_seconds())
+        except Exception:
+            continue
+        if delta < best_delta:
+            best, best_delta = row, delta
+    return best or rows[0]
 
 
 def _extract_dk(row: dict[str, Any] | None) -> dict[str, Any]:
@@ -238,7 +259,7 @@ def build_predictions(target_date: date | None = None) -> dict[str, Any]:
         home_prob = _win_probability(home_runs, away_runs)
         predicted_winner = home_name if home_prob >= 0.5 else away_name
 
-        market_row = dk.get((home_name.lower(), away_name.lower()))
+        market_row = _closest_market(dk.get((home_name.lower(), away_name.lower())), str(game.get("gameDate") or ""))
         market = _extract_dk(market_row)
 
         start = str(game.get("gameDate") or "")
