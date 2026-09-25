@@ -359,6 +359,15 @@ def predict_schedule(schedule: list[dict[str, Any]], bundles: dict[str, dict[str
         total_x = x[:, bundle.get("total_feature_indices", list(range(x.shape[1])))]
         reverse_total_x = reverse_x[:, bundle.get("total_feature_indices", list(range(reverse_x.shape[1])))]
         total = max(12.0, (float(bundle["total"].predict(total_x)[0]) + float(bundle["total"].predict(reverse_total_x)[0])) / 2)
+        p1_rest = a.rest_days(match_date)
+        p2_rest = b.rest_days(match_date)
+        p1_work = a.workload(match_date)
+        p2_work = b.workload(match_date)
+        round_progress = _round_progress(match.get("round"))
+        stakes = min(1.0, (0.35 if match.get("major", False) else 0.0) + 0.65 * round_progress)
+        p1_fatigue = min(1.0, max(0.0, (p1_work - 2.0) / 5.0 + max(0.0, 2.0 - p1_rest) * 0.12))
+        p2_fatigue = min(1.0, max(0.0, (p2_work - 2.0) / 5.0 + max(0.0, 2.0 - p2_rest) * 0.12))
+
         match.update({
             "player_1_rank": rank_a, "player_2_rank": rank_b,
             "player_1_win_probability": round(p1, 4), "player_2_win_probability": round(1 - p1, 4),
@@ -368,6 +377,18 @@ def predict_schedule(schedule: list[dict[str, Any]], bundles: dict[str, dict[str
             "predicted_total_games": round(total, 1),
             "projected_player_1_games": round((total + margin) / 2, 1),
             "projected_player_2_games": round((total - margin) / 2, 1),
+            "competitive_context": {
+                "tournament_stakes": round(stakes, 3),
+                "round_progress": round(round_progress, 3),
+                "major": bool(match.get("major", False)),
+                "player_1_rest_days": round(p1_rest, 1),
+                "player_2_rest_days": round(p2_rest, 1),
+                "player_1_workload_14d": round(p1_work, 1),
+                "player_2_workload_14d": round(p2_work, 1),
+                "player_1_fatigue_risk": round(p1_fatigue, 3),
+                "player_2_fatigue_risk": round(p2_fatigue, 3),
+                "note": "Tennis has no team-postseason cutoff. The model already uses ranking points, rest, workload, major status and round progression as competitive-context features."
+            }
         })
         output.append(match)
     return output
