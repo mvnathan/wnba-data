@@ -90,9 +90,28 @@ def _drop_redundant_cumulative(col: str) -> bool:
     return not any(token in col for token in redundant_tokens)
 
 
+def _is_postseason_context(col: str) -> bool:
+    tokens = (
+        "standings_rank",
+        "playoff_cutoff_rank",
+        "games_remaining",
+        "gap_to_playoff_cutoff_wins",
+        "wins_needed_to_current_cutoff",
+        "wins_of_cushion_over_current_cutoff",
+        "postseason_urgency",
+        "rotation_rest_risk",
+        "playoff_secure_proxy",
+        "playoff_eliminated_proxy",
+    )
+    return any(token in col for token in tokens)
+
+
 def _feature_sets(columns: list[str]) -> dict[str, list[str]]:
+    no_postseason = [c for c in columns if not _is_postseason_context(c)]
     sets = {
-        "current_full": list(columns),
+        "current_full_with_postseason_context": list(columns),
+        "same_model_without_postseason_context": no_postseason,
+        "postseason_context_only": [c for c in columns if _is_postseason_context(c)],
         "pruned_cumulative": [c for c in columns if _drop_redundant_cumulative(c)],
         "rates_form_rest": [c for c in columns if _is_rate_or_context(c)],
         "compact_core": [c for c in columns if _is_compact(c)],
