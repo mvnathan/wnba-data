@@ -90,20 +90,8 @@ def fetch_draftkings_wnba_odds() -> list[dict[str, Any]]:
     age = _cache_age_seconds(cache)
     cached = _cached_events(cache)
 
-    # Primary source: free DraftKings frontend feed. No API credits.
-    try:
-        from src.draftkings_direct import fetch_draftkings_direct
-
-        direct = fetch_draftkings_direct("wnba")
-        if direct:
-            _write_market_cache(direct, "DraftKings direct (unofficial/free)")
-            print(f"Fetched {len(direct)} WNBA events directly from DraftKings; no API credits used")
-            return direct
-    except Exception as exc:
-        print(f"Free DraftKings feed unavailable: {exc}")
-
-    # Secondary free source: SportsBookReview public odds pages. These include
-    # book-specific rows, including DraftKings, without consuming Odds API credits.
+    # Primary free source: SportsBookReview's public odds pages. This avoids
+    # DraftKings' datacenter blocking while preserving book-specific DK lines.
     try:
         from src.sbr_market_odds import fetch_sbr_draftkings
 
@@ -114,6 +102,18 @@ def fetch_draftkings_wnba_odds() -> list[dict[str, Any]]:
             return sbr_dk
     except Exception as exc:
         print(f"SportsBookReview DraftKings feed unavailable: {exc}")
+
+    # Direct DK is retained as a free fallback if its frontend endpoint is reachable.
+    try:
+        from src.draftkings_direct import fetch_draftkings_direct
+
+        direct = fetch_draftkings_direct("wnba")
+        if direct:
+            _write_market_cache(direct, "DraftKings direct (unofficial/free)")
+            print(f"Fetched {len(direct)} WNBA events directly from DraftKings; no API credits used")
+            return direct
+    except Exception as exc:
+        print(f"Free DraftKings feed unavailable: {exc}")
 
     # Secondary free source: ESPN's public scoreboard feed, which exposes
     # DraftKings game markets. This is intentionally before any paid fallback.
