@@ -5,6 +5,10 @@ on:
   schedule:
     - cron: '10 14 * * 0,1,4,5'
     - cron: '10 18 * * 0'
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/generate_nfl_v2.py'
 
 permissions:
   contents: write
