@@ -25,20 +25,26 @@ jobs:
           python-version: '3.12'
       - name: Install dependencies
         run: pip install requests pandas
-      - name: Generate NFL predictions
-        run: python scripts/generate_nfl_predictions.py
+      - name: Generate NFL v1 shadow baseline
+        run: |
+          python scripts/generate_nfl_predictions.py
+          cp docs/nfl-latest.json docs/nfl-v1-latest.json
+          cp predictions/nfl-latest.json predictions/nfl-v1-latest.json
+      - name: Generate NFL v2 production predictions
+        run: python scripts/generate_nfl_v2.py --production
       - name: Validate NFL output
         run: |
           python - <<'PY'
           import json
           d=json.load(open("docs/nfl-latest.json"))
-          assert d["model_status"]=="beta"
-          assert d["model_version"]=="nfl-v1-beta"
+          assert d["model_status"]=="production"
+          assert d["model_version"]=="nfl-v2"
+          assert d["market_used_in_prediction"] is False
           for g in d["games"]:
               assert 0 <= g["home_win_probability"] <= 1
               assert g["predicted_home_points"] > 0
               assert g["predicted_away_points"] > 0
-          print("Validated",len(d["games"]),"NFL games")
+          print("Validated",len(d["games"]),"NFL v2 production games")
           PY
       - name: Publish NFL feed
         shell: bash
@@ -46,7 +52,7 @@ jobs:
           set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add predictions/nfl-latest.json docs/nfl-latest.json
+          git add predictions/nfl-latest.json docs/nfl-latest.json predictions/nfl-v1-latest.json docs/nfl-v1-latest.json predictions/nfl-v2-latest.json docs/nfl-v2-latest.json
           if git diff --cached --quiet; then exit 0; fi
           git commit -m "Update NFL predictions"
           for attempt in 1 2 3; do
