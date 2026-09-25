@@ -141,6 +141,40 @@ def _fit_calibrated_classifier(
 
 
 
+POSTSEASON_CONTEXT_TOKENS = (
+    "standings_rank",
+    "playoff_cutoff_rank",
+    "games_remaining",
+    "gap_to_playoff_cutoff_wins",
+    "wins_needed_to_current_cutoff",
+    "wins_of_cushion_over_current_cutoff",
+    "postseason_urgency",
+    "rotation_rest_risk",
+    "seed_pressure_score",
+    "seed_locked_proxy",
+    "playoff_secure_proxy",
+    "playoff_eliminated_proxy",
+)
+
+
+def _is_postseason_context_feature(name: str) -> bool:
+    return any(token in name for token in POSTSEASON_CONTEXT_TOKENS)
+
+
+def _target_feature_matrix(dataset: pd.DataFrame, target: str) -> tuple[pd.DataFrame, list[str]]:
+    """Use postseason context only where walk-forward validation supports it.
+
+    The September 2026 ablation showed a clear margin benefit, but not a
+    winner-accuracy or total-score benefit. Keep the raw context available to
+    the dashboard/edge layer while restricting direct model use to full_margin.
+    """
+    X, columns = _prepare_feature_matrix(dataset)
+    if target != "full_margin":
+        columns = [c for c in columns if not _is_postseason_context_feature(c)]
+        X = X[columns]
+    return X, columns
+
+
 def train_models() -> dict[str, Any]:
     features = build_model_features()
     if features.empty:
@@ -155,6 +189,7 @@ def train_models() -> dict[str, Any]:
     selected_models: dict[str, str] = {}
     out_of_fold_residuals: dict[str, list[float]] = {}
     walk_forward_metrics: dict[str, dict[str, float]] = {}
+    feature_columns_by_target: dict[str, list[str]] = {}
 
     for target, target_type in TARGETS.items():
         mask = features[target].notna()
@@ -162,7 +197,7 @@ def train_models() -> dict[str, Any]:
             continue
 
         dataset = features.loc[mask].copy().reset_index(drop=True)
-        X, feature_columns = _prepare_feature_matrix(dataset)
+        X, feature_columns = _target_feature_matrix(dataset, target)
         y = dataset[target].reset_index(drop=True)
 
         best_score = float("-inf")
@@ -225,6 +260,7 @@ def train_models() -> dict[str, Any]:
 
         production_models[target] = final_model
         selected_models[target] = best_name
+        feature_columns_by_target[target] = feature_columns
         out_of_fold_residuals[target] = residual_values.astype(float).tolist()
         walk_forward_metrics[target] = best_metrics
 
@@ -245,6 +281,8 @@ def train_models() -> dict[str, Any]:
         "probability_calibration": "isotonic_on_oof_predictions",
         "uncertainty_residuals": "out_of_fold_only",
         "feature_columns": feature_columns,
+        "feature_columns_by_target": feature_columns_by_target,
+        "postseason_context_policy": "Validated target-specific use: full_margin includes standings/urgency/seeding/rest-risk features; winner, totals, scores, halves and quarters exclude them from direct inference while retaining context for edge-risk review.",
     }
     MODEL_METADATA_PATH.parent.mkdir(parents=True, exist_ok=True)
     MODEL_METADATA_PATH.write_text(json.dumps(metadata, indent=2), encoding="utf-8")
@@ -255,6 +293,7 @@ def train_models() -> dict[str, Any]:
             "metadata": metadata,
             "models": production_models,
             "feature_columns": feature_columns,
+            "feature_columns_by_target": feature_columns_by_target,
             # Keep the existing key for prediction compatibility, but these are now
             # genuinely out-of-fold residuals rather than in-sample residuals.
             "holdout_residuals": out_of_fold_residuals,
