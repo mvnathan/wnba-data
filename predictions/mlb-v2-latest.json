@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-09-25T14:02:23.225582+00:00",
+  "generated_at_utc": "2026-09-25T15:02:13.231616+00:00",
   "target_date": "2026-09-25",
   "sport": "MLB",
   "model_version": "mlb-runs-v2",
@@ -20,7 +20,7 @@
       "home_team": "Boston Red Sox",
       "away_team": "Chicago Cubs",
       "venue": "Fenway Park",
-      "status": "Scheduled",
+      "status": "Pre-Game",
       "predicted_home_runs": 4.39,
       "predicted_away_runs": 4.21,
       "predicted_total_runs": 8.6,
@@ -46,7 +46,7 @@
     },
     {
       "game_id": "824706",
-      "game_date_utc": "2026-09-25T22:05:00Z",
+      "game_date_utc": "2026-09-25T21:35:00Z",
       "home_team": "Boston Red Sox",
       "away_team": "Chicago Cubs",
       "venue": "Fenway Park",
