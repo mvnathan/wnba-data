@@ -2,15 +2,12 @@ name: Generate MLB Predictions
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '15 13,17,21 * * *'
   push:
     branches: [main]
     paths:
       - '.github/workflows/mlb_predictions.yml'
       - 'scripts/generate_mlb_predictions.py'
       - 'src/draftkings_direct.py'
-      - 'docs/mlb.html'
 
 concurrency:
   group: sportsmodelhub-mlb-predictions
