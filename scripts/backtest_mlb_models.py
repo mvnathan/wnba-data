@@ -32,18 +32,21 @@ def main():
         if actual:
             v1={g["game_id"]:g for g in build_predictions(day)["games"]}
             v2={g["game_id"]:g for g in build_v2(day)["games"]}
+            v2c={g["game_id"]:g for g in build_v2(day,use_competitive_context=True)["games"]}
             for gid,a in actual.items():
-                if gid not in v1 or gid not in v2: continue
+                if gid not in v1 or gid not in v2 or gid not in v2c: continue
                 hs,aws=_score(a,"home"),_score(a,"away")
                 if hs is None or aws is None or hs==aws: continue
-                x,y=v1[gid],v2[gid]
+                x,y,z=v1[gid],v2[gid],v2c[gid]
                 rows.append({"date":day.isoformat(),"game_id":gid,"home_score":hs,"away_score":aws,
                     "v1_home_prob":x["home_win_probability"],"v1_home_runs":x["predicted_home_runs"],"v1_away_runs":x["predicted_away_runs"],
-                    "v2_home_prob":y["home_win_probability"],"v2_home_runs":y["predicted_home_runs"],"v2_away_runs":y["predicted_away_runs"]})
+                    "v2_home_prob":y["home_win_probability"],"v2_home_runs":y["predicted_home_runs"],"v2_away_runs":y["predicted_away_runs"],
+                    "v2c_home_prob":z["home_win_probability"],"v2c_home_runs":z["predicted_home_runs"],"v2c_away_runs":z["predicted_away_runs"]})
         print(day.isoformat(),len(rows)); day+=timedelta(days=1)
-    a,b=metrics(rows,"v1"),metrics(rows,"v2")
-    payload={"generated_at_utc":datetime.now(timezone.utc).isoformat(),"start":start.isoformat(),"end":end.isoformat(),"v1":a,"v2":b,
+    a,b,cx=metrics(rows,"v1"),metrics(rows,"v2"),metrics(rows,"v2c")
+    payload={"generated_at_utc":datetime.now(timezone.utc).isoformat(),"start":start.isoformat(),"end":end.isoformat(),"v1":a,"v2":b,"v2_context":cx,
       "delta_v2_minus_v1":{"winner_accuracy":round(b.get("winner_accuracy",0)-a.get("winner_accuracy",0),4),"brier_score":round(b.get("brier_score",0)-a.get("brier_score",0),4),"team_score_mae":round(b.get("team_score_mae",0)-a.get("team_score_mae",0),3),"total_score_mae":round(b.get("total_score_mae",0)-a.get("total_score_mae",0),3)},
+      "delta_v2_context_minus_v2":{"winner_accuracy":round(cx.get("winner_accuracy",0)-b.get("winner_accuracy",0),4),"brier_score":round(cx.get("brier_score",0)-b.get("brier_score",0),4),"team_score_mae":round(cx.get("team_score_mae",0)-b.get("team_score_mae",0),3),"total_score_mae":round(cx.get("total_score_mae",0)-b.get("total_score_mae",0),3)},
       "interpretation":"Higher winner accuracy is better; lower Brier and MAE are better.","rows":rows}
     OUT.parent.mkdir(parents=True,exist_ok=True); OUT.write_text(json.dumps(payload,indent=2,allow_nan=False))
     print(json.dumps({k:v for k,v in payload.items() if k!="rows"},indent=2))
