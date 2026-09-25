@@ -1,0 +1,70 @@
+name: Weekly Model Performance
+
+on:
+  workflow_dispatch: {}
+  schedule:
+    - cron: '20 10 * * *'
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/generate_weekly_model_performance.py'
+      - 'docs/performance.json'
+      - 'docs/tennis-performance.json'
+      - 'data/mlb_model_comparison.json'
+      - 'scripts/backtest_nfl_models.py'
+      - 'src/nfl_v2_core.py'
+      - '.github/workflows/model_performance.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: model-performance
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      PYTHONPATH: ${{ github.workspace }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - name: Install dependencies
+        run: pip install pandas requests
+      - name: Build weekly performance
+        run: python scripts/generate_weekly_model_performance.py
+      - name: Validate
+        run: |
+          python - <<'PY'
+          import json
+          d=json.load(open("docs/model-performance-weekly.json"))
+          assert d["status"]=="ok"
+          assert {"NFL","MLB","WNBA","ATP","WTA"}.issubset({m["sport"] for m in d["models"]})
+          for m in d["models"]:
+              for w in m.get("weekly",[]):
+                  if w.get("winner_accuracy") is not None: assert 0 <= w["winner_accuracy"] <= 1
+                  if w.get("brier_score") is not None: assert 0 <= w["brier_score"] <= 1
+          print({m["sport"]:len(m.get("weekly",[])) for m in d["models"]})
+          PY
+      - name: Publish
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          cp docs/model-performance-weekly.json /tmp/model-performance-weekly.json
+          cp data/model-performance-weekly.json /tmp/model-performance-weekly-data.json
+          for attempt in 1 2 3; do
+            git fetch origin main
+            git reset --hard origin/main
+            cp /tmp/model-performance-weekly.json docs/model-performance-weekly.json
+            cp /tmp/model-performance-weekly-data.json data/model-performance-weekly.json
+            git add docs/model-performance-weekly.json data/model-performance-weekly.json
+            if git diff --cached --quiet; then exit 0; fi
+            git commit -m "Update weekly model performance"
+            if git push origin HEAD:main; then exit 0; fi
+          done
+          exit 1
