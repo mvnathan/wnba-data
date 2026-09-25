@@ -1,10 +1,10 @@
 {
-  "generated_at_utc": "2026-09-25T16:05:09.263299+00:00",
+  "generated_at_utc": "2026-09-25T16:13:34.566444+00:00",
   "target_date": "2026-09-25",
   "season": 2026,
   "week": 3,
-  "model_version": "nfl-v2-candidate",
-  "model_status": "candidate_not_promoted",
+  "model_version": "nfl-v2",
+  "model_status": "production",
   "market_used_in_prediction": false,
   "market_event_count": 15,
   "games": [
@@ -27,8 +27,8 @@
       "predicted_winner": "Buffalo Bills",
       "home_win_probability": 0.6708,
       "away_win_probability": 0.3292,
-      "model_version": "nfl-v2-candidate",
-      "model_status": "candidate_not_promoted",
+      "model_version": "nfl-v2",
+      "model_status": "production",
       "market_used_in_prediction": false,
       "v2_strategy": "early_season_enhanced",
       "v2_features": {
@@ -36,14 +36,47 @@
         "rest": true,
         "qb_continuity": true,
         "divisional_margin_shrink": true,
-        "neutral_site_hfa": true
+        "neutral_site_hfa": true,
+        "late_season_postseason_context": true
+      },
+      "competitive_context": {
+        "home": {
+          "wins": 2.0,
+          "losses": 0.0,
+          "games_played": 2.0,
+          "win_pct": 1.0,
+          "games_remaining": 15.0,
+          "rank_group": 2,
+          "playoff_cutoff_rank": 7,
+          "gap_to_cutoff_wins": 1.0,
+          "urgency_score": 0.0,
+          "rest_rotation_risk": 0.0,
+          "postseason_status": "in_position",
+          "context_confidence": 0.25
+        },
+        "away": {
+          "wins": 0.0,
+          "losses": 2.0,
+          "games_played": 2.0,
+          "win_pct": 0.0,
+          "games_remaining": 15.0,
+          "rank_group": 15,
+          "playoff_cutoff_rank": 7,
+          "gap_to_cutoff_wins": -1.0,
+          "urgency_score": 0.0,
+          "rest_rotation_risk": 0.0,
+          "postseason_status": "chasing",
+          "context_confidence": 0.25
+        },
+        "score_adjustment_home_minus_away": 0.0,
+        "actual_player_availability_required_for_star_rest_confirmation": true
       },
       "market_bookmaker": "DraftKings",
       "market_home_moneyline": -340,
       "market_away_moneyline": 270,
       "market_home_spread": -7.5,
       "market_total": 50.5,
-      "market_updated_at": "2026-09-25T16:05:07.951309+00:00",
+      "market_updated_at": "2026-09-25T16:13:32.907254+00:00",
       "model_market_spread_edge": -2.09,
       "model_market_total_edge": -4.7
     },
@@ -66,8 +99,8 @@
       "predicted_winner": "Cleveland Browns",
       "home_win_probability": 0.5202,
       "away_win_probability": 0.4798,
-      "model_version": "nfl-v2-candidate",
-      "model_status": "candidate_not_promoted",
+      "model_version": "nfl-v2",
+      "model_status": "production",
       "market_used_in_prediction": false,
       "v2_strategy": "early_season_enhanced",
       "v2_features": {
@@ -75,14 +108,47 @@
         "rest": true,
         "qb_continuity": true,
         "divisional_margin_shrink": true,
-        "neutral_site_hfa": true
+        "neutral_site_hfa": true,
+        "late_season_postseason_context": true
+      },
+      "competitive_context": {
+        "home": {
+          "wins": 1.0,
+          "losses": 1.0,
+          "games_played": 2.0,
+          "win_pct": 0.5,
+          "games_remaining": 15.0,
+          "rank_group": 8,
+          "playoff_cutoff_rank": 7,
+          "gap_to_cutoff_wins": 0.0,
+          "urgency_score": 0.0,
+          "rest_rotation_risk": 0.0,
+          "postseason_status": "chasing",
+          "context_confidence": 0.25
+        },
+        "away": {
+          "wins": 1.0,
+          "losses": 1.0,
+          "games_played": 2.0,
+          "win_pct": 0.5,
+          "games_remaining": 15.0,
+          "rank_group": 6,
+          "playoff_cutoff_rank": 7,
+          "gap_to_cutoff_wins": 0.0,
+          "urgency_score": 0.0,
+          "rest_rotation_risk": 0.0,
+          "postseason_status": "in_position",
+          "context_confidence": 0.25
+        },
+        "score_adjustment_home_minus_away": 0.0,
+        "actual_player_availability_required_for_star_rest_confirmation": true
       },
       "market_bookmaker": "DraftKings",
       "market_home_moneyline": 124,
       "market_away_moneyline": -148,
       "market_home_spread": 2.5,
       "market_total": 42.5,
-      "market_updated_at": "2026-09-25T16:05:07.951309+00:00",
+      "market_updated_at": "2026-09-25T16:13:32.907254+00:00",
       "model_market_spread_edge": 3.12,
       "model_market_total_edge": 0.54
     },
@@ -105,8 +171,8 @@
       "predicted_winner": "Detroit Lions",
       "home_win_probability": 0.6776,
       "away_win_probability": 0.3224,
-      "model_version": "nfl-v2-candidate",
-      "model_status": "candidate_not_promoted",
+      "model_version": "nfl-v2",
+      "model_status": "production",
       "market_used_in_prediction": false,
       "v2_strategy": "early_season_enhanced",
       "v2_features": {
@@ -114,14 +180,47 @@
         "rest": true,
         "qb_continuity": true,
         "divisional_margin_shrink": true,
-        "neutral_site_hfa": true
+        "neutral_site_hfa": true,
+        "late_season_postseason_context": true
+      },
+      "competitive_context": {
+        "home": {
+          "wins": 1.0,
+          "losses": 1.0,
+          "games_played": 2.0,
+          "win_pct": 0.5,
+          "games_remaining": 15.0,
+          "rank_group": 8,
+          "playoff_cutoff_rank": 7,
+          "gap_to_cutoff_wins": 0.0,
+          "urgency_score": 0.0,
+          "rest_rotation_risk": 0.0,
+          "postseason_status": "chasing",
+          "context_confidence": 0.25
+        },
+        "away": {
+          "wins": 1.0,
+          "losses": 1.0,
+          "games_played": 2.0,
+          "win_pct": 0.5,
+          "games_remaining": 15.0,
+          "rank_group": 10,
+          "playoff_cutoff_rank": 7,
+          "gap_to_cutoff_wins": 0.0,
+          "urgency_score": 0.0,
+          "rest_rotation_risk": 0.0,
+          "postseason_status": "chasing",
+          "context_confidence": 0.25
+        },
+        "score_adjustment_home_minus_away": 0.0,
+        "actual_player_availability_required_for_star_rest_confirmation": true
       },
       "market_bookmaker": "DraftKings",
       "market_home_moneyline": -305,
       "market_away_moneyline": 245,
       "market_home_spread": -6.5,
       "market_total": 47.5,
-      "market_updated_at": "2026-09-25T16:05:07.951309+00:00",
+      "market_updated_at": "2026-09-25T16:13:32.907254+00:00",
       "model_market_spread_edge": -0.86,
       "model_market_total_edge": -0.15
     },
@@ -144,8 +243,8 @@
       "predicted_winner": "Houston Texans",
       "home_win_probability": 0.488,
       "away_win_probability": 0.512,
-      "model_version": "nfl-v2-candidate",
-      "model_status": "candidate_not_promoted",
+      "model_version": "nfl-v2",
+      "model_status": "production",
       "market_used_in_prediction": false,
       "v2_strategy": "early_season_enhanced",
       "v2_features": {
@@ -153,14 +252,47 @@
         "rest": true,
         "qb_continuity": true,
         "divisional_margin_shrink": true,
-        "neutral_site_hfa": true
+        "neutral_site_hfa": true,
+        "late_season_postseason_context": true
+      },
+      "competitive_context": {
+        "home": {
+          "wins": 0.0,
+          "losses": 2.0,
+          "games_played": 2.0,
+          "win_pct": 0.0,
+          "games_remaining": 15.0,
+          "rank_group": 13,
+          "playoff_cutoff_rank": 7,
+          "gap_to_cutoff_wins": -1.0,
+          "urgency_score": 0.0,
+          "rest_rotation_risk": 0.0,
+          "postseason_status": "chasing",
+          "context_confidence": 0.25
+        },
+        "away": {
+          "wins": 0.0,
+          "losses": 2.0,
+          "games_played": 2.0,
+          "win_pct": 0.0,
+          "games_remaining": 15.0,
+          "rank_group": 12,
+          "playoff_cutoff_rank": 7,
+          "gap_to_cutoff_wins": -1.0,
+          "urgency_score": 0.0,
+          "rest_rotation_risk": 0.0,
+          "postseason_status": "chasing",
+          "context_confidence": 0.25
+        },
+        "score_adjustment_home_minus_away": 0.0,
+        "actual_player_availability_required_for_star_rest_confirmation": true
       },
       "market_bookmaker": "DraftKings",
       "market_home_moneyline": 105,
       "market_away_moneyline": -125,
       "market_home_spread": 2.5,
       "market_total": 42.5,
-      "market_updated_at": "2026-09-25T16:05:07.951309+00:00",
+      "market_updated_at": "2026-09-25T16:13:32.907254+00:00",
       "model_market_spread_edge": 2.13,
       "model_market_total_edge": 5.89
     },
@@ -183,8 +315,8 @@
       "predicted_winner": "Jacksonville Jaguars",
       "home_win_probability": 0.5604,
       "away_win_probability": 0.4396,
-      "model_version": "nfl-v2-candidate",
-      "model_status": "candidate_not_promoted",
+      "model_version": "nfl-v2",
+      "model_status": "production",
       "market_used_in_prediction": false,
       "v2_strategy": "early_season_enhanced",
       "v2_features": {
@@ -192,14 +324,47 @@
         "rest": true,
         "qb_continuity": true,
         "divisional_margin_shrink": true,
-        "neutral_site_hfa": true
+        "neutral_site_hfa": true,
+        "late_season_postseason_context": true
+      },
+      "competitive_context": {
+        "home": {
+          "wins": 1.0,
+          "losses": 1.0,
+          "games_played": 2.0,
+          "win_pct": 0.5,
+          "games_remaining": 15.0,
+          "rank_group": 7,
+          "playoff_cutoff_rank": 7,
+          "gap_to_cutoff_wins": 0.0,
+          "urgency_score": 0.0,
+          "rest_rotation_risk": 0.0,
+          "postseason_status": "in_position",
+          "context_confidence": 0.25
+        },
+        "away": {
+          "wins": 1.0,
+          "losses": 1.0,
+          "games_played": 2.0,
+          "win_pct": 0.5,
+          "games_remaining": 15.0,
+          "rank_group": 5,
+          "playoff_cutoff_rank": 7,
+          "gap_to_cutoff_wins": 0.0,
+          "urgency_score": 0.0,
+          "rest_rotation_risk": 0.0,
+          "postseason_status": "in_position",
+          "context_confidence": 0.25
+        },
+        "score_adjustment_home_minus_away": 0.0,
+        "actual_player_availability_required_for_star_rest_confirmation": true
       },
       "market_bookmaker": "DraftKings",
       "market_home_moneyline": -155,
       "market_away_moneyline": 130,
       "market_home_spread": -2.5,
       "market_total": 46.5,
-      "market_updated_at": "2026-09-25T16:05:07.951309+00:00",
+      "market_updated_at": "2026-09-25T16:13:32.907254+00:00",
       "model_market_spread_edge": -0.66,
       "model_market_total_edge": -1.5
     },
@@ -222,8 +387,8 @@
       "predicted_winner": "Kansas City Chiefs",
       "home_win_probability": 0.4222,
       "away_win_probability": 0.5778,
-      "model_version": "nfl-v2-candidate",
-      "model_status": "candidate_not_promoted",
+      "model_version": "nfl-v2",
+      "model_status": "production",
       "market_used_in_prediction": false,
       "v2_strategy": "early_season_enhanced",
       "v2_features": {
@@ -231,14 +396,47 @@
         "rest": true,
         "qb_continuity": true,
         "divisional_margin_shrink": true,
-        "neutral_site_hfa": true
+        "neutral_site_hfa": true,
+        "late_season_postseason_context": true
+      },
+      "competitive_context": {
+        "home": {
+          "wins": 0.0,
+          "losses": 2.0,
+          "games_played": 2.0,
+          "win_pct": 0.0,
+          "games_remaining": 15.0,
+          "rank_group": 16,
+          "playoff_cutoff_rank": 7,
+          "gap_to_cutoff_wins": -1.0,
+          "urgency_score": 0.0,
+          "rest_rotation_risk": 0.0,
+          "postseason_status": "chasing",
+          "context_confidence": 0.25
+        },
+        "away": {
+          "wins": 2.0,
+          "losses": 0.0,
+          "games_played": 2.0,
+          "win_pct": 1.0,
+          "games_remaining": 15.0,
+          "rank_group": 4,
+          "playoff_cutoff_rank": 7,
+          "gap_to_cutoff_wins": 1.0,
+          "urgency_score": 0.0,
+          "rest_rotation_risk": 0.0,
+          "postseason_status": "in_position",
+          "context_confidence": 0.25
+        },
+        "score_adjustment_home_minus_away": 0.0,
+        "actual_player_availability_required_for_star_rest_confirmation": true
       },
       "market_bookmaker": "DraftKings",
       "market_home_moneyline": 425,
       "market_away_moneyline": -575,
       "market_home_spread": 10.5,
       "market_total": 45.5,
-      "market_updated_at": "2026-09-25T16:05:07.951309+00:00",
+      "market_updated_at": "2026-09-25T16:13:32.907254+00:00",
       "model_market_spread_edge": 8.12,
       "model_market_total_edge": -2.14
     },
@@ -261,8 +459,8 @@
       "predicted_winner": "New York Giants",
       "home_win_probability": 0.6462,
       "away_win_probability": 0.3538,
-      "model_version": "nfl-v2-candidate",
-      "model_status": "candidate_not_promoted",
+      "model_version": "nfl-v2",
+      "model_status": "production",
       "market_used_in_prediction": false,
       "v2_strategy": "early_season_enhanced",
       "v2_features": {
@@ -270,14 +468,47 @@
         "rest": true,
         "qb_continuity": true,
         "divisional_margin_shrink": true,
-        "neutral_site_hfa": true
+        "neutral_site_hfa": true,
+        "late_season_postseason_context": true
+      },
+      "competitive_context": {
+        "home": {
+          "wins": 1.0,
+          "losses": 1.0,
+          "games_played": 2.0,
+          "win_pct": 0.5,
+          "games_remaining": 15.0,
+          "rank_group": 12,
+          "playoff_cutoff_rank": 7,
+          "gap_to_cutoff_wins": 0.0,
+          "urgency_score": 0.0,
+          "rest_rotation_risk": 0.0,
+          "postseason_status": "chasing",
+          "context_confidence": 0.25
+        },
+        "away": {
+          "wins": 0.0,
+          "losses": 2.0,
+          "games_played": 2.0,
+          "win_pct": 0.0,
+          "games_remaining": 15.0,
+          "rank_group": 14,
+          "playoff_cutoff_rank": 7,
+          "gap_to_cutoff_wins": -1.0,
+          "urgency_score": 0.0,
+          "rest_rotation_risk": 0.0,
+          "postseason_status": "chasing",
+          "context_confidence": 0.25
+        },
+        "score_adjustment_home_minus_away": 0.0,
+        "actual_player_availability_required_for_star_rest_confirmation": true
       },
       "market_bookmaker": "DraftKings",
       "market_home_moneyline": -135,
       "market_away_moneyline": 114,
       "market_home_spread": -2.5,
       "market_total": 38.5,
-      "market_updated_at": "2026-09-25T16:05:07.951309+00:00",
+      "market_updated_at": "2026-09-25T16:13:32.907254+00:00",
       "model_market_spread_edge": 2.08,
       "model_market_total_edge": 6.31
     },
@@ -300,8 +531,8 @@
       "predicted_winner": "Cincinnati Bengals",
       "home_win_probability": 0.4993,
       "away_win_probability": 0.5007,
-      "model_version": "nfl-v2-candidate",
-      "model_status": "candidate_not_promoted",
+      "model_version": "nfl-v2",
+      "model_status": "production",
       "market_used_in_prediction": false,
       "v2_strategy": "early_season_enhanced",
       "v2_features": {
@@ -309,14 +540,47 @@
         "rest": true,
         "qb_continuity": true,
         "divisional_margin_shrink": true,
-        "neutral_site_hfa": true
+        "neutral_site_hfa": true,
+        "late_season_postseason_context": true
+      },
+      "competitive_context": {
+        "home": {
+          "wins": 1.0,
+          "losses": 1.0,
+          "games_played": 2.0,
+          "win_pct": 0.5,
+          "games_remaining": 15.0,
+          "rank_group": 9,
+          "playoff_cutoff_rank": 7,
+          "gap_to_cutoff_wins": 0.0,
+          "urgency_score": 0.0,
+          "rest_rotation_risk": 0.0,
+          "postseason_status": "chasing",
+          "context_confidence": 0.25
+        },
+        "away": {
+          "wins": 2.0,
+          "losses": 0.0,
+          "games_played": 2.0,
+          "win_pct": 1.0,
+          "games_remaining": 15.0,
+          "rank_group": 1,
+          "playoff_cutoff_rank": 7,
+          "gap_to_cutoff_wins": 1.0,
+          "urgency_score": 0.0,
+          "rest_rotation_risk": 0.0,
+          "postseason_status": "in_position",
+          "context_confidence": 0.25
+        },
+        "score_adjustment_home_minus_away": 0.0,
+        "actual_player_availability_required_for_star_rest_confirmation": true
       },
       "market_bookmaker": "DraftKings",
       "market_home_moneyline": 145,
       "market_away_moneyline": -175,
       "market_home_spread": 3.5,
       "market_total": 42.5,
-      "market_updated_at": "2026-09-25T16:05:07.951309+00:00",
+      "market_updated_at": "2026-09-25T16:13:32.907254+00:00",
       "model_market_spread_edge": 3.48,
       "model_market_total_edge": 2.38
     },
@@ -339,8 +603,8 @@
       "predicted_winner": "Seattle Seahawks",
       "home_win_probability": 0.3579,
       "away_win_probability": 0.6421,
-      "model_version": "nfl-v2-candidate",
-      "model_status": "candidate_not_promoted",
+      "model_version": "nfl-v2",
+      "model_status": "production",
       "market_used_in_prediction": false,
       "v2_strategy": "early_season_enhanced",
       "v2_features": {
@@ -348,14 +612,47 @@
         "rest": true,
         "qb_continuity": true,
         "divisional_margin_shrink": true,
-        "neutral_site_hfa": true
+        "neutral_site_hfa": true,
+        "late_season_postseason_context": true
+      },
+      "competitive_context": {
+        "home": {
+          "wins": 0.0,
+          "losses": 2.0,
+          "games_played": 2.0,
+          "win_pct": 0.0,
+          "games_remaining": 15.0,
+          "rank_group": 16,
+          "playoff_cutoff_rank": 7,
+          "gap_to_cutoff_wins": -1.0,
+          "urgency_score": 0.0,
+          "rest_rotation_risk": 0.0,
+          "postseason_status": "chasing",
+          "context_confidence": 0.25
+        },
+        "away": {
+          "wins": 2.0,
+          "losses": 0.0,
+          "games_played": 2.0,
+          "win_pct": 1.0,
+          "games_remaining": 15.0,
+          "rank_group": 1,
+          "playoff_cutoff_rank": 7,
+          "gap_to_cutoff_wins": 1.0,
+          "urgency_score": 0.0,
+          "rest_rotation_risk": 0.0,
+          "postseason_status": "in_position",
+          "context_confidence": 0.25
+        },
+        "score_adjustment_home_minus_away": 0.0,
+        "actual_player_availability_required_for_star_rest_confirmation": true
       },
       "market_bookmaker": "DraftKings",
       "market_home_moneyline": 280,
       "market_away_moneyline": -355,
       "market_home_spread": 7.5,
       "market_total": 40.5,
-      "market_updated_at": "2026-09-25T16:05:07.951309+00:00",
+      "market_updated_at": "2026-09-25T16:13:32.907254+00:00",
       "model_market_spread_edge": 3.06,
       "model_market_total_edge": 3.87
     },
@@ -378,8 +675,8 @@
       "predicted_winner": "San Francisco 49ers",
       "home_win_probability": 0.7582,
       "away_win_probability": 0.2418,
-      "model_version": "nfl-v2-candidate",
-      "model_status": "candidate_not_promoted",
+      "model_version": "nfl-v2",
+      "model_status": "production",
       "market_used_in_prediction": false,
       "v2_strategy": "early_season_enhanced",
       "v2_features": {
@@ -387,14 +684,47 @@
         "rest": true,
         "qb_continuity": true,
         "divisional_margin_shrink": true,
-        "neutral_site_hfa": true
+        "neutral_site_hfa": true,
+        "late_season_postseason_context": true
+      },
+      "competitive_context": {
+        "home": {
+          "wins": 2.0,
+          "losses": 0.0,
+          "games_played": 2.0,
+          "win_pct": 1.0,
+          "games_remaining": 15.0,
+          "rank_group": 2,
+          "playoff_cutoff_rank": 7,
+          "gap_to_cutoff_wins": 1.0,
+          "urgency_score": 0.0,
+          "rest_rotation_risk": 0.0,
+          "postseason_status": "in_position",
+          "context_confidence": 0.25
+        },
+        "away": {
+          "wins": 1.0,
+          "losses": 1.0,
+          "games_played": 2.0,
+          "win_pct": 0.5,
+          "games_remaining": 15.0,
+          "rank_group": 10,
+          "playoff_cutoff_rank": 7,
+          "gap_to_cutoff_wins": 0.0,
+          "urgency_score": 0.0,
+          "rest_rotation_risk": 0.0,
+          "postseason_status": "chasing",
+          "context_confidence": 0.25
+        },
+        "score_adjustment_home_minus_away": 0.0,
+        "actual_player_availability_required_for_star_rest_confirmation": true
       },
       "market_bookmaker": "DraftKings",
       "market_home_moneyline": -440,
       "market_away_moneyline": 340,
       "market_home_spread": -8.5,
       "market_total": 48.5,
-      "market_updated_at": "2026-09-25T16:05:07.951309+00:00",
+      "market_updated_at": "2026-09-25T16:13:32.907254+00:00",
       "model_market_spread_edge": 0.18,
       "model_market_total_edge": -0.8
     },
@@ -417,8 +747,8 @@
       "predicted_winner": "Minnesota Vikings",
       "home_win_probability": 0.4598,
       "away_win_probability": 0.5402,
-      "model_version": "nfl-v2-candidate",
-      "model_status": "candidate_not_promoted",
+      "model_version": "nfl-v2",
+      "model_status": "production",
       "market_used_in_prediction": false,
       "v2_strategy": "early_season_enhanced",
       "v2_features": {
@@ -426,14 +756,47 @@
         "rest": true,
         "qb_continuity": true,
         "divisional_margin_shrink": true,
-        "neutral_site_hfa": true
+        "neutral_site_hfa": true,
+        "late_season_postseason_context": true
+      },
+      "competitive_context": {
+        "home": {
+          "wins": 0.0,
+          "losses": 2.0,
+          "games_played": 2.0,
+          "win_pct": 0.0,
+          "games_remaining": 15.0,
+          "rank_group": 14,
+          "playoff_cutoff_rank": 7,
+          "gap_to_cutoff_wins": -1.0,
+          "urgency_score": 0.0,
+          "rest_rotation_risk": 0.0,
+          "postseason_status": "chasing",
+          "context_confidence": 0.25
+        },
+        "away": {
+          "wins": 2.0,
+          "losses": 0.0,
+          "games_played": 2.0,
+          "win_pct": 1.0,
+          "games_remaining": 15.0,
+          "rank_group": 3,
+          "playoff_cutoff_rank": 7,
+          "gap_to_cutoff_wins": 1.0,
+          "urgency_score": 0.0,
+          "rest_rotation_risk": 0.0,
+          "postseason_status": "in_position",
+          "context_confidence": 0.25
+        },
+        "score_adjustment_home_minus_away": 0.0,
+        "actual_player_availability_required_for_star_rest_confirmation": true
       },
       "market_bookmaker": "DraftKings",
       "market_home_moneyline": 100,
       "market_away_moneyline": -120,
       "market_home_spread": 1.5,
       "market_total": 42.5,
-      "market_updated_at": "2026-09-25T16:05:07.951309+00:00",
+      "market_updated_at": "2026-09-25T16:13:32.907254+00:00",
       "model_market_spread_edge": 0.27,
       "model_market_total_edge": 0.08
     },
@@ -456,8 +819,8 @@
       "predicted_winner": "Baltimore Ravens",
       "home_win_probability": 0.4435,
       "away_win_probability": 0.5565,
-      "model_version": "nfl-v2-candidate",
-      "model_status": "candidate_not_promoted",
+      "model_version": "nfl-v2",
+      "model_status": "production",
       "market_used_in_prediction": false,
       "v2_strategy": "early_season_enhanced",
       "v2_features": {
@@ -465,14 +828,47 @@
         "rest": true,
         "qb_continuity": true,
         "divisional_margin_shrink": true,
-        "neutral_site_hfa": true
+        "neutral_site_hfa": true,
+        "late_season_postseason_context": true
+      },
+      "competitive_context": {
+        "home": {
+          "wins": 1.0,
+          "losses": 1.0,
+          "games_played": 2.0,
+          "win_pct": 0.5,
+          "games_remaining": 15.0,
+          "rank_group": 13,
+          "playoff_cutoff_rank": 7,
+          "gap_to_cutoff_wins": 0.0,
+          "urgency_score": 0.0,
+          "rest_rotation_risk": 0.0,
+          "postseason_status": "chasing",
+          "context_confidence": 0.25
+        },
+        "away": {
+          "wins": 1.0,
+          "losses": 1.0,
+          "games_played": 2.0,
+          "win_pct": 0.5,
+          "games_remaining": 15.0,
+          "rank_group": 6,
+          "playoff_cutoff_rank": 7,
+          "gap_to_cutoff_wins": 0.0,
+          "urgency_score": 0.0,
+          "rest_rotation_risk": 0.0,
+          "postseason_status": "in_position",
+          "context_confidence": 0.25
+        },
+        "score_adjustment_home_minus_away": 0.0,
+        "actual_player_availability_required_for_star_rest_confirmation": true
       },
       "market_bookmaker": "DraftKings",
       "market_home_moneyline": 145,
       "market_away_moneyline": -175,
       "market_home_spread": 3.5,
       "market_total": 53.5,
-      "market_updated_at": "2026-09-25T16:05:07.951309+00:00",
+      "market_updated_at": "2026-09-25T16:13:32.907254+00:00",
       "model_market_spread_edge": 1.78,
       "model_market_total_edge": -4.47
     },
@@ -495,8 +891,8 @@
       "predicted_winner": "New Orleans Saints",
       "home_win_probability": 0.6184,
       "away_win_probability": 0.3816,
-      "model_version": "nfl-v2-candidate",
-      "model_status": "candidate_not_promoted",
+      "model_version": "nfl-v2",
+      "model_status": "production",
       "market_used_in_prediction": false,
       "v2_strategy": "early_season_enhanced",
       "v2_features": {
@@ -504,14 +900,47 @@
         "rest": true,
         "qb_continuity": true,
         "divisional_margin_shrink": true,
-        "neutral_site_hfa": true
+        "neutral_site_hfa": true,
+        "late_season_postseason_context": true
+      },
+      "competitive_context": {
+        "home": {
+          "wins": 1.0,
+          "losses": 1.0,
+          "games_played": 2.0,
+          "win_pct": 0.5,
+          "games_remaining": 15.0,
+          "rank_group": 9,
+          "playoff_cutoff_rank": 7,
+          "gap_to_cutoff_wins": 0.0,
+          "urgency_score": 0.0,
+          "rest_rotation_risk": 0.0,
+          "postseason_status": "chasing",
+          "context_confidence": 0.25
+        },
+        "away": {
+          "wins": 2.0,
+          "losses": 0.0,
+          "games_played": 2.0,
+          "win_pct": 1.0,
+          "games_remaining": 15.0,
+          "rank_group": 3,
+          "playoff_cutoff_rank": 7,
+          "gap_to_cutoff_wins": 1.0,
+          "urgency_score": 0.0,
+          "rest_rotation_risk": 0.0,
+          "postseason_status": "in_position",
+          "context_confidence": 0.25
+        },
+        "score_adjustment_home_minus_away": 0.0,
+        "actual_player_availability_required_for_star_rest_confirmation": true
       },
       "market_bookmaker": "DraftKings",
       "market_home_moneyline": -185,
       "market_away_moneyline": 154,
       "market_home_spread": -3.5,
       "market_total": 43.5,
-      "market_updated_at": "2026-09-25T16:05:07.951309+00:00",
+      "market_updated_at": "2026-09-25T16:13:32.907254+00:00",
       "model_market_spread_edge": 0.17,
       "model_market_total_edge": -0.51
     },
@@ -534,8 +963,8 @@
       "predicted_winner": "Los Angeles Rams",
       "home_win_probability": 0.4972,
       "away_win_probability": 0.5028,
-      "model_version": "nfl-v2-candidate",
-      "model_status": "candidate_not_promoted",
+      "model_version": "nfl-v2",
+      "model_status": "production",
       "market_used_in_prediction": false,
       "v2_strategy": "early_season_enhanced",
       "v2_features": {
@@ -543,14 +972,47 @@
         "rest": true,
         "qb_continuity": true,
         "divisional_margin_shrink": true,
-        "neutral_site_hfa": true
+        "neutral_site_hfa": true,
+        "late_season_postseason_context": true
+      },
+      "competitive_context": {
+        "home": {
+          "wins": 1.0,
+          "losses": 1.0,
+          "games_played": 2.0,
+          "win_pct": 0.5,
+          "games_remaining": 15.0,
+          "rank_group": 11,
+          "playoff_cutoff_rank": 7,
+          "gap_to_cutoff_wins": 0.0,
+          "urgency_score": 0.0,
+          "rest_rotation_risk": 0.0,
+          "postseason_status": "chasing",
+          "context_confidence": 0.25
+        },
+        "away": {
+          "wins": 1.0,
+          "losses": 1.0,
+          "games_played": 2.0,
+          "win_pct": 0.5,
+          "games_remaining": 15.0,
+          "rank_group": 5,
+          "playoff_cutoff_rank": 7,
+          "gap_to_cutoff_wins": 0.0,
+          "urgency_score": 0.0,
+          "rest_rotation_risk": 0.0,
+          "postseason_status": "in_position",
+          "context_confidence": 0.25
+        },
+        "score_adjustment_home_minus_away": 0.0,
+        "actual_player_availability_required_for_star_rest_confirmation": true
       },
       "market_bookmaker": "DraftKings",
       "market_home_moneyline": 114,
       "market_away_moneyline": -135,
       "market_home_spread": 2.5,
       "market_total": 43.5,
-      "market_updated_at": "2026-09-25T16:05:07.951309+00:00",
+      "market_updated_at": "2026-09-25T16:13:32.907254+00:00",
       "model_market_spread_edge": 2.41,
       "model_market_total_edge": 1.5
     },
@@ -573,8 +1035,8 @@
       "predicted_winner": "Chicago Bears",
       "home_win_probability": 0.5585,
       "away_win_probability": 0.4415,
-      "model_version": "nfl-v2-candidate",
-      "model_status": "candidate_not_promoted",
+      "model_version": "nfl-v2",
+      "model_status": "production",
       "market_used_in_prediction": false,
       "v2_strategy": "early_season_enhanced",
       "v2_features": {
@@ -582,16 +1044,50 @@
         "rest": true,
         "qb_continuity": true,
         "divisional_margin_shrink": true,
-        "neutral_site_hfa": true
+        "neutral_site_hfa": true,
+        "late_season_postseason_context": true
+      },
+      "competitive_context": {
+        "home": {
+          "wins": 1.0,
+          "losses": 1.0,
+          "games_played": 2.0,
+          "win_pct": 0.5,
+          "games_remaining": 15.0,
+          "rank_group": 7,
+          "playoff_cutoff_rank": 7,
+          "gap_to_cutoff_wins": 0.0,
+          "urgency_score": 0.0,
+          "rest_rotation_risk": 0.0,
+          "postseason_status": "in_position",
+          "context_confidence": 0.25
+        },
+        "away": {
+          "wins": 2.0,
+          "losses": 0.0,
+          "games_played": 2.0,
+          "win_pct": 1.0,
+          "games_remaining": 15.0,
+          "rank_group": 4,
+          "playoff_cutoff_rank": 7,
+          "gap_to_cutoff_wins": 1.0,
+          "urgency_score": 0.0,
+          "rest_rotation_risk": 0.0,
+          "postseason_status": "in_position",
+          "context_confidence": 0.25
+        },
+        "score_adjustment_home_minus_away": 0.0,
+        "actual_player_availability_required_for_star_rest_confirmation": true
       },
       "market_bookmaker": "DraftKings",
       "market_home_moneyline": 185,
       "market_away_moneyline": -225,
       "market_home_spread": 5.5,
       "market_total": 41.5,
-      "market_updated_at": "2026-09-25T16:05:07.951309+00:00",
+      "market_updated_at": "2026-09-25T16:13:32.907254+00:00",
       "model_market_spread_edge": 7.29,
       "model_market_total_edge": 2.69
     }
-  ]
+  ],
+  "validation_basis": "577-game leakage-safe backtest across 2024-2026; postseason-aware hybrid v2 improved winner accuracy to 63.26% vs 61.18% for v1 and also improved Brier, margin MAE, total MAE, and team-score MAE."
 }
