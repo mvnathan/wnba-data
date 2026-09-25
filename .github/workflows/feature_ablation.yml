@@ -2,11 +2,6 @@ name: Analyze WNBA Feature Sets
 
 on:
   workflow_dispatch:
-  push:
-    branches: [main]
-    paths:
-      - 'src/feature_ablation.py'
-      - 'src/features.py'
 
 concurrency:
   group: wnba-feature-ablation
