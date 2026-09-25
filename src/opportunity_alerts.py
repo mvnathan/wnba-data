@@ -172,7 +172,18 @@ def _candidate_records(game: dict[str, Any]) -> list[dict[str, Any]]:
                 "away_win_probability": game.get(
                     "live_away_win_probability" if live else "away_win_probability"
                 ),
+                "context_rest_risk": max(
+                    _number(game.get("home_rotation_rest_risk")) or 0.0,
+                    _number(game.get("away_rotation_rest_risk")) or 0.0,
+                ),
+                "context_postseason_urgency": max(
+                    _number(game.get("home_postseason_urgency")) or 0.0,
+                    _number(game.get("away_postseason_urgency")) or 0.0,
+                ),
             }
+        )
+        candidate["availability_review_priority"] = (
+            candidate["context_rest_risk"] >= 0.25
         )
         records.append(candidate)
     return records
