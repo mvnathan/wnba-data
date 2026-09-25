@@ -51,3 +51,5 @@ def main():
     OUT.parent.mkdir(parents=True,exist_ok=True); OUT.write_text(json.dumps(payload,indent=2,allow_nan=False))
     print(json.dumps({k:v for k,v in payload.items() if k!="rows"},indent=2))
 if __name__=="__main__": main()
+
+# Validate MLB postseason context: 2026-09-25
