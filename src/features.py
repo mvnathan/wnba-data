@@ -2600,3 +2600,4 @@ def build_and_save(
         out_path,
         index=False,
     )
+# Postseason context retrain trigger: 2026-09-25
