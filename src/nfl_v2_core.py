@@ -122,3 +122,33 @@ def predict_row(df: pd.DataFrame, row: pd.Series, variant: str="v2") -> dict[str
         "home_win_probability":hp,"league_mean":league,"home_advantage":hfa,
         "home_offense":home_off,"away_offense":away_off,"home_defense":home_def,"away_defense":away_def,
     }
+
+
+def predict_v1_row(df: pd.DataFrame, row: pd.Series) -> dict[str,float]:
+    season=int(row["season"]); week=int(row["week"])
+    hist=df[(df["season"]==season)&(df["game_type"]=="REG")&(df["week"]<week)&df["home_score"].notna()&df["away_score"].notna()].copy()
+    league=_league_mean(hist) if len(hist) else 22.0
+    home_adv=_home_adv(hist) if len(hist) else HOME_ADV_PRIOR
+    pf=defaultdict(list); pa=defaultdict(list)
+    for _,g in hist.iterrows():
+        pf[str(g.home_team)].append(float(g.home_score)); pa[str(g.home_team)].append(float(g.away_score))
+        pf[str(g.away_team)].append(float(g.away_score)); pa[str(g.away_team)].append(float(g.home_score))
+    def shr(values):
+        if not values:return league
+        obs=sum(values)/len(values); n=len(values)
+        return (obs*n+league*3.5)/(n+3.5)
+    home=str(row["home_team"]); away=str(row["away_team"])
+    ho,hd=shr(pf[home]),shr(pa[home]); ao,ad=shr(pf[away]),shr(pa[away])
+    location=str(row.get("location") or "Home").lower()
+    hfa=0.0 if "neutral" in location else home_adv
+    ph=max(10.0,min(39.5,0.53*ho+0.47*ad+hfa/2))
+    pa_=max(10.0,min(39.5,0.53*ao+0.47*hd-hfa/2))
+    margin=ph-pa_; total=ph+pa_; hp=1/(1+math.exp(-margin/7.25))
+    return {"home_points":ph,"away_points":pa_,"margin":margin,"total":total,"home_win_probability":hp,"league_mean":league,"home_advantage":hfa,"home_offense":ho,"away_offense":ao,"home_defense":hd,"away_defense":ad}
+
+
+def predict_hybrid_row(df: pd.DataFrame, row: pd.Series) -> tuple[dict[str,float], str]:
+    week=int(row["week"])
+    if week<=4:
+        return predict_row(df,row,"full"), "early_season_enhanced"
+    return predict_v1_row(df,row), "current_season_baseline"
