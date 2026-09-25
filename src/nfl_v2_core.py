@@ -190,3 +190,5 @@ def predict_hybrid_context_row(df: pd.DataFrame, row: pd.Series) -> tuple[dict[s
         "actual_player_availability_required_for_star_rest_confirmation":True,
     }
     return pred,strategy,meta
+
+# Revalidate division context: 2026-09-25
