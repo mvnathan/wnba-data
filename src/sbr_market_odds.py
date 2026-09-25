@@ -10,6 +10,7 @@ import requests
 SLUGS = {
     "wnba": "wnba-basketball",
     "mlb": "mlb-baseball",
+    "nfl": "nfl-football",
 }
 
 HEADERS = {
@@ -91,7 +92,7 @@ def fetch_sbr_draftkings(sport: str, date_str: str | None = None) -> list[dict[s
     keys = set().union(*(set(v) for v in by_market.values()))
     fetched = datetime.now(timezone.utc).isoformat()
     out: list[dict[str, Any]] = []
-    sport_key = {"wnba": "basketball_wnba", "mlb": "baseball_mlb"}[sport]
+    sport_key = {"wnba": "basketball_wnba", "mlb": "baseball_mlb", "nfl": "americanfootball_nfl"}[sport]
 
     for home, away, start in sorted(keys):
         markets = []
