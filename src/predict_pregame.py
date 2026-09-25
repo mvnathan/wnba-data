@@ -982,6 +982,22 @@ def predict_today(
             "status",
             "status_detail",
             "venue",
+            "home_standings_rank",
+            "away_standings_rank",
+            "home_playoff_cutoff_rank",
+            "away_playoff_cutoff_rank",
+            "home_games_remaining",
+            "away_games_remaining",
+            "home_gap_to_playoff_cutoff_wins",
+            "away_gap_to_playoff_cutoff_wins",
+            "home_postseason_urgency",
+            "away_postseason_urgency",
+            "home_rotation_rest_risk",
+            "away_rotation_rest_risk",
+            "home_playoff_secure_proxy",
+            "away_playoff_secure_proxy",
+            "home_playoff_eliminated_proxy",
+            "away_playoff_eliminated_proxy",
         ):
             if (
                 optional_col
