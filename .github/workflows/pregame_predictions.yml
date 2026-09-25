@@ -2,17 +2,9 @@ name: Generate WNBA Pregame Predictions
 
 on:
   workflow_dispatch:
-  push:
-    branches: [main]
-    paths:
-      - '.github/workflows/pregame_predictions.yml'
-      - 'src/predict_pregame.py'
-      - 'src/market_odds.py'
-      - 'src/draftkings_direct.py'
-      - 'src/espn_market_odds.py'
   schedule:
-    - cron: '30 12,14,16,18,20,22 * * *'
-    - cron: '30 0,2 * * *'
+    - cron: '30 14,20 * * *'
+    - cron: '30 0 * * *'
 
 # Manual repaired consensus refresh trigger: 2026-08-30T22:16Z
 
