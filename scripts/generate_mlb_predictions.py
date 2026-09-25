@@ -302,3 +302,5 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+
+# DK source-order validation: 2026-09-25
