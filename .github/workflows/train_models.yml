@@ -4,6 +4,10 @@ on:
   workflow_dispatch:
   schedule:
     - cron: '0 10 * * 1'
+  push:
+    branches: [main]
+    paths:
+      - 'src/model_training_v2.py'
 
 concurrency:
   group: wnba-model-training
@@ -53,6 +57,8 @@ jobs:
           payload = joblib.load(path)
           if not payload.get('models') or not payload.get('feature_columns'):
               raise SystemExit('Production model bundle is incomplete')
+          if not payload.get('feature_columns_by_target'):
+              raise SystemExit('Target-specific feature map is missing')
           PY
       - name: Commit model outputs
         shell: bash
