@@ -2,6 +2,10 @@ name: Generate NFL Predictions
 
 on:
   workflow_dispatch: {}
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/generate_nfl_v2.py'
   schedule:
     - cron: '10 14 * * 0,1,4,5'
     - cron: '10 18 * * 0'
