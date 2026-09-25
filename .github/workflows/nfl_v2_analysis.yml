@@ -2,6 +2,10 @@ name: NFL V2 Candidate Analysis
 
 on:
   workflow_dispatch: {}
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/backtest_nfl_models.py'
 
 permissions:
   contents: write
