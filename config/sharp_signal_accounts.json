@@ -1,0 +1,17 @@
+{
+  "status": "shadow_research_only",
+  "selection_policy": "Reputation or external tracking qualifies an account for prospective observation only. Model weight remains zero until our own timestamped ledger demonstrates sufficient sample size, positive CLV/ROI, and incremental predictive value.",
+  "accounts": [
+    {"username":"RufusPeabody","tier":"established_professional","sports":["NFL","MLB","NBA","NCAAF"]},
+    {"username":"capjack2000","tier":"established_professional","sports":["NFL","MLB","NBA"]},
+    {"username":"FezzikSports","tier":"established_professional","sports":["NFL"]},
+    {"username":"wheatonbrando","tier":"externally_tracked_analyst","sports":["NFL","NBA"]},
+    {"username":"iamrahstradamus","tier":"externally_tracked_analyst","sports":["NFL","NBA"]}
+  ],
+  "promotion_thresholds": {
+    "minimum_graded_picks": 100,
+    "minimum_positive_clv_rate": 0.52,
+    "minimum_roi": 0.01,
+    "requires_shadow_model_improvement": true
+  }
+}
