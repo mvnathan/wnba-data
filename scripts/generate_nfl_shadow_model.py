@@ -266,6 +266,11 @@ def pick_matches_game(pick: dict[str,Any], g: dict[str,Any]) -> tuple[str | None
     hname=str(g.get("home_team") or "").lower(); aname=str(g.get("away_team") or "").lower()
     market=str(pick.get("market") or "")
     if market=="total":
+        # A total must identify this matchup/team; never apply a generic O/U to every game.
+        team_terms = [hname, aname]
+        team_terms += TEAM_ALIASES.get(h,[]) + TEAM_ALIASES.get(a,[])
+        if not any(term and term in sel for term in team_terms):
+            return None,0.0
         if "over" in sel:return "over",float(pick.get("parse_confidence") or 0.5)
         if "under" in sel:return "under",float(pick.get("parse_confidence") or 0.5)
     if market in {"spread","moneyline"}:
@@ -314,6 +319,21 @@ def sharp_adjustment(g: dict[str,Any], ledger: dict[str,Any], sharp_status: dict
     return {"margin_delta":round(margin_delta,3),"total_delta":round(total_delta,3),"signals_applied":applied}
 
 def apply_combined(g:dict[str,Any], availability:dict[str,Any], sharp:dict[str,Any])->dict[str,Any]:
+    if not sharp.get("signals_applied"):
+        return {
+            "predicted_home_points":availability.get("predicted_home_points"),
+            "predicted_away_points":availability.get("predicted_away_points"),
+            "predicted_margin":availability.get("predicted_margin"),
+            "predicted_total":availability.get("predicted_total"),
+            "home_win_probability":availability.get("home_win_probability"),
+            "away_win_probability":availability.get("away_win_probability"),
+            "predicted_winner":availability.get("predicted_winner"),
+            "combined_margin_delta_vs_production":availability.get("availability_margin_delta",0.0),
+            "combined_total_delta_vs_production":availability.get("availability_total_delta",0.0),
+            "sharp_margin_delta":0.0,
+            "sharp_total_delta":0.0,
+            "sharp_signals_applied":[],
+        }
     hp=float(availability["predicted_home_points"])
     ap=float(availability["predicted_away_points"])
     # Margin-only sharp adjustment is split symmetrically across teams.
