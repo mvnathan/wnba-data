@@ -130,12 +130,16 @@ function mergeNFLScores(predictions, live) {
     const row = map.get(String(game.game_id));
     if (!row) return game;
     const hasScore = row.home_score !== null || row.away_score !== null;
+    const kickoff = Date.parse(String(game.game_date_utc || ""));
+    const now = Date.now();
+    const inWindow = Number.isFinite(kickoff) && now >= kickoff && now <= kickoff + 5 * 60 * 60 * 1000;
+    const state = hasScore ? (inWindow ? "in" : "post") : "pre";
     return {
       ...game,
       live_home_score: row.home_score,
       live_away_score: row.away_score,
-      live_status: hasScore ? "Score updated" : game.live_status || game.status || "Scheduled",
-      live_state: hasScore ? "post" : "pre",
+      live_status: hasScore ? (state === "in" ? "Live score" : "Final") : game.live_status || game.status || "Scheduled",
+      live_state: state,
       live_period: null,
       live_clock: null,
       possession: null,
