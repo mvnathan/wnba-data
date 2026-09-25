@@ -4,16 +4,6 @@ name: Live WNBA Game Monitor
 # workflow remains available for manual fallback and code-change validation.
 on:
   workflow_dispatch:
-  push:
-    branches:
-      - main
-    paths:
-      - '.github/workflows/live_monitor.yml'
-      - 'scripts/monitor_live_games.py'
-      - 'scripts/enrich_quarter_projection.py'
-      - 'src/live_monitor.py'
-      - 'src/live_predict.py'
-      - 'src/quarter_detector.py'
 concurrency:
   group: wnba-live-monitor
   cancel-in-progress: true
