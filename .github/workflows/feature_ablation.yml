@@ -6,6 +6,7 @@ on:
     branches: [main]
     paths:
       - 'src/feature_ablation.py'
+      - 'src/features.py'
 
 concurrency:
   group: wnba-feature-ablation
