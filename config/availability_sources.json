@@ -1,0 +1,61 @@
+{
+  "official_web_sources": [
+    {
+      "sport": "NFL",
+      "name": "NFL Official Injury Report",
+      "url": "https://www.nfl.com/injuries/",
+      "tier": "official"
+    },
+    {
+      "sport": "WNBA",
+      "name": "WNBA Official Injury Report",
+      "url": "https://www.wnba.com/wnba-injury-report",
+      "tier": "official"
+    },
+    {
+      "sport": "MLB",
+      "name": "MLB Official Injury Report",
+      "url": "https://www.mlb.com/injury-report",
+      "tier": "official"
+    },
+    {
+      "sport": "MLB",
+      "name": "MLB Probable Pitchers",
+      "url": "https://www.mlb.com/probable-pitchers",
+      "tier": "official"
+    }
+  ],
+  "trusted_x_accounts": [
+    {"sport": "NFL", "username": "AdamSchefter", "tier": "trusted_media"},
+    {"sport": "NFL", "username": "RapSheet", "tier": "trusted_media"},
+    {"sport": "MLB", "username": "JeffPassan", "tier": "trusted_media"},
+    {"sport": "WNBA", "username": "alexaphilippou", "tier": "trusted_media"}
+  ],
+  "keywords": [
+    "out",
+    "inactive",
+    "doubtful",
+    "questionable",
+    "probable",
+    "expected to play",
+    "will play",
+    "will not play",
+    "won't play",
+    "game-time decision",
+    "injury",
+    "injured",
+    "rest",
+    "resting",
+    "minutes restriction",
+    "limited minutes",
+    "starting lineup",
+    "will start",
+    "benched",
+    "snap count",
+    "pitch count",
+    "bullpen unavailable",
+    "travel issue",
+    "illness",
+    "suspension"
+  ]
+}
