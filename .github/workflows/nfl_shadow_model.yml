@@ -1,0 +1,65 @@
+name: NFL Combined Shadow Model
+
+on:
+  workflow_dispatch: {}
+  schedule:
+    - cron: '42 */2 * * *'
+  push:
+    branches: [main]
+    paths:
+      - 'docs/nfl-latest.json'
+      - 'docs/availability-latest.json'
+      - 'data/sharp-picks-ledger.json'
+      - 'docs/sharp-signal-latest.json'
+      - 'scripts/generate_nfl_shadow_model.py'
+      - '.github/workflows/nfl_shadow_model.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: nfl-combined-shadow
+  cancel-in-progress: true
+
+jobs:
+  shadow:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - name: Build combined shadow model
+        run: python scripts/generate_nfl_shadow_model.py
+      - name: Validate shadow isolation
+        run: |
+          python - <<'PY'
+          import json
+          d=json.load(open("docs/nfl-shadow-latest.json"))
+          assert d["status"]=="ok"
+          assert d["production_modified"] is False
+          assert d["policy"]["sharp_production_weight_remains_zero"] is True
+          for g in d["games"]:
+              for key in ("availability_shadow","combined_shadow"):
+                  assert 0 <= g[key]["home_win_probability"] <= 1
+          print(json.dumps(d["summary"],indent=2))
+          PY
+      - name: Publish shadow output
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          cp docs/nfl-shadow-latest.json /tmp/nfl-shadow-docs.json
+          cp data/nfl-shadow-latest.json /tmp/nfl-shadow-data.json
+          for attempt in 1 2 3; do
+            git fetch origin main
+            git reset --hard origin/main
+            cp /tmp/nfl-shadow-docs.json docs/nfl-shadow-latest.json
+            cp /tmp/nfl-shadow-data.json data/nfl-shadow-latest.json
+            git add docs/nfl-shadow-latest.json data/nfl-shadow-latest.json
+            if git diff --cached --quiet; then exit 0; fi
+            git commit -m "Update NFL combined shadow model"
+            if git push origin HEAD:main; then exit 0; fi
+          done
+          exit 1
