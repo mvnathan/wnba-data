@@ -1,10 +1,10 @@
 {
-  "generated_at_utc": "2026-09-25T16:41:43.092337+00:00",
+  "generated_at_utc": "2026-09-25T16:44:33.577805+00:00",
   "target_date": "2026-09-25",
   "season": 2026,
   "week": 3,
-  "model_version": "nfl-v2-candidate",
-  "model_status": "candidate_not_promoted",
+  "model_version": "nfl-v2",
+  "model_status": "production",
   "market_used_in_prediction": false,
   "market_event_count": 15,
   "games": [
@@ -27,8 +27,8 @@
       "predicted_winner": "Buffalo Bills",
       "home_win_probability": 0.6708,
       "away_win_probability": 0.3292,
-      "model_version": "nfl-v2-candidate",
-      "model_status": "candidate_not_promoted",
+      "model_version": "nfl-v2",
+      "model_status": "production",
       "market_used_in_prediction": false,
       "v2_strategy": "early_season_enhanced",
       "v2_features": {
@@ -84,7 +84,7 @@
       "market_away_moneyline": 270,
       "market_home_spread": -7.5,
       "market_total": 50.5,
-      "market_updated_at": "2026-09-25T16:41:41.150151+00:00",
+      "market_updated_at": "2026-09-25T16:44:32.227008+00:00",
       "model_market_spread_edge": -2.09,
       "model_market_total_edge": -4.7
     },
@@ -107,8 +107,8 @@
       "predicted_winner": "Cleveland Browns",
       "home_win_probability": 0.5202,
       "away_win_probability": 0.4798,
-      "model_version": "nfl-v2-candidate",
-      "model_status": "candidate_not_promoted",
+      "model_version": "nfl-v2",
+      "model_status": "production",
       "market_used_in_prediction": false,
       "v2_strategy": "early_season_enhanced",
       "v2_features": {
@@ -164,7 +164,7 @@
       "market_away_moneyline": -148,
       "market_home_spread": 2.5,
       "market_total": 42.5,
-      "market_updated_at": "2026-09-25T16:41:41.150151+00:00",
+      "market_updated_at": "2026-09-25T16:44:32.227008+00:00",
       "model_market_spread_edge": 3.12,
       "model_market_total_edge": 0.54
     },
@@ -187,8 +187,8 @@
       "predicted_winner": "Detroit Lions",
       "home_win_probability": 0.6776,
       "away_win_probability": 0.3224,
-      "model_version": "nfl-v2-candidate",
-      "model_status": "candidate_not_promoted",
+      "model_version": "nfl-v2",
+      "model_status": "production",
       "market_used_in_prediction": false,
       "v2_strategy": "early_season_enhanced",
       "v2_features": {
@@ -244,7 +244,7 @@
       "market_away_moneyline": 245,
       "market_home_spread": -6.5,
       "market_total": 47.5,
-      "market_updated_at": "2026-09-25T16:41:41.150151+00:00",
+      "market_updated_at": "2026-09-25T16:44:32.227008+00:00",
       "model_market_spread_edge": -0.86,
       "model_market_total_edge": -0.15
     },
@@ -267,8 +267,8 @@
       "predicted_winner": "Houston Texans",
       "home_win_probability": 0.488,
       "away_win_probability": 0.512,
-      "model_version": "nfl-v2-candidate",
-      "model_status": "candidate_not_promoted",
+      "model_version": "nfl-v2",
+      "model_status": "production",
       "market_used_in_prediction": false,
       "v2_strategy": "early_season_enhanced",
       "v2_features": {
@@ -324,7 +324,7 @@
       "market_away_moneyline": -125,
       "market_home_spread": 2.5,
       "market_total": 42.5,
-      "market_updated_at": "2026-09-25T16:41:41.150151+00:00",
+      "market_updated_at": "2026-09-25T16:44:32.227008+00:00",
       "model_market_spread_edge": 2.13,
       "model_market_total_edge": 5.89
     },
@@ -347,8 +347,8 @@
       "predicted_winner": "Jacksonville Jaguars",
       "home_win_probability": 0.5604,
       "away_win_probability": 0.4396,
-      "model_version": "nfl-v2-candidate",
-      "model_status": "candidate_not_promoted",
+      "model_version": "nfl-v2",
+      "model_status": "production",
       "market_used_in_prediction": false,
       "v2_strategy": "early_season_enhanced",
       "v2_features": {
@@ -404,7 +404,7 @@
       "market_away_moneyline": 130,
       "market_home_spread": -2.5,
       "market_total": 46.5,
-      "market_updated_at": "2026-09-25T16:41:41.150151+00:00",
+      "market_updated_at": "2026-09-25T16:44:32.227008+00:00",
       "model_market_spread_edge": -0.66,
       "model_market_total_edge": -1.5
     },
@@ -427,8 +427,8 @@
       "predicted_winner": "Kansas City Chiefs",
       "home_win_probability": 0.4222,
       "away_win_probability": 0.5778,
-      "model_version": "nfl-v2-candidate",
-      "model_status": "candidate_not_promoted",
+      "model_version": "nfl-v2",
+      "model_status": "production",
       "market_used_in_prediction": false,
       "v2_strategy": "early_season_enhanced",
       "v2_features": {
@@ -484,7 +484,7 @@
       "market_away_moneyline": -575,
       "market_home_spread": 10.5,
       "market_total": 45.5,
-      "market_updated_at": "2026-09-25T16:41:41.150151+00:00",
+      "market_updated_at": "2026-09-25T16:44:32.227008+00:00",
       "model_market_spread_edge": 8.12,
       "model_market_total_edge": -2.14
     },
@@ -507,8 +507,8 @@
       "predicted_winner": "New York Giants",
       "home_win_probability": 0.6462,
       "away_win_probability": 0.3538,
-      "model_version": "nfl-v2-candidate",
-      "model_status": "candidate_not_promoted",
+      "model_version": "nfl-v2",
+      "model_status": "production",
       "market_used_in_prediction": false,
       "v2_strategy": "early_season_enhanced",
       "v2_features": {
@@ -564,7 +564,7 @@
       "market_away_moneyline": 114,
       "market_home_spread": -2.5,
       "market_total": 38.5,
-      "market_updated_at": "2026-09-25T16:41:41.150151+00:00",
+      "market_updated_at": "2026-09-25T16:44:32.227008+00:00",
       "model_market_spread_edge": 2.08,
       "model_market_total_edge": 6.31
     },
@@ -587,8 +587,8 @@
       "predicted_winner": "Cincinnati Bengals",
       "home_win_probability": 0.4993,
       "away_win_probability": 0.5007,
-      "model_version": "nfl-v2-candidate",
-      "model_status": "candidate_not_promoted",
+      "model_version": "nfl-v2",
+      "model_status": "production",
       "market_used_in_prediction": false,
       "v2_strategy": "early_season_enhanced",
       "v2_features": {
@@ -644,7 +644,7 @@
       "market_away_moneyline": -175,
       "market_home_spread": 3.5,
       "market_total": 42.5,
-      "market_updated_at": "2026-09-25T16:41:41.150151+00:00",
+      "market_updated_at": "2026-09-25T16:44:32.227008+00:00",
       "model_market_spread_edge": 3.48,
       "model_market_total_edge": 2.38
     },
@@ -667,8 +667,8 @@
       "predicted_winner": "Seattle Seahawks",
       "home_win_probability": 0.3579,
       "away_win_probability": 0.6421,
-      "model_version": "nfl-v2-candidate",
-      "model_status": "candidate_not_promoted",
+      "model_version": "nfl-v2",
+      "model_status": "production",
       "market_used_in_prediction": false,
       "v2_strategy": "early_season_enhanced",
       "v2_features": {
@@ -724,7 +724,7 @@
       "market_away_moneyline": -355,
       "market_home_spread": 7.5,
       "market_total": 40.5,
-      "market_updated_at": "2026-09-25T16:41:41.150151+00:00",
+      "market_updated_at": "2026-09-25T16:44:32.227008+00:00",
       "model_market_spread_edge": 3.06,
       "model_market_total_edge": 3.87
     },
@@ -747,8 +747,8 @@
       "predicted_winner": "San Francisco 49ers",
       "home_win_probability": 0.7582,
       "away_win_probability": 0.2418,
-      "model_version": "nfl-v2-candidate",
-      "model_status": "candidate_not_promoted",
+      "model_version": "nfl-v2",
+      "model_status": "production",
       "market_used_in_prediction": false,
       "v2_strategy": "early_season_enhanced",
       "v2_features": {
@@ -804,7 +804,7 @@
       "market_away_moneyline": 340,
       "market_home_spread": -8.5,
       "market_total": 47.5,
-      "market_updated_at": "2026-09-25T16:41:41.150151+00:00",
+      "market_updated_at": "2026-09-25T16:44:32.227008+00:00",
       "model_market_spread_edge": 0.18,
       "model_market_total_edge": 0.2
     },
@@ -827,8 +827,8 @@
       "predicted_winner": "Minnesota Vikings",
       "home_win_probability": 0.4598,
       "away_win_probability": 0.5402,
-      "model_version": "nfl-v2-candidate",
-      "model_status": "candidate_not_promoted",
+      "model_version": "nfl-v2",
+      "model_status": "production",
       "market_used_in_prediction": false,
       "v2_strategy": "early_season_enhanced",
       "v2_features": {
@@ -884,7 +884,7 @@
       "market_away_moneyline": -120,
       "market_home_spread": 1.5,
       "market_total": 42.5,
-      "market_updated_at": "2026-09-25T16:41:41.150151+00:00",
+      "market_updated_at": "2026-09-25T16:44:32.227008+00:00",
       "model_market_spread_edge": 0.27,
       "model_market_total_edge": 0.08
     },
@@ -907,8 +907,8 @@
       "predicted_winner": "Baltimore Ravens",
       "home_win_probability": 0.4435,
       "away_win_probability": 0.5565,
-      "model_version": "nfl-v2-candidate",
-      "model_status": "candidate_not_promoted",
+      "model_version": "nfl-v2",
+      "model_status": "production",
       "market_used_in_prediction": false,
       "v2_strategy": "early_season_enhanced",
       "v2_features": {
@@ -964,7 +964,7 @@
       "market_away_moneyline": -175,
       "market_home_spread": 3.5,
       "market_total": 53.5,
-      "market_updated_at": "2026-09-25T16:41:41.150151+00:00",
+      "market_updated_at": "2026-09-25T16:44:32.227008+00:00",
       "model_market_spread_edge": 1.78,
       "model_market_total_edge": -4.47
     },
@@ -987,8 +987,8 @@
       "predicted_winner": "New Orleans Saints",
       "home_win_probability": 0.6184,
       "away_win_probability": 0.3816,
-      "model_version": "nfl-v2-candidate",
-      "model_status": "candidate_not_promoted",
+      "model_version": "nfl-v2",
+      "model_status": "production",
       "market_used_in_prediction": false,
       "v2_strategy": "early_season_enhanced",
       "v2_features": {
@@ -1044,7 +1044,7 @@
       "market_away_moneyline": 154,
       "market_home_spread": -3.5,
       "market_total": 43.5,
-      "market_updated_at": "2026-09-25T16:41:41.150151+00:00",
+      "market_updated_at": "2026-09-25T16:44:32.227008+00:00",
       "model_market_spread_edge": 0.17,
       "model_market_total_edge": -0.51
     },
@@ -1067,8 +1067,8 @@
       "predicted_winner": "Los Angeles Rams",
       "home_win_probability": 0.4972,
       "away_win_probability": 0.5028,
-      "model_version": "nfl-v2-candidate",
-      "model_status": "candidate_not_promoted",
+      "model_version": "nfl-v2",
+      "model_status": "production",
       "market_used_in_prediction": false,
       "v2_strategy": "early_season_enhanced",
       "v2_features": {
@@ -1124,7 +1124,7 @@
       "market_away_moneyline": -135,
       "market_home_spread": 2.5,
       "market_total": 43.5,
-      "market_updated_at": "2026-09-25T16:41:41.150151+00:00",
+      "market_updated_at": "2026-09-25T16:44:32.227008+00:00",
       "model_market_spread_edge": 2.41,
       "model_market_total_edge": 1.5
     },
@@ -1147,8 +1147,8 @@
       "predicted_winner": "Chicago Bears",
       "home_win_probability": 0.5585,
       "away_win_probability": 0.4415,
-      "model_version": "nfl-v2-candidate",
-      "model_status": "candidate_not_promoted",
+      "model_version": "nfl-v2",
+      "model_status": "production",
       "market_used_in_prediction": false,
       "v2_strategy": "early_season_enhanced",
       "v2_features": {
@@ -1204,9 +1204,10 @@
       "market_away_moneyline": -225,
       "market_home_spread": 5.5,
       "market_total": 41.5,
-      "market_updated_at": "2026-09-25T16:41:41.150151+00:00",
+      "market_updated_at": "2026-09-25T16:44:32.227008+00:00",
       "model_market_spread_edge": 7.29,
       "model_market_total_edge": 2.69
     }
-  ]
+  ],
+  "validation_basis": "577-game leakage-safe backtest across 2024-2026; postseason-aware hybrid v2 improved winner accuracy to 63.26% vs 61.18% for v1 and also improved Brier, margin MAE, total MAE, and team-score MAE."
 }
