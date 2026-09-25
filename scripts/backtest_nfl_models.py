@@ -9,11 +9,11 @@ from statistics import mean
 
 import pandas as pd
 
-from src.nfl_v2_core import predict_row
+from src.nfl_v2_core import predict_row, predict_hybrid_context_row
 
 URL="https://raw.githubusercontent.com/nflverse/nfldata/master/data/games.csv"
 OUT=Path("data/nfl_model_comparison.json")
-VARIANTS=("v1","base","rest","qb","division","full","hybrid")
+VARIANTS=("v1","base","rest","qb","division","full","hybrid","hybrid_context")
 
 
 def load():
@@ -67,6 +67,8 @@ def main():
         rec["v1"]=v1_predict(df,row)
         for v in ("base","rest","qb","division","full"):rec[v]=predict_row(df,row,v)
         rec["hybrid"]=rec["full"] if int(row.week)<=4 else rec["v1"]
+        ctx,_,_=predict_hybrid_context_row(df,row)
+        rec["hybrid_context"]=ctx
         rows.append(rec)
     out={"evaluation":"leakage-safe chronological regular-season backtest; each prediction uses only games from earlier weeks","seasons":sorted({r["season"] for r in rows}),"metrics":{v:metrics(rows,v) for v in VARIANTS},"delta_full_minus_v1":{},"delta_hybrid_minus_v1":{}}
     a=out["metrics"]["v1"];b=out["metrics"]["full"]
