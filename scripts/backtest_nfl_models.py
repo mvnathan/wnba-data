@@ -70,6 +70,31 @@ def main():
     out={"evaluation":"leakage-safe chronological regular-season backtest; each prediction uses only games from earlier weeks","seasons":sorted({r["season"] for r in rows}),"metrics":{v:metrics(rows,v) for v in VARIANTS},"delta_full_minus_v1":{}}
     a=out["metrics"]["v1"];b=out["metrics"]["full"]
     for k in ("winner_accuracy","brier_score","margin_mae","total_mae","team_score_mae"):out["delta_full_minus_v1"][k]=round(b[k]-a[k],4)
+
+    out["by_season"]={}
+    for season in out["seasons"]:
+        subset=[r for r in rows if r["season"]==season]
+        out["by_season"][str(season)]={"v1":metrics(subset,"v1"),"full_v2":metrics(subset,"full")}
+    early=[r for r in rows if r["week"]<=4]
+    later=[r for r in rows if r["week"]>=5]
+    out["by_season_phase"]={
+        "weeks_1_4":{"v1":metrics(early,"v1"),"full_v2":metrics(early,"full")},
+        "weeks_5_plus":{"v1":metrics(later,"v1"),"full_v2":metrics(later,"full")},
+    }
+
+    bins=[(0.50,0.55),(0.55,0.60),(0.60,0.70),(0.70,0.80),(0.80,1.01)]
+    out["calibration"]={"v1":[],"full_v2":[]}
+    for key,label in (("v1","v1"),("full","full_v2")):
+        for lo,hi in bins:
+            bucket=[]
+            for r in rows:
+                p=float(r[key]["home_win_probability"])
+                conf=max(p,1-p)
+                if lo<=conf<hi: bucket.append((p,1.0 if r["actual_home"]>r["actual_away"] else 0.0))
+            if bucket:
+                predicted=mean(max(p,1-p) for p,_ in bucket)
+                correct=mean(((p>=.5)==bool(y)) for p,y in bucket)
+                out["calibration"][label].append({"band":f"{int(lo*100)}-{int(min(hi,1)*100)}%","n":len(bucket),"mean_confidence":round(predicted,4),"observed_accuracy":round(correct,4)})
     OUT.parent.mkdir(parents=True,exist_ok=True);OUT.write_text(json.dumps(out,indent=2));print(json.dumps(out,indent=2))
 
 
