@@ -3,10 +3,7 @@ on:
   workflow_dispatch: {}
   schedule:
     # Keep a fresh UTC match slate across US, European, and Asian sessions.
-    - cron: '17 */4 * * *'
-  push:
-    branches: [main]
-    paths: ['src/tennis_model.py','scripts/run_tennis_pipeline.py','scripts/evaluate_tennis_predictions.py','docs/tennis.html','docs/performance-charts.js','.github/workflows/tennis_predictions.yml']
+    - cron: '17 */6 * * *'
 permissions:
   contents: write
 concurrency:
