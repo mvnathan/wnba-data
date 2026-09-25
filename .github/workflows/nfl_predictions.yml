@@ -28,7 +28,7 @@ jobs:
         with:
           python-version: '3.12'
       - name: Install dependencies
-        run: pip install requests
+        run: pip install requests pandas
       - name: Generate NFL predictions
         run: python scripts/generate_nfl_predictions.py
       - name: Validate NFL output
