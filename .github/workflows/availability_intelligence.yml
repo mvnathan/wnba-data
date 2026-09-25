@@ -10,6 +10,7 @@ on:
       - 'scripts/generate_availability_intelligence.py'
       - 'src/availability_intelligence.py'
       - 'config/availability_sources.json'
+      - '.github/workflows/availability_intelligence.yml'
 
 permissions:
   contents: write
