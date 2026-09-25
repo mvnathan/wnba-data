@@ -1,9 +1,10 @@
-name: Generate MLB V2 Candidate
+name: Generate MLB Production Predictions
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: '30 13,17,21 * * *'
+    - cron: '15 12,14,16,18,20,22 * * *'
+    - cron: '15 0,2 * * *'
   push:
     branches: [main]
     paths:
@@ -16,7 +17,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  candidate:
+  production:
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -29,9 +30,9 @@ jobs:
           python-version: '3.12'
       - name: Install dependencies
         run: pip install requests curl_cffi pandas
-      - name: Generate MLB v2 candidate
+      - name: Generate MLB v2 production
         run: python scripts/generate_mlb_v2.py
-      - name: Validate candidate
+      - name: Validate production
         run: |
           python - <<'PY'
           import json
@@ -43,7 +44,7 @@ jobs:
               assert g["predicted_home_runs"] > 0 and g["predicted_away_runs"] > 0
           print("Validated",len(d["games"]),"MLB v2 candidate games")
           PY
-      - name: Publish candidate
+      - name: Publish production
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
