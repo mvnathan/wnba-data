@@ -1442,6 +1442,8 @@ def _build_wnba_competitive_context(
                 result[f"{side}_playoff_cutoff_rank"] = float(playoff_slots)
                 result[f"{side}_games_remaining"] = float(remaining)
                 result[f"{side}_gap_to_playoff_cutoff_wins"] = float(gap)
+                result[f"{side}_wins_needed_to_current_cutoff"] = float(max(0.0, -gap + (1.0 if rank > playoff_slots else 0.0)))
+                result[f"{side}_wins_of_cushion_over_current_cutoff"] = float(max(0.0, gap))
                 result[f"{side}_postseason_urgency"] = float(urgency)
                 result[f"{side}_rotation_rest_risk"] = float(rotation_risk)
                 result[f"{side}_playoff_secure_proxy"] = secure
