@@ -2,12 +2,6 @@ name: WNBA Model Audit
 
 on:
   workflow_dispatch: {}
-  push:
-    branches: [main]
-    paths:
-      - 'scripts/audit_wnba_model.py'
-      - 'docs/performance.json'
-      - '.github/workflows/wnba_model_audit.yml'
 
 permissions:
   contents: write
