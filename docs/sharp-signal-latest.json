@@ -1,11 +1,11 @@
 {
-  "generated_at_utc": "2026-09-25T18:36:31.806945+00:00",
+  "generated_at_utc": "2026-09-25T18:37:06.404187+00:00",
   "status": "ok",
   "production_adjustment_enabled": false,
-  "new_posts_seen": 0,
+  "new_posts_seen": 35,
   "new_picks_parsed": 0,
   "ledger_size": 0,
-  "since_id_used": "2103513002775384097",
+  "since_id_used": null,
   "newest_id": "2103513002775384097",
   "accounts": {
     "@RufusPeabody": {
@@ -60,7 +60,253 @@
     }
   },
   "new_picks": [],
-  "candidate_posts": [],
+  "candidate_posts": [
+    {
+      "post_id": "2103513002775384097",
+      "source": "@wheatonbrando",
+      "published_at_utc": "2026-09-25T15:52:35.000Z",
+      "text": "@krispursiainen @blames_ And yeah I bet the Knicks under. I hated the Mike Brown hire based on everything from his history so I bet accordingly. I was wrong. I\u2019m wrong a lot. I also win a lot.",
+      "url": "https://x.com/wheatonbrando/status/2103513002775384097"
+    },
+    {
+      "post_id": "2103511619774955681",
+      "source": "@wheatonbrando",
+      "published_at_utc": "2026-09-25T15:47:06.000Z",
+      "text": "@krispursiainen @EJ_Stewart There\u2019s a difference between best and most important.\n\nChoosing to automatically tune people out because they don\u2019t agree with your own biased opinion is myopic and a great way to remain siloed and over certain about everything \ud83d\udc4d\ud83c\udffc",
+      "url": "https://x.com/wheatonbrando/status/2103511619774955681"
+    },
+    {
+      "post_id": "2103480617073840234",
+      "source": "@FezzikSports",
+      "published_at_utc": "2026-09-25T13:43:54.000Z",
+      "text": "I am LOVING @splashsports  and their Contests!\n\n\ud83d\udc33\n\nWhere sports fans turn picks into payouts. Play Survivor, Daily Fantasy, and Pick\u2019Em contests with friends or go head-to-head with the public.\n\nWorried that you might forget to submit picks?  Go ahead and put them in!  U can",
+      "url": "https://x.com/FezzikSports/status/2103480617073840234"
+    },
+    {
+      "post_id": "2103479977580830912",
+      "source": "@FezzikSports",
+      "published_at_utc": "2026-09-25T13:41:22.000Z",
+      "text": "I am LOVING Splash Sports and their Contests!\n\n\ud83d\udcf7\n\n\ud83d\udcf7\n\n\ud83d\udc33\n\nWhere sports fans turn picks into payouts. Play Survivor, Daily Fantasy, and Pick\u2019Em contests with friends or go head-to-head with the public.\n\nKnow what you want to play already? Tap below to jump in \ud83e\udd11\n\nNot sure yet?",
+      "url": "https://x.com/FezzikSports/status/2103479977580830912"
+    },
+    {
+      "post_id": "2103477831191961780",
+      "source": "@FezzikSports",
+      "published_at_utc": "2026-09-25T13:32:50.000Z",
+      "text": "Blue Horseshoe LOVES Harvard/Brown UN 43.5\n\nDK still has 45.5\n\nSet up UNDER\n\nGo!\n\nWe are betting UNDER",
+      "url": "https://x.com/FezzikSports/status/2103477831191961780"
+    },
+    {
+      "post_id": "2103318784862019972",
+      "source": "@iamrahstradamus",
+      "published_at_utc": "2026-09-25T03:00:50.000Z",
+      "text": "Best Bets from Ringer Wise Guys &amp; Substack Go 1-1 today. Regret not playing some ML. \n\n-Falcons +5.5/+4.5 whatever number you got is good \u2705\n-1H Under 21.5 \u274c\n\nWe've done solid on prime time games this year. Hate that we didn't profit but glad we only drank some juice tonight. https://t.co/3bNIgk4Foj",
+      "url": "https://x.com/iamrahstradamus/status/2103318784862019972"
+    },
+    {
+      "post_id": "2103318441205878897",
+      "source": "@iamrahstradamus",
+      "published_at_utc": "2026-09-25T02:59:28.000Z",
+      "text": "Best Bets from Ringer Wise Guys &amp; Substack Go 1-1 today. Regret not playing some ML. \n\n-Falcons +5.5/+4.5 whatever number you got is good \u2705\n-1H Under 21.5 \u274c\n\nWe've done solid on prime time games this year. Hate that we didn't profit but glad we only drank some juice tonight. https://t.co/3bNIgk4Foj",
+      "url": "https://x.com/iamrahstradamus/status/2103318441205878897"
+    },
+    {
+      "post_id": "2103297945873580251",
+      "source": "@iamrahstradamus",
+      "published_at_utc": "2026-09-25T01:38:02.000Z",
+      "text": "Falcons-Packers 1H half under 21.5 \u274c",
+      "url": "https://x.com/iamrahstradamus/status/2103297945873580251"
+    },
+    {
+      "post_id": "2103240924574961852",
+      "source": "@iamrahstradamus",
+      "published_at_utc": "2026-09-24T21:51:27.000Z",
+      "text": "@elidevine_ @ringer @FanDuel I don't know who that is.....But I was speaking through this play with @thmsdietz. Fan duel asked me for a play and my convo with him led me to it.",
+      "url": "https://x.com/iamrahstradamus/status/2103240924574961852"
+    },
+    {
+      "post_id": "2103205665154257073",
+      "source": "@FezzikSports",
+      "published_at_utc": "2026-09-24T19:31:20.000Z",
+      "text": "I LOVE how @splashsports lets you \n\n1) Set your contest plays in\n\nThen you can set it and forget it    ......... OR\n\n2) CHANGE any play right up until Sunday Kickoff.",
+      "url": "https://x.com/FezzikSports/status/2103205665154257073"
+    },
+    {
+      "post_id": "2102946402884288759",
+      "source": "@wheatonbrando",
+      "published_at_utc": "2026-09-24T02:21:07.000Z",
+      "text": "@YoungSimbuh @thmsdietz If you don\u2019t think caliber of QB play impacts the run game, I don\u2019t know what to tell you.\n\nAnyway, hope you find someone to root for in the playoffs this year, cuz it won\u2019t be your sorry 7 seed again \u270c\ud83c\udffc",
+      "url": "https://x.com/wheatonbrando/status/2102946402884288759"
+    },
+    {
+      "post_id": "2102880364691915238",
+      "source": "@wheatonbrando",
+      "published_at_utc": "2026-09-23T21:58:43.000Z",
+      "text": "@thmsdietz If Love and the offense can\u2019t play significantly better, I\u2019m not sure the defense will matter. Offense is rough rn and I don\u2019t know where the fix is cuz I don\u2019t think it\u2019s Jacobs",
+      "url": "https://x.com/wheatonbrando/status/2102880364691915238"
+    },
+    {
+      "post_id": "2102840503830229489",
+      "source": "@iamrahstradamus",
+      "published_at_utc": "2026-09-23T19:20:19.000Z",
+      "text": "In a contest you have to pick FIVE NFL SIDES, not derivatives (1Hs, 1Qs, 2Hs), not totals, not props, FIVE NFL SIDES in the most efficient betting market in the world. Sure, the lines are stale but they're still sharp. I'm not really betting five NFL sides on a normal Sunday, I'm https://t.co/UCxHu7El75",
+      "url": "https://x.com/iamrahstradamus/status/2102840503830229489"
+    },
+    {
+      "post_id": "2102776997445599621",
+      "source": "@FezzikSports",
+      "published_at_utc": "2026-09-23T15:07:58.000Z",
+      "text": "Blue Horseshoe LOVES CFB 331 Unlv Akron OVER 52",
+      "url": "https://x.com/FezzikSports/status/2102776997445599621"
+    },
+    {
+      "post_id": "2102573816828526963",
+      "source": "@iamrahstradamus",
+      "published_at_utc": "2026-09-23T01:40:36.000Z",
+      "text": "Phillies ML -142 \u2705 Cash it! \n\nPhillies are one step closer to clinching a playoff berth and we cash a ticket. That's a win-win! \n\nYou have some moments you wish you could relive. I want to relive 2022 when we were riding the Phillies all the way to the World Series, moving https://t.co/YbOOWuO1eP https://t.co/UXMkt9aZ1J",
+      "url": "https://x.com/iamrahstradamus/status/2102573816828526963"
+    },
+    {
+      "post_id": "2102560423367299120",
+      "source": "@iamrahstradamus",
+      "published_at_utc": "2026-09-23T00:47:23.000Z",
+      "text": "@potatokmish Yup I submit late Saturday. My problem is I have early week picks I like and then the line moves and then I don't play it.......Panthers last week is a good example of a real life bet I made that I didn't play in the contest.",
+      "url": "https://x.com/iamrahstradamus/status/2102560423367299120"
+    },
+    {
+      "post_id": "2102457960735674696",
+      "source": "@capjack2000",
+      "published_at_utc": "2026-09-22T18:00:14.000Z",
+      "text": "@peanut_bettor That's a bug that I believe is now fixed. It happened because you were previously on the in-game Live tab and it carried that setting over to your next session even though there's no such thing as an in-game future. \n\nAnyway, if it happens again, click Live tab and then Pregame",
+      "url": "https://x.com/capjack2000/status/2102457960735674696"
+    },
+    {
+      "post_id": "2102236268658893240",
+      "source": "@iamrahstradamus",
+      "published_at_utc": "2026-09-22T03:19:18.000Z",
+      "text": "We cash both of these\n\nRams -6.5  \u2705\nLikely Over 4.5 receptions \u2705 https://t.co/yoNhUldbQP",
+      "url": "https://x.com/iamrahstradamus/status/2102236268658893240"
+    },
+    {
+      "post_id": "2102212182700417356",
+      "source": "@FezzikSports",
+      "published_at_utc": "2026-09-22T01:43:36.000Z",
+      "text": "Giants kicked a fg with lots of timeouts and 5 seconds on the play clock.\n\nSo the Rams get 25 seconds instead of 20.  \n\n#Sharp5thgraderissmarter\n\nI just don't understand this.  Is EVERYONE really this bad at this???",
+      "url": "https://x.com/FezzikSports/status/2102212182700417356"
+    },
+    {
+      "post_id": "2102057302270624179",
+      "source": "@iamrahstradamus",
+      "published_at_utc": "2026-09-21T15:28:09.000Z",
+      "text": "@RussillosF I'll pick it up. Didn't like the card yesterday. Week 2 is always a bit rough for me.",
+      "url": "https://x.com/iamrahstradamus/status/2102057302270624179"
+    },
+    {
+      "post_id": "2102047822917120101",
+      "source": "@iamrahstradamus",
+      "published_at_utc": "2026-09-21T14:50:29.000Z",
+      "text": "You watch enough sports and you will see something that you've never seen before in your life. \n\nWatching Australian NBL at 4 am PST, Tasmanian JackJumpers hold a 2 point lead with 30 seconds to go against South East Melbourne Phoenix. SEM steals the ball with 27 seconds left and",
+      "url": "https://x.com/iamrahstradamus/status/2102047822917120101"
+    },
+    {
+      "post_id": "2102038301591118146",
+      "source": "@iamrahstradamus",
+      "published_at_utc": "2026-09-21T14:12:39.000Z",
+      "text": "You watch enough sports and you will see something that you've never seen before in your life. \n\nWatching Australian NBL at 4 am PST, Tasmanian JackJumpers hold a 2 point lead with 30 seconds to go against South East Melbourne Phoenix. SEM steals the ball with 27 seconds left and",
+      "url": "https://x.com/iamrahstradamus/status/2102038301591118146"
+    },
+    {
+      "post_id": "2101886701580824804",
+      "source": "@wheatonbrando",
+      "published_at_utc": "2026-09-21T04:10:15.000Z",
+      "text": "Week 2 total: +6.44u\nWeek 1 total: +6.46u\n\nSo far: +12.9 units, 44% ROI \ud83d\udcb0\n\nHonestly, lotta hits and misses so far but great start to the season with some big long shot winners.\n\nLet\u2019s run it back Week 3 at @ActionNetworkHQ:\nhttps://t.co/q6WQYD55Xk https://t.co/2nH3UorYCM",
+      "url": "https://x.com/wheatonbrando/status/2101886701580824804"
+    },
+    {
+      "post_id": "2101879545515364407",
+      "source": "@iamrahstradamus",
+      "published_at_utc": "2026-09-21T03:41:49.000Z",
+      "text": "Colts playcalling instantly becomes pussy after the big play. You gotta let Danny win this shit.",
+      "url": "https://x.com/iamrahstradamus/status/2101879545515364407"
+    },
+    {
+      "post_id": "2101851336606421114",
+      "source": "@iamrahstradamus",
+      "published_at_utc": "2026-09-21T01:49:43.000Z",
+      "text": "Kaboom!!!!!!!!! Cash it! Colts 1h ML \u2705 https://t.co/mBRzzBiHm6",
+      "url": "https://x.com/iamrahstradamus/status/2101851336606421114"
+    },
+    {
+      "post_id": "2101828857246716166",
+      "source": "@iamrahstradamus",
+      "published_at_utc": "2026-09-21T00:20:24.000Z",
+      "text": "I'm jumping on the Colts 1H ML +164 at @FanDuelSports! \n\nI'm backing a desperate 0-1 team taking on a 1-0 team that over performed the market last week. Underdogs of 3-to-7 points that failed to cover in Week 1 are 70% ATS since 2014.\n\nDo Remember, if you're playing props, Fan https://t.co/fiuzZX1hJp",
+      "url": "https://x.com/iamrahstradamus/status/2101828857246716166"
+    },
+    {
+      "post_id": "2101772129473544482",
+      "source": "@wheatonbrando",
+      "published_at_utc": "2026-09-20T20:34:59.000Z",
+      "text": "Dalton Schultz escalator ALLLLL THE WAY UP!!!!!! \ud83d\udcb0 \ud83d\udcb0 \ud83d\udcb0 \ud83d\udcb0 \ud83d\udcb0 \n\n\u2705 o3.5 receptions\n\u2705 5+ rec +180\n\u2705 6+ rec +375\n\u2705 7+ rec +675\n\u2705 8+ rec +1100\n\u2705 9+ rec +1840\n\u2705 10+ rec +2800\n\n+10.91 units!!!!!\n\nOur biggest escalator hit EVER!! Free at the @ActionApp:\nhttps://t.co/q6WQYD55Xk https://t.co/l39FFRL0aj https://t.co/Q1DYaM9Sbo",
+      "url": "https://x.com/wheatonbrando/status/2101772129473544482"
+    },
+    {
+      "post_id": "2101745741169619126",
+      "source": "@iamrahstradamus",
+      "published_at_utc": "2026-09-20T18:50:07.000Z",
+      "text": "Bears turnover regression hitting hard. Dropped interception in the 1H, Caleb Williams threw a pick and now a fumble at the 1-yard line as they're driving to take the lead down 6-3. Last year they caught all the breaks now they come down to earth. \n\nLet's see if the Bears can",
+      "url": "https://x.com/iamrahstradamus/status/2101745741169619126"
+    },
+    {
+      "post_id": "2101745657048617194",
+      "source": "@iamrahstradamus",
+      "published_at_utc": "2026-09-20T18:49:47.000Z",
+      "text": "Bears turnover regression hitting hard. Dropped interception in the 1H, Caleb Williams threw a pick and now a fumble at the 1-yard line as they're driving to take the lead down 6-3. Let's see if the Bears can overcome this.",
+      "url": "https://x.com/iamrahstradamus/status/2101745657048617194"
+    },
+    {
+      "post_id": "2101432762939170835",
+      "source": "@iamrahstradamus",
+      "published_at_utc": "2026-09-19T22:06:28.000Z",
+      "text": "So the model likes the Vikings against the Bears tomorrow. I\u2019m closer to Bears -2 than I am to Bears -5. However, I'm struggling for two reasons.\n\n-Green Bay generated 10 explosive plays against Minnesota with them blitzing 71.7% overall, including 83% in the first half. If the",
+      "url": "https://x.com/iamrahstradamus/status/2101432762939170835"
+    },
+    {
+      "post_id": "2101431751285579846",
+      "source": "@iamrahstradamus",
+      "published_at_utc": "2026-09-19T22:02:26.000Z",
+      "text": "So the model likes the Vikings against the Bears tomorrow. I\u2019m closing to Bears -2 than I am to Bears -5. However, I'm struggling for two reasons.\n\n-Green Bay generated 10 explosive plays against Minnesota with them blitzing 71.7% overall, including 83% in the first half. If the",
+      "url": "https://x.com/iamrahstradamus/status/2101431751285579846"
+    },
+    {
+      "post_id": "2101428362812309545",
+      "source": "@iamrahstradamus",
+      "published_at_utc": "2026-09-19T21:48:59.000Z",
+      "text": "I'm convinced they aren't teaching these College kids anything.\n\nClemson scoring that touchdown there was stupid. Take a knee at the 1 and this game is over.",
+      "url": "https://x.com/iamrahstradamus/status/2101428362812309545"
+    },
+    {
+      "post_id": "2101370301443461384",
+      "source": "@wheatonbrando",
+      "published_at_utc": "2026-09-19T17:58:16.000Z",
+      "text": "@Clevta haha yeah and Lamar 1h so good historically too. I bet ravens 1q, 1h, and a couple alts so watch it all come crashing down tmrw",
+      "url": "https://x.com/wheatonbrando/status/2101370301443461384"
+    },
+    {
+      "post_id": "2101094587817398426",
+      "source": "@iamrahstradamus",
+      "published_at_utc": "2026-09-18T23:42:40.000Z",
+      "text": "@NickAtwood31 Well the Chargers have oline issues and they're going to get to play the Pats without AJ Brown. I don't think it's unreasonable to say that those games have gotten easier than they appeared before the season started.",
+      "url": "https://x.com/iamrahstradamus/status/2101094587817398426"
+    },
+    {
+      "post_id": "2101082733850382787",
+      "source": "@iamrahstradamus",
+      "published_at_utc": "2026-09-18T22:55:34.000Z",
+      "text": "Suddenly the Chargers and Pats games look much easier and the Rams could be mortal. \n\nI think the number 1 seed is going to loom large this year and I expect Baltimore start the season fast. Also have to truly watch and see if Jacksonville continues to over-perform the market., https://t.co/Zqr7gEeZ4d",
+      "url": "https://x.com/iamrahstradamus/status/2101082733850382787"
+    }
+  ],
   "promotion_thresholds": {
     "minimum_graded_picks": 100,
     "minimum_positive_clv_rate": 0.52,
