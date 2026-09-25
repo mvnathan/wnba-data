@@ -913,6 +913,12 @@ def predict_today(
             "models"
         ]
     )
+    feature_columns_by_target = (
+        model_payload.get(
+            "feature_columns_by_target",
+            {},
+        )
+    )
 
     # ---------------------------------------------------------
     # Validate prediction feature schema
@@ -1020,17 +1026,29 @@ def predict_today(
                     optional_col
                 ] = value
 
-        X_row = X.loc[
-            [idx]
-        ]
-
         # -----------------------------------------------------
-        # Predict each target
+        # Predict each target. Newer model bundles can specify
+        # target-specific feature sets; older bundles continue to use the
+        # legacy shared matrix.
         # -----------------------------------------------------
         for (
             target,
             model,
         ) in models.items():
+            target_columns = (
+                feature_columns_by_target.get(
+                    target,
+                    feature_columns,
+                )
+            )
+            X_row = (
+                schedule.loc[
+                    [idx],
+                    target_columns,
+                ]
+                .astype(float)
+                .fillna(0)
+            )
             try:
                 if (
                     target
