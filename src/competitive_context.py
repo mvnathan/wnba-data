@@ -45,6 +45,8 @@ class TeamContext:
     rank_group: int
     playoff_cutoff_rank: int
     gap_to_cutoff_wins: float
+    wins_needed_to_current_cutoff: float
+    wins_of_cushion_over_current_cutoff: float
     urgency_score: float
     rest_rotation_risk: float
     postseason_status: str
@@ -121,6 +123,8 @@ def build_context(
             out[team]=TeamContext(
                 wins=wins,losses=losses,games_played=games,win_pct=pct,games_remaining=remain,
                 rank_group=idx,playoff_cutoff_rank=playoff_slots,gap_to_cutoff_wins=gap,
+                wins_needed_to_current_cutoff=max(0.0,-gap+(1.0 if idx>playoff_slots else 0.0)),
+                wins_of_cushion_over_current_cutoff=max(0.0,gap),
                 urgency_score=urgency,rest_rotation_risk=rest_risk,
                 postseason_status=status,context_confidence=confidence,
             )
@@ -203,7 +207,10 @@ def build_division_context(
             out[team]=TeamContext(
                 wins=wins,losses=losses,games_played=games,win_pct=pct,games_remaining=remain,
                 rank_group=ranks.get(team,len(items)),playoff_cutoff_rank=len(leaders)+wildcard_slots,
-                gap_to_cutoff_wins=pathway_gap,urgency_score=urgency,rest_rotation_risk=rest_risk,
+                gap_to_cutoff_wins=pathway_gap,
+                wins_needed_to_current_cutoff=max(0.0,-pathway_gap+(0.0 if (is_div_leader or is_wildcard) else 1.0)),
+                wins_of_cushion_over_current_cutoff=max(0.0,pathway_gap),
+                urgency_score=urgency,rest_rotation_risk=rest_risk,
                 postseason_status=status,context_confidence=max(.25,min(1.0,games/max(8.0,total_games*.25))),
             )
     return out
