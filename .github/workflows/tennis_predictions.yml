@@ -1,10 +1,6 @@
 name: Generate ATP and WTA Predictions
 on:
   workflow_dispatch: {}
-  push:
-    branches: [main]
-    paths:
-      - 'src/tennis_model.py'
   schedule:
     # Keep a fresh UTC match slate across US, European, and Asian sessions.
     - cron: '17 */6 * * *'
