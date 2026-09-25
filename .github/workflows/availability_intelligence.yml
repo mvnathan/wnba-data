@@ -25,6 +25,7 @@ jobs:
     env:
       PYTHONPATH: ${{ github.workspace }}
       X_BEARER_TOKEN: ${{ secrets.X_BEARER_TOKEN }}
+      SPORTRADAR_API_KEY: ${{ secrets.SPORTRADAR_API_KEY }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v6
