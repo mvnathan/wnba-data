@@ -281,3 +281,5 @@ def bounded_effort_adjustment(home:TeamContext|None, away:TeamContext|None, scal
     return max(-scale,min(scale,raw))
 
 # Seeding-aware context validation: 2026-09-25
+
+# Production NFL seeding-context refresh: 2026-09-25
