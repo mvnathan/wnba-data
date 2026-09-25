@@ -5,6 +5,11 @@ on:
   schedule:
     - cron: '30 14,20 * * *'
     - cron: '30 0 * * *'
+  push:
+    branches: [main]
+    paths:
+      - 'src/sbr_market_odds.py'
+      - 'src/market_odds.py'
 
 # Manual repaired consensus refresh trigger: 2026-08-30T22:16Z
 
