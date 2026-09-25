@@ -186,7 +186,7 @@ def build_v2(target_date: date | None = None) -> dict[str, Any]:
         "generated_at_utc": datetime.now(timezone.utc).isoformat(),
         "target_date": target_date.isoformat(),
         "sport": "MLB",
-        "model_version": "mlb-runs-v2-candidate",
+        "model_version": "mlb-runs-v2",
         "model_status": "production",
         "pitcher_stats_as_of": (target_date - timedelta(days=1)).isoformat(),
         "features": ["recent offense", "recent run prevention", "probable starter ERA/WHIP", "3-day bullpen workload proxy", "venue run factor", "home advantage"],
