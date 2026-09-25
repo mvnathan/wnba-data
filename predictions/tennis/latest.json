@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-09-25T13:47:39.567957Z",
+  "generated_at_utc": "2026-09-25T16:14:07.975802Z",
   "target_date": "2026-09-25",
   "model_version": "tennis-v3-tournament-context",
   "eligibility": "At least one player ranked in the top 150",
@@ -33,7 +33,19 @@
       "predicted_game_margin_player_1": -3.3,
       "predicted_total_games": 23.6,
       "projected_player_1_games": 10.2,
-      "projected_player_2_games": 13.5
+      "projected_player_2_games": 13.5,
+      "competitive_context": {
+        "tournament_stakes": 0.163,
+        "round_progress": 0.25,
+        "major": false,
+        "player_1_rest_days": 21.0,
+        "player_2_rest_days": 21.0,
+        "player_1_workload_14d": 0.0,
+        "player_2_workload_14d": 0.0,
+        "player_1_fatigue_risk": 0.0,
+        "player_2_fatigue_risk": 0.0,
+        "note": "Tennis has no team-postseason cutoff. The model already uses ranking points, rest, workload, major status and round progression as competitive-context features."
+      }
     },
     {
       "match_id": "184105",
@@ -62,7 +74,19 @@
       "predicted_game_margin_player_1": 4.4,
       "predicted_total_games": 21.4,
       "projected_player_1_games": 12.9,
-      "projected_player_2_games": 8.5
+      "projected_player_2_games": 8.5,
+      "competitive_context": {
+        "tournament_stakes": 0.433,
+        "round_progress": 0.667,
+        "major": false,
+        "player_1_rest_days": 21.0,
+        "player_2_rest_days": 21.0,
+        "player_1_workload_14d": 0.0,
+        "player_2_workload_14d": 0.0,
+        "player_1_fatigue_risk": 0.0,
+        "player_2_fatigue_risk": 0.0,
+        "note": "Tennis has no team-postseason cutoff. The model already uses ranking points, rest, workload, major status and round progression as competitive-context features."
+      }
     },
     {
       "match_id": "183411",
@@ -91,7 +115,19 @@
       "predicted_game_margin_player_1": 0.5,
       "predicted_total_games": 23.7,
       "projected_player_1_games": 12.1,
-      "projected_player_2_games": 11.6
+      "projected_player_2_games": 11.6,
+      "competitive_context": {
+        "tournament_stakes": 0.163,
+        "round_progress": 0.25,
+        "major": false,
+        "player_1_rest_days": 21.0,
+        "player_2_rest_days": 21.0,
+        "player_1_workload_14d": 0.0,
+        "player_2_workload_14d": 0.0,
+        "player_1_fatigue_risk": 0.0,
+        "player_2_fatigue_risk": 0.0,
+        "note": "Tennis has no team-postseason cutoff. The model already uses ranking points, rest, workload, major status and round progression as competitive-context features."
+      }
     },
     {
       "match_id": "183366",
@@ -120,7 +156,19 @@
       "predicted_game_margin_player_1": -4.0,
       "predicted_total_games": 23.9,
       "projected_player_1_games": 9.9,
-      "projected_player_2_games": 13.9
+      "projected_player_2_games": 13.9,
+      "competitive_context": {
+        "tournament_stakes": 0.163,
+        "round_progress": 0.25,
+        "major": false,
+        "player_1_rest_days": 21.0,
+        "player_2_rest_days": 19.0,
+        "player_1_workload_14d": 0.0,
+        "player_2_workload_14d": 0.0,
+        "player_1_fatigue_risk": 0.0,
+        "player_2_fatigue_risk": 0.0,
+        "note": "Tennis has no team-postseason cutoff. The model already uses ranking points, rest, workload, major status and round progression as competitive-context features."
+      }
     },
     {
       "match_id": "183413",
@@ -149,7 +197,19 @@
       "predicted_game_margin_player_1": 4.6,
       "predicted_total_games": 23.6,
       "projected_player_1_games": 14.1,
-      "projected_player_2_games": 9.5
+      "projected_player_2_games": 9.5,
+      "competitive_context": {
+        "tournament_stakes": 0.163,
+        "round_progress": 0.25,
+        "major": false,
+        "player_1_rest_days": 6.0,
+        "player_2_rest_days": 21.0,
+        "player_1_workload_14d": 1.0,
+        "player_2_workload_14d": 0.0,
+        "player_1_fatigue_risk": 0.0,
+        "player_2_fatigue_risk": 0.0,
+        "note": "Tennis has no team-postseason cutoff. The model already uses ranking points, rest, workload, major status and round progression as competitive-context features."
+      }
     },
     {
       "match_id": "183355",
@@ -178,7 +238,19 @@
       "predicted_game_margin_player_1": 3.6,
       "predicted_total_games": 23.6,
       "projected_player_1_games": 13.6,
-      "projected_player_2_games": 10.0
+      "projected_player_2_games": 10.0,
+      "competitive_context": {
+        "tournament_stakes": 0.163,
+        "round_progress": 0.25,
+        "major": false,
+        "player_1_rest_days": 7.0,
+        "player_2_rest_days": 21.0,
+        "player_1_workload_14d": 1.0,
+        "player_2_workload_14d": 0.0,
+        "player_1_fatigue_risk": 0.0,
+        "player_2_fatigue_risk": 0.0,
+        "note": "Tennis has no team-postseason cutoff. The model already uses ranking points, rest, workload, major status and round progression as competitive-context features."
+      }
     },
     {
       "match_id": "183410",
@@ -207,7 +279,19 @@
       "predicted_game_margin_player_1": -5.2,
       "predicted_total_games": 23.3,
       "projected_player_1_games": 9.1,
-      "projected_player_2_games": 14.2
+      "projected_player_2_games": 14.2,
+      "competitive_context": {
+        "tournament_stakes": 0.163,
+        "round_progress": 0.25,
+        "major": false,
+        "player_1_rest_days": 21.0,
+        "player_2_rest_days": 7.0,
+        "player_1_workload_14d": 0.0,
+        "player_2_workload_14d": 1.0,
+        "player_1_fatigue_risk": 0.0,
+        "player_2_fatigue_risk": 0.0,
+        "note": "Tennis has no team-postseason cutoff. The model already uses ranking points, rest, workload, major status and round progression as competitive-context features."
+      }
     },
     {
       "match_id": "183898",
@@ -236,7 +320,19 @@
       "predicted_game_margin_player_1": -0.4,
       "predicted_total_games": 20.3,
       "projected_player_1_games": 10.0,
-      "projected_player_2_games": 10.4
+      "projected_player_2_games": 10.4,
+      "competitive_context": {
+        "tournament_stakes": 0.433,
+        "round_progress": 0.667,
+        "major": false,
+        "player_1_rest_days": 21.0,
+        "player_2_rest_days": 21.0,
+        "player_1_workload_14d": 0.0,
+        "player_2_workload_14d": 0.0,
+        "player_1_fatigue_risk": 0.0,
+        "player_2_fatigue_risk": 0.0,
+        "note": "Tennis has no team-postseason cutoff. The model already uses ranking points, rest, workload, major status and round progression as competitive-context features."
+      }
     },
     {
       "match_id": "183368",
@@ -265,7 +361,19 @@
       "predicted_game_margin_player_1": -4.7,
       "predicted_total_games": 23.3,
       "projected_player_1_games": 9.3,
-      "projected_player_2_games": 14.0
+      "projected_player_2_games": 14.0,
+      "competitive_context": {
+        "tournament_stakes": 0.163,
+        "round_progress": 0.25,
+        "major": false,
+        "player_1_rest_days": 21.0,
+        "player_2_rest_days": 21.0,
+        "player_1_workload_14d": 0.0,
+        "player_2_workload_14d": 0.0,
+        "player_1_fatigue_risk": 0.0,
+        "player_2_fatigue_risk": 0.0,
+        "note": "Tennis has no team-postseason cutoff. The model already uses ranking points, rest, workload, major status and round progression as competitive-context features."
+      }
     },
     {
       "match_id": "184106",
@@ -294,7 +402,19 @@
       "predicted_game_margin_player_1": 4.5,
       "predicted_total_games": 20.7,
       "projected_player_1_games": 12.6,
-      "projected_player_2_games": 8.1
+      "projected_player_2_games": 8.1,
+      "competitive_context": {
+        "tournament_stakes": 0.433,
+        "round_progress": 0.667,
+        "major": false,
+        "player_1_rest_days": 21.0,
+        "player_2_rest_days": 21.0,
+        "player_1_workload_14d": 0.0,
+        "player_2_workload_14d": 0.0,
+        "player_1_fatigue_risk": 0.0,
+        "player_2_fatigue_risk": 0.0,
+        "note": "Tennis has no team-postseason cutoff. The model already uses ranking points, rest, workload, major status and round progression as competitive-context features."
+      }
     },
     {
       "match_id": "183964",
@@ -303,8 +423,8 @@
       "tournament": "Eupago Porto Open",
       "round": "Quarterfinal",
       "start_time_utc": "2026-09-25T12:05Z",
-      "status": "In Progress",
-      "status_state": "in",
+      "status": "Final",
+      "status_state": "post",
       "court": "Court 2",
       "venue": "Porto, Portugal",
       "broadcast": "",
@@ -323,7 +443,19 @@
       "predicted_game_margin_player_1": -4.4,
       "predicted_total_games": 20.1,
       "projected_player_1_games": 7.9,
-      "projected_player_2_games": 12.3
+      "projected_player_2_games": 12.3,
+      "competitive_context": {
+        "tournament_stakes": 0.433,
+        "round_progress": 0.667,
+        "major": false,
+        "player_1_rest_days": 7.0,
+        "player_2_rest_days": 21.0,
+        "player_1_workload_14d": 0.0,
+        "player_2_workload_14d": 0.0,
+        "player_1_fatigue_risk": 0.0,
+        "player_2_fatigue_risk": 0.0,
+        "note": "Tennis has no team-postseason cutoff. The model already uses ranking points, rest, workload, major status and round progression as competitive-context features."
+      }
     },
     {
       "match_id": "183364",
@@ -332,8 +464,8 @@
       "tournament": "AITO Hangzhou Open",
       "round": "Round 2",
       "start_time_utc": "2026-09-25T12:10Z",
-      "status": "In Progress",
-      "status_state": "in",
+      "status": "Final",
+      "status_state": "post",
       "court": "Center Court",
       "venue": "Hangzhou, China PR",
       "broadcast": "",
@@ -352,7 +484,19 @@
       "predicted_game_margin_player_1": 3.0,
       "predicted_total_games": 23.4,
       "projected_player_1_games": 13.2,
-      "projected_player_2_games": 10.2
+      "projected_player_2_games": 10.2,
+      "competitive_context": {
+        "tournament_stakes": 0.163,
+        "round_progress": 0.25,
+        "major": false,
+        "player_1_rest_days": 6.0,
+        "player_2_rest_days": 21.0,
+        "player_1_workload_14d": 1.0,
+        "player_2_workload_14d": 0.0,
+        "player_1_fatigue_risk": 0.0,
+        "player_2_fatigue_risk": 0.0,
+        "note": "Tennis has no team-postseason cutoff. The model already uses ranking points, rest, workload, major status and round progression as competitive-context features."
+      }
     },
     {
       "match_id": "184103",
@@ -361,8 +505,8 @@
       "tournament": "Singapore Tennis Open presented by BNP Paribas",
       "round": "Quarterfinal",
       "start_time_utc": "2026-09-25T12:35Z",
-      "status": "In Progress",
-      "status_state": "in",
+      "status": "Final",
+      "status_state": "post",
       "court": "Center Court",
       "venue": "Singapore, Singapore",
       "broadcast": "",
@@ -381,7 +525,19 @@
       "predicted_game_margin_player_1": 2.9,
       "predicted_total_games": 20.7,
       "projected_player_1_games": 11.8,
-      "projected_player_2_games": 8.9
+      "projected_player_2_games": 8.9,
+      "competitive_context": {
+        "tournament_stakes": 0.433,
+        "round_progress": 0.667,
+        "major": false,
+        "player_1_rest_days": 21.0,
+        "player_2_rest_days": 21.0,
+        "player_1_workload_14d": 0.0,
+        "player_2_workload_14d": 0.0,
+        "player_1_fatigue_risk": 0.0,
+        "player_2_fatigue_risk": 0.0,
+        "note": "Tennis has no team-postseason cutoff. The model already uses ranking points, rest, workload, major status and round progression as competitive-context features."
+      }
     },
     {
       "match_id": "183963",
@@ -390,8 +546,8 @@
       "tournament": "Eupago Porto Open",
       "round": "Quarterfinal",
       "start_time_utc": "2026-09-25T13:35Z",
-      "status": "In Progress",
-      "status_state": "in",
+      "status": "Final",
+      "status_state": "post",
       "court": "Centre Court",
       "venue": "Porto, Portugal",
       "broadcast": "",
@@ -410,7 +566,19 @@
       "predicted_game_margin_player_1": 1.9,
       "predicted_total_games": 21.7,
       "projected_player_1_games": 11.8,
-      "projected_player_2_games": 9.9
+      "projected_player_2_games": 9.9,
+      "competitive_context": {
+        "tournament_stakes": 0.433,
+        "round_progress": 0.667,
+        "major": false,
+        "player_1_rest_days": 21.0,
+        "player_2_rest_days": 21.0,
+        "player_1_workload_14d": 0.0,
+        "player_2_workload_14d": 0.0,
+        "player_1_fatigue_risk": 0.0,
+        "player_2_fatigue_risk": 0.0,
+        "note": "Tennis has no team-postseason cutoff. The model already uses ranking points, rest, workload, major status and round progression as competitive-context features."
+      }
     },
     {
       "match_id": "183900",
@@ -418,9 +586,9 @@
       "major": false,
       "tournament": "Delta Motors Tolentino Open",
       "round": "Quarterfinal",
-      "start_time_utc": "2026-09-25T15:30Z",
-      "status": "Scheduled",
-      "status_state": "pre",
+      "start_time_utc": "2026-09-25T15:35Z",
+      "status": "In Progress",
+      "status_state": "in",
       "court": "Center Court",
       "venue": "Tolentino, Italy",
       "broadcast": "",
@@ -439,7 +607,19 @@
       "predicted_game_margin_player_1": -2.4,
       "predicted_total_games": 20.8,
       "projected_player_1_games": 9.2,
-      "projected_player_2_games": 11.6
+      "projected_player_2_games": 11.6,
+      "competitive_context": {
+        "tournament_stakes": 0.433,
+        "round_progress": 0.667,
+        "major": false,
+        "player_1_rest_days": 21.0,
+        "player_2_rest_days": 21.0,
+        "player_1_workload_14d": 0.0,
+        "player_2_workload_14d": 0.0,
+        "player_1_fatigue_risk": 0.0,
+        "player_2_fatigue_risk": 0.0,
+        "note": "Tennis has no team-postseason cutoff. The model already uses ranking points, rest, workload, major status and round progression as competitive-context features."
+      }
     },
     {
       "match_id": "183901",
@@ -468,7 +648,19 @@
       "predicted_game_margin_player_1": 0.7,
       "predicted_total_games": 20.7,
       "projected_player_1_games": 10.7,
-      "projected_player_2_games": 10.0
+      "projected_player_2_games": 10.0,
+      "competitive_context": {
+        "tournament_stakes": 0.433,
+        "round_progress": 0.667,
+        "major": false,
+        "player_1_rest_days": 21.0,
+        "player_2_rest_days": 21.0,
+        "player_1_workload_14d": 0.0,
+        "player_2_workload_14d": 0.0,
+        "player_1_fatigue_risk": 0.0,
+        "player_2_fatigue_risk": 0.0,
+        "note": "Tennis has no team-postseason cutoff. The model already uses ranking points, rest, workload, major status and round progression as competitive-context features."
+      }
     }
   ],
   "model_performance": [
