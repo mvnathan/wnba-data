@@ -79,5 +79,6 @@
     "travel issue",
     "illness",
     "suspension"
-  ]
+  ],
+  "validation_note": "X credential enabled 2026-09-25; validate trusted-media ingestion"
 }
