@@ -1,0 +1,263 @@
+{
+  "generated_at_utc": "2026-09-25T18:56:56.682615+00:00",
+  "season": 2026,
+  "status": "ok",
+  "models": [
+    {
+      "name": "NFL v2",
+      "sport": "NFL",
+      "season": 2026,
+      "source_type": "leakage_safe_current_season_reconstruction",
+      "overall": {
+        "n": 33,
+        "winner_accuracy": 0.5757575757575758,
+        "brier_score": 0.23836701456327924,
+        "margin_mae": 12.16338601800266,
+        "total_mae": 12.248025483067964
+      },
+      "weekly": [
+        {
+          "week_start": "2026-09-07",
+          "week_label": "Sep 7\u2013Sep 13",
+          "n": 15,
+          "winner_accuracy": 0.6,
+          "brier_score": 0.2292748334859601,
+          "margin_mae": 10.982271634279167,
+          "total_mae": 14.069484737393283
+        },
+        {
+          "week_start": "2026-09-14",
+          "week_label": "Sep 14\u2013Sep 20",
+          "n": 16,
+          "winner_accuracy": 0.5625,
+          "brier_score": 0.24342068723493387,
+          "margin_mae": 12.095061813396077,
+          "total_mae": 10.841781592695504
+        },
+        {
+          "week_start": "2026-09-21",
+          "week_label": "Sep 21\u2013Sep 27",
+          "n": 2,
+          "winner_accuracy": 0.5,
+          "brier_score": 0.26612899126993583,
+          "margin_mae": 21.568337532781513,
+          "total_mae": 9.837032198607751
+        }
+      ]
+    },
+    {
+      "name": "MLB v2",
+      "sport": "MLB",
+      "season": 2026,
+      "source_type": "leakage_safe_current_season_backtest",
+      "overall": {
+        "n": 273,
+        "winner_accuracy": 0.5860805860805861,
+        "brier_score": 0.2383948973992674,
+        "margin_mae": 3.216886446886447,
+        "total_mae": 3.3833333333333333
+      },
+      "weekly": [
+        {
+          "week_start": "2026-08-31",
+          "week_label": "Aug 31\u2013Sep 6",
+          "n": 85,
+          "winner_accuracy": 0.5529411764705883,
+          "brier_score": 0.2575764084705882,
+          "margin_mae": 3.261764705882353,
+          "total_mae": 3.6947058823529413
+        },
+        {
+          "week_start": "2026-09-07",
+          "week_label": "Sep 7\u2013Sep 13",
+          "n": 91,
+          "winner_accuracy": 0.5494505494505495,
+          "brier_score": 0.23748298604395604,
+          "margin_mae": 3.263956043956044,
+          "total_mae": 3.691868131868132
+        },
+        {
+          "week_start": "2026-09-14",
+          "week_label": "Sep 14\u2013Sep 20",
+          "n": 94,
+          "winner_accuracy": 0.648936170212766,
+          "brier_score": 0.2222416540425532,
+          "margin_mae": 3.1221276595744683,
+          "total_mae": 2.8553191489361702
+        },
+        {
+          "week_start": "2026-09-21",
+          "week_label": "Sep 21\u2013Sep 27",
+          "n": 3,
+          "winner_accuracy": 0.6666666666666666,
+          "brier_score": 0.22871502,
+          "margin_mae": 3.486666666666667,
+          "total_mae": 1.7466666666666668
+        }
+      ]
+    },
+    {
+      "name": "WNBA production",
+      "sport": "WNBA",
+      "season": 2026,
+      "source_type": "issued_predictions",
+      "overall": {
+        "n": 54,
+        "winner_accuracy": 0.6981132075471698,
+        "brier_score": 0.19951031025840615,
+        "margin_mae": 11.050350688930287,
+        "total_mae": 10.808241942709206
+      },
+      "weekly": [
+        {
+          "week_start": "2026-08-10",
+          "week_label": "Aug 10\u2013Aug 16",
+          "n": 11,
+          "winner_accuracy": 0.8,
+          "brier_score": 0.12412644010830332,
+          "margin_mae": 6.319733702667065,
+          "total_mae": 9.265309831005693
+        },
+        {
+          "week_start": "2026-08-17",
+          "week_label": "Aug 17\u2013Aug 23",
+          "n": 6,
+          "winner_accuracy": 0.5,
+          "brier_score": 0.2658475778280018,
+          "margin_mae": 9.008323461410923,
+          "total_mae": 12.027091396873837
+        },
+        {
+          "week_start": "2026-08-24",
+          "week_label": "Aug 24\u2013Aug 30",
+          "n": 15,
+          "winner_accuracy": 0.6666666666666666,
+          "brier_score": 0.2318460209044457,
+          "margin_mae": 12.462834688913837,
+          "total_mae": 9.82298020088445
+        },
+        {
+          "week_start": "2026-08-31",
+          "week_label": "Aug 31\u2013Sep 6",
+          "n": 1,
+          "winner_accuracy": 1,
+          "brier_score": 0.016645626476233324,
+          "margin_mae": 17.41440537072468,
+          "total_mae": 5.494405370724678
+        },
+        {
+          "week_start": "2026-09-14",
+          "week_label": "Sep 14\u2013Sep 20",
+          "n": 6,
+          "winner_accuracy": 0.8333333333333334,
+          "brier_score": 0.13635373678880236,
+          "margin_mae": 16.090833333333332,
+          "total_mae": 13.43583333333334
+        },
+        {
+          "week_start": "2026-09-21",
+          "week_label": "Sep 21\u2013Sep 27",
+          "n": 15,
+          "winner_accuracy": 0.6666666666666666,
+          "brier_score": 0.23337480566792349,
+          "margin_mae": 11.48333333333333,
+          "total_mae": 11.740666666666666
+        }
+      ]
+    },
+    {
+      "name": "ATP production",
+      "sport": "ATP",
+      "season": 2026,
+      "source_type": "issued_predictions",
+      "overall": {
+        "n": 82,
+        "winner_accuracy": 0.6585365853658537,
+        "brier_score": 0.21913608414634145,
+        "margin_mae": 4.785365853658536,
+        "total_mae": 6.279268292682927
+      },
+      "weekly": [
+        {
+          "week_start": "2026-08-31",
+          "week_label": "Aug 31\u2013Sep 6",
+          "n": 33,
+          "winner_accuracy": 0.696969696969697,
+          "brier_score": 0.20730895848484848,
+          "margin_mae": 5.654545454545454,
+          "total_mae": 6.360606060606061
+        },
+        {
+          "week_start": "2026-09-07",
+          "week_label": "Sep 7\u2013Sep 13",
+          "n": 7,
+          "winner_accuracy": 0.5714285714285714,
+          "brier_score": 0.2422198757142857,
+          "margin_mae": 4.8999999999999995,
+          "total_mae": 12.642857142857142
+        },
+        {
+          "week_start": "2026-09-21",
+          "week_label": "Sep 21\u2013Sep 27",
+          "n": 42,
+          "winner_accuracy": 0.6428571428571429,
+          "brier_score": 0.22458152714285715,
+          "margin_mae": 4.083333333333333,
+          "total_mae": 5.154761904761905
+        }
+      ]
+    },
+    {
+      "name": "WTA production",
+      "sport": "WTA",
+      "season": 2026,
+      "source_type": "issued_predictions",
+      "overall": {
+        "n": 171,
+        "winner_accuracy": 0.7076023391812866,
+        "brier_score": 0.19872311140350876,
+        "margin_mae": 4.153801169590643,
+        "total_mae": 5.543859649122807
+      },
+      "weekly": [
+        {
+          "week_start": "2026-08-31",
+          "week_label": "Aug 31\u2013Sep 6",
+          "n": 30,
+          "winner_accuracy": 0.7,
+          "brier_score": 0.186995508,
+          "margin_mae": 3.2866666666666666,
+          "total_mae": 6.1033333333333335
+        },
+        {
+          "week_start": "2026-09-07",
+          "week_label": "Sep 7\u2013Sep 13",
+          "n": 35,
+          "winner_accuracy": 0.7428571428571429,
+          "brier_score": 0.17287980285714286,
+          "margin_mae": 4.122857142857143,
+          "total_mae": 4.702857142857143
+        },
+        {
+          "week_start": "2026-09-14",
+          "week_label": "Sep 14\u2013Sep 20",
+          "n": 49,
+          "winner_accuracy": 0.7142857142857143,
+          "brier_score": 0.18642357836734694,
+          "margin_mae": 4.142857142857143,
+          "total_mae": 5.357142857142858
+        },
+        {
+          "week_start": "2026-09-21",
+          "week_label": "Sep 21\u2013Sep 27",
+          "n": 57,
+          "winner_accuracy": 0.6842105263157895,
+          "brier_score": 0.2313375152631579,
+          "margin_mae": 4.63859649122807,
+          "total_mae": 5.926315789473684
+        }
+      ]
+    }
+  ],
+  "method_note": "WNBA and tennis use forecasts actually issued before events. NFL and MLB use leakage-safe current-season historical reconstruction because complete issued-prediction archives were not retained for the full season. Weekly buckets run Monday-Sunday."
+}
