@@ -1317,6 +1317,159 @@ def _build_team_game_features(
 
 
 # ---------------------------------------------------------------------
+# Competitive / postseason context
+# ---------------------------------------------------------------------
+
+
+def _build_wnba_competitive_context(
+    games: pd.DataFrame,
+) -> pd.DataFrame:
+    """Build leakage-safe pregame standings context for every WNBA game.
+
+    The model already includes season win percentage, rest, travel, recent
+    workload, rotation overlap and players used. This adds explicit standings
+    position, distance from the playoff cut line, late-season urgency and a
+    conservative rotation/rest-risk proxy.
+
+    The proxy is objective context only; it does not assert that a specific
+    player will sit.
+    """
+    if games.empty:
+        return pd.DataFrame(columns=["game_id"])
+
+    ordered = games.copy()
+    ordered["game_date_utc"] = pd.to_datetime(
+        ordered["game_date_utc"],
+        utc=True,
+        errors="coerce",
+    )
+    ordered["completed"] = _coerce_bool_series(ordered["completed"])
+    ordered["season"] = pd.to_numeric(ordered["season"], errors="coerce")
+
+    rows: list[dict[str, Any]] = []
+
+    for season, season_games in ordered.groupby("season", dropna=False):
+        season_games = season_games.sort_values(
+            ["game_date_utc", "game_id"]
+        ).copy()
+
+        totals: dict[str, int] = defaultdict(int)
+        team_ids = set()
+
+        for _, game in season_games.iterrows():
+            home = str(game["home_team_id"])
+            away = str(game["away_team_id"])
+            team_ids.update([home, away])
+            totals[home] += 1
+            totals[away] += 1
+
+        record: dict[str, dict[str, float]] = {
+            team: {"wins": 0.0, "games": 0.0}
+            for team in team_ids
+        }
+
+        for idx, game in season_games.iterrows():
+            # Current standings BEFORE this game.
+            standings = sorted(
+                team_ids,
+                key=lambda team: (
+                    record[team]["wins"]
+                    / max(1.0, record[team]["games"]),
+                    record[team]["wins"],
+                ),
+                reverse=True,
+            )
+
+            playoff_slots = min(8, max(1, len(standings) - 1))
+            cutoff_team = standings[playoff_slots - 1]
+            cutoff_wins = record[cutoff_team]["wins"]
+            ranks = {
+                team: pos + 1
+                for pos, team in enumerate(standings)
+            }
+
+            result = {"game_id": str(game["game_id"])}
+
+            for side in ("home", "away"):
+                team = str(game[f"{side}_team_id"])
+                wins = record[team]["wins"]
+                games_before = record[team]["games"]
+                total_games = max(1, totals.get(team, 0))
+                remaining = max(0.0, total_games - games_before)
+                progress = games_before / total_games
+                gap = wins - cutoff_wins
+                rank = ranks.get(team, len(standings))
+
+                late = max(
+                    0.0,
+                    min(
+                        1.0,
+                        (progress - 0.72) / 0.28,
+                    ),
+                )
+                proximity = max(
+                    0.0,
+                    1.0
+                    - min(
+                        1.0,
+                        abs(gap)
+                        / max(
+                            2.0,
+                            remaining * 0.35 + 1.0,
+                        ),
+                    ),
+                )
+                max_wins = wins + remaining
+                eliminated = float(max_wins < cutoff_wins)
+                secure = float(
+                    rank <= playoff_slots
+                    and gap > max(2.0, remaining * 0.45)
+                )
+
+                urgency = late * (0.35 + 0.65 * proximity)
+                if secure or eliminated:
+                    urgency *= 0.25
+
+                rotation_risk = late * (
+                    0.70
+                    if secure
+                    else 0.55
+                    if eliminated
+                    else 0.10
+                )
+
+                result[f"{side}_standings_rank"] = float(rank)
+                result[f"{side}_playoff_cutoff_rank"] = float(playoff_slots)
+                result[f"{side}_games_remaining"] = float(remaining)
+                result[f"{side}_gap_to_playoff_cutoff_wins"] = float(gap)
+                result[f"{side}_postseason_urgency"] = float(urgency)
+                result[f"{side}_rotation_rest_risk"] = float(rotation_risk)
+                result[f"{side}_playoff_secure_proxy"] = secure
+                result[f"{side}_playoff_eliminated_proxy"] = eliminated
+
+            rows.append(result)
+
+            if not bool(game["completed"]):
+                continue
+
+            home_score = _safe_float(game.get("home_score"))
+            away_score = _safe_float(game.get("away_score"))
+            if home_score is None or away_score is None:
+                continue
+
+            home = str(game["home_team_id"])
+            away = str(game["away_team_id"])
+            record[home]["games"] += 1
+            record[away]["games"] += 1
+            if home_score > away_score:
+                record[home]["wins"] += 1
+            elif away_score > home_score:
+                record[away]["wins"] += 1
+
+    return pd.DataFrame(rows)
+
+
+# ---------------------------------------------------------------------
 # Head-to-head features
 # ---------------------------------------------------------------------
 
@@ -1994,6 +2147,22 @@ def build_model_features(
     games["elo_diff"] = (
         games["home_elo"]
         - games["away_elo"]
+    )
+
+    # ---------------------------------------------------------
+    # Explicit standings / postseason context
+    # ---------------------------------------------------------
+    competitive_context = (
+        _build_wnba_competitive_context(
+            games.copy()
+        )
+    )
+
+    games = games.merge(
+        competitive_context,
+        on="game_id",
+        how="left",
+        validate="one_to_one",
     )
 
     # ---------------------------------------------------------
