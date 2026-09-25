@@ -275,3 +275,5 @@ if __name__ == "__main__":
     main()
 
 # nflverse schedule source replaces blocked ESPN datacenter access.
+
+# Validate indexed SBR books: 2026-09-25
