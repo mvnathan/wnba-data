@@ -10,7 +10,7 @@ from zoneinfo import ZoneInfo
 
 import pandas as pd
 
-from src.nfl_v2_core import predict_hybrid_row
+from src.nfl_v2_core import predict_hybrid_context_row
 from src.sbr_market_odds import fetch_sbr_draftkings
 
 CHICAGO=ZoneInfo("America/Chicago")
@@ -90,7 +90,7 @@ def build():
     markets=_market_lookup(rows)
     games=[]
     for _,row in slate.iterrows():
-        pred,strategy=predict_hybrid_row(df,row)
+        pred,strategy,competitive_context=predict_hybrid_context_row(df,row)
         ha,aa=str(row.home_team),str(row.away_team);hn,an=TEAM_NAMES.get(ha,ha),TEAM_NAMES.get(aa,aa)
         start=_dt(row).isoformat().replace("+00:00","Z")
         market=_extract(_closest(markets.get((hn.lower(),an.lower())),start))
@@ -107,7 +107,8 @@ def build():
             "home_win_probability":round(pred["home_win_probability"],4),"away_win_probability":round(1-pred["home_win_probability"],4),
             "model_version":"nfl-v2-candidate","model_status":"candidate_not_promoted","market_used_in_prediction":False,
             "v2_strategy":strategy,
-            "v2_features":{"early_season_multi_season_form":True,"rest":strategy=="early_season_enhanced","qb_continuity":strategy=="early_season_enhanced","divisional_margin_shrink":strategy=="early_season_enhanced","neutral_site_hfa":True},
+            "v2_features":{"early_season_multi_season_form":True,"rest":"early_season_enhanced" in strategy,"qb_continuity":"early_season_enhanced" in strategy,"divisional_margin_shrink":"early_season_enhanced" in strategy,"neutral_site_hfa":True,"late_season_postseason_context":True},
+            "competitive_context":competitive_context,
             **market,
             "model_market_spread_edge":round(spread_edge,2) if spread_edge is not None else None,
             "model_market_total_edge":round(total_edge,2) if total_edge is not None else None,
@@ -123,7 +124,7 @@ def main():
     if args.production:
         p["model_version"]="nfl-v2"
         p["model_status"]="production"
-        p["validation_basis"]="577-game leakage-safe backtest across 2024-2026; hybrid v2 improved winner accuracy, Brier score, margin MAE, total MAE, and team-score MAE vs v1."
+        p["validation_basis"]="577-game leakage-safe backtest across 2024-2026; postseason-aware hybrid v2 improved winner accuracy to 63.26% vs 61.18% for v1 and also improved Brier, margin MAE, total MAE, and team-score MAE."
         for g in p["games"]:
             g["model_version"]="nfl-v2"
             g["model_status"]="production"
