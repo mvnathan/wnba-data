@@ -12,6 +12,7 @@ from zoneinfo import ZoneInfo
 import requests
 
 from src.draftkings_direct import fetch_draftkings_direct
+from src.sbr_market_odds import fetch_sbr_draftkings
 
 MLB_SCHEDULE = "https://statsapi.mlb.com/api/v1/schedule"
 CHICAGO = ZoneInfo("America/Chicago")
@@ -151,7 +152,17 @@ def _dk_market_lookup() -> dict[tuple[str, str], dict[str, Any]]:
     try:
         rows = fetch_draftkings_direct("mlb")
     except Exception as exc:
-        print(f"DraftKings MLB feed unavailable: {exc}")
+        print(f"DraftKings MLB direct feed unavailable: {exc}")
+        rows = []
+    if not rows:
+        try:
+            rows = fetch_sbr_draftkings("mlb")
+            if rows:
+                print(f"Fetched {len(rows)} MLB DraftKings events from SportsBookReview")
+        except Exception as exc:
+            print(f"SportsBookReview MLB DraftKings feed unavailable: {exc}")
+            rows = []
+    if not rows:
         return {}
     return {
         (str(row.get("home_team", "")).lower(), str(row.get("away_team", "")).lower()): row
