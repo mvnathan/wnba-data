@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-09-25T15:28:51.298543+00:00",
+  "generated_at_utc": "2026-09-25T15:31:10.129634+00:00",
   "target_date": "2026-09-25",
   "season": 2026,
   "week": 3,
@@ -506,8 +506,8 @@
       "predicted_margin": -0.6,
       "predicted_total": 41.9,
       "predicted_winner": "Los Angeles Rams",
-      "home_win_probability": 0.4793,
-      "away_win_probability": 0.5207,
+      "home_win_probability": 0.4794,
+      "away_win_probability": 0.5206,
       "team_games_home": 2,
       "team_games_away": 2,
       "model_version": "nfl-v1-beta",
