@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-09-26T16:23:27.543173+00:00",
+  "generated_at_utc": "2026-09-26T19:51:51.744471+00:00",
   "target_date": "2026-09-26",
   "sport": "MLB",
   "model_version": "mlb-runs-v2",
@@ -21,7 +21,7 @@
       "home_team": "Washington Nationals",
       "away_team": "New York Mets",
       "venue": "Nationals Park",
-      "status": "Warmup",
+      "status": "Final",
       "predicted_home_runs": 5.22,
       "predicted_away_runs": 4.71,
       "predicted_total_runs": 9.93,
@@ -305,11 +305,11 @@
       "availability_note": "Standings/urgency context cannot confirm a specific star will rest; actual lineup/inactive data should override the proxy when available.",
       "market_used_in_prediction": false,
       "market_bookmaker": "DraftKings",
-      "market_home_moneyline": -111,
+      "market_home_moneyline": -110,
       "market_away_moneyline": -109,
       "market_run_line_home": 1.5,
-      "market_total": 8.5,
-      "market_updated_at": "2026-09-26T16:23:21.049770+00:00"
+      "market_total": 8,
+      "market_updated_at": "2026-09-26T19:51:46.397291+00:00"
     },
     {
       "game_id": "824219",
@@ -317,7 +317,7 @@
       "home_team": "Detroit Tigers",
       "away_team": "Pittsburgh Pirates",
       "venue": "Comerica Park",
-      "status": "Pre-Game",
+      "status": "In Progress",
       "predicted_home_runs": 4.41,
       "predicted_away_runs": 3.98,
       "predicted_total_runs": 8.4,
@@ -601,11 +601,11 @@
       "availability_note": "Standings/urgency context cannot confirm a specific star will rest; actual lineup/inactive data should override the proxy when available.",
       "market_used_in_prediction": false,
       "market_bookmaker": "DraftKings",
-      "market_home_moneyline": -123,
-      "market_away_moneyline": 102,
-      "market_run_line_home": -1.5,
+      "market_home_moneyline": -120,
+      "market_away_moneyline": -101,
+      "market_run_line_home": 1.5,
       "market_total": 9,
-      "market_updated_at": "2026-09-26T16:23:21.049770+00:00"
+      "market_updated_at": "2026-09-26T19:51:46.397291+00:00"
     },
     {
       "game_id": "822759",
@@ -613,7 +613,7 @@
       "home_team": "Toronto Blue Jays",
       "away_team": "Cincinnati Reds",
       "venue": "Rogers Centre",
-      "status": "Pre-Game",
+      "status": "In Progress",
       "predicted_home_runs": 5.29,
       "predicted_away_runs": 3.62,
       "predicted_total_runs": 8.91,
@@ -897,11 +897,11 @@
       "availability_note": "Standings/urgency context cannot confirm a specific star will rest; actual lineup/inactive data should override the proxy when available.",
       "market_used_in_prediction": false,
       "market_bookmaker": "DraftKings",
-      "market_home_moneyline": -167,
-      "market_away_moneyline": 138,
+      "market_home_moneyline": -168,
+      "market_away_moneyline": 139,
       "market_run_line_home": -1.5,
       "market_total": 8,
-      "market_updated_at": "2026-09-26T16:23:21.049770+00:00"
+      "market_updated_at": "2026-09-26T19:51:46.397291+00:00"
     },
     {
       "game_id": "823165",
@@ -909,7 +909,7 @@
       "home_team": "San Francisco Giants",
       "away_team": "Los Angeles Dodgers",
       "venue": "Oracle Park",
-      "status": "Scheduled",
+      "status": "Warmup",
       "predicted_home_runs": 3.69,
       "predicted_away_runs": 4.31,
       "predicted_total_runs": 8.0,
@@ -1193,11 +1193,11 @@
       "availability_note": "Standings/urgency context cannot confirm a specific star will rest; actual lineup/inactive data should override the proxy when available.",
       "market_used_in_prediction": false,
       "market_bookmaker": "DraftKings",
-      "market_home_moneyline": 231,
-      "market_away_moneyline": -289,
-      "market_run_line_home": 2,
-      "market_total": 7.5,
-      "market_updated_at": "2026-09-26T16:23:21.049770+00:00"
+      "market_home_moneyline": 229,
+      "market_away_moneyline": -287,
+      "market_run_line_home": 2.5,
+      "market_total": 7,
+      "market_updated_at": "2026-09-26T19:51:46.397291+00:00"
     },
     {
       "game_id": "823653",
@@ -1205,7 +1205,7 @@
       "home_team": "Minnesota Twins",
       "away_team": "Texas Rangers",
       "venue": "Target Field",
-      "status": "Scheduled",
+      "status": "Delayed Start",
       "predicted_home_runs": 4.73,
       "predicted_away_runs": 4.44,
       "predicted_total_runs": 9.18,
@@ -1493,7 +1493,7 @@
       "market_away_moneyline": -125,
       "market_run_line_home": 1.5,
       "market_total": 8,
-      "market_updated_at": "2026-09-26T16:23:21.049770+00:00"
+      "market_updated_at": "2026-09-26T19:51:46.397291+00:00"
     },
     {
       "game_id": "823813",
@@ -1501,7 +1501,7 @@
       "home_team": "Miami Marlins",
       "away_team": "Atlanta Braves",
       "venue": "loanDepot park",
-      "status": "Scheduled",
+      "status": "Warmup",
       "predicted_home_runs": 4.1,
       "predicted_away_runs": 4.18,
       "predicted_total_runs": 8.28,
@@ -1789,7 +1789,7 @@
       "market_away_moneyline": -117,
       "market_run_line_home": 1.5,
       "market_total": 8.5,
-      "market_updated_at": "2026-09-26T16:23:21.049770+00:00"
+      "market_updated_at": "2026-09-26T19:51:46.397291+00:00"
     },
     {
       "game_id": "824057",
@@ -1797,7 +1797,7 @@
       "home_team": "Kansas City Royals",
       "away_team": "Cleveland Guardians",
       "venue": "Kauffman Stadium",
-      "status": "Scheduled",
+      "status": "Pre-Game",
       "predicted_home_runs": 5.05,
       "predicted_away_runs": 4.92,
       "predicted_total_runs": 9.97,
@@ -2085,7 +2085,7 @@
       "market_away_moneyline": -114,
       "market_run_line_home": 1.5,
       "market_total": 8.5,
-      "market_updated_at": "2026-09-26T16:23:21.049770+00:00"
+      "market_updated_at": "2026-09-26T19:51:46.397291+00:00"
     },
     {
       "game_id": "824543",
@@ -2093,7 +2093,7 @@
       "home_team": "Chicago White Sox",
       "away_team": "Colorado Rockies",
       "venue": "Rate Field",
-      "status": "Scheduled",
+      "status": "Pre-Game",
       "predicted_home_runs": 5.56,
       "predicted_away_runs": 4.15,
       "predicted_total_runs": 9.7,
@@ -2377,11 +2377,11 @@
       "availability_note": "Standings/urgency context cannot confirm a specific star will rest; actual lineup/inactive data should override the proxy when available.",
       "market_used_in_prediction": false,
       "market_bookmaker": "DraftKings",
-      "market_home_moneyline": -251,
+      "market_home_moneyline": -252,
       "market_away_moneyline": 203,
       "market_run_line_home": -1.5,
       "market_total": 8,
-      "market_updated_at": "2026-09-26T16:23:21.049770+00:00"
+      "market_updated_at": "2026-09-26T19:51:46.397291+00:00"
     },
     {
       "game_id": "823733",
@@ -2677,7 +2677,7 @@
       "market_away_moneyline": 135,
       "market_run_line_home": -1.5,
       "market_total": 7.5,
-      "market_updated_at": "2026-09-26T16:23:21.049770+00:00"
+      "market_updated_at": "2026-09-26T19:51:46.397291+00:00"
     },
     {
       "game_id": "823407",
@@ -2685,7 +2685,7 @@
       "home_team": "Philadelphia Phillies",
       "away_team": "Tampa Bay Rays",
       "venue": "Citizens Bank Park",
-      "status": "Scheduled",
+      "status": "Pre-Game",
       "predicted_home_runs": 4.0,
       "predicted_away_runs": 4.47,
       "predicted_total_runs": 8.47,
@@ -2969,11 +2969,11 @@
       "availability_note": "Standings/urgency context cannot confirm a specific star will rest; actual lineup/inactive data should override the proxy when available.",
       "market_used_in_prediction": false,
       "market_bookmaker": "DraftKings",
-      "market_home_moneyline": -112,
-      "market_away_moneyline": -108,
+      "market_home_moneyline": -122,
+      "market_away_moneyline": 102,
       "market_run_line_home": 1.5,
       "market_total": 7,
-      "market_updated_at": "2026-09-26T16:23:21.049770+00:00"
+      "market_updated_at": "2026-09-26T19:51:46.397291+00:00"
     },
     {
       "game_id": "823245",
@@ -3250,9 +3250,9 @@
       "market_bookmaker": "DraftKings",
       "market_home_moneyline": -126,
       "market_away_moneyline": 104,
-      "market_run_line_home": 1.5,
+      "market_run_line_home": -1.5,
       "market_total": 7.5,
-      "market_updated_at": "2026-09-26T16:23:21.049770+00:00"
+      "market_updated_at": "2026-09-26T19:51:46.397291+00:00"
     },
     {
       "game_id": "824949",
@@ -3844,7 +3844,7 @@
       "market_away_moneyline": 134,
       "market_run_line_home": -1.5,
       "market_total": 7,
-      "market_updated_at": "2026-09-26T16:23:21.049770+00:00"
+      "market_updated_at": "2026-09-26T19:51:46.397291+00:00"
     }
   ]
 }
