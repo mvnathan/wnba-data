@@ -1,10 +1,10 @@
 {
-  "generated_at_utc": "2026-09-25T23:57:07.541764+00:00",
-  "target_date": "2026-09-25",
+  "generated_at_utc": "2026-09-26T16:23:27.543173+00:00",
+  "target_date": "2026-09-26",
   "sport": "MLB",
   "model_version": "mlb-runs-v2",
   "model_status": "production",
-  "pitcher_stats_as_of": "2026-09-24",
+  "pitcher_stats_as_of": "2026-09-25",
   "features": [
     "recent offense",
     "recent run prevention",
@@ -16,1829 +16,53 @@
   "competitive_context_policy": "Official MLB standings plus leakage-safe urgency/rotation-risk context are calculated for every game. Direct score adjustment remains disabled in production because the 273-game validation improved Brier only marginally while slightly reducing winner accuracy. The context remains visible for edge reliability and lineup/rest review.",
   "games": [
     {
-      "game_id": "824703",
-      "game_date_utc": "2026-09-25T17:05:00Z",
-      "home_team": "Boston Red Sox",
-      "away_team": "Chicago Cubs",
-      "venue": "Fenway Park",
-      "status": "Final",
-      "predicted_home_runs": 4.39,
-      "predicted_away_runs": 4.21,
-      "predicted_total_runs": 8.6,
-      "predicted_winner": "Boston Red Sox",
-      "home_win_probability": 0.5247,
-      "away_win_probability": 0.4753,
-      "home_probable_pitcher": "Alec Gamboa",
-      "away_probable_pitcher": "Clay Holmes",
-      "home_starter_era": 1.16,
-      "away_starter_era": 4.26,
-      "home_starter_whip": 1.06,
-      "away_starter_whip": 1.24,
-      "home_bullpen_workload_3d": 3.0,
-      "away_bullpen_workload_3d": 3.54,
-      "park_run_factor": 1.007,
-      "competitive_context_used_in_score": false,
-      "competitive_context_monitored": true,
-      "competitive_context_adjustment_runs": 0.0,
-      "home_competitive_context": {
-        "wins": 93.0,
-        "losses": 88.0,
-        "games_played": 181.0,
-        "win_pct": 0.5138121546961326,
-        "games_remaining": 0.0,
-        "rank_group": 5,
-        "playoff_cutoff_rank": 6,
-        "gap_to_cutoff_wins": 1.0,
-        "wins_needed_to_current_cutoff": 0.0,
-        "wins_of_cushion_over_current_cutoff": 1.0,
-        "urgency_score": 0.675,
-        "rest_rotation_risk": 0.1,
-        "seed_pressure_score": 1.0,
-        "seed_locked_proxy": 0.0,
-        "postseason_status": "wildcard_position",
-        "context_confidence": 1.0
-      },
-      "away_competitive_context": {
-        "wins": 98.0,
-        "losses": 84.0,
-        "games_played": 182.0,
-        "win_pct": 0.5384615384615384,
-        "games_remaining": 0.0,
-        "rank_group": 5,
-        "playoff_cutoff_rank": 6,
-        "gap_to_cutoff_wins": 4.0,
-        "wins_needed_to_current_cutoff": 0.0,
-        "wins_of_cushion_over_current_cutoff": 4.0,
-        "urgency_score": 0.0875,
-        "rest_rotation_risk": 0.25,
-        "seed_pressure_score": 0.0,
-        "seed_locked_proxy": 0.0,
-        "postseason_status": "secure",
-        "context_confidence": 1.0
-      },
-      "home_official_standings": {
-        "wins": 85,
-        "losses": 74,
-        "winning_percentage": ".535",
-        "division": "American League East",
-        "division_rank": "3",
-        "league_rank": "3",
-        "wild_card_rank": "2",
-        "games_back": "11.0",
-        "wild_card_games_back": "+3.0",
-        "magic_number": null,
-        "elimination_number": "E",
-        "clinched": true,
-        "last_ten": [
-          {
-            "wins": 39,
-            "losses": 39,
-            "type": "home",
-            "pct": ".500"
-          },
-          {
-            "wins": 46,
-            "losses": 35,
-            "type": "away",
-            "pct": ".568"
-          },
-          {
-            "wins": 25,
-            "losses": 16,
-            "type": "left",
-            "pct": ".610"
-          },
-          {
-            "wins": 8,
-            "losses": 10,
-            "type": "leftHome",
-            "pct": ".444"
-          },
-          {
-            "wins": 17,
-            "losses": 6,
-            "type": "leftAway",
-            "pct": ".739"
-          },
-          {
-            "wins": 31,
-            "losses": 29,
-            "type": "rightHome",
-            "pct": ".517"
-          },
-          {
-            "wins": 29,
-            "losses": 29,
-            "type": "rightAway",
-            "pct": ".500"
-          },
-          {
-            "wins": 60,
-            "losses": 58,
-            "type": "right",
-            "pct": ".508"
-          },
-          {
-            "wins": 4,
-            "losses": 6,
-            "type": "lastTen",
-            "pct": ".400"
-          },
-          {
-            "wins": 7,
-            "losses": 4,
-            "type": "extraInning",
-            "pct": ".636"
-          },
-          {
-            "wins": 20,
-            "losses": 21,
-            "type": "oneRun",
-            "pct": ".488"
-          },
-          {
-            "wins": 33,
-            "losses": 29,
-            "type": "winners",
-            "pct": ".532"
-          },
-          {
-            "wins": 28,
-            "losses": 31,
-            "type": "day",
-            "pct": ".475"
-          },
-          {
-            "wins": 57,
-            "losses": 43,
-            "type": "night",
-            "pct": ".570"
-          },
-          {
-            "wins": 79,
-            "losses": 61,
-            "type": "grass",
-            "pct": ".564"
-          },
-          {
-            "wins": 6,
-            "losses": 13,
-            "type": "turf",
-            "pct": ".316"
-          }
-        ],
-        "as_of": "2026-09-24"
-      },
-      "away_official_standings": {
-        "wins": 88,
-        "losses": 71,
-        "winning_percentage": ".553",
-        "division": "National League Central",
-        "division_rank": "2",
-        "league_rank": "5",
-        "wild_card_rank": "2",
-        "games_back": "12.0",
-        "wild_card_games_back": "+1.0",
-        "magic_number": null,
-        "elimination_number": "E",
-        "clinched": true,
-        "last_ten": [
-          {
-            "wins": 46,
-            "losses": 35,
-            "type": "home",
-            "pct": ".568"
-          },
-          {
-            "wins": 42,
-            "losses": 36,
-            "type": "away",
-            "pct": ".538"
-          },
-          {
-            "wins": 27,
-            "losses": 18,
-            "type": "left",
-            "pct": ".600"
-          },
-          {
-            "wins": 17,
-            "losses": 8,
-            "type": "leftHome",
-            "pct": ".680"
-          },
-          {
-            "wins": 10,
-            "losses": 10,
-            "type": "leftAway",
-            "pct": ".500"
-          },
-          {
-            "wins": 29,
-            "losses": 27,
-            "type": "rightHome",
-            "pct": ".518"
-          },
-          {
-            "wins": 32,
-            "losses": 26,
-            "type": "rightAway",
-            "pct": ".552"
-          },
-          {
-            "wins": 61,
-            "losses": 53,
-            "type": "right",
-            "pct": ".535"
-          },
-          {
-            "wins": 5,
-            "losses": 5,
-            "type": "lastTen",
-            "pct": ".500"
-          },
-          {
-            "wins": 11,
-            "losses": 9,
-            "type": "extraInning",
-            "pct": ".550"
-          },
-          {
-            "wins": 23,
-            "losses": 20,
-            "type": "oneRun",
-            "pct": ".535"
-          },
-          {
-            "wins": 40,
-            "losses": 32,
-            "type": "winners",
-            "pct": ".556"
-          },
-          {
-            "wins": 35,
-            "losses": 33,
-            "type": "day",
-            "pct": ".515"
-          },
-          {
-            "wins": 53,
-            "losses": 38,
-            "type": "night",
-            "pct": ".582"
-          },
-          {
-            "wins": 82,
-            "losses": 65,
-            "type": "grass",
-            "pct": ".558"
-          },
-          {
-            "wins": 6,
-            "losses": 6,
-            "type": "turf",
-            "pct": ".500"
-          }
-        ],
-        "as_of": "2026-09-24"
-      },
-      "availability_note": "Standings/urgency context cannot confirm a specific star will rest; actual lineup/inactive data should override the proxy when available.",
-      "market_used_in_prediction": false,
-      "market_bookmaker": "DraftKings",
-      "market_home_moneyline": 102,
-      "market_away_moneyline": -123,
-      "market_run_line_home": 1.5,
-      "market_total": 6.5,
-      "market_updated_at": "2026-09-25T23:57:02.109678+00:00"
-    },
-    {
-      "game_id": "824706",
-      "game_date_utc": "2026-09-25T21:35:00Z",
-      "home_team": "Boston Red Sox",
-      "away_team": "Chicago Cubs",
-      "venue": "Fenway Park",
-      "status": "In Progress",
-      "predicted_home_runs": 4.35,
-      "predicted_away_runs": 4.67,
-      "predicted_total_runs": 9.02,
-      "predicted_winner": "Chicago Cubs",
-      "home_win_probability": 0.4587,
-      "away_win_probability": 0.5413,
-      "home_probable_pitcher": "Brayan Bello",
-      "away_probable_pitcher": "David Peterson",
-      "home_starter_era": 4.49,
-      "away_starter_era": 3.94,
-      "home_starter_whip": 1.37,
-      "away_starter_whip": 1.39,
-      "home_bullpen_workload_3d": 3.0,
-      "away_bullpen_workload_3d": 3.54,
-      "park_run_factor": 1.007,
-      "competitive_context_used_in_score": false,
-      "competitive_context_monitored": true,
-      "competitive_context_adjustment_runs": 0.0,
-      "home_competitive_context": {
-        "wins": 93.0,
-        "losses": 88.0,
-        "games_played": 181.0,
-        "win_pct": 0.5138121546961326,
-        "games_remaining": 0.0,
-        "rank_group": 5,
-        "playoff_cutoff_rank": 6,
-        "gap_to_cutoff_wins": 1.0,
-        "wins_needed_to_current_cutoff": 0.0,
-        "wins_of_cushion_over_current_cutoff": 1.0,
-        "urgency_score": 0.675,
-        "rest_rotation_risk": 0.1,
-        "seed_pressure_score": 1.0,
-        "seed_locked_proxy": 0.0,
-        "postseason_status": "wildcard_position",
-        "context_confidence": 1.0
-      },
-      "away_competitive_context": {
-        "wins": 98.0,
-        "losses": 84.0,
-        "games_played": 182.0,
-        "win_pct": 0.5384615384615384,
-        "games_remaining": 0.0,
-        "rank_group": 5,
-        "playoff_cutoff_rank": 6,
-        "gap_to_cutoff_wins": 4.0,
-        "wins_needed_to_current_cutoff": 0.0,
-        "wins_of_cushion_over_current_cutoff": 4.0,
-        "urgency_score": 0.0875,
-        "rest_rotation_risk": 0.25,
-        "seed_pressure_score": 0.0,
-        "seed_locked_proxy": 0.0,
-        "postseason_status": "secure",
-        "context_confidence": 1.0
-      },
-      "home_official_standings": {
-        "wins": 85,
-        "losses": 74,
-        "winning_percentage": ".535",
-        "division": "American League East",
-        "division_rank": "3",
-        "league_rank": "3",
-        "wild_card_rank": "2",
-        "games_back": "11.0",
-        "wild_card_games_back": "+3.0",
-        "magic_number": null,
-        "elimination_number": "E",
-        "clinched": true,
-        "last_ten": [
-          {
-            "wins": 39,
-            "losses": 39,
-            "type": "home",
-            "pct": ".500"
-          },
-          {
-            "wins": 46,
-            "losses": 35,
-            "type": "away",
-            "pct": ".568"
-          },
-          {
-            "wins": 25,
-            "losses": 16,
-            "type": "left",
-            "pct": ".610"
-          },
-          {
-            "wins": 8,
-            "losses": 10,
-            "type": "leftHome",
-            "pct": ".444"
-          },
-          {
-            "wins": 17,
-            "losses": 6,
-            "type": "leftAway",
-            "pct": ".739"
-          },
-          {
-            "wins": 31,
-            "losses": 29,
-            "type": "rightHome",
-            "pct": ".517"
-          },
-          {
-            "wins": 29,
-            "losses": 29,
-            "type": "rightAway",
-            "pct": ".500"
-          },
-          {
-            "wins": 60,
-            "losses": 58,
-            "type": "right",
-            "pct": ".508"
-          },
-          {
-            "wins": 4,
-            "losses": 6,
-            "type": "lastTen",
-            "pct": ".400"
-          },
-          {
-            "wins": 7,
-            "losses": 4,
-            "type": "extraInning",
-            "pct": ".636"
-          },
-          {
-            "wins": 20,
-            "losses": 21,
-            "type": "oneRun",
-            "pct": ".488"
-          },
-          {
-            "wins": 33,
-            "losses": 29,
-            "type": "winners",
-            "pct": ".532"
-          },
-          {
-            "wins": 28,
-            "losses": 31,
-            "type": "day",
-            "pct": ".475"
-          },
-          {
-            "wins": 57,
-            "losses": 43,
-            "type": "night",
-            "pct": ".570"
-          },
-          {
-            "wins": 79,
-            "losses": 61,
-            "type": "grass",
-            "pct": ".564"
-          },
-          {
-            "wins": 6,
-            "losses": 13,
-            "type": "turf",
-            "pct": ".316"
-          }
-        ],
-        "as_of": "2026-09-24"
-      },
-      "away_official_standings": {
-        "wins": 88,
-        "losses": 71,
-        "winning_percentage": ".553",
-        "division": "National League Central",
-        "division_rank": "2",
-        "league_rank": "5",
-        "wild_card_rank": "2",
-        "games_back": "12.0",
-        "wild_card_games_back": "+1.0",
-        "magic_number": null,
-        "elimination_number": "E",
-        "clinched": true,
-        "last_ten": [
-          {
-            "wins": 46,
-            "losses": 35,
-            "type": "home",
-            "pct": ".568"
-          },
-          {
-            "wins": 42,
-            "losses": 36,
-            "type": "away",
-            "pct": ".538"
-          },
-          {
-            "wins": 27,
-            "losses": 18,
-            "type": "left",
-            "pct": ".600"
-          },
-          {
-            "wins": 17,
-            "losses": 8,
-            "type": "leftHome",
-            "pct": ".680"
-          },
-          {
-            "wins": 10,
-            "losses": 10,
-            "type": "leftAway",
-            "pct": ".500"
-          },
-          {
-            "wins": 29,
-            "losses": 27,
-            "type": "rightHome",
-            "pct": ".518"
-          },
-          {
-            "wins": 32,
-            "losses": 26,
-            "type": "rightAway",
-            "pct": ".552"
-          },
-          {
-            "wins": 61,
-            "losses": 53,
-            "type": "right",
-            "pct": ".535"
-          },
-          {
-            "wins": 5,
-            "losses": 5,
-            "type": "lastTen",
-            "pct": ".500"
-          },
-          {
-            "wins": 11,
-            "losses": 9,
-            "type": "extraInning",
-            "pct": ".550"
-          },
-          {
-            "wins": 23,
-            "losses": 20,
-            "type": "oneRun",
-            "pct": ".535"
-          },
-          {
-            "wins": 40,
-            "losses": 32,
-            "type": "winners",
-            "pct": ".556"
-          },
-          {
-            "wins": 35,
-            "losses": 33,
-            "type": "day",
-            "pct": ".515"
-          },
-          {
-            "wins": 53,
-            "losses": 38,
-            "type": "night",
-            "pct": ".582"
-          },
-          {
-            "wins": 82,
-            "losses": 65,
-            "type": "grass",
-            "pct": ".558"
-          },
-          {
-            "wins": 6,
-            "losses": 6,
-            "type": "turf",
-            "pct": ".500"
-          }
-        ],
-        "as_of": "2026-09-24"
-      },
-      "availability_note": "Standings/urgency context cannot confirm a specific star will rest; actual lineup/inactive data should override the proxy when available.",
-      "market_used_in_prediction": false,
-      "market_bookmaker": "DraftKings",
-      "market_home_moneyline": -101,
-      "market_away_moneyline": -120,
-      "market_run_line_home": 1.5,
-      "market_total": 6.5,
-      "market_updated_at": "2026-09-25T23:57:02.109678+00:00"
-    },
-    {
-      "game_id": "823491",
-      "game_date_utc": "2026-09-25T20:05:00Z",
-      "home_team": "New York Yankees",
-      "away_team": "Baltimore Orioles",
-      "venue": "Yankee Stadium",
-      "status": "Final",
-      "predicted_home_runs": 4.18,
-      "predicted_away_runs": 3.99,
-      "predicted_total_runs": 8.17,
-      "predicted_winner": "New York Yankees",
-      "home_win_probability": 0.5254,
-      "away_win_probability": 0.4746,
-      "home_probable_pitcher": "Brendan Beck",
-      "away_probable_pitcher": "Trevor Rogers",
-      "home_starter_era": 8.22,
-      "away_starter_era": 4.07,
-      "home_starter_whip": 1.57,
-      "away_starter_whip": 1.18,
-      "home_bullpen_workload_3d": 4.0,
-      "away_bullpen_workload_3d": 3.0,
-      "park_run_factor": 0.957,
-      "competitive_context_used_in_score": false,
-      "competitive_context_monitored": true,
-      "competitive_context_adjustment_runs": 0.0,
-      "home_competitive_context": {
-        "wins": 105.0,
-        "losses": 77.0,
-        "games_played": 182.0,
-        "win_pct": 0.5769230769230769,
-        "games_remaining": 0.0,
-        "rank_group": 1,
-        "playoff_cutoff_rank": 6,
-        "gap_to_cutoff_wins": 0.0,
-        "wins_needed_to_current_cutoff": 0.0,
-        "wins_of_cushion_over_current_cutoff": 0.0,
-        "urgency_score": 1.0,
-        "rest_rotation_risk": 0.1,
-        "seed_pressure_score": 0.5,
-        "seed_locked_proxy": 0.0,
-        "postseason_status": "division_leader",
-        "context_confidence": 1.0
-      },
-      "away_competitive_context": {
-        "wins": 87.0,
-        "losses": 91.0,
-        "games_played": 180.0,
-        "win_pct": 0.48333333333333334,
-        "games_remaining": 0.0,
-        "rank_group": 9,
-        "playoff_cutoff_rank": 6,
-        "gap_to_cutoff_wins": -5.0,
-        "wins_needed_to_current_cutoff": 6.0,
-        "wins_of_cushion_over_current_cutoff": 0.0,
-        "urgency_score": 0.0875,
-        "rest_rotation_risk": 0.55,
-        "seed_pressure_score": 0.5,
-        "seed_locked_proxy": 0.0,
-        "postseason_status": "eliminated",
-        "context_confidence": 1.0
-      },
-      "home_official_standings": {
-        "wins": 92,
-        "losses": 67,
-        "winning_percentage": ".579",
-        "division": "American League East",
-        "division_rank": "2",
-        "league_rank": "2",
-        "wild_card_rank": "1",
-        "games_back": "4.0",
-        "wild_card_games_back": "+10.0",
-        "magic_number": null,
-        "elimination_number": "E",
-        "clinched": true,
-        "last_ten": [
-          {
-            "wins": 45,
-            "losses": 33,
-            "type": "home",
-            "pct": ".577"
-          },
-          {
-            "wins": 47,
-            "losses": 34,
-            "type": "away",
-            "pct": ".580"
-          },
-          {
-            "wins": 35,
-            "losses": 19,
-            "type": "left",
-            "pct": ".648"
-          },
-          {
-            "wins": 14,
-            "losses": 9,
-            "type": "leftHome",
-            "pct": ".609"
-          },
-          {
-            "wins": 21,
-            "losses": 10,
-            "type": "leftAway",
-            "pct": ".677"
-          },
-          {
-            "wins": 31,
-            "losses": 24,
-            "type": "rightHome",
-            "pct": ".564"
-          },
-          {
-            "wins": 26,
-            "losses": 24,
-            "type": "rightAway",
-            "pct": ".520"
-          },
-          {
-            "wins": 57,
-            "losses": 48,
-            "type": "right",
-            "pct": ".543"
-          },
-          {
-            "wins": 6,
-            "losses": 4,
-            "type": "lastTen",
-            "pct": ".600"
-          },
-          {
-            "wins": 4,
-            "losses": 11,
-            "type": "extraInning",
-            "pct": ".267"
-          },
-          {
-            "wins": 17,
-            "losses": 22,
-            "type": "oneRun",
-            "pct": ".436"
-          },
-          {
-            "wins": 32,
-            "losses": 31,
-            "type": "winners",
-            "pct": ".508"
-          },
-          {
-            "wins": 29,
-            "losses": 27,
-            "type": "day",
-            "pct": ".518"
-          },
-          {
-            "wins": 63,
-            "losses": 40,
-            "type": "night",
-            "pct": ".612"
-          },
-          {
-            "wins": 84,
-            "losses": 56,
-            "type": "grass",
-            "pct": ".600"
-          },
-          {
-            "wins": 8,
-            "losses": 11,
-            "type": "turf",
-            "pct": ".421"
-          }
-        ],
-        "as_of": "2026-09-24"
-      },
-      "away_official_standings": {
-        "wins": 78,
-        "losses": 81,
-        "winning_percentage": ".491",
-        "division": "American League East",
-        "division_rank": "4",
-        "league_rank": "8",
-        "wild_card_rank": "5",
-        "games_back": "18.0",
-        "wild_card_games_back": "4.0",
-        "magic_number": null,
-        "elimination_number": "E",
-        "clinched": false,
-        "last_ten": [
-          {
-            "wins": 39,
-            "losses": 42,
-            "type": "home",
-            "pct": ".481"
-          },
-          {
-            "wins": 39,
-            "losses": 39,
-            "type": "away",
-            "pct": ".500"
-          },
-          {
-            "wins": 24,
-            "losses": 26,
-            "type": "left",
-            "pct": ".480"
-          },
-          {
-            "wins": 13,
-            "losses": 14,
-            "type": "leftHome",
-            "pct": ".481"
-          },
-          {
-            "wins": 11,
-            "losses": 12,
-            "type": "leftAway",
-            "pct": ".478"
-          },
-          {
-            "wins": 26,
-            "losses": 28,
-            "type": "rightHome",
-            "pct": ".481"
-          },
-          {
-            "wins": 28,
-            "losses": 27,
-            "type": "rightAway",
-            "pct": ".509"
-          },
-          {
-            "wins": 54,
-            "losses": 55,
-            "type": "right",
-            "pct": ".495"
-          },
-          {
-            "wins": 6,
-            "losses": 4,
-            "type": "lastTen",
-            "pct": ".600"
-          },
-          {
-            "wins": 8,
-            "losses": 8,
-            "type": "extraInning",
-            "pct": ".500"
-          },
-          {
-            "wins": 18,
-            "losses": 24,
-            "type": "oneRun",
-            "pct": ".429"
-          },
-          {
-            "wins": 28,
-            "losses": 45,
-            "type": "winners",
-            "pct": ".384"
-          },
-          {
-            "wins": 28,
-            "losses": 34,
-            "type": "day",
-            "pct": ".452"
-          },
-          {
-            "wins": 50,
-            "losses": 47,
-            "type": "night",
-            "pct": ".515"
-          },
-          {
-            "wins": 70,
-            "losses": 70,
-            "type": "grass",
-            "pct": ".500"
-          },
-          {
-            "wins": 8,
-            "losses": 11,
-            "type": "turf",
-            "pct": ".421"
-          }
-        ],
-        "as_of": "2026-09-24"
-      },
-      "availability_note": "Standings/urgency context cannot confirm a specific star will rest; actual lineup/inactive data should override the proxy when available.",
-      "market_used_in_prediction": false,
-      "market_bookmaker": "DraftKings",
-      "market_home_moneyline": -122,
-      "market_away_moneyline": -107,
-      "market_run_line_home": -1.5,
-      "market_total": 6.5,
-      "market_updated_at": "2026-09-25T23:57:02.109678+00:00"
-    },
-    {
-      "game_id": "823489",
-      "game_date_utc": "2026-09-25T20:10:00Z",
-      "home_team": "New York Yankees",
-      "away_team": "Baltimore Orioles",
-      "venue": "Yankee Stadium",
-      "status": "In Progress",
-      "predicted_home_runs": 4.14,
-      "predicted_away_runs": 3.83,
-      "predicted_total_runs": 7.97,
-      "predicted_winner": "New York Yankees",
-      "home_win_probability": 0.5436,
-      "away_win_probability": 0.4564,
-      "home_probable_pitcher": "Ryan Yarbrough",
-      "away_probable_pitcher": "Brandon Young",
-      "home_starter_era": 3.84,
-      "away_starter_era": 3.62,
-      "home_starter_whip": 1.18,
-      "away_starter_whip": 1.36,
-      "home_bullpen_workload_3d": 4.0,
-      "away_bullpen_workload_3d": 3.0,
-      "park_run_factor": 0.957,
-      "competitive_context_used_in_score": false,
-      "competitive_context_monitored": true,
-      "competitive_context_adjustment_runs": 0.0,
-      "home_competitive_context": {
-        "wins": 105.0,
-        "losses": 77.0,
-        "games_played": 182.0,
-        "win_pct": 0.5769230769230769,
-        "games_remaining": 0.0,
-        "rank_group": 1,
-        "playoff_cutoff_rank": 6,
-        "gap_to_cutoff_wins": 0.0,
-        "wins_needed_to_current_cutoff": 0.0,
-        "wins_of_cushion_over_current_cutoff": 0.0,
-        "urgency_score": 1.0,
-        "rest_rotation_risk": 0.1,
-        "seed_pressure_score": 0.5,
-        "seed_locked_proxy": 0.0,
-        "postseason_status": "division_leader",
-        "context_confidence": 1.0
-      },
-      "away_competitive_context": {
-        "wins": 87.0,
-        "losses": 91.0,
-        "games_played": 180.0,
-        "win_pct": 0.48333333333333334,
-        "games_remaining": 0.0,
-        "rank_group": 9,
-        "playoff_cutoff_rank": 6,
-        "gap_to_cutoff_wins": -5.0,
-        "wins_needed_to_current_cutoff": 6.0,
-        "wins_of_cushion_over_current_cutoff": 0.0,
-        "urgency_score": 0.0875,
-        "rest_rotation_risk": 0.55,
-        "seed_pressure_score": 0.5,
-        "seed_locked_proxy": 0.0,
-        "postseason_status": "eliminated",
-        "context_confidence": 1.0
-      },
-      "home_official_standings": {
-        "wins": 92,
-        "losses": 67,
-        "winning_percentage": ".579",
-        "division": "American League East",
-        "division_rank": "2",
-        "league_rank": "2",
-        "wild_card_rank": "1",
-        "games_back": "4.0",
-        "wild_card_games_back": "+10.0",
-        "magic_number": null,
-        "elimination_number": "E",
-        "clinched": true,
-        "last_ten": [
-          {
-            "wins": 45,
-            "losses": 33,
-            "type": "home",
-            "pct": ".577"
-          },
-          {
-            "wins": 47,
-            "losses": 34,
-            "type": "away",
-            "pct": ".580"
-          },
-          {
-            "wins": 35,
-            "losses": 19,
-            "type": "left",
-            "pct": ".648"
-          },
-          {
-            "wins": 14,
-            "losses": 9,
-            "type": "leftHome",
-            "pct": ".609"
-          },
-          {
-            "wins": 21,
-            "losses": 10,
-            "type": "leftAway",
-            "pct": ".677"
-          },
-          {
-            "wins": 31,
-            "losses": 24,
-            "type": "rightHome",
-            "pct": ".564"
-          },
-          {
-            "wins": 26,
-            "losses": 24,
-            "type": "rightAway",
-            "pct": ".520"
-          },
-          {
-            "wins": 57,
-            "losses": 48,
-            "type": "right",
-            "pct": ".543"
-          },
-          {
-            "wins": 6,
-            "losses": 4,
-            "type": "lastTen",
-            "pct": ".600"
-          },
-          {
-            "wins": 4,
-            "losses": 11,
-            "type": "extraInning",
-            "pct": ".267"
-          },
-          {
-            "wins": 17,
-            "losses": 22,
-            "type": "oneRun",
-            "pct": ".436"
-          },
-          {
-            "wins": 32,
-            "losses": 31,
-            "type": "winners",
-            "pct": ".508"
-          },
-          {
-            "wins": 29,
-            "losses": 27,
-            "type": "day",
-            "pct": ".518"
-          },
-          {
-            "wins": 63,
-            "losses": 40,
-            "type": "night",
-            "pct": ".612"
-          },
-          {
-            "wins": 84,
-            "losses": 56,
-            "type": "grass",
-            "pct": ".600"
-          },
-          {
-            "wins": 8,
-            "losses": 11,
-            "type": "turf",
-            "pct": ".421"
-          }
-        ],
-        "as_of": "2026-09-24"
-      },
-      "away_official_standings": {
-        "wins": 78,
-        "losses": 81,
-        "winning_percentage": ".491",
-        "division": "American League East",
-        "division_rank": "4",
-        "league_rank": "8",
-        "wild_card_rank": "5",
-        "games_back": "18.0",
-        "wild_card_games_back": "4.0",
-        "magic_number": null,
-        "elimination_number": "E",
-        "clinched": false,
-        "last_ten": [
-          {
-            "wins": 39,
-            "losses": 42,
-            "type": "home",
-            "pct": ".481"
-          },
-          {
-            "wins": 39,
-            "losses": 39,
-            "type": "away",
-            "pct": ".500"
-          },
-          {
-            "wins": 24,
-            "losses": 26,
-            "type": "left",
-            "pct": ".480"
-          },
-          {
-            "wins": 13,
-            "losses": 14,
-            "type": "leftHome",
-            "pct": ".481"
-          },
-          {
-            "wins": 11,
-            "losses": 12,
-            "type": "leftAway",
-            "pct": ".478"
-          },
-          {
-            "wins": 26,
-            "losses": 28,
-            "type": "rightHome",
-            "pct": ".481"
-          },
-          {
-            "wins": 28,
-            "losses": 27,
-            "type": "rightAway",
-            "pct": ".509"
-          },
-          {
-            "wins": 54,
-            "losses": 55,
-            "type": "right",
-            "pct": ".495"
-          },
-          {
-            "wins": 6,
-            "losses": 4,
-            "type": "lastTen",
-            "pct": ".600"
-          },
-          {
-            "wins": 8,
-            "losses": 8,
-            "type": "extraInning",
-            "pct": ".500"
-          },
-          {
-            "wins": 18,
-            "losses": 24,
-            "type": "oneRun",
-            "pct": ".429"
-          },
-          {
-            "wins": 28,
-            "losses": 45,
-            "type": "winners",
-            "pct": ".384"
-          },
-          {
-            "wins": 28,
-            "losses": 34,
-            "type": "day",
-            "pct": ".452"
-          },
-          {
-            "wins": 50,
-            "losses": 47,
-            "type": "night",
-            "pct": ".515"
-          },
-          {
-            "wins": 70,
-            "losses": 70,
-            "type": "grass",
-            "pct": ".500"
-          },
-          {
-            "wins": 8,
-            "losses": 11,
-            "type": "turf",
-            "pct": ".421"
-          }
-        ],
-        "as_of": "2026-09-24"
-      },
-      "availability_note": "Standings/urgency context cannot confirm a specific star will rest; actual lineup/inactive data should override the proxy when available.",
-      "market_used_in_prediction": false,
-      "market_bookmaker": "DraftKings",
-      "market_home_moneyline": -122,
-      "market_away_moneyline": -107,
-      "market_run_line_home": -1.5,
-      "market_total": 6.5,
-      "market_updated_at": "2026-09-25T23:57:02.109678+00:00"
-    },
-    {
-      "game_id": "824220",
-      "game_date_utc": "2026-09-25T22:40:00Z",
-      "home_team": "Detroit Tigers",
-      "away_team": "Pittsburgh Pirates",
-      "venue": "Comerica Park",
-      "status": "In Progress",
-      "predicted_home_runs": 4.3,
-      "predicted_away_runs": 3.79,
-      "predicted_total_runs": 8.09,
-      "predicted_winner": "Detroit Tigers",
-      "home_win_probability": 0.569,
-      "away_win_probability": 0.431,
-      "home_probable_pitcher": "Jackson Jobe",
-      "away_probable_pitcher": "Bubba Chandler",
-      "home_starter_era": 3.98,
-      "away_starter_era": 4.34,
-      "home_starter_whip": 1.2,
-      "away_starter_whip": 1.37,
-      "home_bullpen_workload_3d": 2.0,
-      "away_bullpen_workload_3d": 3.0,
-      "park_run_factor": 0.947,
-      "competitive_context_used_in_score": false,
-      "competitive_context_monitored": true,
-      "competitive_context_adjustment_runs": 0.0,
-      "home_competitive_context": {
-        "wins": 82.0,
-        "losses": 94.0,
-        "games_played": 181.0,
-        "win_pct": 0.4530386740331492,
-        "games_remaining": 0.0,
-        "rank_group": 11,
-        "playoff_cutoff_rank": 6,
-        "gap_to_cutoff_wins": -10.0,
-        "wins_needed_to_current_cutoff": 11.0,
-        "wins_of_cushion_over_current_cutoff": 0.0,
-        "urgency_score": 0.0875,
-        "rest_rotation_risk": 0.55,
-        "seed_pressure_score": 1.0,
-        "seed_locked_proxy": 0.0,
-        "postseason_status": "eliminated",
-        "context_confidence": 1.0
-      },
-      "away_competitive_context": {
-        "wins": 92.0,
-        "losses": 89.0,
-        "games_played": 181.0,
-        "win_pct": 0.5082872928176796,
-        "games_remaining": 0.0,
-        "rank_group": 7,
-        "playoff_cutoff_rank": 6,
-        "gap_to_cutoff_wins": -2.0,
-        "wins_needed_to_current_cutoff": 3.0,
-        "wins_of_cushion_over_current_cutoff": 0.0,
-        "urgency_score": 0.0875,
-        "rest_rotation_risk": 0.55,
-        "seed_pressure_score": 0.0,
-        "seed_locked_proxy": 0.0,
-        "postseason_status": "eliminated",
-        "context_confidence": 1.0
-      },
-      "home_official_standings": {
-        "wins": 74,
-        "losses": 85,
-        "winning_percentage": ".465",
-        "division": "American League Central",
-        "division_rank": "4",
-        "league_rank": "11",
-        "wild_card_rank": "8",
-        "games_back": "9.0",
-        "wild_card_games_back": "8.0",
-        "magic_number": null,
-        "elimination_number": "E",
-        "clinched": false,
-        "last_ten": [
-          {
-            "wins": 40,
-            "losses": 38,
-            "type": "home",
-            "pct": ".513"
-          },
-          {
-            "wins": 34,
-            "losses": 47,
-            "type": "away",
-            "pct": ".420"
-          },
-          {
-            "wins": 19,
-            "losses": 29,
-            "type": "left",
-            "pct": ".396"
-          },
-          {
-            "wins": 10,
-            "losses": 16,
-            "type": "leftHome",
-            "pct": ".385"
-          },
-          {
-            "wins": 9,
-            "losses": 13,
-            "type": "leftAway",
-            "pct": ".409"
-          },
-          {
-            "wins": 30,
-            "losses": 22,
-            "type": "rightHome",
-            "pct": ".577"
-          },
-          {
-            "wins": 25,
-            "losses": 34,
-            "type": "rightAway",
-            "pct": ".424"
-          },
-          {
-            "wins": 55,
-            "losses": 56,
-            "type": "right",
-            "pct": ".495"
-          },
-          {
-            "wins": 4,
-            "losses": 6,
-            "type": "lastTen",
-            "pct": ".400"
-          },
-          {
-            "wins": 5,
-            "losses": 9,
-            "type": "extraInning",
-            "pct": ".357"
-          },
-          {
-            "wins": 15,
-            "losses": 27,
-            "type": "oneRun",
-            "pct": ".357"
-          },
-          {
-            "wins": 27,
-            "losses": 42,
-            "type": "winners",
-            "pct": ".391"
-          },
-          {
-            "wins": 29,
-            "losses": 33,
-            "type": "day",
-            "pct": ".468"
-          },
-          {
-            "wins": 45,
-            "losses": 52,
-            "type": "night",
-            "pct": ".464"
-          },
-          {
-            "wins": 67,
-            "losses": 80,
-            "type": "grass",
-            "pct": ".456"
-          },
-          {
-            "wins": 7,
-            "losses": 5,
-            "type": "turf",
-            "pct": ".583"
-          }
-        ],
-        "as_of": "2026-09-24"
-      },
-      "away_official_standings": {
-        "wins": 81,
-        "losses": 78,
-        "winning_percentage": ".509",
-        "division": "National League Central",
-        "division_rank": "3",
-        "league_rank": "8",
-        "wild_card_rank": "5",
-        "games_back": "19.0",
-        "wild_card_games_back": "6.0",
-        "magic_number": null,
-        "elimination_number": "E",
-        "clinched": false,
-        "last_ten": [
-          {
-            "wins": 44,
-            "losses": 37,
-            "type": "home",
-            "pct": ".543"
-          },
-          {
-            "wins": 37,
-            "losses": 41,
-            "type": "away",
-            "pct": ".474"
-          },
-          {
-            "wins": 18,
-            "losses": 33,
-            "type": "left",
-            "pct": ".353"
-          },
-          {
-            "wins": 8,
-            "losses": 15,
-            "type": "leftHome",
-            "pct": ".348"
-          },
-          {
-            "wins": 10,
-            "losses": 18,
-            "type": "leftAway",
-            "pct": ".357"
-          },
-          {
-            "wins": 36,
-            "losses": 22,
-            "type": "rightHome",
-            "pct": ".621"
-          },
-          {
-            "wins": 27,
-            "losses": 23,
-            "type": "rightAway",
-            "pct": ".540"
-          },
-          {
-            "wins": 63,
-            "losses": 45,
-            "type": "right",
-            "pct": ".583"
-          },
-          {
-            "wins": 7,
-            "losses": 3,
-            "type": "lastTen",
-            "pct": ".700"
-          },
-          {
-            "wins": 6,
-            "losses": 10,
-            "type": "extraInning",
-            "pct": ".375"
-          },
-          {
-            "wins": 28,
-            "losses": 19,
-            "type": "oneRun",
-            "pct": ".596"
-          },
-          {
-            "wins": 33,
-            "losses": 39,
-            "type": "winners",
-            "pct": ".458"
-          },
-          {
-            "wins": 42,
-            "losses": 26,
-            "type": "day",
-            "pct": ".618"
-          },
-          {
-            "wins": 39,
-            "losses": 52,
-            "type": "night",
-            "pct": ".429"
-          },
-          {
-            "wins": 76,
-            "losses": 71,
-            "type": "grass",
-            "pct": ".517"
-          },
-          {
-            "wins": 5,
-            "losses": 7,
-            "type": "turf",
-            "pct": ".417"
-          }
-        ],
-        "as_of": "2026-09-24"
-      },
-      "availability_note": "Standings/urgency context cannot confirm a specific star will rest; actual lineup/inactive data should override the proxy when available.",
-      "market_used_in_prediction": false,
-      "market_bookmaker": "DraftKings",
-      "market_home_moneyline": -119,
-      "market_away_moneyline": -101,
-      "market_run_line_home": 1.5,
-      "market_total": 8,
-      "market_updated_at": "2026-09-25T23:57:02.109678+00:00"
-    },
-    {
-      "game_id": "823409",
-      "game_date_utc": "2026-09-25T22:40:00Z",
-      "home_team": "Philadelphia Phillies",
-      "away_team": "Tampa Bay Rays",
-      "venue": "Citizens Bank Park",
-      "status": "In Progress",
-      "predicted_home_runs": 4.95,
-      "predicted_away_runs": 3.99,
-      "predicted_total_runs": 8.94,
-      "predicted_winner": "Philadelphia Phillies",
-      "home_win_probability": 0.6238,
-      "away_win_probability": 0.3762,
-      "home_probable_pitcher": "Cristopher S\u00e1nchez",
-      "away_probable_pitcher": "Freddy Peralta",
-      "home_starter_era": 2.93,
-      "away_starter_era": 4.99,
-      "home_starter_whip": 1.22,
-      "away_starter_whip": 1.48,
-      "home_bullpen_workload_3d": 3.0,
-      "away_bullpen_workload_3d": 4.0,
-      "park_run_factor": 1.048,
-      "competitive_context_used_in_score": false,
-      "competitive_context_monitored": true,
-      "competitive_context_adjustment_runs": 0.0,
-      "home_competitive_context": {
-        "wins": 94.0,
-        "losses": 85.0,
-        "games_played": 180.0,
-        "win_pct": 0.5222222222222223,
-        "games_remaining": 0.0,
-        "rank_group": 6,
-        "playoff_cutoff_rank": 6,
-        "gap_to_cutoff_wins": 0.0,
-        "wins_needed_to_current_cutoff": 0.0,
-        "wins_of_cushion_over_current_cutoff": 0.0,
-        "urgency_score": 1.0,
-        "rest_rotation_risk": 0.1,
-        "seed_pressure_score": 0.0,
-        "seed_locked_proxy": 0.0,
-        "postseason_status": "wildcard_position",
-        "context_confidence": 1.0
-      },
-      "away_competitive_context": {
-        "wins": 104.0,
-        "losses": 77.0,
-        "games_played": 182.0,
-        "win_pct": 0.5714285714285714,
-        "games_remaining": 0.0,
-        "rank_group": 2,
-        "playoff_cutoff_rank": 6,
-        "gap_to_cutoff_wins": 12.0,
-        "wins_needed_to_current_cutoff": 0.0,
-        "wins_of_cushion_over_current_cutoff": 12.0,
-        "urgency_score": 0.325,
-        "rest_rotation_risk": 0.25,
-        "seed_pressure_score": 0.5,
-        "seed_locked_proxy": 0.0,
-        "postseason_status": "secure",
-        "context_confidence": 1.0
-      },
-      "home_official_standings": {
-        "wins": 87,
-        "losses": 72,
-        "winning_percentage": ".547",
-        "division": "National League East",
-        "division_rank": "2",
-        "league_rank": "6",
-        "wild_card_rank": "3",
-        "games_back": "6.0",
-        "wild_card_games_back": "-",
-        "magic_number": null,
-        "elimination_number": "E",
-        "clinched": false,
-        "last_ten": [
-          {
-            "wins": 42,
-            "losses": 36,
-            "type": "home",
-            "pct": ".538"
-          },
-          {
-            "wins": 45,
-            "losses": 36,
-            "type": "away",
-            "pct": ".556"
-          },
-          {
-            "wins": 29,
-            "losses": 27,
-            "type": "left",
-            "pct": ".518"
-          },
-          {
-            "wins": 13,
-            "losses": 16,
-            "type": "leftHome",
-            "pct": ".448"
-          },
-          {
-            "wins": 16,
-            "losses": 11,
-            "type": "leftAway",
-            "pct": ".593"
-          },
-          {
-            "wins": 29,
-            "losses": 20,
-            "type": "rightHome",
-            "pct": ".592"
-          },
-          {
-            "wins": 29,
-            "losses": 25,
-            "type": "rightAway",
-            "pct": ".537"
-          },
-          {
-            "wins": 58,
-            "losses": 45,
-            "type": "right",
-            "pct": ".563"
-          },
-          {
-            "wins": 5,
-            "losses": 5,
-            "type": "lastTen",
-            "pct": ".500"
-          },
-          {
-            "wins": 7,
-            "losses": 6,
-            "type": "extraInning",
-            "pct": ".538"
-          },
-          {
-            "wins": 25,
-            "losses": 16,
-            "type": "oneRun",
-            "pct": ".610"
-          },
-          {
-            "wins": 29,
-            "losses": 34,
-            "type": "winners",
-            "pct": ".460"
-          },
-          {
-            "wins": 26,
-            "losses": 25,
-            "type": "day",
-            "pct": ".510"
-          },
-          {
-            "wins": 61,
-            "losses": 47,
-            "type": "night",
-            "pct": ".565"
-          },
-          {
-            "wins": 80,
-            "losses": 66,
-            "type": "grass",
-            "pct": ".548"
-          },
-          {
-            "wins": 7,
-            "losses": 6,
-            "type": "turf",
-            "pct": ".538"
-          }
-        ],
-        "as_of": "2026-09-24"
-      },
-      "away_official_standings": {
-        "wins": 96,
-        "losses": 63,
-        "winning_percentage": ".604",
-        "division": "American League East",
-        "division_rank": "1",
-        "league_rank": "1",
-        "wild_card_rank": null,
-        "games_back": "-",
-        "wild_card_games_back": "-",
-        "magic_number": "-",
-        "elimination_number": "-",
-        "clinched": true,
-        "last_ten": [
-          {
-            "wins": 55,
-            "losses": 26,
-            "type": "home",
-            "pct": ".679"
-          },
-          {
-            "wins": 41,
-            "losses": 37,
-            "type": "away",
-            "pct": ".526"
-          },
-          {
-            "wins": 30,
-            "losses": 17,
-            "type": "left",
-            "pct": ".638"
-          },
-          {
-            "wins": 20,
-            "losses": 4,
-            "type": "leftHome",
-            "pct": ".833"
-          },
-          {
-            "wins": 10,
-            "losses": 13,
-            "type": "leftAway",
-            "pct": ".435"
-          },
-          {
-            "wins": 35,
-            "losses": 22,
-            "type": "rightHome",
-            "pct": ".614"
-          },
-          {
-            "wins": 31,
-            "losses": 24,
-            "type": "rightAway",
-            "pct": ".564"
-          },
-          {
-            "wins": 66,
-            "losses": 46,
-            "type": "right",
-            "pct": ".589"
-          },
-          {
-            "wins": 6,
-            "losses": 4,
-            "type": "lastTen",
-            "pct": ".600"
-          },
-          {
-            "wins": 8,
-            "losses": 6,
-            "type": "extraInning",
-            "pct": ".571"
-          },
-          {
-            "wins": 25,
-            "losses": 14,
-            "type": "oneRun",
-            "pct": ".641"
-          },
-          {
-            "wins": 34,
-            "losses": 25,
-            "type": "winners",
-            "pct": ".576"
-          },
-          {
-            "wins": 35,
-            "losses": 28,
-            "type": "day",
-            "pct": ".556"
-          },
-          {
-            "wins": 61,
-            "losses": 35,
-            "type": "night",
-            "pct": ".635"
-          },
-          {
-            "wins": 33,
-            "losses": 31,
-            "type": "grass",
-            "pct": ".516"
-          },
-          {
-            "wins": 63,
-            "losses": 32,
-            "type": "turf",
-            "pct": ".663"
-          }
-        ],
-        "as_of": "2026-09-24"
-      },
-      "availability_note": "Standings/urgency context cannot confirm a specific star will rest; actual lineup/inactive data should override the proxy when available.",
-      "market_used_in_prediction": false,
-      "market_bookmaker": "DraftKings",
-      "market_home_moneyline": -181,
-      "market_away_moneyline": 149,
-      "market_run_line_home": -1.5,
-      "market_total": 6.5,
-      "market_updated_at": "2026-09-25T23:57:02.109678+00:00"
-    },
-    {
-      "game_id": "822681",
-      "game_date_utc": "2026-09-25T22:45:00Z",
+      "game_id": "822678",
+      "game_date_utc": "2026-09-26T16:35:00Z",
       "home_team": "Washington Nationals",
       "away_team": "New York Mets",
       "venue": "Nationals Park",
-      "status": "In Progress",
-      "predicted_home_runs": 5.19,
-      "predicted_away_runs": 4.53,
-      "predicted_total_runs": 9.73,
+      "status": "Warmup",
+      "predicted_home_runs": 5.22,
+      "predicted_away_runs": 4.71,
+      "predicted_total_runs": 9.93,
       "predicted_winner": "Washington Nationals",
-      "home_win_probability": 0.5826,
-      "away_win_probability": 0.4174,
-      "home_probable_pitcher": "Andrew Alvarez",
-      "away_probable_pitcher": "Jefry Yan",
-      "home_starter_era": 3.17,
-      "away_starter_era": 4.34,
-      "home_starter_whip": 1.26,
-      "away_starter_whip": 1.61,
+      "home_win_probability": 0.5644,
+      "away_win_probability": 0.4356,
+      "home_probable_pitcher": "Connelly Early",
+      "away_probable_pitcher": "Jonah Tong",
+      "home_starter_era": 3.44,
+      "away_starter_era": 4.21,
+      "home_starter_whip": 1.25,
+      "away_starter_whip": 1.32,
       "home_bullpen_workload_3d": 2.0,
       "away_bullpen_workload_3d": 3.0,
-      "park_run_factor": 1.117,
+      "park_run_factor": 1.119,
       "competitive_context_used_in_score": false,
       "competitive_context_monitored": true,
       "competitive_context_adjustment_runs": 0.0,
       "home_competitive_context": {
-        "wins": 85.0,
+        "wins": 86.0,
         "losses": 93.0,
-        "games_played": 179.0,
-        "win_pct": 0.4748603351955307,
+        "games_played": 180.0,
+        "win_pct": 0.4777777777777778,
         "games_remaining": 0.0,
         "rank_group": 10,
         "playoff_cutoff_rank": 6,
-        "gap_to_cutoff_wins": -9.0,
-        "wins_needed_to_current_cutoff": 10.0,
+        "gap_to_cutoff_wins": -8.0,
+        "wins_needed_to_current_cutoff": 9.0,
         "wins_of_cushion_over_current_cutoff": 0.0,
         "urgency_score": 0.0875,
         "rest_rotation_risk": 0.55,
-        "seed_pressure_score": 1.0,
+        "seed_pressure_score": 0.5,
         "seed_locked_proxy": 0.0,
         "postseason_status": "eliminated",
         "context_confidence": 1.0
       },
       "away_competitive_context": {
         "wins": 83.0,
-        "losses": 96.0,
-        "games_played": 180.0,
-        "win_pct": 0.46111111111111114,
+        "losses": 97.0,
+        "games_played": 181.0,
+        "win_pct": 0.4585635359116022,
         "games_remaining": 0.0,
         "rank_group": 12,
         "playoff_cutoff_rank": 6,
@@ -1853,24 +77,24 @@
         "context_confidence": 1.0
       },
       "home_official_standings": {
-        "wins": 75,
+        "wins": 76,
         "losses": 84,
-        "winning_percentage": ".472",
+        "winning_percentage": ".475",
         "division": "National League East",
         "division_rank": "4",
         "league_rank": "11",
         "wild_card_rank": "8",
-        "games_back": "18.0",
-        "wild_card_games_back": "12.0",
+        "games_back": "17.0",
+        "wild_card_games_back": "11.0",
         "magic_number": null,
         "elimination_number": "E",
         "clinched": false,
         "last_ten": [
           {
-            "wins": 37,
+            "wins": 38,
             "losses": 41,
             "type": "home",
-            "pct": ".474"
+            "pct": ".481"
           },
           {
             "wins": 38,
@@ -1879,16 +103,16 @@
             "pct": ".469"
           },
           {
-            "wins": 26,
+            "wins": 27,
             "losses": 22,
             "type": "left",
-            "pct": ".542"
+            "pct": ".551"
           },
           {
-            "wins": 7,
+            "wins": 8,
             "losses": 9,
             "type": "leftHome",
-            "pct": ".438"
+            "pct": ".471"
           },
           {
             "wins": 19,
@@ -1927,10 +151,10 @@
             "pct": ".643"
           },
           {
-            "wins": 17,
+            "wins": 18,
             "losses": 22,
             "type": "oneRun",
-            "pct": ".436"
+            "pct": ".450"
           },
           {
             "wins": 31,
@@ -1945,16 +169,16 @@
             "pct": ".478"
           },
           {
-            "wins": 43,
+            "wins": 44,
             "losses": 49,
             "type": "night",
-            "pct": ".467"
+            "pct": ".473"
           },
           {
-            "wins": 70,
+            "wins": 71,
             "losses": 74,
             "type": "grass",
-            "pct": ".486"
+            "pct": ".490"
           },
           {
             "wins": 5,
@@ -1963,12 +187,12 @@
             "pct": ".333"
           }
         ],
-        "as_of": "2026-09-24"
+        "as_of": "2026-09-25"
       },
       "away_official_standings": {
         "wins": 73,
-        "losses": 86,
-        "winning_percentage": ".459",
+        "losses": 87,
+        "winning_percentage": ".456",
         "division": "National League East",
         "division_rank": "5",
         "league_rank": "13",
@@ -1987,15 +211,15 @@
           },
           {
             "wins": 37,
-            "losses": 41,
+            "losses": 42,
             "type": "away",
-            "pct": ".474"
+            "pct": ".468"
           },
           {
             "wins": 20,
-            "losses": 26,
+            "losses": 27,
             "type": "left",
-            "pct": ".435"
+            "pct": ".426"
           },
           {
             "wins": 13,
@@ -2005,9 +229,9 @@
           },
           {
             "wins": 7,
-            "losses": 13,
+            "losses": 14,
             "type": "leftAway",
-            "pct": ".350"
+            "pct": ".333"
           },
           {
             "wins": 23,
@@ -2041,9 +265,9 @@
           },
           {
             "wins": 17,
-            "losses": 22,
+            "losses": 23,
             "type": "oneRun",
-            "pct": ".436"
+            "pct": ".425"
           },
           {
             "wins": 35,
@@ -2059,15 +283,15 @@
           },
           {
             "wins": 41,
-            "losses": 53,
+            "losses": 54,
             "type": "night",
-            "pct": ".436"
+            "pct": ".432"
           },
           {
             "wins": 64,
-            "losses": 77,
+            "losses": 78,
             "type": "grass",
-            "pct": ".454"
+            "pct": ".451"
           },
           {
             "wins": 9,
@@ -2076,52 +300,348 @@
             "pct": ".500"
           }
         ],
-        "as_of": "2026-09-24"
+        "as_of": "2026-09-25"
       },
       "availability_note": "Standings/urgency context cannot confirm a specific star will rest; actual lineup/inactive data should override the proxy when available.",
       "market_used_in_prediction": false,
       "market_bookmaker": "DraftKings",
-      "market_home_moneyline": -112,
-      "market_away_moneyline": -108,
+      "market_home_moneyline": -111,
+      "market_away_moneyline": -109,
       "market_run_line_home": 1.5,
       "market_total": 8.5,
-      "market_updated_at": "2026-09-25T23:57:02.109678+00:00"
+      "market_updated_at": "2026-09-26T16:23:21.049770+00:00"
     },
     {
-      "game_id": "822760",
-      "game_date_utc": "2026-09-25T23:07:00Z",
-      "home_team": "Toronto Blue Jays",
-      "away_team": "Cincinnati Reds",
-      "venue": "Rogers Centre",
-      "status": "In Progress",
-      "predicted_home_runs": 4.89,
-      "predicted_away_runs": 3.97,
-      "predicted_total_runs": 8.86,
-      "predicted_winner": "Toronto Blue Jays",
-      "home_win_probability": 0.6207,
-      "away_win_probability": 0.3793,
-      "home_probable_pitcher": "Jos\u00e9 Soriano",
-      "away_probable_pitcher": "Nick Lodolo",
-      "home_starter_era": 4.73,
-      "away_starter_era": 5.04,
-      "home_starter_whip": 1.29,
-      "away_starter_whip": 1.47,
-      "home_bullpen_workload_3d": 3.0,
-      "away_bullpen_workload_3d": 3.18,
-      "park_run_factor": 0.934,
+      "game_id": "824219",
+      "game_date_utc": "2026-09-26T17:10:00Z",
+      "home_team": "Detroit Tigers",
+      "away_team": "Pittsburgh Pirates",
+      "venue": "Comerica Park",
+      "status": "Pre-Game",
+      "predicted_home_runs": 4.41,
+      "predicted_away_runs": 3.98,
+      "predicted_total_runs": 8.4,
+      "predicted_winner": "Detroit Tigers",
+      "home_win_probability": 0.5584,
+      "away_win_probability": 0.4416,
+      "home_probable_pitcher": "Justin Verlander",
+      "away_probable_pitcher": "Kirby Yates",
+      "home_starter_era": 12.27,
+      "away_starter_era": 2.03,
+      "home_starter_whip": 2.18,
+      "away_starter_whip": 1.28,
+      "home_bullpen_workload_3d": 2.0,
+      "away_bullpen_workload_3d": 3.0,
+      "park_run_factor": 0.956,
       "competitive_context_used_in_score": false,
       "competitive_context_monitored": true,
       "competitive_context_adjustment_runs": 0.0,
       "home_competitive_context": {
-        "wins": 88.0,
+        "wins": 83.0,
+        "losses": 94.0,
+        "games_played": 182.0,
+        "win_pct": 0.45604395604395603,
+        "games_remaining": 0.0,
+        "rank_group": 11,
+        "playoff_cutoff_rank": 6,
+        "gap_to_cutoff_wins": -9.0,
+        "wins_needed_to_current_cutoff": 10.0,
+        "wins_of_cushion_over_current_cutoff": 0.0,
+        "urgency_score": 0.0875,
+        "rest_rotation_risk": 0.55,
+        "seed_pressure_score": 0.5,
+        "seed_locked_proxy": 0.0,
+        "postseason_status": "eliminated",
+        "context_confidence": 1.0
+      },
+      "away_competitive_context": {
+        "wins": 92.0,
         "losses": 90.0,
-        "games_played": 179.0,
-        "win_pct": 0.49162011173184356,
+        "games_played": 182.0,
+        "win_pct": 0.5054945054945055,
+        "games_remaining": 0.0,
+        "rank_group": 7,
+        "playoff_cutoff_rank": 6,
+        "gap_to_cutoff_wins": -2.0,
+        "wins_needed_to_current_cutoff": 3.0,
+        "wins_of_cushion_over_current_cutoff": 0.0,
+        "urgency_score": 0.0875,
+        "rest_rotation_risk": 0.55,
+        "seed_pressure_score": 0.0,
+        "seed_locked_proxy": 0.0,
+        "postseason_status": "eliminated",
+        "context_confidence": 1.0
+      },
+      "home_official_standings": {
+        "wins": 75,
+        "losses": 85,
+        "winning_percentage": ".469",
+        "division": "American League Central",
+        "division_rank": "4",
+        "league_rank": "11",
+        "wild_card_rank": "8",
+        "games_back": "9.0",
+        "wild_card_games_back": "8.0",
+        "magic_number": null,
+        "elimination_number": "E",
+        "clinched": false,
+        "last_ten": [
+          {
+            "wins": 41,
+            "losses": 38,
+            "type": "home",
+            "pct": ".519"
+          },
+          {
+            "wins": 34,
+            "losses": 47,
+            "type": "away",
+            "pct": ".420"
+          },
+          {
+            "wins": 19,
+            "losses": 29,
+            "type": "left",
+            "pct": ".396"
+          },
+          {
+            "wins": 10,
+            "losses": 16,
+            "type": "leftHome",
+            "pct": ".385"
+          },
+          {
+            "wins": 9,
+            "losses": 13,
+            "type": "leftAway",
+            "pct": ".409"
+          },
+          {
+            "wins": 31,
+            "losses": 22,
+            "type": "rightHome",
+            "pct": ".585"
+          },
+          {
+            "wins": 25,
+            "losses": 34,
+            "type": "rightAway",
+            "pct": ".424"
+          },
+          {
+            "wins": 56,
+            "losses": 56,
+            "type": "right",
+            "pct": ".500"
+          },
+          {
+            "wins": 4,
+            "losses": 6,
+            "type": "lastTen",
+            "pct": ".400"
+          },
+          {
+            "wins": 5,
+            "losses": 9,
+            "type": "extraInning",
+            "pct": ".357"
+          },
+          {
+            "wins": 16,
+            "losses": 27,
+            "type": "oneRun",
+            "pct": ".372"
+          },
+          {
+            "wins": 28,
+            "losses": 42,
+            "type": "winners",
+            "pct": ".400"
+          },
+          {
+            "wins": 29,
+            "losses": 33,
+            "type": "day",
+            "pct": ".468"
+          },
+          {
+            "wins": 46,
+            "losses": 52,
+            "type": "night",
+            "pct": ".469"
+          },
+          {
+            "wins": 68,
+            "losses": 80,
+            "type": "grass",
+            "pct": ".459"
+          },
+          {
+            "wins": 7,
+            "losses": 5,
+            "type": "turf",
+            "pct": ".583"
+          }
+        ],
+        "as_of": "2026-09-25"
+      },
+      "away_official_standings": {
+        "wins": 81,
+        "losses": 79,
+        "winning_percentage": ".506",
+        "division": "National League Central",
+        "division_rank": "3",
+        "league_rank": "8",
+        "wild_card_rank": "5",
+        "games_back": "20.0",
+        "wild_card_games_back": "6.0",
+        "magic_number": null,
+        "elimination_number": "E",
+        "clinched": false,
+        "last_ten": [
+          {
+            "wins": 44,
+            "losses": 37,
+            "type": "home",
+            "pct": ".543"
+          },
+          {
+            "wins": 37,
+            "losses": 42,
+            "type": "away",
+            "pct": ".468"
+          },
+          {
+            "wins": 18,
+            "losses": 33,
+            "type": "left",
+            "pct": ".353"
+          },
+          {
+            "wins": 8,
+            "losses": 15,
+            "type": "leftHome",
+            "pct": ".348"
+          },
+          {
+            "wins": 10,
+            "losses": 18,
+            "type": "leftAway",
+            "pct": ".357"
+          },
+          {
+            "wins": 36,
+            "losses": 22,
+            "type": "rightHome",
+            "pct": ".621"
+          },
+          {
+            "wins": 27,
+            "losses": 24,
+            "type": "rightAway",
+            "pct": ".529"
+          },
+          {
+            "wins": 63,
+            "losses": 46,
+            "type": "right",
+            "pct": ".578"
+          },
+          {
+            "wins": 6,
+            "losses": 4,
+            "type": "lastTen",
+            "pct": ".600"
+          },
+          {
+            "wins": 6,
+            "losses": 10,
+            "type": "extraInning",
+            "pct": ".375"
+          },
+          {
+            "wins": 28,
+            "losses": 20,
+            "type": "oneRun",
+            "pct": ".583"
+          },
+          {
+            "wins": 33,
+            "losses": 39,
+            "type": "winners",
+            "pct": ".458"
+          },
+          {
+            "wins": 42,
+            "losses": 26,
+            "type": "day",
+            "pct": ".618"
+          },
+          {
+            "wins": 39,
+            "losses": 53,
+            "type": "night",
+            "pct": ".424"
+          },
+          {
+            "wins": 76,
+            "losses": 72,
+            "type": "grass",
+            "pct": ".514"
+          },
+          {
+            "wins": 5,
+            "losses": 7,
+            "type": "turf",
+            "pct": ".417"
+          }
+        ],
+        "as_of": "2026-09-25"
+      },
+      "availability_note": "Standings/urgency context cannot confirm a specific star will rest; actual lineup/inactive data should override the proxy when available.",
+      "market_used_in_prediction": false,
+      "market_bookmaker": "DraftKings",
+      "market_home_moneyline": -123,
+      "market_away_moneyline": 102,
+      "market_run_line_home": -1.5,
+      "market_total": 9,
+      "market_updated_at": "2026-09-26T16:23:21.049770+00:00"
+    },
+    {
+      "game_id": "822759",
+      "game_date_utc": "2026-09-26T19:07:00Z",
+      "home_team": "Toronto Blue Jays",
+      "away_team": "Cincinnati Reds",
+      "venue": "Rogers Centre",
+      "status": "Pre-Game",
+      "predicted_home_runs": 5.29,
+      "predicted_away_runs": 3.62,
+      "predicted_total_runs": 8.91,
+      "predicted_winner": "Toronto Blue Jays",
+      "home_win_probability": 0.7103,
+      "away_win_probability": 0.2897,
+      "home_probable_pitcher": "Trey Yesavage",
+      "away_probable_pitcher": "Rhett Lowder",
+      "home_starter_era": 3.67,
+      "away_starter_era": 6.01,
+      "home_starter_whip": 1.13,
+      "away_starter_whip": 1.55,
+      "home_bullpen_workload_3d": 3.0,
+      "away_bullpen_workload_3d": 3.18,
+      "park_run_factor": 0.936,
+      "competitive_context_used_in_score": false,
+      "competitive_context_monitored": true,
+      "competitive_context_adjustment_runs": 0.0,
+      "home_competitive_context": {
+        "wins": 89.0,
+        "losses": 90.0,
+        "games_played": 180.0,
+        "win_pct": 0.49444444444444446,
         "games_remaining": 0.0,
         "rank_group": 8,
         "playoff_cutoff_rank": 6,
-        "gap_to_cutoff_wins": -4.0,
-        "wins_needed_to_current_cutoff": 5.0,
+        "gap_to_cutoff_wins": -3.0,
+        "wins_needed_to_current_cutoff": 4.0,
         "wins_of_cushion_over_current_cutoff": 0.0,
         "urgency_score": 0.0875,
         "rest_rotation_risk": 0.55,
@@ -2132,9 +652,9 @@
       },
       "away_competitive_context": {
         "wins": 85.0,
-        "losses": 99.0,
-        "games_played": 184.0,
-        "win_pct": 0.46195652173913043,
+        "losses": 100.0,
+        "games_played": 185.0,
+        "win_pct": 0.4594594594594595,
         "games_remaining": 0.0,
         "rank_group": 11,
         "playoff_cutoff_rank": 6,
@@ -2143,15 +663,15 @@
         "wins_of_cushion_over_current_cutoff": 0.0,
         "urgency_score": 0.0875,
         "rest_rotation_risk": 0.55,
-        "seed_pressure_score": 1.0,
+        "seed_pressure_score": 0.5,
         "seed_locked_proxy": 0.0,
         "postseason_status": "eliminated",
         "context_confidence": 1.0
       },
       "home_official_standings": {
-        "wins": 77,
+        "wins": 78,
         "losses": 82,
-        "winning_percentage": ".484",
+        "winning_percentage": ".488",
         "division": "American League East",
         "division_rank": "5",
         "league_rank": "9",
@@ -2163,10 +683,10 @@
         "clinched": false,
         "last_ten": [
           {
-            "wins": 40,
+            "wins": 41,
             "losses": 38,
             "type": "home",
-            "pct": ".513"
+            "pct": ".519"
           },
           {
             "wins": 37,
@@ -2175,16 +695,16 @@
             "pct": ".457"
           },
           {
-            "wins": 23,
+            "wins": 24,
             "losses": 21,
             "type": "left",
-            "pct": ".523"
+            "pct": ".533"
           },
           {
-            "wins": 11,
+            "wins": 12,
             "losses": 12,
             "type": "leftHome",
-            "pct": ".478"
+            "pct": ".500"
           },
           {
             "wins": 12,
@@ -2223,10 +743,10 @@
             "pct": ".462"
           },
           {
-            "wins": 19,
+            "wins": 20,
             "losses": 24,
             "type": "oneRun",
-            "pct": ".442"
+            "pct": ".455"
           },
           {
             "wins": 35,
@@ -2241,10 +761,10 @@
             "pct": ".507"
           },
           {
-            "wins": 42,
+            "wins": 43,
             "losses": 48,
             "type": "night",
-            "pct": ".467"
+            "pct": ".473"
           },
           {
             "wins": 33,
@@ -2253,23 +773,23 @@
             "pct": ".478"
           },
           {
-            "wins": 44,
+            "wins": 45,
             "losses": 46,
             "type": "turf",
-            "pct": ".489"
+            "pct": ".495"
           }
         ],
-        "as_of": "2026-09-24"
+        "as_of": "2026-09-25"
       },
       "away_official_standings": {
         "wins": 74,
-        "losses": 85,
-        "winning_percentage": ".465",
+        "losses": 86,
+        "winning_percentage": ".463",
         "division": "National League Central",
         "division_rank": "5",
         "league_rank": "12",
         "wild_card_rank": "9",
-        "games_back": "26.0",
+        "games_back": "27.0",
         "wild_card_games_back": "13.0",
         "magic_number": null,
         "elimination_number": "E",
@@ -2283,9 +803,9 @@
           },
           {
             "wins": 36,
-            "losses": 42,
+            "losses": 43,
             "type": "away",
-            "pct": ".462"
+            "pct": ".456"
           },
           {
             "wins": 18,
@@ -2313,15 +833,15 @@
           },
           {
             "wins": 29,
-            "losses": 30,
+            "losses": 31,
             "type": "rightAway",
-            "pct": ".492"
+            "pct": ".483"
           },
           {
             "wins": 56,
-            "losses": 59,
+            "losses": 60,
             "type": "right",
-            "pct": ".487"
+            "pct": ".483"
           },
           {
             "wins": 4,
@@ -2337,9 +857,9 @@
           },
           {
             "wins": 26,
-            "losses": 16,
+            "losses": 17,
             "type": "oneRun",
-            "pct": ".619"
+            "pct": ".605"
           },
           {
             "wins": 36,
@@ -2355,9 +875,9 @@
           },
           {
             "wins": 43,
-            "losses": 56,
+            "losses": 57,
             "type": "night",
-            "pct": ".434"
+            "pct": ".430"
           },
           {
             "wins": 66,
@@ -2367,57 +887,649 @@
           },
           {
             "wins": 8,
-            "losses": 5,
+            "losses": 6,
             "type": "turf",
-            "pct": ".615"
+            "pct": ".571"
           }
         ],
-        "as_of": "2026-09-24"
+        "as_of": "2026-09-25"
       },
       "availability_note": "Standings/urgency context cannot confirm a specific star will rest; actual lineup/inactive data should override the proxy when available.",
       "market_used_in_prediction": false,
       "market_bookmaker": "DraftKings",
-      "market_home_moneyline": -161,
-      "market_away_moneyline": 133,
+      "market_home_moneyline": -167,
+      "market_away_moneyline": 138,
       "market_run_line_home": -1.5,
-      "market_total": 7.5,
-      "market_updated_at": "2026-09-25T23:57:02.109678+00:00"
+      "market_total": 8,
+      "market_updated_at": "2026-09-26T16:23:21.049770+00:00"
     },
     {
-      "game_id": "823816",
-      "game_date_utc": "2026-09-25T23:10:00Z",
-      "home_team": "Miami Marlins",
-      "away_team": "Atlanta Braves",
-      "venue": "loanDepot park",
-      "status": "In Progress",
-      "predicted_home_runs": 4.19,
-      "predicted_away_runs": 4.27,
-      "predicted_total_runs": 8.46,
-      "predicted_winner": "Atlanta Braves",
-      "home_win_probability": 0.4879,
-      "away_win_probability": 0.5121,
-      "home_probable_pitcher": "Eury P\u00e9rez",
-      "away_probable_pitcher": "Ray Kerr",
-      "home_starter_era": 4.14,
-      "away_starter_era": 1.76,
-      "home_starter_whip": 1.27,
-      "away_starter_whip": 0.52,
-      "home_bullpen_workload_3d": 3.54,
-      "away_bullpen_workload_3d": 3.18,
-      "park_run_factor": 0.976,
+      "game_id": "823165",
+      "game_date_utc": "2026-09-26T20:05:00Z",
+      "home_team": "San Francisco Giants",
+      "away_team": "Los Angeles Dodgers",
+      "venue": "Oracle Park",
+      "status": "Scheduled",
+      "predicted_home_runs": 3.69,
+      "predicted_away_runs": 4.31,
+      "predicted_total_runs": 8.0,
+      "predicted_winner": "Los Angeles Dodgers",
+      "home_win_probability": 0.4155,
+      "away_win_probability": 0.5845,
+      "home_probable_pitcher": "Matt Wilkinson",
+      "away_probable_pitcher": "Blake Snell",
+      "home_starter_era": 3.65,
+      "away_starter_era": 1.86,
+      "home_starter_whip": 1.01,
+      "away_starter_whip": 1.09,
+      "home_bullpen_workload_3d": 2.0,
+      "away_bullpen_workload_3d": 3.0,
+      "park_run_factor": 0.968,
+      "competitive_context_used_in_score": false,
+      "competitive_context_monitored": true,
+      "competitive_context_adjustment_runs": 0.0,
+      "home_competitive_context": {
+        "wins": 81.0,
+        "losses": 104.0,
+        "games_played": 186.0,
+        "win_pct": 0.43548387096774194,
+        "games_remaining": 0.0,
+        "rank_group": 13,
+        "playoff_cutoff_rank": 6,
+        "gap_to_cutoff_wins": -13.0,
+        "wins_needed_to_current_cutoff": 14.0,
+        "wins_of_cushion_over_current_cutoff": 0.0,
+        "urgency_score": 0.0875,
+        "rest_rotation_risk": 0.55,
+        "seed_pressure_score": 0.0,
+        "seed_locked_proxy": 0.0,
+        "postseason_status": "eliminated",
+        "context_confidence": 1.0
+      },
+      "away_competitive_context": {
+        "wins": 113.0,
+        "losses": 68.0,
+        "games_played": 183.0,
+        "win_pct": 0.6174863387978142,
+        "games_remaining": 0.0,
+        "rank_group": 1,
+        "playoff_cutoff_rank": 6,
+        "gap_to_cutoff_wins": 0.0,
+        "wins_needed_to_current_cutoff": 0.0,
+        "wins_of_cushion_over_current_cutoff": 0.0,
+        "urgency_score": 0.25,
+        "rest_rotation_risk": 0.25,
+        "seed_pressure_score": 0.0,
+        "seed_locked_proxy": 0.0,
+        "postseason_status": "secure",
+        "context_confidence": 1.0
+      },
+      "home_official_standings": {
+        "wins": 65,
+        "losses": 95,
+        "winning_percentage": ".406",
+        "division": "National League West",
+        "division_rank": "4",
+        "league_rank": "14",
+        "wild_card_rank": "11",
+        "games_back": "33.0",
+        "wild_card_games_back": "22.0",
+        "magic_number": null,
+        "elimination_number": "E",
+        "clinched": false,
+        "last_ten": [
+          {
+            "wins": 37,
+            "losses": 42,
+            "type": "home",
+            "pct": ".468"
+          },
+          {
+            "wins": 28,
+            "losses": 53,
+            "type": "away",
+            "pct": ".346"
+          },
+          {
+            "wins": 19,
+            "losses": 31,
+            "type": "left",
+            "pct": ".380"
+          },
+          {
+            "wins": 12,
+            "losses": 12,
+            "type": "leftHome",
+            "pct": ".500"
+          },
+          {
+            "wins": 7,
+            "losses": 19,
+            "type": "leftAway",
+            "pct": ".269"
+          },
+          {
+            "wins": 25,
+            "losses": 30,
+            "type": "rightHome",
+            "pct": ".455"
+          },
+          {
+            "wins": 21,
+            "losses": 34,
+            "type": "rightAway",
+            "pct": ".382"
+          },
+          {
+            "wins": 46,
+            "losses": 64,
+            "type": "right",
+            "pct": ".418"
+          },
+          {
+            "wins": 3,
+            "losses": 7,
+            "type": "lastTen",
+            "pct": ".300"
+          },
+          {
+            "wins": 7,
+            "losses": 6,
+            "type": "extraInning",
+            "pct": ".538"
+          },
+          {
+            "wins": 16,
+            "losses": 28,
+            "type": "oneRun",
+            "pct": ".364"
+          },
+          {
+            "wins": 31,
+            "losses": 52,
+            "type": "winners",
+            "pct": ".373"
+          },
+          {
+            "wins": 23,
+            "losses": 38,
+            "type": "day",
+            "pct": ".377"
+          },
+          {
+            "wins": 42,
+            "losses": 57,
+            "type": "night",
+            "pct": ".424"
+          },
+          {
+            "wins": 63,
+            "losses": 82,
+            "type": "grass",
+            "pct": ".434"
+          },
+          {
+            "wins": 2,
+            "losses": 13,
+            "type": "turf",
+            "pct": ".133"
+          }
+        ],
+        "as_of": "2026-09-25"
+      },
+      "away_official_standings": {
+        "wins": 98,
+        "losses": 62,
+        "winning_percentage": ".613",
+        "division": "National League West",
+        "division_rank": "1",
+        "league_rank": "2",
+        "wild_card_rank": null,
+        "games_back": "-",
+        "wild_card_games_back": "-",
+        "magic_number": "-",
+        "elimination_number": "-",
+        "clinched": true,
+        "last_ten": [
+          {
+            "wins": 51,
+            "losses": 30,
+            "type": "home",
+            "pct": ".630"
+          },
+          {
+            "wins": 47,
+            "losses": 32,
+            "type": "away",
+            "pct": ".595"
+          },
+          {
+            "wins": 31,
+            "losses": 23,
+            "type": "left",
+            "pct": ".574"
+          },
+          {
+            "wins": 19,
+            "losses": 12,
+            "type": "leftHome",
+            "pct": ".613"
+          },
+          {
+            "wins": 12,
+            "losses": 11,
+            "type": "leftAway",
+            "pct": ".522"
+          },
+          {
+            "wins": 32,
+            "losses": 18,
+            "type": "rightHome",
+            "pct": ".640"
+          },
+          {
+            "wins": 35,
+            "losses": 21,
+            "type": "rightAway",
+            "pct": ".625"
+          },
+          {
+            "wins": 67,
+            "losses": 39,
+            "type": "right",
+            "pct": ".632"
+          },
+          {
+            "wins": 7,
+            "losses": 3,
+            "type": "lastTen",
+            "pct": ".700"
+          },
+          {
+            "wins": 5,
+            "losses": 1,
+            "type": "extraInning",
+            "pct": ".833"
+          },
+          {
+            "wins": 30,
+            "losses": 23,
+            "type": "oneRun",
+            "pct": ".566"
+          },
+          {
+            "wins": 36,
+            "losses": 36,
+            "type": "winners",
+            "pct": ".500"
+          },
+          {
+            "wins": 20,
+            "losses": 19,
+            "type": "day",
+            "pct": ".513"
+          },
+          {
+            "wins": 78,
+            "losses": 43,
+            "type": "night",
+            "pct": ".645"
+          },
+          {
+            "wins": 92,
+            "losses": 55,
+            "type": "grass",
+            "pct": ".626"
+          },
+          {
+            "wins": 6,
+            "losses": 7,
+            "type": "turf",
+            "pct": ".462"
+          }
+        ],
+        "as_of": "2026-09-25"
+      },
+      "availability_note": "Standings/urgency context cannot confirm a specific star will rest; actual lineup/inactive data should override the proxy when available.",
+      "market_used_in_prediction": false,
+      "market_bookmaker": "DraftKings",
+      "market_home_moneyline": 231,
+      "market_away_moneyline": -289,
+      "market_run_line_home": 2,
+      "market_total": 7.5,
+      "market_updated_at": "2026-09-26T16:23:21.049770+00:00"
+    },
+    {
+      "game_id": "823653",
+      "game_date_utc": "2026-09-26T20:10:00Z",
+      "home_team": "Minnesota Twins",
+      "away_team": "Texas Rangers",
+      "venue": "Target Field",
+      "status": "Scheduled",
+      "predicted_home_runs": 4.73,
+      "predicted_away_runs": 4.44,
+      "predicted_total_runs": 9.18,
+      "predicted_winner": "Minnesota Twins",
+      "home_win_probability": 0.5378,
+      "away_win_probability": 0.4622,
+      "home_probable_pitcher": "Bailey Ober",
+      "away_probable_pitcher": "Nathan Eovaldi",
+      "home_starter_era": 4.21,
+      "away_starter_era": 4.27,
+      "home_starter_whip": 1.26,
+      "away_starter_whip": 1.21,
+      "home_bullpen_workload_3d": 2.0,
+      "away_bullpen_workload_3d": 3.0,
+      "park_run_factor": 1.045,
       "competitive_context_used_in_score": false,
       "competitive_context_monitored": true,
       "competitive_context_adjustment_runs": 0.0,
       "home_competitive_context": {
         "wins": 86.0,
+        "losses": 95.0,
+        "games_played": 182.0,
+        "win_pct": 0.4725274725274725,
+        "games_remaining": 0.0,
+        "rank_group": 10,
+        "playoff_cutoff_rank": 6,
+        "gap_to_cutoff_wins": -6.0,
+        "wins_needed_to_current_cutoff": 7.0,
+        "wins_of_cushion_over_current_cutoff": 0.0,
+        "urgency_score": 0.0875,
+        "rest_rotation_risk": 0.55,
+        "seed_pressure_score": 0.0,
+        "seed_locked_proxy": 0.0,
+        "postseason_status": "eliminated",
+        "context_confidence": 1.0
+      },
+      "away_competitive_context": {
+        "wins": 93.0,
+        "losses": 88.0,
+        "games_played": 181.0,
+        "win_pct": 0.5138121546961326,
+        "games_remaining": 0.0,
+        "rank_group": 5,
+        "playoff_cutoff_rank": 6,
+        "gap_to_cutoff_wins": 0.0,
+        "wins_needed_to_current_cutoff": 0.0,
+        "wins_of_cushion_over_current_cutoff": 0.0,
+        "urgency_score": 1.0,
+        "rest_rotation_risk": 0.1,
+        "seed_pressure_score": 0.5,
+        "seed_locked_proxy": 0.0,
+        "postseason_status": "division_leader",
+        "context_confidence": 1.0
+      },
+      "home_official_standings": {
+        "wins": 76,
+        "losses": 84,
+        "winning_percentage": ".475",
+        "division": "American League Central",
+        "division_rank": "3",
+        "league_rank": "10",
+        "wild_card_rank": "7",
+        "games_back": "8.0",
+        "wild_card_games_back": "7.0",
+        "magic_number": null,
+        "elimination_number": "E",
+        "clinched": false,
+        "last_ten": [
+          {
+            "wins": 41,
+            "losses": 38,
+            "type": "home",
+            "pct": ".519"
+          },
+          {
+            "wins": 35,
+            "losses": 46,
+            "type": "away",
+            "pct": ".432"
+          },
+          {
+            "wins": 23,
+            "losses": 27,
+            "type": "left",
+            "pct": ".460"
+          },
+          {
+            "wins": 12,
+            "losses": 12,
+            "type": "leftHome",
+            "pct": ".500"
+          },
+          {
+            "wins": 11,
+            "losses": 15,
+            "type": "leftAway",
+            "pct": ".423"
+          },
+          {
+            "wins": 29,
+            "losses": 26,
+            "type": "rightHome",
+            "pct": ".527"
+          },
+          {
+            "wins": 24,
+            "losses": 31,
+            "type": "rightAway",
+            "pct": ".436"
+          },
+          {
+            "wins": 53,
+            "losses": 57,
+            "type": "right",
+            "pct": ".482"
+          },
+          {
+            "wins": 6,
+            "losses": 4,
+            "type": "lastTen",
+            "pct": ".600"
+          },
+          {
+            "wins": 5,
+            "losses": 6,
+            "type": "extraInning",
+            "pct": ".455"
+          },
+          {
+            "wins": 18,
+            "losses": 23,
+            "type": "oneRun",
+            "pct": ".439"
+          },
+          {
+            "wins": 29,
+            "losses": 42,
+            "type": "winners",
+            "pct": ".408"
+          },
+          {
+            "wins": 31,
+            "losses": 33,
+            "type": "day",
+            "pct": ".484"
+          },
+          {
+            "wins": 45,
+            "losses": 51,
+            "type": "night",
+            "pct": ".469"
+          },
+          {
+            "wins": 69,
+            "losses": 79,
+            "type": "grass",
+            "pct": ".466"
+          },
+          {
+            "wins": 7,
+            "losses": 5,
+            "type": "turf",
+            "pct": ".583"
+          }
+        ],
+        "as_of": "2026-09-25"
+      },
+      "away_official_standings": {
+        "wins": 79,
+        "losses": 81,
+        "winning_percentage": ".494",
+        "division": "American League West",
+        "division_rank": "2",
+        "league_rank": "7",
+        "wild_card_rank": "4",
+        "games_back": "-",
+        "wild_card_games_back": "4.0",
+        "magic_number": null,
+        "elimination_number": "-",
+        "clinched": false,
+        "last_ten": [
+          {
+            "wins": 45,
+            "losses": 36,
+            "type": "home",
+            "pct": ".556"
+          },
+          {
+            "wins": 34,
+            "losses": 45,
+            "type": "away",
+            "pct": ".430"
+          },
+          {
+            "wins": 28,
+            "losses": 20,
+            "type": "left",
+            "pct": ".583"
+          },
+          {
+            "wins": 19,
+            "losses": 5,
+            "type": "leftHome",
+            "pct": ".792"
+          },
+          {
+            "wins": 9,
+            "losses": 15,
+            "type": "leftAway",
+            "pct": ".375"
+          },
+          {
+            "wins": 26,
+            "losses": 31,
+            "type": "rightHome",
+            "pct": ".456"
+          },
+          {
+            "wins": 25,
+            "losses": 30,
+            "type": "rightAway",
+            "pct": ".455"
+          },
+          {
+            "wins": 51,
+            "losses": 61,
+            "type": "right",
+            "pct": ".455"
+          },
+          {
+            "wins": 5,
+            "losses": 5,
+            "type": "lastTen",
+            "pct": ".500"
+          },
+          {
+            "wins": 4,
+            "losses": 2,
+            "type": "extraInning",
+            "pct": ".667"
+          },
+          {
+            "wins": 23,
+            "losses": 17,
+            "type": "oneRun",
+            "pct": ".575"
+          },
+          {
+            "wins": 29,
+            "losses": 29,
+            "type": "winners",
+            "pct": ".500"
+          },
+          {
+            "wins": 25,
+            "losses": 26,
+            "type": "day",
+            "pct": ".490"
+          },
+          {
+            "wins": 54,
+            "losses": 55,
+            "type": "night",
+            "pct": ".495"
+          },
+          {
+            "wins": 26,
+            "losses": 40,
+            "type": "grass",
+            "pct": ".394"
+          },
+          {
+            "wins": 53,
+            "losses": 41,
+            "type": "turf",
+            "pct": ".564"
+          }
+        ],
+        "as_of": "2026-09-25"
+      },
+      "availability_note": "Standings/urgency context cannot confirm a specific star will rest; actual lineup/inactive data should override the proxy when available.",
+      "market_used_in_prediction": false,
+      "market_bookmaker": "DraftKings",
+      "market_home_moneyline": 104,
+      "market_away_moneyline": -125,
+      "market_run_line_home": 1.5,
+      "market_total": 8,
+      "market_updated_at": "2026-09-26T16:23:21.049770+00:00"
+    },
+    {
+      "game_id": "823813",
+      "game_date_utc": "2026-09-26T20:10:00Z",
+      "home_team": "Miami Marlins",
+      "away_team": "Atlanta Braves",
+      "venue": "loanDepot park",
+      "status": "Scheduled",
+      "predicted_home_runs": 4.1,
+      "predicted_away_runs": 4.18,
+      "predicted_total_runs": 8.28,
+      "predicted_winner": "Atlanta Braves",
+      "home_win_probability": 0.4886,
+      "away_win_probability": 0.5114,
+      "home_probable_pitcher": "Jack Ralston",
+      "away_probable_pitcher": "Brent Suter",
+      "home_starter_era": 4.5,
+      "away_starter_era": 1.82,
+      "home_starter_whip": 1.25,
+      "away_starter_whip": 1.22,
+      "home_bullpen_workload_3d": 3.0,
+      "away_bullpen_workload_3d": 3.18,
+      "park_run_factor": 0.963,
+      "competitive_context_used_in_score": false,
+      "competitive_context_monitored": true,
+      "competitive_context_adjustment_runs": 0.0,
+      "home_competitive_context": {
+        "wins": 87.0,
         "losses": 90.0,
-        "games_played": 179.0,
-        "win_pct": 0.48044692737430167,
+        "games_played": 180.0,
+        "win_pct": 0.48333333333333334,
         "games_remaining": 0.0,
         "rank_group": 9,
         "playoff_cutoff_rank": 6,
-        "gap_to_cutoff_wins": -8.0,
-        "wins_needed_to_current_cutoff": 9.0,
+        "gap_to_cutoff_wins": -7.0,
+        "wins_needed_to_current_cutoff": 8.0,
         "wins_of_cushion_over_current_cutoff": 0.0,
         "urgency_score": 0.0875,
         "rest_rotation_risk": 0.55,
@@ -2428,41 +1540,41 @@
       },
       "away_competitive_context": {
         "wins": 109.0,
-        "losses": 72.0,
-        "games_played": 183.0,
-        "win_pct": 0.5956284153005464,
+        "losses": 73.0,
+        "games_played": 184.0,
+        "win_pct": 0.592391304347826,
         "games_remaining": 0.0,
         "rank_group": 3,
         "playoff_cutoff_rank": 6,
         "gap_to_cutoff_wins": 0.0,
         "wins_needed_to_current_cutoff": 0.0,
         "wins_of_cushion_over_current_cutoff": 0.0,
-        "urgency_score": 0.325,
+        "urgency_score": 0.25,
         "rest_rotation_risk": 0.25,
-        "seed_pressure_score": 0.5,
+        "seed_pressure_score": 0.0,
         "seed_locked_proxy": 0.0,
         "postseason_status": "secure",
         "context_confidence": 1.0
       },
       "home_official_standings": {
-        "wins": 78,
+        "wins": 79,
         "losses": 81,
-        "winning_percentage": ".491",
+        "winning_percentage": ".494",
         "division": "National League East",
         "division_rank": "3",
         "league_rank": "9",
         "wild_card_rank": "6",
-        "games_back": "15.0",
-        "wild_card_games_back": "9.0",
+        "games_back": "14.0",
+        "wild_card_games_back": "8.0",
         "magic_number": null,
         "elimination_number": "E",
         "clinched": false,
         "last_ten": [
           {
-            "wins": 45,
+            "wins": 46,
             "losses": 33,
             "type": "home",
-            "pct": ".577"
+            "pct": ".582"
           },
           {
             "wins": 33,
@@ -2471,16 +1583,16 @@
             "pct": ".407"
           },
           {
-            "wins": 17,
+            "wins": 18,
             "losses": 27,
             "type": "left",
-            "pct": ".386"
+            "pct": ".400"
           },
           {
-            "wins": 7,
+            "wins": 8,
             "losses": 14,
             "type": "leftHome",
-            "pct": ".333"
+            "pct": ".364"
           },
           {
             "wins": 10,
@@ -2525,10 +1637,10 @@
             "pct": ".500"
           },
           {
-            "wins": 31,
+            "wins": 32,
             "losses": 46,
             "type": "winners",
-            "pct": ".403"
+            "pct": ".410"
           },
           {
             "wins": 36,
@@ -2537,10 +1649,10 @@
             "pct": ".563"
           },
           {
-            "wins": 42,
+            "wins": 43,
             "losses": 53,
             "type": "night",
-            "pct": ".442"
+            "pct": ".448"
           },
           {
             "wins": 29,
@@ -2549,18 +1661,18 @@
             "pct": ".403"
           },
           {
-            "wins": 49,
+            "wins": 50,
             "losses": 38,
             "type": "turf",
-            "pct": ".563"
+            "pct": ".568"
           }
         ],
-        "as_of": "2026-09-24"
+        "as_of": "2026-09-25"
       },
       "away_official_standings": {
         "wins": 93,
-        "losses": 66,
-        "winning_percentage": ".585",
+        "losses": 67,
+        "winning_percentage": ".581",
         "division": "National League East",
         "division_rank": "1",
         "league_rank": "3",
@@ -2579,9 +1691,9 @@
           },
           {
             "wins": 41,
-            "losses": 37,
+            "losses": 38,
             "type": "away",
-            "pct": ".526"
+            "pct": ".519"
           },
           {
             "wins": 33,
@@ -2609,15 +1721,15 @@
           },
           {
             "wins": 24,
-            "losses": 23,
+            "losses": 24,
             "type": "rightAway",
-            "pct": ".511"
+            "pct": ".500"
           },
           {
             "wins": 60,
-            "losses": 41,
+            "losses": 42,
             "type": "right",
-            "pct": ".594"
+            "pct": ".588"
           },
           {
             "wins": 5,
@@ -2651,9 +1763,9 @@
           },
           {
             "wins": 65,
-            "losses": 46,
+            "losses": 47,
             "type": "night",
-            "pct": ".586"
+            "pct": ".580"
           },
           {
             "wins": 88,
@@ -2663,12 +1775,12 @@
           },
           {
             "wins": 5,
-            "losses": 3,
+            "losses": 4,
             "type": "turf",
-            "pct": ".625"
+            "pct": ".556"
           }
         ],
-        "as_of": "2026-09-24"
+        "as_of": "2026-09-25"
       },
       "availability_note": "Standings/urgency context cannot confirm a specific star will rest; actual lineup/inactive data should override the proxy when available.",
       "market_used_in_prediction": false,
@@ -2676,39 +1788,39 @@
       "market_home_moneyline": -103,
       "market_away_moneyline": -117,
       "market_run_line_home": 1.5,
-      "market_total": 8,
-      "market_updated_at": "2026-09-25T23:57:02.109678+00:00"
+      "market_total": 8.5,
+      "market_updated_at": "2026-09-26T16:23:21.049770+00:00"
     },
     {
-      "game_id": "824058",
-      "game_date_utc": "2026-09-25T23:40:00Z",
+      "game_id": "824057",
+      "game_date_utc": "2026-09-26T23:10:00Z",
       "home_team": "Kansas City Royals",
       "away_team": "Cleveland Guardians",
       "venue": "Kauffman Stadium",
-      "status": "Warmup",
-      "predicted_home_runs": 4.47,
-      "predicted_away_runs": 4.95,
-      "predicted_total_runs": 9.42,
-      "predicted_winner": "Cleveland Guardians",
-      "home_win_probability": 0.4387,
-      "away_win_probability": 0.5613,
-      "home_probable_pitcher": "Noah Cameron",
-      "away_probable_pitcher": "Gavin Williams",
-      "home_starter_era": 3.92,
-      "away_starter_era": 3.63,
-      "home_starter_whip": 1.2,
-      "away_starter_whip": 1.08,
+      "status": "Scheduled",
+      "predicted_home_runs": 5.05,
+      "predicted_away_runs": 4.92,
+      "predicted_total_runs": 9.97,
+      "predicted_winner": "Kansas City Royals",
+      "home_win_probability": 0.5165,
+      "away_win_probability": 0.4835,
+      "home_probable_pitcher": "Michael Wacha",
+      "away_probable_pitcher": "Tanner Bibee",
+      "home_starter_era": 3.33,
+      "away_starter_era": 4.35,
+      "home_starter_whip": 1.11,
+      "away_starter_whip": 1.22,
       "home_bullpen_workload_3d": 3.0,
       "away_bullpen_workload_3d": 3.0,
-      "park_run_factor": 1.128,
+      "park_run_factor": 1.143,
       "competitive_context_used_in_score": false,
       "competitive_context_monitored": true,
       "competitive_context_adjustment_runs": 0.0,
       "home_competitive_context": {
         "wins": 74.0,
-        "losses": 108.0,
-        "games_played": 182.0,
-        "win_pct": 0.4065934065934066,
+        "losses": 109.0,
+        "games_played": 183.0,
+        "win_pct": 0.40437158469945356,
         "games_remaining": 0.0,
         "rank_group": 15,
         "playoff_cutoff_rank": 6,
@@ -2723,42 +1835,42 @@
         "context_confidence": 1.0
       },
       "away_competitive_context": {
-        "wins": 95.0,
+        "wins": 96.0,
         "losses": 85.0,
-        "games_played": 181.0,
-        "win_pct": 0.5248618784530387,
+        "games_played": 182.0,
+        "win_pct": 0.5274725274725275,
         "games_remaining": 0.0,
         "rank_group": 3,
         "playoff_cutoff_rank": 6,
         "gap_to_cutoff_wins": 0.0,
         "wins_needed_to_current_cutoff": 0.0,
         "wins_of_cushion_over_current_cutoff": 0.0,
-        "urgency_score": 0.25,
+        "urgency_score": 0.325,
         "rest_rotation_risk": 0.25,
-        "seed_pressure_score": 0.0,
+        "seed_pressure_score": 0.5,
         "seed_locked_proxy": 0.0,
         "postseason_status": "secure",
         "context_confidence": 1.0
       },
       "home_official_standings": {
         "wins": 68,
-        "losses": 91,
-        "winning_percentage": ".428",
+        "losses": 92,
+        "winning_percentage": ".425",
         "division": "American League Central",
         "division_rank": "5",
         "league_rank": "13",
         "wild_card_rank": "10",
-        "games_back": "15.0",
-        "wild_card_games_back": "14.0",
+        "games_back": "16.0",
+        "wild_card_games_back": "15.0",
         "magic_number": null,
         "elimination_number": "E",
         "clinched": false,
         "last_ten": [
           {
             "wins": 40,
-            "losses": 38,
+            "losses": 39,
             "type": "home",
-            "pct": ".513"
+            "pct": ".506"
           },
           {
             "wins": 28,
@@ -2786,9 +1898,9 @@
           },
           {
             "wins": 32,
-            "losses": 27,
+            "losses": 28,
             "type": "rightHome",
-            "pct": ".542"
+            "pct": ".533"
           },
           {
             "wins": 22,
@@ -2798,9 +1910,9 @@
           },
           {
             "wins": 54,
-            "losses": 59,
+            "losses": 60,
             "type": "right",
-            "pct": ".478"
+            "pct": ".474"
           },
           {
             "wins": 2,
@@ -2822,9 +1934,9 @@
           },
           {
             "wins": 20,
-            "losses": 46,
+            "losses": 47,
             "type": "winners",
-            "pct": ".303"
+            "pct": ".299"
           },
           {
             "wins": 24,
@@ -2834,15 +1946,15 @@
           },
           {
             "wins": 44,
-            "losses": 59,
+            "losses": 60,
             "type": "night",
-            "pct": ".427"
+            "pct": ".423"
           },
           {
             "wins": 64,
-            "losses": 85,
+            "losses": 86,
             "type": "grass",
-            "pct": ".430"
+            "pct": ".427"
           },
           {
             "wins": 4,
@@ -2851,12 +1963,12 @@
             "pct": ".400"
           }
         ],
-        "as_of": "2026-09-24"
+        "as_of": "2026-09-25"
       },
       "away_official_standings": {
-        "wins": 83,
+        "wins": 84,
         "losses": 76,
-        "winning_percentage": ".522",
+        "winning_percentage": ".525",
         "division": "American League Central",
         "division_rank": "1",
         "league_rank": "4",
@@ -2874,16 +1986,16 @@
             "pct": ".506"
           },
           {
-            "wins": 42,
+            "wins": 43,
             "losses": 36,
             "type": "away",
-            "pct": ".538"
+            "pct": ".544"
           },
           {
-            "wins": 32,
+            "wins": 33,
             "losses": 25,
             "type": "left",
-            "pct": ".561"
+            "pct": ".569"
           },
           {
             "wins": 20,
@@ -2892,10 +2004,10 @@
             "pct": ".588"
           },
           {
-            "wins": 12,
+            "wins": 13,
             "losses": 11,
             "type": "leftAway",
-            "pct": ".522"
+            "pct": ".542"
           },
           {
             "wins": 21,
@@ -2946,16 +2058,16 @@
             "pct": ".533"
           },
           {
-            "wins": 51,
+            "wins": 52,
             "losses": 48,
             "type": "night",
-            "pct": ".515"
+            "pct": ".520"
           },
           {
-            "wins": 78,
+            "wins": 79,
             "losses": 69,
             "type": "grass",
-            "pct": ".531"
+            "pct": ".534"
           },
           {
             "wins": 5,
@@ -2964,65 +2076,65 @@
             "pct": ".417"
           }
         ],
-        "as_of": "2026-09-24"
+        "as_of": "2026-09-25"
       },
       "availability_note": "Standings/urgency context cannot confirm a specific star will rest; actual lineup/inactive data should override the proxy when available.",
       "market_used_in_prediction": false,
       "market_bookmaker": "DraftKings",
-      "market_home_moneyline": 120,
-      "market_away_moneyline": -145,
+      "market_home_moneyline": -105,
+      "market_away_moneyline": -114,
       "market_run_line_home": 1.5,
-      "market_total": 7,
-      "market_updated_at": "2026-09-25T23:57:02.109678+00:00"
+      "market_total": 8.5,
+      "market_updated_at": "2026-09-26T16:23:21.049770+00:00"
     },
     {
-      "game_id": "824544",
-      "game_date_utc": "2026-09-25T23:40:00Z",
+      "game_id": "824543",
+      "game_date_utc": "2026-09-26T23:10:00Z",
       "home_team": "Chicago White Sox",
       "away_team": "Colorado Rockies",
       "venue": "Rate Field",
-      "status": "In Progress",
-      "predicted_home_runs": 5.69,
-      "predicted_away_runs": 4.04,
-      "predicted_total_runs": 9.73,
+      "status": "Scheduled",
+      "predicted_home_runs": 5.56,
+      "predicted_away_runs": 4.15,
+      "predicted_total_runs": 9.7,
       "predicted_winner": "Chicago White Sox",
-      "home_win_probability": 0.6997,
-      "away_win_probability": 0.3003,
-      "home_probable_pitcher": "Sean Burke",
-      "away_probable_pitcher": "Tomoyuki Sugano",
-      "home_starter_era": 3.4,
-      "away_starter_era": 5.36,
-      "home_starter_whip": 1.2,
-      "away_starter_whip": 1.33,
+      "home_win_probability": 0.673,
+      "away_win_probability": 0.327,
+      "home_probable_pitcher": "Davis Martin",
+      "away_probable_pitcher": "Jose Quintana",
+      "home_starter_era": 3.84,
+      "away_starter_era": 5.4,
+      "home_starter_whip": 1.29,
+      "away_starter_whip": 1.51,
       "home_bullpen_workload_3d": 3.0,
       "away_bullpen_workload_3d": 3.0,
-      "park_run_factor": 0.995,
+      "park_run_factor": 0.99,
       "competitive_context_used_in_score": false,
       "competitive_context_monitored": true,
       "competitive_context_adjustment_runs": 0.0,
       "home_competitive_context": {
-        "wins": 91.0,
+        "wins": 92.0,
         "losses": 89.0,
-        "games_played": 181.0,
-        "win_pct": 0.5027624309392266,
+        "games_played": 182.0,
+        "win_pct": 0.5054945054945055,
         "games_remaining": 0.0,
-        "rank_group": 7,
+        "rank_group": 6,
         "playoff_cutoff_rank": 6,
-        "gap_to_cutoff_wins": -1.0,
-        "wins_needed_to_current_cutoff": 2.0,
+        "gap_to_cutoff_wins": 0.0,
+        "wins_needed_to_current_cutoff": 0.0,
         "wins_of_cushion_over_current_cutoff": 0.0,
-        "urgency_score": 0.16875,
-        "rest_rotation_risk": 0.55,
-        "seed_pressure_score": 0.5,
+        "urgency_score": 1.0,
+        "rest_rotation_risk": 0.1,
+        "seed_pressure_score": 1.0,
         "seed_locked_proxy": 0.0,
-        "postseason_status": "eliminated",
+        "postseason_status": "wildcard_position",
         "context_confidence": 1.0
       },
       "away_competitive_context": {
         "wins": 66.0,
-        "losses": 117.0,
-        "games_played": 184.0,
-        "win_pct": 0.358695652173913,
+        "losses": 118.0,
+        "games_played": 185.0,
+        "win_pct": 0.3567567567567568,
         "games_remaining": 0.0,
         "rank_group": 14,
         "playoff_cutoff_rank": 6,
@@ -3037,9 +2149,9 @@
         "context_confidence": 1.0
       },
       "home_official_standings": {
-        "wins": 82,
+        "wins": 83,
         "losses": 77,
-        "winning_percentage": ".516",
+        "winning_percentage": ".519",
         "division": "American League Central",
         "division_rank": "2",
         "league_rank": "5",
@@ -3047,14 +2159,14 @@
         "games_back": "1.0",
         "wild_card_games_back": "-",
         "magic_number": null,
-        "elimination_number": "3",
+        "elimination_number": "2",
         "clinched": true,
         "last_ten": [
           {
-            "wins": 46,
+            "wins": 47,
             "losses": 32,
             "type": "home",
-            "pct": ".590"
+            "pct": ".595"
           },
           {
             "wins": 36,
@@ -3081,10 +2193,10 @@
             "pct": ".300"
           },
           {
-            "wins": 30,
+            "wins": 31,
             "losses": 20,
             "type": "rightHome",
-            "pct": ".600"
+            "pct": ".608"
           },
           {
             "wins": 30,
@@ -3093,10 +2205,10 @@
             "pct": ".492"
           },
           {
-            "wins": 60,
+            "wins": 61,
             "losses": 51,
             "type": "right",
-            "pct": ".541"
+            "pct": ".545"
           },
           {
             "wins": 6,
@@ -3129,16 +2241,16 @@
             "pct": ".516"
           },
           {
-            "wins": 49,
+            "wins": 50,
             "losses": 46,
             "type": "night",
-            "pct": ".516"
+            "pct": ".521"
           },
           {
-            "wins": 73,
+            "wins": 74,
             "losses": 71,
             "type": "grass",
-            "pct": ".507"
+            "pct": ".510"
           },
           {
             "wins": 9,
@@ -3147,17 +2259,17 @@
             "pct": ".600"
           }
         ],
-        "as_of": "2026-09-24"
+        "as_of": "2026-09-25"
       },
       "away_official_standings": {
         "wins": 57,
-        "losses": 102,
-        "winning_percentage": ".358",
+        "losses": 103,
+        "winning_percentage": ".356",
         "division": "National League West",
         "division_rank": "5",
         "league_rank": "15",
         "wild_card_rank": "12",
-        "games_back": "40.0",
+        "games_back": "41.0",
         "wild_card_games_back": "30.0",
         "magic_number": null,
         "elimination_number": "E",
@@ -3171,9 +2283,9 @@
           },
           {
             "wins": 25,
-            "losses": 53,
+            "losses": 54,
             "type": "away",
-            "pct": ".321"
+            "pct": ".316"
           },
           {
             "wins": 17,
@@ -3201,15 +2313,15 @@
           },
           {
             "wins": 16,
-            "losses": 36,
+            "losses": 37,
             "type": "rightAway",
-            "pct": ".308"
+            "pct": ".302"
           },
           {
             "wins": 40,
-            "losses": 68,
+            "losses": 69,
             "type": "right",
-            "pct": ".370"
+            "pct": ".367"
           },
           {
             "wins": 2,
@@ -3231,9 +2343,9 @@
           },
           {
             "wins": 20,
-            "losses": 61,
+            "losses": 62,
             "type": "winners",
-            "pct": ".247"
+            "pct": ".244"
           },
           {
             "wins": 18,
@@ -3243,15 +2355,15 @@
           },
           {
             "wins": 39,
-            "losses": 65,
+            "losses": 66,
             "type": "night",
-            "pct": ".375"
+            "pct": ".371"
           },
           {
             "wins": 52,
-            "losses": 94,
+            "losses": 95,
             "type": "grass",
-            "pct": ".356"
+            "pct": ".354"
           },
           {
             "wins": 5,
@@ -3260,65 +2372,65 @@
             "pct": ".385"
           }
         ],
-        "as_of": "2026-09-24"
+        "as_of": "2026-09-25"
       },
       "availability_note": "Standings/urgency context cannot confirm a specific star will rest; actual lineup/inactive data should override the proxy when available.",
       "market_used_in_prediction": false,
       "market_bookmaker": "DraftKings",
-      "market_home_moneyline": -247,
-      "market_away_moneyline": 200,
+      "market_home_moneyline": -251,
+      "market_away_moneyline": 203,
       "market_run_line_home": -1.5,
       "market_total": 8,
-      "market_updated_at": "2026-09-25T23:57:02.109678+00:00"
+      "market_updated_at": "2026-09-26T16:23:21.049770+00:00"
     },
     {
-      "game_id": "823735",
-      "game_date_utc": "2026-09-25T23:40:00Z",
+      "game_id": "823733",
+      "game_date_utc": "2026-09-26T23:10:00Z",
       "home_team": "Milwaukee Brewers",
       "away_team": "St. Louis Cardinals",
       "venue": "American Family Field",
-      "status": "In Progress",
-      "predicted_home_runs": 5.07,
-      "predicted_away_runs": 4.28,
-      "predicted_total_runs": 9.34,
+      "status": "Scheduled",
+      "predicted_home_runs": 5.3,
+      "predicted_away_runs": 4.43,
+      "predicted_total_runs": 9.73,
       "predicted_winner": "Milwaukee Brewers",
-      "home_win_probability": 0.601,
-      "away_win_probability": 0.399,
-      "home_probable_pitcher": "Robert Gasser",
-      "away_probable_pitcher": "Michael McGreevy",
-      "home_starter_era": 4.01,
-      "away_starter_era": 3.84,
-      "home_starter_whip": 1.24,
-      "away_starter_whip": 1.25,
+      "home_win_probability": 0.6082,
+      "away_win_probability": 0.3918,
+      "home_probable_pitcher": "Dustin May",
+      "away_probable_pitcher": "Quinn Mathews",
+      "home_starter_era": 4.38,
+      "away_starter_era": 3.65,
+      "home_starter_whip": 1.28,
+      "away_starter_whip": 1.38,
       "home_bullpen_workload_3d": 3.0,
       "away_bullpen_workload_3d": 3.0,
-      "park_run_factor": 1.044,
+      "park_run_factor": 1.046,
       "competitive_context_used_in_score": false,
       "competitive_context_monitored": true,
       "competitive_context_adjustment_runs": 0.0,
       "home_competitive_context": {
-        "wins": 110.0,
+        "wins": 111.0,
         "losses": 71.0,
-        "games_played": 181.0,
-        "win_pct": 0.6077348066298343,
+        "games_played": 182.0,
+        "win_pct": 0.6098901098901099,
         "games_remaining": 0.0,
         "rank_group": 2,
         "playoff_cutoff_rank": 6,
         "gap_to_cutoff_wins": 0.0,
         "wins_needed_to_current_cutoff": 0.0,
         "wins_of_cushion_over_current_cutoff": 0.0,
-        "urgency_score": 0.325,
+        "urgency_score": 0.25,
         "rest_rotation_risk": 0.25,
-        "seed_pressure_score": 0.5,
+        "seed_pressure_score": 0.0,
         "seed_locked_proxy": 0.0,
         "postseason_status": "secure",
         "context_confidence": 1.0
       },
       "away_competitive_context": {
         "wins": 90.0,
-        "losses": 89.0,
-        "games_played": 181.0,
-        "win_pct": 0.4972375690607735,
+        "losses": 90.0,
+        "games_played": 182.0,
+        "win_pct": 0.4945054945054945,
         "games_remaining": 0.0,
         "rank_group": 8,
         "playoff_cutoff_rank": 6,
@@ -3333,9 +2445,9 @@
         "context_confidence": 1.0
       },
       "home_official_standings": {
-        "wins": 100,
+        "wins": 101,
         "losses": 59,
-        "winning_percentage": ".629",
+        "winning_percentage": ".631",
         "division": "National League Central",
         "division_rank": "1",
         "league_rank": "1",
@@ -3347,10 +2459,10 @@
         "clinched": true,
         "last_ten": [
           {
-            "wins": 52,
+            "wins": 53,
             "losses": 26,
             "type": "home",
-            "pct": ".667"
+            "pct": ".671"
           },
           {
             "wins": 48,
@@ -3377,10 +2489,10 @@
             "pct": ".667"
           },
           {
-            "wins": 33,
+            "wins": 34,
             "losses": 20,
             "type": "rightHome",
-            "pct": ".623"
+            "pct": ".630"
           },
           {
             "wins": 32,
@@ -3389,16 +2501,16 @@
             "pct": ".561"
           },
           {
-            "wins": 65,
+            "wins": 66,
             "losses": 45,
             "type": "right",
-            "pct": ".591"
+            "pct": ".595"
           },
           {
-            "wins": 7,
-            "losses": 3,
+            "wins": 8,
+            "losses": 2,
             "type": "lastTen",
-            "pct": ".700"
+            "pct": ".800"
           },
           {
             "wins": 11,
@@ -3425,16 +2537,16 @@
             "pct": ".586"
           },
           {
-            "wins": 66,
+            "wins": 67,
             "losses": 35,
             "type": "night",
-            "pct": ".653"
+            "pct": ".657"
           },
           {
-            "wins": 96,
+            "wins": 97,
             "losses": 57,
             "type": "grass",
-            "pct": ".627"
+            "pct": ".630"
           },
           {
             "wins": 4,
@@ -3443,17 +2555,17 @@
             "pct": ".667"
           }
         ],
-        "as_of": "2026-09-24"
+        "as_of": "2026-09-25"
       },
       "away_official_standings": {
         "wins": 77,
-        "losses": 82,
-        "winning_percentage": ".484",
+        "losses": 83,
+        "winning_percentage": ".481",
         "division": "National League Central",
         "division_rank": "4",
         "league_rank": "10",
         "wild_card_rank": "7",
-        "games_back": "23.0",
+        "games_back": "24.0",
         "wild_card_games_back": "10.0",
         "magic_number": null,
         "elimination_number": "E",
@@ -3467,15 +2579,15 @@
           },
           {
             "wins": 39,
-            "losses": 39,
+            "losses": 40,
             "type": "away",
-            "pct": ".500"
+            "pct": ".494"
           },
           {
             "wins": 26,
-            "losses": 21,
+            "losses": 22,
             "type": "left",
-            "pct": ".553"
+            "pct": ".542"
           },
           {
             "wins": 14,
@@ -3485,9 +2597,9 @@
           },
           {
             "wins": 12,
-            "losses": 8,
+            "losses": 9,
             "type": "leftAway",
-            "pct": ".600"
+            "pct": ".571"
           },
           {
             "wins": 24,
@@ -3508,10 +2620,10 @@
             "pct": ".455"
           },
           {
-            "wins": 4,
-            "losses": 6,
+            "wins": 3,
+            "losses": 7,
             "type": "lastTen",
-            "pct": ".400"
+            "pct": ".300"
           },
           {
             "wins": 9,
@@ -3527,9 +2639,9 @@
           },
           {
             "wins": 41,
-            "losses": 42,
+            "losses": 43,
             "type": "winners",
-            "pct": ".494"
+            "pct": ".488"
           },
           {
             "wins": 28,
@@ -3539,15 +2651,15 @@
           },
           {
             "wins": 49,
-            "losses": 48,
+            "losses": 49,
             "type": "night",
-            "pct": ".505"
+            "pct": ".500"
           },
           {
             "wins": 74,
-            "losses": 76,
+            "losses": 77,
             "type": "grass",
-            "pct": ".493"
+            "pct": ".490"
           },
           {
             "wins": 3,
@@ -3556,203 +2668,482 @@
             "pct": ".333"
           }
         ],
-        "as_of": "2026-09-24"
+        "as_of": "2026-09-25"
       },
       "availability_note": "Standings/urgency context cannot confirm a specific star will rest; actual lineup/inactive data should override the proxy when available.",
       "market_used_in_prediction": false,
       "market_bookmaker": "DraftKings",
-      "market_home_moneyline": -193,
-      "market_away_moneyline": 158,
+      "market_home_moneyline": -163,
+      "market_away_moneyline": 135,
       "market_run_line_home": -1.5,
       "market_total": 7.5,
-      "market_updated_at": "2026-09-25T23:57:02.109678+00:00"
+      "market_updated_at": "2026-09-26T16:23:21.049770+00:00"
     },
     {
-      "game_id": "823652",
-      "game_date_utc": "2026-09-26T00:10:00Z",
-      "home_team": "Minnesota Twins",
-      "away_team": "Texas Rangers",
-      "venue": "Target Field",
-      "status": "Warmup",
-      "predicted_home_runs": 4.36,
-      "predicted_away_runs": 4.31,
-      "predicted_total_runs": 8.67,
-      "predicted_winner": "Minnesota Twins",
-      "home_win_probability": 0.5067,
-      "away_win_probability": 0.4933,
-      "home_probable_pitcher": "Joe Ryan",
-      "away_probable_pitcher": "Jacob deGrom",
-      "home_starter_era": 3.83,
-      "away_starter_era": 3.86,
-      "home_starter_whip": 1.18,
-      "away_starter_whip": 1.1,
-      "home_bullpen_workload_3d": 2.0,
+      "game_id": "823407",
+      "game_date_utc": "2026-09-26T23:15:00Z",
+      "home_team": "Philadelphia Phillies",
+      "away_team": "Tampa Bay Rays",
+      "venue": "Citizens Bank Park",
+      "status": "Scheduled",
+      "predicted_home_runs": 4.0,
+      "predicted_away_runs": 4.47,
+      "predicted_total_runs": 8.47,
+      "predicted_winner": "Tampa Bay Rays",
+      "home_win_probability": 0.4379,
+      "away_win_probability": 0.5621,
+      "home_probable_pitcher": null,
+      "away_probable_pitcher": "Griffin Jax",
+      "home_starter_era": null,
+      "away_starter_era": 3.62,
+      "home_starter_whip": null,
+      "away_starter_whip": 1.19,
+      "home_bullpen_workload_3d": 3.0,
       "away_bullpen_workload_3d": 3.0,
-      "park_run_factor": 1.044,
+      "park_run_factor": 1.033,
       "competitive_context_used_in_score": false,
       "competitive_context_monitored": true,
       "competitive_context_adjustment_runs": 0.0,
       "home_competitive_context": {
-        "wins": 85.0,
-        "losses": 95.0,
+        "wins": 94.0,
+        "losses": 86.0,
         "games_played": 181.0,
-        "win_pct": 0.4696132596685083,
+        "win_pct": 0.5193370165745856,
         "games_remaining": 0.0,
-        "rank_group": 10,
-        "playoff_cutoff_rank": 6,
-        "gap_to_cutoff_wins": -7.0,
-        "wins_needed_to_current_cutoff": 8.0,
-        "wins_of_cushion_over_current_cutoff": 0.0,
-        "urgency_score": 0.0875,
-        "rest_rotation_risk": 0.55,
-        "seed_pressure_score": 0.0,
-        "seed_locked_proxy": 0.0,
-        "postseason_status": "eliminated",
-        "context_confidence": 1.0
-      },
-      "away_competitive_context": {
-        "wins": 93.0,
-        "losses": 87.0,
-        "games_played": 180.0,
-        "win_pct": 0.5166666666666667,
-        "games_remaining": 0.0,
-        "rank_group": 4,
+        "rank_group": 6,
         "playoff_cutoff_rank": 6,
         "gap_to_cutoff_wins": 0.0,
         "wins_needed_to_current_cutoff": 0.0,
         "wins_of_cushion_over_current_cutoff": 0.0,
         "urgency_score": 1.0,
         "rest_rotation_risk": 0.1,
-        "seed_pressure_score": 1.0,
+        "seed_pressure_score": 0.0,
         "seed_locked_proxy": 0.0,
-        "postseason_status": "division_leader",
+        "postseason_status": "wildcard_position",
+        "context_confidence": 1.0
+      },
+      "away_competitive_context": {
+        "wins": 105.0,
+        "losses": 77.0,
+        "games_played": 183.0,
+        "win_pct": 0.5737704918032787,
+        "games_remaining": 0.0,
+        "rank_group": 2,
+        "playoff_cutoff_rank": 6,
+        "gap_to_cutoff_wins": 13.0,
+        "wins_needed_to_current_cutoff": 0.0,
+        "wins_of_cushion_over_current_cutoff": 13.0,
+        "urgency_score": 0.325,
+        "rest_rotation_risk": 0.25,
+        "seed_pressure_score": 0.5,
+        "seed_locked_proxy": 0.0,
+        "postseason_status": "secure",
         "context_confidence": 1.0
       },
       "home_official_standings": {
-        "wins": 75,
-        "losses": 84,
-        "winning_percentage": ".472",
-        "division": "American League Central",
-        "division_rank": "3",
-        "league_rank": "10",
-        "wild_card_rank": "7",
-        "games_back": "8.0",
-        "wild_card_games_back": "7.0",
+        "wins": 87,
+        "losses": 73,
+        "winning_percentage": ".544",
+        "division": "National League East",
+        "division_rank": "2",
+        "league_rank": "6",
+        "wild_card_rank": "3",
+        "games_back": "6.0",
+        "wild_card_games_back": "-",
         "magic_number": null,
         "elimination_number": "E",
         "clinched": false,
         "last_ten": [
           {
-            "wins": 40,
-            "losses": 38,
+            "wins": 42,
+            "losses": 37,
             "type": "home",
-            "pct": ".513"
+            "pct": ".532"
           },
           {
-            "wins": 35,
-            "losses": 46,
+            "wins": 45,
+            "losses": 36,
             "type": "away",
-            "pct": ".432"
-          },
-          {
-            "wins": 23,
-            "losses": 27,
-            "type": "left",
-            "pct": ".460"
-          },
-          {
-            "wins": 12,
-            "losses": 12,
-            "type": "leftHome",
-            "pct": ".500"
-          },
-          {
-            "wins": 11,
-            "losses": 15,
-            "type": "leftAway",
-            "pct": ".423"
-          },
-          {
-            "wins": 28,
-            "losses": 26,
-            "type": "rightHome",
-            "pct": ".519"
-          },
-          {
-            "wins": 24,
-            "losses": 31,
-            "type": "rightAway",
-            "pct": ".436"
-          },
-          {
-            "wins": 52,
-            "losses": 57,
-            "type": "right",
-            "pct": ".477"
-          },
-          {
-            "wins": 5,
-            "losses": 5,
-            "type": "lastTen",
-            "pct": ".500"
-          },
-          {
-            "wins": 5,
-            "losses": 6,
-            "type": "extraInning",
-            "pct": ".455"
-          },
-          {
-            "wins": 18,
-            "losses": 23,
-            "type": "oneRun",
-            "pct": ".439"
+            "pct": ".556"
           },
           {
             "wins": 29,
-            "losses": 42,
-            "type": "winners",
-            "pct": ".408"
+            "losses": 27,
+            "type": "left",
+            "pct": ".518"
           },
           {
-            "wins": 31,
-            "losses": 33,
-            "type": "day",
-            "pct": ".484"
+            "wins": 13,
+            "losses": 16,
+            "type": "leftHome",
+            "pct": ".448"
           },
           {
-            "wins": 44,
-            "losses": 51,
-            "type": "night",
-            "pct": ".463"
+            "wins": 16,
+            "losses": 11,
+            "type": "leftAway",
+            "pct": ".593"
           },
           {
-            "wins": 68,
-            "losses": 79,
-            "type": "grass",
-            "pct": ".463"
+            "wins": 29,
+            "losses": 21,
+            "type": "rightHome",
+            "pct": ".580"
+          },
+          {
+            "wins": 29,
+            "losses": 25,
+            "type": "rightAway",
+            "pct": ".537"
+          },
+          {
+            "wins": 58,
+            "losses": 46,
+            "type": "right",
+            "pct": ".558"
+          },
+          {
+            "wins": 4,
+            "losses": 6,
+            "type": "lastTen",
+            "pct": ".400"
           },
           {
             "wins": 7,
-            "losses": 5,
+            "losses": 6,
+            "type": "extraInning",
+            "pct": ".538"
+          },
+          {
+            "wins": 25,
+            "losses": 16,
+            "type": "oneRun",
+            "pct": ".610"
+          },
+          {
+            "wins": 29,
+            "losses": 35,
+            "type": "winners",
+            "pct": ".453"
+          },
+          {
+            "wins": 26,
+            "losses": 25,
+            "type": "day",
+            "pct": ".510"
+          },
+          {
+            "wins": 61,
+            "losses": 48,
+            "type": "night",
+            "pct": ".560"
+          },
+          {
+            "wins": 80,
+            "losses": 67,
+            "type": "grass",
+            "pct": ".544"
+          },
+          {
+            "wins": 7,
+            "losses": 6,
             "type": "turf",
-            "pct": ".583"
+            "pct": ".538"
           }
         ],
-        "as_of": "2026-09-24"
+        "as_of": "2026-09-25"
       },
       "away_official_standings": {
-        "wins": 79,
-        "losses": 80,
-        "winning_percentage": ".497",
-        "division": "American League West",
+        "wins": 97,
+        "losses": 63,
+        "winning_percentage": ".606",
+        "division": "American League East",
+        "division_rank": "1",
+        "league_rank": "1",
+        "wild_card_rank": null,
+        "games_back": "-",
+        "wild_card_games_back": "-",
+        "magic_number": "-",
+        "elimination_number": "-",
+        "clinched": true,
+        "last_ten": [
+          {
+            "wins": 55,
+            "losses": 26,
+            "type": "home",
+            "pct": ".679"
+          },
+          {
+            "wins": 42,
+            "losses": 37,
+            "type": "away",
+            "pct": ".532"
+          },
+          {
+            "wins": 31,
+            "losses": 17,
+            "type": "left",
+            "pct": ".646"
+          },
+          {
+            "wins": 20,
+            "losses": 4,
+            "type": "leftHome",
+            "pct": ".833"
+          },
+          {
+            "wins": 11,
+            "losses": 13,
+            "type": "leftAway",
+            "pct": ".458"
+          },
+          {
+            "wins": 35,
+            "losses": 22,
+            "type": "rightHome",
+            "pct": ".614"
+          },
+          {
+            "wins": 31,
+            "losses": 24,
+            "type": "rightAway",
+            "pct": ".564"
+          },
+          {
+            "wins": 66,
+            "losses": 46,
+            "type": "right",
+            "pct": ".589"
+          },
+          {
+            "wins": 6,
+            "losses": 4,
+            "type": "lastTen",
+            "pct": ".600"
+          },
+          {
+            "wins": 8,
+            "losses": 6,
+            "type": "extraInning",
+            "pct": ".571"
+          },
+          {
+            "wins": 25,
+            "losses": 14,
+            "type": "oneRun",
+            "pct": ".641"
+          },
+          {
+            "wins": 35,
+            "losses": 25,
+            "type": "winners",
+            "pct": ".583"
+          },
+          {
+            "wins": 35,
+            "losses": 28,
+            "type": "day",
+            "pct": ".556"
+          },
+          {
+            "wins": 62,
+            "losses": 35,
+            "type": "night",
+            "pct": ".639"
+          },
+          {
+            "wins": 34,
+            "losses": 31,
+            "type": "grass",
+            "pct": ".523"
+          },
+          {
+            "wins": 63,
+            "losses": 32,
+            "type": "turf",
+            "pct": ".663"
+          }
+        ],
+        "as_of": "2026-09-25"
+      },
+      "availability_note": "Standings/urgency context cannot confirm a specific star will rest; actual lineup/inactive data should override the proxy when available.",
+      "market_used_in_prediction": false,
+      "market_bookmaker": "DraftKings",
+      "market_home_moneyline": -112,
+      "market_away_moneyline": -108,
+      "market_run_line_home": 1.5,
+      "market_total": 7,
+      "market_updated_at": "2026-09-26T16:23:21.049770+00:00"
+    },
+    {
+      "game_id": "823245",
+      "game_date_utc": "2026-09-27T00:40:00Z",
+      "home_team": "San Diego Padres",
+      "away_team": "Arizona Diamondbacks",
+      "venue": "Petco Park",
+      "status": "Scheduled",
+      "predicted_home_runs": 4.56,
+      "predicted_away_runs": 4.4,
+      "predicted_total_runs": 8.96,
+      "predicted_winner": "San Diego Padres",
+      "home_win_probability": 0.521,
+      "away_win_probability": 0.479,
+      "home_probable_pitcher": "Walker Buehler",
+      "away_probable_pitcher": null,
+      "home_starter_era": 4.56,
+      "away_starter_era": null,
+      "home_starter_whip": 1.34,
+      "away_starter_whip": null,
+      "home_bullpen_workload_3d": 3.0,
+      "away_bullpen_workload_3d": 3.0,
+      "park_run_factor": 0.951,
+      "competitive_context_used_in_score": false,
+      "competitive_context_monitored": true,
+      "competitive_context_adjustment_runs": 0.0,
+      "home_competitive_context": {
+        "wins": 100.0,
+        "losses": 81.0,
+        "games_played": 183.0,
+        "win_pct": 0.546448087431694,
+        "games_remaining": 0.0,
+        "rank_group": 4,
+        "playoff_cutoff_rank": 6,
+        "gap_to_cutoff_wins": 6.0,
+        "wins_needed_to_current_cutoff": 0.0,
+        "wins_of_cushion_over_current_cutoff": 6.0,
+        "urgency_score": 0.0875,
+        "rest_rotation_risk": 0.25,
+        "seed_pressure_score": 0.0,
+        "seed_locked_proxy": 0.0,
+        "postseason_status": "secure",
+        "context_confidence": 1.0
+      },
+      "away_competitive_context": null,
+      "home_official_standings": {
+        "wins": 89,
+        "losses": 71,
+        "winning_percentage": ".556",
+        "division": "National League West",
         "division_rank": "2",
+        "league_rank": "4",
+        "wild_card_rank": "1",
+        "games_back": "9.0",
+        "wild_card_games_back": "+2.0",
+        "magic_number": null,
+        "elimination_number": "E",
+        "clinched": true,
+        "last_ten": [
+          {
+            "wins": 49,
+            "losses": 30,
+            "type": "home",
+            "pct": ".620"
+          },
+          {
+            "wins": 40,
+            "losses": 41,
+            "type": "away",
+            "pct": ".494"
+          },
+          {
+            "wins": 20,
+            "losses": 21,
+            "type": "left",
+            "pct": ".488"
+          },
+          {
+            "wins": 10,
+            "losses": 8,
+            "type": "leftHome",
+            "pct": ".556"
+          },
+          {
+            "wins": 10,
+            "losses": 13,
+            "type": "leftAway",
+            "pct": ".435"
+          },
+          {
+            "wins": 39,
+            "losses": 22,
+            "type": "rightHome",
+            "pct": ".639"
+          },
+          {
+            "wins": 30,
+            "losses": 28,
+            "type": "rightAway",
+            "pct": ".517"
+          },
+          {
+            "wins": 69,
+            "losses": 50,
+            "type": "right",
+            "pct": ".580"
+          },
+          {
+            "wins": 7,
+            "losses": 3,
+            "type": "lastTen",
+            "pct": ".700"
+          },
+          {
+            "wins": 7,
+            "losses": 4,
+            "type": "extraInning",
+            "pct": ".636"
+          },
+          {
+            "wins": 26,
+            "losses": 22,
+            "type": "oneRun",
+            "pct": ".542"
+          },
+          {
+            "wins": 29,
+            "losses": 41,
+            "type": "winners",
+            "pct": ".414"
+          },
+          {
+            "wins": 38,
+            "losses": 22,
+            "type": "day",
+            "pct": ".633"
+          },
+          {
+            "wins": 51,
+            "losses": 49,
+            "type": "night",
+            "pct": ".510"
+          },
+          {
+            "wins": 82,
+            "losses": 63,
+            "type": "grass",
+            "pct": ".566"
+          },
+          {
+            "wins": 7,
+            "losses": 8,
+            "type": "turf",
+            "pct": ".467"
+          }
+        ],
+        "as_of": "2026-09-25"
+      },
+      "away_official_standings": {
+        "wins": 86,
+        "losses": 74,
+        "winning_percentage": ".538",
+        "division": "National League West",
+        "division_rank": "3",
         "league_rank": "7",
         "wild_card_rank": "4",
-        "games_back": "-",
-        "wild_card_games_back": "3.0",
+        "games_back": "12.0",
+        "wild_card_games_back": "1.0",
         "magic_number": null,
-        "elimination_number": "-",
+        "elimination_number": "E",
         "clinched": false,
         "last_ten": [
           {
@@ -3762,142 +3153,142 @@
             "pct": ".556"
           },
           {
-            "wins": 34,
-            "losses": 44,
+            "wins": 41,
+            "losses": 38,
             "type": "away",
-            "pct": ".436"
+            "pct": ".519"
           },
           {
             "wins": 28,
-            "losses": 20,
+            "losses": 13,
             "type": "left",
-            "pct": ".583"
+            "pct": ".683"
           },
           {
-            "wins": 19,
-            "losses": 5,
+            "wins": 14,
+            "losses": 6,
             "type": "leftHome",
-            "pct": ".792"
+            "pct": ".700"
           },
           {
-            "wins": 9,
-            "losses": 15,
+            "wins": 14,
+            "losses": 7,
             "type": "leftAway",
-            "pct": ".375"
-          },
-          {
-            "wins": 26,
-            "losses": 31,
-            "type": "rightHome",
-            "pct": ".456"
-          },
-          {
-            "wins": 25,
-            "losses": 29,
-            "type": "rightAway",
-            "pct": ".463"
-          },
-          {
-            "wins": 51,
-            "losses": 60,
-            "type": "right",
-            "pct": ".459"
-          },
-          {
-            "wins": 6,
-            "losses": 4,
-            "type": "lastTen",
-            "pct": ".600"
-          },
-          {
-            "wins": 4,
-            "losses": 2,
-            "type": "extraInning",
             "pct": ".667"
           },
           {
-            "wins": 23,
-            "losses": 17,
+            "wins": 31,
+            "losses": 30,
+            "type": "rightHome",
+            "pct": ".508"
+          },
+          {
+            "wins": 27,
+            "losses": 31,
+            "type": "rightAway",
+            "pct": ".466"
+          },
+          {
+            "wins": 58,
+            "losses": 61,
+            "type": "right",
+            "pct": ".487"
+          },
+          {
+            "wins": 7,
+            "losses": 3,
+            "type": "lastTen",
+            "pct": ".700"
+          },
+          {
+            "wins": 9,
+            "losses": 8,
+            "type": "extraInning",
+            "pct": ".529"
+          },
+          {
+            "wins": 28,
+            "losses": 21,
             "type": "oneRun",
-            "pct": ".575"
+            "pct": ".571"
           },
           {
-            "wins": 29,
-            "losses": 29,
+            "wins": 33,
+            "losses": 37,
             "type": "winners",
-            "pct": ".500"
+            "pct": ".471"
           },
           {
-            "wins": 25,
-            "losses": 26,
+            "wins": 33,
+            "losses": 24,
             "type": "day",
-            "pct": ".490"
-          },
-          {
-            "wins": 54,
-            "losses": 54,
-            "type": "night",
-            "pct": ".500"
-          },
-          {
-            "wins": 26,
-            "losses": 39,
-            "type": "grass",
-            "pct": ".400"
+            "pct": ".579"
           },
           {
             "wins": 53,
-            "losses": 41,
+            "losses": 50,
+            "type": "night",
+            "pct": ".515"
+          },
+          {
+            "wins": 40,
+            "losses": 30,
+            "type": "grass",
+            "pct": ".571"
+          },
+          {
+            "wins": 46,
+            "losses": 44,
             "type": "turf",
-            "pct": ".564"
+            "pct": ".511"
           }
         ],
-        "as_of": "2026-09-24"
+        "as_of": "2026-09-25"
       },
       "availability_note": "Standings/urgency context cannot confirm a specific star will rest; actual lineup/inactive data should override the proxy when available.",
       "market_used_in_prediction": false,
       "market_bookmaker": "DraftKings",
-      "market_home_moneyline": 105,
-      "market_away_moneyline": -126,
+      "market_home_moneyline": -126,
+      "market_away_moneyline": 104,
       "market_run_line_home": 1.5,
-      "market_total": 7,
-      "market_updated_at": "2026-09-25T23:57:02.109678+00:00"
+      "market_total": 7.5,
+      "market_updated_at": "2026-09-26T16:23:21.049770+00:00"
     },
     {
-      "game_id": "824947",
-      "game_date_utc": "2026-09-26T01:40:00Z",
+      "game_id": "824949",
+      "game_date_utc": "2026-09-27T01:40:00Z",
       "home_team": "Athletics",
       "away_team": "Houston Astros",
       "venue": "Sutter Health Park",
-      "status": "Pre-Game",
-      "predicted_home_runs": 5.13,
-      "predicted_away_runs": 6.73,
-      "predicted_total_runs": 11.86,
+      "status": "Scheduled",
+      "predicted_home_runs": 5.41,
+      "predicted_away_runs": 6.74,
+      "predicted_total_runs": 12.15,
       "predicted_winner": "Houston Astros",
-      "home_win_probability": 0.3218,
-      "away_win_probability": 0.6782,
-      "home_probable_pitcher": "Jacob Lopez",
-      "away_probable_pitcher": "Hunter Brown",
-      "home_starter_era": 5.68,
-      "away_starter_era": 3.26,
-      "home_starter_whip": 1.53,
-      "away_starter_whip": 1.27,
+      "home_win_probability": 0.3526,
+      "away_win_probability": 0.6474,
+      "home_probable_pitcher": "Jack Perkins",
+      "away_probable_pitcher": "Hayden Wesneski",
+      "home_starter_era": 5.9,
+      "away_starter_era": 3.5,
+      "home_starter_whip": 1.45,
+      "away_starter_whip": 1.15,
       "home_bullpen_workload_3d": 3.0,
       "away_bullpen_workload_3d": 3.18,
-      "park_run_factor": 1.238,
+      "park_run_factor": 1.234,
       "competitive_context_used_in_score": false,
       "competitive_context_monitored": true,
       "competitive_context_adjustment_runs": 0.0,
       "home_competitive_context": {
-        "wins": 77.0,
+        "wins": 78.0,
         "losses": 106.0,
-        "games_played": 184.0,
-        "win_pct": 0.41847826086956524,
+        "games_played": 185.0,
+        "win_pct": 0.42162162162162165,
         "games_remaining": 0.0,
         "rank_group": 13,
         "playoff_cutoff_rank": 6,
-        "gap_to_cutoff_wins": -15.0,
-        "wins_needed_to_current_cutoff": 16.0,
+        "gap_to_cutoff_wins": -14.0,
+        "wins_needed_to_current_cutoff": 15.0,
         "wins_of_cushion_over_current_cutoff": 0.0,
         "urgency_score": 0.0875,
         "rest_rotation_risk": 0.55,
@@ -3908,41 +3299,41 @@
       },
       "away_competitive_context": {
         "wins": 92.0,
-        "losses": 89.0,
-        "games_played": 182.0,
-        "win_pct": 0.5054945054945055,
+        "losses": 90.0,
+        "games_played": 183.0,
+        "win_pct": 0.5027322404371585,
         "games_remaining": 0.0,
-        "rank_group": 6,
+        "rank_group": 7,
         "playoff_cutoff_rank": 6,
         "gap_to_cutoff_wins": 0.0,
-        "wins_needed_to_current_cutoff": 0.0,
+        "wins_needed_to_current_cutoff": 1.0,
         "wins_of_cushion_over_current_cutoff": 0.0,
         "urgency_score": 1.0,
         "rest_rotation_risk": 0.1,
-        "seed_pressure_score": 0.5,
+        "seed_pressure_score": 1.0,
         "seed_locked_proxy": 0.0,
-        "postseason_status": "wildcard_position",
+        "postseason_status": "chasing",
         "context_confidence": 1.0
       },
       "home_official_standings": {
-        "wins": 63,
+        "wins": 64,
         "losses": 96,
-        "winning_percentage": ".396",
+        "winning_percentage": ".400",
         "division": "American League West",
         "division_rank": "4",
         "league_rank": "14",
         "wild_card_rank": "11",
-        "games_back": "16.0",
+        "games_back": "15.0",
         "wild_card_games_back": "19.0",
         "magic_number": null,
         "elimination_number": "E",
         "clinched": false,
         "last_ten": [
           {
-            "wins": 31,
+            "wins": 32,
             "losses": 47,
             "type": "home",
-            "pct": ".397"
+            "pct": ".405"
           },
           {
             "wins": 32,
@@ -3969,10 +3360,10 @@
             "pct": ".286"
           },
           {
-            "wins": 18,
+            "wins": 19,
             "losses": 33,
             "type": "rightHome",
-            "pct": ".353"
+            "pct": ".365"
           },
           {
             "wins": 24,
@@ -3981,10 +3372,10 @@
             "pct": ".453"
           },
           {
-            "wins": 42,
+            "wins": 43,
             "losses": 62,
             "type": "right",
-            "pct": ".404"
+            "pct": ".410"
           },
           {
             "wins": 3,
@@ -3999,10 +3390,10 @@
             "pct": ".538"
           },
           {
-            "wins": 22,
+            "wins": 23,
             "losses": 23,
             "type": "oneRun",
-            "pct": ".489"
+            "pct": ".500"
           },
           {
             "wins": 18,
@@ -4017,16 +3408,16 @@
             "pct": ".380"
           },
           {
-            "wins": 44,
+            "wins": 45,
             "losses": 65,
             "type": "night",
-            "pct": ".404"
+            "pct": ".409"
           },
           {
-            "wins": 59,
+            "wins": 60,
             "losses": 85,
             "type": "grass",
-            "pct": ".410"
+            "pct": ".414"
           },
           {
             "wins": 4,
@@ -4035,12 +3426,12 @@
             "pct": ".267"
           }
         ],
-        "as_of": "2026-09-24"
+        "as_of": "2026-09-25"
       },
       "away_official_standings": {
         "wins": 79,
-        "losses": 80,
-        "winning_percentage": ".497",
+        "losses": 81,
+        "winning_percentage": ".494",
         "division": "American League West",
         "division_rank": "1",
         "league_rank": "6",
@@ -4059,15 +3450,15 @@
           },
           {
             "wins": 40,
-            "losses": 38,
+            "losses": 39,
             "type": "away",
-            "pct": ".513"
+            "pct": ".506"
           },
           {
             "wins": 16,
-            "losses": 24,
+            "losses": 25,
             "type": "left",
-            "pct": ".400"
+            "pct": ".390"
           },
           {
             "wins": 6,
@@ -4077,9 +3468,9 @@
           },
           {
             "wins": 10,
-            "losses": 13,
+            "losses": 14,
             "type": "leftAway",
-            "pct": ".435"
+            "pct": ".417"
           },
           {
             "wins": 33,
@@ -4113,9 +3504,9 @@
           },
           {
             "wins": 15,
-            "losses": 17,
+            "losses": 18,
             "type": "oneRun",
-            "pct": ".469"
+            "pct": ".455"
           },
           {
             "wins": 29,
@@ -4131,15 +3522,15 @@
           },
           {
             "wins": 55,
-            "losses": 53,
+            "losses": 54,
             "type": "night",
-            "pct": ".509"
+            "pct": ".505"
           },
           {
             "wins": 73,
-            "losses": 73,
+            "losses": 74,
             "type": "grass",
-            "pct": ".500"
+            "pct": ".497"
           },
           {
             "wins": 6,
@@ -4148,7 +3539,7 @@
             "pct": ".462"
           }
         ],
-        "as_of": "2026-09-24"
+        "as_of": "2026-09-25"
       },
       "availability_note": "Standings/urgency context cannot confirm a specific star will rest; actual lineup/inactive data should override the proxy when available.",
       "market_used_in_prediction": false,
@@ -4160,314 +3551,35 @@
       "market_updated_at": null
     },
     {
-      "game_id": "823248",
-      "game_date_utc": "2026-09-26T01:40:00Z",
-      "home_team": "San Diego Padres",
-      "away_team": "Arizona Diamondbacks",
-      "venue": "Petco Park",
-      "status": "Pre-Game",
-      "predicted_home_runs": 4.22,
-      "predicted_away_runs": 4.51,
-      "predicted_total_runs": 8.73,
-      "predicted_winner": "Arizona Diamondbacks",
-      "home_win_probability": 0.4609,
-      "away_win_probability": 0.5391,
-      "home_probable_pitcher": "Casey Mize",
-      "away_probable_pitcher": "Brandon Pfaadt",
-      "home_starter_era": 6.64,
-      "away_starter_era": 3.72,
-      "home_starter_whip": 1.62,
-      "away_starter_whip": 1.17,
-      "home_bullpen_workload_3d": 3.0,
-      "away_bullpen_workload_3d": 3.0,
-      "park_run_factor": 0.942,
-      "competitive_context_used_in_score": false,
-      "competitive_context_monitored": true,
-      "competitive_context_adjustment_runs": 0.0,
-      "home_competitive_context": {
-        "wins": 100.0,
-        "losses": 80.0,
-        "games_played": 182.0,
-        "win_pct": 0.5494505494505495,
-        "games_remaining": 0.0,
-        "rank_group": 4,
-        "playoff_cutoff_rank": 6,
-        "gap_to_cutoff_wins": 6.0,
-        "wins_needed_to_current_cutoff": 0.0,
-        "wins_of_cushion_over_current_cutoff": 6.0,
-        "urgency_score": 0.0875,
-        "rest_rotation_risk": 0.25,
-        "seed_pressure_score": 0.0,
-        "seed_locked_proxy": 0.0,
-        "postseason_status": "secure",
-        "context_confidence": 1.0
-      },
-      "away_competitive_context": null,
-      "home_official_standings": {
-        "wins": 89,
-        "losses": 70,
-        "winning_percentage": ".560",
-        "division": "National League West",
-        "division_rank": "2",
-        "league_rank": "4",
-        "wild_card_rank": "1",
-        "games_back": "8.0",
-        "wild_card_games_back": "+2.0",
-        "magic_number": null,
-        "elimination_number": "E",
-        "clinched": true,
-        "last_ten": [
-          {
-            "wins": 49,
-            "losses": 29,
-            "type": "home",
-            "pct": ".628"
-          },
-          {
-            "wins": 40,
-            "losses": 41,
-            "type": "away",
-            "pct": ".494"
-          },
-          {
-            "wins": 20,
-            "losses": 21,
-            "type": "left",
-            "pct": ".488"
-          },
-          {
-            "wins": 10,
-            "losses": 8,
-            "type": "leftHome",
-            "pct": ".556"
-          },
-          {
-            "wins": 10,
-            "losses": 13,
-            "type": "leftAway",
-            "pct": ".435"
-          },
-          {
-            "wins": 39,
-            "losses": 21,
-            "type": "rightHome",
-            "pct": ".650"
-          },
-          {
-            "wins": 30,
-            "losses": 28,
-            "type": "rightAway",
-            "pct": ".517"
-          },
-          {
-            "wins": 69,
-            "losses": 49,
-            "type": "right",
-            "pct": ".585"
-          },
-          {
-            "wins": 8,
-            "losses": 2,
-            "type": "lastTen",
-            "pct": ".800"
-          },
-          {
-            "wins": 7,
-            "losses": 4,
-            "type": "extraInning",
-            "pct": ".636"
-          },
-          {
-            "wins": 26,
-            "losses": 22,
-            "type": "oneRun",
-            "pct": ".542"
-          },
-          {
-            "wins": 29,
-            "losses": 40,
-            "type": "winners",
-            "pct": ".420"
-          },
-          {
-            "wins": 38,
-            "losses": 22,
-            "type": "day",
-            "pct": ".633"
-          },
-          {
-            "wins": 51,
-            "losses": 48,
-            "type": "night",
-            "pct": ".515"
-          },
-          {
-            "wins": 82,
-            "losses": 62,
-            "type": "grass",
-            "pct": ".569"
-          },
-          {
-            "wins": 7,
-            "losses": 8,
-            "type": "turf",
-            "pct": ".467"
-          }
-        ],
-        "as_of": "2026-09-24"
-      },
-      "away_official_standings": {
-        "wins": 85,
-        "losses": 74,
-        "winning_percentage": ".535",
-        "division": "National League West",
-        "division_rank": "3",
-        "league_rank": "7",
-        "wild_card_rank": "4",
-        "games_back": "12.0",
-        "wild_card_games_back": "2.0",
-        "magic_number": null,
-        "elimination_number": "E",
-        "clinched": false,
-        "last_ten": [
-          {
-            "wins": 45,
-            "losses": 36,
-            "type": "home",
-            "pct": ".556"
-          },
-          {
-            "wins": 40,
-            "losses": 38,
-            "type": "away",
-            "pct": ".513"
-          },
-          {
-            "wins": 28,
-            "losses": 13,
-            "type": "left",
-            "pct": ".683"
-          },
-          {
-            "wins": 14,
-            "losses": 6,
-            "type": "leftHome",
-            "pct": ".700"
-          },
-          {
-            "wins": 14,
-            "losses": 7,
-            "type": "leftAway",
-            "pct": ".667"
-          },
-          {
-            "wins": 31,
-            "losses": 30,
-            "type": "rightHome",
-            "pct": ".508"
-          },
-          {
-            "wins": 26,
-            "losses": 31,
-            "type": "rightAway",
-            "pct": ".456"
-          },
-          {
-            "wins": 57,
-            "losses": 61,
-            "type": "right",
-            "pct": ".483"
-          },
-          {
-            "wins": 6,
-            "losses": 4,
-            "type": "lastTen",
-            "pct": ".600"
-          },
-          {
-            "wins": 9,
-            "losses": 8,
-            "type": "extraInning",
-            "pct": ".529"
-          },
-          {
-            "wins": 28,
-            "losses": 21,
-            "type": "oneRun",
-            "pct": ".571"
-          },
-          {
-            "wins": 32,
-            "losses": 37,
-            "type": "winners",
-            "pct": ".464"
-          },
-          {
-            "wins": 33,
-            "losses": 24,
-            "type": "day",
-            "pct": ".579"
-          },
-          {
-            "wins": 52,
-            "losses": 50,
-            "type": "night",
-            "pct": ".510"
-          },
-          {
-            "wins": 39,
-            "losses": 30,
-            "type": "grass",
-            "pct": ".565"
-          },
-          {
-            "wins": 46,
-            "losses": 44,
-            "type": "turf",
-            "pct": ".511"
-          }
-        ],
-        "as_of": "2026-09-24"
-      },
-      "availability_note": "Standings/urgency context cannot confirm a specific star will rest; actual lineup/inactive data should override the proxy when available.",
-      "market_used_in_prediction": false,
-      "market_bookmaker": "DraftKings",
-      "market_home_moneyline": -132,
-      "market_away_moneyline": 110,
-      "market_run_line_home": -1.5,
-      "market_total": 7.5,
-      "market_updated_at": "2026-09-25T23:57:02.109678+00:00"
-    },
-    {
-      "game_id": "823085",
-      "game_date_utc": "2026-09-26T02:10:00Z",
+      "game_id": "823083",
+      "game_date_utc": "2026-09-27T01:40:00Z",
       "home_team": "Seattle Mariners",
       "away_team": "Los Angeles Angels",
       "venue": "T-Mobile Park",
-      "status": "Pre-Game",
-      "predicted_home_runs": 3.66,
-      "predicted_away_runs": 3.84,
-      "predicted_total_runs": 7.5,
-      "predicted_winner": "Los Angeles Angels",
-      "home_win_probability": 0.4735,
-      "away_win_probability": 0.5265,
-      "home_probable_pitcher": "Bryce Miller",
-      "away_probable_pitcher": "Reid Detmers",
-      "home_starter_era": 3.99,
-      "away_starter_era": 3.47,
-      "home_starter_whip": 1.15,
-      "away_starter_whip": 1.05,
+      "status": "Scheduled",
+      "predicted_home_runs": 4.31,
+      "predicted_away_runs": 4.1,
+      "predicted_total_runs": 8.41,
+      "predicted_winner": "Seattle Mariners",
+      "home_win_probability": 0.5292,
+      "away_win_probability": 0.4708,
+      "home_probable_pitcher": "Kade Anderson",
+      "away_probable_pitcher": "Ryan Johnson",
+      "home_starter_era": 4.18,
+      "away_starter_era": 4.93,
+      "home_starter_whip": 1.21,
+      "away_starter_whip": 1.35,
       "home_bullpen_workload_3d": 3.18,
       "away_bullpen_workload_3d": 3.0,
-      "park_run_factor": 0.912,
+      "park_run_factor": 0.916,
       "competitive_context_used_in_score": false,
       "competitive_context_monitored": true,
       "competitive_context_adjustment_runs": 0.0,
       "home_competitive_context": {
         "wins": 82.0,
-        "losses": 99.0,
-        "games_played": 181.0,
-        "win_pct": 0.4530386740331492,
+        "losses": 100.0,
+        "games_played": 182.0,
+        "win_pct": 0.45054945054945056,
         "games_remaining": 0.0,
         "rank_group": 12,
         "playoff_cutoff_rank": 6,
@@ -4476,21 +3588,21 @@
         "wins_of_cushion_over_current_cutoff": 0.0,
         "urgency_score": 0.0875,
         "rest_rotation_risk": 0.55,
-        "seed_pressure_score": 1.0,
+        "seed_pressure_score": 0.5,
         "seed_locked_proxy": 0.0,
         "postseason_status": "eliminated",
         "context_confidence": 1.0
       },
       "away_competitive_context": {
-        "wins": 76.0,
+        "wins": 77.0,
         "losses": 107.0,
-        "games_played": 184.0,
-        "win_pct": 0.41304347826086957,
+        "games_played": 185.0,
+        "win_pct": 0.41621621621621624,
         "games_remaining": 0.0,
         "rank_group": 14,
         "playoff_cutoff_rank": 6,
-        "gap_to_cutoff_wins": -16.0,
-        "wins_needed_to_current_cutoff": 17.0,
+        "gap_to_cutoff_wins": -15.0,
+        "wins_needed_to_current_cutoff": 16.0,
         "wins_of_cushion_over_current_cutoff": 0.0,
         "urgency_score": 0.0875,
         "rest_rotation_risk": 0.55,
@@ -4501,23 +3613,23 @@
       },
       "home_official_standings": {
         "wins": 74,
-        "losses": 85,
-        "winning_percentage": ".465",
+        "losses": 86,
+        "winning_percentage": ".463",
         "division": "American League West",
         "division_rank": "3",
         "league_rank": "12",
         "wild_card_rank": "9",
         "games_back": "5.0",
-        "wild_card_games_back": "8.0",
+        "wild_card_games_back": "9.0",
         "magic_number": null,
         "elimination_number": "E",
         "clinched": false,
         "last_ten": [
           {
             "wins": 41,
-            "losses": 37,
+            "losses": 38,
             "type": "home",
-            "pct": ".526"
+            "pct": ".519"
           },
           {
             "wins": 33,
@@ -4527,15 +3639,15 @@
           },
           {
             "wins": 25,
-            "losses": 28,
+            "losses": 29,
             "type": "left",
-            "pct": ".472"
+            "pct": ".463"
           },
           {
             "wins": 12,
-            "losses": 13,
+            "losses": 14,
             "type": "leftHome",
-            "pct": ".480"
+            "pct": ".462"
           },
           {
             "wins": 13,
@@ -4593,15 +3705,15 @@
           },
           {
             "wins": 43,
-            "losses": 59,
+            "losses": 60,
             "type": "night",
-            "pct": ".422"
+            "pct": ".417"
           },
           {
             "wins": 72,
-            "losses": 71,
+            "losses": 72,
             "type": "grass",
-            "pct": ".503"
+            "pct": ".500"
           },
           {
             "wins": 2,
@@ -4610,17 +3722,17 @@
             "pct": ".125"
           }
         ],
-        "as_of": "2026-09-24"
+        "as_of": "2026-09-25"
       },
       "away_official_standings": {
-        "wins": 61,
+        "wins": 62,
         "losses": 98,
-        "winning_percentage": ".384",
+        "winning_percentage": ".388",
         "division": "American League West",
         "division_rank": "5",
         "league_rank": "15",
         "wild_card_rank": "12",
-        "games_back": "18.0",
+        "games_back": "17.0",
         "wild_card_games_back": "21.0",
         "magic_number": null,
         "elimination_number": "E",
@@ -4633,10 +3745,10 @@
             "pct": ".420"
           },
           {
-            "wins": 27,
+            "wins": 28,
             "losses": 51,
             "type": "away",
-            "pct": ".346"
+            "pct": ".354"
           },
           {
             "wins": 16,
@@ -4663,16 +3775,16 @@
             "pct": ".448"
           },
           {
-            "wins": 19,
+            "wins": 20,
             "losses": 33,
             "type": "rightAway",
-            "pct": ".365"
+            "pct": ".377"
           },
           {
-            "wins": 45,
+            "wins": 46,
             "losses": 65,
             "type": "right",
-            "pct": ".409"
+            "pct": ".414"
           },
           {
             "wins": 5,
@@ -4705,16 +3817,16 @@
             "pct": ".383"
           },
           {
-            "wins": 43,
+            "wins": 44,
             "losses": 69,
             "type": "night",
-            "pct": ".384"
+            "pct": ".389"
           },
           {
-            "wins": 55,
+            "wins": 56,
             "losses": 86,
             "type": "grass",
-            "pct": ".390"
+            "pct": ".394"
           },
           {
             "wins": 6,
@@ -4723,312 +3835,16 @@
             "pct": ".333"
           }
         ],
-        "as_of": "2026-09-24"
+        "as_of": "2026-09-25"
       },
       "availability_note": "Standings/urgency context cannot confirm a specific star will rest; actual lineup/inactive data should override the proxy when available.",
       "market_used_in_prediction": false,
       "market_bookmaker": "DraftKings",
-      "market_home_moneyline": -119,
-      "market_away_moneyline": -101,
+      "market_home_moneyline": -162,
+      "market_away_moneyline": 134,
       "market_run_line_home": -1.5,
-      "market_total": 6.5,
-      "market_updated_at": "2026-09-25T23:57:02.109678+00:00"
-    },
-    {
-      "game_id": "823167",
-      "game_date_utc": "2026-09-26T02:15:00Z",
-      "home_team": "San Francisco Giants",
-      "away_team": "Los Angeles Dodgers",
-      "venue": "Oracle Park",
-      "status": "Pre-Game",
-      "predicted_home_runs": 3.88,
-      "predicted_away_runs": 4.56,
-      "predicted_total_runs": 8.44,
-      "predicted_winner": "Los Angeles Dodgers",
-      "home_win_probability": 0.4081,
-      "away_win_probability": 0.5919,
-      "home_probable_pitcher": "Yunior Marte",
-      "away_probable_pitcher": "Tarik Skubal",
-      "home_starter_era": 4.66,
-      "away_starter_era": 2.95,
-      "home_starter_whip": 1.4,
-      "away_starter_whip": 1.13,
-      "home_bullpen_workload_3d": 2.0,
-      "away_bullpen_workload_3d": 3.0,
-      "park_run_factor": 0.982,
-      "competitive_context_used_in_score": false,
-      "competitive_context_monitored": true,
-      "competitive_context_adjustment_runs": 0.0,
-      "home_competitive_context": {
-        "wins": 81.0,
-        "losses": 103.0,
-        "games_played": 185.0,
-        "win_pct": 0.43783783783783786,
-        "games_remaining": 0.0,
-        "rank_group": 13,
-        "playoff_cutoff_rank": 6,
-        "gap_to_cutoff_wins": -13.0,
-        "wins_needed_to_current_cutoff": 14.0,
-        "wins_of_cushion_over_current_cutoff": 0.0,
-        "urgency_score": 0.0875,
-        "rest_rotation_risk": 0.55,
-        "seed_pressure_score": 0.0,
-        "seed_locked_proxy": 0.0,
-        "postseason_status": "eliminated",
-        "context_confidence": 1.0
-      },
-      "away_competitive_context": {
-        "wins": 112.0,
-        "losses": 68.0,
-        "games_played": 182.0,
-        "win_pct": 0.6153846153846154,
-        "games_remaining": 0.0,
-        "rank_group": 1,
-        "playoff_cutoff_rank": 6,
-        "gap_to_cutoff_wins": 0.0,
-        "wins_needed_to_current_cutoff": 0.0,
-        "wins_of_cushion_over_current_cutoff": 0.0,
-        "urgency_score": 0.25,
-        "rest_rotation_risk": 0.25,
-        "seed_pressure_score": 0.0,
-        "seed_locked_proxy": 0.0,
-        "postseason_status": "secure",
-        "context_confidence": 1.0
-      },
-      "home_official_standings": {
-        "wins": 65,
-        "losses": 94,
-        "winning_percentage": ".409",
-        "division": "National League West",
-        "division_rank": "4",
-        "league_rank": "14",
-        "wild_card_rank": "11",
-        "games_back": "32.0",
-        "wild_card_games_back": "22.0",
-        "magic_number": null,
-        "elimination_number": "E",
-        "clinched": false,
-        "last_ten": [
-          {
-            "wins": 37,
-            "losses": 41,
-            "type": "home",
-            "pct": ".474"
-          },
-          {
-            "wins": 28,
-            "losses": 53,
-            "type": "away",
-            "pct": ".346"
-          },
-          {
-            "wins": 19,
-            "losses": 30,
-            "type": "left",
-            "pct": ".388"
-          },
-          {
-            "wins": 12,
-            "losses": 11,
-            "type": "leftHome",
-            "pct": ".522"
-          },
-          {
-            "wins": 7,
-            "losses": 19,
-            "type": "leftAway",
-            "pct": ".269"
-          },
-          {
-            "wins": 25,
-            "losses": 30,
-            "type": "rightHome",
-            "pct": ".455"
-          },
-          {
-            "wins": 21,
-            "losses": 34,
-            "type": "rightAway",
-            "pct": ".382"
-          },
-          {
-            "wins": 46,
-            "losses": 64,
-            "type": "right",
-            "pct": ".418"
-          },
-          {
-            "wins": 3,
-            "losses": 7,
-            "type": "lastTen",
-            "pct": ".300"
-          },
-          {
-            "wins": 7,
-            "losses": 6,
-            "type": "extraInning",
-            "pct": ".538"
-          },
-          {
-            "wins": 16,
-            "losses": 28,
-            "type": "oneRun",
-            "pct": ".364"
-          },
-          {
-            "wins": 31,
-            "losses": 51,
-            "type": "winners",
-            "pct": ".378"
-          },
-          {
-            "wins": 23,
-            "losses": 38,
-            "type": "day",
-            "pct": ".377"
-          },
-          {
-            "wins": 42,
-            "losses": 56,
-            "type": "night",
-            "pct": ".429"
-          },
-          {
-            "wins": 63,
-            "losses": 81,
-            "type": "grass",
-            "pct": ".438"
-          },
-          {
-            "wins": 2,
-            "losses": 13,
-            "type": "turf",
-            "pct": ".133"
-          }
-        ],
-        "as_of": "2026-09-24"
-      },
-      "away_official_standings": {
-        "wins": 97,
-        "losses": 62,
-        "winning_percentage": ".610",
-        "division": "National League West",
-        "division_rank": "1",
-        "league_rank": "2",
-        "wild_card_rank": null,
-        "games_back": "-",
-        "wild_card_games_back": "-",
-        "magic_number": "-",
-        "elimination_number": "-",
-        "clinched": true,
-        "last_ten": [
-          {
-            "wins": 51,
-            "losses": 30,
-            "type": "home",
-            "pct": ".630"
-          },
-          {
-            "wins": 46,
-            "losses": 32,
-            "type": "away",
-            "pct": ".590"
-          },
-          {
-            "wins": 31,
-            "losses": 23,
-            "type": "left",
-            "pct": ".574"
-          },
-          {
-            "wins": 19,
-            "losses": 12,
-            "type": "leftHome",
-            "pct": ".613"
-          },
-          {
-            "wins": 12,
-            "losses": 11,
-            "type": "leftAway",
-            "pct": ".522"
-          },
-          {
-            "wins": 32,
-            "losses": 18,
-            "type": "rightHome",
-            "pct": ".640"
-          },
-          {
-            "wins": 34,
-            "losses": 21,
-            "type": "rightAway",
-            "pct": ".618"
-          },
-          {
-            "wins": 66,
-            "losses": 39,
-            "type": "right",
-            "pct": ".629"
-          },
-          {
-            "wins": 7,
-            "losses": 3,
-            "type": "lastTen",
-            "pct": ".700"
-          },
-          {
-            "wins": 5,
-            "losses": 1,
-            "type": "extraInning",
-            "pct": ".833"
-          },
-          {
-            "wins": 30,
-            "losses": 23,
-            "type": "oneRun",
-            "pct": ".566"
-          },
-          {
-            "wins": 36,
-            "losses": 36,
-            "type": "winners",
-            "pct": ".500"
-          },
-          {
-            "wins": 20,
-            "losses": 19,
-            "type": "day",
-            "pct": ".513"
-          },
-          {
-            "wins": 77,
-            "losses": 43,
-            "type": "night",
-            "pct": ".642"
-          },
-          {
-            "wins": 91,
-            "losses": 55,
-            "type": "grass",
-            "pct": ".623"
-          },
-          {
-            "wins": 6,
-            "losses": 7,
-            "type": "turf",
-            "pct": ".462"
-          }
-        ],
-        "as_of": "2026-09-24"
-      },
-      "availability_note": "Standings/urgency context cannot confirm a specific star will rest; actual lineup/inactive data should override the proxy when available.",
-      "market_used_in_prediction": false,
-      "market_bookmaker": "DraftKings",
-      "market_home_moneyline": 258,
-      "market_away_moneyline": -328,
-      "market_run_line_home": 2.5,
-      "market_total": 7.5,
-      "market_updated_at": "2026-09-25T23:57:02.109678+00:00"
+      "market_total": 7,
+      "market_updated_at": "2026-09-26T16:23:21.049770+00:00"
     }
   ]
 }
