@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-09-27T20:09:13.814978+00:00",
+  "generated_at_utc": "2026-09-27T23:48:09.031042+00:00",
   "target_date": "2026-09-27",
   "sport": "MLB",
   "model_version": "mlb-runs-v2",
@@ -21,7 +21,7 @@
       "home_team": "Washington Nationals",
       "away_team": "New York Mets",
       "venue": "Nationals Park",
-      "status": "In Progress",
+      "status": "Final",
       "predicted_home_runs": 5.15,
       "predicted_away_runs": 5.13,
       "predicted_total_runs": 10.28,
@@ -309,7 +309,7 @@
       "market_away_moneyline": -112,
       "market_run_line_home": 1.5,
       "market_total": 8,
-      "market_updated_at": "2026-09-27T20:09:06.661428+00:00"
+      "market_updated_at": "2026-09-27T23:48:02.731846+00:00"
     },
     {
       "game_id": "823408",
@@ -317,7 +317,7 @@
       "home_team": "Philadelphia Phillies",
       "away_team": "Tampa Bay Rays",
       "venue": "Citizens Bank Park",
-      "status": "In Progress",
+      "status": "Final",
       "predicted_home_runs": 3.59,
       "predicted_away_runs": 4.03,
       "predicted_total_runs": 7.62,
@@ -605,7 +605,7 @@
       "market_away_moneyline": 170,
       "market_run_line_home": -2.5,
       "market_total": 6.5,
-      "market_updated_at": "2026-09-27T20:09:06.661428+00:00"
+      "market_updated_at": "2026-09-27T23:48:02.731846+00:00"
     },
     {
       "game_id": "824705",
@@ -613,7 +613,7 @@
       "home_team": "Boston Red Sox",
       "away_team": "Chicago Cubs",
       "venue": "Tropicana Field",
-      "status": "In Progress",
+      "status": "Final",
       "predicted_home_runs": 3.78,
       "predicted_away_runs": 4.31,
       "predicted_total_runs": 8.08,
@@ -901,7 +901,7 @@
       "market_away_moneyline": -120,
       "market_run_line_home": 1.5,
       "market_total": 7.5,
-      "market_updated_at": "2026-09-27T20:09:06.661428+00:00"
+      "market_updated_at": "2026-09-27T23:48:02.731846+00:00"
     },
     {
       "game_id": "824948",
@@ -909,7 +909,7 @@
       "home_team": "Athletics",
       "away_team": "Houston Astros",
       "venue": "Sutter Health Park",
-      "status": "In Progress",
+      "status": "Final",
       "predicted_home_runs": 5.3,
       "predicted_away_runs": 6.49,
       "predicted_total_runs": 11.79,
@@ -1205,7 +1205,7 @@
       "home_team": "San Francisco Giants",
       "away_team": "Los Angeles Dodgers",
       "venue": "Oracle Park",
-      "status": "In Progress",
+      "status": "Final",
       "predicted_home_runs": 3.66,
       "predicted_away_runs": 4.46,
       "predicted_total_runs": 8.12,
@@ -1493,7 +1493,7 @@
       "market_away_moneyline": -249,
       "market_run_line_home": 2,
       "market_total": 8.5,
-      "market_updated_at": "2026-09-27T20:09:06.661428+00:00"
+      "market_updated_at": "2026-09-27T23:48:02.731846+00:00"
     },
     {
       "game_id": "822761",
@@ -1501,7 +1501,7 @@
       "home_team": "Toronto Blue Jays",
       "away_team": "Cincinnati Reds",
       "venue": "Rogers Centre",
-      "status": "In Progress",
+      "status": "Final",
       "predicted_home_runs": 4.58,
       "predicted_away_runs": 4.31,
       "predicted_total_runs": 8.89,
@@ -1789,7 +1789,7 @@
       "market_away_moneyline": 141,
       "market_run_line_home": -1.5,
       "market_total": 8.5,
-      "market_updated_at": "2026-09-27T20:09:06.661428+00:00"
+      "market_updated_at": "2026-09-27T23:48:02.731846+00:00"
     },
     {
       "game_id": "824055",
@@ -1797,7 +1797,7 @@
       "home_team": "Kansas City Royals",
       "away_team": "Cleveland Guardians",
       "venue": "Kauffman Stadium",
-      "status": "In Progress",
+      "status": "Final",
       "predicted_home_runs": 4.23,
       "predicted_away_runs": 5.51,
       "predicted_total_runs": 9.74,
@@ -2085,7 +2085,7 @@
       "market_away_moneyline": -109,
       "market_run_line_home": 1.5,
       "market_total": 8,
-      "market_updated_at": "2026-09-27T20:09:06.661428+00:00"
+      "market_updated_at": "2026-09-27T23:48:02.731846+00:00"
     },
     {
       "game_id": "824217",
@@ -2093,7 +2093,7 @@
       "home_team": "Detroit Tigers",
       "away_team": "Pittsburgh Pirates",
       "venue": "Comerica Park",
-      "status": "In Progress",
+      "status": "Final",
       "predicted_home_runs": 4.06,
       "predicted_away_runs": 3.96,
       "predicted_total_runs": 8.02,
@@ -2381,7 +2381,7 @@
       "market_away_moneyline": 101,
       "market_run_line_home": 1.5,
       "market_total": 8,
-      "market_updated_at": "2026-09-27T20:09:06.661428+00:00"
+      "market_updated_at": "2026-09-27T23:48:02.731846+00:00"
     },
     {
       "game_id": "823246",
@@ -2389,7 +2389,7 @@
       "home_team": "San Diego Padres",
       "away_team": "Arizona Diamondbacks",
       "venue": "Petco Park",
-      "status": "In Progress",
+      "status": "Final",
       "predicted_home_runs": 4.2,
       "predicted_away_runs": 4.32,
       "predicted_total_runs": 8.52,
@@ -2660,7 +2660,7 @@
       "market_away_moneyline": -156,
       "market_run_line_home": 1.5,
       "market_total": 8,
-      "market_updated_at": "2026-09-27T20:09:06.661428+00:00"
+      "market_updated_at": "2026-09-27T23:48:02.731846+00:00"
     },
     {
       "game_id": "823084",
@@ -2668,7 +2668,7 @@
       "home_team": "Seattle Mariners",
       "away_team": "Los Angeles Angels",
       "venue": "T-Mobile Park",
-      "status": "In Progress",
+      "status": "Final",
       "predicted_home_runs": 4.35,
       "predicted_away_runs": 3.8,
       "predicted_total_runs": 8.15,
@@ -2956,7 +2956,7 @@
       "market_away_moneyline": 137,
       "market_run_line_home": -1.5,
       "market_total": 7,
-      "market_updated_at": "2026-09-27T20:09:06.661428+00:00"
+      "market_updated_at": "2026-09-27T23:48:02.731846+00:00"
     },
     {
       "game_id": "823650",
@@ -2964,7 +2964,7 @@
       "home_team": "Minnesota Twins",
       "away_team": "Texas Rangers",
       "venue": "Target Field",
-      "status": "In Progress",
+      "status": "Final",
       "predicted_home_runs": 4.82,
       "predicted_away_runs": 4.87,
       "predicted_total_runs": 9.69,
@@ -3252,7 +3252,7 @@
       "market_away_moneyline": -117,
       "market_run_line_home": 1.5,
       "market_total": 8,
-      "market_updated_at": "2026-09-27T20:09:06.661428+00:00"
+      "market_updated_at": "2026-09-27T23:48:02.731846+00:00"
     },
     {
       "game_id": "824542",
@@ -3260,7 +3260,7 @@
       "home_team": "Chicago White Sox",
       "away_team": "Colorado Rockies",
       "venue": "Rate Field",
-      "status": "In Progress",
+      "status": "Final",
       "predicted_home_runs": 6.25,
       "predicted_away_runs": 4.6,
       "predicted_total_runs": 10.85,
@@ -3548,7 +3548,7 @@
       "market_away_moneyline": 135,
       "market_run_line_home": -1.5,
       "market_total": 8.5,
-      "market_updated_at": "2026-09-27T20:09:06.661428+00:00"
+      "market_updated_at": "2026-09-27T23:48:02.731846+00:00"
     },
     {
       "game_id": "823814",
@@ -3556,7 +3556,7 @@
       "home_team": "Miami Marlins",
       "away_team": "Atlanta Braves",
       "venue": "loanDepot park",
-      "status": "Manager challenge",
+      "status": "Final",
       "predicted_home_runs": 4.39,
       "predicted_away_runs": 4.25,
       "predicted_total_runs": 8.64,
@@ -3844,7 +3844,7 @@
       "market_away_moneyline": 105,
       "market_run_line_home": -1.5,
       "market_total": 8,
-      "market_updated_at": "2026-09-27T20:09:06.661428+00:00"
+      "market_updated_at": "2026-09-27T23:48:02.731846+00:00"
     },
     {
       "game_id": "823731",
@@ -3852,7 +3852,7 @@
       "home_team": "Milwaukee Brewers",
       "away_team": "St. Louis Cardinals",
       "venue": "American Family Field",
-      "status": "In Progress",
+      "status": "Final",
       "predicted_home_runs": 4.93,
       "predicted_away_runs": 3.27,
       "predicted_total_runs": 8.19,
@@ -4140,7 +4140,7 @@
       "market_away_moneyline": 178,
       "market_run_line_home": -1.5,
       "market_total": 7,
-      "market_updated_at": "2026-09-27T20:09:06.661428+00:00"
+      "market_updated_at": "2026-09-27T23:48:02.731846+00:00"
     }
   ]
 }
