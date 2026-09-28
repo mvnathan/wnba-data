@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-09-28T18:15:06.123330+00:00",
+  "generated_at_utc": "2026-09-28T23:29:40.501324+00:00",
   "status": "ok",
   "production_modified": false,
   "baseline_model_version": "nfl-v2",
@@ -15,356 +15,14 @@
   "evaluation_status": "prospective_shadow_only",
   "note": "External signals were not available historically across the full 577-game backtest, so current deltas are prospective. Accuracy/Brier/MAE comparison begins as these shadow forecasts settle.",
   "summary": {
-    "games": 6,
-    "games_changed_by_availability": 6,
-    "games_changed_by_combined": 6,
-    "availability_x_signals_available": 45,
+    "games": 1,
+    "games_changed_by_availability": 1,
+    "games_changed_by_combined": 1,
+    "availability_x_signals_available": 43,
     "sharp_ledger_picks": 0,
     "sharp_production_weight": 0.0
   },
   "games": [
-    {
-      "game_id": "2026_03_ARI_SF",
-      "game_date_utc": "2026-09-27T20:05:00Z",
-      "home_team": "San Francisco 49ers",
-      "away_team": "Arizona Cardinals",
-      "home_abbr": "SF",
-      "away_abbr": "ARI",
-      "market_home_spread": -7.5,
-      "market_total": 48.5,
-      "production": {
-        "predicted_home_points": 28.2,
-        "predicted_away_points": 19.5,
-        "predicted_margin": 8.7,
-        "predicted_total": 47.7,
-        "home_win_probability": 0.7582,
-        "predicted_winner": "San Francisco 49ers"
-      },
-      "availability_shadow": {
-        "predicted_home_points": 26.41,
-        "predicted_away_points": 20.31,
-        "predicted_margin": 6.1,
-        "predicted_total": 46.72,
-        "home_win_probability": 0.6989,
-        "away_win_probability": 0.3011,
-        "predicted_winner": "San Francisco 49ers",
-        "availability_margin_delta": -2.6,
-        "availability_total_delta": -0.98,
-        "signals_applied": [
-          {
-            "team": "SF",
-            "player": "Mike Evans",
-            "position": "WR",
-            "status": "out",
-            "confidence": 0.7069,
-            "base_points": 1.3,
-            "point_impact": 0.919,
-            "source": "@AdamSchefter",
-            "published_at_utc": "2026-09-27T21:55:52.000Z",
-            "url": "https://x.com/AdamSchefter/status/2104329198181724347",
-            "text": "49ers now have ruled out WR Mike Evans due to a rib injury. https://t.co/hoLKnVbC2F"
-          },
-          {
-            "team": "SF",
-            "player": "Zay Flowers",
-            "position": "WR",
-            "status": "out",
-            "confidence": 0.6667,
-            "base_points": 1.3,
-            "point_impact": 0.867,
-            "source": "@RapSheet",
-            "published_at_utc": "2026-09-27T16:36:22.000Z",
-            "url": "https://x.com/RapSheet/status/2104248797098299497",
-            "text": "From @NFLGameDay Morning with @MikeGarafolo: #Ravens WR Zay Flowers works out on a soggy field; The #49ers are looking for edge help with Nick Bosa\u2019s injury; A kickoff change is coming; Myles Garrett faces a 6-week timeline to return. https://t.co/czJOpmDUxh"
-          },
-          {
-            "team": "SF",
-            "player": "Jamin Davis",
-            "position": "LB",
-            "status": "out",
-            "confidence": 0.7721,
-            "base_points": 0.7,
-            "point_impact": 0.54,
-            "source": "@RapSheet",
-            "published_at_utc": "2026-09-26T21:04:31.000Z",
-            "url": "https://x.com/RapSheet/status/2103953887497765367",
-            "text": "Following the injury to Nick Bosa this week, the #49ers worked out edge Matt Judon, LB Jamin Davis, DE Julian Okwara and DE Dawuane Smoot."
-          },
-          {
-            "team": "SF",
-            "player": "Matt Judon",
-            "position": "LB",
-            "status": "out",
-            "confidence": 0.7708,
-            "base_points": 0.7,
-            "point_impact": 0.54,
-            "source": "@AdamSchefter",
-            "published_at_utc": "2026-09-26T21:03:26.000Z",
-            "url": "https://x.com/AdamSchefter/status/2103953618395332809",
-            "text": "Having lost six defensive lineman in the past two weeks, the 49ers worked out LB Matt Judon, LB Jamin Davis, DE Julian Okwara and DE Dawuane Smoot."
-          }
-        ]
-      },
-      "combined_shadow": {
-        "predicted_home_points": 26.41,
-        "predicted_away_points": 20.31,
-        "predicted_margin": 6.1,
-        "predicted_total": 46.72,
-        "home_win_probability": 0.6989,
-        "away_win_probability": 0.3011,
-        "predicted_winner": "San Francisco 49ers",
-        "combined_margin_delta_vs_production": -2.6,
-        "combined_total_delta_vs_production": -0.98,
-        "sharp_margin_delta": 0.0,
-        "sharp_total_delta": 0.0,
-        "sharp_signals_applied": []
-      }
-    },
-    {
-      "game_id": "2026_03_MIN_TB",
-      "game_date_utc": "2026-09-27T20:05:00Z",
-      "home_team": "Tampa Bay Buccaneers",
-      "away_team": "Minnesota Vikings",
-      "home_abbr": "TB",
-      "away_abbr": "MIN",
-      "market_home_spread": 1.5,
-      "market_total": 42.5,
-      "production": {
-        "predicted_home_points": 20.7,
-        "predicted_away_points": 21.9,
-        "predicted_margin": -1.2,
-        "predicted_total": 42.6,
-        "home_win_probability": 0.4598,
-        "predicted_winner": "Minnesota Vikings"
-      },
-      "availability_shadow": {
-        "predicted_home_points": 20.7,
-        "predicted_away_points": 20.39,
-        "predicted_margin": 0.31,
-        "predicted_total": 41.09,
-        "home_win_probability": 0.5108,
-        "away_win_probability": 0.4892,
-        "predicted_winner": "Tampa Bay Buccaneers",
-        "availability_margin_delta": 1.51,
-        "availability_total_delta": -1.51,
-        "signals_applied": [
-          {
-            "team": "MIN",
-            "player": "Justin Jefferson",
-            "position": "WR",
-            "status": "out",
-            "confidence": 0.7225,
-            "base_points": 1.3,
-            "point_impact": 0.939,
-            "source": "@RapSheet",
-            "published_at_utc": "2026-09-27T22:11:00.000Z",
-            "url": "https://x.com/RapSheet/status/2104333008463687697",
-            "text": "#Vikings WR Justin Jefferson has been ruled out with an ankle injury."
-          },
-          {
-            "team": "MIN",
-            "player": "Josh Oliver",
-            "position": "TE",
-            "status": "out",
-            "confidence": 0.639,
-            "base_points": 0.9,
-            "point_impact": 0.575,
-            "source": "@RapSheet",
-            "published_at_utc": "2026-09-28T11:38:47.000Z",
-            "url": "https://x.com/RapSheet/status/2104536294848422275",
-            "text": "#Vikings TE Josh Oliver is feared to have suffered a torn biceps in Sunday\u2019s game and will have an MRI today determine if that is the case, sources say. Oliver would be out indefinitely if the testing confirms. https://t.co/pHZG0hj8kX"
-          }
-        ]
-      },
-      "combined_shadow": {
-        "predicted_home_points": 20.7,
-        "predicted_away_points": 20.39,
-        "predicted_margin": 0.31,
-        "predicted_total": 41.09,
-        "home_win_probability": 0.5108,
-        "away_win_probability": 0.4892,
-        "predicted_winner": "Tampa Bay Buccaneers",
-        "combined_margin_delta_vs_production": 1.51,
-        "combined_total_delta_vs_production": -1.51,
-        "sharp_margin_delta": 0.0,
-        "sharp_total_delta": 0.0,
-        "sharp_signals_applied": []
-      }
-    },
-    {
-      "game_id": "2026_03_BAL_DAL",
-      "game_date_utc": "2026-09-27T20:25:00Z",
-      "home_team": "Dallas Cowboys",
-      "away_team": "Baltimore Ravens",
-      "home_abbr": "DAL",
-      "away_abbr": "BAL",
-      "market_home_spread": 3.5,
-      "market_total": 54.5,
-      "production": {
-        "predicted_home_points": 23.7,
-        "predicted_away_points": 25.4,
-        "predicted_margin": -1.7,
-        "predicted_total": 49.0,
-        "home_win_probability": 0.4435,
-        "predicted_winner": "Baltimore Ravens"
-      },
-      "availability_shadow": {
-        "predicted_home_points": 23.7,
-        "predicted_away_points": 24.53,
-        "predicted_margin": -0.83,
-        "predicted_total": 48.23,
-        "home_win_probability": 0.4713,
-        "away_win_probability": 0.5287,
-        "predicted_winner": "Baltimore Ravens",
-        "availability_margin_delta": 0.87,
-        "availability_total_delta": -0.77,
-        "signals_applied": [
-          {
-            "team": "BAL",
-            "player": "Zay Flowers",
-            "position": "WR",
-            "status": "out",
-            "confidence": 0.6667,
-            "base_points": 1.3,
-            "point_impact": 0.867,
-            "source": "@RapSheet",
-            "published_at_utc": "2026-09-27T16:36:22.000Z",
-            "url": "https://x.com/RapSheet/status/2104248797098299497",
-            "text": "From @NFLGameDay Morning with @MikeGarafolo: #Ravens WR Zay Flowers works out on a soggy field; The #49ers are looking for edge help with Nick Bosa\u2019s injury; A kickoff change is coming; Myles Garrett faces a 6-week timeline to return. https://t.co/czJOpmDUxh"
-          }
-        ]
-      },
-      "combined_shadow": {
-        "predicted_home_points": 23.7,
-        "predicted_away_points": 24.53,
-        "predicted_margin": -0.83,
-        "predicted_total": 48.23,
-        "home_win_probability": 0.4713,
-        "away_win_probability": 0.5287,
-        "predicted_winner": "Baltimore Ravens",
-        "combined_margin_delta_vs_production": 0.87,
-        "combined_total_delta_vs_production": -0.77,
-        "sharp_margin_delta": 0.0,
-        "sharp_total_delta": 0.0,
-        "sharp_signals_applied": []
-      }
-    },
-    {
-      "game_id": "2026_03_LV_NO",
-      "game_date_utc": "2026-09-27T20:25:00Z",
-      "home_team": "New Orleans Saints",
-      "away_team": "Las Vegas Raiders",
-      "home_abbr": "NO",
-      "away_abbr": "LV",
-      "market_home_spread": -4.5,
-      "market_total": 43.5,
-      "production": {
-        "predicted_home_points": 23.3,
-        "predicted_away_points": 19.7,
-        "predicted_margin": 3.7,
-        "predicted_total": 43.0,
-        "home_win_probability": 0.6184,
-        "predicted_winner": "New Orleans Saints"
-      },
-      "availability_shadow": {
-        "predicted_home_points": 23.3,
-        "predicted_away_points": 18.69,
-        "predicted_margin": 4.61,
-        "predicted_total": 41.99,
-        "home_win_probability": 0.6538,
-        "away_win_probability": 0.3462,
-        "predicted_winner": "New Orleans Saints",
-        "availability_margin_delta": 0.91,
-        "availability_total_delta": -1.01,
-        "signals_applied": [
-          {
-            "team": "LV",
-            "player": "Jack Bech",
-            "position": "WR",
-            "status": "out",
-            "confidence": 0.777,
-            "base_points": 1.3,
-            "point_impact": 1.01,
-            "source": "@RapSheet",
-            "published_at_utc": "2026-09-27T23:01:19.000Z",
-            "url": "https://x.com/RapSheet/status/2104345671239340116",
-            "text": "#Raiders promising young WR Jack Bech, who was just ruled out of the game, suffered a broken forearm, sources say. He\u2019s headed for IR, but should return later this season."
-          }
-        ]
-      },
-      "combined_shadow": {
-        "predicted_home_points": 23.3,
-        "predicted_away_points": 18.69,
-        "predicted_margin": 4.61,
-        "predicted_total": 41.99,
-        "home_win_probability": 0.6538,
-        "away_win_probability": 0.3462,
-        "predicted_winner": "New Orleans Saints",
-        "combined_margin_delta_vs_production": 0.91,
-        "combined_total_delta_vs_production": -1.01,
-        "sharp_margin_delta": 0.0,
-        "sharp_total_delta": 0.0,
-        "sharp_signals_applied": []
-      }
-    },
-    {
-      "game_id": "2026_03_LA_DEN",
-      "game_date_utc": "2026-09-28T00:20:00Z",
-      "home_team": "Denver Broncos",
-      "away_team": "Los Angeles Rams",
-      "home_abbr": "DEN",
-      "away_abbr": "LA",
-      "market_home_spread": 1.5,
-      "market_total": 43.5,
-      "production": {
-        "predicted_home_points": 22.5,
-        "predicted_away_points": 22.5,
-        "predicted_margin": -0.1,
-        "predicted_total": 45.0,
-        "home_win_probability": 0.4972,
-        "predicted_winner": "Los Angeles Rams"
-      },
-      "availability_shadow": {
-        "predicted_home_points": 22.5,
-        "predicted_away_points": 21.91,
-        "predicted_margin": 0.59,
-        "predicted_total": 44.41,
-        "home_win_probability": 0.5205,
-        "away_win_probability": 0.4795,
-        "predicted_winner": "Denver Broncos",
-        "availability_margin_delta": 0.69,
-        "availability_total_delta": -0.59,
-        "signals_applied": [
-          {
-            "team": "LA",
-            "player": "Puka Nacua",
-            "position": "WR",
-            "status": "out",
-            "confidence": 0.4579,
-            "base_points": 1.3,
-            "point_impact": 0.595,
-            "source": "@RapSheet",
-            "published_at_utc": "2026-09-27T23:16:43.000Z",
-            "url": "https://x.com/RapSheet/status/2104349547090874554",
-            "text": "For SNF, #Rams WR Puka Nacua and #Broncos WR Marvin Mims are both inactive."
-          }
-        ]
-      },
-      "combined_shadow": {
-        "predicted_home_points": 22.5,
-        "predicted_away_points": 21.91,
-        "predicted_margin": 0.59,
-        "predicted_total": 44.41,
-        "home_win_probability": 0.5205,
-        "away_win_probability": 0.4795,
-        "predicted_winner": "Denver Broncos",
-        "combined_margin_delta_vs_production": 0.69,
-        "combined_total_delta_vs_production": -0.59,
-        "sharp_margin_delta": 0.0,
-        "sharp_total_delta": 0.0,
-        "sharp_signals_applied": []
-      }
-    },
     {
       "game_id": "2026_03_PHI_CHI",
       "game_date_utc": "2026-09-29T00:15:00Z",
@@ -372,7 +30,7 @@
       "away_team": "Philadelphia Eagles",
       "home_abbr": "CHI",
       "away_abbr": "PHI",
-      "market_home_spread": 4.5,
+      "market_home_spread": 3.5,
       "market_total": 41.5,
       "production": {
         "predicted_home_points": 23.0,
@@ -383,15 +41,15 @@
         "predicted_winner": "Chicago Bears"
       },
       "availability_shadow": {
-        "predicted_home_points": 16.16,
-        "predicted_away_points": 20.5,
-        "predicted_margin": -4.34,
-        "predicted_total": 36.66,
-        "home_win_probability": 0.3546,
-        "away_win_probability": 0.6454,
+        "predicted_home_points": 19.56,
+        "predicted_away_points": 21.2,
+        "predicted_margin": -1.64,
+        "predicted_total": 40.76,
+        "home_win_probability": 0.4438,
+        "away_win_probability": 0.5562,
         "predicted_winner": "Philadelphia Eagles",
-        "availability_margin_delta": -6.14,
-        "availability_total_delta": -7.54,
+        "availability_margin_delta": -3.44,
+        "availability_total_delta": -3.44,
         "signals_applied": [
           {
             "team": "CHI",
@@ -405,45 +63,19 @@
             "published_at_utc": "2026-09-26T20:57:23.000Z",
             "url": "https://x.com/AdamSchefter/status/2103952095627853908",
             "text": "More about Bears QB Caleb Williams being ruled out for Monday night vs. the Eagles and backup QB Tyson Bagent returning to practice today, via @CourtneyRCronin: https://t.co/8nmcEmZeKV"
-          },
-          {
-            "team": "CHI",
-            "player": "Tyson Bagent",
-            "position": "QB",
-            "status": "out",
-            "confidence": 0.7558,
-            "base_points": 4.5,
-            "point_impact": 3.401,
-            "source": "@RapSheet",
-            "published_at_utc": "2026-09-26T17:24:12.000Z",
-            "url": "https://x.com/RapSheet/status/2103898446533107976",
-            "text": "#Bears QB Tyson Bagent has advanced enough in the concussion protocol to practice today. He has not yet been ruled out for MNF, but a few steps to go."
-          },
-          {
-            "team": "PHI",
-            "player": "Saquon Barkley",
-            "position": "RB",
-            "status": "out",
-            "confidence": 0.6964,
-            "base_points": 1.0,
-            "point_impact": 0.696,
-            "source": "@AdamSchefter",
-            "published_at_utc": "2026-09-26T19:53:05.000Z",
-            "url": "https://x.com/AdamSchefter/status/2103935912283685370",
-            "text": "Eagles RB Saquon Barkley and WR DeVonta Smith officially are off the injury report and good to go Monday night vs. the Bears. WR Hollywood Brown is out. https://t.co/XccGocju2s"
           }
         ]
       },
       "combined_shadow": {
-        "predicted_home_points": 16.16,
-        "predicted_away_points": 20.5,
-        "predicted_margin": -4.34,
-        "predicted_total": 36.66,
-        "home_win_probability": 0.3546,
-        "away_win_probability": 0.6454,
+        "predicted_home_points": 19.56,
+        "predicted_away_points": 21.2,
+        "predicted_margin": -1.64,
+        "predicted_total": 40.76,
+        "home_win_probability": 0.4438,
+        "away_win_probability": 0.5562,
         "predicted_winner": "Philadelphia Eagles",
-        "combined_margin_delta_vs_production": -6.14,
-        "combined_total_delta_vs_production": -7.54,
+        "combined_margin_delta_vs_production": -3.44,
+        "combined_total_delta_vs_production": -3.44,
         "sharp_margin_delta": 0.0,
         "sharp_total_delta": 0.0,
         "sharp_signals_applied": []
