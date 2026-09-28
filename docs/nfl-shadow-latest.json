@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-09-28T08:56:30.185887+00:00",
+  "generated_at_utc": "2026-09-28T18:15:06.123330+00:00",
   "status": "ok",
   "production_modified": false,
   "baseline_model_version": "nfl-v2",
@@ -18,7 +18,7 @@
     "games": 6,
     "games_changed_by_availability": 6,
     "games_changed_by_combined": 6,
-    "availability_x_signals_available": 41,
+    "availability_x_signals_available": 45,
     "sharp_ledger_picks": 0,
     "sharp_production_weight": 0.0
   },
@@ -139,14 +139,14 @@
       },
       "availability_shadow": {
         "predicted_home_points": 20.7,
-        "predicted_away_points": 20.96,
-        "predicted_margin": -0.26,
-        "predicted_total": 41.66,
-        "home_win_probability": 0.491,
-        "away_win_probability": 0.509,
-        "predicted_winner": "Minnesota Vikings",
-        "availability_margin_delta": 0.94,
-        "availability_total_delta": -0.94,
+        "predicted_away_points": 20.39,
+        "predicted_margin": 0.31,
+        "predicted_total": 41.09,
+        "home_win_probability": 0.5108,
+        "away_win_probability": 0.4892,
+        "predicted_winner": "Tampa Bay Buccaneers",
+        "availability_margin_delta": 1.51,
+        "availability_total_delta": -1.51,
         "signals_applied": [
           {
             "team": "MIN",
@@ -160,19 +160,32 @@
             "published_at_utc": "2026-09-27T22:11:00.000Z",
             "url": "https://x.com/RapSheet/status/2104333008463687697",
             "text": "#Vikings WR Justin Jefferson has been ruled out with an ankle injury."
+          },
+          {
+            "team": "MIN",
+            "player": "Josh Oliver",
+            "position": "TE",
+            "status": "out",
+            "confidence": 0.639,
+            "base_points": 0.9,
+            "point_impact": 0.575,
+            "source": "@RapSheet",
+            "published_at_utc": "2026-09-28T11:38:47.000Z",
+            "url": "https://x.com/RapSheet/status/2104536294848422275",
+            "text": "#Vikings TE Josh Oliver is feared to have suffered a torn biceps in Sunday\u2019s game and will have an MRI today determine if that is the case, sources say. Oliver would be out indefinitely if the testing confirms. https://t.co/pHZG0hj8kX"
           }
         ]
       },
       "combined_shadow": {
         "predicted_home_points": 20.7,
-        "predicted_away_points": 20.96,
-        "predicted_margin": -0.26,
-        "predicted_total": 41.66,
-        "home_win_probability": 0.491,
-        "away_win_probability": 0.509,
-        "predicted_winner": "Minnesota Vikings",
-        "combined_margin_delta_vs_production": 0.94,
-        "combined_total_delta_vs_production": -0.94,
+        "predicted_away_points": 20.39,
+        "predicted_margin": 0.31,
+        "predicted_total": 41.09,
+        "home_win_probability": 0.5108,
+        "away_win_probability": 0.4892,
+        "predicted_winner": "Tampa Bay Buccaneers",
+        "combined_margin_delta_vs_production": 1.51,
+        "combined_total_delta_vs_production": -1.51,
         "sharp_margin_delta": 0.0,
         "sharp_total_delta": 0.0,
         "sharp_signals_applied": []
