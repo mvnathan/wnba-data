@@ -17,15 +17,7 @@ from .config import (
 
 
 def _json_safe_value(value: Any) -> Any:
-    """
-    Convert pandas / numpy values into strict JSON-safe values.
-
-    Examples:
-    - NaN -> None
-    - NaT -> None
-    - numpy scalar -> Python scalar
-    - Timestamp -> ISO string
-    """
+    """Recursively convert pandas / numpy values into strict JSON-safe values."""
     if value is None:
         return None
 
@@ -34,11 +26,21 @@ def _json_safe_value(value: Any) -> Any:
             return None
         return value.isoformat()
 
+    if isinstance(value, np.ndarray):
+        return [_json_safe_value(item) for item in value.tolist()]
+
+    if isinstance(value, (list, tuple, set)):
+        return [_json_safe_value(item) for item in value]
+
+    if isinstance(value, dict):
+        return {str(key): _json_safe_value(item) for key, item in value.items()}
+
     if isinstance(value, np.generic):
         value = value.item()
 
     try:
-        if pd.isna(value):
+        missing = pd.isna(value)
+        if isinstance(missing, (bool, np.bool_)) and missing:
             return None
     except (TypeError, ValueError):
         pass
