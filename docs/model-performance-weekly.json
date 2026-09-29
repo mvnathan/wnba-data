@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-09-28T18:10:38.669326+00:00",
+  "generated_at_utc": "2026-09-29T16:31:51.599351+00:00",
   "season": 2026,
   "status": "ok",
   "models": [
@@ -9,11 +9,11 @@
       "season": 2026,
       "source_type": "leakage_safe_current_season_reconstruction",
       "overall": {
-        "n": 47,
-        "winner_accuracy": 0.5957446808510638,
-        "brier_score": 0.23047502950073703,
-        "margin_mae": 10.302864027144508,
-        "total_mae": 12.187875814563633
+        "n": 48,
+        "winner_accuracy": 0.6041666666666666,
+        "brier_score": 0.2297345840023244,
+        "margin_mae": 10.467675518613397,
+        "total_mae": 12.146151951871795
       },
       "weekly": [
         {
@@ -42,6 +42,15 @@
           "brier_score": 0.21865455553039356,
           "margin_mae": 7.873721609204198,
           "total_mae": 11.769961671278963
+        },
+        {
+          "week_start": "2026-09-28",
+          "week_label": "Sep 28\u2013Oct 4",
+          "n": 1,
+          "winner_accuracy": 1,
+          "brier_score": 0.19493364557693188,
+          "margin_mae": 18.213815617651175,
+          "total_mae": 10.185130405355437
         }
       ]
     },
@@ -171,11 +180,11 @@
       "season": 2026,
       "source_type": "issued_predictions",
       "overall": {
-        "n": 107,
-        "winner_accuracy": 0.6635514018691588,
-        "brier_score": 0.2162394706542056,
-        "margin_mae": 4.426168224299065,
-        "total_mae": 5.981308411214953
+        "n": 108,
+        "winner_accuracy": 0.6574074074074074,
+        "brier_score": 0.21660889416666668,
+        "margin_mae": 4.421296296296296,
+        "total_mae": 5.993518518518519
       },
       "weekly": [
         {
@@ -208,11 +217,11 @@
         {
           "week_start": "2026-09-28",
           "week_label": "Sep 28\u2013Oct 4",
-          "n": 10,
-          "winner_accuracy": 0.8,
-          "brier_score": 0.172137901,
-          "margin_mae": 2.9299999999999997,
-          "total_mae": 4.69
+          "n": 11,
+          "winner_accuracy": 0.7272727272727273,
+          "brier_score": 0.17977420181818182,
+          "margin_mae": 3.018181818181818,
+          "total_mae": 4.927272727272728
         }
       ]
     },
@@ -222,11 +231,11 @@
       "season": 2026,
       "source_type": "issued_predictions",
       "overall": {
-        "n": 202,
-        "winner_accuracy": 0.698019801980198,
-        "brier_score": 0.2006388828217822,
-        "margin_mae": 4.1925742574257425,
-        "total_mae": 5.296534653465346
+        "n": 206,
+        "winner_accuracy": 0.6990291262135923,
+        "brier_score": 0.20004312970873786,
+        "margin_mae": 4.219902912621359,
+        "total_mae": 5.303883495145631
       },
       "weekly": [
         {
@@ -268,11 +277,11 @@
         {
           "week_start": "2026-09-28",
           "week_label": "Sep 28\u2013Oct 4",
-          "n": 14,
-          "winner_accuracy": 0.7857142857142857,
-          "brier_score": 0.18494072,
-          "margin_mae": 4.607142857142857,
-          "total_mae": 3.778571428571429
+          "n": 18,
+          "winner_accuracy": 0.7777777777777778,
+          "brier_score": 0.18161113722222222,
+          "margin_mae": 4.8277777777777775,
+          "total_mae": 4.2
         }
       ]
     }
