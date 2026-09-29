@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import os
 from datetime import date
 from pathlib import Path
 from typing import Any
@@ -167,21 +168,34 @@ def _build_pregame_data(
             .str.upper()
         )
 
+        recovery_started_today = (
+            target_date == _today_chicago()
+            and os.getenv("WNBA_RECOVER_STARTED_TODAY", "").strip() == "1"
+        )
         excluded_statuses = {
-            "STATUS_IN_PROGRESS",
-            "STATUS_HALFTIME",
             "STATUS_FINAL",
             "STATUS_FINAL_OT",
             "STATUS_POSTPONED",
             "STATUS_CANCELED",
             "STATUS_CANCELLED",
         }
+        if not recovery_started_today:
+            excluded_statuses.update({
+                "STATUS_IN_PROGRESS",
+                "STATUS_HALFTIME",
+            })
 
         schedule = schedule[
             ~status.isin(
                 excluded_statuses
             )
         ].copy()
+
+        if recovery_started_today:
+            schedule["prediction_recovery_after_start"] = status.isin({
+                "STATUS_IN_PROGRESS",
+                "STATUS_HALFTIME",
+            })
 
     # ---------------------------------------------------------
     # If predicting today, also remove games whose scheduled
@@ -190,6 +204,7 @@ def _build_pregame_data(
     if (
         target_date
         == _today_chicago()
+        and os.getenv("WNBA_RECOVER_STARTED_TODAY", "").strip() != "1"
     ):
         now_utc = pd.Timestamp.now(
             tz="UTC"
