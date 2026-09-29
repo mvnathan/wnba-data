@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-09-28T23:29:40.501324+00:00",
+  "generated_at_utc": "2026-09-29T06:09:24.747085+00:00",
   "status": "ok",
   "production_modified": false,
   "baseline_model_version": "nfl-v2",
@@ -16,9 +16,9 @@
   "note": "External signals were not available historically across the full 577-game backtest, so current deltas are prospective. Accuracy/Brier/MAE comparison begins as these shadow forecasts settle.",
   "summary": {
     "games": 1,
-    "games_changed_by_availability": 1,
-    "games_changed_by_combined": 1,
-    "availability_x_signals_available": 43,
+    "games_changed_by_availability": 0,
+    "games_changed_by_combined": 0,
+    "availability_x_signals_available": 39,
     "sharp_ledger_picks": 0,
     "sharp_production_weight": 0.0
   },
@@ -41,41 +41,27 @@
         "predicted_winner": "Chicago Bears"
       },
       "availability_shadow": {
-        "predicted_home_points": 19.56,
+        "predicted_home_points": 23.0,
         "predicted_away_points": 21.2,
-        "predicted_margin": -1.64,
-        "predicted_total": 40.76,
-        "home_win_probability": 0.4438,
-        "away_win_probability": 0.5562,
-        "predicted_winner": "Philadelphia Eagles",
-        "availability_margin_delta": -3.44,
-        "availability_total_delta": -3.44,
-        "signals_applied": [
-          {
-            "team": "CHI",
-            "player": "Caleb Williams",
-            "position": "QB",
-            "status": "out",
-            "confidence": 0.7641,
-            "base_points": 4.5,
-            "point_impact": 3.438,
-            "source": "@AdamSchefter",
-            "published_at_utc": "2026-09-26T20:57:23.000Z",
-            "url": "https://x.com/AdamSchefter/status/2103952095627853908",
-            "text": "More about Bears QB Caleb Williams being ruled out for Monday night vs. the Eagles and backup QB Tyson Bagent returning to practice today, via @CourtneyRCronin: https://t.co/8nmcEmZeKV"
-          }
-        ]
+        "predicted_margin": 1.8,
+        "predicted_total": 44.2,
+        "home_win_probability": 0.5585,
+        "away_win_probability": 0.4415,
+        "predicted_winner": "Chicago Bears",
+        "availability_margin_delta": 0.0,
+        "availability_total_delta": 0.0,
+        "signals_applied": []
       },
       "combined_shadow": {
-        "predicted_home_points": 19.56,
+        "predicted_home_points": 23.0,
         "predicted_away_points": 21.2,
-        "predicted_margin": -1.64,
-        "predicted_total": 40.76,
-        "home_win_probability": 0.4438,
-        "away_win_probability": 0.5562,
-        "predicted_winner": "Philadelphia Eagles",
-        "combined_margin_delta_vs_production": -3.44,
-        "combined_total_delta_vs_production": -3.44,
+        "predicted_margin": 1.8,
+        "predicted_total": 44.2,
+        "home_win_probability": 0.5585,
+        "away_win_probability": 0.4415,
+        "predicted_winner": "Chicago Bears",
+        "combined_margin_delta_vs_production": 0.0,
+        "combined_total_delta_vs_production": 0.0,
         "sharp_margin_delta": 0.0,
         "sharp_total_delta": 0.0,
         "sharp_signals_applied": []
