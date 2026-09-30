@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-09-30T08:35:17.580889+00:00",
+  "generated_at_utc": "2026-09-30T16:25:25.283899+00:00",
   "status": "ok",
   "direct_model_adjustment_enabled": false,
   "integration_stage": "context_and_edge_reliability_only",
@@ -15,7 +15,7 @@
       "sport": "NFL",
       "url": "https://www.nfl.com/injuries/",
       "status": "ok",
-      "snippets": 15
+      "snippets": 14
     },
     {
       "source": "WNBA Official Injury Report",
@@ -53,18 +53,42 @@
   },
   "x_source_diagnostics": {
     "status": "ok",
-    "posts": 1,
+    "posts": 3,
     "query": "(from:AdamSchefter OR from:RapSheet OR from:JeffPassan OR from:alexaphilippou) (out OR inactive OR doubtful OR questionable OR injury OR injured OR rest OR resting OR \"expected to play\" OR \"will start\" OR \"minutes restriction\" OR \"snap count\" OR \"pitch count\") -is:retweet lang:en",
-    "since_id_used": "2105072083369623554",
-    "newest_id": "2105134813980004596"
+    "since_id_used": "2105134813980004596",
+    "newest_id": "2105324532441763947"
   },
   "signals": [
+    {
+      "sport": "NFL",
+      "source": "@AdamSchefter",
+      "source_tier": "trusted_media",
+      "published_at_utc": "2026-09-30T15:50:58.000Z",
+      "fetched_at_utc": "2026-09-30T16:25:25.282545+00:00",
+      "status_signal": "out",
+      "tactical_flags": [],
+      "confidence": 0.7421,
+      "text": "Packers are placing WR Jayden Reed on injured reserve due to his neck injury, per sources. Reed is out indefinitely if not for the season as he continues his recovery. He posted on IG today, \u201c11 out.\u201d https://t.co/dgH47yfXIe",
+      "url": "https://x.com/AdamSchefter/status/2105324532441763947"
+    },
+    {
+      "sport": "NFL",
+      "source": "@AdamSchefter",
+      "source_tier": "trusted_media",
+      "published_at_utc": "2026-09-30T14:33:51.000Z",
+      "fetched_at_utc": "2026-09-30T16:25:25.282685+00:00",
+      "status_signal": "out",
+      "tactical_flags": [],
+      "confidence": 0.6639,
+      "text": "Buccaneers placed wide receiver Jalen McMillan on Injured Reserve, sidelining him for a minimum of four games. With Baker Mayfield out at least three weeks, they also signed quarterback Brett Rypien to their practice squad. https://t.co/e6jAZbEGeh",
+      "url": "https://x.com/AdamSchefter/status/2105305127112393019"
+    },
     {
       "sport": "NFL",
       "source": "NFL Official Injury Report",
       "source_tier": "official",
       "published_at_utc": null,
-      "fetched_at_utc": "2026-09-30T08:35:16.695697+00:00",
+      "fetched_at_utc": "2026-09-30T16:25:24.570707+00:00",
       "status_signal": "out",
       "tactical_flags": [],
       "confidence": 0.65,
@@ -76,7 +100,7 @@
       "source": "NFL Official Injury Report",
       "source_tier": "official",
       "published_at_utc": null,
-      "fetched_at_utc": "2026-09-30T08:35:16.695755+00:00",
+      "fetched_at_utc": "2026-09-30T16:25:24.570775+00:00",
       "status_signal": "out",
       "tactical_flags": [],
       "confidence": 0.65,
@@ -88,7 +112,7 @@
       "source": "NFL Official Injury Report",
       "source_tier": "official",
       "published_at_utc": null,
-      "fetched_at_utc": "2026-09-30T08:35:16.696148+00:00",
+      "fetched_at_utc": "2026-09-30T16:25:24.571177+00:00",
       "status_signal": "out",
       "tactical_flags": [],
       "confidence": 0.65,
@@ -100,7 +124,7 @@
       "source": "NFL Official Injury Report",
       "source_tier": "official",
       "published_at_utc": null,
-      "fetched_at_utc": "2026-09-30T08:35:16.696382+00:00",
+      "fetched_at_utc": "2026-09-30T16:25:24.571416+00:00",
       "status_signal": "out",
       "tactical_flags": [],
       "confidence": 0.65,
@@ -112,7 +136,7 @@
       "source": "NFL Official Injury Report",
       "source_tier": "official",
       "published_at_utc": null,
-      "fetched_at_utc": "2026-09-30T08:35:16.696432+00:00",
+      "fetched_at_utc": "2026-09-30T16:25:24.571467+00:00",
       "status_signal": "out",
       "tactical_flags": [],
       "confidence": 0.65,
@@ -124,7 +148,7 @@
       "source": "MLB Official Injury Report",
       "source_tier": "official",
       "published_at_utc": null,
-      "fetched_at_utc": "2026-09-30T08:35:17.013893+00:00",
+      "fetched_at_utc": "2026-09-30T16:25:24.810041+00:00",
       "status_signal": "out",
       "tactical_flags": [],
       "confidence": 0.65,
@@ -136,7 +160,7 @@
       "source": "MLB Official Injury Report",
       "source_tier": "official",
       "published_at_utc": null,
-      "fetched_at_utc": "2026-09-30T08:35:17.013966+00:00",
+      "fetched_at_utc": "2026-09-30T16:25:24.810115+00:00",
       "status_signal": "out",
       "tactical_flags": [],
       "confidence": 0.65,
@@ -148,7 +172,7 @@
       "source": "MLB Official Injury Report",
       "source_tier": "official",
       "published_at_utc": null,
-      "fetched_at_utc": "2026-09-30T08:35:17.014012+00:00",
+      "fetched_at_utc": "2026-09-30T16:25:24.810162+00:00",
       "status_signal": "out",
       "tactical_flags": [],
       "confidence": 0.65,
@@ -160,7 +184,7 @@
       "source": "MLB Official Injury Report",
       "source_tier": "official",
       "published_at_utc": null,
-      "fetched_at_utc": "2026-09-30T08:35:17.014222+00:00",
+      "fetched_at_utc": "2026-09-30T16:25:24.810378+00:00",
       "status_signal": "out",
       "tactical_flags": [],
       "confidence": 0.65,
@@ -172,7 +196,7 @@
       "source": "MLB Official Injury Report",
       "source_tier": "official",
       "published_at_utc": null,
-      "fetched_at_utc": "2026-09-30T08:35:17.014349+00:00",
+      "fetched_at_utc": "2026-09-30T16:25:24.810506+00:00",
       "status_signal": "out",
       "tactical_flags": [],
       "confidence": 0.65,
@@ -184,7 +208,7 @@
       "source": "NFL Official Injury Report",
       "source_tier": "official",
       "published_at_utc": null,
-      "fetched_at_utc": "2026-09-30T08:35:16.696206+00:00",
+      "fetched_at_utc": "2026-09-30T16:25:24.571236+00:00",
       "status_signal": "doubtful",
       "tactical_flags": [],
       "confidence": 0.585,
@@ -196,7 +220,7 @@
       "source": "MLB Official Injury Report",
       "source_tier": "official",
       "published_at_utc": null,
-      "fetched_at_utc": "2026-09-30T08:35:17.013721+00:00",
+      "fetched_at_utc": "2026-09-30T16:25:24.809863+00:00",
       "status_signal": "probable",
       "tactical_flags": [],
       "confidence": 0.585,
@@ -208,7 +232,7 @@
       "source": "MLB Probable Pitchers",
       "source_tier": "official",
       "published_at_utc": null,
-      "fetched_at_utc": "2026-09-30T08:35:17.129291+00:00",
+      "fetched_at_utc": "2026-09-30T16:25:24.957864+00:00",
       "status_signal": "probable",
       "tactical_flags": [],
       "confidence": 0.585,
@@ -216,23 +240,11 @@
       "url": "https://www.mlb.com/probable-pitchers"
     },
     {
-      "sport": "MLB",
-      "source": "@JeffPassan",
-      "source_tier": "trusted_media",
-      "published_at_utc": "2026-09-30T03:17:05.000Z",
-      "fetched_at_utc": "2026-09-30T08:35:17.579612+00:00",
-      "status_signal": "out",
-      "tactical_flags": [],
-      "confidence": 0.4926,
-      "text": "FINAL: Yankees 9, Red Sox 0 Ben Rice hit two home runs and drove in six. Cam Schlittler threw 6.1 scoreless and struck out 10. New York beat the snot out of Boston and can clinch an ALDS berth against Tampa Bay with a win Wednesday or, if necessary, Thursday.",
-      "url": "https://x.com/JeffPassan/status/2105134813980004596"
-    },
-    {
       "sport": "NFL",
       "source": "NFL Official Injury Report",
       "source_tier": "official",
       "published_at_utc": null,
-      "fetched_at_utc": "2026-09-30T08:35:16.696120+00:00",
+      "fetched_at_utc": "2026-09-30T16:25:24.571149+00:00",
       "status_signal": null,
       "tactical_flags": [
         "rest_candidate"
@@ -246,7 +258,7 @@
       "source": "NFL Official Injury Report",
       "source_tier": "official",
       "published_at_utc": null,
-      "fetched_at_utc": "2026-09-30T08:35:16.696322+00:00",
+      "fetched_at_utc": "2026-09-30T16:25:24.571355+00:00",
       "status_signal": null,
       "tactical_flags": [
         "expected_to_start"
@@ -254,6 +266,18 @@
       "confidence": 0.4875,
       "text": "Kyler Murray clears concussion protocol, will start for Vikings in Week 3 vs. Buccaneers",
       "url": "https://www.nfl.com/injuries/"
+    },
+    {
+      "sport": "MLB",
+      "source": "@JeffPassan",
+      "source_tier": "trusted_media",
+      "published_at_utc": "2026-09-30T03:17:05.000Z",
+      "fetched_at_utc": "2026-09-30T08:35:17.579612+00:00",
+      "status_signal": "out",
+      "tactical_flags": [],
+      "confidence": 0.4926,
+      "text": "FINAL: Yankees 9, Red Sox 0 Ben Rice hit two home runs and drove in six. Cam Schlittler threw 6.1 scoreless and struck out 10. New York beat the snot out of Boston and can clinch an ALDS berth against Tampa Bay with a win Wednesday or, if necessary, Thursday.",
+      "url": "https://x.com/JeffPassan/status/2105134813980004596"
     },
     {
       "sport": "NFL",
@@ -343,18 +367,6 @@
       "sport": "NFL",
       "source": "@RapSheet",
       "source_tier": "trusted_media",
-      "published_at_utc": "2026-09-28T16:08:21.000Z",
-      "fetched_at_utc": "2026-09-28T20:34:06.422724+00:00",
-      "status_signal": "out",
-      "tactical_flags": [],
-      "confidence": 0.5314,
-      "text": "\ud83d\udea8 \ud83d\udea8 \ud83d\udea8 The #Giants are trading for #Vikings former first-round QB JJ McCarthy, per me, @AdamSchefter and @MikeGarafolo. With Jaxson Dart out for the regular season, NYG acquires McCarthy to help solidify their room. An intriguing add. https://t.co/DtLG1SW4Sz",
-      "url": "https://x.com/RapSheet/status/2104604130710815093"
-    },
-    {
-      "sport": "NFL",
-      "source": "@RapSheet",
-      "source_tier": "trusted_media",
       "published_at_utc": "2026-09-28T18:44:50.000Z",
       "fetched_at_utc": "2026-09-28T20:34:06.422304+00:00",
       "status_signal": null,
@@ -364,110 +376,10 @@
       "confidence": 0.4996,
       "text": "From The Aftermath on @NFLNetwork: The #Bears will start Case Keenum tonight. A look at where it all stands\u2026 https://t.co/9jJzxYwLEi",
       "url": "https://x.com/RapSheet/status/2104643510968410621"
-    },
-    {
-      "sport": "NFL",
-      "source": "@AdamSchefter",
-      "source_tier": "trusted_media",
-      "published_at_utc": "2026-09-28T14:30:25.000Z",
-      "fetched_at_utc": "2026-09-28T20:34:06.422956+00:00",
-      "status_signal": "out",
-      "tactical_flags": [],
-      "confidence": 0.4613,
-      "text": "Dolphins RB De\u2019Von Achane suffered a torn ACL during Sunday\u2019s loss to the Chiefs and will be out for the season, sources tell @rapsheet and me. https://t.co/oQrUYX1AAF",
-      "url": "https://x.com/AdamSchefter/status/2104579485366710726"
-    },
-    {
-      "sport": "NFL",
-      "source": "@RapSheet",
-      "source_tier": "trusted_media",
-      "published_at_utc": "2026-09-28T14:30:15.000Z",
-      "fetched_at_utc": "2026-09-28T20:34:06.423024+00:00",
-      "status_signal": "out",
-      "tactical_flags": [],
-      "confidence": 0.4612,
-      "text": "#Dolphins star RB De\u2019Von Achane suffered a torn ACL, sources tell me and @AdamSchefter, and he\u2019s out for the season. In an already trying season for Miami, the team loses Achane. https://t.co/xgUfQNfjet",
-      "url": "https://x.com/RapSheet/status/2104579442764837228"
-    },
-    {
-      "sport": "NFL",
-      "source": "@RapSheet",
-      "source_tier": "trusted_media",
-      "published_at_utc": "2026-09-28T15:07:59.000Z",
-      "fetched_at_utc": "2026-09-28T20:34:06.422801+00:00",
-      "status_signal": "questionable",
-      "tactical_flags": [],
-      "confidence": 0.4383,
-      "text": "#Panthers WR Jalen Coker, who left Sunday's game early, suffered a minor quad strain, source said. He's considered questionable for this week, but good news overall for the promising young WR. https://t.co/WrXAppeAUI",
-      "url": "https://x.com/RapSheet/status/2104588941685072047"
-    },
-    {
-      "sport": "NFL",
-      "source": "@RapSheet",
-      "source_tier": "trusted_media",
-      "published_at_utc": "2026-09-28T16:23:17.000Z",
-      "fetched_at_utc": "2026-09-28T20:34:06.422637+00:00",
-      "status_signal": null,
-      "tactical_flags": [
-        "expected_to_start"
-      ],
-      "confidence": 0.4072,
-      "text": "Baker Mayfield is still expected to miss some time, as he'll need to be able to grip a ball. Jalon Daniels will start going forward, but Mayfield's good news helps him back on the field sooner. https://t.co/AVQheEPbbv",
-      "url": "https://x.com/RapSheet/status/2104607889231155659"
-    },
-    {
-      "sport": "NFL",
-      "source": "@RapSheet",
-      "source_tier": "trusted_media",
-      "published_at_utc": "2026-09-28T11:59:21.000Z",
-      "fetched_at_utc": "2026-09-28T13:56:52.623828+00:00",
-      "status_signal": "out",
-      "tactical_flags": [],
-      "confidence": 0.6582,
-      "text": "First Jaxson Dart out with a major knee injury and now Brian Burns. Brutal injury situation for the #Giants. https://t.co/vtGE8edd02",
-      "url": "https://x.com/RapSheet/status/2104541468463350195"
-    },
-    {
-      "sport": "NFL",
-      "source": "@RapSheet",
-      "source_tier": "trusted_media",
-      "published_at_utc": "2026-09-28T11:38:47.000Z",
-      "fetched_at_utc": "2026-09-28T13:56:52.624074+00:00",
-      "status_signal": "out",
-      "tactical_flags": [],
-      "confidence": 0.639,
-      "text": "#Vikings TE Josh Oliver is feared to have suffered a torn biceps in Sunday\u2019s game and will have an MRI today determine if that is the case, sources say. Oliver would be out indefinitely if the testing confirms. https://t.co/pHZG0hj8kX",
-      "url": "https://x.com/RapSheet/status/2104536294848422275"
-    },
-    {
-      "sport": "NFL",
-      "source": "@RapSheet",
-      "source_tier": "trusted_media",
-      "published_at_utc": "2026-09-28T10:48:00.000Z",
-      "fetched_at_utc": "2026-09-28T13:56:52.624129+00:00",
-      "status_signal": "out",
-      "tactical_flags": [
-        "expected_to_start"
-      ],
-      "confidence": 0.5938,
-      "text": "The #Bears are expected to start Case Keenum at QB against the #Eagles tonight. Caleb Williams has already been ruled out, and Tyson Bagent practiced only once this week. Bagent was eventually cleared from the concussion protocol, but Keenum is slated to start. https://t.co/CNu4WyHjQu",
-      "url": "https://x.com/RapSheet/status/2104523511729619106"
-    },
-    {
-      "sport": "NFL",
-      "source": "@RapSheet",
-      "source_tier": "trusted_media",
-      "published_at_utc": "2026-09-28T09:06:00.000Z",
-      "fetched_at_utc": "2026-09-28T13:56:52.624191+00:00",
-      "status_signal": "out",
-      "tactical_flags": [],
-      "confidence": 0.5125,
-      "text": "Reunion: The #Commanders are expected to sign FA RB Austin Ekeler to their 53-man roster pending physical, sources tell me and @MikeGarafolo. Ekeler, who is healed from an Achilles tear and worked out for the #Panthers last week, lands back in a familiar place. https://t.co/YZGlmGdFjK",
-      "url": "https://x.com/RapSheet/status/2104497843579048132"
     }
   ],
   "structured": {
-    "generated_at_utc": "2026-09-30T08:35:17.580561+00:00",
+    "generated_at_utc": "2026-09-30T16:25:25.283817+00:00",
     "players": [],
     "teams": {},
     "policy": {
