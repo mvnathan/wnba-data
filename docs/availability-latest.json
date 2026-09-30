@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-09-30T16:25:25.283899+00:00",
+  "generated_at_utc": "2026-09-30T22:17:03.034476+00:00",
   "status": "ok",
   "direct_model_adjustment_enabled": false,
   "integration_stage": "context_and_edge_reliability_only",
@@ -15,7 +15,7 @@
       "sport": "NFL",
       "url": "https://www.nfl.com/injuries/",
       "status": "ok",
-      "snippets": 14
+      "snippets": 17
     },
     {
       "source": "WNBA Official Injury Report",
@@ -30,7 +30,7 @@
       "sport": "MLB",
       "url": "https://www.mlb.com/injury-report",
       "status": "ok",
-      "snippets": 26
+      "snippets": 25
     },
     {
       "source": "MLB Probable Pitchers",
@@ -53,12 +53,280 @@
   },
   "x_source_diagnostics": {
     "status": "ok",
-    "posts": 3,
+    "posts": 13,
     "query": "(from:AdamSchefter OR from:RapSheet OR from:JeffPassan OR from:alexaphilippou) (out OR inactive OR doubtful OR questionable OR injury OR injured OR rest OR resting OR \"expected to play\" OR \"will start\" OR \"minutes restriction\" OR \"snap count\" OR \"pitch count\") -is:retweet lang:en",
-    "since_id_used": "2105134813980004596",
-    "newest_id": "2105324532441763947"
+    "since_id_used": "2105324532441763947",
+    "newest_id": "2105405812843975119"
   },
   "signals": [
+    {
+      "sport": "NFL",
+      "source": "NFL Official Injury Report",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-09-30T22:17:02.236052+00:00",
+      "status_signal": "out",
+      "tactical_flags": [],
+      "confidence": 0.65,
+      "text": "Sam Cosmi G Concussion, Throat Did Not Participate In Practice Out",
+      "url": "https://www.nfl.com/injuries/"
+    },
+    {
+      "sport": "NFL",
+      "source": "NFL Official Injury Report",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-09-30T22:17:02.236115+00:00",
+      "status_signal": "out",
+      "tactical_flags": [],
+      "confidence": 0.65,
+      "text": "Nick Cross S Illness Did Not Participate In Practice Out",
+      "url": "https://www.nfl.com/injuries/"
+    },
+    {
+      "sport": "NFL",
+      "source": "NFL Official Injury Report",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-09-30T22:17:02.236502+00:00",
+      "status_signal": "out",
+      "tactical_flags": [],
+      "confidence": 0.65,
+      "text": "Buccaneers QB Baker Mayfield out at least 3 weeks with thumb injury; rookie Jalon Daniels to start",
+      "url": "https://www.nfl.com/injuries/"
+    },
+    {
+      "sport": "NFL",
+      "source": "NFL Official Injury Report",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-09-30T22:17:02.236529+00:00",
+      "status_signal": "out",
+      "tactical_flags": [],
+      "confidence": 0.65,
+      "text": "NFL news roundup: Jaycee Horn out indefinitely; Justin Jefferson, Breece Hall avoid serious injuries",
+      "url": "https://www.nfl.com/injuries/"
+    },
+    {
+      "sport": "NFL",
+      "source": "NFL Official Injury Report",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-09-30T22:17:02.236586+00:00",
+      "status_signal": "out",
+      "tactical_flags": [],
+      "confidence": 0.65,
+      "text": "NFL Week 3 inactives: Players ruled out for Sunday's 14 games",
+      "url": "https://www.nfl.com/injuries/"
+    },
+    {
+      "sport": "NFL",
+      "source": "NFL Official Injury Report",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-09-30T22:17:02.236823+00:00",
+      "status_signal": "out",
+      "tactical_flags": [],
+      "confidence": 0.65,
+      "text": "NFL news roundup: Saints LT Kelvin Banks (ankle) out indefinitely; Lions' Avonte Maddox out for year",
+      "url": "https://www.nfl.com/injuries/"
+    },
+    {
+      "sport": "NFL",
+      "source": "NFL Official Injury Report",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-09-30T22:17:02.236872+00:00",
+      "status_signal": "out",
+      "tactical_flags": [],
+      "confidence": 0.65,
+      "text": "Vikings QB Kyler Murray (concussion) out Sunday vs. Bears; Carson Wentz to start",
+      "url": "https://www.nfl.com/injuries/"
+    },
+    {
+      "sport": "MLB",
+      "source": "MLB Official Injury Report",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-09-30T22:17:02.570713+00:00",
+      "status_signal": "out",
+      "tactical_flags": [],
+      "confidence": 0.65,
+      "text": "Anthony out of Game 2 lineup with right hand/wrist discomfort",
+      "url": "https://www.mlb.com/injury-report"
+    },
+    {
+      "sport": "MLB",
+      "source": "MLB Official Injury Report",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-09-30T22:17:02.570758+00:00",
+      "status_signal": "out",
+      "tactical_flags": [],
+      "confidence": 0.65,
+      "text": "Schmidt likely out for postseason after returning to IL with biceps injury",
+      "url": "https://www.mlb.com/injury-report"
+    },
+    {
+      "sport": "MLB",
+      "source": "MLB Official Injury Report",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-09-30T22:17:02.570831+00:00",
+      "status_signal": "out",
+      "tactical_flags": [],
+      "confidence": 0.65,
+      "text": "DeLauter, Mart\u00ednez remain out of lineup for Guardians' finale vs. White Sox",
+      "url": "https://www.mlb.com/injury-report"
+    },
+    {
+      "sport": "MLB",
+      "source": "MLB Official Injury Report",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-09-30T22:17:02.570878+00:00",
+      "status_signal": "out",
+      "tactical_flags": [],
+      "confidence": 0.65,
+      "text": "Flaherty strikes out two in first rehab outing, eyes end-of-year return",
+      "url": "https://www.mlb.com/injury-report"
+    },
+    {
+      "sport": "MLB",
+      "source": "MLB Official Injury Report",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-09-30T22:17:02.571140+00:00",
+      "status_signal": "out",
+      "tactical_flags": [],
+      "confidence": 0.65,
+      "text": "Young out for season, but avoids serious injury after 'terrifying' collision with McLean",
+      "url": "https://www.mlb.com/injury-report"
+    },
+    {
+      "sport": "MLB",
+      "source": "MLB Official Injury Report",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-09-30T22:17:02.571242+00:00",
+      "status_signal": "out",
+      "tactical_flags": [],
+      "confidence": 0.65,
+      "text": "Goodman (right thumb soreness) out again on Wednesday",
+      "url": "https://www.mlb.com/injury-report"
+    },
+    {
+      "sport": "NFL",
+      "source": "@AdamSchefter",
+      "source_tier": "trusted_media",
+      "published_at_utc": "2026-09-30T20:07:48.000Z",
+      "fetched_at_utc": "2026-09-30T22:17:03.033179+00:00",
+      "status_signal": "out",
+      "tactical_flags": [],
+      "confidence": 0.6472,
+      "text": "More about the Steelers ruling out CB Joey Porter Jr. again and listing CB Jalen Ramsey as questionable for Thursday night\u2019s game in Cleveland, via @bepryor: https://t.co/XwybdTRKtL",
+      "url": "https://x.com/AdamSchefter/status/2105389167371026799"
+    },
+    {
+      "sport": "NFL",
+      "source": "@AdamSchefter",
+      "source_tier": "trusted_media",
+      "published_at_utc": "2026-09-30T19:20:43.000Z",
+      "fetched_at_utc": "2026-09-30T22:17:03.033225+00:00",
+      "status_signal": "out",
+      "tactical_flags": [],
+      "confidence": 0.6047,
+      "text": "Steelers have ruled out CB Joey Porter Jr. for Thursday night\u2019s game vs. the Browns due to his back issue.",
+      "url": "https://x.com/AdamSchefter/status/2105377317224690019"
+    },
+    {
+      "sport": "NFL",
+      "source": "@RapSheet",
+      "source_tier": "trusted_media",
+      "published_at_utc": "2026-09-30T19:16:55.000Z",
+      "fetched_at_utc": "2026-09-30T22:17:03.033283+00:00",
+      "status_signal": "out",
+      "tactical_flags": [],
+      "confidence": 0.6013,
+      "text": "For TNF: \u2014 The #Steelers rule out RB Rico Dowdle and CB Joey Porter Jr., while DB Jalen Ramsey and CB Brandin Echols are questionable. \u2014 #Browns C Elgton Jenkins and G Teven Jenkins are out.",
+      "url": "https://x.com/RapSheet/status/2105376360688693623"
+    },
+    {
+      "sport": "NFL",
+      "source": "@AdamSchefter",
+      "source_tier": "trusted_media",
+      "published_at_utc": "2026-09-30T19:04:16.000Z",
+      "fetched_at_utc": "2026-09-30T22:17:03.033323+00:00",
+      "status_signal": "out",
+      "tactical_flags": [],
+      "confidence": 0.5905,
+      "text": "Steelers have ruled out CB Joey Porter Jr. is for Thursday night\u2019s game vs. the Browns due to his back issue.",
+      "url": "https://x.com/AdamSchefter/status/2105373179136942192"
+    },
+    {
+      "sport": "NFL",
+      "source": "NFL Official Injury Report",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-09-30T22:17:02.236644+00:00",
+      "status_signal": "doubtful",
+      "tactical_flags": [],
+      "confidence": 0.585,
+      "text": "Rams' Puka Nacua doubtful to play Sunday night vs. Broncos",
+      "url": "https://www.nfl.com/injuries/"
+    },
+    {
+      "sport": "MLB",
+      "source": "MLB Official Injury Report",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-09-30T22:17:02.570593+00:00",
+      "status_signal": "probable",
+      "tactical_flags": [],
+      "confidence": 0.585,
+      "text": "News Probable Pitchers Awards Starting Lineups Transactions Injury Report World Baseball Classic MLB Draft All-Star Game AUSL MLB Pipeline Postseason History Podcasts International",
+      "url": "https://www.mlb.com/injury-report"
+    },
+    {
+      "sport": "MLB",
+      "source": "MLB Probable Pitchers",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-09-30T22:17:02.694909+00:00",
+      "status_signal": "probable",
+      "tactical_flags": [],
+      "confidence": 0.585,
+      "text": "News Probable Pitchers Awards Starting Lineups Transactions Injury Report World Baseball Classic MLB Draft All-Star Game AUSL MLB Pipeline Postseason History Podcasts International",
+      "url": "https://www.mlb.com/probable-pitchers"
+    },
+    {
+      "sport": "NFL",
+      "source": "NFL Official Injury Report",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-09-30T22:17:02.236564+00:00",
+      "status_signal": null,
+      "tactical_flags": [
+        "rest_candidate"
+      ],
+      "confidence": 0.4875,
+      "text": "Dolphins RB De'Von Achane to miss rest of season after tearing ACL in loss to Chiefs",
+      "url": "https://www.nfl.com/injuries/"
+    },
+    {
+      "sport": "NFL",
+      "source": "NFL Official Injury Report",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-09-30T22:17:02.236762+00:00",
+      "status_signal": null,
+      "tactical_flags": [
+        "expected_to_start"
+      ],
+      "confidence": 0.4875,
+      "text": "Kyler Murray clears concussion protocol, will start for Vikings in Week 3 vs. Buccaneers",
+      "url": "https://www.nfl.com/injuries/"
+    },
     {
       "sport": "NFL",
       "source": "@AdamSchefter",
@@ -82,190 +350,6 @@
       "confidence": 0.6639,
       "text": "Buccaneers placed wide receiver Jalen McMillan on Injured Reserve, sidelining him for a minimum of four games. With Baker Mayfield out at least three weeks, they also signed quarterback Brett Rypien to their practice squad. https://t.co/e6jAZbEGeh",
       "url": "https://x.com/AdamSchefter/status/2105305127112393019"
-    },
-    {
-      "sport": "NFL",
-      "source": "NFL Official Injury Report",
-      "source_tier": "official",
-      "published_at_utc": null,
-      "fetched_at_utc": "2026-09-30T16:25:24.570707+00:00",
-      "status_signal": "out",
-      "tactical_flags": [],
-      "confidence": 0.65,
-      "text": "Buccaneers QB Baker Mayfield out at least 3 weeks with thumb injury; rookie Jalon Daniels to start",
-      "url": "https://www.nfl.com/injuries/"
-    },
-    {
-      "sport": "NFL",
-      "source": "NFL Official Injury Report",
-      "source_tier": "official",
-      "published_at_utc": null,
-      "fetched_at_utc": "2026-09-30T16:25:24.570775+00:00",
-      "status_signal": "out",
-      "tactical_flags": [],
-      "confidence": 0.65,
-      "text": "NFL news roundup: Jaycee Horn out indefinitely; Justin Jefferson, Breece Hall avoid serious injuries",
-      "url": "https://www.nfl.com/injuries/"
-    },
-    {
-      "sport": "NFL",
-      "source": "NFL Official Injury Report",
-      "source_tier": "official",
-      "published_at_utc": null,
-      "fetched_at_utc": "2026-09-30T16:25:24.571177+00:00",
-      "status_signal": "out",
-      "tactical_flags": [],
-      "confidence": 0.65,
-      "text": "NFL Week 3 inactives: Players ruled out for Sunday's 14 games",
-      "url": "https://www.nfl.com/injuries/"
-    },
-    {
-      "sport": "NFL",
-      "source": "NFL Official Injury Report",
-      "source_tier": "official",
-      "published_at_utc": null,
-      "fetched_at_utc": "2026-09-30T16:25:24.571416+00:00",
-      "status_signal": "out",
-      "tactical_flags": [],
-      "confidence": 0.65,
-      "text": "NFL news roundup: Saints LT Kelvin Banks (ankle) out indefinitely; Lions' Avonte Maddox out for year",
-      "url": "https://www.nfl.com/injuries/"
-    },
-    {
-      "sport": "NFL",
-      "source": "NFL Official Injury Report",
-      "source_tier": "official",
-      "published_at_utc": null,
-      "fetched_at_utc": "2026-09-30T16:25:24.571467+00:00",
-      "status_signal": "out",
-      "tactical_flags": [],
-      "confidence": 0.65,
-      "text": "Vikings QB Kyler Murray (concussion) out Sunday vs. Bears; Carson Wentz to start",
-      "url": "https://www.nfl.com/injuries/"
-    },
-    {
-      "sport": "MLB",
-      "source": "MLB Official Injury Report",
-      "source_tier": "official",
-      "published_at_utc": null,
-      "fetched_at_utc": "2026-09-30T16:25:24.810041+00:00",
-      "status_signal": "out",
-      "tactical_flags": [],
-      "confidence": 0.65,
-      "text": "Schmidt likely out for postseason after returning to IL with biceps injury",
-      "url": "https://www.mlb.com/injury-report"
-    },
-    {
-      "sport": "MLB",
-      "source": "MLB Official Injury Report",
-      "source_tier": "official",
-      "published_at_utc": null,
-      "fetched_at_utc": "2026-09-30T16:25:24.810115+00:00",
-      "status_signal": "out",
-      "tactical_flags": [],
-      "confidence": 0.65,
-      "text": "DeLauter, Mart\u00ednez remain out of lineup for Guardians' finale vs. White Sox",
-      "url": "https://www.mlb.com/injury-report"
-    },
-    {
-      "sport": "MLB",
-      "source": "MLB Official Injury Report",
-      "source_tier": "official",
-      "published_at_utc": null,
-      "fetched_at_utc": "2026-09-30T16:25:24.810162+00:00",
-      "status_signal": "out",
-      "tactical_flags": [],
-      "confidence": 0.65,
-      "text": "Flaherty strikes out two in first rehab outing, eyes end-of-year return",
-      "url": "https://www.mlb.com/injury-report"
-    },
-    {
-      "sport": "MLB",
-      "source": "MLB Official Injury Report",
-      "source_tier": "official",
-      "published_at_utc": null,
-      "fetched_at_utc": "2026-09-30T16:25:24.810378+00:00",
-      "status_signal": "out",
-      "tactical_flags": [],
-      "confidence": 0.65,
-      "text": "Young out for season, but avoids serious injury after 'terrifying' collision with McLean",
-      "url": "https://www.mlb.com/injury-report"
-    },
-    {
-      "sport": "MLB",
-      "source": "MLB Official Injury Report",
-      "source_tier": "official",
-      "published_at_utc": null,
-      "fetched_at_utc": "2026-09-30T16:25:24.810506+00:00",
-      "status_signal": "out",
-      "tactical_flags": [],
-      "confidence": 0.65,
-      "text": "Goodman (right thumb soreness) out again on Wednesday",
-      "url": "https://www.mlb.com/injury-report"
-    },
-    {
-      "sport": "NFL",
-      "source": "NFL Official Injury Report",
-      "source_tier": "official",
-      "published_at_utc": null,
-      "fetched_at_utc": "2026-09-30T16:25:24.571236+00:00",
-      "status_signal": "doubtful",
-      "tactical_flags": [],
-      "confidence": 0.585,
-      "text": "Rams' Puka Nacua doubtful to play Sunday night vs. Broncos",
-      "url": "https://www.nfl.com/injuries/"
-    },
-    {
-      "sport": "MLB",
-      "source": "MLB Official Injury Report",
-      "source_tier": "official",
-      "published_at_utc": null,
-      "fetched_at_utc": "2026-09-30T16:25:24.809863+00:00",
-      "status_signal": "probable",
-      "tactical_flags": [],
-      "confidence": 0.585,
-      "text": "News Probable Pitchers Awards Starting Lineups Transactions Injury Report World Baseball Classic MLB Draft All-Star Game AUSL MLB Pipeline Postseason History Podcasts International",
-      "url": "https://www.mlb.com/injury-report"
-    },
-    {
-      "sport": "MLB",
-      "source": "MLB Probable Pitchers",
-      "source_tier": "official",
-      "published_at_utc": null,
-      "fetched_at_utc": "2026-09-30T16:25:24.957864+00:00",
-      "status_signal": "probable",
-      "tactical_flags": [],
-      "confidence": 0.585,
-      "text": "News Probable Pitchers Awards Starting Lineups Transactions Injury Report World Baseball Classic MLB Draft All-Star Game AUSL MLB Pipeline Postseason History Podcasts International",
-      "url": "https://www.mlb.com/probable-pitchers"
-    },
-    {
-      "sport": "NFL",
-      "source": "NFL Official Injury Report",
-      "source_tier": "official",
-      "published_at_utc": null,
-      "fetched_at_utc": "2026-09-30T16:25:24.571149+00:00",
-      "status_signal": null,
-      "tactical_flags": [
-        "rest_candidate"
-      ],
-      "confidence": 0.4875,
-      "text": "Dolphins RB De'Von Achane to miss rest of season after tearing ACL in loss to Chiefs",
-      "url": "https://www.nfl.com/injuries/"
-    },
-    {
-      "sport": "NFL",
-      "source": "NFL Official Injury Report",
-      "source_tier": "official",
-      "published_at_utc": null,
-      "fetched_at_utc": "2026-09-30T16:25:24.571355+00:00",
-      "status_signal": null,
-      "tactical_flags": [
-        "expected_to_start"
-      ],
-      "confidence": 0.4875,
-      "text": "Kyler Murray clears concussion protocol, will start for Vikings in Week 3 vs. Buccaneers",
-      "url": "https://www.nfl.com/injuries/"
     },
     {
       "sport": "MLB",
@@ -314,72 +398,10 @@
       "confidence": 0.406,
       "text": "#Bears OL Braxton Jones (Knee) is questionable to return.",
       "url": "https://x.com/RapSheet/status/2104756218187092237"
-    },
-    {
-      "sport": "NFL",
-      "source": "@AdamSchefter",
-      "source_tier": "trusted_media",
-      "published_at_utc": "2026-09-28T20:02:02.000Z",
-      "fetched_at_utc": "2026-09-28T20:34:06.422077+00:00",
-      "status_signal": "available",
-      "tactical_flags": [],
-      "confidence": 0.7447,
-      "text": "Packers OL moves: \ud83c\udfc8Signed G Laken Tomlinson to their active roster from the Dallas Cowboys\u2019 practice squad. \ud83c\udfc8Signed G Mekhi Becton Sr. to their practice squad. \ud83c\udfc8Placed OL Zach Bako-Bewele on injured reserve.",
-      "url": "https://x.com/AdamSchefter/status/2104662940314157502"
-    },
-    {
-      "sport": "NFL",
-      "source": "@RapSheet",
-      "source_tier": "trusted_media",
-      "published_at_utc": "2026-09-28T16:31:03.000Z",
-      "fetched_at_utc": "2026-09-28T20:34:06.422351+00:00",
-      "status_signal": "out",
-      "tactical_flags": [],
-      "confidence": 0.5491,
-      "text": "Coach Todd Bowles estimated that QB Baker Mayfield will be out three weeks with his injury. https://t.co/AVQheEODlX",
-      "url": "https://x.com/RapSheet/status/2104609845512953867"
-    },
-    {
-      "sport": "NFL",
-      "source": "@RapSheet",
-      "source_tier": "trusted_media",
-      "published_at_utc": "2026-09-28T16:29:08.000Z",
-      "fetched_at_utc": "2026-09-28T20:34:06.422509+00:00",
-      "status_signal": "out",
-      "tactical_flags": [],
-      "confidence": 0.5476,
-      "text": "Sources: #Panthers star CB Jaycee Horn suffered a torn quad and is out indefinitely. One of the game's best. Horn will seek a second opinion, but he's headed for Injured Reserve and could be lost for the season. https://t.co/HINTtlOEtp",
-      "url": "https://x.com/RapSheet/status/2104609364690780162"
-    },
-    {
-      "sport": "NFL",
-      "source": "@RapSheet",
-      "source_tier": "trusted_media",
-      "published_at_utc": "2026-09-28T16:27:49.000Z",
-      "fetched_at_utc": "2026-09-28T20:34:06.422549+00:00",
-      "status_signal": "out",
-      "tactical_flags": [],
-      "confidence": 0.5466,
-      "text": "Sources: #Panthers star CB Jaycee Horn suffered a torn quad and is out indefinitely. One of the game's best.",
-      "url": "https://x.com/RapSheet/status/2104609030958415943"
-    },
-    {
-      "sport": "NFL",
-      "source": "@RapSheet",
-      "source_tier": "trusted_media",
-      "published_at_utc": "2026-09-28T18:44:50.000Z",
-      "fetched_at_utc": "2026-09-28T20:34:06.422304+00:00",
-      "status_signal": null,
-      "tactical_flags": [
-        "expected_to_start"
-      ],
-      "confidence": 0.4996,
-      "text": "From The Aftermath on @NFLNetwork: The #Bears will start Case Keenum tonight. A look at where it all stands\u2026 https://t.co/9jJzxYwLEi",
-      "url": "https://x.com/RapSheet/status/2104643510968410621"
     }
   ],
   "structured": {
-    "generated_at_utc": "2026-09-30T16:25:25.283817+00:00",
+    "generated_at_utc": "2026-09-30T22:17:03.034402+00:00",
     "players": [],
     "teams": {},
     "policy": {
