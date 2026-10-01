@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-09-30T18:00:08.586492+00:00",
+  "generated_at_utc": "2026-10-01T00:33:32.065684+00:00",
   "target_date": "2026-09-30",
   "sport": "MLB",
   "model_version": "mlb-runs-v2",
@@ -21,7 +21,7 @@
       "home_team": "Atlanta Braves",
       "away_team": "Philadelphia Phillies",
       "venue": "Truist Park",
-      "status": "Warmup",
+      "status": "Final",
       "predicted_home_runs": 3.83,
       "predicted_away_runs": 3.62,
       "predicted_total_runs": 7.45,
@@ -81,11 +81,11 @@
       "availability_note": "Standings/urgency context cannot confirm a specific star will rest; actual lineup/inactive data should override the proxy when available.",
       "market_used_in_prediction": false,
       "market_bookmaker": "DraftKings",
-      "market_home_moneyline": -106,
-      "market_away_moneyline": -114,
+      "market_home_moneyline": -104,
+      "market_away_moneyline": -116,
       "market_run_line_home": 1.5,
       "market_total": 7,
-      "market_updated_at": "2026-09-30T18:00:05.169981+00:00"
+      "market_updated_at": "2026-10-01T00:33:27.568955+00:00"
     },
     {
       "game_id": "849846",
@@ -93,7 +93,7 @@
       "home_team": "Houston Astros",
       "away_team": "Chicago White Sox",
       "venue": "Daikin Park",
-      "status": "Pre-Game",
+      "status": "Final",
       "predicted_home_runs": 3.98,
       "predicted_away_runs": 3.99,
       "predicted_total_runs": 7.97,
@@ -152,12 +152,12 @@
       "away_official_standings": null,
       "availability_note": "Standings/urgency context cannot confirm a specific star will rest; actual lineup/inactive data should override the proxy when available.",
       "market_used_in_prediction": false,
-      "market_bookmaker": "DraftKings",
-      "market_home_moneyline": -155,
-      "market_away_moneyline": 129,
-      "market_run_line_home": -1.5,
-      "market_total": 7.5,
-      "market_updated_at": "2026-09-30T18:00:05.169981+00:00"
+      "market_bookmaker": null,
+      "market_home_moneyline": null,
+      "market_away_moneyline": null,
+      "market_run_line_home": null,
+      "market_total": null,
+      "market_updated_at": null
     },
     {
       "game_id": "849848",
@@ -165,7 +165,7 @@
       "home_team": "New York Yankees",
       "away_team": "Boston Red Sox",
       "venue": "Yankee Stadium",
-      "status": "Scheduled",
+      "status": "In Progress",
       "predicted_home_runs": 3.55,
       "predicted_away_runs": 2.93,
       "predicted_total_runs": 6.47,
@@ -224,12 +224,12 @@
       "away_official_standings": null,
       "availability_note": "Standings/urgency context cannot confirm a specific star will rest; actual lineup/inactive data should override the proxy when available.",
       "market_used_in_prediction": false,
-      "market_bookmaker": "DraftKings",
-      "market_home_moneyline": -143,
-      "market_away_moneyline": 118,
-      "market_run_line_home": -1.5,
-      "market_total": 6.5,
-      "market_updated_at": "2026-09-30T18:00:05.169981+00:00"
+      "market_bookmaker": null,
+      "market_home_moneyline": null,
+      "market_away_moneyline": null,
+      "market_run_line_home": null,
+      "market_total": null,
+      "market_updated_at": null
     },
     {
       "game_id": "849842",
@@ -237,7 +237,7 @@
       "home_team": "San Diego Padres",
       "away_team": "Chicago Cubs",
       "venue": "Petco Park",
-      "status": "Scheduled",
+      "status": "Pre-Game",
       "predicted_home_runs": 4.68,
       "predicted_away_runs": 4.12,
       "predicted_total_runs": 8.81,
@@ -296,12 +296,12 @@
       "away_official_standings": null,
       "availability_note": "Standings/urgency context cannot confirm a specific star will rest; actual lineup/inactive data should override the proxy when available.",
       "market_used_in_prediction": false,
-      "market_bookmaker": "DraftKings",
-      "market_home_moneyline": -137,
-      "market_away_moneyline": 114,
-      "market_run_line_home": -1.5,
-      "market_total": 7,
-      "market_updated_at": "2026-09-30T18:00:05.169981+00:00"
+      "market_bookmaker": null,
+      "market_home_moneyline": null,
+      "market_away_moneyline": null,
+      "market_run_line_home": null,
+      "market_total": null,
+      "market_updated_at": null
     }
   ]
 }
