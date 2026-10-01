@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-01T17:02:25.196400+00:00",
+  "generated_at_utc": "2026-10-01T22:42:13.712695+00:00",
   "status": "ok",
   "direct_model_adjustment_enabled": false,
   "integration_stage": "context_and_edge_reliability_only",
@@ -15,7 +15,7 @@
       "sport": "NFL",
       "url": "https://www.nfl.com/injuries/",
       "status": "ok",
-      "snippets": 16
+      "snippets": 23
     },
     {
       "source": "WNBA Official Injury Report",
@@ -30,7 +30,7 @@
       "sport": "MLB",
       "url": "https://www.mlb.com/injury-report",
       "status": "ok",
-      "snippets": 27
+      "snippets": 26
     },
     {
       "source": "MLB Probable Pitchers",
@@ -53,30 +53,78 @@
   },
   "x_source_diagnostics": {
     "status": "ok",
-    "posts": 4,
+    "posts": 2,
     "query": "(from:AdamSchefter OR from:RapSheet OR from:JeffPassan OR from:alexaphilippou) (out OR inactive OR doubtful OR questionable OR injury OR injured OR rest OR resting OR \"expected to play\" OR \"will start\" OR \"minutes restriction\" OR \"snap count\" OR \"pitch count\") -is:retweet lang:en",
-    "since_id_used": "2105499480720076801",
-    "newest_id": "2105703192642437315"
+    "since_id_used": "2105703192642437315",
+    "newest_id": "2105758572181373145"
   },
   "signals": [
     {
       "sport": "NFL",
-      "source": "@AdamSchefter",
-      "source_tier": "trusted_media",
-      "published_at_utc": "2026-10-01T16:55:37.000Z",
-      "fetched_at_utc": "2026-10-01T17:02:25.195632+00:00",
+      "source": "NFL Official Injury Report",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-10-01T22:42:12.760820+00:00",
       "status_signal": "out",
       "tactical_flags": [],
-      "confidence": 0.7724,
-      "text": "New Cowboys CB Joey Porter Jr. is headed to Dallas without a new contract. He will play for the Cowboys, as early as Sunday, without a new deal, but with both sides hoping and believing they will figure out a way to get it done. Cc: @tyschmit \ud83c\udfa7 https://t.co/w3Ld4bIE0y https://t.co/596OdLvWK8",
-      "url": "https://x.com/AdamSchefter/status/2105703192642437315"
+      "confidence": 0.65,
+      "text": "Rico Dowdle RB Toe Did Not Participate In Practice Out",
+      "url": "https://www.nfl.com/injuries/"
     },
     {
       "sport": "NFL",
       "source": "NFL Official Injury Report",
       "source_tier": "official",
       "published_at_utc": null,
-      "fetched_at_utc": "2026-10-01T17:02:24.427801+00:00",
+      "fetched_at_utc": "2026-10-01T22:42:12.760857+00:00",
+      "status_signal": "out",
+      "tactical_flags": [],
+      "confidence": 0.65,
+      "text": "Joey Porter Jr. CB Not injury related - other, Back Limited Participation in Practice Out",
+      "url": "https://www.nfl.com/injuries/"
+    },
+    {
+      "sport": "NFL",
+      "source": "NFL Official Injury Report",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-10-01T22:42:12.760912+00:00",
+      "status_signal": "out",
+      "tactical_flags": [],
+      "confidence": 0.65,
+      "text": "Elgton Jenkins C Concussion Did Not Participate In Practice Out",
+      "url": "https://www.nfl.com/injuries/"
+    },
+    {
+      "sport": "NFL",
+      "source": "NFL Official Injury Report",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-10-01T22:42:12.760932+00:00",
+      "status_signal": "out",
+      "tactical_flags": [],
+      "confidence": 0.65,
+      "text": "Teven Jenkins G Back Limited Participation in Practice Out",
+      "url": "https://www.nfl.com/injuries/"
+    },
+    {
+      "sport": "NFL",
+      "source": "NFL Official Injury Report",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-10-01T22:42:12.760952+00:00",
+      "status_signal": "out",
+      "tactical_flags": [],
+      "confidence": 0.65,
+      "text": "Tylan Wallace WR Knee Did Not Participate In Practice Out",
+      "url": "https://www.nfl.com/injuries/"
+    },
+    {
+      "sport": "NFL",
+      "source": "NFL Official Injury Report",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-10-01T22:42:12.760972+00:00",
       "status_signal": "out",
       "tactical_flags": [],
       "confidence": 0.65,
@@ -88,7 +136,7 @@
       "source": "NFL Official Injury Report",
       "source_tier": "official",
       "published_at_utc": null,
-      "fetched_at_utc": "2026-10-01T17:02:24.427848+00:00",
+      "fetched_at_utc": "2026-10-01T22:42:12.760991+00:00",
       "status_signal": "out",
       "tactical_flags": [],
       "confidence": 0.65,
@@ -100,7 +148,7 @@
       "source": "NFL Official Injury Report",
       "source_tier": "official",
       "published_at_utc": null,
-      "fetched_at_utc": "2026-10-01T17:02:24.428244+00:00",
+      "fetched_at_utc": "2026-10-01T22:42:12.761227+00:00",
       "status_signal": "out",
       "tactical_flags": [],
       "confidence": 0.65,
@@ -112,7 +160,7 @@
       "source": "NFL Official Injury Report",
       "source_tier": "official",
       "published_at_utc": null,
-      "fetched_at_utc": "2026-10-01T17:02:24.428270+00:00",
+      "fetched_at_utc": "2026-10-01T22:42:12.761252+00:00",
       "status_signal": "out",
       "tactical_flags": [],
       "confidence": 0.65,
@@ -124,7 +172,7 @@
       "source": "NFL Official Injury Report",
       "source_tier": "official",
       "published_at_utc": null,
-      "fetched_at_utc": "2026-10-01T17:02:24.428328+00:00",
+      "fetched_at_utc": "2026-10-01T22:42:12.761309+00:00",
       "status_signal": "out",
       "tactical_flags": [],
       "confidence": 0.65,
@@ -136,7 +184,7 @@
       "source": "NFL Official Injury Report",
       "source_tier": "official",
       "published_at_utc": null,
-      "fetched_at_utc": "2026-10-01T17:02:24.428561+00:00",
+      "fetched_at_utc": "2026-10-01T22:42:12.761542+00:00",
       "status_signal": "out",
       "tactical_flags": [],
       "confidence": 0.65,
@@ -148,7 +196,7 @@
       "source": "MLB Official Injury Report",
       "source_tier": "official",
       "published_at_utc": null,
-      "fetched_at_utc": "2026-10-01T17:02:24.716082+00:00",
+      "fetched_at_utc": "2026-10-01T22:42:13.154429+00:00",
       "status_signal": "out",
       "tactical_flags": [],
       "confidence": 0.65,
@@ -160,7 +208,7 @@
       "source": "MLB Official Injury Report",
       "source_tier": "official",
       "published_at_utc": null,
-      "fetched_at_utc": "2026-10-01T17:02:24.716126+00:00",
+      "fetched_at_utc": "2026-10-01T22:42:13.154474+00:00",
       "status_signal": "out",
       "tactical_flags": [],
       "confidence": 0.65,
@@ -172,19 +220,7 @@
       "source": "MLB Official Injury Report",
       "source_tier": "official",
       "published_at_utc": null,
-      "fetched_at_utc": "2026-10-01T17:02:24.716200+00:00",
-      "status_signal": "out",
-      "tactical_flags": [],
-      "confidence": 0.65,
-      "text": "DeLauter, Mart\u00ednez remain out of lineup for Guardians' finale vs. White Sox",
-      "url": "https://www.mlb.com/injury-report"
-    },
-    {
-      "sport": "MLB",
-      "source": "MLB Official Injury Report",
-      "source_tier": "official",
-      "published_at_utc": null,
-      "fetched_at_utc": "2026-10-01T17:02:24.716247+00:00",
+      "fetched_at_utc": "2026-10-01T22:42:13.154571+00:00",
       "status_signal": "out",
       "tactical_flags": [],
       "confidence": 0.65,
@@ -196,7 +232,7 @@
       "source": "MLB Official Injury Report",
       "source_tier": "official",
       "published_at_utc": null,
-      "fetched_at_utc": "2026-10-01T17:02:24.716463+00:00",
+      "fetched_at_utc": "2026-10-01T22:42:13.154782+00:00",
       "status_signal": "out",
       "tactical_flags": [],
       "confidence": 0.65,
@@ -208,12 +244,112 @@
       "source": "MLB Official Injury Report",
       "source_tier": "official",
       "published_at_utc": null,
-      "fetched_at_utc": "2026-10-01T17:02:24.716617+00:00",
+      "fetched_at_utc": "2026-10-01T22:42:13.154947+00:00",
       "status_signal": "out",
       "tactical_flags": [],
       "confidence": 0.65,
       "text": "Goodman (right thumb soreness) out again on Wednesday",
       "url": "https://www.mlb.com/injury-report"
+    },
+    {
+      "sport": "NFL",
+      "source": "NFL Official Injury Report",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-10-01T22:42:12.760741+00:00",
+      "status_signal": "questionable",
+      "tactical_flags": [],
+      "confidence": 0.585,
+      "text": "Yahya Black DT Not injury related - personal matter Questionable",
+      "url": "https://www.nfl.com/injuries/"
+    },
+    {
+      "sport": "NFL",
+      "source": "NFL Official Injury Report",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-10-01T22:42:12.760884+00:00",
+      "status_signal": "questionable",
+      "tactical_flags": [],
+      "confidence": 0.585,
+      "text": "Jalen Ramsey CB Wrist Limited Participation in Practice Questionable",
+      "url": "https://www.nfl.com/injuries/"
+    },
+    {
+      "sport": "NFL",
+      "source": "NFL Official Injury Report",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-10-01T22:42:12.761362+00:00",
+      "status_signal": "doubtful",
+      "tactical_flags": [],
+      "confidence": 0.585,
+      "text": "Rams' Puka Nacua doubtful to play Sunday night vs. Broncos",
+      "url": "https://www.nfl.com/injuries/"
+    },
+    {
+      "sport": "MLB",
+      "source": "MLB Official Injury Report",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-10-01T22:42:13.154284+00:00",
+      "status_signal": "probable",
+      "tactical_flags": [],
+      "confidence": 0.585,
+      "text": "News Probable Pitchers Awards Starting Lineups Transactions Injury Report World Baseball Classic MLB Draft All-Star Game AUSL MLB Pipeline Postseason History Podcasts International",
+      "url": "https://www.mlb.com/injury-report"
+    },
+    {
+      "sport": "MLB",
+      "source": "MLB Probable Pitchers",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-10-01T22:42:13.244189+00:00",
+      "status_signal": "probable",
+      "tactical_flags": [],
+      "confidence": 0.585,
+      "text": "News Probable Pitchers Awards Starting Lineups Transactions Injury Report World Baseball Classic MLB Draft All-Star Game AUSL MLB Pipeline Postseason History Podcasts International",
+      "url": "https://www.mlb.com/probable-pitchers"
+    },
+    {
+      "sport": "NFL",
+      "source": "NFL Official Injury Report",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-10-01T22:42:12.761287+00:00",
+      "status_signal": null,
+      "tactical_flags": [
+        "rest_candidate"
+      ],
+      "confidence": 0.4875,
+      "text": "Dolphins RB De'Von Achane to miss rest of season after tearing ACL in loss to Chiefs",
+      "url": "https://www.nfl.com/injuries/"
+    },
+    {
+      "sport": "NFL",
+      "source": "NFL Official Injury Report",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-10-01T22:42:12.761481+00:00",
+      "status_signal": null,
+      "tactical_flags": [
+        "expected_to_start"
+      ],
+      "confidence": 0.4875,
+      "text": "Kyler Murray clears concussion protocol, will start for Vikings in Week 3 vs. Buccaneers",
+      "url": "https://www.nfl.com/injuries/"
+    },
+    {
+      "sport": "NFL",
+      "source": "@AdamSchefter",
+      "source_tier": "trusted_media",
+      "published_at_utc": "2026-10-01T16:55:37.000Z",
+      "fetched_at_utc": "2026-10-01T17:02:25.195632+00:00",
+      "status_signal": "out",
+      "tactical_flags": [],
+      "confidence": 0.7724,
+      "text": "New Cowboys CB Joey Porter Jr. is headed to Dallas without a new contract. He will play for the Cowboys, as early as Sunday, without a new deal, but with both sides hoping and believing they will figure out a way to get it done. Cc: @tyschmit \ud83c\udfa7 https://t.co/w3Ld4bIE0y https://t.co/596OdLvWK8",
+      "url": "https://x.com/AdamSchefter/status/2105703192642437315"
     },
     {
       "sport": "NFL",
@@ -229,42 +365,6 @@
     },
     {
       "sport": "NFL",
-      "source": "NFL Official Injury Report",
-      "source_tier": "official",
-      "published_at_utc": null,
-      "fetched_at_utc": "2026-10-01T17:02:24.428382+00:00",
-      "status_signal": "doubtful",
-      "tactical_flags": [],
-      "confidence": 0.585,
-      "text": "Rams' Puka Nacua doubtful to play Sunday night vs. Broncos",
-      "url": "https://www.nfl.com/injuries/"
-    },
-    {
-      "sport": "MLB",
-      "source": "MLB Official Injury Report",
-      "source_tier": "official",
-      "published_at_utc": null,
-      "fetched_at_utc": "2026-10-01T17:02:24.715943+00:00",
-      "status_signal": "probable",
-      "tactical_flags": [],
-      "confidence": 0.585,
-      "text": "News Probable Pitchers Awards Starting Lineups Transactions Injury Report World Baseball Classic MLB Draft All-Star Game AUSL MLB Pipeline Postseason History Podcasts International",
-      "url": "https://www.mlb.com/injury-report"
-    },
-    {
-      "sport": "MLB",
-      "source": "MLB Probable Pitchers",
-      "source_tier": "official",
-      "published_at_utc": null,
-      "fetched_at_utc": "2026-10-01T17:02:24.810084+00:00",
-      "status_signal": "probable",
-      "tactical_flags": [],
-      "confidence": 0.585,
-      "text": "News Probable Pitchers Awards Starting Lineups Transactions Injury Report World Baseball Classic MLB Draft All-Star Game AUSL MLB Pipeline Postseason History Podcasts International",
-      "url": "https://www.mlb.com/probable-pitchers"
-    },
-    {
-      "sport": "NFL",
       "source": "@AdamSchefter",
       "source_tier": "trusted_media",
       "published_at_utc": "2026-10-01T11:58:11.000Z",
@@ -274,34 +374,6 @@
       "confidence": 0.5027,
       "text": "There is \u201ca chance\u201d that new Cowboys CB Joey Porter will make his Dallas debut Sunday vs. the Texans, per league source. The Cowboys are going to work to get him ready for Sunday, and need him with their secondary depleted by injury. Porter could go from being ruled out for https://t.co/bOtBa74Md8",
       "url": "https://x.com/AdamSchefter/status/2105628339457175631"
-    },
-    {
-      "sport": "NFL",
-      "source": "NFL Official Injury Report",
-      "source_tier": "official",
-      "published_at_utc": null,
-      "fetched_at_utc": "2026-10-01T17:02:24.428306+00:00",
-      "status_signal": null,
-      "tactical_flags": [
-        "rest_candidate"
-      ],
-      "confidence": 0.4875,
-      "text": "Dolphins RB De'Von Achane to miss rest of season after tearing ACL in loss to Chiefs",
-      "url": "https://www.nfl.com/injuries/"
-    },
-    {
-      "sport": "NFL",
-      "source": "NFL Official Injury Report",
-      "source_tier": "official",
-      "published_at_utc": null,
-      "fetched_at_utc": "2026-10-01T17:02:24.428500+00:00",
-      "status_signal": null,
-      "tactical_flags": [
-        "expected_to_start"
-      ],
-      "confidence": 0.4875,
-      "text": "Kyler Murray clears concussion protocol, will start for Vikings in Week 3 vs. Buccaneers",
-      "url": "https://www.nfl.com/injuries/"
     },
     {
       "sport": "WNBA",
@@ -422,22 +494,10 @@
       "confidence": 0.6441,
       "text": "Commanders G Sam Cosmi (Concussion/Throat) and S Nick Cross (Illness) are not traveling with the team tonight to London and have been ruled out for Sunday\u2019s game vs. the Colts.",
       "url": "https://x.com/AdamSchefter/status/2105072083369623554"
-    },
-    {
-      "sport": "NFL",
-      "source": "@RapSheet",
-      "source_tier": "trusted_media",
-      "published_at_utc": "2026-09-29T19:53:04.000Z",
-      "fetched_at_utc": "2026-09-29T22:16:05.095360+00:00",
-      "status_signal": "out",
-      "tactical_flags": [],
-      "confidence": 0.6345,
-      "text": "From @BigDayESPN: The #Chargers find themselves 0-3 after an offseason of optimism. How do they fight their way out? https://t.co/s7L6WfcSy8",
-      "url": "https://x.com/RapSheet/status/2105023073342931216"
     }
   ],
   "structured": {
-    "generated_at_utc": "2026-10-01T17:02:25.196338+00:00",
+    "generated_at_utc": "2026-10-01T22:42:13.712615+00:00",
     "players": [],
     "teams": {},
     "policy": {
