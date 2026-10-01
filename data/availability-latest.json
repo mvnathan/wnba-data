@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-09-30T22:17:03.034476+00:00",
+  "generated_at_utc": "2026-10-01T01:19:54.097432+00:00",
   "status": "ok",
   "direct_model_adjustment_enabled": false,
   "integration_stage": "context_and_edge_reliability_only",
@@ -30,7 +30,7 @@
       "sport": "MLB",
       "url": "https://www.mlb.com/injury-report",
       "status": "ok",
-      "snippets": 25
+      "snippets": 27
     },
     {
       "source": "MLB Probable Pitchers",
@@ -53,9 +53,9 @@
   },
   "x_source_diagnostics": {
     "status": "ok",
-    "posts": 13,
+    "posts": 0,
     "query": "(from:AdamSchefter OR from:RapSheet OR from:JeffPassan OR from:alexaphilippou) (out OR inactive OR doubtful OR questionable OR injury OR injured OR rest OR resting OR \"expected to play\" OR \"will start\" OR \"minutes restriction\" OR \"snap count\" OR \"pitch count\") -is:retweet lang:en",
-    "since_id_used": "2105324532441763947",
+    "since_id_used": "2105405812843975119",
     "newest_id": "2105405812843975119"
   },
   "signals": [
@@ -64,7 +64,7 @@
       "source": "NFL Official Injury Report",
       "source_tier": "official",
       "published_at_utc": null,
-      "fetched_at_utc": "2026-09-30T22:17:02.236052+00:00",
+      "fetched_at_utc": "2026-10-01T01:19:53.442677+00:00",
       "status_signal": "out",
       "tactical_flags": [],
       "confidence": 0.65,
@@ -76,7 +76,7 @@
       "source": "NFL Official Injury Report",
       "source_tier": "official",
       "published_at_utc": null,
-      "fetched_at_utc": "2026-09-30T22:17:02.236115+00:00",
+      "fetched_at_utc": "2026-10-01T01:19:53.442738+00:00",
       "status_signal": "out",
       "tactical_flags": [],
       "confidence": 0.65,
@@ -88,7 +88,7 @@
       "source": "NFL Official Injury Report",
       "source_tier": "official",
       "published_at_utc": null,
-      "fetched_at_utc": "2026-09-30T22:17:02.236502+00:00",
+      "fetched_at_utc": "2026-10-01T01:19:53.443167+00:00",
       "status_signal": "out",
       "tactical_flags": [],
       "confidence": 0.65,
@@ -100,7 +100,7 @@
       "source": "NFL Official Injury Report",
       "source_tier": "official",
       "published_at_utc": null,
-      "fetched_at_utc": "2026-09-30T22:17:02.236529+00:00",
+      "fetched_at_utc": "2026-10-01T01:19:53.443194+00:00",
       "status_signal": "out",
       "tactical_flags": [],
       "confidence": 0.65,
@@ -112,7 +112,7 @@
       "source": "NFL Official Injury Report",
       "source_tier": "official",
       "published_at_utc": null,
-      "fetched_at_utc": "2026-09-30T22:17:02.236586+00:00",
+      "fetched_at_utc": "2026-10-01T01:19:53.443250+00:00",
       "status_signal": "out",
       "tactical_flags": [],
       "confidence": 0.65,
@@ -124,7 +124,7 @@
       "source": "NFL Official Injury Report",
       "source_tier": "official",
       "published_at_utc": null,
-      "fetched_at_utc": "2026-09-30T22:17:02.236823+00:00",
+      "fetched_at_utc": "2026-10-01T01:19:53.443487+00:00",
       "status_signal": "out",
       "tactical_flags": [],
       "confidence": 0.65,
@@ -136,7 +136,7 @@
       "source": "NFL Official Injury Report",
       "source_tier": "official",
       "published_at_utc": null,
-      "fetched_at_utc": "2026-09-30T22:17:02.236872+00:00",
+      "fetched_at_utc": "2026-10-01T01:19:53.443535+00:00",
       "status_signal": "out",
       "tactical_flags": [],
       "confidence": 0.65,
@@ -148,7 +148,7 @@
       "source": "MLB Official Injury Report",
       "source_tier": "official",
       "published_at_utc": null,
-      "fetched_at_utc": "2026-09-30T22:17:02.570713+00:00",
+      "fetched_at_utc": "2026-10-01T01:19:53.685665+00:00",
       "status_signal": "out",
       "tactical_flags": [],
       "confidence": 0.65,
@@ -160,7 +160,7 @@
       "source": "MLB Official Injury Report",
       "source_tier": "official",
       "published_at_utc": null,
-      "fetched_at_utc": "2026-09-30T22:17:02.570758+00:00",
+      "fetched_at_utc": "2026-10-01T01:19:53.685709+00:00",
       "status_signal": "out",
       "tactical_flags": [],
       "confidence": 0.65,
@@ -172,7 +172,7 @@
       "source": "MLB Official Injury Report",
       "source_tier": "official",
       "published_at_utc": null,
-      "fetched_at_utc": "2026-09-30T22:17:02.570831+00:00",
+      "fetched_at_utc": "2026-10-01T01:19:53.685783+00:00",
       "status_signal": "out",
       "tactical_flags": [],
       "confidence": 0.65,
@@ -184,7 +184,7 @@
       "source": "MLB Official Injury Report",
       "source_tier": "official",
       "published_at_utc": null,
-      "fetched_at_utc": "2026-09-30T22:17:02.570878+00:00",
+      "fetched_at_utc": "2026-10-01T01:19:53.685829+00:00",
       "status_signal": "out",
       "tactical_flags": [],
       "confidence": 0.65,
@@ -196,7 +196,7 @@
       "source": "MLB Official Injury Report",
       "source_tier": "official",
       "published_at_utc": null,
-      "fetched_at_utc": "2026-09-30T22:17:02.571140+00:00",
+      "fetched_at_utc": "2026-10-01T01:19:53.686096+00:00",
       "status_signal": "out",
       "tactical_flags": [],
       "confidence": 0.65,
@@ -208,12 +208,76 @@
       "source": "MLB Official Injury Report",
       "source_tier": "official",
       "published_at_utc": null,
-      "fetched_at_utc": "2026-09-30T22:17:02.571242+00:00",
+      "fetched_at_utc": "2026-10-01T01:19:53.686227+00:00",
       "status_signal": "out",
       "tactical_flags": [],
       "confidence": 0.65,
       "text": "Goodman (right thumb soreness) out again on Wednesday",
       "url": "https://www.mlb.com/injury-report"
+    },
+    {
+      "sport": "NFL",
+      "source": "NFL Official Injury Report",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-10-01T01:19:53.443304+00:00",
+      "status_signal": "doubtful",
+      "tactical_flags": [],
+      "confidence": 0.585,
+      "text": "Rams' Puka Nacua doubtful to play Sunday night vs. Broncos",
+      "url": "https://www.nfl.com/injuries/"
+    },
+    {
+      "sport": "MLB",
+      "source": "MLB Official Injury Report",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-10-01T01:19:53.685519+00:00",
+      "status_signal": "probable",
+      "tactical_flags": [],
+      "confidence": 0.585,
+      "text": "News Probable Pitchers Awards Starting Lineups Transactions Injury Report World Baseball Classic MLB Draft All-Star Game AUSL MLB Pipeline Postseason History Podcasts International",
+      "url": "https://www.mlb.com/injury-report"
+    },
+    {
+      "sport": "MLB",
+      "source": "MLB Probable Pitchers",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-10-01T01:19:53.785831+00:00",
+      "status_signal": "probable",
+      "tactical_flags": [],
+      "confidence": 0.585,
+      "text": "News Probable Pitchers Awards Starting Lineups Transactions Injury Report World Baseball Classic MLB Draft All-Star Game AUSL MLB Pipeline Postseason History Podcasts International",
+      "url": "https://www.mlb.com/probable-pitchers"
+    },
+    {
+      "sport": "NFL",
+      "source": "NFL Official Injury Report",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-10-01T01:19:53.443229+00:00",
+      "status_signal": null,
+      "tactical_flags": [
+        "rest_candidate"
+      ],
+      "confidence": 0.4875,
+      "text": "Dolphins RB De'Von Achane to miss rest of season after tearing ACL in loss to Chiefs",
+      "url": "https://www.nfl.com/injuries/"
+    },
+    {
+      "sport": "NFL",
+      "source": "NFL Official Injury Report",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-10-01T01:19:53.443426+00:00",
+      "status_signal": null,
+      "tactical_flags": [
+        "expected_to_start"
+      ],
+      "confidence": 0.4875,
+      "text": "Kyler Murray clears concussion protocol, will start for Vikings in Week 3 vs. Buccaneers",
+      "url": "https://www.nfl.com/injuries/"
     },
     {
       "sport": "NFL",
@@ -262,70 +326,6 @@
       "confidence": 0.5905,
       "text": "Steelers have ruled out CB Joey Porter Jr. is for Thursday night\u2019s game vs. the Browns due to his back issue.",
       "url": "https://x.com/AdamSchefter/status/2105373179136942192"
-    },
-    {
-      "sport": "NFL",
-      "source": "NFL Official Injury Report",
-      "source_tier": "official",
-      "published_at_utc": null,
-      "fetched_at_utc": "2026-09-30T22:17:02.236644+00:00",
-      "status_signal": "doubtful",
-      "tactical_flags": [],
-      "confidence": 0.585,
-      "text": "Rams' Puka Nacua doubtful to play Sunday night vs. Broncos",
-      "url": "https://www.nfl.com/injuries/"
-    },
-    {
-      "sport": "MLB",
-      "source": "MLB Official Injury Report",
-      "source_tier": "official",
-      "published_at_utc": null,
-      "fetched_at_utc": "2026-09-30T22:17:02.570593+00:00",
-      "status_signal": "probable",
-      "tactical_flags": [],
-      "confidence": 0.585,
-      "text": "News Probable Pitchers Awards Starting Lineups Transactions Injury Report World Baseball Classic MLB Draft All-Star Game AUSL MLB Pipeline Postseason History Podcasts International",
-      "url": "https://www.mlb.com/injury-report"
-    },
-    {
-      "sport": "MLB",
-      "source": "MLB Probable Pitchers",
-      "source_tier": "official",
-      "published_at_utc": null,
-      "fetched_at_utc": "2026-09-30T22:17:02.694909+00:00",
-      "status_signal": "probable",
-      "tactical_flags": [],
-      "confidence": 0.585,
-      "text": "News Probable Pitchers Awards Starting Lineups Transactions Injury Report World Baseball Classic MLB Draft All-Star Game AUSL MLB Pipeline Postseason History Podcasts International",
-      "url": "https://www.mlb.com/probable-pitchers"
-    },
-    {
-      "sport": "NFL",
-      "source": "NFL Official Injury Report",
-      "source_tier": "official",
-      "published_at_utc": null,
-      "fetched_at_utc": "2026-09-30T22:17:02.236564+00:00",
-      "status_signal": null,
-      "tactical_flags": [
-        "rest_candidate"
-      ],
-      "confidence": 0.4875,
-      "text": "Dolphins RB De'Von Achane to miss rest of season after tearing ACL in loss to Chiefs",
-      "url": "https://www.nfl.com/injuries/"
-    },
-    {
-      "sport": "NFL",
-      "source": "NFL Official Injury Report",
-      "source_tier": "official",
-      "published_at_utc": null,
-      "fetched_at_utc": "2026-09-30T22:17:02.236762+00:00",
-      "status_signal": null,
-      "tactical_flags": [
-        "expected_to_start"
-      ],
-      "confidence": 0.4875,
-      "text": "Kyler Murray clears concussion protocol, will start for Vikings in Week 3 vs. Buccaneers",
-      "url": "https://www.nfl.com/injuries/"
     },
     {
       "sport": "NFL",
@@ -401,7 +401,7 @@
     }
   ],
   "structured": {
-    "generated_at_utc": "2026-09-30T22:17:03.034402+00:00",
+    "generated_at_utc": "2026-10-01T01:19:54.097351+00:00",
     "players": [],
     "teams": {},
     "policy": {
