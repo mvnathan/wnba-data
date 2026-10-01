@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-01T06:29:50.155447+00:00",
+  "generated_at_utc": "2026-10-01T13:51:21.771609+00:00",
   "status": "ok",
   "production_modified": false,
   "baseline_model_version": "nfl-v2",
@@ -16,9 +16,9 @@
   "note": "External signals were not available historically across the full 577-game backtest, so current deltas are prospective. Accuracy/Brier/MAE comparison begins as these shadow forecasts settle.",
   "summary": {
     "games": 1,
-    "games_changed_by_availability": 1,
-    "games_changed_by_combined": 1,
-    "availability_x_signals_available": 9,
+    "games_changed_by_availability": 0,
+    "games_changed_by_combined": 0,
+    "availability_x_signals_available": 8,
     "sharp_ledger_picks": 0,
     "sharp_production_weight": 0.0
   },
@@ -41,41 +41,27 @@
         "predicted_winner": "Chicago Bears"
       },
       "availability_shadow": {
-        "predicted_home_points": 22.87,
+        "predicted_home_points": 23.0,
         "predicted_away_points": 21.2,
-        "predicted_margin": 1.67,
-        "predicted_total": 44.07,
-        "home_win_probability": 0.5574,
-        "away_win_probability": 0.4426,
+        "predicted_margin": 1.8,
+        "predicted_total": 44.2,
+        "home_win_probability": 0.5585,
+        "away_win_probability": 0.4415,
         "predicted_winner": "Chicago Bears",
-        "availability_margin_delta": -0.13,
-        "availability_total_delta": -0.13,
-        "signals_applied": [
-          {
-            "team": "CHI",
-            "player": "Braxton Jones",
-            "position": "OL",
-            "status": "questionable",
-            "confidence": 0.406,
-            "base_points": 0.7,
-            "point_impact": 0.128,
-            "source": "@RapSheet",
-            "published_at_utc": "2026-09-29T02:12:41.000Z",
-            "url": "https://x.com/RapSheet/status/2104756218187092237",
-            "text": "#Bears OL Braxton Jones (Knee) is questionable to return."
-          }
-        ]
+        "availability_margin_delta": 0.0,
+        "availability_total_delta": 0.0,
+        "signals_applied": []
       },
       "combined_shadow": {
-        "predicted_home_points": 22.87,
+        "predicted_home_points": 23.0,
         "predicted_away_points": 21.2,
-        "predicted_margin": 1.67,
-        "predicted_total": 44.07,
-        "home_win_probability": 0.5574,
-        "away_win_probability": 0.4426,
+        "predicted_margin": 1.8,
+        "predicted_total": 44.2,
+        "home_win_probability": 0.5585,
+        "away_win_probability": 0.4415,
         "predicted_winner": "Chicago Bears",
-        "combined_margin_delta_vs_production": -0.13,
-        "combined_total_delta_vs_production": -0.13,
+        "combined_margin_delta_vs_production": 0.0,
+        "combined_total_delta_vs_production": 0.0,
         "sharp_margin_delta": 0.0,
         "sharp_total_delta": 0.0,
         "sharp_signals_applied": []
