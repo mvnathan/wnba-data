@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-02T19:29:30.872884+00:00",
+  "generated_at_utc": "2026-10-02T23:58:55.623711+00:00",
   "status": "ok",
   "production_modified": false,
   "baseline_model_version": "nfl-v2",
@@ -18,7 +18,7 @@
     "games": 15,
     "games_changed_by_availability": 6,
     "games_changed_by_combined": 6,
-    "availability_x_signals_available": 20,
+    "availability_x_signals_available": 22,
     "sharp_ledger_picks": 0,
     "sharp_production_weight": 0.0
   },
@@ -417,15 +417,15 @@
         "predicted_winner": "Los Angeles Rams"
       },
       "availability_shadow": {
-        "predicted_home_points": 22.2,
+        "predicted_home_points": 21.84,
         "predicted_away_points": 22.01,
-        "predicted_margin": 0.19,
-        "predicted_total": 44.21,
-        "home_win_probability": 0.5066,
-        "away_win_probability": 0.4934,
-        "predicted_winner": "Philadelphia Eagles",
-        "availability_margin_delta": 0.79,
-        "availability_total_delta": -0.79,
+        "predicted_margin": -0.17,
+        "predicted_total": 43.85,
+        "home_win_probability": 0.494,
+        "away_win_probability": 0.506,
+        "predicted_winner": "Los Angeles Rams",
+        "availability_margin_delta": 0.43,
+        "availability_total_delta": -1.15,
         "signals_applied": [
           {
             "team": "LA",
@@ -439,19 +439,45 @@
             "published_at_utc": "2026-10-01T14:09:54.000Z",
             "url": "https://x.com/RapSheet/status/2105661486840365451",
             "text": "From @GMFB: The #Cowboys trade for Joey Porter Jr., #Packers WR Jayden Reed is out for the season; #Rams WR Puka Nacua is slated to play, while the #Rams got news(?) on their pass interference call. https://t.co/1Fj4GUvnGn"
+          },
+          {
+            "team": "PHI",
+            "player": "DeVonta Smith",
+            "position": "WR",
+            "status": "out",
+            "confidence": 0.5589,
+            "base_points": 1.3,
+            "point_impact": 0.727,
+            "source": "@AdamSchefter",
+            "published_at_utc": "2026-10-02T19:56:19.000Z",
+            "url": "https://x.com/AdamSchefter/status/2106111053449060437",
+            "text": "Eagles ruled out WR DeVonta Smith for Sunday\u2019s game vs. Rams due to his hamstring injury. https://t.co/jOMBS6WG14"
+          },
+          {
+            "team": "LA",
+            "player": "Aaron Donald",
+            "position": "DT",
+            "status": "out",
+            "confidence": 0.7448,
+            "base_points": 0.65,
+            "point_impact": 0.484,
+            "source": "@RapSheet",
+            "published_at_utc": "2026-10-02T23:15:12.000Z",
+            "url": "https://x.com/RapSheet/status/2106161102807769550",
+            "text": "From The Insiders on @nflnetwork: #Rams DT Aaron Donald is out on Sunday with a minor back injury. https://t.co/xQTWJFNtUr"
           }
         ]
       },
       "combined_shadow": {
-        "predicted_home_points": 22.2,
+        "predicted_home_points": 21.84,
         "predicted_away_points": 22.01,
-        "predicted_margin": 0.19,
-        "predicted_total": 44.21,
-        "home_win_probability": 0.5066,
-        "away_win_probability": 0.4934,
-        "predicted_winner": "Philadelphia Eagles",
-        "combined_margin_delta_vs_production": 0.79,
-        "combined_total_delta_vs_production": -0.79,
+        "predicted_margin": -0.17,
+        "predicted_total": 43.85,
+        "home_win_probability": 0.494,
+        "away_win_probability": 0.506,
+        "predicted_winner": "Los Angeles Rams",
+        "combined_margin_delta_vs_production": 0.43,
+        "combined_total_delta_vs_production": -1.15,
         "sharp_margin_delta": 0.0,
         "sharp_total_delta": 0.0,
         "sharp_signals_applied": []
