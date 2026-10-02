@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-02T00:10:24.735028+00:00",
+  "generated_at_utc": "2026-10-02T06:08:31.013589+00:00",
   "status": "ok",
   "production_modified": false,
   "baseline_model_version": "nfl-v2",
@@ -16,8 +16,8 @@
   "note": "External signals were not available historically across the full 577-game backtest, so current deltas are prospective. Accuracy/Brier/MAE comparison begins as these shadow forecasts settle.",
   "summary": {
     "games": 16,
-    "games_changed_by_availability": 5,
-    "games_changed_by_combined": 5,
+    "games_changed_by_availability": 4,
+    "games_changed_by_combined": 4,
     "availability_x_signals_available": 10,
     "sharp_ledger_picks": 0,
     "sharp_production_weight": 0.0
@@ -112,41 +112,27 @@
         "predicted_winner": "Indianapolis Colts"
       },
       "availability_shadow": {
-        "predicted_home_points": 23.71,
+        "predicted_home_points": 24.1,
         "predicted_away_points": 25.0,
-        "predicted_margin": -1.29,
-        "predicted_total": 48.71,
-        "home_win_probability": 0.4558,
-        "away_win_probability": 0.5442,
+        "predicted_margin": -0.9,
+        "predicted_total": 49.1,
+        "home_win_probability": 0.4718,
+        "away_win_probability": 0.5282,
         "predicted_winner": "Indianapolis Colts",
-        "availability_margin_delta": -0.39,
-        "availability_total_delta": -0.39,
-        "signals_applied": [
-          {
-            "team": "WAS",
-            "player": "Sam Cosmi",
-            "position": "G",
-            "status": "out",
-            "confidence": 0.6441,
-            "base_points": 0.6,
-            "point_impact": 0.386,
-            "source": "@AdamSchefter",
-            "published_at_utc": "2026-09-29T23:07:49.000Z",
-            "url": "https://x.com/AdamSchefter/status/2105072083369623554",
-            "text": "Commanders G Sam Cosmi (Concussion/Throat) and S Nick Cross (Illness) are not traveling with the team tonight to London and have been ruled out for Sunday\u2019s game vs. the Colts."
-          }
-        ]
+        "availability_margin_delta": 0.0,
+        "availability_total_delta": 0.0,
+        "signals_applied": []
       },
       "combined_shadow": {
-        "predicted_home_points": 23.71,
+        "predicted_home_points": 24.1,
         "predicted_away_points": 25.0,
-        "predicted_margin": -1.29,
-        "predicted_total": 48.71,
-        "home_win_probability": 0.4558,
-        "away_win_probability": 0.5442,
+        "predicted_margin": -0.9,
+        "predicted_total": 49.1,
+        "home_win_probability": 0.4718,
+        "away_win_probability": 0.5282,
         "predicted_winner": "Indianapolis Colts",
-        "combined_margin_delta_vs_production": -0.39,
-        "combined_total_delta_vs_production": -0.39,
+        "combined_margin_delta_vs_production": 0.0,
+        "combined_total_delta_vs_production": 0.0,
         "sharp_margin_delta": 0.0,
         "sharp_total_delta": 0.0,
         "sharp_signals_applied": []
