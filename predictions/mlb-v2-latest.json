@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-01T18:25:43.494597+00:00",
+  "generated_at_utc": "2026-10-02T00:47:24.988760+00:00",
   "target_date": "2026-10-01",
   "sport": "MLB",
   "model_version": "mlb-runs-v2",
@@ -21,7 +21,7 @@
       "home_team": "Atlanta Braves",
       "away_team": "Philadelphia Phillies",
       "venue": "Truist Park",
-      "status": "Scheduled",
+      "status": "In Progress",
       "predicted_home_runs": 4.54,
       "predicted_away_runs": 3.95,
       "predicted_total_runs": 8.49,
