@@ -1,6 +1,6 @@
 {
-  "generated_at_utc": "2026-10-02T19:30:24.424299+00:00",
-  "source_generated_at_utc": "2026-10-02T19:30:14.801318+00:00",
+  "generated_at_utc": "2026-10-03T00:00:17.978387+00:00",
+  "source_generated_at_utc": "2026-10-03T00:00:05.612507+00:00",
   "active_opportunities": [
     {
       "market": "total",
@@ -22,44 +22,19 @@
       "live_away_score": null,
       "live_home_score": null,
       "market_bookmaker": "DraftKings",
-      "market_updated_at": "2026-10-02T19:30:23.739357+00:00",
+      "market_updated_at": "2026-10-03T00:00:17.195403+00:00",
       "home_win_probability": 0.7666666666666667,
       "away_win_probability": 0.23333333333333328,
       "context_rest_risk": 0.19419642857142858,
       "context_postseason_urgency": 0.642857142857143,
       "availability_review_priority": false,
-      "evaluated_at_utc": "2026-10-02T19:30:24.424299+00:00",
+      "evaluated_at_utc": "2026-10-03T00:00:17.978387+00:00",
       "is_new": false,
       "lifecycle_event": null
     }
   ],
   "new_alerts": [],
-  "notification_events": [
-    {
-      "event_id": "0eee9018be07fda993e6",
-      "event_type": "resolved",
-      "notify": true,
-      "occurred_at_utc": "2026-10-02T19:30:24.424299+00:00",
-      "game_id": "401918294",
-      "phase": "pregame",
-      "market": "spread",
-      "side": "GS",
-      "level": "moderate",
-      "edge": 3.9550000000000125,
-      "away_abbr": "DAL",
-      "home_abbr": "GS",
-      "live_period": null,
-      "live_clock": null,
-      "live_away_score": null,
-      "live_home_score": null,
-      "market_bookmaker": "DraftKings",
-      "market_updated_at": "2026-10-02T19:30:23.739357+00:00",
-      "reason": "edge_below_alert_threshold",
-      "previous_side": "GS",
-      "previous_level": "strong",
-      "previous_edge": 4.9550000000000125
-    }
-  ],
+  "notification_events": [],
   "recent_events": [
     {
       "event_id": "0eee9018be07fda993e6",
@@ -4720,7 +4695,7 @@
   ],
   "summary": {
     "active_count": 1,
-    "notification_event_count": 1,
+    "notification_event_count": 0,
     "new_count": 0,
     "very_strong_count": 0,
     "strong_count": 1
