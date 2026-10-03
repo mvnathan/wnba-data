@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-03T16:17:28.805378+00:00",
+  "generated_at_utc": "2026-10-03T19:50:20.787201+00:00",
   "target_date": "2026-10-03",
   "sport": "MLB",
   "model_version": "mlb-runs-v2",
@@ -21,7 +21,7 @@
       "home_team": "Cleveland Guardians",
       "away_team": "Chicago White Sox",
       "venue": "Progressive Field",
-      "status": "Pre-Game",
+      "status": "In Progress",
       "predicted_home_runs": 4.19,
       "predicted_away_runs": 3.67,
       "predicted_total_runs": 7.87,
@@ -82,10 +82,10 @@
       "market_used_in_prediction": false,
       "market_bookmaker": "DraftKings",
       "market_home_moneyline": -149,
-      "market_away_moneyline": 123,
+      "market_away_moneyline": 124,
       "market_run_line_home": -1.5,
       "market_total": 6.5,
-      "market_updated_at": "2026-10-03T16:17:24.244481+00:00"
+      "market_updated_at": "2026-10-03T19:50:16.748430+00:00"
     },
     {
       "game_id": "849828",
@@ -93,19 +93,19 @@
       "home_team": "Los Angeles Dodgers",
       "away_team": "Atlanta Braves",
       "venue": "UNIQLO Field at Dodger Stadium",
-      "status": "Scheduled",
-      "predicted_home_runs": 4.44,
+      "status": "Warmup",
+      "predicted_home_runs": 3.99,
       "predicted_away_runs": 3.45,
-      "predicted_total_runs": 7.89,
+      "predicted_total_runs": 7.44,
       "predicted_winner": "Los Angeles Dodgers",
-      "home_win_probability": 0.6354,
-      "away_win_probability": 0.3646,
+      "home_win_probability": 0.5771,
+      "away_win_probability": 0.4229,
       "home_probable_pitcher": "Tarik Skubal",
-      "away_probable_pitcher": null,
+      "away_probable_pitcher": "Dylan Dodd",
       "home_starter_era": 2.61,
-      "away_starter_era": null,
+      "away_starter_era": 2.54,
       "home_starter_whip": 1.05,
-      "away_starter_whip": null,
+      "away_starter_whip": 0.91,
       "home_bullpen_workload_3d": 0.0,
       "away_bullpen_workload_3d": 2.18,
       "park_run_factor": 1.003,
@@ -157,7 +157,7 @@
       "market_away_moneyline": 173,
       "market_run_line_home": -1.5,
       "market_total": 8.5,
-      "market_updated_at": "2026-10-03T16:17:24.244481+00:00"
+      "market_updated_at": "2026-10-03T19:50:16.748430+00:00"
     },
     {
       "game_id": "849835",
@@ -165,7 +165,7 @@
       "home_team": "Tampa Bay Rays",
       "away_team": "New York Yankees",
       "venue": "Tropicana Field",
-      "status": "Scheduled",
+      "status": "Pre-Game",
       "predicted_home_runs": 3.64,
       "predicted_away_runs": 3.2,
       "predicted_total_runs": 6.84,
@@ -229,7 +229,7 @@
       "market_away_moneyline": 112,
       "market_run_line_home": -1.5,
       "market_total": 7,
-      "market_updated_at": "2026-10-03T16:17:24.244481+00:00"
+      "market_updated_at": "2026-10-03T19:50:16.748430+00:00"
     },
     {
       "game_id": "849830",
@@ -297,11 +297,11 @@
       "availability_note": "Standings/urgency context cannot confirm a specific star will rest; actual lineup/inactive data should override the proxy when available.",
       "market_used_in_prediction": false,
       "market_bookmaker": "DraftKings",
-      "market_home_moneyline": -219,
-      "market_away_moneyline": 178,
+      "market_home_moneyline": -209,
+      "market_away_moneyline": 171,
       "market_run_line_home": -1.5,
       "market_total": 7,
-      "market_updated_at": "2026-10-03T16:17:24.244481+00:00"
+      "market_updated_at": "2026-10-03T19:50:16.748430+00:00"
     }
   ]
 }
