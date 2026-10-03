@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-03T16:16:24.775899Z",
+  "generated_at_utc": "2026-10-03T21:14:17.707455Z",
   "target_date": "2026-10-03",
   "model_version": "tennis-v3-tournament-context",
   "eligibility": "At least one player ranked in the top 150",
@@ -1161,8 +1161,8 @@
       "tournament": "Adana Open",
       "round": "Semifinal",
       "start_time_utc": "2026-10-03T15:00Z",
-      "status": "In Progress",
-      "status_state": "in",
+      "status": "Final",
+      "status_state": "post",
       "court": "Centre Court",
       "venue": "Adana, T\u00fcrkiye",
       "broadcast": "",
