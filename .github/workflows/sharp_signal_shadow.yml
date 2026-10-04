@@ -4,12 +4,6 @@ on:
   workflow_dispatch: {}
   schedule:
     - cron: '27 */6 * * *'
-  push:
-    branches: [main]
-    paths:
-      - 'scripts/generate_sharp_signal.py'
-      - 'config/sharp_signal_accounts.json'
-      - '.github/workflows/sharp_signal_shadow.yml'
 
 permissions:
   contents: write
