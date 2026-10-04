@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-03T14:43:45.136109+00:00",
+  "generated_at_utc": "2026-10-04T15:23:07.384261+00:00",
   "season": 2026,
   "status": "ok",
   "models": [
@@ -189,11 +189,11 @@
       "season": 2026,
       "source_type": "issued_predictions",
       "overall": {
-        "n": 135,
-        "winner_accuracy": 0.6592592592592592,
-        "brier_score": 0.2187591431851852,
-        "margin_mae": 4.327407407407407,
-        "total_mae": 5.856296296296296
+        "n": 142,
+        "winner_accuracy": 0.6619718309859155,
+        "brier_score": 0.21588233387323943,
+        "margin_mae": 4.256338028169014,
+        "total_mae": 5.81056338028169
       },
       "weekly": [
         {
@@ -226,11 +226,11 @@
         {
           "week_start": "2026-09-28",
           "week_label": "Sep 28\u2013Oct 4",
-          "n": 38,
-          "winner_accuracy": 0.6842105263157895,
-          "brier_score": 0.21358526263157895,
-          "margin_mae": 3.681578947368421,
-          "total_mae": 5.197368421052632
+          "n": 45,
+          "winner_accuracy": 0.6888888888888889,
+          "brier_score": 0.2053121568888889,
+          "margin_mae": 3.557777777777778,
+          "total_mae": 5.155555555555556
         }
       ]
     },
@@ -240,11 +240,11 @@
       "season": 2026,
       "source_type": "issued_predictions",
       "overall": {
-        "n": 251,
-        "winner_accuracy": 0.6812749003984063,
-        "brier_score": 0.20992981816733067,
-        "margin_mae": 4.440637450199203,
-        "total_mae": 5.203585657370518
+        "n": 261,
+        "winner_accuracy": 0.6743295019157088,
+        "brier_score": 0.214770601954023,
+        "margin_mae": 4.522988505747127,
+        "total_mae": 5.169348659003831
       },
       "weekly": [
         {
@@ -286,11 +286,11 @@
         {
           "week_start": "2026-09-28",
           "week_label": "Sep 28\u2013Oct 4",
-          "n": 63,
-          "winner_accuracy": 0.6507936507936508,
-          "brier_score": 0.23416666841269843,
-          "margin_mae": 5.273015873015873,
-          "total_mae": 4.588888888888889
+          "n": 73,
+          "winner_accuracy": 0.6301369863013698,
+          "brier_score": 0.24815401178082191,
+          "margin_mae": 5.453424657534247,
+          "total_mae": 4.550684931506849
         }
       ]
     }
