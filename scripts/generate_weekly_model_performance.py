@@ -1,57 +1,80 @@
 #!/usr/bin/env python3
-"""Build unified current-season weekly model performance for SportsModelHub."""
+"""Build simple weekly market-performance ratios for SportsModelHub.
+
+Primary metrics:
+- ML: model winner hit rate
+- ATS: model side vs spread hit rate
+- O/U: model over/under hit rate
+
+WNBA uses the sportsbook line saved with the issued pregame forecast.
+NFL ATS/O-U use nflverse historical closing lines because a complete issued-line archive
+was not retained for the full season.
+MLB and Tennis expose ML history now; ATS/O-U remain unavailable until issued-line
+history is retained prospectively.
+"""
 from __future__ import annotations
-import json, math
+import json
 from collections import defaultdict
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
-from statistics import mean
 
 import pandas as pd
 
 ROOT=Path(__file__).resolve().parents[1]
 OUT=ROOT/"docs"/"model-performance-weekly.json"
 OUT_DATA=ROOT/"data"/"model-performance-weekly.json"
+PICK_EDGE=0.5
 
 def load_json(path, default):
     try:return json.loads((ROOT/path).read_text())
     except Exception:return default
 
-def week_label(dt):
-    monday=dt-timedelta(days=dt.weekday())
+def week_label(day):
+    monday=day-timedelta(days=day.weekday())
     sunday=monday+timedelta(days=6)
-    return monday.strftime("%b %-d")+"–"+sunday.strftime("%b %-d")
+    try:return monday.strftime("%b %-d")+"–"+sunday.strftime("%b %-d")
+    except ValueError:return monday.strftime("%b %d").replace(" 0"," ")+"–"+sunday.strftime("%b %d").replace(" 0"," ")
 
-def metrics(rows):
-    if not rows:return {}
-    def avg(k):
-        v=[float(r[k]) for r in rows if r.get(k) is not None]
-        return mean(v) if v else None
-    wins=[bool(r["winner_correct"]) for r in rows if r.get("winner_correct") is not None]
+def result_record(value):
+    if value is True:return "win"
+    if value is False:return "loss"
+    return None
+
+def market_summary(rows,key):
+    vals=[r.get(key) for r in rows if r.get(key) in {"win","loss","push"}]
+    wins=sum(v=="win" for v in vals); losses=sum(v=="loss" for v in vals); pushes=sum(v=="push" for v in vals)
+    graded=wins+losses
     return {
-        "n":len(rows),
-        "winner_accuracy":mean(wins) if wins else None,
-        "brier_score":avg("brier_score"),
-        "margin_mae":avg("margin_mae"),
-        "total_mae":avg("total_mae"),
+        "wins":wins,"losses":losses,"pushes":pushes,
+        "graded":graded,
+        "rate":(wins/graded) if graded else None,
     }
 
-def aggregate(name,sport,rows,source,season):
+def summarize(rows):
+    return {
+        "n":len(rows),
+        "ml":market_summary(rows,"ml_result"),
+        "ats":market_summary(rows,"ats_result"),
+        "ou":market_summary(rows,"ou_result"),
+    }
+
+def aggregate(name,sport,rows,source,season,market_notes):
     buckets=defaultdict(list)
     for r in rows:
-        dt=r["_date"]
-        buckets[dt.date()-timedelta(days=dt.weekday())].append(r)
+        d=r["_date"].date()
+        buckets[d-timedelta(days=d.weekday())].append(r)
     weekly=[]
     for monday in sorted(buckets):
-        m=metrics(buckets[monday])
         weekly.append({
             "week_start":monday.isoformat(),
-            "week_label":week_label(datetime.combine(monday,datetime.min.time())),
-            **m
+            "week_label":week_label(monday),
+            **summarize(buckets[monday]),
         })
     return {
         "name":name,"sport":sport,"season":season,"source_type":source,
-        "overall":metrics(rows),"weekly":weekly
+        "market_notes":market_notes,
+        "overall":summarize(rows),
+        "weekly":weekly,
     }
 
 def nfl_current_season(season):
@@ -62,15 +85,31 @@ def nfl_current_season(season):
     rows=[]
     for _,row in eval_df.iterrows():
         p,_,_=predict_hybrid_context_row(df,row)
-        y=1.0 if float(row.home_score)>float(row.away_score) else 0.0
+        actual_margin=float(row.home_score)-float(row.away_score)
+        actual_total=float(row.home_score)+float(row.away_score)
+        pred_margin=float(p["margin"]); pred_total=float(p["total"])
+        ml="win" if ((pred_margin>=0)==(actual_margin>0)) else "loss"
+
+        ats=None
+        spread=pd.to_numeric(pd.Series([row.get("spread_line")]),errors="coerce").iloc[0]
+        if pd.notna(spread):
+            spread=float(spread) # nflverse: points the home team was favored by
+            edge=pred_margin-spread
+            actual_edge=actual_margin-spread
+            if abs(actual_edge)<1e-9: ats="push"
+            elif abs(edge)>=PICK_EDGE: ats="win" if ((edge>0)==(actual_edge>0)) else "loss"
+
+        ou=None
+        total_line=pd.to_numeric(pd.Series([row.get("total_line")]),errors="coerce").iloc[0]
+        if pd.notna(total_line):
+            total_line=float(total_line)
+            model_edge=pred_total-total_line
+            actual_edge=actual_total-total_line
+            if abs(actual_edge)<1e-9: ou="push"
+            elif abs(model_edge)>=PICK_EDGE: ou="win" if ((model_edge>0)==(actual_edge>0)) else "loss"
+
         dt=pd.to_datetime(row.gameday,utc=True).to_pydatetime()
-        rows.append({
-            "_date":dt,
-            "winner_correct":(float(p["home_win_probability"])>=.5)==bool(y),
-            "brier_score":(float(p["home_win_probability"])-y)**2,
-            "margin_mae":abs(float(p["margin"])-(float(row.home_score)-float(row.away_score))),
-            "total_mae":abs(float(p["total"])-(float(row.home_score)+float(row.away_score))),
-        })
+        rows.append({"_date":dt,"ml_result":ml,"ats_result":ats,"ou_result":ou})
     return rows
 
 def mlb_rows(season):
@@ -79,21 +118,24 @@ def mlb_rows(season):
     for r in d.get("rows",[]):
         dt=datetime.fromisoformat(str(r["date"])).replace(tzinfo=timezone.utc)
         if dt.year!=season:continue
-        hp=float(r["v2c_home_prob"]); y=1.0 if float(r["home_score"])>float(r["away_score"]) else 0.0
-        pm=float(r["v2c_home_runs"])-float(r["v2c_away_runs"])
-        am=float(r["home_score"])-float(r["away_score"])
-        pt=float(r["v2c_home_runs"])+float(r["v2c_away_runs"])
-        at=float(r["home_score"])+float(r["away_score"])
-        rows.append({"_date":dt,"winner_correct":(hp>=.5)==bool(y),"brier_score":(hp-y)**2,"margin_mae":abs(pm-am),"total_mae":abs(pt-at)})
+        pred_home=float(r["v2c_home_prob"])>=.5
+        actual_home=float(r["home_score"])>float(r["away_score"])
+        rows.append({"_date":dt,"ml_result":"win" if pred_home==actual_home else "loss","ats_result":None,"ou_result":None})
     return rows
 
 def wnba_rows(season):
     d=load_json("docs/performance.json",{})
     rows=[]
     for r in d.get("games",[]):
-        dt=datetime.fromisoformat(str(r.get("game_date_utc")).replace("Z","+00:00"))
+        try:dt=datetime.fromisoformat(str(r.get("game_date_utc")).replace("Z","+00:00"))
+        except Exception:continue
         if int(r.get("season") or dt.year)!=season:continue
-        rows.append({"_date":dt,"winner_correct":r.get("winner_correct"),"brier_score":r.get("brier_score"),"margin_mae":r.get("absolute_margin_error"),"total_mae":r.get("absolute_total_error")})
+        ml=result_record(r.get("winner_correct"))
+        actual_side=r.get("actual_market_side")
+        ats="push" if actual_side=="push" else result_record(r.get("ats_model_correct"))
+        actual_total=r.get("actual_total_side")
+        ou="push" if actual_total=="push" else result_record(r.get("total_model_correct"))
+        rows.append({"_date":dt,"ml_result":ml,"ats_result":ats,"ou_result":ou})
     return rows
 
 def tennis_rows(season,tour):
@@ -101,37 +143,54 @@ def tennis_rows(season,tour):
     rows=[]
     for r in d.get("matches",[]):
         if r.get("tour")!=tour:continue
-        dt=datetime.fromisoformat(str(r.get("start_time_utc")).replace("Z","+00:00"))
+        try:dt=datetime.fromisoformat(str(r.get("start_time_utc")).replace("Z","+00:00"))
+        except Exception:continue
         if dt.year!=season:continue
-        rows.append({"_date":dt,"winner_correct":r.get("winner_correct"),"brier_score":r.get("brier_score"),"margin_mae":r.get("absolute_margin_error"),"total_mae":r.get("absolute_total_error")})
+        rows.append({"_date":dt,"ml_result":result_record(r.get("winner_correct")),"ats_result":None,"ou_result":None})
     return rows
 
 def main():
     season=datetime.now(timezone.utc).year
+    specs=[
+        (nfl_current_season,(season,),"NFL v2","NFL","leakage_safe_current_season_reconstruction",{
+            "ml":"Leakage-safe model winner vs final result.",
+            "ats":"Model side vs nflverse historical closing spread.",
+            "ou":"Model total side vs nflverse historical closing total."
+        }),
+        (mlb_rows,(season,),"MLB v2","MLB","leakage_safe_current_season_backtest",{
+            "ml":"Leakage-safe model winner vs final result.",
+            "ats":"Historical issued spread lines were not retained; prospective tracking is required.",
+            "ou":"Historical issued totals were not retained; prospective tracking is required."
+        }),
+        (wnba_rows,(season,),"WNBA production","WNBA","issued_predictions",{
+            "ml":"Issued pregame model winner vs final result.",
+            "ats":"Issued model side vs sportsbook spread saved with the forecast.",
+            "ou":"Issued model total side vs sportsbook total saved with the forecast."
+        }),
+        (tennis_rows,(season,"ATP"),"ATP production","ATP","issued_predictions",{
+            "ml":"Issued pre-match model winner vs final result.",
+            "ats":"Historical sportsbook game spreads were not retained with issued forecasts.",
+            "ou":"Historical sportsbook totals were not retained with issued forecasts."
+        }),
+        (tennis_rows,(season,"WTA"),"WTA production","WTA","issued_predictions",{
+            "ml":"Issued pre-match model winner vs final result.",
+            "ats":"Historical sportsbook game spreads were not retained with issued forecasts.",
+            "ou":"Historical sportsbook totals were not retained with issued forecasts."
+        }),
+    ]
     models=[]
-    for fn,args,name,sport,source in [
-        (nfl_current_season,(season,),"NFL v2","NFL","leakage_safe_current_season_reconstruction"),
-        (mlb_rows,(season,),"MLB v2","MLB","leakage_safe_current_season_backtest"),
-        (wnba_rows,(season,),"WNBA production","WNBA","issued_predictions"),
-        (tennis_rows,(season,"ATP"),"ATP production","ATP","issued_predictions"),
-        (tennis_rows,(season,"WTA"),"WTA production","WTA","issued_predictions"),
-    ]:
-        try:
-            rows=fn(*args)
-            models.append(aggregate(name,sport,rows,source,season))
-        except Exception as e:
-            models.append({"name":name,"sport":sport,"season":season,"source_type":source,"overall":{},"weekly":[],"error":str(e)})
-
+    for fn,args,name,sport,source,notes in specs:
+        try:models.append(aggregate(name,sport,fn(*args),source,season,notes))
+        except Exception as e:models.append({"name":name,"sport":sport,"season":season,"source_type":source,"market_notes":notes,"overall":{},"weekly":[],"error":str(e)})
     payload={
         "generated_at_utc":datetime.now(timezone.utc).isoformat(),
-        "season":season,
-        "status":"ok",
-        "models":models,
-        "method_note":"WNBA and tennis use forecasts actually issued before events. NFL and MLB use leakage-safe current-season historical reconstruction because complete issued-prediction archives were not retained for the full season. Weekly buckets run Monday-Sunday.",
+        "season":season,"status":"ok","models":models,
+        "metric_definition":"Hit rate = wins / (wins + losses). Pushes are displayed separately and excluded from the denominator.",
+        "method_note":"Market performance is only calculated where a valid benchmark line was retained. No missing historical lines are imputed."
     }
     for p in (OUT,OUT_DATA):
         p.parent.mkdir(parents=True,exist_ok=True)
         p.write_text(json.dumps(payload,indent=2,allow_nan=False))
-    print(json.dumps({"season":season,"models":{m["sport"]:len(m.get("weekly",[])) for m in models}},indent=2))
+    print(json.dumps({m["sport"]:m.get("overall") for m in models},indent=2))
 
 if __name__=="__main__":main()
