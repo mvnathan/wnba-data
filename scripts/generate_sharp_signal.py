@@ -38,12 +38,70 @@ def query(accounts:list[dict[str,Any]])->str:
 def parse_pick(text:str)->dict[str,Any]|None:
     clean=re.sub(r"https?://\\S+","",text).strip()
     low=f" {clean.lower()} "
-    retrospective=any(x in low for x in ("✅","❌"," cash "," cashed "," went "," go 1-"," win-win"," result:"))\n    if retrospective:return None\n    explicit=any(x in low for x in ("best bet","official play","my bet","i bet","play:","pick:"," units"," unit","moneyline"," ml "," over "," under "," loves "," betting "))\n    if not explicit:return None\n    om=ODDS_RE.search(clean); odds=int(om.group("odds")) if om else None
-    sm=STAKE_RE.search(clean); stake=float(sm.group("stake")) if sm else None
-    m=TOTAL_RE.search(clean)\n    if not m:\n        m=ALT_TOTAL_RE.search(clean)\n    if m:\n        side=m.group("side").lower()\n        if side in {"o","ov"}:side="over"\n        if side in {"u","un"}:side="under"\n        event=m.groupdict().get("event") if hasattr(m,"groupdict") else None\n        selection=(str(event).strip(" #:-")+" "+side).strip() if event else side\n        return {"market":"total","selection":selection,"line":float(m.group("line")),"odds":odds,"stake_units":stake,"parse_confidence":0.75 if odds is not None else 0.65}\n    m=ML_RE.search(clean)
-    if m:return {"market":"moneyline","selection":m.group("team").strip(" #:-"),"line":None,"odds":odds,"stake_units":stake,"parse_confidence":0.75 if odds is not None else 0.6}
+
+    retrospective=any(
+        x in low
+        for x in (
+            "✅","❌"," cash "," cashed "," went "," go 1-",
+            " win-win"," result:"
+        )
+    )
+    if retrospective:
+        return None
+
+    explicit=any(
+        x in low
+        for x in (
+            "best bet","official play","my bet","i bet","play:","pick:",
+            " units"," unit","moneyline"," ml "," over "," under ",
+            " loves "," betting "
+        )
+    )
+    if not explicit:
+        return None
+
+    om=ODDS_RE.search(clean)
+    odds=int(om.group("odds")) if om else None
+    sm=STAKE_RE.search(clean)
+    stake=float(sm.group("stake")) if sm else None
+
+    m=TOTAL_RE.search(clean)
+    if m:
+        side=m.group("side").lower()
+        if side in {"o","ov"}:
+            side="over"
+        elif side in {"u","un"}:
+            side="under"
+        return {
+            "market":"total",
+            "selection":side,
+            "line":float(m.group("line")),
+            "odds":odds,
+            "stake_units":stake,
+            "parse_confidence":0.75 if odds is not None else 0.65,
+        }
+
+    m=ML_RE.search(clean)
+    if m:
+        return {
+            "market":"moneyline",
+            "selection":m.group("team").strip(" #:-"),
+            "line":None,
+            "odds":odds,
+            "stake_units":stake,
+            "parse_confidence":0.75 if odds is not None else 0.6,
+        }
+
     m=SPREAD_RE.search(clean)
-    if m:return {"market":"spread","selection":m.group("team").strip(" #:-"),"line":float(m.group("line")),"odds":odds,"stake_units":stake,"parse_confidence":0.75 if odds is not None else 0.6}
+    if m:
+        return {
+            "market":"spread",
+            "selection":m.group("team").strip(" #:-"),
+            "line":float(m.group("line")),
+            "odds":odds,
+            "stake_units":stake,
+            "parse_confidence":0.75 if odds is not None else 0.6,
+        }
     return None
 
 def main()->None:
