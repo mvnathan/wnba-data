@@ -44,10 +44,12 @@ jobs:
           assert d["status"]=="ok"
           assert {"NFL","MLB","WNBA","ATP","WTA"}.issubset({m["sport"] for m in d["models"]})
           for m in d["models"]:
-              for w in m.get("weekly",[]):
-                  if w.get("winner_accuracy") is not None: assert 0 <= w["winner_accuracy"] <= 1
-                  if w.get("brier_score") is not None: assert 0 <= w["brier_score"] <= 1
-          print({m["sport"]:len(m.get("weekly",[])) for m in d["models"]})
+              for scope in [m.get("overall",{})] + list(m.get("weekly",[])):
+                  for key in ("ml","ats","ou"):
+                      x=scope.get(key) or {}
+                      if x.get("rate") is not None: assert 0 <= x["rate"] <= 1
+                      assert int(x.get("graded",0)) == int(x.get("wins",0)) + int(x.get("losses",0))
+          print({m["sport"]:{k:(m.get("overall",{}).get(k) or {}).get("rate") for k in ("ml","ats","ou")} for m in d["models"]})
           PY
       - name: Publish
         shell: bash
