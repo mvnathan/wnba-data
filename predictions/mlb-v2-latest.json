@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-04T16:51:03.258239+00:00",
+  "generated_at_utc": "2026-10-04T20:11:07.990543+00:00",
   "target_date": "2026-10-04",
   "sport": "MLB",
   "model_version": "mlb-runs-v2",
@@ -21,7 +21,7 @@
       "home_team": "Milwaukee Brewers",
       "away_team": "San Diego Padres",
       "venue": "American Family Field",
-      "status": "Pre-Game",
+      "status": "In Progress",
       "predicted_home_runs": 4.21,
       "predicted_away_runs": 3.53,
       "predicted_total_runs": 7.74,
@@ -85,7 +85,7 @@
       "market_away_moneyline": 113,
       "market_run_line_home": -1.5,
       "market_total": 7,
-      "market_updated_at": "2026-10-04T16:50:59.782514+00:00"
+      "market_updated_at": "2026-10-04T20:11:04.866908+00:00"
     },
     {
       "game_id": "849823",
@@ -93,19 +93,19 @@
       "home_team": "Los Angeles Dodgers",
       "away_team": "Atlanta Braves",
       "venue": "UNIQLO Field at Dodger Stadium",
-      "status": "Scheduled",
-      "predicted_home_runs": 4.5,
+      "status": "Pre-Game",
+      "predicted_home_runs": 4.23,
       "predicted_away_runs": 3.55,
-      "predicted_total_runs": 8.05,
+      "predicted_total_runs": 7.78,
       "predicted_winner": "Los Angeles Dodgers",
-      "home_win_probability": 0.6295,
-      "away_win_probability": 0.3705,
+      "home_win_probability": 0.5951,
+      "away_win_probability": 0.4049,
       "home_probable_pitcher": "Blake Snell",
-      "away_probable_pitcher": null,
+      "away_probable_pitcher": "Ray Kerr",
       "home_starter_era": 1.9,
-      "away_starter_era": null,
+      "away_starter_era": 1.47,
       "home_starter_whip": 1.1,
-      "away_starter_whip": null,
+      "away_starter_whip": 0.6,
       "home_bullpen_workload_3d": 1.0,
       "away_bullpen_workload_3d": 2.0,
       "park_run_factor": 1.019,
@@ -153,11 +153,11 @@
       "availability_note": "Standings/urgency context cannot confirm a specific star will rest; actual lineup/inactive data should override the proxy when available.",
       "market_used_in_prediction": false,
       "market_bookmaker": "DraftKings",
-      "market_home_moneyline": -157,
-      "market_away_moneyline": 130,
+      "market_home_moneyline": -212,
+      "market_away_moneyline": 173,
       "market_run_line_home": -1.5,
-      "market_total": 7,
-      "market_updated_at": "2026-10-04T16:50:59.782514+00:00"
+      "market_total": 7.5,
+      "market_updated_at": "2026-10-04T20:11:04.866908+00:00"
     }
   ]
 }
