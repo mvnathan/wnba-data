@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-04T20:11:07.990543+00:00",
+  "generated_at_utc": "2026-10-04T23:57:20.367001+00:00",
   "target_date": "2026-10-04",
   "sport": "MLB",
   "model_version": "mlb-runs-v2",
@@ -21,7 +21,7 @@
       "home_team": "Milwaukee Brewers",
       "away_team": "San Diego Padres",
       "venue": "American Family Field",
-      "status": "In Progress",
+      "status": "Final",
       "predicted_home_runs": 4.21,
       "predicted_away_runs": 3.53,
       "predicted_total_runs": 7.74,
@@ -85,7 +85,7 @@
       "market_away_moneyline": 113,
       "market_run_line_home": -1.5,
       "market_total": 7,
-      "market_updated_at": "2026-10-04T20:11:04.866908+00:00"
+      "market_updated_at": "2026-10-04T23:57:16.244430+00:00"
     },
     {
       "game_id": "849823",
@@ -93,7 +93,7 @@
       "home_team": "Los Angeles Dodgers",
       "away_team": "Atlanta Braves",
       "venue": "UNIQLO Field at Dodger Stadium",
-      "status": "Pre-Game",
+      "status": "Warmup",
       "predicted_home_runs": 4.23,
       "predicted_away_runs": 3.55,
       "predicted_total_runs": 7.78,
@@ -153,11 +153,11 @@
       "availability_note": "Standings/urgency context cannot confirm a specific star will rest; actual lineup/inactive data should override the proxy when available.",
       "market_used_in_prediction": false,
       "market_bookmaker": "DraftKings",
-      "market_home_moneyline": -212,
-      "market_away_moneyline": 173,
+      "market_home_moneyline": -213,
+      "market_away_moneyline": 174,
       "market_run_line_home": -1.5,
       "market_total": 7.5,
-      "market_updated_at": "2026-10-04T20:11:04.866908+00:00"
+      "market_updated_at": "2026-10-04T23:57:16.244430+00:00"
     }
   ]
 }
