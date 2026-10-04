@@ -88,7 +88,8 @@ def nfl_current_season(season):
         actual_margin=float(row.home_score)-float(row.away_score)
         actual_total=float(row.home_score)+float(row.away_score)
         pred_margin=float(p["margin"]); pred_total=float(p["total"])
-        ml="win" if ((pred_margin>=0)==(actual_margin>0)) else "loss"
+        pred_home_win=float(p["home_win_probability"])>=.5
+        ml="win" if (pred_home_win==(actual_margin>0)) else "loss"
 
         ats=None
         spread=pd.to_numeric(pd.Series([row.get("spread_line")]),errors="coerce").iloc[0]
