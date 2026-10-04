@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-04T18:19:40.911369+00:00",
+  "generated_at_utc": "2026-10-04T23:31:34.446694+00:00",
   "target_date": "2026-10-04",
   "games": [
     {
@@ -261,14 +261,14 @@
   ],
   "uncertainty": {
     "full_total": {
-      "p10": 155.295,
-      "median": 155.295,
-      "p90": 155.295
+      "p10": null,
+      "median": null,
+      "p90": null
     },
     "home_score": {
-      "p10": 100.50999999999999,
-      "median": 100.50999999999999,
-      "p90": 100.50999999999999
+      "p10": null,
+      "median": null,
+      "p90": null
     }
   }
 }
