@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-04T06:17:36.427149+00:00",
+  "generated_at_utc": "2026-10-04T12:51:14.979014+00:00",
   "status": "ok",
   "production_modified": false,
   "baseline_model_version": "nfl-v2",
@@ -18,7 +18,7 @@
     "games": 15,
     "games_changed_by_availability": 5,
     "games_changed_by_combined": 5,
-    "availability_x_signals_available": 21,
+    "availability_x_signals_available": 20,
     "sharp_ledger_picks": 0,
     "sharp_production_weight": 0.0
   },
