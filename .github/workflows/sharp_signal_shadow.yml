@@ -3,7 +3,7 @@ name: Sharp Signal Shadow
 on:
   workflow_dispatch: {}
   schedule:
-    - cron: '27 */2 * * *'
+    - cron: '27 */6 * * *'
   push:
     branches: [main]
     paths:
