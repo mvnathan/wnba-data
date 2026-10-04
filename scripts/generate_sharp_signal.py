@@ -113,11 +113,35 @@ def main()->None:
     ledger=load(LEDGER,{"created_at_utc":datetime.now(timezone.utc).isoformat(),"picks":[]})
     params={"query":query(accounts),"max_results":100,"tweet.fields":"created_at,author_id,text","expansions":"author_id","user.fields":"username,name"}
     if state.get("newest_id"):params["since_id"]=str(state["newest_id"])
-    r=requests.get(X_URL,params=params,headers={"Authorization":f"Bearer {token}"},timeout=30)
-    if r.status_code in {401,402,403,429}:
-        save(DOCS,{"status":"unavailable","http_status":r.status_code,"generated_at_utc":datetime.now(timezone.utc).isoformat(),"production_adjustment_enabled":False})
+    headers={"Authorization":f"Bearer {token}"}
+    r=requests.get(X_URL,params=params,headers=headers,timeout=30)
+
+    # Recent-search can reject a stale/invalid since_id with HTTP 400.
+    # Retry once without the cursor rather than failing the scheduled workflow.
+    if r.status_code==400 and "since_id" in params:
+        params.pop("since_id",None)
+        r=requests.get(X_URL,params=params,headers=headers,timeout=30)
+
+    # External X/API problems should never create a GitHub Actions failure
+    # for this shadow-only research feed. Publish a diagnostic snapshot instead.
+    if r.status_code>=400:
+        detail=None
+        try:
+            detail=r.json()
+        except Exception:
+            detail=r.text[:500]
+        save(DOCS,{
+            "status":"unavailable",
+            "http_status":r.status_code,
+            "generated_at_utc":datetime.now(timezone.utc).isoformat(),
+            "production_adjustment_enabled":False,
+            "detail":detail,
+            "retry_without_since_id":True,
+        })
+        print(json.dumps({"status":"unavailable","http_status":r.status_code},indent=2))
         return
-    r.raise_for_status(); payload=r.json()
+
+    payload=r.json()
     users={str(u["id"]):u for u in ((payload.get("includes") or {}).get("users") or [])}
     cfg_by={a["username"].lower():a for a in accounts}
     seen={str(p.get("post_id")) for p in ledger.get("picks",[])}
