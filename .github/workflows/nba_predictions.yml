@@ -34,7 +34,7 @@ jobs:
       - uses: actions/setup-python@v6
         with: {python-version: '3.12', cache: pip}
       - name: Install dependencies
-        run: pip install pandas numpy scikit-learn requests nba_api curl_cffi
+        run: pip install pandas numpy scikit-learn requests curl_cffi
       - name: Train, backtest and publish NBA model
         run: python scripts/generate_nba_predictions.py
       - name: Validate NBA output
