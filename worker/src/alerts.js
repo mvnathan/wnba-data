@@ -64,7 +64,7 @@ export async function enrichTennisMarkets(payload, apiKey) {
   return { ...payload, market_data_status: diagnostics, market_events: odds.length, market_event_names: odds.map((game) => [game.home_team, game.away_team]), matches: (payload.matches || []).map((match) => ({ ...match, ...tennisMarket(match, matchOdds(match, odds)) })) };
 }
 
-export function buildAlerts(wnba, tennis) {
+export function buildAlerts(wnba, tennis, nba = null) {
   const alerts = [];
   for (const game of wnba?.games || []) {
     const matchup = `${game.away_abbr || game.away_team} @ ${game.home_abbr || game.home_team}`;
@@ -72,6 +72,15 @@ export function buildAlerts(wnba, tennis) {
     const spreadEdge = Number(game.model_market_margin_edge ?? game.model_consensus_margin_edge);
     if (Number.isFinite(totalEdge) && Math.abs(totalEdge) >= 6) alerts.push({ id: `wnba:${game.game_id}:total`, sport: "WNBA", score: Math.abs(totalEdge), title: `${matchup}: ${totalEdge > 0 ? "Over" : "Under"} signal`, body: `Model ${Number(game.model_predicted_total ?? game.predicted_total).toFixed(1)} vs market ${Number(game.market_total ?? game.consensus_total).toFixed(1)} (${Math.abs(totalEdge).toFixed(1)}-point gap)`, url: "https://mvnathan.github.io/wnba-data/wnba.html" });
     if (Number.isFinite(spreadEdge) && Math.abs(spreadEdge) >= 4) alerts.push({ id: `wnba:${game.game_id}:spread`, sport: "WNBA", score: Math.abs(spreadEdge), title: `${matchup}: spread disagreement`, body: `Model-market gap is ${Math.abs(spreadEdge).toFixed(1)} points`, url: "https://mvnathan.github.io/wnba-data/wnba.html" });
+  }
+  for (const game of nba?.games || []) {
+    const matchup = `${game.away_abbr || game.away_team} @ ${game.home_abbr || game.home_team}`;
+    const spreadEdge = Number(game.model_market_spread_edge);
+    const totalEdge = Number(game.model_market_total_edge);
+    const winEdge = Number(game.model_market_home_win_edge);
+    if (Number.isFinite(spreadEdge) && Math.abs(spreadEdge) >= 4) alerts.push({ id: `nba:${game.game_id}:spread`, sport: "NBA", score: Math.abs(spreadEdge), title: `${matchup}: spread disagreement`, body: `Model-market gap is ${Math.abs(spreadEdge).toFixed(1)} points`, url: `https://mvnathan.github.io/wnba-data/nba.html#game-${game.game_id}` });
+    if (Number.isFinite(totalEdge) && Math.abs(totalEdge) >= 6) alerts.push({ id: `nba:${game.game_id}:total`, sport: "NBA", score: Math.abs(totalEdge), title: `${matchup}: ${totalEdge > 0 ? "Over" : "Under"} signal`, body: `Model ${Number(game.predicted_total).toFixed(1)} vs market ${Number(game.market_total).toFixed(1)} (${Math.abs(totalEdge).toFixed(1)}-point gap)`, url: `https://mvnathan.github.io/wnba-data/nba.html#game-${game.game_id}` });
+    if (Number.isFinite(winEdge) && Math.abs(winEdge) >= .12) alerts.push({ id: `nba:${game.game_id}:ml`, sport: "NBA", score: Math.abs(winEdge) * 20, title: `${matchup}: moneyline disagreement`, body: `Model and market differ by ${(Math.abs(winEdge) * 100).toFixed(0)} percentage points`, url: `https://mvnathan.github.io/wnba-data/nba.html#game-${game.game_id}` });
   }
   for (const match of tennis?.matches || []) {
     const matchup = `${match.player_1} vs ${match.player_2}`;
