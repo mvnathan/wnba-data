@@ -12,6 +12,8 @@ on:
       - 'docs/tennis-performance.json'
       - 'data/mlb_model_comparison.json'
       - 'data/nba_model_comparison.json'
+      - 'docs/nba-latest.json'
+      - 'scripts/evaluate_nba_predictions.py'
       - 'scripts/backtest_nfl_models.py'
       - 'src/nfl_v2_core.py'
       - '.github/workflows/model_performance.yml'
@@ -30,11 +32,14 @@ jobs:
       PYTHONPATH: ${{ github.workspace }}
     steps:
       - uses: actions/checkout@v4
+        with: {fetch-depth: 0}
       - uses: actions/setup-python@v6
         with:
           python-version: '3.12'
       - name: Install dependencies
         run: pip install pandas requests
+      - name: Grade issued NBA predictions
+        run: python scripts/evaluate_nba_predictions.py
       - name: Build weekly performance
         run: python scripts/generate_weekly_model_performance.py
       - name: Validate
@@ -60,12 +65,14 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           cp docs/model-performance-weekly.json /tmp/model-performance-weekly.json
           cp data/model-performance-weekly.json /tmp/model-performance-weekly-data.json
+          cp docs/nba-performance.json /tmp/nba-performance.json
           for attempt in 1 2 3; do
             git fetch origin main
             git reset --hard origin/main
             cp /tmp/model-performance-weekly.json docs/model-performance-weekly.json
             cp /tmp/model-performance-weekly-data.json data/model-performance-weekly.json
-            git add docs/model-performance-weekly.json data/model-performance-weekly.json
+            cp /tmp/nba-performance.json docs/nba-performance.json
+            git add docs/model-performance-weekly.json data/model-performance-weekly.json docs/nba-performance.json
             if git diff --cached --quiet; then exit 0; fi
             git commit -m "Update weekly model performance"
             if git push origin HEAD:main; then exit 0; fi
