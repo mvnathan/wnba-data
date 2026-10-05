@@ -335,13 +335,18 @@ def apply_x_adjustment(game:dict[str,Any],home_roster:dict[str,Any],away_roster:
         for player in roster.get("players") or []:
             name=str(player.get("name") or "").lower()
             if len(name)<5:continue
+            best=None
             for sig in signals:
                 if sig.get("sport")!="NBA" or name not in str(sig.get("text") or "").lower():continue
                 mult=multipliers.get(str(sig.get("status_signal") or "").lower(),0)
                 if mult<=0:continue
                 importance=min(.9,max(.05,float(player.get("rotation_share") or 0)))
                 penalty=min(4.5,.5+6.0*importance)*mult*float(sig.get("confidence") or .6)
-                if side=="home":hp-=penalty
-                else:ap-=penalty
-                applied.append({"team_side":side,"player":player.get("name"),"status":sig.get("status_signal"),"points":round(penalty,2),"source":sig.get("source"),"url":sig.get("url"),"text":sig.get("text")})
+                cand=(penalty,sig)
+                if best is None or cand[0]>best[0]:best=cand
+            if best is None:continue
+            penalty,sig=best
+            if side=="home":hp-=penalty
+            else:ap-=penalty
+            applied.append({"team_side":side,"player":player.get("name"),"status":sig.get("status_signal"),"points":round(penalty,2),"source":sig.get("source"),"url":sig.get("url"),"text":sig.get("text")})
     return hp,ap,applied
