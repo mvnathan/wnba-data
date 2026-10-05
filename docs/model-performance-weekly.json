@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-05T19:28:42.753253+00:00",
+  "generated_at_utc": "2026-10-05T23:39:41.444266+00:00",
   "season": 2026,
   "status": "ok",
   "models": [
@@ -143,6 +143,42 @@
           }
         }
       ]
+    },
+    {
+      "name": "NBA roster model",
+      "sport": "NBA",
+      "season": 2026,
+      "source_type": "chronological_two_season_holdout",
+      "market_notes": {
+        "ml": "Untouched chronological holdout winner prediction vs final result.",
+        "ats": "Prospective issued-line tracking begins with NBA launch; historical line data is not imputed.",
+        "ou": "Prospective issued-line tracking begins with NBA launch; historical line data is not imputed."
+      },
+      "overall": {
+        "n": 0,
+        "ml": {
+          "wins": 0,
+          "losses": 0,
+          "pushes": 0,
+          "graded": 0,
+          "rate": null
+        },
+        "ats": {
+          "wins": 0,
+          "losses": 0,
+          "pushes": 0,
+          "graded": 0,
+          "rate": null
+        },
+        "ou": {
+          "wins": 0,
+          "losses": 0,
+          "pushes": 0,
+          "graded": 0,
+          "rate": null
+        }
+      },
+      "weekly": []
     },
     {
       "name": "MLB v2",
