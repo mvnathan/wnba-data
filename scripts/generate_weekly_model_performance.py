@@ -113,6 +113,16 @@ def nfl_current_season(season):
         rows.append({"_date":dt,"ml_result":ml,"ats_result":ats,"ou_result":ou})
     return rows
 
+def nba_rows(season):
+    d=load_json("data/nba_model_comparison.json",{})
+    rows=[]
+    for r in d.get("test_predictions",[]):
+        try:dt=datetime.fromisoformat(str(r.get("date")).replace("Z","+00:00"))
+        except Exception:continue
+        if dt.year not in {season-1,season}:continue
+        rows.append({"_date":dt,"ml_result":"win" if r.get("winner_correct") else "loss","ats_result":None,"ou_result":None})
+    return rows
+
 def mlb_rows(season):
     d=load_json("data/mlb_model_comparison.json",{})
     rows=[]
@@ -157,6 +167,11 @@ def main():
             "ml":"Leakage-safe model winner vs final result.",
             "ats":"Model side vs nflverse historical closing spread.",
             "ou":"Model total side vs nflverse historical closing total."
+        }),
+        (nba_rows,(season,),"NBA roster model","NBA","chronological_two_season_holdout",{
+            "ml":"Untouched chronological holdout winner prediction vs final result.",
+            "ats":"Prospective issued-line tracking begins with NBA launch; historical line data is not imputed.",
+            "ou":"Prospective issued-line tracking begins with NBA launch; historical line data is not imputed."
         }),
         (mlb_rows,(season,),"MLB v2","MLB","leakage_safe_current_season_backtest",{
             "ml":"Leakage-safe model winner vs final result.",
