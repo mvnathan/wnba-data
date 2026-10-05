@@ -10,6 +10,7 @@ import numpy as np
 import pandas as pd
 import requests
 from nba_api.stats.endpoints import commonteamroster, leaguegamelog
+from nba_api.stats.static import teams as nba_teams
 from sklearn.ensemble import HistGradientBoostingClassifier, HistGradientBoostingRegressor, RandomForestClassifier, RandomForestRegressor
 from sklearn.linear_model import LogisticRegression, Ridge
 from sklearn.metrics import accuracy_score, brier_score_loss, mean_absolute_error
@@ -269,6 +270,18 @@ def roster_features_from_current(team_id:int,roster:list[dict[str,Any]])->dict[s
     shares=[max(1,x["prior_minutes"])/total for x in roster]
     return {"continuity":retained,"roster_value":val,"incoming_share":1-retained,"top3_share":sum(sorted(shares,reverse=True)[:3]),"players":roster}
 
+NBA_TEAM_LOOKUP={str(x["abbreviation"]).upper():int(x["id"]) for x in nba_teams.get_teams()}
+ESPN_ABBR_TO_NBA={"GS":"GSW","NY":"NYK","NO":"NOP","SA":"SAS"}
+
+def _nba_team_id(team:dict[str,Any])->int|None:
+    ab=str(team.get("abbreviation") or "").upper()
+    ab=ESPN_ABBR_TO_NBA.get(ab,ab)
+    if ab in NBA_TEAM_LOOKUP:return NBA_TEAM_LOOKUP[ab]
+    name=str(team.get("displayName") or "").lower()
+    for row in nba_teams.get_teams():
+        if str(row.get("full_name") or "").lower()==name:return int(row["id"])
+    return None
+
 def espn_schedule(date_str:str)->list[dict[str,Any]]:
     stamp=date_str.replace("-","")
     r=requests.get(ESPN_SCOREBOARD,params={"dates":stamp},timeout=30,headers={"user-agent":"SportsModelHub/1.0"});r.raise_for_status()
@@ -278,8 +291,12 @@ def espn_schedule(date_str:str)->list[dict[str,Any]]:
         h=next((x for x in cs if x.get("homeAway")=="home"),None);a=next((x for x in cs if x.get("homeAway")=="away"),None)
         if not h or not a:continue
         ht=h.get("team") or {};at=a.get("team") or {}
+        hid=_nba_team_id(ht);aid=_nba_team_id(at)
+        if hid is None or aid is None:continue
+        hab=ESPN_ABBR_TO_NBA.get(str(ht.get("abbreviation") or "").upper(),str(ht.get("abbreviation") or "").upper())
+        aab=ESPN_ABBR_TO_NBA.get(str(at.get("abbreviation") or "").upper(),str(at.get("abbreviation") or "").upper())
         out.append({"game_id":str(e.get("id")),"date":e.get("date"),"status":((e.get("status") or {}).get("type") or {}).get("description"),
-                    "home_id":int(ht.get("id")),"away_id":int(at.get("id")),"home_abbr":ht.get("abbreviation"),"away_abbr":at.get("abbreviation"),
+                    "home_id":hid,"away_id":aid,"home_abbr":hab,"away_abbr":aab,
                     "home_team":ht.get("displayName"),"away_team":at.get("displayName")})
     return out
 
