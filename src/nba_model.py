@@ -230,12 +230,23 @@ def train_evaluate(dataset:pd.DataFrame)->tuple[dict[str,Any],dict[str,Any]]:
       "total_mae":float(mean_absolute_error(test["total"],pt)),
       "test_start":str(test.iloc[0]["date"]) if len(test) else None,"test_end":str(test.iloc[-1]["date"]) if len(test) else None
     }
+    test_predictions=[]
+    for i,(_,r) in enumerate(test.iterrows()):
+        test_predictions.append({
+            "date":pd.to_datetime(r["date"],utc=True).isoformat(),
+            "game_id":str(r["game_id"]),
+            "home_abbr":str(r["home_abbr"]),"away_abbr":str(r["away_abbr"]),
+            "home_win_probability":float(p[i]),
+            "predicted_margin":float(pm[i]),"actual_margin":float(r["margin"]),
+            "predicted_total":float(pt[i]),"actual_total":float(r["total"]),
+            "winner_correct":bool((p[i]>=.5)==bool(r["home_win"])),
+        })
     # Production models refit on all two-season observations.
     prod_clf=_clf_candidates()[selected["winner"]];prod_clf.fit(dataset[FEATURES],dataset["home_win"])
     prod_regs={}
     for target in ("margin","total"):
         m=_reg_candidates()[selected[target]];m.fit(dataset[FEATURES],dataset[target]);prod_regs[target]=m
-    return {"winner":prod_clf,"margin":prod_regs["margin"],"total":prod_regs["total"]},{"selected":selected,"validation":validation,"test":test_metrics,"rows":n,"split":{"train":a,"validation":b-a,"test":n-b}}
+    return {"winner":prod_clf,"margin":prod_regs["margin"],"total":prod_regs["total"]},{"selected":selected,"validation":validation,"test":test_metrics,"test_predictions":test_predictions,"rows":n,"split":{"train":a,"validation":b-a,"test":n-b}}
 
 def current_roster(team_id:int,season:str,prior_profiles:dict[int,dict[str,Any]])->list[dict[str,Any]]:
     def call():
