@@ -35,9 +35,9 @@ function snapshotStub(env) {
 }
 
 async function dispatchOpportunityAlerts(env) {
-  const [wnba, tennisBase] = await Promise.all([fetchStaticLatest(), fetchTennisLatest()]);
+  const [wnba, tennisBase, nba] = await Promise.all([fetchStaticLatest(), fetchTennisLatest(), fetchNBALatest().catch(() => null)]);
   const tennis = await enrichTennisMarkets(tennisBase, env.ODDS_API_KEY);
-  const alerts = buildAlerts(wnba, tennis);
+  const alerts = buildAlerts(wnba, tennis, nba);
   const response = await snapshotStub(env).fetch("https://snapshot.internal/push/dispatch", {
     method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ alerts }),
   });
