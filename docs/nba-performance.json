@@ -1,0 +1,29 @@
+{
+  "generated_at_utc": "2026-10-05T23:47:00.397720+00:00",
+  "method": "Earliest committed pregame NBA forecast and market line joined to ESPN final score by game ID",
+  "summary": {
+    "n": 0,
+    "ml": {
+      "wins": 0,
+      "losses": 0,
+      "pushes": 0,
+      "graded": 0,
+      "rate": null
+    },
+    "ats": {
+      "wins": 0,
+      "losses": 0,
+      "pushes": 0,
+      "graded": 0,
+      "rate": null
+    },
+    "ou": {
+      "wins": 0,
+      "losses": 0,
+      "pushes": 0,
+      "graded": 0,
+      "rate": null
+    }
+  },
+  "games": []
+}
