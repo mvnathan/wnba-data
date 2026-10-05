@@ -11,6 +11,7 @@ on:
       - 'docs/performance.json'
       - 'docs/tennis-performance.json'
       - 'data/mlb_model_comparison.json'
+      - 'data/nba_model_comparison.json'
       - 'scripts/backtest_nfl_models.py'
       - 'src/nfl_v2_core.py'
       - '.github/workflows/model_performance.yml'
@@ -42,7 +43,7 @@ jobs:
           import json
           d=json.load(open("docs/model-performance-weekly.json"))
           assert d["status"]=="ok"
-          assert {"NFL","MLB","WNBA","ATP","WTA"}.issubset({m["sport"] for m in d["models"]})
+          assert {"NFL","NBA","MLB","WNBA","ATP","WTA"}.issubset({m["sport"] for m in d["models"]})
           for m in d["models"]:
               for scope in [m.get("overall",{})] + list(m.get("weekly",[])):
                   for key in ("ml","ats","ou"):

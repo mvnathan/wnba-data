@@ -13,6 +13,7 @@ LEAGUE_IDS = {
     "wnba": 94682,
     "mlb": 84240,
     "nfl": 88808,
+    "nba": 42648,
 }
 
 CATEGORY_ID = 493  # DraftKings full-game lines
@@ -179,7 +180,7 @@ def _fetch_v5_full_game(sport: str, league_id: int) -> list[dict[str, Any]]:
         away_team, home_team = teams
         rows.append({
             "id": eid,
-            "sport_key": {"wnba":"basketball_wnba","mlb":"baseball_mlb","nfl":"americanfootball_nfl"}[sport],
+            "sport_key": {"wnba":"basketball_wnba","mlb":"baseball_mlb","nfl":"americanfootball_nfl","nba":"basketball_nba"}[sport],
             "commence_time": ev.get("startEventDate") or ev.get("startDate"),
             "home_team": home_team,
             "away_team": away_team,
@@ -291,6 +292,7 @@ def fetch_draftkings_direct(sport: str) -> list[dict[str, Any]]:
                     "wnba": "basketball_wnba",
                     "mlb": "baseball_mlb",
                     "nfl": "americanfootball_nfl",
+                    "nba": "basketball_nba",
                 }[sport],
                 "commence_time": event.get("startEventDate") or event.get("startDate"),
                 "home_team": home_team,

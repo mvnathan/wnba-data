@@ -29,6 +29,12 @@
       "name": "ESPN WNBA Injuries",
       "url": "https://www.espn.com/wnba/injuries",
       "tier": "trusted_media"
+    },
+    {
+      "sport": "NBA",
+      "name": "ESPN NBA Injuries",
+      "url": "https://www.espn.com/nba/injuries",
+      "tier": "trusted_media"
     }
   ],
   "trusted_x_accounts": [
@@ -50,6 +56,16 @@
     {
       "sport": "WNBA",
       "username": "alexaphilippou",
+      "tier": "trusted_media"
+    },
+    {
+      "sport": "NBA",
+      "username": "ShamsCharania",
+      "tier": "trusted_media"
+    },
+    {
+      "sport": "NBA",
+      "username": "ChrisBHaynes",
       "tier": "trusted_media"
     }
   ],

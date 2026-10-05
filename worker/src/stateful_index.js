@@ -6,6 +6,8 @@ const STATIC_LATEST = "https://raw.githubusercontent.com/mvnathan/wnba-data/main
 const TENNIS_LATEST = "https://raw.githubusercontent.com/mvnathan/wnba-data/main/docs/tennis-latest.json";
 const MLB_LATEST = "https://raw.githubusercontent.com/mvnathan/wnba-data/main/docs/mlb-latest.json";
 const NFL_LATEST = "https://raw.githubusercontent.com/mvnathan/wnba-data/main/docs/nfl-latest.json";
+const NBA_LATEST = "https://raw.githubusercontent.com/mvnathan/wnba-data/main/docs/nba-latest.json";
+const NBA_SCOREBOARD = "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard";
 const NFL_SCOREBOARD = "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard";
 const NFLVERSE_GAMES = "https://raw.githubusercontent.com/nflverse/nfldata/master/data/games.csv";
 const MLB_SCHEDULE = "https://statsapi.mlb.com/api/v1/schedule";
@@ -99,6 +101,49 @@ async function fetchNFLLatest() {
   });
   if (!response.ok) throw new Error(`NFL latest returned ${response.status}`);
   return response.json();
+}
+
+async function fetchNBALatest() {
+  const response = await fetch(`${NBA_LATEST}?t=${Date.now()}`, {
+    headers: { "cache-control": "no-cache" },
+    cf: { cacheTtl: 0, cacheEverything: false },
+  });
+  if (!response.ok) throw new Error(`NBA latest returned ${response.status}`);
+  return response.json();
+}
+
+async function fetchNBALive(date) {
+  const stamp = String(date || "").replaceAll("-", "");
+  return fetchJson(`${NBA_SCOREBOARD}?dates=${stamp}&_=${Date.now()}`, {
+    headers: { "User-Agent": "SportsModelHub/1.0", "Cache-Control": "no-cache" },
+    cf: { cacheTtl: 8, cacheEverything: true },
+  });
+}
+
+function mergeNBAScores(predictions, live) {
+  const map = new Map();
+  for (const event of live?.events || []) {
+    const comp = (event?.competitions || [])[0];
+    if (!comp) continue;
+    map.set(String(event.id), { event, comp });
+  }
+  return (predictions || []).map((game) => {
+    const hit = map.get(String(game.game_id));
+    if (!hit) return game;
+    const { event, comp } = hit;
+    const home = (comp.competitors || []).find((x) => x.homeAway === "home");
+    const away = (comp.competitors || []).find((x) => x.homeAway === "away");
+    const type = event?.status?.type || {};
+    return {
+      ...game,
+      live_home_score: home?.score ?? null,
+      live_away_score: away?.score ?? null,
+      live_status: type.detail || type.description || game.status || "Scheduled",
+      live_state: type.state || (type.completed ? "post" : "pre"),
+      live_period: event?.status?.period ?? null,
+      live_clock: event?.status?.displayClock || null,
+    };
+  });
 }
 
 async function fetchNFLLive(season, week) {
@@ -472,6 +517,31 @@ export default {
         return jsonResponse(data);
       } catch (error) {
         return jsonResponse({ ok: false, service: "nfl-scoreboard-proxy", error: String(error?.message || error) }, 503);
+      }
+    }
+
+    if (url.pathname === "/nba/latest.json" || url.pathname === "/api/nba") {
+      try {
+        const data = await fetchNBALatest();
+        try {
+          const live = await fetchNBALive(data.target_date);
+          return jsonResponse({
+            ...data,
+            games: mergeNBAScores(data.games, live),
+            live_score_generated_at_utc: new Date().toISOString(),
+            live_score_source: "ESPN NBA scoreboard via Cloudflare",
+            cloudflare_delivery: "nba-live-overlay",
+          });
+        } catch (liveError) {
+          return jsonResponse({
+            ...data,
+            live_score_error: String(liveError?.message || liveError),
+            live_score_source: "prediction-feed-fallback",
+            cloudflare_delivery: "nba-static-proxy",
+          });
+        }
+      } catch (error) {
+        return jsonResponse({ ok: false, service: "nba-predictions", error: String(error?.message || error) }, 503);
       }
     }
 

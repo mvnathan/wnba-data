@@ -1,0 +1,76 @@
+name: Generate NBA Predictions
+
+on:
+  workflow_dispatch: {}
+  schedule:
+    - cron: '35 12 * * *'
+    - cron: '35 18 * * *'
+  push:
+    branches: [main]
+    paths:
+      - 'src/nba_model.py'
+      - 'scripts/generate_nba_predictions.py'
+      - 'src/draftkings_direct.py'
+      - 'src/espn_market_odds.py'
+      - 'config/availability_sources.json'
+      - '.github/workflows/nba_predictions.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: nba-predictions
+  cancel-in-progress: true
+
+jobs:
+  nba:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      PYTHONPATH: ${{ github.workspace }}
+    steps:
+      - uses: actions/checkout@v4
+        with: {fetch-depth: 0}
+      - uses: actions/setup-python@v6
+        with: {python-version: '3.12', cache: pip}
+      - name: Install dependencies
+        run: pip install pandas numpy scikit-learn requests nba_api curl_cffi
+      - name: Train, backtest and publish NBA model
+        run: python scripts/generate_nba_predictions.py
+      - name: Validate NBA output
+        run: |
+          python - <<'PY'
+          import json
+          latest=json.load(open("docs/nba-latest.json"))
+          perf=json.load(open("data/nba_model_comparison.json"))
+          assert latest["sport"]=="NBA"
+          assert latest["model_status"]=="production"
+          assert latest["market_used_in_prediction"] is False
+          assert len(latest["training_seasons"])==2
+          test=perf["test"]
+          assert test["n"] >= 200, test
+          assert 0 <= test["winner_accuracy"] <= 1
+          assert 0 <= test["brier_score"] <= 1
+          assert test["margin_mae"] > 0 and test["total_mae"] > 0
+          for g in latest["games"]:
+              assert 0 <= g["home_win_probability"] <= 1
+              assert g["predicted_home_points"] > 0
+              assert g["predicted_away_points"] > 0
+          print("NBA holdout",test)
+          print("NBA slate",len(latest["games"]))
+          PY
+      - name: Publish NBA outputs
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add docs/nba-latest.json predictions/nba-latest.json data/nba_model_comparison.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Update NBA predictions"
+          for attempt in 1 2 3; do
+            if git push origin HEAD:main; then exit 0; fi
+            git fetch origin main
+            git rebase origin/main || { git rebase --abort || true; exit 1; }
+          done
+          exit 1
