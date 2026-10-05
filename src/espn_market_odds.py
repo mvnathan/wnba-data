@@ -9,6 +9,7 @@ ESPN_SCOREBOARD = {
     "wnba": "https://site.api.espn.com/apis/site/v2/sports/basketball/wnba/scoreboard",
     "mlb": "https://site.api.espn.com/apis/site/v2/sports/baseball/mlb/scoreboard",
     "nfl": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard",
+    "nba": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard",
 }
 
 
@@ -128,7 +129,7 @@ def fetch_espn_draftkings(sport: str) -> list[dict[str, Any]]:
 
         rows.append({
             "id": str(event.get("id") or comp.get("id") or ""),
-            "sport_key": {"wnba": "basketball_wnba", "mlb": "baseball_mlb", "nfl": "americanfootball_nfl"}[sport],
+            "sport_key": {"wnba": "basketball_wnba", "mlb": "baseball_mlb", "nfl": "americanfootball_nfl", "nba": "basketball_nba"}[sport],
             "commence_time": event.get("date") or comp.get("date"),
             "home_team": home_team,
             "away_team": away_team,
