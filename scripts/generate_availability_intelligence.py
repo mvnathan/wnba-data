@@ -173,8 +173,12 @@ def load_previous_state() -> dict[str, Any]:
     return {}
 
 
-def previous_x_since_id(previous: dict[str, Any]) -> str | None:
+def previous_x_since_id(previous: dict[str, Any], accounts: list[dict[str, Any]] | None = None) -> str | None:
     diag = previous.get("x_source_diagnostics") or {}
+    current_accounts = sorted(str(x.get("username") or "").lower() for x in (accounts or []))
+    prior_accounts = sorted(str(x).lower() for x in (diag.get("accounts") or []))
+    if current_accounts and current_accounts != prior_accounts:
+        return None
     if diag.get("newest_id"):
         return str(diag["newest_id"])
 
@@ -306,6 +310,7 @@ def x_evidence(cfg: dict[str, Any], since_id: str | None = None) -> tuple[list[A
     return evidence, {
         "status": "ok",
         "posts": len(raw_posts),
+        "accounts": [x["username"] for x in accounts],
         "query": query,
         "since_id_used": since_id,
         "newest_id": newest_id,
@@ -336,7 +341,7 @@ def raw_signals(evidence: list[Any]) -> list[dict[str, Any]]:
 def main() -> None:
     cfg = load_config()
     previous = load_previous_state()
-    since_id = previous_x_since_id(previous)
+    since_id = previous_x_since_id(previous, cfg.get("trusted_x_accounts") or [])
 
     official, web_diag = official_web_evidence(cfg)
     wnba_items, wnba_diag = sportradar_wnba_evidence()
