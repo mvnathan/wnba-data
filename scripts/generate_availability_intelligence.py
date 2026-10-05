@@ -160,6 +160,11 @@ def x_query(accounts: list[dict[str, Any]], keywords: list[str]) -> str:
         "rest", "resting", "\"expected to play\"", "\"will start\"",
         "\"minutes restriction\"", "\"snap count\"", "\"pitch count\"",
     ]
+    if any(str(x.get("sport") or "").upper() == "NBA" for x in accounts):
+        terms += [
+            "\"will miss\"", "sidelined", "available", "cleared", "starting",
+            "surgery", "sprain", "signed", "waived", "trade", "traded",
+        ]
     return f"({handles}) ({' OR '.join(terms)}) -is:retweet lang:en"
 
 
