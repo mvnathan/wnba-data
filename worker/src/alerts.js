@@ -74,6 +74,8 @@ export function buildAlerts(wnba, tennis, nba = null) {
     if (Number.isFinite(spreadEdge) && Math.abs(spreadEdge) >= 4) alerts.push({ id: `wnba:${game.game_id}:spread`, sport: "WNBA", score: Math.abs(spreadEdge), title: `${matchup}: spread disagreement`, body: `Model-market gap is ${Math.abs(spreadEdge).toFixed(1)} points`, url: "https://mvnathan.github.io/wnba-data/wnba.html" });
   }
   for (const game of nba?.games || []) {
+    const start = Date.parse(String(game.date || game.game_date_utc || ""));
+    if (Number.isFinite(start) && start < Date.parse("2026-10-20T00:00:00Z")) continue;
     const matchup = `${game.away_abbr || game.away_team} @ ${game.home_abbr || game.home_team}`;
     const spreadEdge = Number(game.model_market_spread_edge);
     const totalEdge = Number(game.model_market_total_edge);
