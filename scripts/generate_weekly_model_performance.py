@@ -114,6 +114,20 @@ def nfl_current_season(season):
     return rows
 
 def nba_rows(season):
+    issued=load_json("docs/nba-performance.json",{})
+    if issued.get("games"):
+        rows=[]
+        for r in issued.get("games",[]):
+            try:dt=datetime.fromisoformat(str(r.get("game_date_utc")).replace("Z","+00:00"))
+            except Exception:continue
+            if dt.year not in {season-1,season}:continue
+            rows.append({
+                "_date":dt,
+                "ml_result":"win" if r.get("winner_correct") else "loss",
+                "ats_result":r.get("ats_result"),
+                "ou_result":r.get("ou_result"),
+            })
+        if rows:return rows
     d=load_json("data/nba_model_comparison.json",{})
     rows=[]
     for r in d.get("test_predictions",[]):
