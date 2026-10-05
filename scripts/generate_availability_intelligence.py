@@ -221,16 +221,15 @@ def merge_recent_x_signals(
     return current + carried
 
 
-def x_evidence(cfg: dict[str, Any], since_id: str | None = None) -> tuple[list[Any], dict[str, Any]]:
-    token = os.getenv("X_BEARER_TOKEN") or os.getenv("TWITTER_BEARER_TOKEN")
-    if not token:
-        return [], {"status": "disabled", "reason": "X_BEARER_TOKEN not configured"}
-
-    accounts = cfg.get("trusted_x_accounts") or []
+def _x_fetch_group(
+    token: str,
+    accounts: list[dict[str, Any]],
+    since_id: str | None,
+) -> tuple[list[Any], dict[str, Any]]:
     if not accounts:
-        return [], {"status": "disabled", "reason": "no trusted X accounts configured"}
+        return [], {"status": "disabled", "posts": 0, "newest_id": since_id}
 
-    query = x_query(accounts, cfg.get("keywords") or [])
+    query = x_query(accounts, [])
     params = {
         "query": query,
         "max_results": 100,
@@ -240,6 +239,7 @@ def x_evidence(cfg: dict[str, Any], since_id: str | None = None) -> tuple[list[A
     }
     if since_id:
         params["since_id"] = since_id
+
     try:
         r = requests.get(X_URL, params=params, headers={"Authorization": f"Bearer {token}"}, timeout=30)
         if r.status_code in {401, 402, 403, 429}:
@@ -250,29 +250,23 @@ def x_evidence(cfg: dict[str, Any], since_id: str | None = None) -> tuple[list[A
                 429: "X API rate limit reached",
             }[r.status_code]
             return [], {
-                "status": "unavailable",
-                "http_status": r.status_code,
-                "reason": reason,
-                "query": query,
-                "since_id_used": since_id,
-                "newest_id": since_id,
+                "status": "unavailable", "http_status": r.status_code, "reason": reason,
+                "query": query, "since_id_used": since_id, "newest_id": since_id,
             }
         r.raise_for_status()
         payload = r.json()
     except Exception as exc:
         return [], {
-            "status": "error",
-            "reason": str(exc),
-            "query": query,
-            "since_id_used": since_id,
-            "newest_id": since_id,
+            "status": "error", "reason": str(exc), "query": query,
+            "since_id_used": since_id, "newest_id": since_id,
         }
+
     users = {str(x["id"]): x for x in ((payload.get("includes") or {}).get("users") or [])}
     by_username = {x["username"].lower(): x for x in accounts}
-
     evidence = []
     raw_posts = []
     post_ids = []
+
     for post in payload.get("data") or []:
         try:
             post_ids.append(int(post.get("id")))
@@ -285,38 +279,65 @@ def x_evidence(cfg: dict[str, Any], since_id: str | None = None) -> tuple[list[A
             continue
         text = compact(post.get("text") or "")
         ev = make_evidence(
-            sport=src_cfg["sport"],
-            team=None,
-            player=None,
+            sport=src_cfg["sport"], team=None, player=None,
             source="@" + str(user.get("username") or src_cfg["username"]),
             source_tier=src_cfg.get("tier", "trusted_media"),
-            text=text,
-            published_at_utc=post.get("created_at"),
+            text=text, published_at_utc=post.get("created_at"),
             url=f"https://x.com/{user.get('username')}/status/{post.get('id')}" if user.get("username") else None,
         )
         evidence.append(ev)
         raw_posts.append({
-            "sport": src_cfg["sport"],
-            "source": ev.source,
-            "published_at_utc": ev.published_at_utc,
-            "text": text,
-            "status_signal": ev.status,
-            "tactical_flags": ev.tactical_flags,
-            "confidence": ev.confidence,
-            "url": ev.url,
+            "sport": src_cfg["sport"], "source": ev.source,
+            "published_at_utc": ev.published_at_utc, "text": text,
+            "status_signal": ev.status, "tactical_flags": ev.tactical_flags,
+            "confidence": ev.confidence, "url": ev.url,
         })
 
     newest_id = str(max(post_ids)) if post_ids else since_id
     return evidence, {
-        "status": "ok",
-        "posts": len(raw_posts),
+        "status": "ok", "posts": len(raw_posts),
         "accounts": [x["username"] for x in accounts],
-        "query": query,
-        "since_id_used": since_id,
-        "newest_id": newest_id,
+        "query": query, "since_id_used": since_id, "newest_id": newest_id,
         "raw_posts": raw_posts[:100],
     }
 
+
+def x_evidence(cfg: dict[str, Any], previous: dict[str, Any]) -> tuple[list[Any], dict[str, Any]]:
+    token = os.getenv("X_BEARER_TOKEN") or os.getenv("TWITTER_BEARER_TOKEN")
+    if not token:
+        return [], {"status": "disabled", "reason": "X_BEARER_TOKEN not configured"}
+
+    accounts = cfg.get("trusted_x_accounts") or []
+    if not accounts:
+        return [], {"status": "disabled", "reason": "no trusted X accounts configured"}
+
+    nba_accounts = [x for x in accounts if x.get("sport") == "NBA"]
+    general_accounts = [x for x in accounts if x.get("sport") != "NBA"]
+    prior_diag = previous.get("x_source_diagnostics") or {}
+
+    general_since = prior_diag.get("newest_id_general") or prior_diag.get("newest_id")
+    nba_since = prior_diag.get("newest_id_nba")
+
+    general_items, general_diag = _x_fetch_group(token, general_accounts, str(general_since) if general_since else None)
+    nba_items, nba_diag = _x_fetch_group(token, nba_accounts, str(nba_since) if nba_since else None)
+
+    statuses = {general_diag.get("status"), nba_diag.get("status")}
+    status = "ok" if "ok" in statuses else (nba_diag.get("status") or general_diag.get("status"))
+    return general_items + nba_items, {
+        "status": status,
+        "posts": int(general_diag.get("posts") or 0) + int(nba_diag.get("posts") or 0),
+        "posts_general": int(general_diag.get("posts") or 0),
+        "posts_nba": int(nba_diag.get("posts") or 0),
+        "accounts": [x["username"] for x in accounts],
+        "since_id_used_general": general_diag.get("since_id_used"),
+        "since_id_used_nba": nba_diag.get("since_id_used"),
+        "newest_id": general_diag.get("newest_id"),
+        "newest_id_general": general_diag.get("newest_id"),
+        "newest_id_nba": nba_diag.get("newest_id"),
+        "query_general": general_diag.get("query"),
+        "query_nba": nba_diag.get("query"),
+        "raw_posts": (general_diag.get("raw_posts") or []) + (nba_diag.get("raw_posts") or []),
+    }
 
 def raw_signals(evidence: list[Any]) -> list[dict[str, Any]]:
     rows = []
@@ -341,11 +362,9 @@ def raw_signals(evidence: list[Any]) -> list[dict[str, Any]]:
 def main() -> None:
     cfg = load_config()
     previous = load_previous_state()
-    since_id = previous_x_since_id(previous, cfg.get("trusted_x_accounts") or [])
-
     official, web_diag = official_web_evidence(cfg)
     wnba_items, wnba_diag = sportradar_wnba_evidence()
-    x_items, x_diag = x_evidence(cfg, since_id=since_id)
+    x_items, x_diag = x_evidence(cfg, previous)
     all_items = official + wnba_items + x_items
 
     structured = aggregate([e for e in all_items if e.player or e.team])
@@ -379,8 +398,10 @@ def main() -> None:
         "official_signals": len(official),
         "wnba_structured_signals": len(wnba_items),
         "x_signals": len(x_items),
-        "x_since_id_used": x_diag.get("since_id_used"),
-        "x_newest_id": x_diag.get("newest_id"),
+        "x_since_id_used_general": x_diag.get("since_id_used_general"),
+        "x_since_id_used_nba": x_diag.get("since_id_used_nba"),
+        "x_newest_id_general": x_diag.get("newest_id_general"),
+        "x_newest_id_nba": x_diag.get("newest_id_nba"),
         "output_signals": len(payload["signals"]),
         "x_status": x_diag.get("status"),
     }, indent=2))
