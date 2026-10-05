@@ -1,11 +1,11 @@
 {
-  "generated_at_utc": "2026-10-05T05:57:48.102685+00:00",
+  "generated_at_utc": "2026-10-05T15:02:08.754331+00:00",
   "status": "ok",
   "production_adjustment_enabled": false,
-  "new_posts_seen": 9,
+  "new_posts_seen": 0,
   "new_picks_parsed": 0,
   "ledger_size": 0,
-  "since_id_used": "2106515898244985247",
+  "since_id_used": "2106915780617248850",
   "newest_id": "2106915780617248850",
   "accounts": {
     "@RufusPeabody": {
@@ -60,71 +60,7 @@
     }
   },
   "new_picks": [],
-  "candidate_posts": [
-    {
-      "post_id": "2106915780617248850",
-      "source": "@FezzikSports",
-      "published_at_utc": "2026-10-05T01:14:01.000Z",
-      "text": "Random result, like the Price Is Right Plinco puck.... does it land in OVER or UNDER or FAV or DOG https://t.co/YH0Bb4RvTn",
-      "url": "https://x.com/FezzikSports/status/2106915780617248850"
-    },
-    {
-      "post_id": "2106911679204470901",
-      "source": "@iamrahstradamus",
-      "published_at_utc": "2026-10-05T00:57:43.000Z",
-      "text": "I\u2019m retweeting this because this bothers me. Seriously, can we normalize speaking to media personalities like actual human beings when they say something negative about your team? I realize this is the internet but some of you guys really need help. Maybe I was raised differently https://t.co/Zd9SQpOAbZ",
-      "url": "https://x.com/iamrahstradamus/status/2106911679204470901"
-    },
-    {
-      "post_id": "2106897117297918176",
-      "source": "@wheatonbrando",
-      "published_at_utc": "2026-10-04T23:59:51.000Z",
-      "text": "There\u2019s still time to play the most fun bet of the day\u2026 Jameson Williams escalator!! https://t.co/AZc5eWETiX",
-      "url": "https://x.com/wheatonbrando/status/2106897117297918176"
-    },
-    {
-      "post_id": "2106892494147600763",
-      "source": "@FezzikSports",
-      "published_at_utc": "2026-10-04T23:41:29.000Z",
-      "text": "I have NEVER seen so much PLINCO decide who covers in the late games EVER\n\nThe final 2 minutes....\n\nWhere unders go to OVER\n\nAnd where covers go to pushes/losses",
-      "url": "https://x.com/FezzikSports/status/2106892494147600763"
-    },
-    {
-      "post_id": "2106881584091783335",
-      "source": "@iamrahstradamus",
-      "published_at_utc": "2026-10-04T22:58:08.000Z",
-      "text": "Wow, Vikings slide at the 1 yard line with 2 minutes to go. \n\nNo cover. 3 kneel downs and this is over.",
-      "url": "https://x.com/iamrahstradamus/status/2106881584091783335"
-    },
-    {
-      "post_id": "2106862483608908236",
-      "source": "@wheatonbrando",
-      "published_at_utc": "2026-10-04T21:42:14.000Z",
-      "text": "@cartmanburner @ActionNetworkHQ You can play to win a unit, but better to just make your own decisions with your money",
-      "url": "https://x.com/wheatonbrando/status/2106862483608908236"
-    },
-    {
-      "post_id": "2106850887230705868",
-      "source": "@iamrahstradamus",
-      "published_at_utc": "2026-10-04T20:56:09.000Z",
-      "text": "Texans remind me of the 2009 Tennessee Titans. They went 13-3 in 2008.  Some people thought that would carry over and they were favored in 2 out of their first 4 games in 2009 and had heavy market respect before the wheels completely fell off and they started 0-6. Far more",
-      "url": "https://x.com/iamrahstradamus/status/2106850887230705868"
-    },
-    {
-      "post_id": "2106836577960022377",
-      "source": "@iamrahstradamus",
-      "published_at_utc": "2026-10-04T19:59:17.000Z",
-      "text": "Bengals still can't stop tight ends.........who beats the Bengals on the most critical play of the game? A tight end.",
-      "url": "https://x.com/iamrahstradamus/status/2106836577960022377"
-    },
-    {
-      "post_id": "2106834951295611260",
-      "source": "@iamrahstradamus",
-      "published_at_utc": "2026-10-04T19:52:50.000Z",
-      "text": "That hook and lateral play might have been the best offensive play I've seen the Texans run during the entire Demeco Ryans era.",
-      "url": "https://x.com/iamrahstradamus/status/2106834951295611260"
-    }
-  ],
+  "candidate_posts": [],
   "promotion_thresholds": {
     "minimum_graded_picks": 100,
     "minimum_positive_clv_rate": 0.52,
