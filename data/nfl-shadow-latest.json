@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-06T01:25:32.336901+00:00",
+  "generated_at_utc": "2026-10-06T09:23:26.131228+00:00",
   "status": "ok",
   "production_modified": false,
   "baseline_model_version": "nfl-v2",
@@ -16,9 +16,9 @@
   "note": "External signals were not available historically across the full 577-game backtest, so current deltas are prospective. Accuracy/Brier/MAE comparison begins as these shadow forecasts settle.",
   "summary": {
     "games": 1,
-    "games_changed_by_availability": 0,
-    "games_changed_by_combined": 0,
-    "availability_x_signals_available": 43,
+    "games_changed_by_availability": 1,
+    "games_changed_by_combined": 1,
+    "availability_x_signals_available": 45,
     "sharp_ledger_picks": 0,
     "sharp_production_weight": 0.0
   },
@@ -42,26 +42,40 @@
       },
       "availability_shadow": {
         "predicted_home_points": 23.7,
-        "predicted_away_points": 21.5,
-        "predicted_margin": 2.2,
-        "predicted_total": 45.3,
-        "home_win_probability": 0.5716,
-        "away_win_probability": 0.4284,
+        "predicted_away_points": 21.3,
+        "predicted_margin": 2.4,
+        "predicted_total": 45.0,
+        "home_win_probability": 0.582,
+        "away_win_probability": 0.418,
         "predicted_winner": "New Orleans Saints",
-        "availability_margin_delta": 0.0,
-        "availability_total_delta": 0.0,
-        "signals_applied": []
+        "availability_margin_delta": 0.2,
+        "availability_total_delta": -0.3,
+        "signals_applied": [
+          {
+            "team": "ATL",
+            "player": "Jake Matthews",
+            "position": "LT",
+            "status": "questionable",
+            "confidence": 0.446,
+            "base_points": 1.0,
+            "point_impact": 0.201,
+            "source": "@RapSheet",
+            "published_at_utc": "2026-10-06T01:08:09.000Z",
+            "url": "https://x.com/RapSheet/status/2107276692310176226",
+            "text": "#Falcons LT Jake Matthews, one of the game\u2019s true iron men, has a groin injury and is questionable to return. This is his 200th start and he hasn\u2019t missed a game since 2014."
+          }
+        ]
       },
       "combined_shadow": {
         "predicted_home_points": 23.7,
-        "predicted_away_points": 21.5,
-        "predicted_margin": 2.2,
-        "predicted_total": 45.3,
-        "home_win_probability": 0.5716,
-        "away_win_probability": 0.4284,
+        "predicted_away_points": 21.3,
+        "predicted_margin": 2.4,
+        "predicted_total": 45.0,
+        "home_win_probability": 0.582,
+        "away_win_probability": 0.418,
         "predicted_winner": "New Orleans Saints",
-        "combined_margin_delta_vs_production": 0.0,
-        "combined_total_delta_vs_production": 0.0,
+        "combined_margin_delta_vs_production": 0.2,
+        "combined_total_delta_vs_production": -0.3,
         "sharp_margin_delta": 0.0,
         "sharp_total_delta": 0.0,
         "sharp_signals_applied": []
