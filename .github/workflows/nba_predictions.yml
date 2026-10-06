@@ -5,6 +5,7 @@ on:
   schedule:
     - cron: '35 12 * * *'
     - cron: '35 18 * * *'
+    - cron: '35 22 * * *'
   push:
     branches: [main]
     paths:
