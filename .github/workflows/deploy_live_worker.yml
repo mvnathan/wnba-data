@@ -123,6 +123,26 @@ jobs:
           print('Snapshot generated:', data.get('live_generated_at_utc'))
           PY
 
+          echo "Checking NBA prediction endpoint"
+          curl --fail --silent --show-error --retry 8 --retry-delay 2 --retry-all-errors \
+            "${BASE_URL}/api/nba?t=$(date +%s)" \
+            | tee /tmp/nba-latest.json
+
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          data = json.loads(Path('/tmp/nba-latest.json').read_text())
+          if data.get('sport') != 'NBA':
+              raise SystemExit(f'NBA endpoint returned unexpected payload: {data}')
+          if data.get('model_status') != 'production':
+              raise SystemExit(f'NBA production status missing: {data}')
+          if not isinstance(data.get('games'), list):
+              raise SystemExit(f'NBA endpoint missing games list: {data}')
+          print('NBA prediction endpoint OK')
+          print('NBA games:', len(data.get('games') or []))
+          print('NBA model:', data.get('model_version'))
+          PY
+
           echo "Checking tennis prediction endpoint"
           curl --fail --silent --show-error --retry 8 --retry-delay 2 --retry-all-errors \
             "${BASE_URL}/tennis/health?t=$(date +%s)" \
