@@ -224,3 +224,5 @@ def main():
     print(json.dumps({m["sport"]:m.get("overall") for m in models},indent=2))
 
 if __name__=="__main__":main()
+
+# NBA v2 performance refresh trigger: 2026-10-05
