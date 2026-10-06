@@ -1,29 +1,76 @@
 {
-  "generated_at_utc": "2026-10-06T01:00:42.994665+00:00",
+  "generated_at_utc": "2026-10-06T16:49:55.495128+00:00",
   "method": "Earliest committed pregame NBA forecast and market line joined to ESPN final score by game ID",
   "summary": {
-    "n": 0,
+    "n": 2,
     "ml": {
-      "wins": 0,
+      "wins": 2,
       "losses": 0,
       "pushes": 0,
-      "graded": 0,
-      "rate": null
+      "graded": 2,
+      "rate": 1.0
     },
     "ats": {
       "wins": 0,
-      "losses": 0,
+      "losses": 1,
       "pushes": 0,
-      "graded": 0,
-      "rate": null
+      "graded": 1,
+      "rate": 0.0
     },
     "ou": {
-      "wins": 0,
+      "wins": 1,
       "losses": 0,
       "pushes": 0,
-      "graded": 0,
-      "rate": null
+      "graded": 1,
+      "rate": 1.0
     }
   },
-  "games": []
+  "games": [
+    {
+      "game_id": "401914102",
+      "game_date_utc": "2026-10-06T00:00Z",
+      "home_team": "Milwaukee Bucks",
+      "away_team": "Minnesota Timberwolves",
+      "home_abbr": "MIL",
+      "away_abbr": "MIN",
+      "prediction_issued_at": "2026-10-05T23:52:12.309452+00:00",
+      "prediction_commit": "a69c75df",
+      "home_win_probability": 0.3313768919745009,
+      "predicted_margin": -4.993469724447666,
+      "predicted_total": 228.68081936838027,
+      "actual_home_score": 97.0,
+      "actual_away_score": 116.0,
+      "actual_margin": -19.0,
+      "actual_total": 213.0,
+      "winner_correct": true,
+      "market_home_spread": 6.5,
+      "market_total": 231.5,
+      "market_bookmaker": "DraftKings",
+      "ats_result": "loss",
+      "ou_result": "win"
+    },
+    {
+      "game_id": "401898716",
+      "game_date_utc": "2026-10-06T02:00Z",
+      "home_team": "Sacramento Kings",
+      "away_team": "Los Angeles Lakers",
+      "home_abbr": "SAC",
+      "away_abbr": "LAL",
+      "prediction_issued_at": "2026-10-05T23:52:12.309452+00:00",
+      "prediction_commit": "a69c75df",
+      "home_win_probability": 0.43315335092073526,
+      "predicted_margin": -5.017211263273762,
+      "predicted_total": 228.152751193466,
+      "actual_home_score": 103.0,
+      "actual_away_score": 127.0,
+      "actual_margin": -24.0,
+      "actual_total": 230.0,
+      "winner_correct": true,
+      "market_home_spread": 5.5,
+      "market_total": 228.5,
+      "market_bookmaker": "DraftKings",
+      "ats_result": null,
+      "ou_result": null
+    }
+  ]
 }
