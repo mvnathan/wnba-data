@@ -37,14 +37,18 @@ jobs:
         run: pip install pandas numpy scikit-learn requests curl_cffi
       - name: Train, backtest and publish NBA model
         run: python scripts/generate_nba_predictions.py
+      - name: Rebuild issued NBA performance
+        run: python scripts/evaluate_nba_predictions.py
       - name: Validate NBA output
         run: |
           python - <<'PY'
           import json
           latest=json.load(open("docs/nba-latest.json"))
           perf=json.load(open("data/nba_model_comparison.json"))
+          issued=json.load(open("docs/nba-performance.json"))
           assert latest["sport"]=="NBA"
           assert latest["model_status"]=="production"
+          assert latest["model_version"]=="nba-v2-roster-four-factors"
           assert latest["market_used_in_prediction"] is False
           assert len(latest["training_seasons"])==2
           test=perf["test"]
@@ -56,7 +60,9 @@ jobs:
               assert 0 <= g["home_win_probability"] <= 1
               assert g["predicted_home_points"] > 0
               assert g["predicted_away_points"] > 0
+          assert isinstance(issued.get("games"),list)
           print("NBA holdout",test)
+          print("NBA issued performance",issued.get("summary"))
           print("NBA slate",len(latest["games"]))
           PY
       - name: Publish NBA outputs
@@ -65,7 +71,7 @@ jobs:
           set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add docs/nba-latest.json predictions/nba-latest.json data/nba_model_comparison.json
+          git add docs/nba-latest.json predictions/nba-latest.json data/nba_model_comparison.json docs/nba-performance.json
           if git diff --cached --quiet; then exit 0; fi
           git commit -m "Update NBA predictions"
           for attempt in 1 2 3; do
