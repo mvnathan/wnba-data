@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-05T23:47:52.378170+00:00",
+  "generated_at_utc": "2026-10-06T01:00:11.520Z",
   "season": 2026,
   "status": "ok",
   "models": [
@@ -40,7 +40,7 @@
       "weekly": [
         {
           "week_start": "2026-09-07",
-          "week_label": "Sep 7\u2013Sep 13",
+          "week_label": "Sep 7–Sep 13",
           "n": 15,
           "ml": {
             "wins": 9,
@@ -66,7 +66,7 @@
         },
         {
           "week_start": "2026-09-14",
-          "week_label": "Sep 14\u2013Sep 20",
+          "week_label": "Sep 14–Sep 20",
           "n": 16,
           "ml": {
             "wins": 9,
@@ -92,7 +92,7 @@
         },
         {
           "week_start": "2026-09-21",
-          "week_label": "Sep 21\u2013Sep 27",
+          "week_label": "Sep 21–Sep 27",
           "n": 16,
           "ml": {
             "wins": 10,
@@ -118,7 +118,7 @@
         },
         {
           "week_start": "2026-09-28",
-          "week_label": "Sep 28\u2013Oct 4",
+          "week_label": "Sep 28–Oct 4",
           "n": 16,
           "ml": {
             "wins": 12,
@@ -145,7 +145,7 @@
       ]
     },
     {
-      "name": "NBA roster model",
+      "name": "NBA roster + four-factor model",
       "sport": "NBA",
       "season": 2026,
       "source_type": "chronological_two_season_holdout",
@@ -155,13 +155,13 @@
         "ou": "Prospective issued-line tracking begins with NBA launch; historical line data is not imputed."
       },
       "overall": {
-        "n": 0,
+        "n": 494,
         "ml": {
-          "wins": 0,
-          "losses": 0,
+          "wins": 349,
+          "losses": 145,
           "pushes": 0,
-          "graded": 0,
-          "rate": null
+          "graded": 494,
+          "rate": 0.7064777327935222
         },
         "ats": {
           "wins": 0,
@@ -178,7 +178,294 @@
           "rate": null
         }
       },
-      "weekly": []
+      "weekly": [
+        {
+          "week_start": "2026-02-02",
+          "week_label": "Feb 2–Feb 8",
+          "n": 48,
+          "ml": {
+            "wins": 29,
+            "losses": 19,
+            "pushes": 0,
+            "graded": 48,
+            "rate": 0.6041666666666666
+          },
+          "ats": {
+            "wins": 0,
+            "losses": 0,
+            "pushes": 0,
+            "graded": 0,
+            "rate": null
+          },
+          "ou": {
+            "wins": 0,
+            "losses": 0,
+            "pushes": 0,
+            "graded": 0,
+            "rate": null
+          }
+        },
+        {
+          "week_start": "2026-02-09",
+          "week_label": "Feb 9–Feb 15",
+          "n": 34,
+          "ml": {
+            "wins": 23,
+            "losses": 11,
+            "pushes": 0,
+            "graded": 34,
+            "rate": 0.6764705882352942
+          },
+          "ats": {
+            "wins": 0,
+            "losses": 0,
+            "pushes": 0,
+            "graded": 0,
+            "rate": null
+          },
+          "ou": {
+            "wins": 0,
+            "losses": 0,
+            "pushes": 0,
+            "graded": 0,
+            "rate": null
+          }
+        },
+        {
+          "week_start": "2026-02-16",
+          "week_label": "Feb 16–Feb 22",
+          "n": 33,
+          "ml": {
+            "wins": 20,
+            "losses": 13,
+            "pushes": 0,
+            "graded": 33,
+            "rate": 0.6060606060606061
+          },
+          "ats": {
+            "wins": 0,
+            "losses": 0,
+            "pushes": 0,
+            "graded": 0,
+            "rate": null
+          },
+          "ou": {
+            "wins": 0,
+            "losses": 0,
+            "pushes": 0,
+            "graded": 0,
+            "rate": null
+          }
+        },
+        {
+          "week_start": "2026-02-23",
+          "week_label": "Feb 23–Mar 1",
+          "n": 51,
+          "ml": {
+            "wins": 34,
+            "losses": 17,
+            "pushes": 0,
+            "graded": 51,
+            "rate": 0.6666666666666666
+          },
+          "ats": {
+            "wins": 0,
+            "losses": 0,
+            "pushes": 0,
+            "graded": 0,
+            "rate": null
+          },
+          "ou": {
+            "wins": 0,
+            "losses": 0,
+            "pushes": 0,
+            "graded": 0,
+            "rate": null
+          }
+        },
+        {
+          "week_start": "2026-03-02",
+          "week_label": "Mar 2–Mar 8",
+          "n": 51,
+          "ml": {
+            "wins": 40,
+            "losses": 11,
+            "pushes": 0,
+            "graded": 51,
+            "rate": 0.7843137254901961
+          },
+          "ats": {
+            "wins": 0,
+            "losses": 0,
+            "pushes": 0,
+            "graded": 0,
+            "rate": null
+          },
+          "ou": {
+            "wins": 0,
+            "losses": 0,
+            "pushes": 0,
+            "graded": 0,
+            "rate": null
+          }
+        },
+        {
+          "week_start": "2026-03-09",
+          "week_label": "Mar 9–Mar 15",
+          "n": 56,
+          "ml": {
+            "wins": 40,
+            "losses": 16,
+            "pushes": 0,
+            "graded": 56,
+            "rate": 0.7142857142857143
+          },
+          "ats": {
+            "wins": 0,
+            "losses": 0,
+            "pushes": 0,
+            "graded": 0,
+            "rate": null
+          },
+          "ou": {
+            "wins": 0,
+            "losses": 0,
+            "pushes": 0,
+            "graded": 0,
+            "rate": null
+          }
+        },
+        {
+          "week_start": "2026-03-16",
+          "week_label": "Mar 16–Mar 22",
+          "n": 54,
+          "ml": {
+            "wins": 41,
+            "losses": 13,
+            "pushes": 0,
+            "graded": 54,
+            "rate": 0.7592592592592593
+          },
+          "ats": {
+            "wins": 0,
+            "losses": 0,
+            "pushes": 0,
+            "graded": 0,
+            "rate": null
+          },
+          "ou": {
+            "wins": 0,
+            "losses": 0,
+            "pushes": 0,
+            "graded": 0,
+            "rate": null
+          }
+        },
+        {
+          "week_start": "2026-03-23",
+          "week_label": "Mar 23–Mar 29",
+          "n": 55,
+          "ml": {
+            "wins": 36,
+            "losses": 19,
+            "pushes": 0,
+            "graded": 55,
+            "rate": 0.6545454545454545
+          },
+          "ats": {
+            "wins": 0,
+            "losses": 0,
+            "pushes": 0,
+            "graded": 0,
+            "rate": null
+          },
+          "ou": {
+            "wins": 0,
+            "losses": 0,
+            "pushes": 0,
+            "graded": 0,
+            "rate": null
+          }
+        },
+        {
+          "week_start": "2026-03-30",
+          "week_label": "Mar 30–Apr 5",
+          "n": 52,
+          "ml": {
+            "wins": 40,
+            "losses": 12,
+            "pushes": 0,
+            "graded": 52,
+            "rate": 0.7692307692307693
+          },
+          "ats": {
+            "wins": 0,
+            "losses": 0,
+            "pushes": 0,
+            "graded": 0,
+            "rate": null
+          },
+          "ou": {
+            "wins": 0,
+            "losses": 0,
+            "pushes": 0,
+            "graded": 0,
+            "rate": null
+          }
+        },
+        {
+          "week_start": "2026-04-06",
+          "week_label": "Apr 6–Apr 12",
+          "n": 52,
+          "ml": {
+            "wins": 40,
+            "losses": 12,
+            "pushes": 0,
+            "graded": 52,
+            "rate": 0.7692307692307693
+          },
+          "ats": {
+            "wins": 0,
+            "losses": 0,
+            "pushes": 0,
+            "graded": 0,
+            "rate": null
+          },
+          "ou": {
+            "wins": 0,
+            "losses": 0,
+            "pushes": 0,
+            "graded": 0,
+            "rate": null
+          }
+        },
+        {
+          "week_start": "2026-04-13",
+          "week_label": "Apr 13–Apr 19",
+          "n": 8,
+          "ml": {
+            "wins": 6,
+            "losses": 2,
+            "pushes": 0,
+            "graded": 8,
+            "rate": 0.75
+          },
+          "ats": {
+            "wins": 0,
+            "losses": 0,
+            "pushes": 0,
+            "graded": 0,
+            "rate": null
+          },
+          "ou": {
+            "wins": 0,
+            "losses": 0,
+            "pushes": 0,
+            "graded": 0,
+            "rate": null
+          }
+        }
+      ]
     },
     {
       "name": "MLB v2",
@@ -217,7 +504,7 @@
       "weekly": [
         {
           "week_start": "2026-08-31",
-          "week_label": "Aug 31\u2013Sep 6",
+          "week_label": "Aug 31–Sep 6",
           "n": 85,
           "ml": {
             "wins": 47,
@@ -243,7 +530,7 @@
         },
         {
           "week_start": "2026-09-07",
-          "week_label": "Sep 7\u2013Sep 13",
+          "week_label": "Sep 7–Sep 13",
           "n": 91,
           "ml": {
             "wins": 50,
@@ -269,7 +556,7 @@
         },
         {
           "week_start": "2026-09-14",
-          "week_label": "Sep 14\u2013Sep 20",
+          "week_label": "Sep 14–Sep 20",
           "n": 94,
           "ml": {
             "wins": 61,
@@ -295,7 +582,7 @@
         },
         {
           "week_start": "2026-09-21",
-          "week_label": "Sep 21\u2013Sep 27",
+          "week_label": "Sep 21–Sep 27",
           "n": 3,
           "ml": {
             "wins": 2,
@@ -358,7 +645,7 @@
       "weekly": [
         {
           "week_start": "2026-08-10",
-          "week_label": "Aug 10\u2013Aug 16",
+          "week_label": "Aug 10–Aug 16",
           "n": 11,
           "ml": {
             "wins": 8,
@@ -379,12 +666,12 @@
             "losses": 0,
             "pushes": 0,
             "graded": 11,
-            "rate": 1.0
+            "rate": 1
           }
         },
         {
           "week_start": "2026-08-17",
-          "week_label": "Aug 17\u2013Aug 23",
+          "week_label": "Aug 17–Aug 23",
           "n": 6,
           "ml": {
             "wins": 3,
@@ -410,7 +697,7 @@
         },
         {
           "week_start": "2026-08-24",
-          "week_label": "Aug 24\u2013Aug 30",
+          "week_label": "Aug 24–Aug 30",
           "n": 15,
           "ml": {
             "wins": 10,
@@ -436,14 +723,14 @@
         },
         {
           "week_start": "2026-08-31",
-          "week_label": "Aug 31\u2013Sep 6",
+          "week_label": "Aug 31–Sep 6",
           "n": 1,
           "ml": {
             "wins": 1,
             "losses": 0,
             "pushes": 0,
             "graded": 1,
-            "rate": 1.0
+            "rate": 1
           },
           "ats": {
             "wins": 0,
@@ -462,7 +749,7 @@
         },
         {
           "week_start": "2026-09-14",
-          "week_label": "Sep 14\u2013Sep 20",
+          "week_label": "Sep 14–Sep 20",
           "n": 6,
           "ml": {
             "wins": 5,
@@ -488,7 +775,7 @@
         },
         {
           "week_start": "2026-09-21",
-          "week_label": "Sep 21\u2013Sep 27",
+          "week_label": "Sep 21–Sep 27",
           "n": 15,
           "ml": {
             "wins": 10,
@@ -514,7 +801,7 @@
         },
         {
           "week_start": "2026-09-28",
-          "week_label": "Sep 28\u2013Oct 4",
+          "week_label": "Sep 28–Oct 4",
           "n": 7,
           "ml": {
             "wins": 6,
@@ -577,7 +864,7 @@
       "weekly": [
         {
           "week_start": "2026-08-31",
-          "week_label": "Aug 31\u2013Sep 6",
+          "week_label": "Aug 31–Sep 6",
           "n": 33,
           "ml": {
             "wins": 23,
@@ -603,7 +890,7 @@
         },
         {
           "week_start": "2026-09-07",
-          "week_label": "Sep 7\u2013Sep 13",
+          "week_label": "Sep 7–Sep 13",
           "n": 7,
           "ml": {
             "wins": 4,
@@ -629,7 +916,7 @@
         },
         {
           "week_start": "2026-09-21",
-          "week_label": "Sep 21\u2013Sep 27",
+          "week_label": "Sep 21–Sep 27",
           "n": 57,
           "ml": {
             "wins": 36,
@@ -655,7 +942,7 @@
         },
         {
           "week_start": "2026-09-28",
-          "week_label": "Sep 28\u2013Oct 4",
+          "week_label": "Sep 28–Oct 4",
           "n": 46,
           "ml": {
             "wins": 31,
@@ -681,7 +968,7 @@
         },
         {
           "week_start": "2026-10-05",
-          "week_label": "Oct 5\u2013Oct 11",
+          "week_label": "Oct 5–Oct 11",
           "n": 19,
           "ml": {
             "wins": 12,
@@ -744,7 +1031,7 @@
       "weekly": [
         {
           "week_start": "2026-08-31",
-          "week_label": "Aug 31\u2013Sep 6",
+          "week_label": "Aug 31–Sep 6",
           "n": 30,
           "ml": {
             "wins": 21,
@@ -770,7 +1057,7 @@
         },
         {
           "week_start": "2026-09-07",
-          "week_label": "Sep 7\u2013Sep 13",
+          "week_label": "Sep 7–Sep 13",
           "n": 35,
           "ml": {
             "wins": 26,
@@ -796,7 +1083,7 @@
         },
         {
           "week_start": "2026-09-14",
-          "week_label": "Sep 14\u2013Sep 20",
+          "week_label": "Sep 14–Sep 20",
           "n": 49,
           "ml": {
             "wins": 35,
@@ -822,7 +1109,7 @@
         },
         {
           "week_start": "2026-09-21",
-          "week_label": "Sep 21\u2013Sep 27",
+          "week_label": "Sep 21–Sep 27",
           "n": 74,
           "ml": {
             "wins": 48,
@@ -848,7 +1135,7 @@
         },
         {
           "week_start": "2026-09-28",
-          "week_label": "Sep 28\u2013Oct 4",
+          "week_label": "Sep 28–Oct 4",
           "n": 76,
           "ml": {
             "wins": 48,
@@ -874,7 +1161,7 @@
         },
         {
           "week_start": "2026-10-05",
-          "week_label": "Oct 5\u2013Oct 11",
+          "week_label": "Oct 5–Oct 11",
           "n": 11,
           "ml": {
             "wins": 7,
@@ -902,5 +1189,5 @@
     }
   ],
   "metric_definition": "Hit rate = wins / (wins + losses). Pushes are displayed separately and excluded from the denominator.",
-  "method_note": "Market performance is only calculated where a valid benchmark line was retained. No missing historical lines are imputed."
+  "method_note": "Market performance is only calculated where a valid benchmark line was retained. NBA ML currently uses the untouched two-season chronological holdout; NBA ATS/O-U will populate prospectively from issued forecasts. No missing historical lines are imputed."
 }
