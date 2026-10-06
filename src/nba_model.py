@@ -24,13 +24,18 @@ ESPN_SCOREBOARD="https://site.api.espn.com/apis/site/v2/sports/basketball/nba/sc
 ESPN_TEAMS="https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams"
 SD_TEAM="https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_nba_team_boxscores/team_box_{year}.csv"
 SD_PLAYER="https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_nba_player_boxscores/player_box_{year}.csv"
-FEATURES=[
+BASE_FEATURES=[
 "home_off","home_def","home_margin","home_pace","home_win_pct","home_rest",
 "away_off","away_def","away_margin","away_pace","away_win_pct","away_rest",
-"home_continuity","away_continuity","home_roster_value","away_roster_value",
-"home_incoming_share","away_incoming_share","home_top3_share","away_top3_share",
-"home_games_played","away_games_played","neutral_site"
+"home_games_played","away_games_played","neutral_site",
+"home_ortg","home_drtg","home_efg","home_tov_rate","home_orb_rate","home_ft_rate","home_form_volatility",
+"away_ortg","away_drtg","away_efg","away_tov_rate","away_orb_rate","away_ft_rate","away_form_volatility"
 ]
+ROSTER_FEATURES=[
+"home_continuity","away_continuity","home_roster_value","away_roster_value",
+"home_incoming_share","away_incoming_share","home_top3_share","away_top3_share"
+]
+FEATURES=BASE_FEATURES+ROSTER_FEATURES
 
 def season_label_from_end(end_year:int)->str:
     return f"{end_year-1}-{str(end_year)[-2:]}"
@@ -78,6 +83,25 @@ def _minutes(v)->float:
 def _poss(r)->float:
     return max(1.0,_num(r.get("field_goals_attempted"))+0.44*_num(r.get("free_throws_attempted"))-_num(r.get("offensive_rebounds"))+_num(r.get("turnovers")))
 
+def _ratio(a,b,default=0.0)->float:
+    d=_num(b)
+    return _num(a)/d if d>0 else default
+
+def _team_box_metrics(r,opp)->dict[str,float]:
+    fga=max(1.0,_num(r.get("field_goals_attempted")))
+    fgm=_num(r.get("field_goals_made"))
+    tpm=_num(r.get("three_point_field_goals_made") or r.get("three_point_field_goals_made"))
+    poss=_poss(r)
+    orb=_num(r.get("offensive_rebounds"))
+    opp_drb=_num(opp.get("defensive_rebounds"))
+    return {
+        "poss":poss,
+        "efg":(fgm+0.5*tpm)/fga,
+        "tov_rate":_num(r.get("turnovers"))/poss,
+        "orb_rate":orb/max(1.0,orb+opp_drb),
+        "ft_rate":_num(r.get("free_throws_attempted"))/fga,
+    }
+
 def team_games(team_box:pd.DataFrame,end_year:int)->pd.DataFrame:
     if team_box.empty:return pd.DataFrame(columns=["game_id","date","season","home_id","away_id","home_abbr","away_abbr","home_score","away_score","home_poss","away_poss"])
     rows=[]
@@ -87,13 +111,18 @@ def team_games(team_box:pd.DataFrame,end_year:int)->pd.DataFrame:
         a=g[g["team_home_away"].astype(str).str.lower()=="away"] if "team_home_away" in g.columns else pd.DataFrame()
         if h.empty or a.empty:continue
         h=h.iloc[0];a=a.iloc[0]
+        hm=_team_box_metrics(h,a);am=_team_box_metrics(a,h)
         rows.append({
             "game_id":str(gid),"date":pd.to_datetime(h.get("game_date_time"),utc=True),
             "season":season_label_from_end(end_year),
             "home_id":int(h["team_id"]),"away_id":int(a["team_id"]),
             "home_abbr":str(h.get("team_abbreviation") or ""),"away_abbr":str(a.get("team_abbreviation") or ""),
             "home_score":_num(h.get("team_score")),"away_score":_num(a.get("team_score")),
-            "home_poss":_poss(h),"away_poss":_poss(a),
+            "home_poss":hm["poss"],"away_poss":am["poss"],
+            "home_efg":hm["efg"],"away_efg":am["efg"],
+            "home_tov_rate":hm["tov_rate"],"away_tov_rate":am["tov_rate"],
+            "home_orb_rate":hm["orb_rate"],"away_orb_rate":am["orb_rate"],
+            "home_ft_rate":hm["ft_rate"],"away_ft_rate":am["ft_rate"],
         })
     return pd.DataFrame(rows).dropna(subset=["date"]).sort_values(["date","game_id"]).reset_index(drop=True)
 
@@ -158,16 +187,29 @@ def _rollup_roster(team_id:int,players:list[dict[str,Any]])->dict[str,Any]:
 
 def _team_pre(team_id:int,date:pd.Timestamp,all_games:pd.DataFrame)->dict[str,float]:
     hist=all_games[(all_games["date"]<date)&((all_games["home_id"]==team_id)|(all_games["away_id"]==team_id))].tail(10)
-    if hist.empty:return {"off":112.0,"def":112.0,"margin":0.0,"pace":100.0,"win_pct":.5,"rest":4.0,"games":0}
-    pts=[];pa=[];pace=[];wins=[]
+    empty={"off":112.0,"def":112.0,"margin":0.0,"pace":100.0,"win_pct":.5,"rest":4.0,"games":0,
+           "ortg":112.0,"drtg":112.0,"efg":.52,"tov_rate":.13,"orb_rate":.25,"ft_rate":.25,"form_volatility":11.0}
+    if hist.empty:return empty
+    pts=[];pa=[];pace=[];wins=[];ortg=[];drtg=[];efg=[];tov=[];orb=[];ftr=[];margins=[]
     for _,r in hist.iterrows():
         home=int(r["home_id"])==team_id
         pf=float(r["home_score"] if home else r["away_score"]);ag=float(r["away_score"] if home else r["home_score"])
-        poss=(float(r["home_poss"])+float(r["away_poss"]))/2
-        pts.append(pf);pa.append(ag);pace.append(poss);wins.append(pf>ag)
+        tposs=float(r["home_poss"] if home else r["away_poss"]);oposs=float(r["away_poss"] if home else r["home_poss"])
+        poss=max(1.0,(tposs+oposs)/2)
+        pts.append(pf);pa.append(ag);pace.append(poss);wins.append(pf>ag);margins.append(pf-ag)
+        ortg.append(100*pf/poss);drtg.append(100*ag/poss)
+        prefix="home" if home else "away"
+        efg.append(float(r.get(prefix+"_efg",.52)))
+        tov.append(float(r.get(prefix+"_tov_rate",.13)))
+        orb.append(float(r.get(prefix+"_orb_rate",.25)))
+        ftr.append(float(r.get(prefix+"_ft_rate",.25)))
     last=pd.to_datetime(hist.iloc[-1]["date"],utc=True)
     rest=max(0,min(7,(date-last).total_seconds()/86400))
-    return {"off":float(np.mean(pts)),"def":float(np.mean(pa)),"margin":float(np.mean(np.array(pts)-np.array(pa))),"pace":float(np.mean(pace)),"win_pct":float(np.mean(wins)),"rest":rest,"games":len(hist)}
+    return {"off":float(np.mean(pts)),"def":float(np.mean(pa)),"margin":float(np.mean(margins)),
+            "pace":float(np.mean(pace)),"win_pct":float(np.mean(wins)),"rest":rest,"games":len(hist),
+            "ortg":float(np.mean(ortg)),"drtg":float(np.mean(drtg)),"efg":float(np.mean(efg)),
+            "tov_rate":float(np.mean(tov)),"orb_rate":float(np.mean(orb)),"ft_rate":float(np.mean(ftr)),
+            "form_volatility":float(np.std(margins)) if len(margins)>1 else 11.0}
 
 def feature_row(game:dict[str,Any],games_before:pd.DataFrame,current_players:pd.DataFrame,prior_profiles:dict[int,dict[str,Any]])->tuple[dict[str,float],dict[str,Any]]:
     date=pd.to_datetime(game["date"],utc=True)
@@ -177,7 +219,9 @@ def feature_row(game:dict[str,Any],games_before:pd.DataFrame,current_players:pd.
        "away_off":a["off"],"away_def":a["def"],"away_margin":a["margin"],"away_pace":a["pace"],"away_win_pct":a["win_pct"],"away_rest":a["rest"],
        "home_continuity":hr["continuity"],"away_continuity":ar["continuity"],"home_roster_value":hr["roster_value"],"away_roster_value":ar["roster_value"],
        "home_incoming_share":hr["incoming_share"],"away_incoming_share":ar["incoming_share"],"home_top3_share":hr["top3_share"],"away_top3_share":ar["top3_share"],
-       "home_games_played":h["games"],"away_games_played":a["games"],"neutral_site":0.0}
+       "home_games_played":h["games"],"away_games_played":a["games"],"neutral_site":0.0,
+       "home_ortg":h["ortg"],"home_drtg":h["drtg"],"home_efg":h["efg"],"home_tov_rate":h["tov_rate"],"home_orb_rate":h["orb_rate"],"home_ft_rate":h["ft_rate"],"home_form_volatility":h["form_volatility"],
+       "away_ortg":a["ortg"],"away_drtg":a["drtg"],"away_efg":a["efg"],"away_tov_rate":a["tov_rate"],"away_orb_rate":a["orb_rate"],"away_ft_rate":a["ft_rate"],"away_form_volatility":a["form_volatility"]}
     return x,{"home_roster":hr,"away_roster":ar}
 
 def build_dataset(target_end_years:list[int],context:dict[int,dict[str,pd.DataFrame]])->pd.DataFrame:
@@ -209,10 +253,11 @@ def _reg_candidates():
       "extra_trees":Pipeline([("impute",SimpleImputer(strategy="median")),("m",ExtraTreesRegressor(n_estimators=600,min_samples_leaf=7,max_features=.85,random_state=42,n_jobs=-1))]),
     }
 
-def train_evaluate(dataset:pd.DataFrame)->tuple[dict[str,Any],dict[str,Any]]:
+def train_evaluate(dataset:pd.DataFrame,feature_columns:list[str]|None=None)->tuple[dict[str,Any],dict[str,Any]]:
+    feature_columns=feature_columns or FEATURES
     n=len(dataset);a=max(1,int(n*.65));b=max(a+1,int(n*.80))
     train=dataset.iloc[:a];val=dataset.iloc[a:b];test=dataset.iloc[b:]
-    Xtr=train[FEATURES];Xv=val[FEATURES];Xt=test[FEATURES]
+    Xtr=train[feature_columns];Xv=val[feature_columns];Xt=test[feature_columns]
     selected={};validation={}
     best=None;score=1e9
     for name,m in _clf_candidates().items():
@@ -226,7 +271,7 @@ def train_evaluate(dataset:pd.DataFrame)->tuple[dict[str,Any],dict[str,Any]]:
             m.fit(Xtr,train[target]);pred=m.predict(Xv);s=float(mean_absolute_error(val[target],pred));validation[target+"_"+name]={"mae":s}
             if s<score:score=s;best=(name,m)
         selected[target]=best[0]
-    fit=dataset.iloc[:b];Xfit=fit[FEATURES]
+    fit=dataset.iloc[:b];Xfit=fit[feature_columns]
     clf=_clf_candidates()[selected["winner"]];clf.fit(Xfit,fit["home_win"])
     regs={}
     for target in ("margin","total"):
@@ -239,11 +284,11 @@ def train_evaluate(dataset:pd.DataFrame)->tuple[dict[str,Any],dict[str,Any]]:
                        "home_win_probability":float(p[i]),"predicted_margin":float(pm[i]),"actual_margin":float(r["margin"]),
                        "predicted_total":float(pt[i]),"actual_total":float(r["total"]),"winner_correct":bool((p[i]>=.5)==bool(r["home_win"]))}
                       for i,(_,r) in enumerate(test.iterrows())]
-    prod_clf=_clf_candidates()[selected["winner"]];prod_clf.fit(dataset[FEATURES],dataset["home_win"])
+    prod_clf=_clf_candidates()[selected["winner"]];prod_clf.fit(dataset[feature_columns],dataset["home_win"])
     prod_regs={}
     for target in ("margin","total"):
-        m=_reg_candidates()[selected[target]];m.fit(dataset[FEATURES],dataset[target]);prod_regs[target]=m
-    return {"winner":prod_clf,"margin":prod_regs["margin"],"total":prod_regs["total"]},{"selected":selected,"validation":validation,"test":test_metrics,"test_predictions":test_predictions,"rows":n,"split":{"train":a,"validation":b-a,"test":n-b}}
+        m=_reg_candidates()[selected[target]];m.fit(dataset[feature_columns],dataset[target]);prod_regs[target]=m
+    return {"winner":prod_clf,"margin":prod_regs["margin"],"total":prod_regs["total"]},{"selected":selected,"validation":validation,"test":test_metrics,"test_predictions":test_predictions,"rows":n,"split":{"train":a,"validation":b-a,"test":n-b},"features":feature_columns}
 
 def current_roster(team_id:int,prior_profiles:dict[int,dict[str,Any]])->list[dict[str,Any]]:
     url=f"{ESPN_TEAMS}/{team_id}/roster"
