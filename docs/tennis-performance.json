@@ -1,16 +1,16 @@
 {
-  "generated_at_utc": "2026-10-05T14:33:41.888554Z",
+  "generated_at_utc": "2026-10-06T00:02:33.033851Z",
   "method": "Earliest committed pre-match forecast joined to ESPN final scores by match ID",
   "summary": {
-    "matches_evaluated": 437,
-    "winner_accuracy": 0.665903890160183,
-    "winner_auc": 0.7132282011491842,
-    "winner_log_loss": 0.6298085209264385,
-    "winner_brier_score": 0.2172787436384439,
-    "spread_mae_games": 4.3814645308924485,
-    "spread_bias_games": -0.1324942791762014,
-    "total_mae_games": 5.406407322654462,
-    "total_bias_games": -1.637528604118993
+    "matches_evaluated": 438,
+    "winner_accuracy": 0.6666666666666666,
+    "winner_auc": 0.714470634904065,
+    "winner_log_loss": 0.6285043529732555,
+    "winner_brier_score": 0.21679006525114156,
+    "spread_mae_games": 4.372374429223744,
+    "spread_bias_games": -0.13310502283105025,
+    "total_mae_games": 5.391780821917808,
+    "total_bias_games": -1.6497716894977168
   },
   "by_tour": {
     "ATP": {
@@ -21,19 +21,19 @@
       "winner_brier_score": 0.21815070006172838,
       "spread_mae_games": 4.173456790123457,
       "spread_bias_games": -0.8919753086419753,
-      "total_mae_games": 5.8617283950617285,
-      "total_bias_games": -1.38641975308642
+      "total_mae_games": 5.837037037037037,
+      "total_bias_games": -1.4111111111111112
     },
     "WTA": {
-      "matches_evaluated": 275,
-      "winner_accuracy": 0.6727272727272727,
-      "winner_auc": 0.7153284671532847,
-      "winner_log_loss": 0.630825196815021,
-      "winner_brier_score": 0.21676508203636366,
-      "spread_mae_games": 4.504,
-      "spread_bias_games": 0.3149090909090909,
-      "total_mae_games": 5.138181818181818,
-      "total_bias_games": -1.7854545454545454
+      "matches_evaluated": 276,
+      "winner_accuracy": 0.6739130434782609,
+      "winner_auc": 0.7173239510581316,
+      "winner_log_loss": 0.6287518553679822,
+      "winner_brier_score": 0.2159914317753623,
+      "spread_mae_games": 4.489130434782608,
+      "spread_bias_games": 0.31231884057971016,
+      "total_mae_games": 5.130434782608695,
+      "total_bias_games": -1.789855072463768
     }
   },
   "by_day": [
@@ -411,15 +411,15 @@
     },
     {
       "date": "2026-10-05",
-      "matches_evaluated": 30,
-      "winner_accuracy": 0.6333333333333333,
-      "winner_auc": 0.6428571428571428,
-      "winner_log_loss": 0.6990649135670004,
-      "winner_brier_score": 0.24577446666666666,
-      "spread_mae_games": 3.9766666666666666,
-      "spread_bias_games": 0.63,
-      "total_mae_games": 5.293333333333335,
-      "total_bias_games": -2.18
+      "matches_evaluated": 31,
+      "winner_accuracy": 0.6451612903225806,
+      "winner_auc": 0.6666666666666666,
+      "winner_log_loss": 0.6784042053045907,
+      "winner_brier_score": 0.23795069709677422,
+      "spread_mae_games": 3.861290322580645,
+      "spread_bias_games": 0.5967741935483871,
+      "total_mae_games": 5.090322580645163,
+      "total_bias_games": -2.335483870967742
     }
   ],
   "matches": [
@@ -15233,10 +15233,10 @@
       "predicted_total_games": 23.2,
       "actual_player_1": "Novak Djokovic",
       "actual_player_2": "Daniil Medvedev",
-      "actual_player_1_games": 10.0,
-      "actual_player_2_games": 6.0,
+      "actual_player_1_games": 12.0,
+      "actual_player_2_games": 8.0,
       "actual_margin_player_1": 4.0,
-      "actual_total_games": 16.0,
+      "actual_total_games": 20.0,
       "actual_winner_player_1": true,
       "final_status": "Final",
       "winner_correct": false,
@@ -15244,8 +15244,8 @@
       "log_loss": 0.8076605673487061,
       "margin_error": -4.3,
       "absolute_margin_error": 4.3,
-      "total_error": 7.199999999999999,
-      "absolute_total_error": 7.199999999999999
+      "total_error": 3.1999999999999993,
+      "absolute_total_error": 3.1999999999999993
     },
     {
       "match_id": "185236",
@@ -15280,6 +15280,40 @@
       "absolute_margin_error": 7.8,
       "total_error": 3.3999999999999986,
       "absolute_total_error": 3.3999999999999986
+    },
+    {
+      "match_id": "184332",
+      "target_date": "2026-10-05",
+      "start_time_utc": "2026-10-05T12:30Z",
+      "tour": "WTA",
+      "tournament": "China Open",
+      "round": "Round 3",
+      "player_1": "Coco Gauff",
+      "player_2": "Xinran Sun",
+      "player_1_rank": 4,
+      "player_2_rank": null,
+      "model_version": "tennis-v3-tournament-context",
+      "prediction_issued_at": "2026-10-05T05:36:17.729011+00:00",
+      "prediction_commit": "58e7a8a9",
+      "player_1_win_probability": 0.9431,
+      "predicted_winner": "Coco Gauff",
+      "predicted_game_margin_player_1": 6.6,
+      "predicted_total_games": 16.0,
+      "actual_player_1": "Coco Gauff",
+      "actual_player_2": "Xinran Sun",
+      "actual_player_1_games": 13.0,
+      "actual_player_2_games": 6.0,
+      "actual_margin_player_1": 7.0,
+      "actual_total_games": 19.0,
+      "actual_winner_player_1": true,
+      "final_status": "Final",
+      "winner_correct": true,
+      "brier_score": 0.0032376099999999945,
+      "log_loss": 0.05858295743229787,
+      "margin_error": -0.40000000000000036,
+      "absolute_margin_error": 0.40000000000000036,
+      "total_error": -3.0,
+      "absolute_total_error": 3.0
     }
   ]
 }
