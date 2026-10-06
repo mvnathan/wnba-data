@@ -1,6 +1,6 @@
 {
   "sport": "NBA",
-  "generated_at_utc": "2026-10-06T18:35:37.790451+00:00",
+  "generated_at_utc": "2026-10-06T22:46:43.222760+00:00",
   "target_date": "2026-10-06",
   "season": "2026-27",
   "model_version": "nba-v2-roster-four-factors",
@@ -52,10 +52,10 @@
         "mae": 16.052277339680376
       },
       "total_rf": {
-        "mae": 15.750307765858189
+        "mae": 15.750307765858192
       },
       "total_extra_trees": {
-        "mae": 15.823980776889647
+        "mae": 15.823980776889648
       }
     },
     "test": {
@@ -6087,16 +6087,16 @@
         }
       },
       "market_bookmaker": "DraftKings",
-      "market_updated_at": "2026-10-06T18:39:10.036263+00:00",
-      "market_home_moneyline": -185,
-      "market_away_moneyline": 154,
-      "market_home_spread": -5.5,
-      "market_away_spread": 5.5,
+      "market_updated_at": "2026-10-06T22:50:16.215669+00:00",
+      "market_home_moneyline": -120,
+      "market_away_moneyline": 100,
+      "market_home_spread": -1.5,
+      "market_away_spread": 1.5,
       "market_total": 212.5,
       "x_availability_adjustments": [],
-      "model_market_spread_edge": 2.85,
+      "model_market_spread_edge": 6.85,
       "model_market_total_edge": 10.34,
-      "model_market_home_win_edge": 0.0793
+      "model_market_home_win_edge": 0.183
     },
     {
       "game_id": "401898389",
@@ -6133,16 +6133,16 @@
         }
       },
       "market_bookmaker": "DraftKings",
-      "market_updated_at": "2026-10-06T18:39:10.036263+00:00",
-      "market_home_moneyline": -118,
-      "market_away_moneyline": -102,
+      "market_updated_at": "2026-10-06T22:50:16.215669+00:00",
+      "market_home_moneyline": -110,
+      "market_away_moneyline": -110,
       "market_home_spread": -1.5,
       "market_away_spread": 1.5,
-      "market_total": 222.5,
+      "market_total": 223.5,
       "x_availability_adjustments": [],
       "model_market_spread_edge": 12.22,
-      "model_market_total_edge": 18.12,
-      "model_market_home_win_edge": 0.3338
+      "model_market_total_edge": 17.12,
+      "model_market_home_win_edge": 0.3513
     },
     {
       "game_id": "401914128",
@@ -6179,15 +6179,15 @@
         }
       },
       "market_bookmaker": "DraftKings",
-      "market_updated_at": "2026-10-06T18:39:10.036263+00:00",
+      "market_updated_at": "2026-10-06T22:50:16.215669+00:00",
       "market_home_moneyline": -102,
       "market_away_moneyline": -118,
       "market_home_spread": 1.5,
       "market_away_spread": -1.5,
-      "market_total": 230.5,
+      "market_total": 229.5,
       "x_availability_adjustments": [],
       "model_market_spread_edge": -11.59,
-      "model_market_total_edge": 25.62,
+      "model_market_total_edge": 26.62,
       "model_market_home_win_edge": -0.3221
     },
     {
@@ -6225,7 +6225,7 @@
         }
       },
       "market_bookmaker": "DraftKings",
-      "market_updated_at": "2026-10-06T18:39:10.036263+00:00",
+      "market_updated_at": "2026-10-06T22:50:16.215669+00:00",
       "market_home_moneyline": -180,
       "market_away_moneyline": 150,
       "market_home_spread": -4.5,
