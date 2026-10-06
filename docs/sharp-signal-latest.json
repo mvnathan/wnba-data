@@ -1,12 +1,12 @@
 {
-  "generated_at_utc": "2026-10-06T00:11:35.028528+00:00",
+  "generated_at_utc": "2026-10-06T06:35:38.406645+00:00",
   "status": "ok",
   "production_adjustment_enabled": false,
-  "new_posts_seen": 0,
+  "new_posts_seen": 6,
   "new_picks_parsed": 0,
   "ledger_size": 0,
   "since_id_used": "2106915780617248850",
-  "newest_id": "2106915780617248850",
+  "newest_id": "2107336939590332605",
   "accounts": {
     "@RufusPeabody": {
       "tier": "established_professional",
@@ -60,7 +60,50 @@
     }
   },
   "new_picks": [],
-  "candidate_posts": [],
+  "candidate_posts": [
+    {
+      "post_id": "2107336939590332605",
+      "source": "@wheatonbrando",
+      "published_at_utc": "2026-10-06T05:07:33.000Z",
+      "text": "@AnthonyDabbundo Very dumb. If you had to pick one team to win the Super Bowl right now with no odds, you\u2019d pick the Rams.",
+      "url": "https://x.com/wheatonbrando/status/2107336939590332605"
+    },
+    {
+      "post_id": "2107307760241262828",
+      "source": "@iamrahstradamus",
+      "published_at_utc": "2026-10-06T03:11:36.000Z",
+      "text": "@bigrat310 It\u2019s also what they do late too. \n\nChampions make their mark over these bum ass teams.",
+      "url": "https://x.com/iamrahstradamus/status/2107307760241262828"
+    },
+    {
+      "post_id": "2107289641938522225",
+      "source": "@iamrahstradamus",
+      "published_at_utc": "2026-10-06T01:59:36.000Z",
+      "text": "The Falcons play big boy football. They run the play and they play defense. Falcons have 138 yards on 6.6 yards per carry with a 57% rushing success rate.\n\nThought I wouldn't like this team coming into the year but I've reversed course on them.",
+      "url": "https://x.com/iamrahstradamus/status/2107289641938522225"
+    },
+    {
+      "post_id": "2107289591103525060",
+      "source": "@iamrahstradamus",
+      "published_at_utc": "2026-10-06T01:59:24.000Z",
+      "text": "The Falcons play big boy football. They run the play and they play defense. Falcons have 138 yards on 6.6 yards per carry with a 57% rushing success rate.\n\nThought I wouldn't like this team coming into the year but I've reverse course on them.",
+      "url": "https://x.com/iamrahstradamus/status/2107289591103525060"
+    },
+    {
+      "post_id": "2107289498187137323",
+      "source": "@iamrahstradamus",
+      "published_at_utc": "2026-10-06T01:59:02.000Z",
+      "text": "The Falcons play big boy football. They run the play and they play defense. Falcons have 138 yards on 6.6 yards per carry with a 57% rushing success rate.",
+      "url": "https://x.com/iamrahstradamus/status/2107289498187137323"
+    },
+    {
+      "post_id": "2107278394345840798",
+      "source": "@wheatonbrando",
+      "published_at_utc": "2026-10-06T01:14:55.000Z",
+      "text": "@EvanHAbrams @ActionNetworkHQ @ActionApp and which one did I bet against them 1q \ud83e\udd2c",
+      "url": "https://x.com/wheatonbrando/status/2107278394345840798"
+    }
+  ],
   "promotion_thresholds": {
     "minimum_graded_picks": 100,
     "minimum_positive_clv_rate": 0.52,
