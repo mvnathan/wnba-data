@@ -1,0 +1,104 @@
+/* Mobile-first polish layer. Desktop intentionally unchanged. */
+@media (max-width: 640px) {
+  html{-webkit-text-size-adjust:100%;scroll-padding-top:88px}
+  body{padding-bottom:env(safe-area-inset-bottom);font-size:16px}
+  .wrap,.shell,main{max-width:100%}
+  .top,header{backdrop-filter:blur(18px)}
+  .brand,.title{letter-spacing:-.02em}
+  .nav,.sports,.tabs,.models,.filterrow{
+    -webkit-overflow-scrolling:touch;
+    scrollbar-width:none;
+    scroll-snap-type:x proximity;
+  }
+  .nav::-webkit-scrollbar,.sports::-webkit-scrollbar,.tabs::-webkit-scrollbar,.models::-webkit-scrollbar,.filterrow::-webkit-scrollbar{display:none}
+  .nav a,.sports a,.tab,.chip{
+    min-height:38px;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    scroll-snap-align:start;
+  }
+
+  /* Put the decision surface above the explanation. */
+  .hero{padding:14px 0 9px!important}
+  .hero h1{font-size:1.95rem!important;line-height:1!important;margin:5px 0 6px!important;letter-spacing:-.045em}
+  .hero p{font-size:.8rem!important;line-height:1.4!important;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .eyebrow{font-size:.6rem!important}
+  .date{font-size:.72rem!important;padding:7px 9px!important;margin-top:8px!important}
+
+  .kpis,.summary{gap:6px!important;margin-bottom:8px!important}
+  .kpi,.sum{padding:9px 10px!important;border-radius:12px!important}
+  .kpi .v,.sum .v{font-size:1.35rem!important}
+  .kpi .k,.sum .k{font-size:.62rem!important;line-height:1.2}
+  .kpi .s{display:none}
+
+  /* Cards should read vertically on a phone; avoid carousel-within-dashboard behavior. */
+  .events,.ranklist,.games,.grid,.oppgrid{grid-template-columns:1fr!important}
+  .events,.ranklist{display:grid!important;overflow:visible!important;scroll-snap-type:none!important}
+  .event,.opp{min-width:0!important;width:100%!important;scroll-snap-align:none!important}
+  .panel,.section,.card,.game,.event,.opp{border-radius:14px!important}
+  .panel,.section{padding:11px!important}
+  .event,.card{padding-left:0;padding-right:0}
+  .event{padding:11px!important}
+  .match{font-size:1rem!important;line-height:1.25}
+  .pick,.winner,.opppick{font-size:1.12rem!important}
+  .meta,.sub,.context,.contextstrip,.xadj,.why,.note,.foot{font-size:.7rem!important;line-height:1.45!important}
+  .badge,.pill,.tier,.sport,.tour{font-size:.62rem!important}
+  .chip{font-size:.7rem!important;padding:7px 10px!important}
+  .cell .k,.mini .k,.metric .k{font-size:.58rem!important}
+  .cell .v,.mini .v,.metric .v{font-size:.82rem!important}
+  .metrics{gap:5px!important}
+  .model,.context,.xadj,.edge,.market,.model-read{margin-left:8px!important;margin-right:8px!important}
+
+  /* The timeline edge maps are useful on desktop but dominate small screens.
+     Mobile already surfaces ranked opportunities and game cards, so remove duplication. */
+  .mainGrid > .panel:first-child,.edge-map{display:none!important}
+  .mainGrid{gap:7px!important}
+  .rank{order:0!important}
+
+  .sectionTitle{margin:13px 0 7px!important}
+  .sectionTitle h2,.panel h2,.section h2{font-size:.98rem!important}
+
+  /* Strategy: compact the disclaimer/KPIs so the paper portfolio is visible sooner. */
+  .notice{font-size:.68rem!important;line-height:1.35!important;padding:8px 10px!important;margin:7px 0 9px!important}
+  .grid{margin-top:8px!important}
+  .grid .card{padding:11px!important}
+  .grid .card .metrics{grid-template-columns:repeat(3,minmax(0,1fr))!important}
+
+  /* League pages */
+  .head,.gamehead{padding:10px!important}
+  .model{padding:9px!important}
+  .market{gap:5px!important;padding-bottom:8px!important}
+  .edge{padding:8px!important}
+  .diag{grid-template-columns:1fr 1fr!important}
+  .model-read summary{font-size:.74rem!important;min-height:40px}
+  .model-read-body{gap:6px!important}
+  .model-read-v{font-size:.72rem!important}
+
+  /* Tennis: keep forecast compact instead of one tall metric per row. */
+  .forecast{grid-template-columns:1fr 1fr!important;gap:6px!important}
+  .forecast .metric{display:block!important;padding:9px!important}
+  .score-scroll{margin-bottom:8px!important}
+  .filterrow{flex-wrap:nowrap!important;overflow-x:auto!important;margin:8px 0 10px!important}
+
+  /* Performance page */
+  .chart{height:165px!important}
+  .mp-tiles{grid-template-columns:repeat(3,1fr)!important;gap:6px!important}
+  .mp-tile{padding:10px!important}
+  .mp-rate{font-size:1.35rem!important}
+  .mp-label{font-size:.58rem!important}
+  .mp-record{font-size:.68rem!important}
+
+  /* Comfortable iPhone safe-area spacing */
+  header,.top{padding-left:max(0px,env(safe-area-inset-left));padding-right:max(0px,env(safe-area-inset-right))}
+}
+
+@media (max-width: 390px) {
+  .hero h1{font-size:1.8rem!important}
+  .kpi .v,.sum .v{font-size:1.22rem!important}
+  .metrics{grid-template-columns:repeat(3,minmax(0,1fr))!important}
+  .mp-tiles{grid-template-columns:1fr!important}
+  .mp-tile{display:grid;grid-template-columns:1fr auto;align-items:center}
+  .mp-rate{margin:0!important}
+  .mp-note{grid-column:1/-1}
+}
