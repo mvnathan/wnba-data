@@ -53,6 +53,9 @@ def main():
     models,report=train_evaluate(dataset)
     report["training_seasons"]=[season_label_from_end(y) for y in target]
     report["data_source"]="SportsDataverse ESPN NBA team/player box-score bulk releases"
+    report["architecture"]="Chronological two-season model selection using possession-adjusted team strength, Dean Oliver-style four-factor proxies, rest/form, and roster continuity/player-value features. Sportsbook lines are excluded from model features."
+    report["roster_policy"]="Prior-season player value and minutes identify retained vs incoming rotation share; current ESPN roster construction is used for live inference."
+    report["availability_policy"]="Trusted NBA X availability posts affect live forecasts only when a current-roster player is explicitly matched; adjustment is capped and weighted by rotation share and source confidence."
     PERF.parent.mkdir(parents=True,exist_ok=True)
     PERF.write_text(json.dumps({"generated_at_utc":now.isoformat(),"feature_count":len(FEATURES),"features":FEATURES,**report},indent=2))
     MODEL.parent.mkdir(parents=True,exist_ok=True)
@@ -89,11 +92,13 @@ def main():
             "home_continuity":hr["continuity"],"away_continuity":ar["continuity"],"home_roster_value":hr["roster_value"],"away_roster_value":ar["roster_value"],
             "home_incoming_share":hr["incoming_share"],"away_incoming_share":ar["incoming_share"],"home_top3_share":hr["top3_share"],"away_top3_share":ar["top3_share"],
             "home_games_played":hbase["games"],"away_games_played":abase["games"],"neutral_site":0.0,
+            "home_ortg":hbase["ortg"],"home_drtg":hbase["drtg"],"home_efg":hbase["efg"],"home_tov_rate":hbase["tov_rate"],"home_orb_rate":hbase["orb_rate"],"home_ft_rate":hbase["ft_rate"],"home_form_volatility":hbase["form_volatility"],
+            "away_ortg":abase["ortg"],"away_drtg":abase["drtg"],"away_efg":abase["efg"],"away_tov_rate":abase["tov_rate"],"away_orb_rate":abase["orb_rate"],"away_ft_rate":abase["ft_rate"],"away_form_volatility":abase["form_volatility"],
         }
         X=pd.DataFrame([x])[FEATURES]
         hp=float(models["winner"].predict_proba(X)[0,1]);margin=float(models["margin"].predict(X)[0]);total=float(models["total"].predict(X)[0])
         ph,pa=model_points(margin,total)
-        row={**g,"model_version":"nba-v1-roster-context","home_win_probability":hp,"away_win_probability":1-hp,
+        row={**g,"model_version":"nba-v2-roster-four-factors","home_win_probability":hp,"away_win_probability":1-hp,
              "predicted_margin":margin,"predicted_total":total,"predicted_home_points":ph,"predicted_away_points":pa,
              "predicted_winner":g["home_team"] if hp>=.5 else g["away_team"],
              "roster_context":{"home":{"continuity":hr["continuity"],"incoming_share":hr["incoming_share"],"top3_share":hr["top3_share"],"roster_value":hr["roster_value"]},
@@ -113,9 +118,10 @@ def main():
             o=float(row["market_home_moneyline"]);mp=(-o/(-o+100)) if o<0 else 100/(o+100);row["model_market_home_win_edge"]=round(row["home_win_probability"]-mp,4)
         games.append(row)
 
-    payload={"sport":"NBA","generated_at_utc":now.isoformat(),"target_date":date,"season":season_label_from_end(current_end),"model_version":"nba-v1-roster-context",
+    payload={"sport":"NBA","generated_at_utc":now.isoformat(),"target_date":date,"season":season_label_from_end(current_end),"model_version":"nba-v2-roster-four-factors",
              "model_status":"production","market_used_in_prediction":False,"training_seasons":report["training_seasons"],"validation":report,"games":games,
              "historical_data_source":"SportsDataverse ESPN NBA bulk releases",
+             "model_feature_groups":{"team_strength":"possession-adjusted offense/defense, pace, recent margin, win rate, rest","four_factors":"eFG%, turnover rate, offensive rebound rate, free-throw rate","roster":"continuity, incoming share, top-3 concentration, prior player value","uncertainty":"recent form volatility"},
              "x_integration":"trusted NBA availability posts matched to current roster players and weighted by prior rotation share"}
     for p in (DOCS,PRED):
         p.parent.mkdir(parents=True,exist_ok=True);p.write_text(json.dumps(payload,indent=2,allow_nan=False))
