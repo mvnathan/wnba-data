@@ -1,14 +1,14 @@
 {
-  "generated_at_utc": "2026-10-06T22:50:17.561503+00:00",
+  "generated_at_utc": "2026-10-07T01:50:43.712203+00:00",
   "method": "Earliest committed pregame NBA forecast and market line joined to ESPN final score by game ID",
   "summary": {
-    "n": 2,
+    "n": 3,
     "ml": {
       "wins": 2,
-      "losses": 0,
+      "losses": 1,
       "pushes": 0,
-      "graded": 2,
-      "rate": 1.0
+      "graded": 3,
+      "rate": 0.6666666666666666
     },
     "ats": {
       "wins": 0,
@@ -26,6 +26,29 @@
     }
   },
   "games": [
+    {
+      "game_id": "401901820",
+      "game_date_utc": "2026-10-06T23:00Z",
+      "home_team": "Charlotte Hornets",
+      "away_team": "Brooklyn Nets",
+      "home_abbr": "CHA",
+      "away_abbr": "BKN",
+      "prediction_issued_at": "2026-10-06T00:54:28.337015+00:00",
+      "prediction_commit": "a4a71f98",
+      "home_win_probability": 0.7284389392504491,
+      "predicted_margin": 8.35120846958874,
+      "predicted_total": 222.84335439521536,
+      "actual_home_score": 90.0,
+      "actual_away_score": 124.0,
+      "actual_margin": -34.0,
+      "actual_total": 214.0,
+      "winner_correct": false,
+      "market_home_spread": null,
+      "market_total": null,
+      "market_bookmaker": null,
+      "ats_result": null,
+      "ou_result": null
+    },
     {
       "game_id": "401914102",
       "game_date_utc": "2026-10-06T00:00Z",
