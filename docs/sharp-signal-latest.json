@@ -1,12 +1,12 @@
 {
-  "generated_at_utc": "2026-10-06T18:30:18.233895+00:00",
+  "generated_at_utc": "2026-10-07T06:13:20.637453+00:00",
   "status": "ok",
   "production_adjustment_enabled": false,
-  "new_posts_seen": 0,
+  "new_posts_seen": 3,
   "new_picks_parsed": 0,
   "ledger_size": 0,
   "since_id_used": "2107336939590332605",
-  "newest_id": "2107336939590332605",
+  "newest_id": "2107666610085658850",
   "accounts": {
     "@RufusPeabody": {
       "tier": "established_professional",
@@ -60,7 +60,29 @@
     }
   },
   "new_picks": [],
-  "candidate_posts": [],
+  "candidate_posts": [
+    {
+      "post_id": "2107666610085658850",
+      "source": "@iamrahstradamus",
+      "published_at_utc": "2026-10-07T02:57:33.000Z",
+      "text": "\"I know how this movie ends, still I play.......starring role in Rahvito's Way.......\" https://t.co/K3mUl9gZNr",
+      "url": "https://x.com/iamrahstradamus/status/2107666610085658850"
+    },
+    {
+      "post_id": "2107660894922821736",
+      "source": "@iamrahstradamus",
+      "published_at_utc": "2026-10-07T02:34:50.000Z",
+      "text": "Wow so we start of the 2025-26 NBA Season the same way we ended last season.......with a 24-point comeback.\n\nPelicans ML +124 \u2705 https://t.co/vGciTO6IAD",
+      "url": "https://x.com/iamrahstradamus/status/2107660894922821736"
+    },
+    {
+      "post_id": "2107624243345404302",
+      "source": "@iamrahstradamus",
+      "published_at_utc": "2026-10-07T00:09:12.000Z",
+      "text": "Pelicans close as a -130 favorite.\n\nHopefully the CLV works out for us. \n\nFirst public NBA play of the season. https://t.co/xlw1ba7OC0",
+      "url": "https://x.com/iamrahstradamus/status/2107624243345404302"
+    }
+  ],
   "promotion_thresholds": {
     "minimum_graded_picks": 100,
     "minimum_positive_clv_rate": 0.52,
