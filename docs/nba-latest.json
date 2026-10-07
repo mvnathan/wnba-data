@@ -1,6 +1,6 @@
 {
   "sport": "NBA",
-  "generated_at_utc": "2026-10-07T19:04:30.560619+00:00",
+  "generated_at_utc": "2026-10-07T23:17:31.470634+00:00",
   "target_date": "2026-10-07",
   "season": "2026-27",
   "model_version": "nba-v2-roster-four-factors",
@@ -55,7 +55,7 @@
         "mae": 15.750307765858192
       },
       "total_extra_trees": {
-        "mae": 15.823980776889648
+        "mae": 15.823980776889647
       }
     },
     "test": {
@@ -6055,7 +6055,7 @@
     {
       "game_id": "401914123",
       "date": "2026-10-07T23:00Z",
-      "status": "Scheduled",
+      "status": "In Progress",
       "season_type": 1,
       "decision_eligible": false,
       "home_id": 11,
@@ -6086,17 +6086,7 @@
           "roster_value": 12.77262317410423
         }
       },
-      "market_bookmaker": "DraftKings",
-      "market_updated_at": "2026-10-07T19:08:11.901630+00:00",
-      "market_home_moneyline": 120,
-      "market_away_moneyline": -142,
-      "market_home_spread": 2.5,
-      "market_away_spread": -2.5,
-      "market_total": 235.5,
-      "x_availability_adjustments": [],
-      "model_market_spread_edge": -1.04,
-      "model_market_total_edge": 4.58,
-      "model_market_home_win_edge": -0.0319
+      "x_availability_adjustments": []
     },
     {
       "game_id": "401898391",
@@ -6133,16 +6123,16 @@
         }
       },
       "market_bookmaker": "DraftKings",
-      "market_updated_at": "2026-10-07T19:08:11.901630+00:00",
-      "market_home_moneyline": 114,
-      "market_away_moneyline": -135,
-      "market_home_spread": 2.5,
-      "market_away_spread": -2.5,
+      "market_updated_at": "2026-10-07T23:20:28.573608+00:00",
+      "market_home_moneyline": 105,
+      "market_away_moneyline": -125,
+      "market_home_spread": 1.5,
+      "market_away_spread": -1.5,
       "market_total": 234.5,
       "x_availability_adjustments": [],
-      "model_market_spread_edge": -16.56,
+      "model_market_spread_edge": -17.56,
       "model_market_total_edge": 9.13,
-      "model_market_home_win_edge": -0.3695
+      "model_market_home_win_edge": -0.39
     },
     {
       "game_id": "401908620",
@@ -6179,16 +6169,16 @@
         }
       },
       "market_bookmaker": "DraftKings",
-      "market_updated_at": "2026-10-07T19:08:11.901630+00:00",
-      "market_home_moneyline": -600,
-      "market_away_moneyline": 440,
-      "market_home_spread": -13.5,
-      "market_away_spread": 13.5,
+      "market_updated_at": "2026-10-07T23:20:28.573608+00:00",
+      "market_home_moneyline": -520,
+      "market_away_moneyline": 390,
+      "market_home_spread": -12.5,
+      "market_away_spread": 12.5,
       "market_total": 218.5,
       "x_availability_adjustments": [],
-      "model_market_spread_edge": 1.86,
+      "model_market_spread_edge": 2.86,
       "model_market_total_edge": 14.82,
-      "model_market_home_win_edge": 0.0437
+      "model_market_home_win_edge": 0.0622
     },
     {
       "game_id": "401908939",
@@ -6225,16 +6215,16 @@
         }
       },
       "market_bookmaker": "DraftKings",
-      "market_updated_at": "2026-10-07T19:08:11.901630+00:00",
-      "market_home_moneyline": 114,
-      "market_away_moneyline": -135,
+      "market_updated_at": "2026-10-07T23:20:28.573608+00:00",
+      "market_home_moneyline": 120,
+      "market_away_moneyline": -142,
       "market_home_spread": 2.5,
       "market_away_spread": -2.5,
-      "market_total": 229.5,
+      "market_total": 228.5,
       "x_availability_adjustments": [],
       "model_market_spread_edge": -3.71,
-      "model_market_total_edge": 8.59,
-      "model_market_home_win_edge": -0.1107
+      "model_market_total_edge": 9.59,
+      "model_market_home_win_edge": -0.0979
     },
     {
       "game_id": "401914129",
@@ -6271,7 +6261,7 @@
         }
       },
       "market_bookmaker": "DraftKings",
-      "market_updated_at": "2026-10-07T19:08:11.901630+00:00",
+      "market_updated_at": "2026-10-07T23:20:28.573608+00:00",
       "market_home_moneyline": -520,
       "market_away_moneyline": 390,
       "market_home_spread": -13.5,
