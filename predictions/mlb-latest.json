@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-06T18:21:50.217038+00:00",
+  "generated_at_utc": "2026-10-07T00:42:19.207799+00:00",
   "target_date": "2026-10-06",
   "sport": "MLB",
   "model_version": "mlb-runs-v2",
@@ -21,7 +21,7 @@
       "home_team": "Atlanta Braves",
       "away_team": "Los Angeles Dodgers",
       "venue": "Truist Park",
-      "status": "Pre-Game",
+      "status": "In Progress",
       "predicted_home_runs": 3.2,
       "predicted_away_runs": 3.36,
       "predicted_total_runs": 6.57,
@@ -80,12 +80,12 @@
       "away_official_standings": null,
       "availability_note": "Standings/urgency context cannot confirm a specific star will rest; actual lineup/inactive data should override the proxy when available.",
       "market_used_in_prediction": false,
-      "market_bookmaker": "DraftKings",
-      "market_home_moneyline": -109,
-      "market_away_moneyline": -110,
-      "market_run_line_home": 1.5,
-      "market_total": 6.5,
-      "market_updated_at": "2026-10-06T18:21:47.153419+00:00"
+      "market_bookmaker": null,
+      "market_home_moneyline": null,
+      "market_away_moneyline": null,
+      "market_run_line_home": null,
+      "market_total": null,
+      "market_updated_at": null
     },
     {
       "game_id": "849826",
@@ -93,7 +93,7 @@
       "home_team": "San Diego Padres",
       "away_team": "Milwaukee Brewers",
       "venue": "Petco Park",
-      "status": "Scheduled",
+      "status": "Pre-Game",
       "predicted_home_runs": 4.41,
       "predicted_away_runs": 4.16,
       "predicted_total_runs": 8.57,
@@ -152,12 +152,12 @@
       "away_official_standings": null,
       "availability_note": "Standings/urgency context cannot confirm a specific star will rest; actual lineup/inactive data should override the proxy when available.",
       "market_used_in_prediction": false,
-      "market_bookmaker": "DraftKings",
-      "market_home_moneyline": -142,
-      "market_away_moneyline": 118,
-      "market_run_line_home": -1.5,
-      "market_total": 7.5,
-      "market_updated_at": "2026-10-06T18:21:47.153419+00:00"
+      "market_bookmaker": null,
+      "market_home_moneyline": null,
+      "market_away_moneyline": null,
+      "market_run_line_home": null,
+      "market_total": null,
+      "market_updated_at": null
     }
   ]
 }
