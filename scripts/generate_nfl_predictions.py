@@ -220,7 +220,9 @@ def build() -> dict[str, Any]:
         hp = 1 / (1 + math.exp(-margin / PROB_SCALE))
 
         market = _extract_market(_closest(markets.get((hn.lower(), an.lower())), start.isoformat()))
-        ml_prob = _american_prob(market.get("market_home_moneyline"))
+        ml_prob, _ = no_vig_two_way_probabilities(
+            market.get("market_home_moneyline"), market.get("market_away_moneyline")
+        )
         spread_edge = margin + float(market["market_home_spread"]) if market.get("market_home_spread") is not None else None
         total_edge = total - float(market["market_total"]) if market.get("market_total") is not None else None
         ml_edge = hp - ml_prob if ml_prob is not None else None
@@ -282,3 +284,4 @@ if __name__ == "__main__":
 # Validate indexed SBR books: 2026-09-25
 
 # Validate all SBR tables: 2026-09-25
+from src.market_math import no_vig_two_way_probabilities
