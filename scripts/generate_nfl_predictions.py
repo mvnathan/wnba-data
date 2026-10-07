@@ -18,6 +18,7 @@ from zoneinfo import ZoneInfo
 import pandas as pd
 
 from src.sbr_market_odds import fetch_sbr_draftkings
+from src.market_math import no_vig_two_way_probabilities
 
 CHICAGO = ZoneInfo("America/Chicago")
 EASTERN = ZoneInfo("America/New_York")
@@ -284,4 +285,3 @@ if __name__ == "__main__":
 # Validate indexed SBR books: 2026-09-25
 
 # Validate all SBR tables: 2026-09-25
-from src.market_math import no_vig_two_way_probabilities
