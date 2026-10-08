@@ -1,14 +1,14 @@
 {
-  "generated_at_utc": "2026-10-07T23:20:30.339520+00:00",
+  "generated_at_utc": "2026-10-08T02:18:51.503571+00:00",
   "method": "Earliest committed pregame NBA forecast and market line joined to ESPN final score by game ID",
   "summary": {
-    "n": 6,
+    "n": 7,
     "ml": {
       "wins": 3,
-      "losses": 3,
+      "losses": 4,
       "pushes": 0,
-      "graded": 6,
-      "rate": 0.5
+      "graded": 7,
+      "rate": 0.42857142857142855
     },
     "ats": {
       "wins": 0,
@@ -26,6 +26,29 @@
     }
   },
   "games": [
+    {
+      "game_id": "401914123",
+      "game_date_utc": "2026-10-07T23:00Z",
+      "home_team": "Indiana Pacers",
+      "away_team": "Minnesota Timberwolves",
+      "home_abbr": "IND",
+      "away_abbr": "MIN",
+      "prediction_issued_at": "2026-10-07T01:47:38.527428+00:00",
+      "prediction_commit": "721934fc",
+      "home_win_probability": 0.4226925047787775,
+      "predicted_margin": -3.538383889992123,
+      "predicted_total": 240.07566097850398,
+      "actual_home_score": 123.0,
+      "actual_away_score": 112.0,
+      "actual_margin": 11.0,
+      "actual_total": 235.0,
+      "winner_correct": false,
+      "market_home_spread": null,
+      "market_total": null,
+      "market_bookmaker": null,
+      "ats_result": null,
+      "ou_result": null
+    },
     {
       "game_id": "401901820",
       "game_date_utc": "2026-10-06T23:00Z",
