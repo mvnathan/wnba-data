@@ -1,12 +1,12 @@
 {
-  "generated_at_utc": "2026-10-07T23:12:43.710290+00:00",
+  "generated_at_utc": "2026-10-08T06:21:30.245339+00:00",
   "status": "ok",
   "production_adjustment_enabled": false,
-  "new_posts_seen": 0,
+  "new_posts_seen": 2,
   "new_picks_parsed": 0,
   "ledger_size": 0,
   "since_id_used": "2107666610085658850",
-  "newest_id": "2107666610085658850",
+  "newest_id": "2108072685779685871",
   "accounts": {
     "@RufusPeabody": {
       "tier": "established_professional",
@@ -60,7 +60,22 @@
     }
   },
   "new_picks": [],
-  "candidate_posts": [],
+  "candidate_posts": [
+    {
+      "post_id": "2108072685779685871",
+      "source": "@iamrahstradamus",
+      "published_at_utc": "2026-10-08T05:51:09.000Z",
+      "text": "I keep getting invited to golf events and I don't own a set of golf clubs and don't know how to play golf. I can putt but I don't can't drive at all. This is so distressing to me. I've been promising myself I was going to learn all year but I've been so busy.",
+      "url": "https://x.com/iamrahstradamus/status/2108072685779685871"
+    },
+    {
+      "post_id": "2107980611474297023",
+      "source": "@wheatonbrando",
+      "published_at_utc": "2026-10-07T23:45:16.000Z",
+      "text": "@Clevta totally agree, i bet it and gave it out yesterday too. this was always the pivot spot for Cincy\n\nhttps://t.co/wjVFbXPZNb",
+      "url": "https://x.com/wheatonbrando/status/2107980611474297023"
+    }
+  ],
   "promotion_thresholds": {
     "minimum_graded_picks": 100,
     "minimum_positive_clv_rate": 0.52,
