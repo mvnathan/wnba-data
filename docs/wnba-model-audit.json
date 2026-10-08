@@ -2,31 +2,31 @@
   "status": "production_baseline_audit",
   "source": "issued pregame forecasts only",
   "overall": {
-    "n": 61,
-    "winner_accuracy": 0.7166666666666667,
-    "brier_score": 0.19589072142582195,
-    "margin_mae": 10.899654708233369,
-    "total_mae": 11.448279752562247,
-    "home_score_mae": 8.989825623606787,
-    "away_score_mae": 7.39377049180328,
-    "ats_direction_accuracy": 0.5238095238095238,
-    "total_direction_accuracy": 0.6190476190476191
+    "n": 63,
+    "winner_accuracy": 0.7258064516129032,
+    "brier_score": 0.1925844417679364,
+    "margin_mae": 10.60101487622596,
+    "total_mae": 11.591112141369795,
+    "home_score_mae": 8.93387877841292,
+    "away_score_mae": 7.4358730158730175,
+    "ats_direction_accuracy": 0.5652173913043478,
+    "total_direction_accuracy": 0.6363636363636364
   },
   "recent_20": {
     "n": 20,
-    "winner_accuracy": 0.75,
-    "brier_score": 0.22401384445297332,
-    "margin_mae": 10.827750000000002,
-    "total_mae": 13.995249999999999,
-    "home_score_mae": 8.847500000000002,
-    "away_score_mae": 8.867250000000002,
-    "ats_direction_accuracy": 0.25,
-    "total_direction_accuracy": 0.25
+    "winner_accuracy": 0.8,
+    "brier_score": 0.199374706892534,
+    "margin_mae": 10.319000000000003,
+    "total_mae": 14.6125,
+    "home_score_mae": 8.885000000000002,
+    "away_score_mae": 9.327000000000002,
+    "ats_direction_accuracy": 0.5,
+    "total_direction_accuracy": 0.4
   },
   "market_coverage": {
-    "games_with_market": 21,
-    "games_total": 61,
-    "coverage": 0.3442622950819672
+    "games_with_market": 23,
+    "games_total": 63,
+    "coverage": 0.36507936507936506
   },
   "by_confidence": {
     "50-55%": {
@@ -52,26 +52,26 @@
       "total_direction_accuracy": 1
     },
     "60-70%": {
-      "n": 15,
-      "winner_accuracy": 0.6,
-      "brier_score": 0.2512069834312394,
-      "margin_mae": 13.686388932637557,
-      "total_mae": 10.410670981922967,
-      "home_score_mae": 9.373551870934877,
-      "away_score_mae": 9.14766666666667,
-      "ats_direction_accuracy": 0.5,
+      "n": 16,
+      "winner_accuracy": 0.625,
+      "brier_score": 0.2435716332143126,
+      "margin_mae": 12.88973962434771,
+      "total_mae": 11.566254045552782,
+      "home_score_mae": 9.661454879001447,
+      "away_score_mae": 9.508437500000003,
+      "ats_direction_accuracy": 0.5714285714285714,
       "total_direction_accuracy": 1
     },
     "70-80%": {
-      "n": 21,
-      "winner_accuracy": 0.8,
-      "brier_score": 0.15928744077154625,
-      "margin_mae": 8.732048613269093,
-      "total_mae": 10.58127539303089,
-      "home_score_mae": 7.360875518361185,
-      "away_score_mae": 7.263095238095241,
-      "ats_direction_accuracy": 0.4444444444444444,
-      "total_direction_accuracy": 0.4444444444444444
+      "n": 22,
+      "winner_accuracy": 0.8095238095238095,
+      "brier_score": 0.15452185002940524,
+      "margin_mae": 8.428091858120498,
+      "total_mae": 10.236444693347668,
+      "home_score_mae": 7.047881176617494,
+      "away_score_mae": 7.047500000000003,
+      "ats_direction_accuracy": 0.5,
+      "total_direction_accuracy": 0.5
     },
     "80%+": {
       "n": 11,
@@ -97,14 +97,14 @@
       "observed_home_win_rate": 0.5
     },
     "60-70%": {
-      "n": 15,
-      "mean_predicted_home_win_probability": 0.4088506984531725,
-      "observed_home_win_rate": 0.4
+      "n": 16,
+      "mean_predicted_home_win_probability": 0.42334607348916964,
+      "observed_home_win_rate": 0.4375
     },
     "70-80%": {
-      "n": 21,
-      "mean_predicted_home_win_probability": 0.5217661252011442,
-      "observed_home_win_rate": 0.7142857142857143
+      "n": 22,
+      "mean_predicted_home_win_probability": 0.5328979679950316,
+      "observed_home_win_rate": 0.7272727272727273
     },
     "80%+": {
       "n": 11,
@@ -136,27 +136,27 @@
       "total_direction_accuracy": 1
     },
     "2026-10": {
-      "n": 5,
-      "winner_accuracy": 0.8,
-      "brier_score": 0.15517544227437866,
-      "margin_mae": 7.602000000000004,
-      "total_mae": 20.752000000000002,
-      "home_score_mae": 13.071000000000003,
-      "away_score_mae": 9.205000000000002,
-      "ats_direction_accuracy": 0.3333333333333333,
-      "total_direction_accuracy": 0
+      "n": 7,
+      "winner_accuracy": 0.8571428571428571,
+      "brier_score": 0.13705186225382124,
+      "margin_mae": 5.856428571428574,
+      "total_mae": 19.379285714285718,
+      "home_score_mae": 11.401428571428573,
+      "away_score_mae": 9.066428571428572,
+      "ats_direction_accuracy": 0.6,
+      "total_direction_accuracy": 0.25
     }
   },
   "by_team": {
     "ATL": {
-      "n": 10,
-      "winner_accuracy": 0.7,
-      "brier_score": 0.18946196468379803,
-      "margin_mae": 13.808756804918376,
-      "total_mae": 9.178356249436828,
-      "home_score_mae": 9.338731145849584,
-      "away_score_mae": 7.802999999999999,
-      "ats_direction_accuracy": 0.4,
+      "n": 11,
+      "winner_accuracy": 0.7272727272727273,
+      "brier_score": 0.1839691842543992,
+      "margin_mae": 12.638869822653069,
+      "total_mae": 10.97123295403348,
+      "home_score_mae": 9.760664678045076,
+      "away_score_mae": 8.45,
+      "ats_direction_accuracy": 0.5,
       "total_direction_accuracy": 0.6
     },
     "CHI": {
@@ -193,15 +193,15 @@
       "total_direction_accuracy": 0.5
     },
     "GS": {
-      "n": 12,
-      "winner_accuracy": 0.6666666666666666,
-      "brier_score": 0.18721066975018322,
-      "margin_mae": 12.356181032039196,
-      "total_mae": 21.63072269870587,
-      "home_score_mae": 15.471428402707037,
-      "away_score_mae": 8.849166666666667,
-      "ats_direction_accuracy": 0.3333333333333333,
-      "total_direction_accuracy": 0
+      "n": 13,
+      "winner_accuracy": 0.6923076923076923,
+      "brier_score": 0.1769978831882033,
+      "margin_mae": 11.563013260343872,
+      "total_mae": 20.19720556803619,
+      "home_score_mae": 14.317856987114187,
+      "away_score_mae": 8.362307692307692,
+      "ats_direction_accuracy": 0.5,
+      "total_direction_accuracy": 0.25
     },
     "IND": {
       "n": 7,
@@ -226,15 +226,15 @@
       "total_direction_accuracy": 1
     },
     "LV": {
-      "n": 9,
-      "winner_accuracy": 0.8888888888888888,
-      "brier_score": 0.09000972365936179,
-      "margin_mae": 6.902100470971276,
-      "total_mae": 10.204959070901294,
-      "home_score_mae": 4.504551080222116,
-      "away_score_mae": 8.063333333333334,
-      "ats_direction_accuracy": 0.75,
-      "total_direction_accuracy": 0.5
+      "n": 10,
+      "winner_accuracy": 0.9,
+      "brier_score": 0.08645319573787004,
+      "margin_mae": 6.416390423874148,
+      "total_mae": 9.483963163811165,
+      "home_score_mae": 4.101595972199904,
+      "away_score_mae": 7.509,
+      "ats_direction_accuracy": 0.8,
+      "total_direction_accuracy": 0.6
     },
     "MIN": {
       "n": 7,
@@ -248,14 +248,14 @@
       "total_direction_accuracy": 0.5
     },
     "NY": {
-      "n": 9,
-      "winner_accuracy": 0.7777777777777778,
-      "brier_score": 0.19571215775558015,
-      "margin_mae": 14.017126296777187,
-      "total_mae": 10.647351478662914,
-      "home_score_mae": 10.493972111279549,
-      "away_score_mae": 6.944444444444446,
-      "ats_direction_accuracy": 0.5,
+      "n": 10,
+      "winner_accuracy": 0.8,
+      "brier_score": 0.18904507997606323,
+      "margin_mae": 12.709413667099469,
+      "total_mae": 12.472616330796622,
+      "home_score_mae": 10.842574900151593,
+      "away_score_mae": 7.742000000000002,
+      "ats_direction_accuracy": 0.6,
       "total_direction_accuracy": 0.5
     },
     "PHX": {
@@ -315,14 +315,14 @@
     }
   },
   "diagnostics": {
-    "mean_margin_error": -0.38697264216958616,
-    "mean_total_error": 2.3542568660271375,
-    "q1_total_mae": 5.758121132155059,
-    "q2_total_mae": 6.257131147540984,
-    "q3_total_mae": 6.395081967213115,
-    "q4_total_mae": 6.7076229508196725,
-    "first_half_margin_mae": 10.274412172027043,
-    "second_half_margin_mae": 7.66827868852459
+    "mean_margin_error": -0.32730684400547233,
+    "mean_total_error": 1.7732487115500852,
+    "q1_total_mae": 5.8904030009755335,
+    "q2_total_mae": 6.325873015873016,
+    "q3_total_mae": 6.37984126984127,
+    "q4_total_mae": 6.797380952380952,
+    "first_half_margin_mae": 10.068319722121423,
+    "second_half_margin_mae": 7.560238095238095
   },
   "promotion_rule": "Do not replace production from this audit alone; compare candidate models prospectively and with leakage-safe chronological validation."
 }
