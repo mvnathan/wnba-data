@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-08T18:50:59.775363+00:00",
+  "generated_at_utc": "2026-10-09T01:13:30.765011+00:00",
   "target_date": "2026-10-08",
   "sport": "MLB",
   "model_version": "mlb-runs-v2",
@@ -21,7 +21,7 @@
       "home_team": "Chicago White Sox",
       "away_team": "Cleveland Guardians",
       "venue": "Rate Field",
-      "status": "Scheduled",
+      "status": "In Progress",
       "predicted_home_runs": 3.79,
       "predicted_away_runs": 4.13,
       "predicted_total_runs": 7.92,
