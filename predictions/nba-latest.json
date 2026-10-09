@@ -1,6 +1,6 @@
 {
   "sport": "NBA",
-  "generated_at_utc": "2026-10-09T18:29:56.961917+00:00",
+  "generated_at_utc": "2026-10-09T22:52:38.833774+00:00",
   "target_date": "2026-10-09",
   "season": "2026-27",
   "model_version": "nba-v2-roster-four-factors",
@@ -52,7 +52,7 @@
         "mae": 16.052277339680376
       },
       "total_rf": {
-        "mae": 15.750307765858189
+        "mae": 15.750307765858192
       },
       "total_extra_trees": {
         "mae": 15.823980776889647
@@ -6123,16 +6123,16 @@
         }
       },
       "market_bookmaker": "DraftKings",
-      "market_updated_at": "2026-10-09T18:33:42.788468+00:00",
-      "market_home_moneyline": -142,
-      "market_away_moneyline": 120,
+      "market_updated_at": "2026-10-09T22:56:18.445207+00:00",
+      "market_home_moneyline": -130,
+      "market_away_moneyline": 110,
       "market_home_spread": -2.5,
       "market_away_spread": 2.5,
       "market_total": 239.5,
       "x_availability_adjustments": [],
       "model_market_spread_edge": 6.88,
       "model_market_total_edge": 4.9,
-      "model_market_home_win_edge": 0.2095
+      "model_market_home_win_edge": 0.2311
     }
   ],
   "historical_data_source": "SportsDataverse ESPN NBA bulk releases",
