@@ -1,12 +1,12 @@
 {
-  "generated_at_utc": "2026-10-08T23:28:16.638300+00:00",
+  "generated_at_utc": "2026-10-09T06:23:15.559907+00:00",
   "status": "ok",
   "production_adjustment_enabled": false,
-  "new_posts_seen": 0,
+  "new_posts_seen": 2,
   "new_picks_parsed": 0,
   "ledger_size": 0,
   "since_id_used": "2108072685779685871",
-  "newest_id": "2108072685779685871",
+  "newest_id": "2108397045837086992",
   "accounts": {
     "@RufusPeabody": {
       "tier": "established_professional",
@@ -60,7 +60,22 @@
     }
   },
   "new_picks": [],
-  "candidate_posts": [],
+  "candidate_posts": [
+    {
+      "post_id": "2108397045837086992",
+      "source": "@iamrahstradamus",
+      "published_at_utc": "2026-10-09T03:20:02.000Z",
+      "text": "This is officially a loss but I'd make this bet again. Three turnovers, 2 being in the red zone. 7.5 yards per pass + CeeDee Lamb injury + a dropped Pick 6. Offense probably should have had more than 16 points tonight. https://t.co/Fze5bPdeEd",
+      "url": "https://x.com/iamrahstradamus/status/2108397045837086992"
+    },
+    {
+      "post_id": "2108389980385259805",
+      "source": "@iamrahstradamus",
+      "published_at_utc": "2026-10-09T02:51:57.000Z",
+      "text": "Very big let down from the Cowboys TT Over 28.5. \u274c",
+      "url": "https://x.com/iamrahstradamus/status/2108389980385259805"
+    }
+  ],
   "promotion_thresholds": {
     "minimum_graded_picks": 100,
     "minimum_positive_clv_rate": 0.52,
