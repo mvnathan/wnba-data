@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-09T13:44:46.096364+00:00",
+  "generated_at_utc": "2026-10-09T19:42:56.646798+00:00",
   "status": "ok",
   "production_modified": false,
   "baseline_model_version": "nfl-v2",
@@ -15,72 +15,14 @@
   "evaluation_status": "prospective_shadow_only",
   "note": "External signals were not available historically across the full 577-game backtest, so current deltas are prospective. Accuracy/Brier/MAE comparison begins as these shadow forecasts settle.",
   "summary": {
-    "games": 15,
-    "games_changed_by_availability": 2,
-    "games_changed_by_combined": 2,
-    "availability_x_signals_available": 4,
+    "games": 14,
+    "games_changed_by_availability": 3,
+    "games_changed_by_combined": 3,
+    "availability_x_signals_available": 7,
     "sharp_ledger_picks": 0,
     "sharp_production_weight": 0.0
   },
   "games": [
-    {
-      "game_id": "2026_05_TB_DAL",
-      "game_date_utc": "2026-10-09T00:15:00Z",
-      "home_team": "Dallas Cowboys",
-      "away_team": "Tampa Bay Buccaneers",
-      "home_abbr": "DAL",
-      "away_abbr": "TB",
-      "market_home_spread": -9.5,
-      "market_total": 48.5,
-      "production": {
-        "predicted_home_points": 26.0,
-        "predicted_away_points": 22.6,
-        "predicted_margin": 3.4,
-        "predicted_total": 48.6,
-        "home_win_probability": 0.616,
-        "predicted_winner": "Dallas Cowboys"
-      },
-      "availability_shadow": {
-        "predicted_home_points": 26.0,
-        "predicted_away_points": 23.0,
-        "predicted_margin": 3.0,
-        "predicted_total": 49.0,
-        "home_win_probability": 0.602,
-        "away_win_probability": 0.398,
-        "predicted_winner": "Dallas Cowboys",
-        "availability_margin_delta": -0.4,
-        "availability_total_delta": 0.4,
-        "signals_applied": [
-          {
-            "team": "DAL",
-            "player": "Joey Porter Jr",
-            "position": "CB",
-            "status": "out",
-            "confidence": 0.6681,
-            "base_points": 0.8,
-            "point_impact": 0.534,
-            "source": "@RapSheet",
-            "published_at_utc": "2026-10-08T22:36:27.000Z",
-            "url": "https://x.com/RapSheet/status/2108325679389704640",
-            "text": "News just a couple hours before kickoff: The #Cowboys have ruled out CB Joey Porter Jr. with an illness."
-          }
-        ]
-      },
-      "combined_shadow": {
-        "predicted_home_points": 26.0,
-        "predicted_away_points": 23.0,
-        "predicted_margin": 3.0,
-        "predicted_total": 49.0,
-        "home_win_probability": 0.602,
-        "away_win_probability": 0.398,
-        "predicted_winner": "Dallas Cowboys",
-        "combined_margin_delta_vs_production": -0.4,
-        "combined_total_delta_vs_production": 0.4,
-        "sharp_margin_delta": 0.0,
-        "sharp_total_delta": 0.0,
-        "sharp_signals_applied": []
-      }
-    },
     {
       "game_id": "2026_05_PHI_JAX",
       "game_date_utc": "2026-10-11T13:30:00Z",
@@ -133,7 +75,7 @@
       "home_abbr": "GB",
       "away_abbr": "CHI",
       "market_home_spread": 1.5,
-      "market_total": 45.5,
+      "market_total": 46.5,
       "production": {
         "predicted_home_points": 20.6,
         "predicted_away_points": 24.7,
@@ -191,7 +133,7 @@
       "home_abbr": "MIA",
       "away_abbr": "CIN",
       "market_home_spread": 6.5,
-      "market_total": 42.5,
+      "market_total": 43.5,
       "production": {
         "predicted_home_points": 20.0,
         "predicted_away_points": 23.4,
@@ -333,27 +275,41 @@
         "predicted_winner": "New York Jets"
       },
       "availability_shadow": {
-        "predicted_home_points": 22.7,
+        "predicted_home_points": 22.06,
         "predicted_away_points": 21.2,
-        "predicted_margin": 1.5,
-        "predicted_total": 43.9,
-        "home_win_probability": 0.552,
-        "away_win_probability": 0.448,
+        "predicted_margin": 0.86,
+        "predicted_total": 43.26,
+        "home_win_probability": 0.5296,
+        "away_win_probability": 0.4704,
         "predicted_winner": "New York Jets",
-        "availability_margin_delta": 0.0,
-        "availability_total_delta": 0.0,
-        "signals_applied": []
+        "availability_margin_delta": -0.64,
+        "availability_total_delta": -0.64,
+        "signals_applied": [
+          {
+            "team": "NYJ",
+            "player": "Breece Hall",
+            "position": "RB",
+            "status": "out",
+            "confidence": 0.6398,
+            "base_points": 1.0,
+            "point_impact": 0.64,
+            "source": "@AdamSchefter",
+            "published_at_utc": "2026-10-09T14:42:55.000Z",
+            "url": "https://x.com/AdamSchefter/status/2108568898786508951",
+            "text": "Jets have ruled out RB Breece Hall (quad) and WR Adonai Mitchell (finger) for Sunday\u2019s game vs. the Browns."
+          }
+        ]
       },
       "combined_shadow": {
-        "predicted_home_points": 22.7,
+        "predicted_home_points": 22.06,
         "predicted_away_points": 21.2,
-        "predicted_margin": 1.5,
-        "predicted_total": 43.9,
-        "home_win_probability": 0.552,
-        "away_win_probability": 0.448,
+        "predicted_margin": 0.86,
+        "predicted_total": 43.26,
+        "home_win_probability": 0.5296,
+        "away_win_probability": 0.4704,
         "predicted_winner": "New York Jets",
-        "combined_margin_delta_vs_production": 0.0,
-        "combined_total_delta_vs_production": 0.0,
+        "combined_margin_delta_vs_production": -0.64,
+        "combined_total_delta_vs_production": -0.64,
         "sharp_margin_delta": 0.0,
         "sharp_total_delta": 0.0,
         "sharp_signals_applied": []
@@ -367,7 +323,7 @@
       "home_abbr": "PIT",
       "away_abbr": "IND",
       "market_home_spread": -2.5,
-      "market_total": 44.5,
+      "market_total": 43.5,
       "production": {
         "predicted_home_points": 23.3,
         "predicted_away_points": 22.9,
@@ -465,27 +421,41 @@
         "predicted_winner": "New York Giants"
       },
       "availability_shadow": {
-        "predicted_home_points": 22.5,
+        "predicted_home_points": 21.51,
         "predicted_away_points": 23.6,
-        "predicted_margin": -1.1,
-        "predicted_total": 46.2,
-        "home_win_probability": 0.4624,
-        "away_win_probability": 0.5376,
+        "predicted_margin": -2.09,
+        "predicted_total": 45.11,
+        "home_win_probability": 0.4285,
+        "away_win_probability": 0.5715,
         "predicted_winner": "New York Giants",
-        "availability_margin_delta": 0.0,
-        "availability_total_delta": 0.0,
-        "signals_applied": []
+        "availability_margin_delta": -0.99,
+        "availability_total_delta": -1.09,
+        "signals_applied": [
+          {
+            "team": "WAS",
+            "player": "Stefon Diggs",
+            "position": "WR",
+            "status": "out",
+            "confidence": 0.7608,
+            "base_points": 1.3,
+            "point_impact": 0.989,
+            "source": "@RapSheet",
+            "published_at_utc": "2026-10-09T16:42:53.000Z",
+            "url": "https://x.com/RapSheet/status/2108599090640757082",
+            "text": "#Commanders coach Dan Quinn tells reporters that WR Stefon Diggs is out Sunday vs the #Giants. Jayden Daniels is good to go, while WR Terry McLaurin is headed in a good direction."
+          }
+        ]
       },
       "combined_shadow": {
-        "predicted_home_points": 22.5,
+        "predicted_home_points": 21.51,
         "predicted_away_points": 23.6,
-        "predicted_margin": -1.1,
-        "predicted_total": 46.2,
-        "home_win_probability": 0.4624,
-        "away_win_probability": 0.5376,
+        "predicted_margin": -2.09,
+        "predicted_total": 45.11,
+        "home_win_probability": 0.4285,
+        "away_win_probability": 0.5715,
         "predicted_winner": "New York Giants",
-        "combined_margin_delta_vs_production": 0.0,
-        "combined_total_delta_vs_production": 0.0,
+        "combined_margin_delta_vs_production": -0.99,
+        "combined_total_delta_vs_production": -1.09,
         "sharp_margin_delta": 0.0,
         "sharp_total_delta": 0.0,
         "sharp_signals_applied": []
@@ -499,7 +469,7 @@
       "home_abbr": "LAC",
       "away_abbr": "DEN",
       "market_home_spread": 3.5,
-      "market_total": 42.5,
+      "market_total": 41.5,
       "production": {
         "predicted_home_points": 22.0,
         "predicted_away_points": 22.1,
