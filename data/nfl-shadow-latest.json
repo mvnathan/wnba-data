@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-08T20:05:42.730124+00:00",
+  "generated_at_utc": "2026-10-09T00:36:57.094962+00:00",
   "status": "ok",
   "production_modified": false,
   "baseline_model_version": "nfl-v2",
@@ -16,9 +16,9 @@
   "note": "External signals were not available historically across the full 577-game backtest, so current deltas are prospective. Accuracy/Brier/MAE comparison begins as these shadow forecasts settle.",
   "summary": {
     "games": 15,
-    "games_changed_by_availability": 1,
-    "games_changed_by_combined": 1,
-    "availability_x_signals_available": 3,
+    "games_changed_by_availability": 2,
+    "games_changed_by_combined": 2,
+    "availability_x_signals_available": 4,
     "sharp_ledger_picks": 0,
     "sharp_production_weight": 0.0
   },
@@ -42,26 +42,40 @@
       },
       "availability_shadow": {
         "predicted_home_points": 26.0,
-        "predicted_away_points": 22.6,
-        "predicted_margin": 3.4,
-        "predicted_total": 48.6,
-        "home_win_probability": 0.616,
-        "away_win_probability": 0.384,
+        "predicted_away_points": 23.0,
+        "predicted_margin": 3.0,
+        "predicted_total": 49.0,
+        "home_win_probability": 0.602,
+        "away_win_probability": 0.398,
         "predicted_winner": "Dallas Cowboys",
-        "availability_margin_delta": 0.0,
-        "availability_total_delta": 0.0,
-        "signals_applied": []
+        "availability_margin_delta": -0.4,
+        "availability_total_delta": 0.4,
+        "signals_applied": [
+          {
+            "team": "DAL",
+            "player": "Joey Porter Jr",
+            "position": "CB",
+            "status": "out",
+            "confidence": 0.6681,
+            "base_points": 0.8,
+            "point_impact": 0.534,
+            "source": "@RapSheet",
+            "published_at_utc": "2026-10-08T22:36:27.000Z",
+            "url": "https://x.com/RapSheet/status/2108325679389704640",
+            "text": "News just a couple hours before kickoff: The #Cowboys have ruled out CB Joey Porter Jr. with an illness."
+          }
+        ]
       },
       "combined_shadow": {
         "predicted_home_points": 26.0,
-        "predicted_away_points": 22.6,
-        "predicted_margin": 3.4,
-        "predicted_total": 48.6,
-        "home_win_probability": 0.616,
-        "away_win_probability": 0.384,
+        "predicted_away_points": 23.0,
+        "predicted_margin": 3.0,
+        "predicted_total": 49.0,
+        "home_win_probability": 0.602,
+        "away_win_probability": 0.398,
         "predicted_winner": "Dallas Cowboys",
-        "combined_margin_delta_vs_production": 0.0,
-        "combined_total_delta_vs_production": 0.0,
+        "combined_margin_delta_vs_production": -0.4,
+        "combined_total_delta_vs_production": 0.4,
         "sharp_margin_delta": 0.0,
         "sharp_total_delta": 0.0,
         "sharp_signals_applied": []
