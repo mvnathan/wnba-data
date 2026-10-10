@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-10T13:00:44.764927+00:00",
+  "generated_at_utc": "2026-10-10T18:49:12.554524+00:00",
   "status": "ok",
   "production_modified": false,
   "baseline_model_version": "nfl-v2",
@@ -16,9 +16,9 @@
   "note": "External signals were not available historically across the full 577-game backtest, so current deltas are prospective. Accuracy/Brier/MAE comparison begins as these shadow forecasts settle.",
   "summary": {
     "games": 14,
-    "games_changed_by_availability": 8,
-    "games_changed_by_combined": 8,
-    "availability_x_signals_available": 23,
+    "games_changed_by_availability": 9,
+    "games_changed_by_combined": 9,
+    "availability_x_signals_available": 27,
     "sharp_ledger_picks": 0,
     "sharp_production_weight": 0.0
   },
@@ -578,27 +578,41 @@
         "predicted_winner": "Detroit Lions"
       },
       "availability_shadow": {
-        "predicted_home_points": 25.5,
+        "predicted_home_points": 24.76,
         "predicted_away_points": 25.9,
-        "predicted_margin": -0.5,
-        "predicted_total": 51.4,
-        "home_win_probability": 0.4843,
-        "away_win_probability": 0.5157,
+        "predicted_margin": -1.14,
+        "predicted_total": 50.66,
+        "home_win_probability": 0.4606,
+        "away_win_probability": 0.5394,
         "predicted_winner": "Detroit Lions",
-        "availability_margin_delta": 0.0,
-        "availability_total_delta": 0.0,
-        "signals_applied": []
+        "availability_margin_delta": -0.64,
+        "availability_total_delta": -0.74,
+        "signals_applied": [
+          {
+            "team": "ARI",
+            "player": "Marvin Harrison",
+            "position": "WR",
+            "status": "out",
+            "confidence": 0.5723,
+            "base_points": 1.3,
+            "point_impact": 0.744,
+            "source": "@AdamSchefter",
+            "published_at_utc": "2026-10-10T15:02:29.000Z",
+            "url": "https://x.com/AdamSchefter/status/2108936212014923979",
+            "text": "Breaking: the Arizona Cardinals are finalizing a deal to trade WR Marvin Harrison, sources tell me and @RapSheet. The team informed Harrison this morning that he will be inactive for Sunday\u2019s game vs Detroit as details of the trade are finalized. https://t.co/x6n0Hsfzzj"
+          }
+        ]
       },
       "combined_shadow": {
-        "predicted_home_points": 25.5,
+        "predicted_home_points": 24.76,
         "predicted_away_points": 25.9,
-        "predicted_margin": -0.5,
-        "predicted_total": 51.4,
-        "home_win_probability": 0.4843,
-        "away_win_probability": 0.5157,
+        "predicted_margin": -1.14,
+        "predicted_total": 50.66,
+        "home_win_probability": 0.4606,
+        "away_win_probability": 0.5394,
         "predicted_winner": "Detroit Lions",
-        "combined_margin_delta_vs_production": 0.0,
-        "combined_total_delta_vs_production": 0.0,
+        "combined_margin_delta_vs_production": -0.64,
+        "combined_total_delta_vs_production": -0.74,
         "sharp_margin_delta": 0.0,
         "sharp_total_delta": 0.0,
         "sharp_signals_applied": []
