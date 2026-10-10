@@ -1,12 +1,12 @@
 {
-  "generated_at_utc": "2026-10-10T12:45:48.299656+00:00",
+  "generated_at_utc": "2026-10-10T21:53:53.319461+00:00",
   "status": "ok",
   "production_adjustment_enabled": false,
-  "new_posts_seen": 0,
+  "new_posts_seen": 2,
   "new_picks_parsed": 0,
   "ledger_size": 0,
   "since_id_used": "2108397045837086992",
-  "newest_id": "2108397045837086992",
+  "newest_id": "2109000227319656592",
   "accounts": {
     "@RufusPeabody": {
       "tier": "established_professional",
@@ -60,7 +60,22 @@
     }
   },
   "new_picks": [],
-  "candidate_posts": [],
+  "candidate_posts": [
+    {
+      "post_id": "2109000227319656592",
+      "source": "@iamrahstradamus",
+      "published_at_utc": "2026-10-10T19:16:52.000Z",
+      "text": "As much as I believe in closing line value, my biggest wins as a gambler have always come when I had the balls to stand up against the market and say this is wrong &amp; I don't care if Jesus Christ, Allah or Buddha is on the other side of me. \n\nThere was a time in my life (not now,",
+      "url": "https://x.com/iamrahstradamus/status/2109000227319656592"
+    },
+    {
+      "post_id": "2109000074756067690",
+      "source": "@iamrahstradamus",
+      "published_at_utc": "2026-10-10T19:16:15.000Z",
+      "text": "As much as I believe in closing line value, my biggest wins as a gambler have always come when I had the balls to stand up against the market and say this is wrong &amp; I don't care if Jesus Christ, Allah or Buddha is on the other side of me. \n\nThere was a time in my life (not now,",
+      "url": "https://x.com/iamrahstradamus/status/2109000074756067690"
+    }
+  ],
   "promotion_thresholds": {
     "minimum_graded_picks": 100,
     "minimum_positive_clv_rate": 0.52,
