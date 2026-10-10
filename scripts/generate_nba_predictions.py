@@ -5,6 +5,8 @@ from datetime import datetime, timezone, timedelta
 from pathlib import Path
 import pandas as pd
 
+from src.market_math import no_vig_two_way_probabilities
+
 from src.nba_model import (
     FEATURES, season_label_from_end, fetch_bulk_season, build_dataset, train_evaluate,
     prior_player_profiles, current_roster, roster_features_from_current, _team_pre,
@@ -114,8 +116,13 @@ def main():
         row["x_availability_adjustments"]=xap
         if row.get("market_home_spread") is not None:row["model_market_spread_edge"]=round(row["predicted_margin"]+float(row["market_home_spread"]),2)
         if row.get("market_total") is not None:row["model_market_total_edge"]=round(row["predicted_total"]-float(row["market_total"]),2)
-        if row.get("market_home_moneyline") is not None:
-            o=float(row["market_home_moneyline"]);mp=(-o/(-o+100)) if o<0 else 100/(o+100);row["model_market_home_win_edge"]=round(row["home_win_probability"]-mp,4)
+        fair_home, _ = no_vig_two_way_probabilities(
+            row.get("market_home_moneyline"), row.get("market_away_moneyline")
+        )
+        row["model_market_home_win_edge"] = (
+            round(row["home_win_probability"] - fair_home, 4)
+            if fair_home is not None else None
+        )
         games.append(row)
 
     payload={"sport":"NBA","generated_at_utc":now.isoformat(),"target_date":date,"season":season_label_from_end(current_end),"model_version":"nba-v2-roster-four-factors",

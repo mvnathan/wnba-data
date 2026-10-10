@@ -18,6 +18,7 @@ from zoneinfo import ZoneInfo
 import pandas as pd
 
 from src.sbr_market_odds import fetch_sbr_draftkings
+from src.market_math import no_vig_two_way_probabilities
 
 CHICAGO = ZoneInfo("America/Chicago")
 EASTERN = ZoneInfo("America/New_York")
@@ -220,7 +221,9 @@ def build() -> dict[str, Any]:
         hp = 1 / (1 + math.exp(-margin / PROB_SCALE))
 
         market = _extract_market(_closest(markets.get((hn.lower(), an.lower())), start.isoformat()))
-        ml_prob = _american_prob(market.get("market_home_moneyline"))
+        ml_prob, _ = no_vig_two_way_probabilities(
+            market.get("market_home_moneyline"), market.get("market_away_moneyline")
+        )
         spread_edge = margin + float(market["market_home_spread"]) if market.get("market_home_spread") is not None else None
         total_edge = total - float(market["market_total"]) if market.get("market_total") is not None else None
         ml_edge = hp - ml_prob if ml_prob is not None else None
