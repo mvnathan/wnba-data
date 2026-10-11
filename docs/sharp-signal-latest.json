@@ -1,11 +1,11 @@
 {
-  "generated_at_utc": "2026-10-11T06:02:48.850965+00:00",
+  "generated_at_utc": "2026-10-11T13:09:21.813692+00:00",
   "status": "ok",
   "production_adjustment_enabled": false,
-  "new_posts_seen": 2,
+  "new_posts_seen": 0,
   "new_picks_parsed": 0,
   "ledger_size": 0,
-  "since_id_used": "2109000227319656592",
+  "since_id_used": "2109128156783255562",
   "newest_id": "2109128156783255562",
   "accounts": {
     "@RufusPeabody": {
@@ -60,22 +60,7 @@
     }
   },
   "new_picks": [],
-  "candidate_posts": [
-    {
-      "post_id": "2109128156783255562",
-      "source": "@wheatonbrando",
-      "published_at_utc": "2026-10-11T03:45:12.000Z",
-      "text": "@D3Keith @d3football lol give me a break, the #2 team went on the road and held its rival #1 to under 200 yards on homecoming, but sure, it could really be anyone",
-      "url": "https://x.com/wheatonbrando/status/2109128156783255562"
-    },
-    {
-      "post_id": "2109089668826603742",
-      "source": "@FezzikSports",
-      "published_at_utc": "2026-10-11T01:12:16.000Z",
-      "text": "Congrats to EVERYONE who was aboard this week with me on CFB\n\n8-0-1 week for me.  https://t.co/aut9jk7iRf is the ONLY place I sell picks.  I do NOT have a website.  DO NOT buy picks unless you are a bettor that is betting over $100 per bet......  nothing wrong with that, just",
-      "url": "https://x.com/FezzikSports/status/2109089668826603742"
-    }
-  ],
+  "candidate_posts": [],
   "promotion_thresholds": {
     "minimum_graded_picks": 100,
     "minimum_positive_clv_rate": 0.52,
