@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-10T17:20:56.881366+00:00",
+  "generated_at_utc": "2026-10-11T00:14:27.498082+00:00",
   "target_date": "2026-10-10",
   "sport": "MLB",
   "model_version": "mlb-runs-v2",
@@ -21,7 +21,7 @@
       "home_team": "Cleveland Guardians",
       "away_team": "Chicago White Sox",
       "venue": "Progressive Field",
-      "status": "Scheduled",
+      "status": "In Progress",
       "predicted_home_runs": 4.16,
       "predicted_away_runs": 4.01,
       "predicted_total_runs": 8.16,
@@ -80,12 +80,12 @@
       "away_official_standings": null,
       "availability_note": "Standings/urgency context cannot confirm a specific star will rest; actual lineup/inactive data should override the proxy when available.",
       "market_used_in_prediction": false,
-      "market_bookmaker": "DraftKings",
-      "market_home_moneyline": -143,
-      "market_away_moneyline": 118,
-      "market_run_line_home": -1.5,
-      "market_total": 7,
-      "market_updated_at": "2026-10-10T17:20:54.642883+00:00"
+      "market_bookmaker": null,
+      "market_home_moneyline": null,
+      "market_away_moneyline": null,
+      "market_run_line_home": null,
+      "market_total": null,
+      "market_updated_at": null
     }
   ]
 }
