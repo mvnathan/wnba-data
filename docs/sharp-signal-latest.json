@@ -1,12 +1,12 @@
 {
-  "generated_at_utc": "2026-10-10T21:53:53.319461+00:00",
+  "generated_at_utc": "2026-10-11T06:02:48.850965+00:00",
   "status": "ok",
   "production_adjustment_enabled": false,
   "new_posts_seen": 2,
   "new_picks_parsed": 0,
   "ledger_size": 0,
-  "since_id_used": "2108397045837086992",
-  "newest_id": "2109000227319656592",
+  "since_id_used": "2109000227319656592",
+  "newest_id": "2109128156783255562",
   "accounts": {
     "@RufusPeabody": {
       "tier": "established_professional",
@@ -62,18 +62,18 @@
   "new_picks": [],
   "candidate_posts": [
     {
-      "post_id": "2109000227319656592",
-      "source": "@iamrahstradamus",
-      "published_at_utc": "2026-10-10T19:16:52.000Z",
-      "text": "As much as I believe in closing line value, my biggest wins as a gambler have always come when I had the balls to stand up against the market and say this is wrong &amp; I don't care if Jesus Christ, Allah or Buddha is on the other side of me. \n\nThere was a time in my life (not now,",
-      "url": "https://x.com/iamrahstradamus/status/2109000227319656592"
+      "post_id": "2109128156783255562",
+      "source": "@wheatonbrando",
+      "published_at_utc": "2026-10-11T03:45:12.000Z",
+      "text": "@D3Keith @d3football lol give me a break, the #2 team went on the road and held its rival #1 to under 200 yards on homecoming, but sure, it could really be anyone",
+      "url": "https://x.com/wheatonbrando/status/2109128156783255562"
     },
     {
-      "post_id": "2109000074756067690",
-      "source": "@iamrahstradamus",
-      "published_at_utc": "2026-10-10T19:16:15.000Z",
-      "text": "As much as I believe in closing line value, my biggest wins as a gambler have always come when I had the balls to stand up against the market and say this is wrong &amp; I don't care if Jesus Christ, Allah or Buddha is on the other side of me. \n\nThere was a time in my life (not now,",
-      "url": "https://x.com/iamrahstradamus/status/2109000074756067690"
+      "post_id": "2109089668826603742",
+      "source": "@FezzikSports",
+      "published_at_utc": "2026-10-11T01:12:16.000Z",
+      "text": "Congrats to EVERYONE who was aboard this week with me on CFB\n\n8-0-1 week for me.  https://t.co/aut9jk7iRf is the ONLY place I sell picks.  I do NOT have a website.  DO NOT buy picks unless you are a bettor that is betting over $100 per bet......  nothing wrong with that, just",
+      "url": "https://x.com/FezzikSports/status/2109089668826603742"
     }
   ],
   "promotion_thresholds": {
