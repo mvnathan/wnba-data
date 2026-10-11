@@ -1,12 +1,12 @@
 {
-  "generated_at_utc": "2026-10-11T13:09:21.813692+00:00",
+  "generated_at_utc": "2026-10-11T22:09:46.536086+00:00",
   "status": "ok",
   "production_adjustment_enabled": false,
-  "new_posts_seen": 0,
+  "new_posts_seen": 7,
   "new_picks_parsed": 0,
   "ledger_size": 0,
   "since_id_used": "2109128156783255562",
-  "newest_id": "2109128156783255562",
+  "newest_id": "2109396991314903238",
   "accounts": {
     "@RufusPeabody": {
       "tier": "established_professional",
@@ -60,7 +60,57 @@
     }
   },
   "new_picks": [],
-  "candidate_posts": [],
+  "candidate_posts": [
+    {
+      "post_id": "2109396991314903238",
+      "source": "@FezzikSports",
+      "published_at_utc": "2026-10-11T21:33:28.000Z",
+      "text": "GREAT JOB by the NYG and Wash today.  BOTH teams pick up 1/2 a game in the standings vs. the Favorites to win the division.",
+      "url": "https://x.com/FezzikSports/status/2109396991314903238"
+    },
+    {
+      "post_id": "2109385358500884513",
+      "source": "@iamrahstradamus",
+      "published_at_utc": "2026-10-11T20:47:14.000Z",
+      "text": "Vikings -1.5 Wise Wager cashes \u2705\n\n4-1 Week in @Ringer 107\n\n3-1 Week in @CircaSports Millions with one more pending.\n\nWould have been nearly a perfect week if the Browns punter could catch the ball and punt it. Should have cashed on the Giants ML too but we'll take a push there.",
+      "url": "https://x.com/iamrahstradamus/status/2109385358500884513"
+    },
+    {
+      "post_id": "2109376204289753282",
+      "source": "@iamrahstradamus",
+      "published_at_utc": "2026-10-11T20:10:52.000Z",
+      "text": "Browns were probably in the 90% range to cover punting with 3 minutes to go up 2. The long snapper snaps the ball over the punters head, Jets recover at the Browns 24. Jets get stopped on 1st and 2nd down, on 3rd and 9 the Jets score a rushing touchdown, the first all year",
+      "url": "https://x.com/iamrahstradamus/status/2109376204289753282"
+    },
+    {
+      "post_id": "2109375848210157821",
+      "source": "@iamrahstradamus",
+      "published_at_utc": "2026-10-11T20:09:27.000Z",
+      "text": "Browns were probably in the 90% range to cover punting with 3 minutes to go up 2. The long snapper snaps the ball over the punters head, Jets cover at the Browns 24. Jets get stopped on 1st and 2nd down, on 3rd and 9 the Jets score a rushing touchdown, the first all year against",
+      "url": "https://x.com/iamrahstradamus/status/2109375848210157821"
+    },
+    {
+      "post_id": "2109337132888363456",
+      "source": "@iamrahstradamus",
+      "published_at_utc": "2026-10-11T17:35:36.000Z",
+      "text": "Hate the NFL sometimes. Vikings about to take firm control over this game and Aaron Jones fumbles. Now they're in for a dog fight.",
+      "url": "https://x.com/iamrahstradamus/status/2109337132888363456"
+    },
+    {
+      "post_id": "2109309769098084669",
+      "source": "@FezzikSports",
+      "published_at_utc": "2026-10-11T15:46:52.000Z",
+      "text": "WOW!  \n\n@splashsports EVEN MONEY weekly contest has a great overlay!\n\n$1000 buyin.  Only 17 of the 28 spots are filled!\n\nYou have a little over an hour to get in!  \n\nCan you beat me?",
+      "url": "https://x.com/FezzikSports/status/2109309769098084669"
+    },
+    {
+      "post_id": "2109299116484493636",
+      "source": "@iamrahstradamus",
+      "published_at_utc": "2026-10-11T15:04:32.000Z",
+      "text": "Rolling with Rome Odunze over 39.5 receiving yards. He\u2019s becoming one of the Bears most consistent receiving options and with his targets increasing every game and him averaging nearly 17 yards per reception, it feels like we\u2019re getting a bargain.\n\nGrab that at @fanduel https://t.co/OIUlhfYyqi",
+      "url": "https://x.com/iamrahstradamus/status/2109299116484493636"
+    }
+  ],
   "promotion_thresholds": {
     "minimum_graded_picks": 100,
     "minimum_positive_clv_rate": 0.52,
