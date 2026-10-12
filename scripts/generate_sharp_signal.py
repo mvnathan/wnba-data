@@ -112,7 +112,10 @@ def main()->None:
     state=load(STATE,{})
     ledger=load(LEDGER,{"created_at_utc":datetime.now(timezone.utc).isoformat(),"picks":[]})
     params={"query":query(accounts),"max_results":100,"tweet.fields":"created_at,author_id,text","expansions":"author_id","user.fields":"username,name"}
-    if state.get("newest_id"):params["since_id"]=str(state["newest_id"])
+    current_accounts=sorted(a["username"].lower() for a in accounts)
+    # Account changes invalidate the old global search cursor.
+    if state.get("accounts")==current_accounts and state.get("newest_id"):
+        params["since_id"]=str(state["newest_id"])
     headers={"Authorization":f"Bearer {token}"}
     r=requests.get(X_URL,params=params,headers=headers,timeout=30)
 
@@ -162,7 +165,7 @@ def main()->None:
         row={"post_id":pid,"source":"@"+str(user.get("username") or ac["username"]),"account_tier":ac.get("tier","candidate"),"sports":ac.get("sports",[]),"published_at_utc":post.get("created_at"),"captured_at_utc":datetime.now(timezone.utc).isoformat(),"text":post.get("text"),"url":f"https://x.com/{user.get('username')}/status/{pid}",**parsed,"status":"ungraded","closing_line":None,"closing_odds":None,"clv":None,"result":None,"profit_units":None}
         ledger.setdefault("picks",[]).append(row);added.append(row)
     newest=str(max(ids)) if ids else state.get("newest_id")
-    save(STATE,{"newest_id":newest,"updated_at_utc":datetime.now(timezone.utc).isoformat()})
+    save(STATE,{"newest_id":newest,"accounts":current_accounts,"updated_at_utc":datetime.now(timezone.utc).isoformat()})
     ledger["updated_at_utc"]=datetime.now(timezone.utc).isoformat(); save(LEDGER,ledger)
     stats={}
     for ac in accounts:
