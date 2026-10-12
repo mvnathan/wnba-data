@@ -89,7 +89,7 @@ def extract_status(text: str) -> str | None:
     negative = bool(re.search(
         r"\\b(ruled out|will not play|won't play|"
         r"not expected to play|inactive|doubtful|"
-        r"out for (?:today|tonight|the game|week \\d+))\\b", lowered
+        r"out for (?:today|tonight|the game|week \\d+)|(?:is|listed|declared) out)\\b", lowered
     ))
     # Strong positive assertions override incidental 'out' references in the
     # same sentence (e.g. 'ruled out earlier, now cleared to play').
