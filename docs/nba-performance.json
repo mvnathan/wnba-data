@@ -1,14 +1,14 @@
 {
-  "generated_at_utc": "2026-10-12T01:47:02.697498+00:00",
+  "generated_at_utc": "2026-10-12T19:49:09.367884+00:00",
   "method": "Earliest committed pregame NBA forecast and market line joined to ESPN final score by game ID",
   "summary": {
-    "n": 29,
+    "n": 30,
     "ml": {
-      "wins": 16,
+      "wins": 17,
       "losses": 13,
       "pushes": 0,
-      "graded": 29,
-      "rate": 0.5517241379310345
+      "graded": 30,
+      "rate": 0.5666666666666667
     },
     "ats": {
       "wins": 0,
@@ -65,6 +65,29 @@
       "actual_away_score": 90.0,
       "actual_margin": 15.0,
       "actual_total": 195.0,
+      "winner_correct": true,
+      "market_home_spread": null,
+      "market_total": null,
+      "market_bookmaker": null,
+      "ats_result": null,
+      "ou_result": null
+    },
+    {
+      "game_id": "401908941",
+      "game_date_utc": "2026-10-12T01:00Z",
+      "home_team": "Denver Nuggets",
+      "away_team": "Chicago Bulls",
+      "home_abbr": "DEN",
+      "away_abbr": "CHI",
+      "prediction_issued_at": "2026-10-11T01:13:05.955473+00:00",
+      "prediction_commit": "3b66c16a",
+      "home_win_probability": 0.8217059467608417,
+      "predicted_margin": 8.626242663473626,
+      "predicted_total": 249.065729832764,
+      "actual_home_score": 133.0,
+      "actual_away_score": 128.0,
+      "actual_margin": 5.0,
+      "actual_total": 261.0,
       "winner_correct": true,
       "market_home_spread": null,
       "market_total": null,
