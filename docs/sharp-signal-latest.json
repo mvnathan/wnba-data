@@ -1,12 +1,12 @@
 {
-  "generated_at_utc": "2026-10-13T00:52:11.446987+00:00",
+  "generated_at_utc": "2026-10-13T14:25:35.693360+00:00",
   "status": "ok",
   "production_adjustment_enabled": false,
-  "new_posts_seen": 3,
+  "new_posts_seen": 4,
   "new_picks_parsed": 0,
   "ledger_size": 0,
-  "since_id_used": "2109424503252308308",
-  "newest_id": "2109770081706389912",
+  "since_id_used": "2109770081706389912",
+  "newest_id": "2109856279061794864",
   "accounts": {
     "@RufusPeabody": {
       "tier": "established_professional",
@@ -62,25 +62,32 @@
   "new_picks": [],
   "candidate_posts": [
     {
-      "post_id": "2109770081706389912",
+      "post_id": "2109856279061794864",
       "source": "@iamrahstradamus",
-      "published_at_utc": "2026-10-12T22:15:59.000Z",
-      "text": "Going through some numbers for something I'm working on: Jayson Tatum's career high PER (Player Efficiency Rating) is 23.7 in 2022-23. \n\nThe last player to win the NBA's Most Valuable Player Award with a PER of less than 24 was Derrick Rose in 2010-11. Over the last 40 years,",
-      "url": "https://x.com/iamrahstradamus/status/2109770081706389912"
+      "published_at_utc": "2026-10-13T03:58:30.000Z",
+      "text": "@GladItsJeff You're right but there's always a media aspect to this as well. You don't keep your foot on the gas and you turn the ball over and you're risking your job so coaches tend to play it safe.",
+      "url": "https://x.com/iamrahstradamus/status/2109856279061794864"
     },
     {
-      "post_id": "2109769933819441614",
+      "post_id": "2109852275980345389",
       "source": "@iamrahstradamus",
-      "published_at_utc": "2026-10-12T22:15:24.000Z",
-      "text": "Going through some numbers for something I'm working on: Jayson Tatum's career high PER (Player Efficiency Rating) is 23.7 in 2022-23. \n\nThe last player to win the NBA's Most Valuable Player Award with a PER of less than 24 was Derrick Rose in 2010-11. Over the last 40 years,",
-      "url": "https://x.com/iamrahstradamus/status/2109769933819441614"
+      "published_at_utc": "2026-10-13T03:42:36.000Z",
+      "text": "You really gotta do kicker rankings every time you think about making a Super Bowl pick. \n\n\"It's serious as cancer.....\" (C)-Shyne Po",
+      "url": "https://x.com/iamrahstradamus/status/2109852275980345389"
     },
     {
-      "post_id": "2109739071492813147",
+      "post_id": "2109829966879654238",
       "source": "@wheatonbrando",
-      "published_at_utc": "2026-10-12T20:12:46.000Z",
-      "text": "@HPbasketball This never made sense from the moment of the trade though. Huge overpay in a weak draft for a small guard that was on a different timeline and would never get playing time on that roster. The pick was doomed to fail cuz they couldn\u2019t develop him at all",
-      "url": "https://x.com/wheatonbrando/status/2109739071492813147"
+      "published_at_utc": "2026-10-13T02:13:57.000Z",
+      "text": "@Bnyce1025 There was nothing else there on the play. What happens when you get nothing on the third down, on the next play?",
+      "url": "https://x.com/wheatonbrando/status/2109829966879654238"
+    },
+    {
+      "post_id": "2109824921476206742",
+      "source": "@iamrahstradamus",
+      "published_at_utc": "2026-10-13T01:53:54.000Z",
+      "text": "Puka Nacua Over 6.5 receptions \u2705",
+      "url": "https://x.com/iamrahstradamus/status/2109824921476206742"
     }
   ],
   "promotion_thresholds": {
