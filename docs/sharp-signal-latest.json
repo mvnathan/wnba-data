@@ -1,12 +1,12 @@
 {
-  "generated_at_utc": "2026-10-12T15:47:47.860325+00:00",
+  "generated_at_utc": "2026-10-13T00:52:11.446987+00:00",
   "status": "ok",
   "production_adjustment_enabled": false,
-  "new_posts_seen": 0,
+  "new_posts_seen": 3,
   "new_picks_parsed": 0,
   "ledger_size": 0,
   "since_id_used": "2109424503252308308",
-  "newest_id": "2109424503252308308",
+  "newest_id": "2109770081706389912",
   "accounts": {
     "@RufusPeabody": {
       "tier": "established_professional",
@@ -60,7 +60,29 @@
     }
   },
   "new_picks": [],
-  "candidate_posts": [],
+  "candidate_posts": [
+    {
+      "post_id": "2109770081706389912",
+      "source": "@iamrahstradamus",
+      "published_at_utc": "2026-10-12T22:15:59.000Z",
+      "text": "Going through some numbers for something I'm working on: Jayson Tatum's career high PER (Player Efficiency Rating) is 23.7 in 2022-23. \n\nThe last player to win the NBA's Most Valuable Player Award with a PER of less than 24 was Derrick Rose in 2010-11. Over the last 40 years,",
+      "url": "https://x.com/iamrahstradamus/status/2109770081706389912"
+    },
+    {
+      "post_id": "2109769933819441614",
+      "source": "@iamrahstradamus",
+      "published_at_utc": "2026-10-12T22:15:24.000Z",
+      "text": "Going through some numbers for something I'm working on: Jayson Tatum's career high PER (Player Efficiency Rating) is 23.7 in 2022-23. \n\nThe last player to win the NBA's Most Valuable Player Award with a PER of less than 24 was Derrick Rose in 2010-11. Over the last 40 years,",
+      "url": "https://x.com/iamrahstradamus/status/2109769933819441614"
+    },
+    {
+      "post_id": "2109739071492813147",
+      "source": "@wheatonbrando",
+      "published_at_utc": "2026-10-12T20:12:46.000Z",
+      "text": "@HPbasketball This never made sense from the moment of the trade though. Huge overpay in a weak draft for a small guard that was on a different timeline and would never get playing time on that roster. The pick was doomed to fail cuz they couldn\u2019t develop him at all",
+      "url": "https://x.com/wheatonbrando/status/2109739071492813147"
+    }
+  ],
   "promotion_thresholds": {
     "minimum_graded_picks": 100,
     "minimum_positive_clv_rate": 0.52,
