@@ -1,14 +1,14 @@
 {
-  "generated_at_utc": "2026-10-12T21:26:22.426399+00:00",
+  "generated_at_utc": "2026-10-13T00:59:40.879474+00:00",
   "method": "Earliest committed pregame NBA forecast and market line joined to ESPN final score by game ID",
   "summary": {
-    "n": 30,
+    "n": 31,
     "ml": {
       "wins": 17,
-      "losses": 13,
+      "losses": 14,
       "pushes": 0,
-      "graded": 30,
-      "rate": 0.5666666666666667
+      "graded": 31,
+      "rate": 0.5483870967741935
     },
     "ats": {
       "wins": 0,
@@ -26,6 +26,29 @@
     }
   },
   "games": [
+    {
+      "game_id": "401914130",
+      "game_date_utc": "2026-10-12T20:00Z",
+      "home_team": "Portland Trail Blazers",
+      "away_team": "London Lions",
+      "home_abbr": "POR",
+      "away_abbr": "LON",
+      "prediction_issued_at": "2026-10-12T01:43:23.203009+00:00",
+      "prediction_commit": "2da075ae",
+      "home_win_probability": 0.3412012058744645,
+      "predicted_margin": -7.650604758218318,
+      "predicted_total": 130.38213357329056,
+      "actual_home_score": 119.0,
+      "actual_away_score": 66.0,
+      "actual_margin": 53.0,
+      "actual_total": 185.0,
+      "winner_correct": false,
+      "market_home_spread": null,
+      "market_total": null,
+      "market_bookmaker": null,
+      "ats_result": null,
+      "ou_result": null
+    },
     {
       "game_id": "401898401",
       "game_date_utc": "2026-10-11T22:30Z",

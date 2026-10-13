@@ -1,7 +1,7 @@
 {
   "sport": "NBA",
-  "generated_at_utc": "2026-10-12T21:23:48.778374+00:00",
-  "target_date": "2026-10-12",
+  "generated_at_utc": "2026-10-13T00:57:17.049874+00:00",
+  "target_date": "2026-10-13",
   "season": "2026-27",
   "model_version": "nba-v2-roster-four-factors",
   "model_status": "production",
@@ -52,10 +52,10 @@
         "mae": 16.052277339680376
       },
       "total_rf": {
-        "mae": 15.750307765858192
+        "mae": 15.750307765858189
       },
       "total_extra_trees": {
-        "mae": 15.823980776889647
+        "mae": 15.823980776889643
       }
     },
     "test": {
@@ -6053,216 +6053,189 @@
   },
   "games": [
     {
-      "game_id": "401914130",
-      "date": "2026-10-12T20:00Z",
-      "status": "In Progress",
+      "game_id": "401898403",
+      "date": "2026-10-13T23:00Z",
+      "status": "Scheduled",
       "season_type": 1,
       "decision_eligible": false,
-      "home_id": 22,
-      "away_id": 134478,
-      "home_abbr": "POR",
-      "away_abbr": "LON",
-      "home_team": "Portland Trail Blazers",
-      "away_team": "London Lions",
+      "home_id": 19,
+      "away_id": 5,
+      "home_abbr": "ORL",
+      "away_abbr": "CLE",
+      "home_team": "Orlando Magic",
+      "away_team": "Cleveland Cavaliers",
       "model_version": "nba-v2-roster-four-factors",
-      "home_win_probability": 0.3412012058743924,
-      "away_win_probability": 0.6587987941256076,
-      "predicted_margin": -7.650604758106336,
-      "predicted_total": 130.3821335734184,
-      "predicted_home_points": 61.36576440765603,
-      "predicted_away_points": 69.01636916576237,
-      "predicted_winner": "London Lions",
+      "home_win_probability": 0.4966430221602245,
+      "away_win_probability": 0.5033569778397755,
+      "predicted_margin": -1.2341855124231649,
+      "predicted_total": 237.73725640288546,
+      "predicted_home_points": 118.25153544523116,
+      "predicted_away_points": 119.48572095765431,
+      "predicted_winner": "Cleveland Cavaliers",
       "roster_context": {
         "home": {
-          "continuity": 0.7701423144525713,
-          "incoming_share": 0.2298576855474287,
-          "top3_share": 0.3991608550206951,
-          "roster_value": 12.153758757376142
+          "continuity": 0.8871164447046197,
+          "incoming_share": 0.1128835552953803,
+          "top3_share": 0.3681155178301381,
+          "roster_value": 12.534639629449918
         },
         "away": {
-          "continuity": 0.5,
-          "incoming_share": 0.5,
-          "top3_share": 0.5,
-          "roster_value": 0.0
+          "continuity": 0.7518058022498519,
+          "incoming_share": 0.24819419775014806,
+          "top3_share": 0.4073416222616933,
+          "roster_value": 14.059594687333814
         }
       },
       "x_availability_adjustments": [],
       "model_market_home_win_edge": null
     },
     {
-      "game_id": "401898402",
-      "date": "2026-10-12T23:00Z",
+      "game_id": "401908944",
+      "date": "2026-10-13T23:00Z",
       "status": "Scheduled",
       "season_type": 1,
       "decision_eligible": false,
-      "home_id": 1,
-      "away_id": 25,
-      "home_abbr": "ATL",
-      "away_abbr": "OKC",
-      "home_team": "Atlanta Hawks",
-      "away_team": "Oklahoma City Thunder",
+      "home_id": 28,
+      "away_id": 18,
+      "home_abbr": "TOR",
+      "away_abbr": "NY",
+      "home_team": "Toronto Raptors",
+      "away_team": "New York Knicks",
       "model_version": "nba-v2-roster-four-factors",
-      "home_win_probability": 0.2826391303058034,
-      "away_win_probability": 0.7173608696941967,
-      "predicted_margin": -6.829607801493296,
-      "predicted_total": 236.6373364403417,
-      "predicted_home_points": 114.9038643194242,
-      "predicted_away_points": 121.7334721209175,
-      "predicted_winner": "Oklahoma City Thunder",
+      "home_win_probability": 0.733354497442725,
+      "away_win_probability": 0.26664550255727504,
+      "predicted_margin": 7.46551607965841,
+      "predicted_total": 225.72970263220603,
+      "predicted_home_points": 116.59760935593222,
+      "predicted_away_points": 109.1320932762738,
+      "predicted_winner": "Toronto Raptors",
       "roster_context": {
         "home": {
-          "continuity": 0.6965181058495822,
-          "incoming_share": 0.3034818941504178,
-          "top3_share": 0.3565459610027855,
-          "roster_value": 12.880901829112647
+          "continuity": 0.7512661141804788,
+          "incoming_share": 0.24873388581952116,
+          "top3_share": 0.40630755064456725,
+          "roster_value": 13.177166209301236
         },
         "away": {
-          "continuity": 0.9209058759521219,
-          "incoming_share": 0.07909412404787808,
-          "top3_share": 0.43022306855277476,
-          "roster_value": 13.702893679958832
-        }
-      },
-      "market_bookmaker": "DraftKings",
-      "market_updated_at": "2026-10-12T21:26:20.167049+00:00",
-      "market_home_moneyline": -198,
-      "market_away_moneyline": 164,
-      "market_home_spread": -5.5,
-      "market_away_spread": 5.5,
-      "market_total": 222.5,
-      "x_availability_adjustments": [],
-      "model_market_spread_edge": -12.33,
-      "model_market_total_edge": 14.14,
-      "model_market_home_win_edge": -0.3543
-    },
-    {
-      "game_id": "401901824",
-      "date": "2026-10-12T23:00Z",
-      "status": "Scheduled",
-      "season_type": 1,
-      "decision_eligible": false,
-      "home_id": 27,
-      "away_id": 17,
-      "home_abbr": "WSH",
-      "away_abbr": "BKN",
-      "home_team": "Washington Wizards",
-      "away_team": "Brooklyn Nets",
-      "model_version": "nba-v2-roster-four-factors",
-      "home_win_probability": 0.40850746340735555,
-      "away_win_probability": 0.5914925365926444,
-      "predicted_margin": -3.516941296341212,
-      "predicted_total": 235.82374143202776,
-      "predicted_home_points": 116.15340006784328,
-      "predicted_away_points": 119.67034136418448,
-      "predicted_winner": "Brooklyn Nets",
-      "roster_context": {
-        "home": {
-          "continuity": 0.8035006958569746,
-          "incoming_share": 0.1964993041430254,
-          "top3_share": 0.31399207793598116,
-          "roster_value": 10.514515054610925
-        },
-        "away": {
-          "continuity": 0.7007331952762076,
-          "incoming_share": 0.2992668047237924,
-          "top3_share": 0.34051603514859796,
-          "roster_value": 10.3371628906299
-        }
-      },
-      "x_availability_adjustments": [],
-      "model_market_home_win_edge": null
-    },
-    {
-      "game_id": "401914124",
-      "date": "2026-10-12T23:30Z",
-      "status": "Scheduled",
-      "season_type": 1,
-      "decision_eligible": false,
-      "home_id": 18,
-      "away_id": 16,
-      "home_abbr": "NY",
-      "away_abbr": "MIN",
-      "home_team": "New York Knicks",
-      "away_team": "Minnesota Timberwolves",
-      "model_version": "nba-v2-roster-four-factors",
-      "home_win_probability": 0.5293980335056386,
-      "away_win_probability": 0.47060196649436137,
-      "predicted_margin": 0.059371001056884865,
-      "predicted_total": 231.59243859282122,
-      "predicted_home_points": 115.82590479693906,
-      "predicted_away_points": 115.76653379588217,
-      "predicted_winner": "New York Knicks",
-      "roster_context": {
-        "home": {
           "continuity": 0.7224032756747722,
           "incoming_share": 0.27759672432522775,
           "top3_share": 0.3242667335171722,
           "roster_value": 11.974012813293907
-        },
-        "away": {
-          "continuity": 0.6494337248322147,
-          "incoming_share": 0.35056627516778527,
-          "top3_share": 0.37714974832214765,
-          "roster_value": 12.77262317410423
         }
       },
-      "market_bookmaker": "DraftKings",
-      "market_updated_at": "2026-10-12T21:26:20.167049+00:00",
-      "market_home_moneyline": -115,
-      "market_away_moneyline": -105,
-      "market_home_spread": -1.5,
-      "market_away_spread": 1.5,
-      "market_total": 227.5,
       "x_availability_adjustments": [],
-      "model_market_spread_edge": -1.44,
-      "model_market_total_edge": 4.09,
-      "model_market_home_win_edge": 0.0186
+      "model_market_home_win_edge": null
     },
     {
-      "game_id": "401898721",
-      "date": "2026-10-13T01:00Z",
+      "game_id": "401908621",
+      "date": "2026-10-14T00:00Z",
       "status": "Scheduled",
       "season_type": 1,
       "decision_eligible": false,
-      "home_id": 26,
-      "away_id": 24,
-      "home_abbr": "UTAH",
-      "away_abbr": "SA",
-      "home_team": "Utah Jazz",
-      "away_team": "San Antonio Spurs",
+      "home_id": 25,
+      "away_id": 11,
+      "home_abbr": "OKC",
+      "away_abbr": "IND",
+      "home_team": "Oklahoma City Thunder",
+      "away_team": "Indiana Pacers",
       "model_version": "nba-v2-roster-four-factors",
-      "home_win_probability": 0.12274913973879731,
-      "away_win_probability": 0.8772508602612027,
-      "predicted_margin": -16.33206996120287,
-      "predicted_total": 249.92146002444747,
-      "predicted_home_points": 116.7946950316223,
-      "predicted_away_points": 133.12676499282517,
-      "predicted_winner": "San Antonio Spurs",
+      "home_win_probability": 0.8310312103340505,
+      "away_win_probability": 0.16896878966594953,
+      "predicted_margin": 11.504671787774223,
+      "predicted_total": 240.06376670748782,
+      "predicted_home_points": 125.78421924763101,
+      "predicted_away_points": 114.2795474598568,
+      "predicted_winner": "Oklahoma City Thunder",
       "roster_context": {
         "home": {
-          "continuity": 0.7173125174240312,
-          "incoming_share": 0.28268748257596876,
-          "top3_share": 0.31067744633398386,
-          "roster_value": 11.593078623883306
+          "continuity": 0.9209058759521219,
+          "incoming_share": 0.07909412404787808,
+          "top3_share": 0.43022306855277476,
+          "roster_value": 13.702893679958832
         },
         "away": {
-          "continuity": 0.8933872502378687,
-          "incoming_share": 0.10661274976213131,
-          "top3_share": 0.31627021883920076,
-          "roster_value": 12.931436952522727
+          "continuity": 0.8062879759183901,
+          "incoming_share": 0.19371202408160992,
+          "top3_share": 0.32432131110987233,
+          "roster_value": 11.153526668651265
         }
       },
-      "market_bookmaker": "DraftKings",
-      "market_updated_at": "2026-10-12T21:26:20.167049+00:00",
-      "market_home_moneyline": -192,
-      "market_away_moneyline": 160,
-      "market_home_spread": -4.5,
-      "market_away_spread": 4.5,
-      "market_total": 226.5,
       "x_availability_adjustments": [],
-      "model_market_spread_edge": -20.83,
-      "model_market_total_edge": 23.42,
-      "model_market_home_win_edge": -0.5082
+      "model_market_home_win_edge": null
+    },
+    {
+      "game_id": "401898718",
+      "date": "2026-10-14T02:00Z",
+      "status": "Scheduled",
+      "season_type": 1,
+      "decision_eligible": false,
+      "home_id": 13,
+      "away_id": 9,
+      "home_abbr": "LAL",
+      "away_abbr": "GS",
+      "home_team": "Los Angeles Lakers",
+      "away_team": "Golden State Warriors",
+      "model_version": "nba-v2-roster-four-factors",
+      "home_win_probability": 0.6571080640721774,
+      "away_win_probability": 0.34289193592782263,
+      "predicted_margin": 4.029284930427112,
+      "predicted_total": 233.98099087262,
+      "predicted_home_points": 119.00513790152355,
+      "predicted_away_points": 114.97585297109644,
+      "predicted_winner": "Los Angeles Lakers",
+      "roster_context": {
+        "home": {
+          "continuity": 0.49063231850117095,
+          "incoming_share": 0.509367681498829,
+          "top3_share": 0.38489461358313815,
+          "roster_value": 12.171073223282319
+        },
+        "away": {
+          "continuity": 0.8370639129221323,
+          "incoming_share": 0.16293608707786766,
+          "top3_share": 0.3206809935807982,
+          "roster_value": 11.459469417374423
+        }
+      },
+      "x_availability_adjustments": [],
+      "model_market_home_win_edge": null
+    },
+    {
+      "game_id": "401901826",
+      "date": "2026-10-14T02:00Z",
+      "status": "Scheduled",
+      "season_type": 1,
+      "decision_eligible": false,
+      "home_id": 23,
+      "away_id": 22,
+      "home_abbr": "SAC",
+      "away_abbr": "POR",
+      "home_team": "Sacramento Kings",
+      "away_team": "Portland Trail Blazers",
+      "model_version": "nba-v2-roster-four-factors",
+      "home_win_probability": 0.25009263937940146,
+      "away_win_probability": 0.7499073606205986,
+      "predicted_margin": -11.6164427070625,
+      "predicted_total": 233.6709644415016,
+      "predicted_home_points": 111.02726086721955,
+      "predicted_away_points": 122.64370357428206,
+      "predicted_winner": "Portland Trail Blazers",
+      "roster_context": {
+        "home": {
+          "continuity": 0.8579019280400789,
+          "incoming_share": 0.14209807195992108,
+          "top3_share": 0.42500379535448607,
+          "roster_value": 10.676987429953675
+        },
+        "away": {
+          "continuity": 0.7701423144525713,
+          "incoming_share": 0.2298576855474287,
+          "top3_share": 0.3991608550206951,
+          "roster_value": 12.153758757376142
+        }
+      },
+      "x_availability_adjustments": [],
+      "model_market_home_win_edge": null
     }
   ],
   "historical_data_source": "SportsDataverse ESPN NBA bulk releases",
