@@ -1,6 +1,6 @@
 {
   "sport": "NBA",
-  "generated_at_utc": "2026-10-13T00:57:17.049874+00:00",
+  "generated_at_utc": "2026-10-13T03:09:19.219104+00:00",
   "target_date": "2026-10-13",
   "season": "2026-27",
   "model_version": "nba-v2-roster-four-factors",
@@ -26,7 +26,7 @@
         "accuracy": 0.6091644204851752
       },
       "winner_rf": {
-        "brier": 0.24199123579885937,
+        "brier": 0.2419912357988593,
         "accuracy": 0.5822102425876011
       },
       "winner_extra_trees": {
@@ -52,10 +52,10 @@
         "mae": 16.052277339680376
       },
       "total_rf": {
-        "mae": 15.750307765858189
+        "mae": 15.750307765858192
       },
       "total_extra_trees": {
-        "mae": 15.823980776889643
+        "mae": 15.823980776889647
       }
     },
     "test": {
@@ -6102,19 +6102,19 @@
       "home_team": "Toronto Raptors",
       "away_team": "New York Knicks",
       "model_version": "nba-v2-roster-four-factors",
-      "home_win_probability": 0.733354497442725,
-      "away_win_probability": 0.26664550255727504,
-      "predicted_margin": 7.46551607965841,
-      "predicted_total": 225.72970263220603,
-      "predicted_home_points": 116.59760935593222,
-      "predicted_away_points": 109.1320932762738,
+      "home_win_probability": 0.7337701850253753,
+      "away_win_probability": 0.2662298149746247,
+      "predicted_margin": 7.477905210133233,
+      "predicted_total": 225.73400088904168,
+      "predicted_home_points": 116.60595304958746,
+      "predicted_away_points": 109.12804783945423,
       "predicted_winner": "Toronto Raptors",
       "roster_context": {
         "home": {
-          "continuity": 0.7512661141804788,
-          "incoming_share": 0.24873388581952116,
-          "top3_share": 0.40630755064456725,
-          "roster_value": 13.177166209301236
+          "continuity": 0.751079882508783,
+          "incoming_share": 0.248920117491217,
+          "top3_share": 0.40661176064044235,
+          "roster_value": 13.186825832391769
         },
         "away": {
           "continuity": 0.7224032756747722,
