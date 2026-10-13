@@ -1,12 +1,12 @@
 {
-  "generated_at_utc": "2026-10-13T14:25:35.693360+00:00",
+  "generated_at_utc": "2026-10-13T22:57:11.537089+00:00",
   "status": "ok",
   "production_adjustment_enabled": false,
-  "new_posts_seen": 4,
+  "new_posts_seen": 2,
   "new_picks_parsed": 0,
   "ledger_size": 0,
-  "since_id_used": "2109770081706389912",
-  "newest_id": "2109856279061794864",
+  "since_id_used": "2109856279061794864",
+  "newest_id": "2110131899570254316",
   "accounts": {
     "@RufusPeabody": {
       "tier": "established_professional",
@@ -62,32 +62,18 @@
   "new_picks": [],
   "candidate_posts": [
     {
-      "post_id": "2109856279061794864",
-      "source": "@iamrahstradamus",
-      "published_at_utc": "2026-10-13T03:58:30.000Z",
-      "text": "@GladItsJeff You're right but there's always a media aspect to this as well. You don't keep your foot on the gas and you turn the ball over and you're risking your job so coaches tend to play it safe.",
-      "url": "https://x.com/iamrahstradamus/status/2109856279061794864"
+      "post_id": "2110131899570254316",
+      "source": "@FezzikSports",
+      "published_at_utc": "2026-10-13T22:13:43.000Z",
+      "text": "Laughing out loud\n\nI had one Pick in the Splashsports even money weekly contest last week\n\nI had a grand total of two super contest Picks last year and won the second half contest versus 1000 people https://t.co/1diEQK2Eax",
+      "url": "https://x.com/FezzikSports/status/2110131899570254316"
     },
     {
-      "post_id": "2109852275980345389",
-      "source": "@iamrahstradamus",
-      "published_at_utc": "2026-10-13T03:42:36.000Z",
-      "text": "You really gotta do kicker rankings every time you think about making a Super Bowl pick. \n\n\"It's serious as cancer.....\" (C)-Shyne Po",
-      "url": "https://x.com/iamrahstradamus/status/2109852275980345389"
-    },
-    {
-      "post_id": "2109829966879654238",
+      "post_id": "2110108497941598671",
       "source": "@wheatonbrando",
-      "published_at_utc": "2026-10-13T02:13:57.000Z",
-      "text": "@Bnyce1025 There was nothing else there on the play. What happens when you get nothing on the third down, on the next play?",
-      "url": "https://x.com/wheatonbrando/status/2109829966879654238"
-    },
-    {
-      "post_id": "2109824921476206742",
-      "source": "@iamrahstradamus",
-      "published_at_utc": "2026-10-13T01:53:54.000Z",
-      "text": "Puka Nacua Over 6.5 receptions \u2705",
-      "url": "https://x.com/iamrahstradamus/status/2109824921476206742"
+      "published_at_utc": "2026-10-13T20:40:44.000Z",
+      "text": "@IBlackhustlers Haha I have no idea, super does not look like a show I would like. I just posted it because the linebacker with the same name had a huge play last night",
+      "url": "https://x.com/wheatonbrando/status/2110108497941598671"
     }
   ],
   "promotion_thresholds": {
