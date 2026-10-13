@@ -1,14 +1,14 @@
 {
-  "generated_at_utc": "2026-10-13T03:11:23.554593+00:00",
+  "generated_at_utc": "2026-10-13T17:36:42.830821+00:00",
   "method": "Earliest committed pregame NBA forecast and market line joined to ESPN final score by game ID",
   "summary": {
-    "n": 34,
+    "n": 35,
     "ml": {
       "wins": 18,
-      "losses": 16,
+      "losses": 17,
       "pushes": 0,
-      "graded": 34,
-      "rate": 0.5294117647058824
+      "graded": 35,
+      "rate": 0.5142857142857142
     },
     "ats": {
       "wins": 0,
@@ -88,6 +88,29 @@
       "actual_away_score": 122.0,
       "actual_margin": -18.0,
       "actual_total": 226.0,
+      "winner_correct": false,
+      "market_home_spread": null,
+      "market_total": null,
+      "market_bookmaker": null,
+      "ats_result": null,
+      "ou_result": null
+    },
+    {
+      "game_id": "401898721",
+      "game_date_utc": "2026-10-13T01:00Z",
+      "home_team": "Utah Jazz",
+      "away_team": "San Antonio Spurs",
+      "home_abbr": "UTAH",
+      "away_abbr": "SA",
+      "prediction_issued_at": "2026-10-12T01:43:23.203009+00:00",
+      "prediction_commit": "2da075ae",
+      "home_win_probability": 0.1227491397388003,
+      "predicted_margin": -16.33206996120297,
+      "predicted_total": 249.9214600244473,
+      "actual_home_score": 119.0,
+      "actual_away_score": 109.0,
+      "actual_margin": 10.0,
+      "actual_total": 228.0,
       "winner_correct": false,
       "market_home_spread": null,
       "market_total": null,
