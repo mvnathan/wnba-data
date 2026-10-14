@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-14T13:44:34.969871+00:00",
+  "generated_at_utc": "2026-10-14T18:38:43.578210+00:00",
   "status": "ok",
   "direct_model_adjustment_enabled": false,
   "integration_stage": "context_and_edge_reliability_only",
@@ -60,8 +60,8 @@
   },
   "x_source_diagnostics": {
     "status": "ok",
-    "posts": 2,
-    "posts_general": 2,
+    "posts": 4,
+    "posts_general": 4,
     "posts_nba": 0,
     "accounts": [
       "AdamSchefter",
@@ -71,15 +71,187 @@
       "ShamsCharania",
       "ChrisBHaynes"
     ],
-    "since_id_used_general": "2110091125352742939",
+    "since_id_used_general": "2110363660254376201",
     "since_id_used_nba": "2109849063789412464",
-    "newest_id": "2110363660254376201",
-    "newest_id_general": "2110363660254376201",
+    "newest_id": "2110439540250878430",
+    "newest_id_general": "2110439540250878430",
     "newest_id_nba": "2109849063789412464",
     "query_general": "(from:AdamSchefter OR from:RapSheet OR from:JeffPassan OR from:alexaphilippou) (out OR inactive OR doubtful OR questionable OR injury OR injured OR rest OR resting OR \"expected to play\" OR \"will start\" OR \"minutes restriction\" OR \"snap count\" OR \"pitch count\") -is:retweet lang:en",
     "query_nba": "(from:ShamsCharania OR from:ChrisBHaynes) (out OR inactive OR doubtful OR questionable OR injury OR injured OR rest OR resting OR \"expected to play\" OR \"will start\" OR \"minutes restriction\" OR \"snap count\" OR \"pitch count\" OR \"will miss\" OR sidelined OR available OR cleared OR starting OR surgery OR sprain OR signed OR waived OR trade OR traded) -is:retweet lang:en"
   },
   "signals": [
+    {
+      "sport": "NFL",
+      "source": "NFL Official Injury Report",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-10-14T18:38:42.737078+00:00",
+      "status_signal": "out",
+      "tactical_flags": [],
+      "confidence": 0.65,
+      "text": "NFL Week 5 inactives: Players ruled out for Sunday's 13 games",
+      "url": "https://www.nfl.com/injuries/"
+    },
+    {
+      "sport": "NFL",
+      "source": "NFL Official Injury Report",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-10-14T18:38:42.737145+00:00",
+      "status_signal": "out",
+      "tactical_flags": [],
+      "confidence": 0.65,
+      "text": "NFL news roundup: Saints' Tyler Shough (left hand) limited in practice; Giants' Malik Nabers (knee) sits out",
+      "url": "https://www.nfl.com/injuries/"
+    },
+    {
+      "sport": "NFL",
+      "source": "NFL Official Injury Report",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-10-14T18:38:42.737253+00:00",
+      "status_signal": "out",
+      "tactical_flags": [],
+      "confidence": 0.65,
+      "text": "NFL Week 4 inactives: Players ruled out for Sunday's 14 games",
+      "url": "https://www.nfl.com/injuries/"
+    },
+    {
+      "sport": "NFL",
+      "source": "NFL Official Injury Report",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-10-14T18:38:42.737271+00:00",
+      "status_signal": "out",
+      "tactical_flags": [],
+      "confidence": 0.65,
+      "text": "Vikings WR Justin Jefferson (ankle) out Sunday against Dolphins",
+      "url": "https://www.nfl.com/injuries/"
+    },
+    {
+      "sport": "NFL",
+      "source": "NFL Official Injury Report",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-10-14T18:38:42.737295+00:00",
+      "status_signal": "out",
+      "tactical_flags": [],
+      "confidence": 0.65,
+      "text": "Commanders' Jayden Daniels (elbow) ruled out for London game; QB Marcus Mariota to start vs. Colts",
+      "url": "https://www.nfl.com/injuries/"
+    },
+    {
+      "sport": "NFL",
+      "source": "NFL Official Injury Report",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-10-14T18:38:42.737343+00:00",
+      "status_signal": "out",
+      "tactical_flags": [],
+      "confidence": 0.65,
+      "text": "Buccaneers QB Baker Mayfield out at least 3 weeks with thumb injury; rookie Jalon Daniels to start",
+      "url": "https://www.nfl.com/injuries/"
+    },
+    {
+      "sport": "NFL",
+      "source": "NFL Official Injury Report",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-10-14T18:38:42.737366+00:00",
+      "status_signal": "out",
+      "tactical_flags": [],
+      "confidence": 0.65,
+      "text": "NFL news roundup: Jaycee Horn out indefinitely; Justin Jefferson, Breece Hall avoid serious injuries",
+      "url": "https://www.nfl.com/injuries/"
+    },
+    {
+      "sport": "MLB",
+      "source": "MLB Official Injury Report",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-10-14T18:38:43.062748+00:00",
+      "status_signal": "out",
+      "tactical_flags": [],
+      "confidence": 0.65,
+      "text": "Flaherty strikes out two in first rehab outing, eyes end-of-year return",
+      "url": "https://www.mlb.com/injury-report"
+    },
+    {
+      "sport": "MLB",
+      "source": "MLB Official Injury Report",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-10-14T18:38:43.062931+00:00",
+      "status_signal": "out",
+      "tactical_flags": [],
+      "confidence": 0.65,
+      "text": "Young out for season, but avoids serious injury after 'terrifying' collision with McLean",
+      "url": "https://www.mlb.com/injury-report"
+    },
+    {
+      "sport": "MLB",
+      "source": "MLB Official Injury Report",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-10-14T18:38:43.063098+00:00",
+      "status_signal": "out",
+      "tactical_flags": [],
+      "confidence": 0.65,
+      "text": "Goodman (right thumb soreness) out again on Wednesday",
+      "url": "https://www.mlb.com/injury-report"
+    },
+    {
+      "sport": "MLB",
+      "source": "MLB Official Injury Report",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-10-14T18:38:43.062398+00:00",
+      "status_signal": "probable",
+      "tactical_flags": [],
+      "confidence": 0.585,
+      "text": "News Probable Pitchers Awards Starting Lineups Transactions Injury Report World Baseball Classic MLB Draft All-Star Game AUSL MLB Pipeline Postseason History Podcasts International",
+      "url": "https://www.mlb.com/injury-report"
+    },
+    {
+      "sport": "MLB",
+      "source": "MLB Probable Pitchers",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-10-14T18:38:43.139022+00:00",
+      "status_signal": "probable",
+      "tactical_flags": [],
+      "confidence": 0.585,
+      "text": "News Probable Pitchers Awards Starting Lineups Transactions Injury Report World Baseball Classic MLB Draft All-Star Game AUSL MLB Pipeline Postseason History Podcasts International",
+      "url": "https://www.mlb.com/probable-pitchers"
+    },
+    {
+      "sport": "NFL",
+      "source": "NFL Official Injury Report",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-10-14T18:38:42.737398+00:00",
+      "status_signal": null,
+      "tactical_flags": [
+        "rest_candidate"
+      ],
+      "confidence": 0.4875,
+      "text": "Dolphins RB De'Von Achane to miss rest of season after tearing ACL in loss to Chiefs",
+      "url": "https://www.nfl.com/injuries/"
+    },
+    {
+      "sport": "MLB",
+      "source": "MLB Official Injury Report",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-10-14T18:38:43.062580+00:00",
+      "status_signal": null,
+      "tactical_flags": [
+        "rest_candidate"
+      ],
+      "confidence": 0.4875,
+      "text": "Anthony not expected to need surgery: 'Rest is likely the best path to recovery'",
+      "url": "https://www.mlb.com/injury-report"
+    },
     {
       "sport": "NFL",
       "source": "@RapSheet",
@@ -103,178 +275,6 @@
       "confidence": 0.662,
       "text": "Headlines: \u2014 Alaric Jackson suspended 2 games https://t.co/3sHaLhpFWU \u2014 Mixed verdict for Tyreek Hill https://t.co/7EmQ0UFXaW \u2014 Micah speaks out on Jayden Daniels https://t.co/sRAVawAY33 \u2014 Coen to change play-calling methods https://t.co/s2DXNnRX5p",
       "url": "https://x.com/RapSheet/status/2110337564137988568"
-    },
-    {
-      "sport": "NFL",
-      "source": "NFL Official Injury Report",
-      "source_tier": "official",
-      "published_at_utc": null,
-      "fetched_at_utc": "2026-10-14T13:44:34.034015+00:00",
-      "status_signal": "out",
-      "tactical_flags": [],
-      "confidence": 0.65,
-      "text": "NFL Week 5 inactives: Players ruled out for Sunday's 13 games",
-      "url": "https://www.nfl.com/injuries/"
-    },
-    {
-      "sport": "NFL",
-      "source": "NFL Official Injury Report",
-      "source_tier": "official",
-      "published_at_utc": null,
-      "fetched_at_utc": "2026-10-14T13:44:34.034078+00:00",
-      "status_signal": "out",
-      "tactical_flags": [],
-      "confidence": 0.65,
-      "text": "NFL news roundup: Saints' Tyler Shough (left hand) limited in practice; Giants' Malik Nabers (knee) sits out",
-      "url": "https://www.nfl.com/injuries/"
-    },
-    {
-      "sport": "NFL",
-      "source": "NFL Official Injury Report",
-      "source_tier": "official",
-      "published_at_utc": null,
-      "fetched_at_utc": "2026-10-14T13:44:34.034229+00:00",
-      "status_signal": "out",
-      "tactical_flags": [],
-      "confidence": 0.65,
-      "text": "NFL Week 4 inactives: Players ruled out for Sunday's 14 games",
-      "url": "https://www.nfl.com/injuries/"
-    },
-    {
-      "sport": "NFL",
-      "source": "NFL Official Injury Report",
-      "source_tier": "official",
-      "published_at_utc": null,
-      "fetched_at_utc": "2026-10-14T13:44:34.034248+00:00",
-      "status_signal": "out",
-      "tactical_flags": [],
-      "confidence": 0.65,
-      "text": "Vikings WR Justin Jefferson (ankle) out Sunday against Dolphins",
-      "url": "https://www.nfl.com/injuries/"
-    },
-    {
-      "sport": "NFL",
-      "source": "NFL Official Injury Report",
-      "source_tier": "official",
-      "published_at_utc": null,
-      "fetched_at_utc": "2026-10-14T13:44:34.034272+00:00",
-      "status_signal": "out",
-      "tactical_flags": [],
-      "confidence": 0.65,
-      "text": "Commanders' Jayden Daniels (elbow) ruled out for London game; QB Marcus Mariota to start vs. Colts",
-      "url": "https://www.nfl.com/injuries/"
-    },
-    {
-      "sport": "NFL",
-      "source": "NFL Official Injury Report",
-      "source_tier": "official",
-      "published_at_utc": null,
-      "fetched_at_utc": "2026-10-14T13:44:34.034321+00:00",
-      "status_signal": "out",
-      "tactical_flags": [],
-      "confidence": 0.65,
-      "text": "Buccaneers QB Baker Mayfield out at least 3 weeks with thumb injury; rookie Jalon Daniels to start",
-      "url": "https://www.nfl.com/injuries/"
-    },
-    {
-      "sport": "NFL",
-      "source": "NFL Official Injury Report",
-      "source_tier": "official",
-      "published_at_utc": null,
-      "fetched_at_utc": "2026-10-14T13:44:34.034343+00:00",
-      "status_signal": "out",
-      "tactical_flags": [],
-      "confidence": 0.65,
-      "text": "NFL news roundup: Jaycee Horn out indefinitely; Justin Jefferson, Breece Hall avoid serious injuries",
-      "url": "https://www.nfl.com/injuries/"
-    },
-    {
-      "sport": "MLB",
-      "source": "MLB Official Injury Report",
-      "source_tier": "official",
-      "published_at_utc": null,
-      "fetched_at_utc": "2026-10-14T13:44:34.356962+00:00",
-      "status_signal": "out",
-      "tactical_flags": [],
-      "confidence": 0.65,
-      "text": "Flaherty strikes out two in first rehab outing, eyes end-of-year return",
-      "url": "https://www.mlb.com/injury-report"
-    },
-    {
-      "sport": "MLB",
-      "source": "MLB Official Injury Report",
-      "source_tier": "official",
-      "published_at_utc": null,
-      "fetched_at_utc": "2026-10-14T13:44:34.357167+00:00",
-      "status_signal": "out",
-      "tactical_flags": [],
-      "confidence": 0.65,
-      "text": "Young out for season, but avoids serious injury after 'terrifying' collision with McLean",
-      "url": "https://www.mlb.com/injury-report"
-    },
-    {
-      "sport": "MLB",
-      "source": "MLB Official Injury Report",
-      "source_tier": "official",
-      "published_at_utc": null,
-      "fetched_at_utc": "2026-10-14T13:44:34.357299+00:00",
-      "status_signal": "out",
-      "tactical_flags": [],
-      "confidence": 0.65,
-      "text": "Goodman (right thumb soreness) out again on Wednesday",
-      "url": "https://www.mlb.com/injury-report"
-    },
-    {
-      "sport": "MLB",
-      "source": "MLB Official Injury Report",
-      "source_tier": "official",
-      "published_at_utc": null,
-      "fetched_at_utc": "2026-10-14T13:44:34.356614+00:00",
-      "status_signal": "probable",
-      "tactical_flags": [],
-      "confidence": 0.585,
-      "text": "News Probable Pitchers Awards Starting Lineups Transactions Injury Report World Baseball Classic MLB Draft All-Star Game AUSL MLB Pipeline Postseason History Podcasts International",
-      "url": "https://www.mlb.com/injury-report"
-    },
-    {
-      "sport": "MLB",
-      "source": "MLB Probable Pitchers",
-      "source_tier": "official",
-      "published_at_utc": null,
-      "fetched_at_utc": "2026-10-14T13:44:34.437253+00:00",
-      "status_signal": "probable",
-      "tactical_flags": [],
-      "confidence": 0.585,
-      "text": "News Probable Pitchers Awards Starting Lineups Transactions Injury Report World Baseball Classic MLB Draft All-Star Game AUSL MLB Pipeline Postseason History Podcasts International",
-      "url": "https://www.mlb.com/probable-pitchers"
-    },
-    {
-      "sport": "NFL",
-      "source": "NFL Official Injury Report",
-      "source_tier": "official",
-      "published_at_utc": null,
-      "fetched_at_utc": "2026-10-14T13:44:34.034375+00:00",
-      "status_signal": null,
-      "tactical_flags": [
-        "rest_candidate"
-      ],
-      "confidence": 0.4875,
-      "text": "Dolphins RB De'Von Achane to miss rest of season after tearing ACL in loss to Chiefs",
-      "url": "https://www.nfl.com/injuries/"
-    },
-    {
-      "sport": "MLB",
-      "source": "MLB Official Injury Report",
-      "source_tier": "official",
-      "published_at_utc": null,
-      "fetched_at_utc": "2026-10-14T13:44:34.356798+00:00",
-      "status_signal": null,
-      "tactical_flags": [
-        "rest_candidate"
-      ],
-      "confidence": 0.4875,
-      "text": "Anthony not expected to need surgery: 'Rest is likely the best path to recovery'",
-      "url": "https://www.mlb.com/injury-report"
     },
     {
       "sport": "WNBA",
@@ -407,22 +407,10 @@
       "confidence": 0.5554,
       "text": "From The Aftermath on @nflnetwork: The #Vikings, one of the NFL\u2019s few undefeated teams, should be pretty healthy out of the bye. https://t.co/IcdImXSy59",
       "url": "https://x.com/RapSheet/status/2109722068933873825"
-    },
-    {
-      "sport": "NFL",
-      "source": "@RapSheet",
-      "source_tier": "trusted_media",
-      "published_at_utc": "2026-10-12T15:47:45.000Z",
-      "fetched_at_utc": "2026-10-12T23:00:22.150547+00:00",
-      "status_signal": "out",
-      "tactical_flags": [],
-      "confidence": 0.4176,
-      "text": "#Browns star LB Carson Schwesinger suffered a Grade 1 ankle sprain in their loss against the #Jets, though the injury occurred before his strip sack of Geno Smith, sources say. He is not ruled out for this week, though availability depends on how he responds. https://t.co/jpB1zbAlQb",
-      "url": "https://x.com/RapSheet/status/2109672378804654497"
     }
   ],
   "structured": {
-    "generated_at_utc": "2026-10-14T13:44:34.969786+00:00",
+    "generated_at_utc": "2026-10-14T18:38:43.578107+00:00",
     "players": [],
     "teams": {},
     "policy": {
