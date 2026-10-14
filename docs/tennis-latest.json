@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-14T17:08:53.186467Z",
+  "generated_at_utc": "2026-10-14T21:40:06.601758Z",
   "target_date": "2026-10-14",
   "model_version": "tennis-v3-tournament-context",
   "eligibility": "At least one player ranked in the top 150",
@@ -956,8 +956,8 @@
       "tournament": "RoveretOpen Citt\u00e0 della Pace",
       "round": "Round 2",
       "start_time_utc": "2026-10-14T16:00Z",
-      "status": "In Progress",
-      "status_state": "in",
+      "status": "Final",
+      "status_state": "post",
       "court": "Centre Court",
       "venue": "Rovereto, Italy",
       "broadcast": "",
