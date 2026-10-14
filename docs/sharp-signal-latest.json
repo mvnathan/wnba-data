@@ -1,12 +1,12 @@
 {
-  "generated_at_utc": "2026-10-14T12:10:10.045851+00:00",
+  "generated_at_utc": "2026-10-14T17:23:26.004910+00:00",
   "status": "ok",
   "production_adjustment_enabled": false,
-  "new_posts_seen": 0,
+  "new_posts_seen": 1,
   "new_picks_parsed": 0,
   "ledger_size": 0,
   "since_id_used": "2110131899570254316",
-  "newest_id": "2110131899570254316",
+  "newest_id": "2110406252878778857",
   "accounts": {
     "@RufusPeabody": {
       "tier": "established_professional",
@@ -60,7 +60,15 @@
     }
   },
   "new_picks": [],
-  "candidate_posts": [],
+  "candidate_posts": [
+    {
+      "post_id": "2110406252878778857",
+      "source": "@iamrahstradamus",
+      "published_at_utc": "2026-10-14T16:23:54.000Z",
+      "text": "On the real, I'll know Lebron has truly embraced Philly if he's in David's Mai Lai Wah getting salt and pepper wings on the late night tip........or he heads over to Danny Wok's in South West. https://t.co/IxpCWP0WzD",
+      "url": "https://x.com/iamrahstradamus/status/2110406252878778857"
+    }
+  ],
   "promotion_thresholds": {
     "minimum_graded_picks": 100,
     "minimum_positive_clv_rate": 0.52,
