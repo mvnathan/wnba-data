@@ -1,11 +1,11 @@
 {
-  "generated_at_utc": "2026-10-13T22:57:11.537089+00:00",
+  "generated_at_utc": "2026-10-14T05:06:03.810756+00:00",
   "status": "ok",
   "production_adjustment_enabled": false,
-  "new_posts_seen": 2,
+  "new_posts_seen": 0,
   "new_picks_parsed": 0,
   "ledger_size": 0,
-  "since_id_used": "2109856279061794864",
+  "since_id_used": "2110131899570254316",
   "newest_id": "2110131899570254316",
   "accounts": {
     "@RufusPeabody": {
@@ -60,22 +60,7 @@
     }
   },
   "new_picks": [],
-  "candidate_posts": [
-    {
-      "post_id": "2110131899570254316",
-      "source": "@FezzikSports",
-      "published_at_utc": "2026-10-13T22:13:43.000Z",
-      "text": "Laughing out loud\n\nI had one Pick in the Splashsports even money weekly contest last week\n\nI had a grand total of two super contest Picks last year and won the second half contest versus 1000 people https://t.co/1diEQK2Eax",
-      "url": "https://x.com/FezzikSports/status/2110131899570254316"
-    },
-    {
-      "post_id": "2110108497941598671",
-      "source": "@wheatonbrando",
-      "published_at_utc": "2026-10-13T20:40:44.000Z",
-      "text": "@IBlackhustlers Haha I have no idea, super does not look like a show I would like. I just posted it because the linebacker with the same name had a huge play last night",
-      "url": "https://x.com/wheatonbrando/status/2110108497941598671"
-    }
-  ],
+  "candidate_posts": [],
   "promotion_thresholds": {
     "minimum_graded_picks": 100,
     "minimum_positive_clv_rate": 0.52,
