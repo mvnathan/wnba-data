@@ -1,11 +1,11 @@
 {
-  "generated_at_utc": "2026-10-14T21:49:49.686511+00:00",
+  "generated_at_utc": "2026-10-15T04:54:52.053389+00:00",
   "status": "ok",
   "production_adjustment_enabled": false,
-  "new_posts_seen": 1,
+  "new_posts_seen": 0,
   "new_picks_parsed": 0,
   "ledger_size": 0,
-  "since_id_used": "2110406252878778857",
+  "since_id_used": "2110455894081409226",
   "newest_id": "2110455894081409226",
   "accounts": {
     "@RufusPeabody": {
@@ -60,15 +60,7 @@
     }
   },
   "new_picks": [],
-  "candidate_posts": [
-    {
-      "post_id": "2110455894081409226",
-      "source": "@FezzikSports",
-      "published_at_utc": "2026-10-14T19:41:10.000Z",
-      "text": "CFB!  7 plays are UP! Including 4 plays TONIGHT!\n\nI ONLY sell picks at https://t.co/E2xLaZxAcu, NOWHERE else.\n\nDo not buy unless your bet size is over $100+\n\n8-0-1 Last Week CFB\n\nUp over 100 units fully documented last two years CFB\nUp 20 units this year CFB\n\nI used to sell daily",
-      "url": "https://x.com/FezzikSports/status/2110455894081409226"
-    }
-  ],
+  "candidate_posts": [],
   "promotion_thresholds": {
     "minimum_graded_picks": 100,
     "minimum_positive_clv_rate": 0.52,
