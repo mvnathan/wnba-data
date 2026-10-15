@@ -1,11 +1,11 @@
 {
-  "generated_at_utc": "2026-10-15T17:12:19.247912+00:00",
+  "generated_at_utc": "2026-10-15T21:33:47.801829+00:00",
   "status": "ok",
   "production_adjustment_enabled": false,
-  "new_posts_seen": 1,
+  "new_posts_seen": 0,
   "new_picks_parsed": 0,
   "ledger_size": 0,
-  "since_id_used": "2110612696899150030",
+  "since_id_used": "2110731106026987558",
   "newest_id": "2110731106026987558",
   "accounts": {
     "@RufusPeabody": {
@@ -60,15 +60,7 @@
     }
   },
   "new_picks": [],
-  "candidate_posts": [
-    {
-      "post_id": "2110731106026987558",
-      "source": "@FezzikSports",
-      "published_at_utc": "2026-10-15T13:54:45.000Z",
-      "text": "Short term results should not matter.   All that matters is LONG TERM documented results.\n\nI am up over 100 units in CFB in 2025 and 2026!\n\nI only sell picks at https://t.co/Pekv6QB73V   I do NOT have a website.   Let's keep winning!",
-      "url": "https://x.com/FezzikSports/status/2110731106026987558"
-    }
-  ],
+  "candidate_posts": [],
   "promotion_thresholds": {
     "minimum_graded_picks": 100,
     "minimum_positive_clv_rate": 0.52,
