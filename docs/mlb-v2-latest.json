@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-15T20:20:23.080167+00:00",
+  "generated_at_utc": "2026-10-15T23:41:12.938760+00:00",
   "target_date": "2026-10-15",
   "sport": "MLB",
   "model_version": "mlb-runs-v2",
@@ -85,7 +85,7 @@
       "market_away_moneyline": 112,
       "market_run_line_home": -1.5,
       "market_total": 6.5,
-      "market_updated_at": "2026-10-15T20:20:19.458764+00:00"
+      "market_updated_at": "2026-10-15T23:41:10.422597+00:00"
     },
     {
       "game_id": "849810",
@@ -93,7 +93,7 @@
       "home_team": "Los Angeles Dodgers",
       "away_team": "Milwaukee Brewers",
       "venue": "UNIQLO Field at Dodger Stadium",
-      "status": "Scheduled",
+      "status": "Pre-Game",
       "predicted_home_runs": 4.12,
       "predicted_away_runs": 3.94,
       "predicted_total_runs": 8.06,
@@ -153,11 +153,11 @@
       "availability_note": "Standings/urgency context cannot confirm a specific star will rest; actual lineup/inactive data should override the proxy when available.",
       "market_used_in_prediction": false,
       "market_bookmaker": "DraftKings",
-      "market_home_moneyline": -157,
-      "market_away_moneyline": 130,
+      "market_home_moneyline": -151,
+      "market_away_moneyline": 135,
       "market_run_line_home": -1.5,
       "market_total": 8,
-      "market_updated_at": "2026-10-15T20:20:19.458764+00:00"
+      "market_updated_at": "2026-10-15T23:41:10.422597+00:00"
     }
   ]
 }
