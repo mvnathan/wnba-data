@@ -1,12 +1,12 @@
 {
-  "generated_at_utc": "2026-10-15T04:54:52.053389+00:00",
+  "generated_at_utc": "2026-10-15T11:46:47.872655+00:00",
   "status": "ok",
   "production_adjustment_enabled": false,
-  "new_posts_seen": 0,
+  "new_posts_seen": 1,
   "new_picks_parsed": 0,
   "ledger_size": 0,
   "since_id_used": "2110455894081409226",
-  "newest_id": "2110455894081409226",
+  "newest_id": "2110612696899150030",
   "accounts": {
     "@RufusPeabody": {
       "tier": "established_professional",
@@ -60,7 +60,15 @@
     }
   },
   "new_picks": [],
-  "candidate_posts": [],
+  "candidate_posts": [
+    {
+      "post_id": "2110612696899150030",
+      "source": "@iamrahstradamus",
+      "published_at_utc": "2026-10-15T06:04:14.000Z",
+      "text": "@jamescl21053211 @MikeAdxx I just don't see how it's beneficial to me to lay almost 10-1 and wait for something that would take 9 months to pay me out. It's just not worth it for me when I can turn my bankroll over much faster than that. I think there's better ways of making money in and outside of",
+      "url": "https://x.com/iamrahstradamus/status/2110612696899150030"
+    }
+  ],
   "promotion_thresholds": {
     "minimum_graded_picks": 100,
     "minimum_positive_clv_rate": 0.52,
