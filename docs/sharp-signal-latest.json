@@ -1,11 +1,11 @@
 {
-  "generated_at_utc": "2026-10-16T16:48:52.069465+00:00",
+  "generated_at_utc": "2026-10-16T21:26:20.932801+00:00",
   "status": "ok",
   "production_adjustment_enabled": false,
-  "new_posts_seen": 1,
+  "new_posts_seen": 0,
   "new_picks_parsed": 0,
   "ledger_size": 0,
-  "since_id_used": "2110937222858014763",
+  "since_id_used": "2111087412743180569",
   "newest_id": "2111087412743180569",
   "accounts": {
     "@RufusPeabody": {
@@ -60,15 +60,7 @@
     }
   },
   "new_picks": [],
-  "candidate_posts": [
-    {
-      "post_id": "2111087412743180569",
-      "source": "@FezzikSports",
-      "published_at_utc": "2026-10-16T13:30:35.000Z",
-      "text": "Next release 3PM PST at https://t.co/E2xLaZxAcu\n\nCFB up well over 100 units last 2 Seasons.\nNFL up over the last 2 Season.\n\nCFB 15-1-1 Run (be careful, short term win streaks are usually meangless).  \n\nMy NUMBER ONE CFB guy is Dan the Stat Man.  He is the BEST CFB capper you have",
-      "url": "https://x.com/FezzikSports/status/2111087412743180569"
-    }
-  ],
+  "candidate_posts": [],
   "promotion_thresholds": {
     "minimum_graded_picks": 100,
     "minimum_positive_clv_rate": 0.52,
