@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-16T19:57:53.411697+00:00",
+  "generated_at_utc": "2026-10-16T23:35:11.867079+00:00",
   "target_date": "2026-10-16",
   "sport": "MLB",
   "model_version": "mlb-runs-v2",
@@ -21,7 +21,7 @@
       "home_team": "Cleveland Guardians",
       "away_team": "Tampa Bay Rays",
       "venue": "Progressive Field",
-      "status": "Scheduled",
+      "status": "Delayed Start",
       "predicted_home_runs": 3.59,
       "predicted_away_runs": 4.07,
       "predicted_total_runs": 7.66,
@@ -82,10 +82,10 @@
       "market_used_in_prediction": false,
       "market_bookmaker": "DraftKings",
       "market_home_moneyline": -105,
-      "market_away_moneyline": -115,
+      "market_away_moneyline": -114,
       "market_run_line_home": 1.5,
       "market_total": 6.5,
-      "market_updated_at": "2026-10-16T19:57:51.276181+00:00"
+      "market_updated_at": "2026-10-16T23:35:09.352895+00:00"
     }
   ]
 }
