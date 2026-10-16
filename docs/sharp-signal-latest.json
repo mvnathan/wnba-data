@@ -1,11 +1,11 @@
 {
-  "generated_at_utc": "2026-10-16T04:45:19.723146+00:00",
+  "generated_at_utc": "2026-10-16T11:41:02.772055+00:00",
   "status": "ok",
   "production_adjustment_enabled": false,
-  "new_posts_seen": 1,
+  "new_posts_seen": 0,
   "new_picks_parsed": 0,
   "ledger_size": 0,
-  "since_id_used": "2110731106026987558",
+  "since_id_used": "2110937222858014763",
   "newest_id": "2110937222858014763",
   "accounts": {
     "@RufusPeabody": {
@@ -60,15 +60,7 @@
     }
   },
   "new_picks": [],
-  "candidate_posts": [
-    {
-      "post_id": "2110937222858014763",
-      "source": "@iamrahstradamus",
-      "published_at_utc": "2026-10-16T03:33:47.000Z",
-      "text": "Sam Darnold Over 0.5 Interceptions \u2705\n\nBroncos ML \u2705\n\nThere's only so long fake thugs can pretend!\n\nGood night!",
-      "url": "https://x.com/iamrahstradamus/status/2110937222858014763"
-    }
-  ],
+  "candidate_posts": [],
   "promotion_thresholds": {
     "minimum_graded_picks": 100,
     "minimum_positive_clv_rate": 0.52,
