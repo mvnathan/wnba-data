@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-16T00:43:04.886553+00:00",
+  "generated_at_utc": "2026-10-16T07:29:45.372175+00:00",
   "status": "ok",
   "production_modified": false,
   "baseline_model_version": "nfl-v2",
@@ -18,7 +18,7 @@
     "games": 14,
     "games_changed_by_availability": 3,
     "games_changed_by_combined": 3,
-    "availability_x_signals_available": 14,
+    "availability_x_signals_available": 15,
     "sharp_ledger_picks": 0,
     "sharp_production_weight": 0.0
   },
@@ -41,15 +41,15 @@
         "predicted_winner": "Seattle Seahawks"
       },
       "availability_shadow": {
-        "predicted_home_points": 21.9,
+        "predicted_home_points": 21.64,
         "predicted_away_points": 24.03,
-        "predicted_margin": -2.13,
-        "predicted_total": 45.93,
-        "home_win_probability": 0.4271,
-        "away_win_probability": 0.5729,
+        "predicted_margin": -2.39,
+        "predicted_total": 45.67,
+        "home_win_probability": 0.4183,
+        "away_win_probability": 0.5817,
         "predicted_winner": "Seattle Seahawks",
-        "availability_margin_delta": -0.43,
-        "availability_total_delta": 0.43,
+        "availability_margin_delta": -0.69,
+        "availability_total_delta": 0.17,
         "signals_applied": [
           {
             "team": "DEN",
@@ -63,19 +63,32 @@
             "published_at_utc": "2026-10-14T22:16:05.000Z",
             "url": "https://x.com/AdamSchefter/status/2110494882192068870",
             "text": "Broncos officially ruled out CB Pat Surtain II for Thursday night\u2019s game vs. the Seahawks. https://t.co/tqc1q5nGMf"
+          },
+          {
+            "team": "DEN",
+            "player": "Jaylen Waddle",
+            "position": "WR",
+            "status": "questionable",
+            "confidence": 0.4487,
+            "base_points": 1.3,
+            "point_impact": 0.262,
+            "source": "@AdamSchefter",
+            "published_at_utc": "2026-10-16T02:01:05.000Z",
+            "url": "https://x.com/AdamSchefter/status/2110913890783465854",
+            "text": "Broncos WR Jaylen Waddle is questionable to return tonight due to a shoulder injury."
           }
         ]
       },
       "combined_shadow": {
-        "predicted_home_points": 21.9,
+        "predicted_home_points": 21.64,
         "predicted_away_points": 24.03,
-        "predicted_margin": -2.13,
-        "predicted_total": 45.93,
-        "home_win_probability": 0.4271,
-        "away_win_probability": 0.5729,
+        "predicted_margin": -2.39,
+        "predicted_total": 45.67,
+        "home_win_probability": 0.4183,
+        "away_win_probability": 0.5817,
         "predicted_winner": "Seattle Seahawks",
-        "combined_margin_delta_vs_production": -0.43,
-        "combined_total_delta_vs_production": 0.43,
+        "combined_margin_delta_vs_production": -0.69,
+        "combined_total_delta_vs_production": 0.17,
         "sharp_margin_delta": 0.0,
         "sharp_total_delta": 0.0,
         "sharp_signals_applied": []
