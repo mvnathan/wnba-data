@@ -1,14 +1,14 @@
 {
-  "generated_at_utc": "2026-10-16T00:43:59.012415+00:00",
+  "generated_at_utc": "2026-10-16T14:52:42.131611+00:00",
   "method": "Earliest committed pregame NBA forecast and market line joined to ESPN final score by game ID",
   "summary": {
-    "n": 47,
+    "n": 49,
     "ml": {
-      "wins": 26,
-      "losses": 21,
+      "wins": 27,
+      "losses": 22,
       "pushes": 0,
-      "graded": 47,
-      "rate": 0.5531914893617021
+      "graded": 49,
+      "rate": 0.5510204081632653
     },
     "ats": {
       "wins": 0,
@@ -26,6 +26,52 @@
     }
   },
   "games": [
+    {
+      "game_id": "401908945",
+      "game_date_utc": "2026-10-15T23:30Z",
+      "home_team": "New York Knicks",
+      "away_team": "Toronto Raptors",
+      "home_abbr": "NY",
+      "away_abbr": "TOR",
+      "prediction_issued_at": "2026-10-15T00:49:35.066626+00:00",
+      "prediction_commit": "2737c2c6",
+      "home_win_probability": 0.24719492497550155,
+      "predicted_margin": -8.609924127617406,
+      "predicted_total": 230.76756289172636,
+      "actual_home_score": 122.0,
+      "actual_away_score": 120.0,
+      "actual_margin": 2.0,
+      "actual_total": 242.0,
+      "winner_correct": false,
+      "market_home_spread": null,
+      "market_total": null,
+      "market_bookmaker": null,
+      "ats_result": null,
+      "ou_result": null
+    },
+    {
+      "game_id": "401908622",
+      "game_date_utc": "2026-10-16T00:30Z",
+      "home_team": "Houston Rockets",
+      "away_team": "Oklahoma City Thunder",
+      "home_abbr": "HOU",
+      "away_abbr": "OKC",
+      "prediction_issued_at": "2026-10-15T00:49:35.066626+00:00",
+      "prediction_commit": "2737c2c6",
+      "home_win_probability": 0.5463545864749247,
+      "predicted_margin": 1.285072341768563,
+      "predicted_total": 233.15361082119279,
+      "actual_home_score": 116.0,
+      "actual_away_score": 89.0,
+      "actual_margin": 27.0,
+      "actual_total": 205.0,
+      "winner_correct": true,
+      "market_home_spread": null,
+      "market_total": null,
+      "market_bookmaker": null,
+      "ats_result": null,
+      "ou_result": null
+    },
     {
       "game_id": "401898404",
       "game_date_utc": "2026-10-14T23:30Z",
