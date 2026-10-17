@@ -1,12 +1,12 @@
 {
-  "generated_at_utc": "2026-10-16T21:26:20.932801+00:00",
+  "generated_at_utc": "2026-10-17T04:43:18.391099+00:00",
   "status": "ok",
   "production_adjustment_enabled": false,
-  "new_posts_seen": 0,
+  "new_posts_seen": 2,
   "new_picks_parsed": 0,
   "ledger_size": 0,
   "since_id_used": "2111087412743180569",
-  "newest_id": "2111087412743180569",
+  "newest_id": "2111297303931662691",
   "accounts": {
     "@RufusPeabody": {
       "tier": "established_professional",
@@ -60,7 +60,22 @@
     }
   },
   "new_picks": [],
-  "candidate_posts": [],
+  "candidate_posts": [
+    {
+      "post_id": "2111297303931662691",
+      "source": "@wheatonbrando",
+      "published_at_utc": "2026-10-17T03:24:37.000Z",
+      "text": "@TJames312 @eviestaysgolden @HPbasketball @JohnJablonka_ The inefficient third-at-best option anchoring a good-not-great defense for a middling forgettable play-in team at the low low cost of $50 million a season?\n\nYeah, I think I\u2019m good.",
+      "url": "https://x.com/wheatonbrando/status/2111297303931662691"
+    },
+    {
+      "post_id": "2111263003702440332",
+      "source": "@capjack2000",
+      "published_at_utc": "2026-10-17T01:08:20.000Z",
+      "text": "@CliffHucker69 @UnabatedSports Yes, compared to the source everyone else is \u2018under\u2019 the spell of.",
+      "url": "https://x.com/capjack2000/status/2111263003702440332"
+    }
+  ],
   "promotion_thresholds": {
     "minimum_graded_picks": 100,
     "minimum_positive_clv_rate": 0.52,
