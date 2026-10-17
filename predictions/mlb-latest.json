@@ -1,10 +1,10 @@
 {
-  "generated_at_utc": "2026-10-16T23:35:11.867079+00:00",
-  "target_date": "2026-10-16",
+  "generated_at_utc": "2026-10-17T15:34:24.295645+00:00",
+  "target_date": "2026-10-17",
   "sport": "MLB",
   "model_version": "mlb-runs-v2",
   "model_status": "production",
-  "pitcher_stats_as_of": "2026-10-15",
+  "pitcher_stats_as_of": "2026-10-16",
   "features": [
     "recent offense",
     "recent run prevention",
@@ -16,18 +16,18 @@
   "competitive_context_policy": "Official MLB standings plus leakage-safe urgency/rotation-risk context are calculated for every game. Direct score adjustment remains disabled in production because the 273-game validation improved Brier only marginally while slightly reducing winner accuracy. The context remains visible for edge reliability and lineup/rest review.",
   "games": [
     {
-      "game_id": "849817",
-      "game_date_utc": "2026-10-17T00:00:00Z",
+      "game_id": "849816",
+      "game_date_utc": "2026-10-18T00:08:00Z",
       "home_team": "Cleveland Guardians",
       "away_team": "Tampa Bay Rays",
       "venue": "Progressive Field",
-      "status": "Delayed Start",
+      "status": "Scheduled",
       "predicted_home_runs": 3.59,
       "predicted_away_runs": 4.07,
       "predicted_total_runs": 7.66,
       "predicted_winner": "Tampa Bay Rays",
-      "home_win_probability": 0.4331,
-      "away_win_probability": 0.5669,
+      "home_win_probability": 0.433,
+      "away_win_probability": 0.567,
       "home_probable_pitcher": "Shawn Armstrong",
       "away_probable_pitcher": "Nick Martinez",
       "home_starter_era": 4.58,
@@ -81,11 +81,11 @@
       "availability_note": "Standings/urgency context cannot confirm a specific star will rest; actual lineup/inactive data should override the proxy when available.",
       "market_used_in_prediction": false,
       "market_bookmaker": "DraftKings",
-      "market_home_moneyline": -105,
+      "market_home_moneyline": -106,
       "market_away_moneyline": -114,
       "market_run_line_home": 1.5,
       "market_total": 6.5,
-      "market_updated_at": "2026-10-16T23:35:09.352895+00:00"
+      "market_updated_at": "2026-10-17T15:34:21.017683+00:00"
     }
   ]
 }
