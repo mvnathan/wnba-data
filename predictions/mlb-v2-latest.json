@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-17T19:23:31.224381+00:00",
+  "generated_at_utc": "2026-10-17T23:07:46.594817+00:00",
   "target_date": "2026-10-17",
   "sport": "MLB",
   "model_version": "mlb-runs-v2",
@@ -21,7 +21,7 @@
       "home_team": "Cleveland Guardians",
       "away_team": "Tampa Bay Rays",
       "venue": "Progressive Field",
-      "status": "Scheduled",
+      "status": "Pre-Game",
       "predicted_home_runs": 3.59,
       "predicted_away_runs": 4.07,
       "predicted_total_runs": 7.66,
@@ -81,11 +81,11 @@
       "availability_note": "Standings/urgency context cannot confirm a specific star will rest; actual lineup/inactive data should override the proxy when available.",
       "market_used_in_prediction": false,
       "market_bookmaker": "DraftKings",
-      "market_home_moneyline": -106,
-      "market_away_moneyline": -114,
+      "market_home_moneyline": -107,
+      "market_away_moneyline": -112,
       "market_run_line_home": 1.5,
       "market_total": 6.5,
-      "market_updated_at": "2026-10-17T19:23:28.000842+00:00"
+      "market_updated_at": "2026-10-17T23:07:44.303443+00:00"
     }
   ]
 }
