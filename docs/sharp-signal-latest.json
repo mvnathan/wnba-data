@@ -1,12 +1,12 @@
 {
-  "generated_at_utc": "2026-10-17T11:00:22.850762+00:00",
+  "generated_at_utc": "2026-10-17T15:45:11.262437+00:00",
   "status": "ok",
   "production_adjustment_enabled": false,
-  "new_posts_seen": 0,
+  "new_posts_seen": 1,
   "new_picks_parsed": 0,
   "ledger_size": 0,
   "since_id_used": "2111297303931662691",
-  "newest_id": "2111297303931662691",
+  "newest_id": "2111473100521132302",
   "accounts": {
     "@RufusPeabody": {
       "tier": "established_professional",
@@ -60,7 +60,15 @@
     }
   },
   "new_picks": [],
-  "candidate_posts": [],
+  "candidate_posts": [
+    {
+      "post_id": "2111473100521132302",
+      "source": "@capjack2000",
+      "published_at_utc": "2026-10-17T15:03:11.000Z",
+      "text": "@bakeage09 Which PM? Since the game is going to be played within a week, most PM\u2019s just roll it over to the new date, but call out anyone charging commission on an event that didn\u2019t happen.",
+      "url": "https://x.com/capjack2000/status/2111473100521132302"
+    }
+  ],
   "promotion_thresholds": {
     "minimum_graded_picks": 100,
     "minimum_positive_clv_rate": 0.52,
