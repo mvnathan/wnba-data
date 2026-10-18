@@ -1,12 +1,12 @@
 {
-  "generated_at_utc": "2026-10-17T20:46:06.277784+00:00",
+  "generated_at_utc": "2026-10-18T04:49:02.538122+00:00",
   "status": "ok",
   "production_adjustment_enabled": false,
   "new_posts_seen": 1,
   "new_picks_parsed": 0,
   "ledger_size": 0,
-  "since_id_used": "2111473100521132302",
-  "newest_id": "2111520793876160517",
+  "since_id_used": "2111520793876160517",
+  "newest_id": "2111671942411649164",
   "accounts": {
     "@RufusPeabody": {
       "tier": "established_professional",
@@ -62,11 +62,11 @@
   "new_picks": [],
   "candidate_posts": [
     {
-      "post_id": "2111520793876160517",
+      "post_id": "2111671942411649164",
       "source": "@wheatonbrando",
-      "published_at_utc": "2026-10-17T18:12:42.000Z",
-      "text": "WNBA Finals tip off in just over an hour!\n\nThat leaves the perfect amount of time to catch this Buckets preview from @mariacmarino @TurveyBets @JoeDellera @drmataya at @ActionNetworkHQ!\n\nWho ya got?! \ud83c\udfc0 \n\nhttps://t.co/vjUeXiyOD8",
-      "url": "https://x.com/wheatonbrando/status/2111520793876160517"
+      "published_at_utc": "2026-10-18T04:13:18.000Z",
+      "text": "@fornekdf Heck of a pick! Heck of a player. Can\u2019t believe he didn\u2019t even play in high school",
+      "url": "https://x.com/wheatonbrando/status/2111671942411649164"
     }
   ],
   "promotion_thresholds": {
