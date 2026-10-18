@@ -1,12 +1,12 @@
 {
-  "generated_at_utc": "2026-10-18T16:01:00.389802+00:00",
+  "generated_at_utc": "2026-10-18T20:55:33.288176+00:00",
   "status": "ok",
   "production_adjustment_enabled": false,
-  "new_posts_seen": 2,
+  "new_posts_seen": 1,
   "new_picks_parsed": 0,
   "ledger_size": 0,
-  "since_id_used": "2111671942411649164",
-  "newest_id": "2111848485129801902",
+  "since_id_used": "2111848485129801902",
+  "newest_id": "2111917606126964787",
   "accounts": {
     "@RufusPeabody": {
       "tier": "established_professional",
@@ -62,18 +62,11 @@
   "new_picks": [],
   "candidate_posts": [
     {
-      "post_id": "2111848485129801902",
-      "source": "@iamrahstradamus",
-      "published_at_utc": "2026-10-18T15:54:49.000Z",
-      "text": "Running this back! Puka Nacua over 7.5 receptions. You can also climb the ladder to success escalator style! B.I.G!!!!!!\n\nGrab that at @fanduel #FDPartner https://t.co/Ldevg6Fkjt",
-      "url": "https://x.com/iamrahstradamus/status/2111848485129801902"
-    },
-    {
-      "post_id": "2111802224166719783",
+      "post_id": "2111917606126964787",
       "source": "@wheatonbrando",
-      "published_at_utc": "2026-10-18T12:51:00.000Z",
-      "text": "Sunday morning football in London!!\n\nJaguars vs Texans is the best and most important game of the day so let\u2019s start it out right.\n\nWhy I think the best bet you can make is actually a future, plus a Nico Collins escalator you\u2019ll love at @ActionNetworkHQ:\n\nhttps://t.co/FyG1ZridnN",
-      "url": "https://x.com/wheatonbrando/status/2111802224166719783"
+      "published_at_utc": "2026-10-18T20:29:29.000Z",
+      "text": "Bryce Young \ud83d\udd25 \ud83d\udd25 \ud83d\udd25 \n\nCash the entire \ud83e\ude9c!!!\n\nOver 227.5 (lol) \u2705\n250+ +155 \u2705\n275+ +285 \u2705\n\n+2.17u win! Still my favorite escalator of the day to come this evening on SNF, follow along in the FREE @ActionApp:\n\nhttps://t.co/q6WQYD55Xk https://t.co/e1H8RzGTUq",
+      "url": "https://x.com/wheatonbrando/status/2111917606126964787"
     }
   ],
   "promotion_thresholds": {
