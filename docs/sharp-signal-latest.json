@@ -1,12 +1,12 @@
 {
-  "generated_at_utc": "2026-10-18T11:26:29.926645+00:00",
+  "generated_at_utc": "2026-10-18T16:01:00.389802+00:00",
   "status": "ok",
   "production_adjustment_enabled": false,
-  "new_posts_seen": 0,
+  "new_posts_seen": 2,
   "new_picks_parsed": 0,
   "ledger_size": 0,
   "since_id_used": "2111671942411649164",
-  "newest_id": "2111671942411649164",
+  "newest_id": "2111848485129801902",
   "accounts": {
     "@RufusPeabody": {
       "tier": "established_professional",
@@ -60,7 +60,22 @@
     }
   },
   "new_picks": [],
-  "candidate_posts": [],
+  "candidate_posts": [
+    {
+      "post_id": "2111848485129801902",
+      "source": "@iamrahstradamus",
+      "published_at_utc": "2026-10-18T15:54:49.000Z",
+      "text": "Running this back! Puka Nacua over 7.5 receptions. You can also climb the ladder to success escalator style! B.I.G!!!!!!\n\nGrab that at @fanduel #FDPartner https://t.co/Ldevg6Fkjt",
+      "url": "https://x.com/iamrahstradamus/status/2111848485129801902"
+    },
+    {
+      "post_id": "2111802224166719783",
+      "source": "@wheatonbrando",
+      "published_at_utc": "2026-10-18T12:51:00.000Z",
+      "text": "Sunday morning football in London!!\n\nJaguars vs Texans is the best and most important game of the day so let\u2019s start it out right.\n\nWhy I think the best bet you can make is actually a future, plus a Nico Collins escalator you\u2019ll love at @ActionNetworkHQ:\n\nhttps://t.co/FyG1ZridnN",
+      "url": "https://x.com/wheatonbrando/status/2111802224166719783"
+    }
+  ],
   "promotion_thresholds": {
     "minimum_graded_picks": 100,
     "minimum_positive_clv_rate": 0.52,
