@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-18T00:16:53.803774+00:00",
+  "generated_at_utc": "2026-10-18T14:02:17.713326+00:00",
   "method": "Earliest committed pregame NBA forecast and market line joined to ESPN final score by game ID",
   "summary": {
     "n": 61,
@@ -176,10 +176,10 @@
       "home_win_probability": 0.09200815782278232,
       "predicted_margin": -19.363829755375814,
       "predicted_total": 238.03528646807231,
-      "actual_home_score": 117.0,
+      "actual_home_score": 116.0,
       "actual_away_score": 98.0,
-      "actual_margin": 19.0,
-      "actual_total": 215.0,
+      "actual_margin": 18.0,
+      "actual_total": 214.0,
       "winner_correct": false,
       "market_home_spread": null,
       "market_total": null,
