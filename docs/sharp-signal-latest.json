@@ -1,11 +1,11 @@
 {
-  "generated_at_utc": "2026-10-18T04:49:02.538122+00:00",
+  "generated_at_utc": "2026-10-18T11:26:29.926645+00:00",
   "status": "ok",
   "production_adjustment_enabled": false,
-  "new_posts_seen": 1,
+  "new_posts_seen": 0,
   "new_picks_parsed": 0,
   "ledger_size": 0,
-  "since_id_used": "2111520793876160517",
+  "since_id_used": "2111671942411649164",
   "newest_id": "2111671942411649164",
   "accounts": {
     "@RufusPeabody": {
@@ -60,15 +60,7 @@
     }
   },
   "new_picks": [],
-  "candidate_posts": [
-    {
-      "post_id": "2111671942411649164",
-      "source": "@wheatonbrando",
-      "published_at_utc": "2026-10-18T04:13:18.000Z",
-      "text": "@fornekdf Heck of a pick! Heck of a player. Can\u2019t believe he didn\u2019t even play in high school",
-      "url": "https://x.com/wheatonbrando/status/2111671942411649164"
-    }
-  ],
+  "candidate_posts": [],
   "promotion_thresholds": {
     "minimum_graded_picks": 100,
     "minimum_positive_clv_rate": 0.52,
