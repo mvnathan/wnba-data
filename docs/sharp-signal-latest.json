@@ -1,11 +1,11 @@
 {
-  "generated_at_utc": "2026-10-19T04:57:48.583830+00:00",
+  "generated_at_utc": "2026-10-19T13:42:56.978869+00:00",
   "status": "ok",
   "production_adjustment_enabled": false,
-  "new_posts_seen": 4,
+  "new_posts_seen": 0,
   "new_picks_parsed": 0,
   "ledger_size": 0,
-  "since_id_used": "2111917606126964787",
+  "since_id_used": "2112032452701028556",
   "newest_id": "2112032452701028556",
   "accounts": {
     "@RufusPeabody": {
@@ -60,36 +60,7 @@
     }
   },
   "new_picks": [],
-  "candidate_posts": [
-    {
-      "post_id": "2112032452701028556",
-      "source": "@wheatonbrando",
-      "published_at_utc": "2026-10-19T04:05:51.000Z",
-      "text": "@Bceltics86 That was a bet I made already about 10 days ago, before last weeks games. I do that each week as a \u201clookahead \u201c pick hoping to get ahead of a line move. Can\u2019t get 49ers -7 anywhere right now.",
-      "url": "https://x.com/wheatonbrando/status/2112032452701028556"
-    },
-    {
-      "post_id": "2111997965346738231",
-      "source": "@wheatonbrando",
-      "published_at_utc": "2026-10-19T01:48:48.000Z",
-      "text": "@SuperSmAshworth Yeah I mean Herbert is playing way way worse, no question. So the question is what fault you give that to, is that on him, is that the line or the weapons, is that being on the wrong page or book or universe with the play caller? All of the above. QB should get the most blame. He",
-      "url": "https://x.com/wheatonbrando/status/2111997965346738231"
-    },
-    {
-      "post_id": "2111980400595574941",
-      "source": "@wheatonbrando",
-      "published_at_utc": "2026-10-19T00:39:00.000Z",
-      "text": "@SuperSmAshworth I strongly disagree. There\u2019s almost no chance that anything other than your offensive line is the biggest problem by a wide margin. And your quarterback is playing like hot garbage and has completely lost his mind. And you have exactly one receiver and he got hurt three seconds",
-      "url": "https://x.com/wheatonbrando/status/2111980400595574941"
-    },
-    {
-      "post_id": "2111957617782493488",
-      "source": "@iamrahstradamus",
-      "published_at_utc": "2026-10-18T23:08:29.000Z",
-      "text": "I\u2019ve been betting NFL for a long time. I\u2019ve had winning days, losing days but never a Sunday like this where literally every single team I bet blows a double digit lead.",
-      "url": "https://x.com/iamrahstradamus/status/2111957617782493488"
-    }
-  ],
+  "candidate_posts": [],
   "promotion_thresholds": {
     "minimum_graded_picks": 100,
     "minimum_positive_clv_rate": 0.52,
