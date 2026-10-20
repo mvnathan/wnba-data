@@ -1,11 +1,11 @@
 {
-  "generated_at_utc": "2026-10-20T05:02:57.239183+00:00",
+  "generated_at_utc": "2026-10-20T11:53:25.578277+00:00",
   "status": "ok",
   "production_adjustment_enabled": false,
-  "new_posts_seen": 1,
+  "new_posts_seen": 0,
   "new_picks_parsed": 0,
   "ledger_size": 0,
-  "since_id_used": "2112308732151689434",
+  "since_id_used": "2112328450048458905",
   "newest_id": "2112328450048458905",
   "accounts": {
     "@RufusPeabody": {
@@ -60,15 +60,7 @@
     }
   },
   "new_picks": [],
-  "candidate_posts": [
-    {
-      "post_id": "2112328450048458905",
-      "source": "@wheatonbrando",
-      "published_at_utc": "2026-10-19T23:42:02.000Z",
-      "text": "@YoungSimbuh Not combative at all. Data grows and changes and it\u2019s always width re evaluating. \n\nDefinitely not confident they\u2019ll miss the playoffs. Wouldn\u2019t have expected them to win all three of these, or for Love to suddenly play like a top 5 QB after his start (super fun!).\n\nThere\u2019s 5",
-      "url": "https://x.com/wheatonbrando/status/2112328450048458905"
-    }
-  ],
+  "candidate_posts": [],
   "promotion_thresholds": {
     "minimum_graded_picks": 100,
     "minimum_positive_clv_rate": 0.52,
