@@ -1,12 +1,12 @@
 {
-  "generated_at_utc": "2026-10-20T17:22:56.282755+00:00",
+  "generated_at_utc": "2026-10-20T21:45:35.868054+00:00",
   "status": "ok",
   "production_adjustment_enabled": false,
-  "new_posts_seen": 3,
+  "new_posts_seen": 4,
   "new_picks_parsed": 0,
   "ledger_size": 0,
-  "since_id_used": "2112328450048458905",
-  "newest_id": "2112587890119373272",
+  "since_id_used": "2112587890119373272",
+  "newest_id": "2112644254212444466",
   "accounts": {
     "@RufusPeabody": {
       "tier": "established_professional",
@@ -62,25 +62,32 @@
   "new_picks": [],
   "candidate_posts": [
     {
-      "post_id": "2112587890119373272",
-      "source": "@FezzikSports",
-      "published_at_utc": "2026-10-20T16:52:57.000Z",
-      "text": "2026 YTD:\n1st Quarter:  +63 Units\nI was off then until Football:\n\n2026 CFB :  UP well over 20+ units\n2026 NFL :  UP well over 10+ units\n\n2020-2026 Up well over 250 + units\n\nShort Term Results DO NOT MATTER.   Watch out for guys overhyping select subsets........with great win",
-      "url": "https://x.com/FezzikSports/status/2112587890119373272"
+      "post_id": "2112644254212444466",
+      "source": "@iamrahstradamus",
+      "published_at_utc": "2026-10-20T20:36:55.000Z",
+      "text": "@Award1021 I bet on the 49ers in Mahomes first Super Bowl and they held a 10 point 4th quarter lead. The Chiefs won 13 one score games and up to that point, each of Mahomes 3 Super Bowls they held deficits and had to come back. It's reasonable to say I'll bet the first half and not want",
+      "url": "https://x.com/iamrahstradamus/status/2112644254212444466"
     },
     {
-      "post_id": "2112587683163972007",
-      "source": "@FezzikSports",
-      "published_at_utc": "2026-10-20T16:52:08.000Z",
-      "text": "2026 YTD:\n1st Quarter:  +63 Units\nI was off then until Football:\n\n2026 CFB :  UP well over 20+ units\n2026 NFL :  UP well over 10+ units\n\n2020-2026 Up well over 250 + units\n\nShort Term Results DO NOT MATTER.   Watch out for guys overhyping select subsets........with great win",
-      "url": "https://x.com/FezzikSports/status/2112587683163972007"
+      "post_id": "2112610524378886147",
+      "source": "@iamrahstradamus",
+      "published_at_utc": "2026-10-20T18:22:54.000Z",
+      "text": "No I wasn\u2019t. Go back and listen to the live podcast we did in New Orleans. I said my model loved the Eagles and the wrong team was favored but I was terrified to actually bet the full game because Mahomes has pulled out every close game for years. That was a completely reasonable https://t.co/omJ9xcLpUN https://t.co/GxWMMttlI6",
+      "url": "https://x.com/iamrahstradamus/status/2112610524378886147"
     },
     {
-      "post_id": "2112567847549612273",
-      "source": "@wheatonbrando",
-      "published_at_utc": "2026-10-20T15:33:19.000Z",
-      "text": "Action Pro under $100 for NBA tipoff day! \ud83c\udfc0\n\nFull daily projections from @TurveyBets &amp; crew + instant bet notifications for his &amp; @JoeDellera futures + daily picks from @HPbasketball @BryanFonsecaNY @BrandonKravitz &amp; the whole Buckets crew! \ud83e\udea3\n\nSign up: https://t.co/X0DZEPTrRy https://t.co/8zG9dRIur7",
-      "url": "https://x.com/wheatonbrando/status/2112567847549612273"
+      "post_id": "2112609106276368570",
+      "source": "@iamrahstradamus",
+      "published_at_utc": "2026-10-20T18:17:15.000Z",
+      "text": "No I wasn\u2019t. Go back and listen to the live podcast we did in New Orleans. I said my model loved the Eagles and the wrong team was favored but I was terrified to actually bet the game because Mahomes has pulled out every close game for years. That was a completely reasonable take https://t.co/eitVLlkCxW https://t.co/GxWMMttlI6",
+      "url": "https://x.com/iamrahstradamus/status/2112609106276368570"
+    },
+    {
+      "post_id": "2112608783277142339",
+      "source": "@iamrahstradamus",
+      "published_at_utc": "2026-10-20T18:15:58.000Z",
+      "text": "No I wasn\u2019t. Go back and listen to the live podcast we did in New Orleans. I said my model loved the Eagles but I was terrified to actually bet the game because Mahomes has pulled out every close game for years. I suggested Eagles first half as my best bet (Wisest Wager) on the https://t.co/ia1Tm9N3HT https://t.co/GxWMMttlI6",
+      "url": "https://x.com/iamrahstradamus/status/2112608783277142339"
     }
   ],
   "promotion_thresholds": {
