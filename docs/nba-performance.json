@@ -1,31 +1,54 @@
 {
-  "generated_at_utc": "2026-10-20T17:31:37.521178+00:00",
+  "generated_at_utc": "2026-10-20T21:54:07.203015+00:00",
   "method": "Earliest committed pregame NBA forecast and market line joined to ESPN final score by game ID",
   "summary": {
-    "n": 61,
+    "n": 62,
     "ml": {
       "wins": 33,
-      "losses": 28,
+      "losses": 29,
       "pushes": 0,
-      "graded": 61,
-      "rate": 0.5409836065573771
+      "graded": 62,
+      "rate": 0.532258064516129
     },
     "ats": {
       "wins": 0,
-      "losses": 1,
+      "losses": 2,
       "pushes": 0,
-      "graded": 1,
+      "graded": 2,
       "rate": 0.0
     },
     "ou": {
-      "wins": 1,
+      "wins": 2,
       "losses": 0,
       "pushes": 0,
-      "graded": 1,
+      "graded": 2,
       "rate": 1.0
     }
   },
   "games": [
+    {
+      "game_id": "401909088",
+      "game_date_utc": "2026-10-20T19:00Z",
+      "home_team": "Detroit Pistons",
+      "away_team": "Boston Celtics",
+      "home_abbr": "DET",
+      "away_abbr": "BOS",
+      "prediction_issued_at": "2026-10-18T00:15:09.664470+00:00",
+      "prediction_commit": "2797b5d4",
+      "home_win_probability": 0.4338524472922316,
+      "predicted_margin": -2.1928464738065943,
+      "predicted_total": 230.94385905868907,
+      "actual_home_score": 121.0,
+      "actual_away_score": 113.0,
+      "actual_margin": 8.0,
+      "actual_total": 234.0,
+      "winner_correct": false,
+      "market_home_spread": -1.5,
+      "market_total": 222.5,
+      "market_bookmaker": "DraftKings",
+      "ats_result": "loss",
+      "ou_result": "win"
+    },
     {
       "game_id": "401898406",
       "game_date_utc": "2026-10-16T23:00Z",
