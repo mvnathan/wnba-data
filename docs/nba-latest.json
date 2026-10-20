@@ -1,6 +1,6 @@
 {
   "sport": "NBA",
-  "generated_at_utc": "2026-10-19T22:36:55.996287+00:00",
+  "generated_at_utc": "2026-10-20T01:13:47.835506+00:00",
   "target_date": "2026-10-20",
   "season": "2026-27",
   "model_version": "nba-v2-roster-four-factors",
@@ -52,7 +52,7 @@
         "mae": 16.052277339680376
       },
       "total_rf": {
-        "mae": 15.750307765858189
+        "mae": 15.750307765858192
       },
       "total_extra_trees": {
         "mae": 15.823980776889647
@@ -6087,7 +6087,7 @@
         }
       },
       "market_bookmaker": "DraftKings",
-      "market_updated_at": "2026-10-19T22:39:54.116765+00:00",
+      "market_updated_at": "2026-10-20T01:17:23.965405+00:00",
       "market_home_moneyline": -105,
       "market_away_moneyline": -115,
       "market_home_spread": 1.5,
@@ -6133,7 +6133,7 @@
         }
       },
       "market_bookmaker": "DraftKings",
-      "market_updated_at": "2026-10-19T22:39:54.116765+00:00",
+      "market_updated_at": "2026-10-20T01:17:23.965405+00:00",
       "market_home_moneyline": -180,
       "market_away_moneyline": 150,
       "market_home_spread": -4.5,
@@ -6179,16 +6179,16 @@
         }
       },
       "market_bookmaker": "DraftKings",
-      "market_updated_at": "2026-10-19T22:39:54.116765+00:00",
-      "market_home_moneyline": -135,
-      "market_away_moneyline": 114,
+      "market_updated_at": "2026-10-20T01:17:23.965405+00:00",
+      "market_home_moneyline": -130,
+      "market_away_moneyline": 110,
       "market_home_spread": -2.5,
       "market_away_spread": 2.5,
       "market_total": 231.5,
       "x_availability_adjustments": [],
       "model_market_spread_edge": -4.46,
       "model_market_total_edge": 2.97,
-      "model_market_home_win_edge": -0.14
+      "model_market_home_win_edge": -0.1313
     }
   ],
   "historical_data_source": "SportsDataverse ESPN NBA bulk releases",
