@@ -1,12 +1,12 @@
 {
-  "generated_at_utc": "2026-10-20T11:53:25.578277+00:00",
+  "generated_at_utc": "2026-10-20T17:22:56.282755+00:00",
   "status": "ok",
   "production_adjustment_enabled": false,
-  "new_posts_seen": 0,
+  "new_posts_seen": 3,
   "new_picks_parsed": 0,
   "ledger_size": 0,
   "since_id_used": "2112328450048458905",
-  "newest_id": "2112328450048458905",
+  "newest_id": "2112587890119373272",
   "accounts": {
     "@RufusPeabody": {
       "tier": "established_professional",
@@ -60,7 +60,29 @@
     }
   },
   "new_picks": [],
-  "candidate_posts": [],
+  "candidate_posts": [
+    {
+      "post_id": "2112587890119373272",
+      "source": "@FezzikSports",
+      "published_at_utc": "2026-10-20T16:52:57.000Z",
+      "text": "2026 YTD:\n1st Quarter:  +63 Units\nI was off then until Football:\n\n2026 CFB :  UP well over 20+ units\n2026 NFL :  UP well over 10+ units\n\n2020-2026 Up well over 250 + units\n\nShort Term Results DO NOT MATTER.   Watch out for guys overhyping select subsets........with great win",
+      "url": "https://x.com/FezzikSports/status/2112587890119373272"
+    },
+    {
+      "post_id": "2112587683163972007",
+      "source": "@FezzikSports",
+      "published_at_utc": "2026-10-20T16:52:08.000Z",
+      "text": "2026 YTD:\n1st Quarter:  +63 Units\nI was off then until Football:\n\n2026 CFB :  UP well over 20+ units\n2026 NFL :  UP well over 10+ units\n\n2020-2026 Up well over 250 + units\n\nShort Term Results DO NOT MATTER.   Watch out for guys overhyping select subsets........with great win",
+      "url": "https://x.com/FezzikSports/status/2112587683163972007"
+    },
+    {
+      "post_id": "2112567847549612273",
+      "source": "@wheatonbrando",
+      "published_at_utc": "2026-10-20T15:33:19.000Z",
+      "text": "Action Pro under $100 for NBA tipoff day! \ud83c\udfc0\n\nFull daily projections from @TurveyBets &amp; crew + instant bet notifications for his &amp; @JoeDellera futures + daily picks from @HPbasketball @BryanFonsecaNY @BrandonKravitz &amp; the whole Buckets crew! \ud83e\udea3\n\nSign up: https://t.co/X0DZEPTrRy https://t.co/8zG9dRIur7",
+      "url": "https://x.com/wheatonbrando/status/2112567847549612273"
+    }
+  ],
   "promotion_thresholds": {
     "minimum_graded_picks": 100,
     "minimum_positive_clv_rate": 0.52,
