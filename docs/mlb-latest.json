@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-19T18:43:05.546384+00:00",
+  "generated_at_utc": "2026-10-20T00:19:44.687674+00:00",
   "target_date": "2026-10-19",
   "sport": "MLB",
   "model_version": "mlb-runs-v2",
@@ -21,7 +21,7 @@
       "home_team": "Tampa Bay Rays",
       "away_team": "Cleveland Guardians",
       "venue": "Tropicana Field",
-      "status": "Scheduled",
+      "status": "In Progress",
       "predicted_home_runs": 4.12,
       "predicted_away_runs": 4.17,
       "predicted_total_runs": 8.29,
