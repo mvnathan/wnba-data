@@ -1,31 +1,77 @@
 {
-  "generated_at_utc": "2026-10-21T00:55:56.004752+00:00",
+  "generated_at_utc": "2026-10-21T15:17:06.765354+00:00",
   "method": "Earliest committed pregame NBA forecast and market line joined to ESPN final score by game ID",
   "summary": {
-    "n": 62,
+    "n": 64,
     "ml": {
-      "wins": 33,
-      "losses": 29,
+      "wins": 34,
+      "losses": 30,
       "pushes": 0,
-      "graded": 62,
-      "rate": 0.532258064516129
+      "graded": 64,
+      "rate": 0.53125
     },
     "ats": {
-      "wins": 0,
+      "wins": 2,
       "losses": 2,
       "pushes": 0,
-      "graded": 2,
-      "rate": 0.0
+      "graded": 4,
+      "rate": 0.5
     },
     "ou": {
       "wins": 2,
-      "losses": 0,
+      "losses": 2,
       "pushes": 0,
-      "graded": 2,
-      "rate": 1.0
+      "graded": 4,
+      "rate": 0.5
     }
   },
   "games": [
+    {
+      "game_id": "401909089",
+      "game_date_utc": "2026-10-20T23:00Z",
+      "home_team": "New York Knicks",
+      "away_team": "Philadelphia 76ers",
+      "home_abbr": "NY",
+      "away_abbr": "PHI",
+      "prediction_issued_at": "2026-10-18T00:15:09.664470+00:00",
+      "prediction_commit": "2797b5d4",
+      "home_win_probability": 0.6421082680094211,
+      "predicted_margin": 2.4667867896053455,
+      "predicted_total": 232.9115198140884,
+      "actual_home_score": 100.0,
+      "actual_away_score": 106.0,
+      "actual_margin": -6.0,
+      "actual_total": 206.0,
+      "winner_correct": false,
+      "market_home_spread": -5.5,
+      "market_total": 231.5,
+      "market_bookmaker": "DraftKings",
+      "ats_result": "win",
+      "ou_result": "loss"
+    },
+    {
+      "game_id": "401909090",
+      "game_date_utc": "2026-10-21T01:30Z",
+      "home_team": "San Antonio Spurs",
+      "away_team": "Oklahoma City Thunder",
+      "home_abbr": "SA",
+      "away_abbr": "OKC",
+      "prediction_issued_at": "2026-10-18T00:15:09.664470+00:00",
+      "prediction_commit": "2797b5d4",
+      "home_win_probability": 0.4114690331596495,
+      "predicted_margin": -1.9571945920965246,
+      "predicted_total": 234.47144069674542,
+      "actual_home_score": 104.0,
+      "actual_away_score": 116.0,
+      "actual_margin": -12.0,
+      "actual_total": 220.0,
+      "winner_correct": true,
+      "market_home_spread": -2.5,
+      "market_total": 231.5,
+      "market_bookmaker": "DraftKings",
+      "ats_result": "win",
+      "ou_result": "loss"
+    },
     {
       "game_id": "401909088",
       "game_date_utc": "2026-10-20T19:00Z",
