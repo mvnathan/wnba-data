@@ -1,12 +1,12 @@
 {
-  "generated_at_utc": "2026-10-20T21:45:35.868054+00:00",
+  "generated_at_utc": "2026-10-21T05:03:43.606253+00:00",
   "status": "ok",
   "production_adjustment_enabled": false,
-  "new_posts_seen": 4,
+  "new_posts_seen": 2,
   "new_picks_parsed": 0,
   "ledger_size": 0,
-  "since_id_used": "2112587890119373272",
-  "newest_id": "2112644254212444466",
+  "since_id_used": "2112644254212444466",
+  "newest_id": "2112765170766499955",
   "accounts": {
     "@RufusPeabody": {
       "tier": "established_professional",
@@ -62,32 +62,18 @@
   "new_picks": [],
   "candidate_posts": [
     {
-      "post_id": "2112644254212444466",
-      "source": "@iamrahstradamus",
-      "published_at_utc": "2026-10-20T20:36:55.000Z",
-      "text": "@Award1021 I bet on the 49ers in Mahomes first Super Bowl and they held a 10 point 4th quarter lead. The Chiefs won 13 one score games and up to that point, each of Mahomes 3 Super Bowls they held deficits and had to come back. It's reasonable to say I'll bet the first half and not want",
-      "url": "https://x.com/iamrahstradamus/status/2112644254212444466"
+      "post_id": "2112765170766499955",
+      "source": "@wheatonbrando",
+      "published_at_utc": "2026-10-21T04:37:24.000Z",
+      "text": "@DrewBasile45 omg it\u2019s definitely over for you\n\nyou can\u2019t go back",
+      "url": "https://x.com/wheatonbrando/status/2112765170766499955"
     },
     {
-      "post_id": "2112610524378886147",
+      "post_id": "2112697263889997858",
       "source": "@iamrahstradamus",
-      "published_at_utc": "2026-10-20T18:22:54.000Z",
-      "text": "No I wasn\u2019t. Go back and listen to the live podcast we did in New Orleans. I said my model loved the Eagles and the wrong team was favored but I was terrified to actually bet the full game because Mahomes has pulled out every close game for years. That was a completely reasonable https://t.co/omJ9xcLpUN https://t.co/GxWMMttlI6",
-      "url": "https://x.com/iamrahstradamus/status/2112610524378886147"
-    },
-    {
-      "post_id": "2112609106276368570",
-      "source": "@iamrahstradamus",
-      "published_at_utc": "2026-10-20T18:17:15.000Z",
-      "text": "No I wasn\u2019t. Go back and listen to the live podcast we did in New Orleans. I said my model loved the Eagles and the wrong team was favored but I was terrified to actually bet the game because Mahomes has pulled out every close game for years. That was a completely reasonable take https://t.co/eitVLlkCxW https://t.co/GxWMMttlI6",
-      "url": "https://x.com/iamrahstradamus/status/2112609106276368570"
-    },
-    {
-      "post_id": "2112608783277142339",
-      "source": "@iamrahstradamus",
-      "published_at_utc": "2026-10-20T18:15:58.000Z",
-      "text": "No I wasn\u2019t. Go back and listen to the live podcast we did in New Orleans. I said my model loved the Eagles but I was terrified to actually bet the game because Mahomes has pulled out every close game for years. I suggested Eagles first half as my best bet (Wisest Wager) on the https://t.co/ia1Tm9N3HT https://t.co/GxWMMttlI6",
-      "url": "https://x.com/iamrahstradamus/status/2112608783277142339"
+      "published_at_utc": "2026-10-21T00:07:34.000Z",
+      "text": "@TheEight8all Yup @phillygodfather sent me a text that week and told me he was all over the Birds.",
+      "url": "https://x.com/iamrahstradamus/status/2112697263889997858"
     }
   ],
   "promotion_thresholds": {
