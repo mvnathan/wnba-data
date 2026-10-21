@@ -1,5 +1,5 @@
 {
-  "updated_at_utc": "2026-10-21T05:09:59.501240+00:00",
+  "updated_at_utc": "2026-10-21T18:51:48.121291+00:00",
   "opportunities": {
     "401857143|pregame|spread": {
       "market": "spread",
@@ -2597,7 +2597,7 @@
       "live_away_score": null,
       "live_home_score": null,
       "market_bookmaker": "DraftKings",
-      "market_updated_at": "2026-10-21T05:09:58.818181+00:00",
+      "market_updated_at": "2026-10-21T18:51:47.296393+00:00",
       "home_win_probability": 0.42771084337349397,
       "away_win_probability": 0.572289156626506,
       "context_rest_risk": 0.5181818181818181,
@@ -2605,7 +2605,7 @@
       "availability_review_priority": true,
       "active": true,
       "first_seen_at_utc": "2026-10-21T05:09:59.501240+00:00",
-      "last_seen_at_utc": "2026-10-21T05:09:59.501240+00:00",
+      "last_seen_at_utc": "2026-10-21T18:51:48.121291+00:00",
       "last_notified_at_utc": "2026-10-21T05:09:59.501240+00:00",
       "last_notified_edge": 5.204999999999984
     },
@@ -2629,7 +2629,7 @@
       "live_away_score": null,
       "live_home_score": null,
       "market_bookmaker": "DraftKings",
-      "market_updated_at": "2026-10-21T05:09:58.818181+00:00",
+      "market_updated_at": "2026-10-21T18:51:47.296393+00:00",
       "home_win_probability": 0.42771084337349397,
       "away_win_probability": 0.572289156626506,
       "context_rest_risk": 0.5181818181818181,
@@ -2637,7 +2637,7 @@
       "availability_review_priority": true,
       "active": false,
       "first_seen_at_utc": null,
-      "last_seen_at_utc": "2026-10-21T05:09:59.501240+00:00",
+      "last_seen_at_utc": "2026-10-21T18:51:48.121291+00:00",
       "last_notified_at_utc": null,
       "last_notified_edge": null,
       "resolved_at_utc": null
