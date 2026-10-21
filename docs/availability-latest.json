@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-21T13:49:14.951325+00:00",
+  "generated_at_utc": "2026-10-21T18:39:48.949976+00:00",
   "status": "ok",
   "direct_model_adjustment_enabled": false,
   "integration_stage": "context_and_edge_reliability_only",
@@ -60,9 +60,9 @@
   },
   "x_source_diagnostics": {
     "status": "ok",
-    "posts": 1,
-    "posts_general": 1,
-    "posts_nba": 0,
+    "posts": 4,
+    "posts_general": 2,
+    "posts_nba": 2,
     "accounts": [
       "AdamSchefter",
       "RapSheet",
@@ -71,11 +71,11 @@
       "ShamsCharania",
       "ChrisBHaynes"
     ],
-    "since_id_used_general": "2112691305671467341",
+    "since_id_used_general": "2112889820590559473",
     "since_id_used_nba": "2112358156953358700",
-    "newest_id": "2112889820590559473",
-    "newest_id_general": "2112889820590559473",
-    "newest_id_nba": "2112358156953358700",
+    "newest_id": "2112966047317794863",
+    "newest_id_general": "2112966047317794863",
+    "newest_id_nba": "2112972839863329002",
     "query_general": "(from:AdamSchefter OR from:RapSheet OR from:JeffPassan OR from:alexaphilippou) (out OR inactive OR doubtful OR questionable OR injury OR injured OR rest OR resting OR \"expected to play\" OR \"will start\" OR \"minutes restriction\" OR \"snap count\" OR \"pitch count\") -is:retweet lang:en",
     "query_nba": "(from:ShamsCharania OR from:ChrisBHaynes) (out OR inactive OR doubtful OR questionable OR injury OR injured OR rest OR resting OR \"expected to play\" OR \"will start\" OR \"minutes restriction\" OR \"snap count\" OR \"pitch count\" OR \"will miss\" OR sidelined OR available OR cleared OR starting OR surgery OR sprain OR signed OR waived OR trade OR traded) -is:retweet lang:en"
   },
@@ -85,7 +85,7 @@
       "source": "NFL Official Injury Report",
       "source_tier": "official",
       "published_at_utc": null,
-      "fetched_at_utc": "2026-10-21T13:49:13.849269+00:00",
+      "fetched_at_utc": "2026-10-21T18:39:47.696641+00:00",
       "status_signal": "out",
       "tactical_flags": [
         "rest_candidate"
@@ -99,7 +99,7 @@
       "source": "NFL Official Injury Report",
       "source_tier": "official",
       "published_at_utc": null,
-      "fetched_at_utc": "2026-10-21T13:49:13.849510+00:00",
+      "fetched_at_utc": "2026-10-21T18:39:47.697028+00:00",
       "status_signal": "out",
       "tactical_flags": [
         "rest_candidate"
@@ -113,7 +113,7 @@
       "source": "NFL Official Injury Report",
       "source_tier": "official",
       "published_at_utc": null,
-      "fetched_at_utc": "2026-10-21T13:49:13.849524+00:00",
+      "fetched_at_utc": "2026-10-21T18:39:47.697062+00:00",
       "status_signal": "out",
       "tactical_flags": [],
       "confidence": 0.65,
@@ -125,7 +125,7 @@
       "source": "NFL Official Injury Report",
       "source_tier": "official",
       "published_at_utc": null,
-      "fetched_at_utc": "2026-10-21T13:49:13.849557+00:00",
+      "fetched_at_utc": "2026-10-21T18:39:47.697133+00:00",
       "status_signal": "out",
       "tactical_flags": [],
       "confidence": 0.65,
@@ -137,7 +137,7 @@
       "source": "NFL Official Injury Report",
       "source_tier": "official",
       "published_at_utc": null,
-      "fetched_at_utc": "2026-10-21T13:49:13.849588+00:00",
+      "fetched_at_utc": "2026-10-21T18:39:47.697182+00:00",
       "status_signal": "out",
       "tactical_flags": [],
       "confidence": 0.65,
@@ -149,7 +149,7 @@
       "source": "NFL Official Injury Report",
       "source_tier": "official",
       "published_at_utc": null,
-      "fetched_at_utc": "2026-10-21T13:49:13.849632+00:00",
+      "fetched_at_utc": "2026-10-21T18:39:47.697252+00:00",
       "status_signal": "out",
       "tactical_flags": [],
       "confidence": 0.65,
@@ -161,7 +161,7 @@
       "source": "NFL Official Injury Report",
       "source_tier": "official",
       "published_at_utc": null,
-      "fetched_at_utc": "2026-10-21T13:49:13.849662+00:00",
+      "fetched_at_utc": "2026-10-21T18:39:47.697306+00:00",
       "status_signal": "out",
       "tactical_flags": [],
       "confidence": 0.65,
@@ -173,7 +173,7 @@
       "source": "MLB Official Injury Report",
       "source_tier": "official",
       "published_at_utc": null,
-      "fetched_at_utc": "2026-10-21T13:49:14.165063+00:00",
+      "fetched_at_utc": "2026-10-21T18:39:48.045655+00:00",
       "status_signal": "out",
       "tactical_flags": [],
       "confidence": 0.65,
@@ -185,7 +185,7 @@
       "source": "MLB Official Injury Report",
       "source_tier": "official",
       "published_at_utc": null,
-      "fetched_at_utc": "2026-10-21T13:49:14.165175+00:00",
+      "fetched_at_utc": "2026-10-21T18:39:48.045828+00:00",
       "status_signal": "out",
       "tactical_flags": [],
       "confidence": 0.65,
@@ -197,7 +197,7 @@
       "source": "MLB Official Injury Report",
       "source_tier": "official",
       "published_at_utc": null,
-      "fetched_at_utc": "2026-10-21T13:49:14.165249+00:00",
+      "fetched_at_utc": "2026-10-21T18:39:48.045945+00:00",
       "status_signal": "out",
       "tactical_flags": [],
       "confidence": 0.65,
@@ -209,7 +209,7 @@
       "source": "NFL Official Injury Report",
       "source_tier": "official",
       "published_at_utc": null,
-      "fetched_at_utc": "2026-10-21T13:49:13.849543+00:00",
+      "fetched_at_utc": "2026-10-21T18:39:47.697110+00:00",
       "status_signal": "questionable",
       "tactical_flags": [],
       "confidence": 0.585,
@@ -221,7 +221,7 @@
       "source": "MLB Official Injury Report",
       "source_tier": "official",
       "published_at_utc": null,
-      "fetched_at_utc": "2026-10-21T13:49:14.164824+00:00",
+      "fetched_at_utc": "2026-10-21T18:39:48.045323+00:00",
       "status_signal": "probable",
       "tactical_flags": [],
       "confidence": 0.585,
@@ -233,7 +233,7 @@
       "source": "MLB Probable Pitchers",
       "source_tier": "official",
       "published_at_utc": null,
-      "fetched_at_utc": "2026-10-21T13:49:14.307161+00:00",
+      "fetched_at_utc": "2026-10-21T18:39:48.202000+00:00",
       "status_signal": "probable",
       "tactical_flags": [],
       "confidence": 0.585,
@@ -241,11 +241,23 @@
       "url": "https://www.mlb.com/probable-pitchers"
     },
     {
+      "sport": "WNBA",
+      "source": "@alexaphilippou",
+      "source_tier": "trusted_media",
+      "published_at_utc": "2026-10-21T14:20:15.000Z",
+      "fetched_at_utc": "2026-10-21T18:39:48.765959+00:00",
+      "status_signal": "out",
+      "tactical_flags": [],
+      "confidence": 0.5362,
+      "text": "Tonight\u2019s Finals Game 3 at State Farm Arena is officially a sellout, a source confirmed to ESPN (@FOS first), and that\u2019s for the entire arena, roughly 17k seats. A huge win for the Atlanta Dream org and WNBA after figuring out a way to get Games 3 &amp; 4 moved to the bigger venue",
+      "url": "https://x.com/alexaphilippou/status/2112911849738162542"
+    },
+    {
       "sport": "NFL",
       "source": "NFL Official Injury Report",
       "source_tier": "official",
       "published_at_utc": null,
-      "fetched_at_utc": "2026-10-21T13:49:13.849576+00:00",
+      "fetched_at_utc": "2026-10-21T18:39:47.697163+00:00",
       "status_signal": null,
       "tactical_flags": [
         "expected_to_start"
@@ -259,7 +271,7 @@
       "source": "MLB Official Injury Report",
       "source_tier": "official",
       "published_at_utc": null,
-      "fetched_at_utc": "2026-10-21T13:49:14.164956+00:00",
+      "fetched_at_utc": "2026-10-21T18:39:48.045500+00:00",
       "status_signal": null,
       "tactical_flags": [
         "rest_candidate"
@@ -439,84 +451,10 @@
       "confidence": 0.6132,
       "text": "Bad to worse: #Rams star WR Davante Adams, who sustained a hamstring injury in last night\u2019s loss to the #AZCardinals, is out 6-10 weeks. https://t.co/FO80VAb5NM",
       "url": "https://x.com/RapSheet/status/2112286809397006716"
-    },
-    {
-      "sport": "NFL",
-      "source": "@RapSheet",
-      "source_tier": "trusted_media",
-      "published_at_utc": "2026-10-19T14:22:51.000Z",
-      "fetched_at_utc": "2026-10-19T19:57:05.734953+00:00",
-      "status_signal": "out",
-      "tactical_flags": [],
-      "confidence": 0.4814,
-      "text": "#Eagles QB Jalen Hurts, who is out for the season after several blood clots were revealed in his lungs, has been undergoing tests for days. Before the London game, Hurts was in the hospital until 4 am and did not sleep because sleep was a risk. He played without having slept. https://t.co/avMUeBBOua",
-      "url": "https://x.com/RapSheet/status/2112187727399489688"
-    },
-    {
-      "sport": "NFL",
-      "source": "@RapSheet",
-      "source_tier": "trusted_media",
-      "published_at_utc": "2026-10-19T14:21:19.000Z",
-      "fetched_at_utc": "2026-10-19T19:57:05.735027+00:00",
-      "status_signal": "out",
-      "tactical_flags": [],
-      "confidence": 0.4803,
-      "text": "#Eagles QB Jalen Hurts, who is out for the season after several blood clots were revealed in his lungs. Before the London game, Hurts was in the hospital until 4 am and did not sleep because sleep was a risk. He played the game without having slept. Crazy. https://t.co/HCOaiwLNw0",
-      "url": "https://x.com/RapSheet/status/2112187341473214688"
-    },
-    {
-      "sport": "NFL",
-      "source": "@AdamSchefter",
-      "source_tier": "trusted_media",
-      "published_at_utc": "2026-10-19T14:18:02.000Z",
-      "fetched_at_utc": "2026-10-19T19:57:05.735067+00:00",
-      "status_signal": "out",
-      "tactical_flags": [],
-      "confidence": 0.478,
-      "text": "Jalen Hurts will be out for the season after doctors discovered multiple blood clots in his lungs. https://t.co/PYfJpO16FS",
-      "url": "https://x.com/AdamSchefter/status/2112186516684357831"
-    },
-    {
-      "sport": "NFL",
-      "source": "@RapSheet",
-      "source_tier": "trusted_media",
-      "published_at_utc": "2026-10-19T14:13:06.000Z",
-      "fetched_at_utc": "2026-10-19T19:57:05.735138+00:00",
-      "status_signal": "out",
-      "tactical_flags": [],
-      "confidence": 0.4746,
-      "text": "This statement details why there was such a dramatic change in the diagnosis for Jalen Hurts. When doctors found multiple blood clots in his lungs, it went from being able to manage it to immediate treatment. Hurts is out for the season. https://t.co/5rYLhTYGuF",
-      "url": "https://x.com/RapSheet/status/2112185275862417814"
-    },
-    {
-      "sport": "NFL",
-      "source": "@RapSheet",
-      "source_tier": "trusted_media",
-      "published_at_utc": "2026-10-19T14:11:43.000Z",
-      "fetched_at_utc": "2026-10-19T19:57:05.735172+00:00",
-      "status_signal": "out",
-      "tactical_flags": [],
-      "confidence": 0.4737,
-      "text": "Jalen Hurts will be out an estimated three months as he undergoes treatment. https://t.co/riJ68k5Q8H",
-      "url": "https://x.com/RapSheet/status/2112184924182646853"
-    },
-    {
-      "sport": "NFL",
-      "source": "@AdamSchefter",
-      "source_tier": "trusted_media",
-      "published_at_utc": "2026-10-19T15:10:36.000Z",
-      "fetched_at_utc": "2026-10-19T19:57:05.734867+00:00",
-      "status_signal": null,
-      "tactical_flags": [
-        "rest_candidate"
-      ],
-      "confidence": 0.3868,
-      "text": "More about Eagles quarterback Jalen Hurts now being expected to miss the rest of the season after doctors discovered multiple blood clots in his lungs: https://t.co/5PDkyDWqwy",
-      "url": "https://x.com/AdamSchefter/status/2112199746022777039"
     }
   ],
   "structured": {
-    "generated_at_utc": "2026-10-21T13:49:14.951111+00:00",
+    "generated_at_utc": "2026-10-21T18:39:48.949889+00:00",
     "players": [],
     "teams": {},
     "policy": {
