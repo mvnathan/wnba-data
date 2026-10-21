@@ -1,11 +1,11 @@
 {
-  "generated_at_utc": "2026-10-21T05:03:43.606253+00:00",
+  "generated_at_utc": "2026-10-21T12:05:15.141343+00:00",
   "status": "ok",
   "production_adjustment_enabled": false,
-  "new_posts_seen": 2,
+  "new_posts_seen": 0,
   "new_picks_parsed": 0,
   "ledger_size": 0,
-  "since_id_used": "2112644254212444466",
+  "since_id_used": "2112765170766499955",
   "newest_id": "2112765170766499955",
   "accounts": {
     "@RufusPeabody": {
@@ -60,22 +60,7 @@
     }
   },
   "new_picks": [],
-  "candidate_posts": [
-    {
-      "post_id": "2112765170766499955",
-      "source": "@wheatonbrando",
-      "published_at_utc": "2026-10-21T04:37:24.000Z",
-      "text": "@DrewBasile45 omg it\u2019s definitely over for you\n\nyou can\u2019t go back",
-      "url": "https://x.com/wheatonbrando/status/2112765170766499955"
-    },
-    {
-      "post_id": "2112697263889997858",
-      "source": "@iamrahstradamus",
-      "published_at_utc": "2026-10-21T00:07:34.000Z",
-      "text": "@TheEight8all Yup @phillygodfather sent me a text that week and told me he was all over the Birds.",
-      "url": "https://x.com/iamrahstradamus/status/2112697263889997858"
-    }
-  ],
+  "candidate_posts": [],
   "promotion_thresholds": {
     "minimum_graded_picks": 100,
     "minimum_positive_clv_rate": 0.52,
