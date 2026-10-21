@@ -1,28 +1,28 @@
 {
-  "generated_at_utc": "2026-10-20T21:36:09.480088Z",
+  "generated_at_utc": "2026-10-21T04:43:02.234509Z",
   "method": "Earliest committed pre-match forecast joined to ESPN final scores by match ID",
   "summary": {
-    "matches_evaluated": 757,
-    "winner_accuracy": 0.6327608982826949,
-    "winner_auc": 0.676614721160443,
-    "winner_log_loss": 0.656825904860516,
-    "winner_brier_score": 0.2291333482694848,
-    "spread_mae_games": 4.42562747688243,
-    "spread_bias_games": -0.022721268163804435,
-    "total_mae_games": 5.383091149273448,
-    "total_bias_games": -1.323645970937913
+    "matches_evaluated": 758,
+    "winner_accuracy": 0.633245382585752,
+    "winner_auc": 0.6773409847739125,
+    "winner_log_loss": 0.656351101099247,
+    "winner_brier_score": 0.22891812961741423,
+    "spread_mae_games": 4.420844327176781,
+    "spread_bias_games": -0.02374670184696564,
+    "total_mae_games": 5.389577836411609,
+    "total_bias_games": -1.3354881266490766
   },
   "by_tour": {
     "ATP": {
-      "matches_evaluated": 296,
-      "winner_accuracy": 0.6182432432432432,
-      "winner_auc": 0.6784007352941177,
-      "winner_log_loss": 0.6434192806749689,
-      "winner_brier_score": 0.22576708320945946,
-      "spread_mae_games": 4.05168918918919,
-      "spread_bias_games": -0.1773648648648649,
-      "total_mae_games": 5.773648648648648,
-      "total_bias_games": -0.8722972972972971
+      "matches_evaluated": 297,
+      "winner_accuracy": 0.6195286195286195,
+      "winner_auc": 0.6803832116788321,
+      "winner_log_loss": 0.6422526320996953,
+      "winner_brier_score": 0.22522913885521884,
+      "spread_mae_games": 4.040740740740741,
+      "spread_bias_games": -0.1794612794612795,
+      "total_mae_games": 5.78888888888889,
+      "total_bias_games": -0.9040404040404039
     },
     "WTA": {
       "matches_evaluated": 461,
@@ -591,15 +591,15 @@
     },
     {
       "date": "2026-10-20",
-      "matches_evaluated": 32,
-      "winner_accuracy": 0.5625,
-      "winner_auc": 0.5951417004048583,
-      "winner_log_loss": 0.6673532826857462,
-      "winner_brier_score": 0.23815616875,
-      "spread_mae_games": 3.90625,
-      "spread_bias_games": -0.34375,
-      "total_mae_games": 5.29375,
-      "total_bias_games": -1.6062499999999997
+      "matches_evaluated": 33,
+      "winner_accuracy": 0.5757575757575758,
+      "winner_auc": 0.6203007518796992,
+      "winner_log_loss": 0.6561281727200786,
+      "winner_brier_score": 0.23293924272727273,
+      "spread_mae_games": 3.812121212121212,
+      "spread_bias_games": -0.3575757575757576,
+      "total_mae_games": 5.445454545454546,
+      "total_bias_games": -1.8696969696969694
     }
   ],
   "matches": [
@@ -26340,6 +26340,40 @@
       "absolute_margin_error": 1.4,
       "total_error": -4.0,
       "absolute_total_error": 4.0
+    },
+    {
+      "match_id": "185091",
+      "target_date": "2026-10-20",
+      "start_time_utc": "2026-10-20T18:30Z",
+      "tour": "ATP",
+      "tournament": "Grand Prix Auvergne-Rh\u00f4ne-Alpes",
+      "round": "Round 1",
+      "player_1": "Hamad Medjedovic",
+      "player_2": "Brandon Nakashima",
+      "player_1_rank": 78,
+      "player_2_rank": 18,
+      "model_version": "tennis-v3-tournament-context",
+      "prediction_issued_at": "2026-10-20T04:46:45.939706+00:00",
+      "prediction_commit": "b340e815",
+      "player_1_win_probability": 0.2569,
+      "predicted_winner": "Brandon Nakashima",
+      "predicted_game_margin_player_1": -4.8,
+      "predicted_total_games": 23.7,
+      "actual_player_1": "Hamad Medjedovic",
+      "actual_player_2": "Brandon Nakashima",
+      "actual_player_1_games": 15.0,
+      "actual_player_2_games": 19.0,
+      "actual_margin_player_1": -4.0,
+      "actual_total_games": 34.0,
+      "actual_winner_player_1": false,
+      "final_status": "Final",
+      "winner_correct": true,
+      "brier_score": 0.06599761000000001,
+      "log_loss": 0.2969246538187135,
+      "margin_error": -0.7999999999999998,
+      "absolute_margin_error": 0.7999999999999998,
+      "total_error": -10.3,
+      "absolute_total_error": 10.3
     }
   ]
 }
