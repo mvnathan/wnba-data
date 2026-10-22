@@ -1,12 +1,12 @@
 {
-  "generated_at_utc": "2026-10-22T17:23:09.562246+00:00",
+  "generated_at_utc": "2026-10-22T21:46:39.578175+00:00",
   "status": "ok",
   "production_adjustment_enabled": false,
   "new_posts_seen": 1,
   "new_picks_parsed": 0,
   "ledger_size": 0,
-  "since_id_used": "2113165876534919640",
-  "newest_id": "2113290774880366848",
+  "since_id_used": "2113290774880366848",
+  "newest_id": "2113380116252565514",
   "accounts": {
     "@RufusPeabody": {
       "tier": "established_professional",
@@ -62,11 +62,11 @@
   "new_picks": [],
   "candidate_posts": [
     {
-      "post_id": "2113290774880366848",
-      "source": "@wheatonbrando",
-      "published_at_utc": "2026-10-22T15:25:58.000Z",
-      "text": "@Marcus_Mosher Yeah no, this is the bears play. Show some respect and get it right.",
-      "url": "https://x.com/wheatonbrando/status/2113290774880366848"
+      "post_id": "2113380116252565514",
+      "source": "@iamrahstradamus",
+      "published_at_utc": "2026-10-22T21:20:59.000Z",
+      "text": "Floyd Mayweather opened up as a +300 underdog against Ryan Garcia who is -400. \n\nMy mind is truly struggling to deal with the mere thought of Ryan being a favorite over Floyd. If I have to watch Floyd lose to Ryan I might call out sick for work for the first time in my life.",
+      "url": "https://x.com/iamrahstradamus/status/2113380116252565514"
     }
   ],
   "promotion_thresholds": {
