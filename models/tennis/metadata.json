@@ -1,31 +1,31 @@
 {
-  "generated_at_utc": "2026-10-21T21:41:20.911825Z",
+  "generated_at_utc": "2026-10-22T04:41:06.159567Z",
   "metrics": [
     {
       "tour": "ATP",
-      "training_matches": 5140,
-      "holdout_matches": 1028,
-      "holdout_start": "2026-06-08",
+      "training_matches": 5081,
+      "holdout_matches": 1017,
+      "holdout_start": "2026-06-09",
       "holdout_end": "2026-10-17",
-      "winner_accuracy": 0.6556,
-      "winner_auc": 0.7079,
-      "winner_log_loss": 0.6217,
-      "winner_brier_score": 0.2169,
-      "spread_mae_games": 4.096,
-      "total_mae_games": 5.619
+      "winner_accuracy": 0.6539,
+      "winner_auc": 0.7126,
+      "winner_log_loss": 0.6208,
+      "winner_brier_score": 0.2161,
+      "spread_mae_games": 4.111,
+      "total_mae_games": 5.609
     },
     {
       "tour": "WTA",
-      "training_matches": 4713,
-      "holdout_matches": 943,
-      "holdout_start": "2026-06-08",
+      "training_matches": 4660,
+      "holdout_matches": 932,
+      "holdout_start": "2026-06-15",
       "holdout_end": "2026-10-12",
-      "winner_accuracy": 0.6787,
-      "winner_auc": 0.7497,
-      "winner_log_loss": 0.5888,
-      "winner_brier_score": 0.2025,
-      "spread_mae_games": 4.307,
-      "total_mae_games": 4.653
+      "winner_accuracy": 0.6706,
+      "winner_auc": 0.7526,
+      "winner_log_loss": 0.5864,
+      "winner_brier_score": 0.2015,
+      "spread_mae_games": 4.277,
+      "total_mae_games": 4.67
     }
   ],
   "features": [
