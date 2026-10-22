@@ -1,12 +1,12 @@
 {
-  "generated_at_utc": "2026-10-21T21:51:46.177805+00:00",
+  "generated_at_utc": "2026-10-22T05:05:45.259013+00:00",
   "status": "ok",
   "production_adjustment_enabled": false,
   "new_posts_seen": 4,
   "new_picks_parsed": 0,
   "ledger_size": 0,
-  "since_id_used": "2112940259726250449",
-  "newest_id": "2112993856132108395",
+  "since_id_used": "2112993856132108395",
+  "newest_id": "2113113187000496187",
   "accounts": {
     "@RufusPeabody": {
       "tier": "established_professional",
@@ -62,32 +62,32 @@
   "new_picks": [],
   "candidate_posts": [
     {
-      "post_id": "2112993856132108395",
-      "source": "@capjack2000",
-      "published_at_utc": "2026-10-21T19:46:07.000Z",
-      "text": "@WalrusQuant Nice summary. My only comment is that no sportsbook is setting the line on the mean. \n\nThey don't care how far over or under you go. Sportsbook lines are set on the median. That's why most people look at a player's average and bet the over. Wrongly.",
-      "url": "https://x.com/capjack2000/status/2112993856132108395"
-    },
-    {
-      "post_id": "2112982736613027874",
-      "source": "@wheatonbrando",
-      "published_at_utc": "2026-10-21T19:01:56.000Z",
-      "text": "I have 11 teams left with over a 5% chance of making the Super Bowl \u2014 none of which are the Rams or Seahawks.\n\nWhy the 49ers are bigger favorites than you might think, plus futures value on the Lions and Texans at @ActionNetworkHQ:\n\nhttps://t.co/VAjfqtFLne",
-      "url": "https://x.com/wheatonbrando/status/2112982736613027874"
-    },
-    {
-      "post_id": "2112977003729297494",
+      "post_id": "2113113187000496187",
       "source": "@iamrahstradamus",
-      "published_at_utc": "2026-10-21T18:39:09.000Z",
-      "text": "@BrandyLJensen When I joined the Ringer in 2022, I wanted to write and they told me they only wanted me to do podcasts. I was confused because literally everyone else wanted my writing. Over the last year I started to realize that I lost my edge by not writing. Not writing was hurting my",
-      "url": "https://x.com/iamrahstradamus/status/2112977003729297494"
+      "published_at_utc": "2026-10-22T03:40:18.000Z",
+      "text": "@OptimusRhyme It was a Kobe-Bron thing and I was a Kobe Stan. I've long gotten over that and realized I can enjoy both and Stan wars are lame.......but it's hard to enjoy rooting for his teams because of all the chaos that comes with his presence.",
+      "url": "https://x.com/iamrahstradamus/status/2113113187000496187"
     },
     {
-      "post_id": "2112972671751508441",
-      "source": "@capjack2000",
-      "published_at_utc": "2026-10-21T18:21:56.000Z",
-      "text": "@MattRybaltowski I wouldn't expect it to last even 3 seconds. Prediction markets are for algorithmic (bot) trading. If your bot didn't capture an arbitrage event in under 1 second, you need a better bot.",
-      "url": "https://x.com/capjack2000/status/2112972671751508441"
+      "post_id": "2113089465011101732",
+      "source": "@wheatonbrando",
+      "published_at_utc": "2026-10-22T02:06:02.000Z",
+      "text": "@krum_k man that\u2019s aggressive haha, good luck. I can see a play-in loss",
+      "url": "https://x.com/wheatonbrando/status/2113089465011101732"
+    },
+    {
+      "post_id": "2113064493131739246",
+      "source": "@wheatonbrando",
+      "published_at_utc": "2026-10-22T00:26:48.000Z",
+      "text": "thinking $200 but I could be talked into $50 if they let me suit up and play 15 at shooting guard https://t.co/EoCC36ZiQo",
+      "url": "https://x.com/wheatonbrando/status/2113064493131739246"
+    },
+    {
+      "post_id": "2113059555836113007",
+      "source": "@wheatonbrando",
+      "published_at_utc": "2026-10-22T00:07:11.000Z",
+      "text": "currently thinking about how much the Milwaukee Bucks would have to pay me to send a car to my house, pick me up at my door, drive me two hours to the arena, give me a free ticket, and force me to watch them play",
+      "url": "https://x.com/wheatonbrando/status/2113059555836113007"
     }
   ],
   "promotion_thresholds": {
