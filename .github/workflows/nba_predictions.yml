@@ -75,9 +75,15 @@ jobs:
           git add docs/nba-latest.json predictions/nba-latest.json data/nba_model_comparison.json docs/nba-performance.json
           if git diff --cached --quiet; then exit 0; fi
           git commit -m "Update NBA predictions"
-          for attempt in 1 2 3; do
-            if git push origin HEAD:main; then exit 0; fi
+          # Rebase only generated artifacts on the newest main, rather than
+          # replaying unrelated workflow commits from a stale checkout.
+          for attempt in 1 2 3 4 5; do
             git fetch origin main
-            git rebase origin/main || { git rebase --abort || true; exit 1; }
+            git reset --soft origin/main
+            git reset
+            git add docs/nba-latest.json predictions/nba-latest.json data/nba_model_comparison.json docs/nba-performance.json
+            if git diff --cached --quiet; then exit 0; fi
+            git commit -m "Update NBA predictions"
+            if git push origin HEAD:main; then exit 0; fi
           done
           exit 1
