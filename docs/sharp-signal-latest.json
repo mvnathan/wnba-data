@@ -1,12 +1,12 @@
 {
-  "generated_at_utc": "2026-10-22T12:09:01.572269+00:00",
+  "generated_at_utc": "2026-10-22T17:23:09.562246+00:00",
   "status": "ok",
   "production_adjustment_enabled": false,
   "new_posts_seen": 1,
   "new_picks_parsed": 0,
   "ledger_size": 0,
-  "since_id_used": "2113113187000496187",
-  "newest_id": "2113165876534919640",
+  "since_id_used": "2113165876534919640",
+  "newest_id": "2113290774880366848",
   "accounts": {
     "@RufusPeabody": {
       "tier": "established_professional",
@@ -62,11 +62,11 @@
   "new_picks": [],
   "candidate_posts": [
     {
-      "post_id": "2113165876534919640",
-      "source": "@iamrahstradamus",
-      "published_at_utc": "2026-10-22T07:09:40.000Z",
-      "text": "@kccomadena @CLVcreator Basically I was a big Kobe fan anI didn\u2019t want Lebron to be better than him. I think I fell victim to the Skip Bayless school of thought. At some point I recognized, this is silly. I can enjoy both......but still it felt weird to root for him. \n\nI think there's a generation of",
-      "url": "https://x.com/iamrahstradamus/status/2113165876534919640"
+      "post_id": "2113290774880366848",
+      "source": "@wheatonbrando",
+      "published_at_utc": "2026-10-22T15:25:58.000Z",
+      "text": "@Marcus_Mosher Yeah no, this is the bears play. Show some respect and get it right.",
+      "url": "https://x.com/wheatonbrando/status/2113290774880366848"
     }
   ],
   "promotion_thresholds": {
