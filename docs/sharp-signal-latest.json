@@ -1,12 +1,12 @@
 {
-  "generated_at_utc": "2026-10-23T11:52:06.836623+00:00",
+  "generated_at_utc": "2026-10-23T17:19:06.594332+00:00",
   "status": "ok",
   "production_adjustment_enabled": false,
   "new_posts_seen": 1,
   "new_picks_parsed": 0,
   "ledger_size": 0,
-  "since_id_used": "2113471294880829452",
-  "newest_id": "2113524097162604567",
+  "since_id_used": "2113524097162604567",
+  "newest_id": "2113627571644678606",
   "accounts": {
     "@RufusPeabody": {
       "tier": "established_professional",
@@ -62,11 +62,11 @@
   "new_picks": [],
   "candidate_posts": [
     {
-      "post_id": "2113524097162604567",
-      "source": "@wheatonbrando",
-      "published_at_utc": "2026-10-23T06:53:06.000Z",
-      "text": "@RyanPaganetti That\u2019s why one of those two is an A++ play caller and the other is a C+ at best that does precious little to elevate an offense.",
-      "url": "https://x.com/wheatonbrando/status/2113524097162604567"
+      "post_id": "2113627571644678606",
+      "source": "@FezzikSports",
+      "published_at_utc": "2026-10-23T13:44:17.000Z",
+      "text": "My last survivor entries went DOWN with the Rams last week. I said \"it's over\".  90% plus of survivor players have been eliminated.\n\nHowever, it is never over until we say it is over!   It wasn't over when the Japanese bombed  France, and it's not over now!  When the going gets",
+      "url": "https://x.com/FezzikSports/status/2113627571644678606"
     }
   ],
   "promotion_thresholds": {
