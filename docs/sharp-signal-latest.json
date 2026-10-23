@@ -1,12 +1,12 @@
 {
-  "generated_at_utc": "2026-10-23T05:05:27.396046+00:00",
+  "generated_at_utc": "2026-10-23T11:52:06.836623+00:00",
   "status": "ok",
   "production_adjustment_enabled": false,
-  "new_posts_seen": 6,
+  "new_posts_seen": 1,
   "new_picks_parsed": 0,
   "ledger_size": 0,
-  "since_id_used": "2113380116252565514",
-  "newest_id": "2113471294880829452",
+  "since_id_used": "2113471294880829452",
+  "newest_id": "2113524097162604567",
   "accounts": {
     "@RufusPeabody": {
       "tier": "established_professional",
@@ -62,46 +62,11 @@
   "new_picks": [],
   "candidate_posts": [
     {
-      "post_id": "2113471294880829452",
-      "source": "@iamrahstradamus",
-      "published_at_utc": "2026-10-23T03:23:17.000Z",
-      "text": "Chicago Bears -3 \u2705\nHunter Henry over 33.5 receiving yards \u2705\n\nRough week and losing streak finally comes to an end. We've had so many double digit leads this week and finally one didn't fold. https://t.co/8aUplzJ8KN",
-      "url": "https://x.com/iamrahstradamus/status/2113471294880829452"
-    },
-    {
-      "post_id": "2113454323606942071",
-      "source": "@iamrahstradamus",
-      "published_at_utc": "2026-10-23T02:15:51.000Z",
-      "text": "Hunter Henry Over 33.5 yards \u2705 gets to the window in the 3rd quarter! https://t.co/MHG0oq11OX",
-      "url": "https://x.com/iamrahstradamus/status/2113454323606942071"
-    },
-    {
-      "post_id": "2113440123584995772",
+      "post_id": "2113524097162604567",
       "source": "@wheatonbrando",
-      "published_at_utc": "2026-10-23T01:19:25.000Z",
-      "text": "wait so why was that a penalty on the Thuney play? did he not declare or something??",
-      "url": "https://x.com/wheatonbrando/status/2113440123584995772"
-    },
-    {
-      "post_id": "2113413276587704795",
-      "source": "@iamrahstradamus",
-      "published_at_utc": "2026-10-22T23:32:45.000Z",
-      "text": "My best bet is Bears -3 but on the props side I like Hunter Henry over 33.5 receiving yards. I expect the Pats to play more 12 and 13 personnel and Henry should be the beneficiary against a Bears defense that tends to give up explosives. \n\nHe\u2019s hit this in 3 straight games. Let\u2019s https://t.co/FI2QEOmJHP",
-      "url": "https://x.com/iamrahstradamus/status/2113413276587704795"
-    },
-    {
-      "post_id": "2113398192654229960",
-      "source": "@iamrahstradamus",
-      "published_at_utc": "2026-10-22T22:32:48.000Z",
-      "text": "This is why you don't bet NFL teams to go over 11.5 wins.\n\nVery hard to do. https://t.co/XGvc3sJ6gV",
-      "url": "https://x.com/iamrahstradamus/status/2113398192654229960"
-    },
-    {
-      "post_id": "2113398137872334943",
-      "source": "@iamrahstradamus",
-      "published_at_utc": "2026-10-22T22:32:35.000Z",
-      "text": "This is why you don't bet NFL teams to go over 11.5 wins. https://t.co/XGvc3sJ6gV",
-      "url": "https://x.com/iamrahstradamus/status/2113398137872334943"
+      "published_at_utc": "2026-10-23T06:53:06.000Z",
+      "text": "@RyanPaganetti That\u2019s why one of those two is an A++ play caller and the other is a C+ at best that does precious little to elevate an offense.",
+      "url": "https://x.com/wheatonbrando/status/2113524097162604567"
     }
   ],
   "promotion_thresholds": {
