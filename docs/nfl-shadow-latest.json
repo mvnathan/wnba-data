@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-22T21:54:13.649623+00:00",
+  "generated_at_utc": "2026-10-23T00:54:31.349964+00:00",
   "status": "ok",
   "production_modified": false,
   "baseline_model_version": "nfl-v2",
@@ -18,7 +18,7 @@
     "games": 14,
     "games_changed_by_availability": 1,
     "games_changed_by_combined": 1,
-    "availability_x_signals_available": 3,
+    "availability_x_signals_available": 5,
     "sharp_ledger_picks": 0,
     "sharp_production_weight": 0.0
   },
@@ -41,15 +41,15 @@
         "predicted_winner": "Chicago Bears"
       },
       "availability_shadow": {
-        "predicted_home_points": 22.34,
+        "predicted_home_points": 22.5,
         "predicted_away_points": 21.6,
-        "predicted_margin": 0.74,
-        "predicted_total": 43.94,
-        "home_win_probability": 0.5256,
-        "away_win_probability": 0.4744,
+        "predicted_margin": 0.9,
+        "predicted_total": 44.1,
+        "home_win_probability": 0.5309,
+        "away_win_probability": 0.4691,
         "predicted_winner": "Chicago Bears",
-        "availability_margin_delta": -0.56,
-        "availability_total_delta": -0.46,
+        "availability_margin_delta": -0.4,
+        "availability_total_delta": -0.3,
         "signals_applied": [
           {
             "team": "CHI",
@@ -63,19 +63,32 @@
             "published_at_utc": "2026-10-21T19:25:48.000Z",
             "url": "https://x.com/RapSheet/status/2112988744357949624",
             "text": "#Bears RB Kyle Monangai ruled out https://t.co/2ZClBNCWet"
+          },
+          {
+            "team": "NE",
+            "player": "Christian Gonzalez",
+            "position": "CB",
+            "status": "questionable",
+            "confidence": 0.5661,
+            "base_points": 0.8,
+            "point_impact": 0.204,
+            "source": "@RapSheet",
+            "published_at_utc": "2026-10-22T22:11:49.000Z",
+            "url": "https://x.com/RapSheet/status/2113392909324288298",
+            "text": "#Patriots CB Christian Gonzalez was downgraded to questionable for tonight's game vs the #Bears with an illness."
           }
         ]
       },
       "combined_shadow": {
-        "predicted_home_points": 22.34,
+        "predicted_home_points": 22.5,
         "predicted_away_points": 21.6,
-        "predicted_margin": 0.74,
-        "predicted_total": 43.94,
-        "home_win_probability": 0.5256,
-        "away_win_probability": 0.4744,
+        "predicted_margin": 0.9,
+        "predicted_total": 44.1,
+        "home_win_probability": 0.5309,
+        "away_win_probability": 0.4691,
         "predicted_winner": "Chicago Bears",
-        "combined_margin_delta_vs_production": -0.56,
-        "combined_total_delta_vs_production": -0.46,
+        "combined_margin_delta_vs_production": -0.4,
+        "combined_total_delta_vs_production": -0.3,
         "sharp_margin_delta": 0.0,
         "sharp_total_delta": 0.0,
         "sharp_signals_applied": []
