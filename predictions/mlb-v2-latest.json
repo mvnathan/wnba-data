@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-23T20:26:57.713166+00:00",
+  "generated_at_utc": "2026-10-23T23:51:40.019421+00:00",
   "target_date": "2026-10-23",
   "sport": "MLB",
   "model_version": "mlb-runs-v2",
@@ -81,11 +81,11 @@
       "availability_note": "Standings/urgency context cannot confirm a specific star will rest; actual lineup/inactive data should override the proxy when available.",
       "market_used_in_prediction": false,
       "market_bookmaker": "DraftKings",
-      "market_home_moneyline": -162,
-      "market_away_moneyline": 134,
+      "market_home_moneyline": -161,
+      "market_away_moneyline": 133,
       "market_run_line_home": -1.5,
       "market_total": 6,
-      "market_updated_at": "2026-10-23T20:26:55.748063+00:00"
+      "market_updated_at": "2026-10-23T23:51:37.198763+00:00"
     }
   ]
 }
