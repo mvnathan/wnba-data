@@ -1,12 +1,12 @@
 {
-  "generated_at_utc": "2026-10-23T17:19:06.594332+00:00",
+  "generated_at_utc": "2026-10-23T21:32:08.314518+00:00",
   "status": "ok",
   "production_adjustment_enabled": false,
-  "new_posts_seen": 1,
+  "new_posts_seen": 2,
   "new_picks_parsed": 0,
   "ledger_size": 0,
-  "since_id_used": "2113524097162604567",
-  "newest_id": "2113627571644678606",
+  "since_id_used": "2113627571644678606",
+  "newest_id": "2113695929438232944",
   "accounts": {
     "@RufusPeabody": {
       "tier": "established_professional",
@@ -62,11 +62,18 @@
   "new_picks": [],
   "candidate_posts": [
     {
-      "post_id": "2113627571644678606",
-      "source": "@FezzikSports",
-      "published_at_utc": "2026-10-23T13:44:17.000Z",
-      "text": "My last survivor entries went DOWN with the Rams last week. I said \"it's over\".  90% plus of survivor players have been eliminated.\n\nHowever, it is never over until we say it is over!   It wasn't over when the Japanese bombed  France, and it's not over now!  When the going gets",
-      "url": "https://x.com/FezzikSports/status/2113627571644678606"
+      "post_id": "2113695929438232944",
+      "source": "@wheatonbrando",
+      "published_at_utc": "2026-10-23T18:15:54.000Z",
+      "text": "@EstablishTheRun @BrandonThornNFL What exactly is the point of these if the rankings stay basically the same every week and don\u2019t really account for all the injuries and missing guys etc, let alone the growths and failures of various units?",
+      "url": "https://x.com/wheatonbrando/status/2113695929438232944"
+    },
+    {
+      "post_id": "2113686966432670187",
+      "source": "@wheatonbrando",
+      "published_at_utc": "2026-10-23T17:40:17.000Z",
+      "text": "There is no one else in sports media that can break down a play like this with such joy, such clarity, such vocabulary, and such precision all at once. \n\n@BenjaminSolak is 1 of 1.\n\nIncredible stuff. Genuinely as cool as the Caleb throws. https://t.co/8cY8IpoCut",
+      "url": "https://x.com/wheatonbrando/status/2113686966432670187"
     }
   ],
   "promotion_thresholds": {
