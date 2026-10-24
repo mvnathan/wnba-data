@@ -1,14 +1,14 @@
 {
-  "generated_at_utc": "2026-10-23T21:40:47.542962+00:00",
+  "generated_at_utc": "2026-10-24T01:04:15.083583+00:00",
   "method": "Earliest committed pregame NBA forecast and market line joined to ESPN final score by game ID",
   "summary": {
-    "n": 77,
+    "n": 78,
     "ml": {
       "wins": 43,
-      "losses": 34,
+      "losses": 35,
       "pushes": 0,
-      "graded": 77,
-      "rate": 0.5584415584415584
+      "graded": 78,
+      "rate": 0.5512820512820513
     },
     "ats": {
       "wins": 2,
@@ -26,6 +26,29 @@
     }
   },
   "games": [
+    {
+      "game_id": "401909848",
+      "game_date_utc": "2026-10-23T20:00Z",
+      "home_team": "Milwaukee Bucks",
+      "away_team": "Chicago Bulls",
+      "home_abbr": "MIL",
+      "away_abbr": "CHI",
+      "prediction_issued_at": "2026-10-23T00:54:51.554651+00:00",
+      "prediction_commit": "52593481",
+      "home_win_probability": 0.5689097440947798,
+      "predicted_margin": 1.526422804637546,
+      "predicted_total": 233.5881488955729,
+      "actual_home_score": 125.0,
+      "actual_away_score": 132.0,
+      "actual_margin": -7.0,
+      "actual_total": 257.0,
+      "winner_correct": false,
+      "market_home_spread": null,
+      "market_total": null,
+      "market_bookmaker": null,
+      "ats_result": null,
+      "ou_result": null
+    },
     {
       "game_id": "401909093",
       "game_date_utc": "2026-10-22T23:00Z",
