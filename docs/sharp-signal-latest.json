@@ -1,11 +1,11 @@
 {
-  "generated_at_utc": "2026-10-24T04:50:03.539393+00:00",
+  "generated_at_utc": "2026-10-24T11:19:51.148817+00:00",
   "status": "ok",
   "production_adjustment_enabled": false,
-  "new_posts_seen": 1,
+  "new_posts_seen": 0,
   "new_picks_parsed": 0,
   "ledger_size": 0,
-  "since_id_used": "2113695929438232944",
+  "since_id_used": "2113816041961013326",
   "newest_id": "2113816041961013326",
   "accounts": {
     "@RufusPeabody": {
@@ -60,15 +60,7 @@
     }
   },
   "new_picks": [],
-  "candidate_posts": [
-    {
-      "post_id": "2113816041961013326",
-      "source": "@iamrahstradamus",
-      "published_at_utc": "2026-10-24T02:13:11.000Z",
-      "text": "@rirugrat Would have loved to see peak or even Suns cp3 play with Tatum.",
-      "url": "https://x.com/iamrahstradamus/status/2113816041961013326"
-    }
-  ],
+  "candidate_posts": [],
   "promotion_thresholds": {
     "minimum_graded_picks": 100,
     "minimum_positive_clv_rate": 0.52,
