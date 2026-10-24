@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-24T19:29:13.377729+00:00",
+  "generated_at_utc": "2026-10-24T23:13:43.146217+00:00",
   "target_date": "2026-10-24",
   "sport": "MLB",
   "model_version": "mlb-runs-v2",
@@ -21,7 +21,7 @@
       "home_team": "Milwaukee Brewers",
       "away_team": "Tampa Bay Rays",
       "venue": "American Family Field",
-      "status": "Scheduled",
+      "status": "Pre-Game",
       "predicted_home_runs": 3.51,
       "predicted_away_runs": 3.14,
       "predicted_total_runs": 6.64,
