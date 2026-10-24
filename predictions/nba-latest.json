@@ -1,6 +1,6 @@
 {
   "sport": "NBA",
-  "generated_at_utc": "2026-10-24T01:01:18.469421+00:00",
+  "generated_at_utc": "2026-10-24T16:13:05.858130+00:00",
   "target_date": "2026-10-24",
   "season": "2026-27",
   "model_version": "nba-v2-roster-four-factors",
@@ -52,7 +52,7 @@
         "mae": 16.052277339680376
       },
       "total_rf": {
-        "mae": 15.750307765858192
+        "mae": 15.750307765858189
       },
       "total_extra_trees": {
         "mae": 15.823980776889647
@@ -6065,12 +6065,12 @@
       "home_team": "Charlotte Hornets",
       "away_team": "Miami Heat",
       "model_version": "nba-v2-roster-four-factors",
-      "home_win_probability": 0.670924358064065,
-      "away_win_probability": 0.32907564193593497,
-      "predicted_margin": 6.395048383925498,
-      "predicted_total": 232.91774627322897,
-      "predicted_home_points": 119.65639732857723,
-      "predicted_away_points": 113.26134894465174,
+      "home_win_probability": 0.6133745303404996,
+      "away_win_probability": 0.3866254696595004,
+      "predicted_margin": 4.619513316997567,
+      "predicted_total": 230.5318858479346,
+      "predicted_home_points": 117.57569958246609,
+      "predicted_away_points": 112.95618626546852,
       "predicted_winner": "Charlotte Hornets",
       "roster_context": {
         "home": {
@@ -6086,8 +6086,17 @@
           "roster_value": 11.77311115565334
         }
       },
+      "market_bookmaker": "DraftKings",
+      "market_updated_at": "2026-10-24T16:16:38.681036+00:00",
+      "market_home_moneyline": 120,
+      "market_away_moneyline": -142,
+      "market_home_spread": 3.5,
+      "market_away_spread": -3.5,
+      "market_total": 229.5,
       "x_availability_adjustments": [],
-      "model_market_home_win_edge": null
+      "model_market_spread_edge": 8.12,
+      "model_market_total_edge": 1.03,
+      "model_market_home_win_edge": 0.1769
     },
     {
       "game_id": "401909854",
@@ -6123,8 +6132,17 @@
           "roster_value": 10.3371628906299
         }
       },
+      "market_bookmaker": "DraftKings",
+      "market_updated_at": "2026-10-24T16:16:38.681036+00:00",
+      "market_home_moneyline": -500,
+      "market_away_moneyline": 380,
+      "market_home_spread": -11.5,
+      "market_away_spread": 11.5,
+      "market_total": 228.5,
       "x_availability_adjustments": [],
-      "model_market_home_win_edge": null
+      "model_market_spread_edge": 1.68,
+      "model_market_total_edge": -1.5,
+      "model_market_home_win_edge": 0.0578
     },
     {
       "game_id": "401909855",
@@ -6139,12 +6157,12 @@
       "home_team": "Philadelphia 76ers",
       "away_team": "Milwaukee Bucks",
       "model_version": "nba-v2-roster-four-factors",
-      "home_win_probability": 0.7074987385205813,
-      "away_win_probability": 0.2925012614794187,
-      "predicted_margin": 6.982675367423385,
-      "predicted_total": 226.49706507196672,
-      "predicted_home_points": 116.73987021969505,
-      "predicted_away_points": 109.75719485227167,
+      "home_win_probability": 0.7607722514367248,
+      "away_win_probability": 0.23922774856327522,
+      "predicted_margin": 9.056361991510268,
+      "predicted_total": 227.1825042761309,
+      "predicted_home_points": 118.11943313382059,
+      "predicted_away_points": 109.06307114231032,
       "predicted_winner": "Philadelphia 76ers",
       "roster_context": {
         "home": {
@@ -6160,8 +6178,17 @@
           "roster_value": 10.619766671802397
         }
       },
+      "market_bookmaker": "DraftKings",
+      "market_updated_at": "2026-10-24T16:16:38.681036+00:00",
+      "market_home_moneyline": -675,
+      "market_away_moneyline": 490,
+      "market_home_spread": -12.5,
+      "market_away_spread": 12.5,
+      "market_total": 235.5,
       "x_availability_adjustments": [],
-      "model_market_home_win_edge": null
+      "model_market_spread_edge": -3.44,
+      "model_market_total_edge": -8.32,
+      "model_market_home_win_edge": -0.0763
     },
     {
       "game_id": "401909857",
@@ -6176,12 +6203,12 @@
       "home_team": "Chicago Bulls",
       "away_team": "Washington Wizards",
       "model_version": "nba-v2-roster-four-factors",
-      "home_win_probability": 0.6649253049049334,
-      "away_win_probability": 0.3350746950950666,
-      "predicted_margin": 5.937842973273436,
-      "predicted_total": 239.76221557426473,
-      "predicted_home_points": 122.85002927376908,
-      "predicted_away_points": 116.91218630049565,
+      "home_win_probability": 0.6507505147413487,
+      "away_win_probability": 0.3492494852586513,
+      "predicted_margin": 5.672728993616598,
+      "predicted_total": 239.88979502361548,
+      "predicted_home_points": 122.78126200861604,
+      "predicted_away_points": 117.10853301499944,
       "predicted_winner": "Chicago Bulls",
       "roster_context": {
         "home": {
@@ -6197,8 +6224,17 @@
           "roster_value": 10.526583602412547
         }
       },
+      "market_bookmaker": "DraftKings",
+      "market_updated_at": "2026-10-24T16:16:38.681036+00:00",
+      "market_home_moneyline": -122,
+      "market_away_moneyline": 102,
+      "market_home_spread": -2.5,
+      "market_away_spread": 2.5,
+      "market_total": 244.5,
       "x_availability_adjustments": [],
-      "model_market_home_win_edge": null
+      "model_market_spread_edge": 3.17,
+      "model_market_total_edge": -4.61,
+      "model_market_home_win_edge": 0.1247
     },
     {
       "game_id": "401909858",
@@ -6213,12 +6249,12 @@
       "home_team": "Dallas Mavericks",
       "away_team": "San Antonio Spurs",
       "model_version": "nba-v2-roster-four-factors",
-      "home_win_probability": 0.23246500597655068,
-      "away_win_probability": 0.7675349940234493,
-      "predicted_margin": -9.632646714771383,
-      "predicted_total": 234.92010305577384,
-      "predicted_home_points": 112.64372817050122,
-      "predicted_away_points": 122.27637488527262,
+      "home_win_probability": 0.3303243371992123,
+      "away_win_probability": 0.6696756628007877,
+      "predicted_margin": -5.265652835488554,
+      "predicted_total": 234.55435494203448,
+      "predicted_home_points": 114.64435105327296,
+      "predicted_away_points": 119.91000388876152,
       "predicted_winner": "San Antonio Spurs",
       "roster_context": {
         "home": {
@@ -6234,8 +6270,17 @@
           "roster_value": 13.09913667182242
         }
       },
+      "market_bookmaker": "DraftKings",
+      "market_updated_at": "2026-10-24T16:16:38.681036+00:00",
+      "market_home_moneyline": 440,
+      "market_away_moneyline": -600,
+      "market_home_spread": 12.5,
+      "market_away_spread": -12.5,
+      "market_total": 232.5,
       "x_availability_adjustments": [],
-      "model_market_home_win_edge": null
+      "model_market_spread_edge": 7.23,
+      "model_market_total_edge": 2.05,
+      "model_market_home_win_edge": 0.1527
     },
     {
       "game_id": "401909856",
@@ -6250,12 +6295,12 @@
       "home_team": "Atlanta Hawks",
       "away_team": "Houston Rockets",
       "model_version": "nba-v2-roster-four-factors",
-      "home_win_probability": 0.318612152371212,
-      "away_win_probability": 0.681387847628788,
-      "predicted_margin": -6.2417925826303,
-      "predicted_total": 234.02743773696795,
-      "predicted_home_points": 113.89282257716883,
-      "predicted_away_points": 120.13461515979913,
+      "home_win_probability": 0.4431166876480776,
+      "away_win_probability": 0.5568833123519223,
+      "predicted_margin": -1.3127326886498323,
+      "predicted_total": 231.9961954458065,
+      "predicted_home_points": 115.34173137857833,
+      "predicted_away_points": 116.65446406722818,
       "predicted_winner": "Houston Rockets",
       "roster_context": {
         "home": {
@@ -6271,8 +6316,17 @@
           "roster_value": 14.132103816168014
         }
       },
+      "market_bookmaker": "DraftKings",
+      "market_updated_at": "2026-10-24T16:16:38.681036+00:00",
+      "market_home_moneyline": -115,
+      "market_away_moneyline": -105,
+      "market_home_spread": -1.5,
+      "market_away_spread": 1.5,
+      "market_total": 227.5,
       "x_availability_adjustments": [],
-      "model_market_home_win_edge": null
+      "model_market_spread_edge": -2.81,
+      "model_market_total_edge": 4.5,
+      "model_market_home_win_edge": -0.0677
     },
     {
       "game_id": "401909859",
@@ -6287,12 +6341,12 @@
       "home_team": "Denver Nuggets",
       "away_team": "New Orleans Pelicans",
       "model_version": "nba-v2-roster-four-factors",
-      "home_win_probability": 0.7736806057210956,
-      "away_win_probability": 0.22631939427890435,
-      "predicted_margin": 7.894421057653613,
-      "predicted_total": 240.48764509369371,
-      "predicted_home_points": 124.19103307567366,
-      "predicted_away_points": 116.29661201802006,
+      "home_win_probability": 0.8002802335728175,
+      "away_win_probability": 0.19971976642718248,
+      "predicted_margin": 9.562941896477271,
+      "predicted_total": 239.68821226117768,
+      "predicted_home_points": 124.62557707882748,
+      "predicted_away_points": 115.0626351823502,
       "predicted_winner": "Denver Nuggets",
       "roster_context": {
         "home": {
@@ -6308,8 +6362,17 @@
           "roster_value": 12.00395226052946
         }
       },
+      "market_bookmaker": "DraftKings",
+      "market_updated_at": "2026-10-24T16:16:38.681036+00:00",
+      "market_home_moneyline": -485,
+      "market_away_moneyline": 370,
+      "market_home_spread": -11.5,
+      "market_away_spread": 11.5,
+      "market_total": 239.5,
       "x_availability_adjustments": [],
-      "model_market_home_win_edge": null
+      "model_market_spread_edge": -1.94,
+      "model_market_total_edge": 0.19,
+      "model_market_home_win_edge": 0.0045
     },
     {
       "game_id": "401909860",
@@ -6324,12 +6387,12 @@
       "home_team": "Phoenix Suns",
       "away_team": "Golden State Warriors",
       "model_version": "nba-v2-roster-four-factors",
-      "home_win_probability": 0.6177313361381406,
-      "away_win_probability": 0.3822686638618594,
-      "predicted_margin": 4.699897901389237,
-      "predicted_total": 225.58324454208946,
-      "predicted_home_points": 115.14157122173935,
-      "predicted_away_points": 110.4416733203501,
+      "home_win_probability": 0.6863005615033438,
+      "away_win_probability": 0.31369943849665616,
+      "predicted_margin": 7.24158691735116,
+      "predicted_total": 223.575836893777,
+      "predicted_home_points": 115.40871190556408,
+      "predicted_away_points": 108.16712498821292,
       "predicted_winner": "Phoenix Suns",
       "roster_context": {
         "home": {
@@ -6345,8 +6408,17 @@
           "roster_value": 11.672387268147963
         }
       },
+      "market_bookmaker": "DraftKings",
+      "market_updated_at": "2026-10-24T16:16:38.681036+00:00",
+      "market_home_moneyline": -375,
+      "market_away_moneyline": 295,
+      "market_home_spread": -9.5,
+      "market_away_spread": 9.5,
+      "market_total": 221.5,
       "x_availability_adjustments": [],
-      "model_market_home_win_edge": null
+      "model_market_spread_edge": -2.26,
+      "model_market_total_edge": 2.08,
+      "model_market_home_win_edge": -0.0709
     }
   ],
   "historical_data_source": "SportsDataverse ESPN NBA bulk releases",
