@@ -1,28 +1,28 @@
 {
-  "generated_at_utc": "2026-10-23T21:23:35.752926Z",
+  "generated_at_utc": "2026-10-24T04:33:31.128901Z",
   "method": "Earliest committed pre-match forecast joined to ESPN final scores by match ID",
   "summary": {
-    "matches_evaluated": 813,
-    "winner_accuracy": 0.6383763837638377,
-    "winner_auc": 0.6870872183372183,
-    "winner_log_loss": 0.6488373651073156,
-    "winner_brier_score": 0.22576966594095937,
-    "spread_mae_games": 4.331611316113161,
-    "spread_bias_games": -0.07576875768757686,
-    "total_mae_games": 5.405658056580566,
-    "total_bias_games": -1.2076260762607627
+    "matches_evaluated": 814,
+    "winner_accuracy": 0.6388206388206388,
+    "winner_auc": 0.687669905851724,
+    "winner_log_loss": 0.6484768647269328,
+    "winner_brier_score": 0.22560221034398034,
+    "spread_mae_games": 4.32997542997543,
+    "spread_bias_games": -0.07936117936117935,
+    "total_mae_games": 5.414127764127764,
+    "total_bias_games": -1.2212530712530714
   },
   "by_tour": {
     "ATP": {
-      "matches_evaluated": 336,
-      "winner_accuracy": 0.6279761904761905,
-      "winner_auc": 0.7007122507122507,
-      "winner_log_loss": 0.6286315251455463,
-      "winner_brier_score": 0.21916312026785714,
-      "spread_mae_games": 3.897619047619048,
-      "spread_bias_games": -0.27619047619047615,
-      "total_mae_games": 5.784226190476191,
-      "total_bias_games": -0.700297619047619
+      "matches_evaluated": 337,
+      "winner_accuracy": 0.629080118694362,
+      "winner_auc": 0.7020877565463552,
+      "winner_log_loss": 0.6278207195975649,
+      "winner_brier_score": 0.21877824694362014,
+      "spread_mae_games": 3.8949554896142438,
+      "spread_bias_games": -0.2842729970326409,
+      "total_mae_games": 5.803560830860535,
+      "total_bias_games": -0.7347181008902077
     },
     "WTA": {
       "matches_evaluated": 477,
@@ -627,15 +627,15 @@
     },
     {
       "date": "2026-10-23",
-      "matches_evaluated": 17,
-      "winner_accuracy": 0.7058823529411765,
-      "winner_auc": 0.8181818181818181,
-      "winner_log_loss": 0.5731749711402527,
-      "winner_brier_score": 0.19406198882352943,
-      "spread_mae_games": 3.3588235294117648,
-      "spread_bias_games": -1.3941176470588237,
-      "total_mae_games": 4.747058823529412,
-      "total_bias_games": -0.8176470588235297
+      "matches_evaluated": 18,
+      "winner_accuracy": 0.7222222222222222,
+      "winner_auc": 0.8311688311688312,
+      "winner_log_loss": 0.5610758091588974,
+      "winner_brier_score": 0.18825081222222223,
+      "spread_mae_games": 3.338888888888889,
+      "spread_bias_games": -1.4833333333333334,
+      "total_mae_games": 5.166666666666667,
+      "total_bias_games": -1.455555555555556
     }
   ],
   "matches": [
@@ -28280,6 +28280,40 @@
       "absolute_margin_error": 7.4,
       "total_error": 2.0,
       "absolute_total_error": 2.0
+    },
+    {
+      "match_id": "185108",
+      "target_date": "2026-10-23",
+      "start_time_utc": "2026-10-23T18:30Z",
+      "tour": "ATP",
+      "tournament": "Grand Prix Auvergne-Rh\u00f4ne-Alpes",
+      "round": "Quarterfinal",
+      "player_1": "Luca Van Assche",
+      "player_2": "Lorenzo Musetti",
+      "player_1_rank": 45,
+      "player_2_rank": 14,
+      "model_version": "tennis-v3-tournament-context",
+      "prediction_issued_at": "2026-10-23T04:46:09.359481+00:00",
+      "prediction_commit": "a31d0aba",
+      "player_1_win_probability": 0.2991,
+      "predicted_winner": "Lorenzo Musetti",
+      "predicted_game_margin_player_1": -5.0,
+      "predicted_total_games": 23.7,
+      "actual_player_1": "Luca Van Assche",
+      "actual_player_2": "Lorenzo Musetti",
+      "actual_player_1_games": 17.0,
+      "actual_player_2_games": 19.0,
+      "actual_margin_player_1": -2.0,
+      "actual_total_games": 36.0,
+      "actual_winner_player_1": false,
+      "final_status": "Final",
+      "winner_correct": true,
+      "brier_score": 0.08946080999999999,
+      "log_loss": 0.3553900554758579,
+      "margin_error": -3.0,
+      "absolute_margin_error": 3.0,
+      "total_error": -12.3,
+      "absolute_total_error": 12.3
     }
   ]
 }
