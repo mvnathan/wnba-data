@@ -1,12 +1,12 @@
 {
-  "generated_at_utc": "2026-10-25T04:59:03.529142+00:00",
+  "generated_at_utc": "2026-10-25T11:50:08.632183+00:00",
   "status": "ok",
   "production_adjustment_enabled": false,
-  "new_posts_seen": 4,
+  "new_posts_seen": 2,
   "new_picks_parsed": 0,
   "ledger_size": 0,
-  "since_id_used": "2114003856028021240",
-  "newest_id": "2114215937192956215",
+  "since_id_used": "2114215937192956215",
+  "newest_id": "2114250178941341989",
   "accounts": {
     "@RufusPeabody": {
       "tier": "established_professional",
@@ -62,32 +62,18 @@
   "new_picks": [],
   "candidate_posts": [
     {
-      "post_id": "2114215937192956215",
-      "source": "@wheatonbrando",
-      "published_at_utc": "2026-10-25T04:42:14.000Z",
-      "text": "@profbadgerfan @NotTheeWillHill The umpire crew blew the call and the game would have been over had justice and the replay system not intervened to correct it.\n\nAgain, this isn\u2019t hard. No one outside of Wisconsin is having a hard time understanding it.",
-      "url": "https://x.com/wheatonbrando/status/2114215937192956215"
-    },
-    {
-      "post_id": "2114185207851139230",
+      "post_id": "2114250178941341989",
       "source": "@iamrahstradamus",
-      "published_at_utc": "2026-10-25T02:40:07.000Z",
-      "text": "I'm absolutely rooting for @KDTrey5 to find a way to get his third championship ring this year. I love this Rockets team that much and seeing him play as well as he's played the last two years at his age and mileage has been a joy to watch.",
-      "url": "https://x.com/iamrahstradamus/status/2114185207851139230"
+      "published_at_utc": "2026-10-25T06:58:18.000Z",
+      "text": "@Stuckey2 I just want Darnold Over 0.5 Interception. Don't want anything to do with a side on that game. Either side I bet I'm going to feel like a god damn fool. Either buy the Chiefs at the peak of the market or Sam ruins a good Seattle bet.",
+      "url": "https://x.com/iamrahstradamus/status/2114250178941341989"
     },
     {
-      "post_id": "2114151833266704773",
-      "source": "@iamrahstradamus",
-      "published_at_utc": "2026-10-25T00:27:30.000Z",
-      "text": "Houston Rockets +1.5 is a play for me. https://t.co/TKyg83erFu",
-      "url": "https://x.com/iamrahstradamus/status/2114151833266704773"
-    },
-    {
-      "post_id": "2114107691065065822",
+      "post_id": "2114241801624449255",
       "source": "@FezzikSports",
-      "published_at_utc": "2026-10-24T21:32:06.000Z",
-      "text": "SET UP Clev/Ten UN 37.5\n\nGO!\n\nWe are betting \n\nUNDER 37.5 https://t.co/VCA80a7xE2",
-      "url": "https://x.com/FezzikSports/status/2114107691065065822"
+      "published_at_utc": "2026-10-25T06:25:00.000Z",
+      "text": "Congrats to ALL who were on board for another solid CFB Week \n\n10-6 including a win on my ONLY 3* Play Rice.\n\n78-55 YTD CFB +30+ units.\n\nLet's keep rolling.......",
+      "url": "https://x.com/FezzikSports/status/2114241801624449255"
     }
   ],
   "promotion_thresholds": {
