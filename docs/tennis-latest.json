@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-25T16:13:55.065006Z",
+  "generated_at_utc": "2026-10-25T20:48:54.495554Z",
   "target_date": "2026-10-25",
   "model_version": "tennis-v3-tournament-context",
   "eligibility": "At least one player ranked in the top 150",
@@ -874,8 +874,8 @@
       "tournament": "BNP Paribas Fortis European Open",
       "round": "Final",
       "start_time_utc": "2026-10-25T15:40Z",
-      "status": "In Progress",
-      "status_state": "in",
+      "status": "Final",
+      "status_state": "post",
       "court": "Centre Court",
       "venue": "Brussels, Belgium",
       "broadcast": "",

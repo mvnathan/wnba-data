@@ -1,28 +1,28 @@
 {
-  "generated_at_utc": "2026-10-25T16:14:07.900297Z",
+  "generated_at_utc": "2026-10-25T20:49:17.162949Z",
   "method": "Earliest committed pre-match forecast joined to ESPN final scores by match ID",
   "summary": {
-    "matches_evaluated": 869,
-    "winner_accuracy": 0.6352128883774454,
-    "winner_auc": 0.6847893037678943,
-    "winner_log_loss": 0.6494651683753697,
-    "winner_brier_score": 0.22625641548906789,
-    "spread_mae_games": 4.330379746835443,
-    "spread_bias_games": -0.054660529344073665,
-    "total_mae_games": 5.422899884925202,
-    "total_bias_games": -1.2102416570771
+    "matches_evaluated": 870,
+    "winner_accuracy": 0.635632183908046,
+    "winner_auc": 0.6848991439952539,
+    "winner_log_loss": 0.6494328921063554,
+    "winner_brier_score": 0.22624253896551724,
+    "spread_mae_games": 4.32816091954023,
+    "spread_bias_games": -0.05183908045977014,
+    "total_mae_games": 5.421724137931034,
+    "total_bias_games": -1.2139080459770113
   },
   "by_tour": {
     "ATP": {
-      "matches_evaluated": 367,
-      "winner_accuracy": 0.6130790190735694,
-      "winner_auc": 0.6868709427669585,
-      "winner_log_loss": 0.6365026105931639,
-      "winner_brier_score": 0.22288126081743864,
-      "spread_mae_games": 3.928337874659401,
-      "spread_bias_games": -0.22425068119890995,
-      "total_mae_games": 5.781471389645777,
-      "total_bias_games": -0.6773841961852861
+      "matches_evaluated": 368,
+      "winner_accuracy": 0.6141304347826086,
+      "winner_auc": 0.6870614359733531,
+      "winner_log_loss": 0.6364615296250659,
+      "winner_brier_score": 0.2228576265217391,
+      "spread_mae_games": 3.9241847826086955,
+      "spread_bias_games": -0.2171195652173913,
+      "total_mae_games": 5.777717391304347,
+      "total_bias_games": -0.6875
     },
     "WTA": {
       "matches_evaluated": 502,
@@ -651,15 +651,15 @@
     },
     {
       "date": "2026-10-25",
-      "matches_evaluated": 15,
-      "winner_accuracy": 0.6,
-      "winner_auc": 0.7,
-      "winner_log_loss": 0.5847740453842473,
-      "winner_brier_score": 0.20069690666666667,
-      "spread_mae_games": 4.44,
-      "spread_bias_games": -1.7066666666666666,
-      "total_mae_games": 5.220000000000001,
-      "total_bias_games": 2.3133333333333335
+      "matches_evaluated": 16,
+      "winner_accuracy": 0.625,
+      "winner_auc": 0.7166666666666667,
+      "winner_log_loss": 0.5870622184435479,
+      "winner_brier_score": 0.20153984,
+      "spread_mae_games": 4.3125,
+      "spread_bias_games": -1.4499999999999997,
+      "total_mae_games": 5.168749999999999,
+      "total_bias_games": 1.8937499999999998
     }
   ],
   "matches": [
@@ -30208,6 +30208,40 @@
       "absolute_margin_error": 8.2,
       "total_error": 4.0,
       "absolute_total_error": 4.0
+    },
+    {
+      "match_id": "185067",
+      "target_date": "2026-10-25",
+      "start_time_utc": "2026-10-25T15:30Z",
+      "tour": "ATP",
+      "tournament": "BNP Paribas Fortis European Open",
+      "round": "Final",
+      "player_1": "Jan-Lennard Struff",
+      "player_2": "Tallon Griekspoor",
+      "player_1_rank": 59,
+      "player_2_rank": 58,
+      "model_version": "tennis-v3-tournament-context",
+      "prediction_issued_at": "2026-10-25T04:38:14.046026+00:00",
+      "prediction_commit": "a1c14438",
+      "player_1_win_probability": 0.4628,
+      "predicted_winner": "Tallon Griekspoor",
+      "predicted_game_margin_player_1": -0.6,
+      "predicted_total_games": 24.6,
+      "actual_player_1": "Jan-Lennard Struff",
+      "actual_player_2": "Tallon Griekspoor",
+      "actual_player_1_games": 13.0,
+      "actual_player_2_games": 16.0,
+      "actual_margin_player_1": -3.0,
+      "actual_total_games": 29.0,
+      "actual_winner_player_1": false,
+      "final_status": "Final",
+      "winner_correct": true,
+      "brier_score": 0.21418384,
+      "log_loss": 0.6213848143330545,
+      "margin_error": 2.4,
+      "absolute_margin_error": 2.4,
+      "total_error": -4.399999999999999,
+      "absolute_total_error": 4.399999999999999
     }
   ]
 }
