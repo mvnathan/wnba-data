@@ -1,12 +1,12 @@
 {
-  "generated_at_utc": "2026-10-25T11:50:08.632183+00:00",
+  "generated_at_utc": "2026-10-25T16:37:34.026988+00:00",
   "status": "ok",
   "production_adjustment_enabled": false,
   "new_posts_seen": 2,
   "new_picks_parsed": 0,
   "ledger_size": 0,
-  "since_id_used": "2114215937192956215",
-  "newest_id": "2114250178941341989",
+  "since_id_used": "2114250178941341989",
+  "newest_id": "2114375960548278372",
   "accounts": {
     "@RufusPeabody": {
       "tier": "established_professional",
@@ -62,18 +62,18 @@
   "new_picks": [],
   "candidate_posts": [
     {
-      "post_id": "2114250178941341989",
+      "post_id": "2114375960548278372",
       "source": "@iamrahstradamus",
-      "published_at_utc": "2026-10-25T06:58:18.000Z",
-      "text": "@Stuckey2 I just want Darnold Over 0.5 Interception. Don't want anything to do with a side on that game. Either side I bet I'm going to feel like a god damn fool. Either buy the Chiefs at the peak of the market or Sam ruins a good Seattle bet.",
-      "url": "https://x.com/iamrahstradamus/status/2114250178941341989"
+      "published_at_utc": "2026-10-25T15:18:06.000Z",
+      "text": "The days of NBA teams progressing in a linear fashion, becoming contenders, then champions while contending every year until they get washed up and #FlabbyAndSick are done. It's the NFL now. A team can win a title and completely fall off the next season, go under their win total",
+      "url": "https://x.com/iamrahstradamus/status/2114375960548278372"
     },
     {
-      "post_id": "2114241801624449255",
-      "source": "@FezzikSports",
-      "published_at_utc": "2026-10-25T06:25:00.000Z",
-      "text": "Congrats to ALL who were on board for another solid CFB Week \n\n10-6 including a win on my ONLY 3* Play Rice.\n\n78-55 YTD CFB +30+ units.\n\nLet's keep rolling.......",
-      "url": "https://x.com/FezzikSports/status/2114241801624449255"
+      "post_id": "2114357770233229730",
+      "source": "@wheatonbrando",
+      "published_at_utc": "2026-10-25T14:05:49.000Z",
+      "text": "\u2705 Jaylen Warren longest rush o13.5\n\u2705 Warren longest run o19.5 +225\n\nSecond play of the game cash!\n\nLove to wake up to 1.5u already sitting in our accounts \ud83d\udcb0\ud83d\udcb0 https://t.co/gjTSOgV8Tl",
+      "url": "https://x.com/wheatonbrando/status/2114357770233229730"
     }
   ],
   "promotion_thresholds": {
