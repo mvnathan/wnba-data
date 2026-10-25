@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-25T00:30:12.236522+00:00",
+  "generated_at_utc": "2026-10-25T05:14:55.377191+00:00",
   "status": "ok",
   "production_modified": false,
   "baseline_model_version": "nfl-v2",
@@ -16,9 +16,9 @@
   "note": "External signals were not available historically across the full 577-game backtest, so current deltas are prospective. Accuracy/Brier/MAE comparison begins as these shadow forecasts settle.",
   "summary": {
     "games": 13,
-    "games_changed_by_availability": 8,
-    "games_changed_by_combined": 8,
-    "availability_x_signals_available": 22,
+    "games_changed_by_availability": 9,
+    "games_changed_by_combined": 9,
+    "availability_x_signals_available": 24,
     "sharp_ledger_picks": 0,
     "sharp_production_weight": 0.0
   },
@@ -86,14 +86,14 @@
       },
       "availability_shadow": {
         "predicted_home_points": 22.3,
-        "predicted_away_points": 24.68,
-        "predicted_margin": -2.38,
-        "predicted_total": 46.98,
-        "home_win_probability": 0.4188,
-        "away_win_probability": 0.5812,
+        "predicted_away_points": 24.61,
+        "predicted_margin": -2.31,
+        "predicted_total": 46.91,
+        "home_win_probability": 0.4211,
+        "away_win_probability": 0.5789,
         "predicted_winner": "San Francisco 49ers",
-        "availability_margin_delta": 0.92,
-        "availability_total_delta": -0.82,
+        "availability_margin_delta": 0.99,
+        "availability_total_delta": -0.89,
         "signals_applied": [
           {
             "team": "SF",
@@ -107,19 +107,32 @@
             "published_at_utc": "2026-10-23T20:45:30.000Z",
             "url": "https://x.com/RapSheet/status/2113733575040540685",
             "text": "#49ers coach Kyle Shanahan told reporters that WR Mike Evans (Achilles) is out against the #Falcons."
+          },
+          {
+            "team": "SF",
+            "player": "Josh Jacobs",
+            "position": "RB",
+            "status": "probable",
+            "confidence": 0.4759,
+            "base_points": 1.0,
+            "point_impact": 0.071,
+            "source": "@AdamSchefter",
+            "published_at_utc": "2026-10-25T00:13:32.000Z",
+            "url": "https://x.com/AdamSchefter/status/2114148318787912081",
+            "text": "Players activated today who are expected to play Sunday: \ud83c\udfc8Packers RB Josh Jacobs \ud83c\udfc8Vikings RB Jordan Mason \ud83c\udfc8Broncos RB Jonah Coleman \ud83c\udfc8Texans WR Tank Dell \ud83c\udfc849ers WR Christian Kirk \ud83c\udfc8Lions C Cade Mays \ud83c\udfc8Broncos LB Jonathon Cooper \ud83c\udfc8Falcons CB A.J. Terrell Jr. \ud83c\udfc8Lions S Brian https://t.co/vsLbWTvkAO"
           }
         ]
       },
       "combined_shadow": {
         "predicted_home_points": 22.3,
-        "predicted_away_points": 24.68,
-        "predicted_margin": -2.38,
-        "predicted_total": 46.98,
-        "home_win_probability": 0.4188,
-        "away_win_probability": 0.5812,
+        "predicted_away_points": 24.61,
+        "predicted_margin": -2.31,
+        "predicted_total": 46.91,
+        "home_win_probability": 0.4211,
+        "away_win_probability": 0.5789,
         "predicted_winner": "San Francisco 49ers",
-        "combined_margin_delta_vs_production": 0.92,
-        "combined_total_delta_vs_production": -0.82,
+        "combined_margin_delta_vs_production": 0.99,
+        "combined_total_delta_vs_production": -0.89,
         "sharp_margin_delta": 0.0,
         "sharp_total_delta": 0.0,
         "sharp_signals_applied": []
@@ -245,15 +258,15 @@
         "predicted_winner": "Houston Texans"
       },
       "availability_shadow": {
-        "predicted_home_points": 23.9,
+        "predicted_home_points": 23.83,
         "predicted_away_points": 22.2,
-        "predicted_margin": 1.7,
-        "predicted_total": 46.1,
-        "home_win_probability": 0.5584,
-        "away_win_probability": 0.4416,
+        "predicted_margin": 1.63,
+        "predicted_total": 46.03,
+        "home_win_probability": 0.5559,
+        "away_win_probability": 0.4441,
         "predicted_winner": "Houston Texans",
-        "availability_margin_delta": 0.6,
-        "availability_total_delta": -0.5,
+        "availability_margin_delta": 0.53,
+        "availability_total_delta": -0.57,
         "signals_applied": [
           {
             "team": "NYG",
@@ -267,19 +280,32 @@
             "published_at_utc": "2026-10-24T16:59:21.000Z",
             "url": "https://x.com/AdamSchefter/status/2114039050331910178",
             "text": "Giants downgraded S Jev\u00f3n Holland (concussion) and TE Theo Johnson (neck) to out for Sunday\u2019s game at Houston."
+          },
+          {
+            "team": "HOU",
+            "player": "Josh Jacobs",
+            "position": "RB",
+            "status": "probable",
+            "confidence": 0.4759,
+            "base_points": 1.0,
+            "point_impact": 0.071,
+            "source": "@AdamSchefter",
+            "published_at_utc": "2026-10-25T00:13:32.000Z",
+            "url": "https://x.com/AdamSchefter/status/2114148318787912081",
+            "text": "Players activated today who are expected to play Sunday: \ud83c\udfc8Packers RB Josh Jacobs \ud83c\udfc8Vikings RB Jordan Mason \ud83c\udfc8Broncos RB Jonah Coleman \ud83c\udfc8Texans WR Tank Dell \ud83c\udfc849ers WR Christian Kirk \ud83c\udfc8Lions C Cade Mays \ud83c\udfc8Broncos LB Jonathon Cooper \ud83c\udfc8Falcons CB A.J. Terrell Jr. \ud83c\udfc8Lions S Brian https://t.co/vsLbWTvkAO"
           }
         ]
       },
       "combined_shadow": {
-        "predicted_home_points": 23.9,
+        "predicted_home_points": 23.83,
         "predicted_away_points": 22.2,
-        "predicted_margin": 1.7,
-        "predicted_total": 46.1,
-        "home_win_probability": 0.5584,
-        "away_win_probability": 0.4416,
+        "predicted_margin": 1.63,
+        "predicted_total": 46.03,
+        "home_win_probability": 0.5559,
+        "away_win_probability": 0.4441,
         "predicted_winner": "Houston Texans",
-        "combined_margin_delta_vs_production": 0.6,
-        "combined_total_delta_vs_production": -0.5,
+        "combined_margin_delta_vs_production": 0.53,
+        "combined_total_delta_vs_production": -0.57,
         "sharp_margin_delta": 0.0,
         "sharp_total_delta": 0.0,
         "sharp_signals_applied": []
@@ -303,15 +329,15 @@
         "predicted_winner": "Minnesota Vikings"
       },
       "availability_shadow": {
-        "predicted_home_points": 24.72,
+        "predicted_home_points": 24.65,
         "predicted_away_points": 20.1,
-        "predicted_margin": 4.62,
-        "predicted_total": 44.82,
-        "home_win_probability": 0.6541,
-        "away_win_probability": 0.3459,
+        "predicted_margin": 4.55,
+        "predicted_total": 44.75,
+        "home_win_probability": 0.6519,
+        "away_win_probability": 0.3481,
         "predicted_winner": "Minnesota Vikings",
-        "availability_margin_delta": 0.42,
-        "availability_total_delta": 0.32,
+        "availability_margin_delta": 0.35,
+        "availability_total_delta": 0.25,
         "signals_applied": [
           {
             "team": "IND",
@@ -338,19 +364,32 @@
             "published_at_utc": "2026-10-24T20:31:09.000Z",
             "url": "https://x.com/AdamSchefter/status/2114092353535254653",
             "text": "Vikings activated RB Jordan Mason off injured reserve to their 53-man roster and he is expected to play Sunday vs. the Colts."
+          },
+          {
+            "team": "MIN",
+            "player": "Josh Jacobs",
+            "position": "RB",
+            "status": "probable",
+            "confidence": 0.4759,
+            "base_points": 1.0,
+            "point_impact": 0.071,
+            "source": "@AdamSchefter",
+            "published_at_utc": "2026-10-25T00:13:32.000Z",
+            "url": "https://x.com/AdamSchefter/status/2114148318787912081",
+            "text": "Players activated today who are expected to play Sunday: \ud83c\udfc8Packers RB Josh Jacobs \ud83c\udfc8Vikings RB Jordan Mason \ud83c\udfc8Broncos RB Jonah Coleman \ud83c\udfc8Texans WR Tank Dell \ud83c\udfc849ers WR Christian Kirk \ud83c\udfc8Lions C Cade Mays \ud83c\udfc8Broncos LB Jonathon Cooper \ud83c\udfc8Falcons CB A.J. Terrell Jr. \ud83c\udfc8Lions S Brian https://t.co/vsLbWTvkAO"
           }
         ]
       },
       "combined_shadow": {
-        "predicted_home_points": 24.72,
+        "predicted_home_points": 24.65,
         "predicted_away_points": 20.1,
-        "predicted_margin": 4.62,
-        "predicted_total": 44.82,
-        "home_win_probability": 0.6541,
-        "away_win_probability": 0.3459,
+        "predicted_margin": 4.55,
+        "predicted_total": 44.75,
+        "home_win_probability": 0.6519,
+        "away_win_probability": 0.3481,
         "predicted_winner": "Minnesota Vikings",
-        "combined_margin_delta_vs_production": 0.42,
-        "combined_total_delta_vs_production": 0.32,
+        "combined_margin_delta_vs_production": 0.35,
+        "combined_total_delta_vs_production": 0.25,
         "sharp_margin_delta": 0.0,
         "sharp_total_delta": 0.0,
         "sharp_signals_applied": []
@@ -477,26 +516,40 @@
       },
       "availability_shadow": {
         "predicted_home_points": 22.1,
-        "predicted_away_points": 23.3,
-        "predicted_margin": -1.1,
-        "predicted_total": 45.4,
-        "home_win_probability": 0.461,
-        "away_win_probability": 0.539,
+        "predicted_away_points": 23.23,
+        "predicted_margin": -1.13,
+        "predicted_total": 45.33,
+        "home_win_probability": 0.4611,
+        "away_win_probability": 0.5389,
         "predicted_winner": "Denver Broncos",
-        "availability_margin_delta": 0.0,
-        "availability_total_delta": 0.0,
-        "signals_applied": []
+        "availability_margin_delta": -0.03,
+        "availability_total_delta": -0.07,
+        "signals_applied": [
+          {
+            "team": "DEN",
+            "player": "Josh Jacobs",
+            "position": "RB",
+            "status": "probable",
+            "confidence": 0.4759,
+            "base_points": 1.0,
+            "point_impact": 0.071,
+            "source": "@AdamSchefter",
+            "published_at_utc": "2026-10-25T00:13:32.000Z",
+            "url": "https://x.com/AdamSchefter/status/2114148318787912081",
+            "text": "Players activated today who are expected to play Sunday: \ud83c\udfc8Packers RB Josh Jacobs \ud83c\udfc8Vikings RB Jordan Mason \ud83c\udfc8Broncos RB Jonah Coleman \ud83c\udfc8Texans WR Tank Dell \ud83c\udfc849ers WR Christian Kirk \ud83c\udfc8Lions C Cade Mays \ud83c\udfc8Broncos LB Jonathon Cooper \ud83c\udfc8Falcons CB A.J. Terrell Jr. \ud83c\udfc8Lions S Brian https://t.co/vsLbWTvkAO"
+          }
+        ]
       },
       "combined_shadow": {
         "predicted_home_points": 22.1,
-        "predicted_away_points": 23.3,
-        "predicted_margin": -1.1,
-        "predicted_total": 45.4,
-        "home_win_probability": 0.461,
-        "away_win_probability": 0.539,
+        "predicted_away_points": 23.23,
+        "predicted_margin": -1.13,
+        "predicted_total": 45.33,
+        "home_win_probability": 0.4611,
+        "away_win_probability": 0.5389,
         "predicted_winner": "Denver Broncos",
-        "combined_margin_delta_vs_production": 0.0,
-        "combined_total_delta_vs_production": 0.0,
+        "combined_margin_delta_vs_production": -0.03,
+        "combined_total_delta_vs_production": -0.07,
         "sharp_margin_delta": 0.0,
         "sharp_total_delta": 0.0,
         "sharp_signals_applied": []
