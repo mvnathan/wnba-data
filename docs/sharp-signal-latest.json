@@ -1,12 +1,12 @@
 {
-  "generated_at_utc": "2026-10-25T21:00:34.622954+00:00",
+  "generated_at_utc": "2026-10-26T05:02:48.523067+00:00",
   "status": "ok",
   "production_adjustment_enabled": false,
-  "new_posts_seen": 0,
+  "new_posts_seen": 1,
   "new_picks_parsed": 0,
   "ledger_size": 0,
   "since_id_used": "2114375960548278372",
-  "newest_id": "2114375960548278372",
+  "newest_id": "2114533311859355897",
   "accounts": {
     "@RufusPeabody": {
       "tier": "established_professional",
@@ -60,7 +60,15 @@
     }
   },
   "new_picks": [],
-  "candidate_posts": [],
+  "candidate_posts": [
+    {
+      "post_id": "2114533311859355897",
+      "source": "@iamrahstradamus",
+      "published_at_utc": "2026-10-26T01:43:22.000Z",
+      "text": "Why waste time betting the side or the total when you can bet Sam Darnold Over 0.5 Interception \u2705\u2705\u2705\u2705\u2705?  \n\n#BANG",
+      "url": "https://x.com/iamrahstradamus/status/2114533311859355897"
+    }
+  ],
   "promotion_thresholds": {
     "minimum_graded_picks": 100,
     "minimum_positive_clv_rate": 0.52,
