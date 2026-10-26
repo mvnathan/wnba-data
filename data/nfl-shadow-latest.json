@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-26T00:42:10.898293+00:00",
+  "generated_at_utc": "2026-10-26T08:05:32.046791+00:00",
   "status": "ok",
   "production_modified": false,
   "baseline_model_version": "nfl-v2",
@@ -18,7 +18,7 @@
     "games": 5,
     "games_changed_by_availability": 5,
     "games_changed_by_combined": 5,
-    "availability_x_signals_available": 30,
+    "availability_x_signals_available": 32,
     "sharp_ledger_picks": 0,
     "sharp_production_weight": 0.0
   },
@@ -241,16 +241,29 @@
         "predicted_winner": "Kansas City Chiefs"
       },
       "availability_shadow": {
-        "predicted_home_points": 22.2,
+        "predicted_home_points": 21.55,
         "predicted_away_points": 23.51,
-        "predicted_margin": -1.31,
-        "predicted_total": 45.71,
-        "home_win_probability": 0.4549,
-        "away_win_probability": 0.5451,
+        "predicted_margin": -1.96,
+        "predicted_total": 45.06,
+        "home_win_probability": 0.4329,
+        "away_win_probability": 0.5671,
         "predicted_winner": "Kansas City Chiefs",
-        "availability_margin_delta": -0.11,
-        "availability_total_delta": 0.11,
+        "availability_margin_delta": -0.76,
+        "availability_total_delta": -0.54,
         "signals_applied": [
+          {
+            "team": "SEA",
+            "player": "Rashid Shaheed",
+            "position": "WR",
+            "status": "out",
+            "confidence": 0.4966,
+            "base_points": 1.3,
+            "point_impact": 0.646,
+            "source": "@RapSheet",
+            "published_at_utc": "2026-10-26T02:36:04.000Z",
+            "url": "https://x.com/RapSheet/status/2114546572973260816",
+            "text": "#Seahawks WR Rashid Shaheed (knee) will not return, while RB Velus Jones Jr. is out because of a hamstring injury."
+          },
           {
             "team": "SEA",
             "player": "Uchenna Nwosu",
@@ -267,15 +280,15 @@
         ]
       },
       "combined_shadow": {
-        "predicted_home_points": 22.2,
+        "predicted_home_points": 21.55,
         "predicted_away_points": 23.51,
-        "predicted_margin": -1.31,
-        "predicted_total": 45.71,
-        "home_win_probability": 0.4549,
-        "away_win_probability": 0.5451,
+        "predicted_margin": -1.96,
+        "predicted_total": 45.06,
+        "home_win_probability": 0.4329,
+        "away_win_probability": 0.5671,
         "predicted_winner": "Kansas City Chiefs",
-        "combined_margin_delta_vs_production": -0.11,
-        "combined_total_delta_vs_production": 0.11,
+        "combined_margin_delta_vs_production": -0.76,
+        "combined_total_delta_vs_production": -0.54,
         "sharp_margin_delta": 0.0,
         "sharp_total_delta": 0.0,
         "sharp_signals_applied": []
