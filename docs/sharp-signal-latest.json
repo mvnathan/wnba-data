@@ -1,12 +1,12 @@
 {
-  "generated_at_utc": "2026-10-26T13:21:31.283641+00:00",
+  "generated_at_utc": "2026-10-26T22:47:21.496199+00:00",
   "status": "ok",
   "production_adjustment_enabled": false,
-  "new_posts_seen": 0,
+  "new_posts_seen": 3,
   "new_picks_parsed": 0,
   "ledger_size": 0,
   "since_id_used": "2114533311859355897",
-  "newest_id": "2114533311859355897",
+  "newest_id": "2114837029603397964",
   "accounts": {
     "@RufusPeabody": {
       "tier": "established_professional",
@@ -60,7 +60,29 @@
     }
   },
   "new_picks": [],
-  "candidate_posts": [],
+  "candidate_posts": [
+    {
+      "post_id": "2114837029603397964",
+      "source": "@iamrahstradamus",
+      "published_at_utc": "2026-10-26T21:50:14.000Z",
+      "text": "Gave out a few NBA Plays on the @Ringer Gambling Show both which have moved in our direction. \n\nWolves +4.5 and Heat/Mavs Over 239.5\n\nGot the best of the number so we'll see what happens.",
+      "url": "https://x.com/iamrahstradamus/status/2114837029603397964"
+    },
+    {
+      "post_id": "2114827151899799795",
+      "source": "@wheatonbrando",
+      "published_at_utc": "2026-10-26T21:10:59.000Z",
+      "text": "Let\u2019s have some fun on sports equinox!!\n\nCowboys, Nuggets, Rays, Valkyrie, Oilers all on the ML at 10-1 \ud83c\udfc8 \ud83c\udfc0 \u26be\ufe0f \ud83c\udfc0 \ud83c\udfd2 \n\nPlus some bonus Brevyn Spann-Ford bets in the FREE @ActionApp: https://t.co/q6WQYD55Xk https://t.co/3YnWSN2iXC https://t.co/h2uSC9BIGk",
+      "url": "https://x.com/wheatonbrando/status/2114827151899799795"
+    },
+    {
+      "post_id": "2114739023650709685",
+      "source": "@capjack2000",
+      "published_at_utc": "2026-10-26T15:20:47.000Z",
+      "text": "@CBSNews Good report. \n\nIf you're looking for a gambler's point of view, here are more tricks sportsbooks play on customers:\nhttps://t.co/HKnZ0wF2mn",
+      "url": "https://x.com/capjack2000/status/2114739023650709685"
+    }
+  ],
   "promotion_thresholds": {
     "minimum_graded_picks": 100,
     "minimum_positive_clv_rate": 0.52,
