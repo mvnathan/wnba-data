@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-26T15:26:57.519732+00:00",
+  "generated_at_utc": "2026-10-26T21:10:41.473158+00:00",
   "status": "ok",
   "production_modified": false,
   "baseline_model_version": "nfl-v2",
@@ -15,285 +15,14 @@
   "evaluation_status": "prospective_shadow_only",
   "note": "External signals were not available historically across the full 577-game backtest, so current deltas are prospective. Accuracy/Brier/MAE comparison begins as these shadow forecasts settle.",
   "summary": {
-    "games": 5,
-    "games_changed_by_availability": 5,
-    "games_changed_by_combined": 5,
-    "availability_x_signals_available": 31,
+    "games": 1,
+    "games_changed_by_availability": 0,
+    "games_changed_by_combined": 0,
+    "availability_x_signals_available": 22,
     "sharp_ledger_picks": 0,
     "sharp_production_weight": 0.0
   },
   "games": [
-    {
-      "game_id": "2026_07_DEN_ARI",
-      "game_date_utc": "2026-10-25T20:05:00Z",
-      "home_team": "Arizona Cardinals",
-      "away_team": "Denver Broncos",
-      "home_abbr": "ARI",
-      "away_abbr": "DEN",
-      "market_home_spread": 5.5,
-      "market_total": 44.5,
-      "production": {
-        "predicted_home_points": 22.1,
-        "predicted_away_points": 23.3,
-        "predicted_margin": -1.1,
-        "predicted_total": 45.4,
-        "home_win_probability": 0.461,
-        "predicted_winner": "Denver Broncos"
-      },
-      "availability_shadow": {
-        "predicted_home_points": 22.71,
-        "predicted_away_points": 23.23,
-        "predicted_margin": -0.52,
-        "predicted_total": 45.94,
-        "home_win_probability": 0.4821,
-        "away_win_probability": 0.5179,
-        "predicted_winner": "Denver Broncos",
-        "availability_margin_delta": 0.58,
-        "availability_total_delta": 0.54,
-        "signals_applied": [
-          {
-            "team": "DEN",
-            "player": "Pat Surtain",
-            "position": "CB",
-            "status": "out",
-            "confidence": 0.6409,
-            "base_points": 0.8,
-            "point_impact": 0.513,
-            "source": "@AdamSchefter",
-            "published_at_utc": "2026-10-25T18:35:59.000Z",
-            "url": "https://x.com/AdamSchefter/status/2114425759401963717",
-            "text": "Broncos CB Pat Surtain is inactive. https://t.co/NEnxbdJbhf"
-          },
-          {
-            "team": "DEN",
-            "player": "Pat Surtain II",
-            "position": "CB",
-            "status": "doubtful",
-            "confidence": 0.4668,
-            "base_points": 0.8,
-            "point_impact": 0.299,
-            "source": "@RapSheet",
-            "published_at_utc": "2026-10-25T11:38:28.000Z",
-            "url": "https://x.com/RapSheet/status/2114320686713843978",
-            "text": "#Broncos star CB Pat Surtain II, who has missed the last two games with an ankle injury, is unlikely to play today, source says. But there\u2019s a good chance he\u2019s back next week."
-          },
-          {
-            "team": "DEN",
-            "player": "Josh Jacobs",
-            "position": "RB",
-            "status": "probable",
-            "confidence": 0.4759,
-            "base_points": 1.0,
-            "point_impact": 0.071,
-            "source": "@AdamSchefter",
-            "published_at_utc": "2026-10-25T00:13:32.000Z",
-            "url": "https://x.com/AdamSchefter/status/2114148318787912081",
-            "text": "Players activated today who are expected to play Sunday: \ud83c\udfc8Packers RB Josh Jacobs \ud83c\udfc8Vikings RB Jordan Mason \ud83c\udfc8Broncos RB Jonah Coleman \ud83c\udfc8Texans WR Tank Dell \ud83c\udfc849ers WR Christian Kirk \ud83c\udfc8Lions C Cade Mays \ud83c\udfc8Broncos LB Jonathon Cooper \ud83c\udfc8Falcons CB A.J. Terrell Jr. \ud83c\udfc8Lions S Brian https://t.co/vsLbWTvkAO"
-          }
-        ]
-      },
-      "combined_shadow": {
-        "predicted_home_points": 22.71,
-        "predicted_away_points": 23.23,
-        "predicted_margin": -0.52,
-        "predicted_total": 45.94,
-        "home_win_probability": 0.4821,
-        "away_win_probability": 0.5179,
-        "predicted_winner": "Denver Broncos",
-        "combined_margin_delta_vs_production": 0.58,
-        "combined_total_delta_vs_production": 0.54,
-        "sharp_margin_delta": 0.0,
-        "sharp_total_delta": 0.0,
-        "sharp_signals_applied": []
-      }
-    },
-    {
-      "game_id": "2026_07_GB_DET",
-      "game_date_utc": "2026-10-25T20:25:00Z",
-      "home_team": "Detroit Lions",
-      "away_team": "Green Bay Packers",
-      "home_abbr": "DET",
-      "away_abbr": "GB",
-      "market_home_spread": -3.5,
-      "market_total": 55.5,
-      "production": {
-        "predicted_home_points": 25.9,
-        "predicted_away_points": 23.8,
-        "predicted_margin": 2.0,
-        "predicted_total": 49.7,
-        "home_win_probability": 0.5693,
-        "predicted_winner": "Detroit Lions"
-      },
-      "availability_shadow": {
-        "predicted_home_points": 25.9,
-        "predicted_away_points": 23.71,
-        "predicted_margin": 2.18,
-        "predicted_total": 49.61,
-        "home_win_probability": 0.5748,
-        "away_win_probability": 0.4252,
-        "predicted_winner": "Detroit Lions",
-        "availability_margin_delta": 0.18,
-        "availability_total_delta": -0.09,
-        "signals_applied": [
-          {
-            "team": "GB",
-            "player": "Josh Jacobs",
-            "position": "RB",
-            "status": "probable",
-            "confidence": 0.5664,
-            "base_points": 1.0,
-            "point_impact": 0.085,
-            "source": "@AdamSchefter",
-            "published_at_utc": "2026-10-24T20:00:34.000Z",
-            "url": "https://x.com/AdamSchefter/status/2114084655414620503",
-            "text": "Packers activated RB Josh Jacobs and he is expected to play Sunday at Detroit."
-          }
-        ]
-      },
-      "combined_shadow": {
-        "predicted_home_points": 25.9,
-        "predicted_away_points": 23.71,
-        "predicted_margin": 2.18,
-        "predicted_total": 49.61,
-        "home_win_probability": 0.5748,
-        "away_win_probability": 0.4252,
-        "predicted_winner": "Detroit Lions",
-        "combined_margin_delta_vs_production": 0.18,
-        "combined_total_delta_vs_production": -0.09,
-        "sharp_margin_delta": 0.0,
-        "sharp_total_delta": 0.0,
-        "sharp_signals_applied": []
-      }
-    },
-    {
-      "game_id": "2026_07_LA_LV",
-      "game_date_utc": "2026-10-25T20:25:00Z",
-      "home_team": "Las Vegas Raiders",
-      "away_team": "Los Angeles Rams",
-      "home_abbr": "LV",
-      "away_abbr": "LA",
-      "market_home_spread": 3.5,
-      "market_total": 49.5,
-      "production": {
-        "predicted_home_points": 24.8,
-        "predicted_away_points": 23.6,
-        "predicted_margin": 1.1,
-        "predicted_total": 48.4,
-        "home_win_probability": 0.5392,
-        "predicted_winner": "Las Vegas Raiders"
-      },
-      "availability_shadow": {
-        "predicted_home_points": 24.8,
-        "predicted_away_points": 23.32,
-        "predicted_margin": 1.48,
-        "predicted_total": 48.12,
-        "home_win_probability": 0.5508,
-        "away_win_probability": 0.4492,
-        "predicted_winner": "Las Vegas Raiders",
-        "availability_margin_delta": 0.38,
-        "availability_total_delta": -0.28,
-        "signals_applied": [
-          {
-            "team": "LA",
-            "player": "Puka Nacua",
-            "position": "WR",
-            "status": "questionable",
-            "confidence": 0.4773,
-            "base_points": 1.3,
-            "point_impact": 0.279,
-            "source": "@AdamSchefter",
-            "published_at_utc": "2026-10-25T11:53:54.000Z",
-            "url": "https://x.com/AdamSchefter/status/2114324569909534753",
-            "text": "Rams are optimistic that WR Puka Nacua, who is questionable for Sunday\u2019s game due to a calf injury, will play vs. the Raiders. Nacua was feeling better Saturday and, as one source said, \u201cas long as there aren\u2019t any setbacks, we feel good about him being available to play.\u201d https://t.co/mI22MZNcCj"
-          }
-        ]
-      },
-      "combined_shadow": {
-        "predicted_home_points": 24.8,
-        "predicted_away_points": 23.32,
-        "predicted_margin": 1.48,
-        "predicted_total": 48.12,
-        "home_win_probability": 0.5508,
-        "away_win_probability": 0.4492,
-        "predicted_winner": "Las Vegas Raiders",
-        "combined_margin_delta_vs_production": 0.38,
-        "combined_total_delta_vs_production": -0.28,
-        "sharp_margin_delta": 0.0,
-        "sharp_total_delta": 0.0,
-        "sharp_signals_applied": []
-      }
-    },
-    {
-      "game_id": "2026_07_KC_SEA",
-      "game_date_utc": "2026-10-26T00:20:00Z",
-      "home_team": "Seattle Seahawks",
-      "away_team": "Kansas City Chiefs",
-      "home_abbr": "SEA",
-      "away_abbr": "KC",
-      "market_home_spread": -2.5,
-      "market_total": 42.5,
-      "production": {
-        "predicted_home_points": 22.2,
-        "predicted_away_points": 23.4,
-        "predicted_margin": -1.2,
-        "predicted_total": 45.6,
-        "home_win_probability": 0.4601,
-        "predicted_winner": "Kansas City Chiefs"
-      },
-      "availability_shadow": {
-        "predicted_home_points": 21.55,
-        "predicted_away_points": 23.51,
-        "predicted_margin": -1.96,
-        "predicted_total": 45.06,
-        "home_win_probability": 0.4329,
-        "away_win_probability": 0.5671,
-        "predicted_winner": "Kansas City Chiefs",
-        "availability_margin_delta": -0.76,
-        "availability_total_delta": -0.54,
-        "signals_applied": [
-          {
-            "team": "SEA",
-            "player": "Rashid Shaheed",
-            "position": "WR",
-            "status": "out",
-            "confidence": 0.4966,
-            "base_points": 1.3,
-            "point_impact": 0.646,
-            "source": "@RapSheet",
-            "published_at_utc": "2026-10-26T02:36:04.000Z",
-            "url": "https://x.com/RapSheet/status/2114546572973260816",
-            "text": "#Seahawks WR Rashid Shaheed (knee) will not return, while RB Velus Jones Jr. is out because of a hamstring injury."
-          },
-          {
-            "team": "SEA",
-            "player": "Uchenna Nwosu",
-            "position": "LB",
-            "status": "questionable",
-            "confidence": 0.4669,
-            "base_points": 0.7,
-            "point_impact": 0.147,
-            "source": "@RapSheet",
-            "published_at_utc": "2026-10-25T11:38:36.000Z",
-            "url": "https://x.com/RapSheet/status/2114320719551345009",
-            "text": "#Seahawks defenders LB Uchenna Nwosu (hip) and S Nick Emmanwori (hip) are both listed as questionable and both expected to go, sources say."
-          }
-        ]
-      },
-      "combined_shadow": {
-        "predicted_home_points": 21.55,
-        "predicted_away_points": 23.51,
-        "predicted_margin": -1.96,
-        "predicted_total": 45.06,
-        "home_win_probability": 0.4329,
-        "away_win_probability": 0.5671,
-        "predicted_winner": "Kansas City Chiefs",
-        "combined_margin_delta_vs_production": -0.76,
-        "combined_total_delta_vs_production": -0.54,
-        "sharp_margin_delta": 0.0,
-        "sharp_total_delta": 0.0,
-        "sharp_signals_applied": []
-      }
-    },
     {
       "game_id": "2026_07_DAL_PHI",
       "game_date_utc": "2026-10-27T00:15:00Z",
@@ -312,41 +41,27 @@
         "predicted_winner": "Dallas Cowboys"
       },
       "availability_shadow": {
-        "predicted_home_points": 21.9,
+        "predicted_home_points": 22.7,
         "predicted_away_points": 23.3,
-        "predicted_margin": -1.4,
-        "predicted_total": 45.2,
-        "home_win_probability": 0.4517,
-        "away_win_probability": 0.5483,
+        "predicted_margin": -0.6,
+        "predicted_total": 46.0,
+        "home_win_probability": 0.4793,
+        "away_win_probability": 0.5207,
         "predicted_winner": "Dallas Cowboys",
-        "availability_margin_delta": -0.8,
-        "availability_total_delta": -0.8,
-        "signals_applied": [
-          {
-            "team": "PHI",
-            "player": "DeVonta Smith",
-            "position": "WR",
-            "status": "out",
-            "confidence": 0.6187,
-            "base_points": 1.3,
-            "point_impact": 0.804,
-            "source": "@AdamSchefter",
-            "published_at_utc": "2026-10-24T19:48:43.000Z",
-            "url": "https://x.com/AdamSchefter/status/2114081673696449008",
-            "text": "Eagles ruled out WR DeVonta Smith for Monday night\u2019s game vs. Dallas."
-          }
-        ]
+        "availability_margin_delta": 0.0,
+        "availability_total_delta": 0.0,
+        "signals_applied": []
       },
       "combined_shadow": {
-        "predicted_home_points": 21.9,
+        "predicted_home_points": 22.7,
         "predicted_away_points": 23.3,
-        "predicted_margin": -1.4,
-        "predicted_total": 45.2,
-        "home_win_probability": 0.4517,
-        "away_win_probability": 0.5483,
+        "predicted_margin": -0.6,
+        "predicted_total": 46.0,
+        "home_win_probability": 0.4793,
+        "away_win_probability": 0.5207,
         "predicted_winner": "Dallas Cowboys",
-        "combined_margin_delta_vs_production": -0.8,
-        "combined_total_delta_vs_production": -0.8,
+        "combined_margin_delta_vs_production": 0.0,
+        "combined_total_delta_vs_production": 0.0,
         "sharp_margin_delta": 0.0,
         "sharp_total_delta": 0.0,
         "sharp_signals_applied": []
