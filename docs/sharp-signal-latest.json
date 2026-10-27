@@ -1,12 +1,12 @@
 {
-  "generated_at_utc": "2026-10-27T05:19:02.850834+00:00",
+  "generated_at_utc": "2026-10-27T12:29:41.068130+00:00",
   "status": "ok",
   "production_adjustment_enabled": false,
   "new_posts_seen": 1,
   "new_picks_parsed": 0,
   "ledger_size": 0,
-  "since_id_used": "2114837029603397964",
-  "newest_id": "2114883197054136470",
+  "since_id_used": "2114883197054136470",
+  "newest_id": "2114979958007411047",
   "accounts": {
     "@RufusPeabody": {
       "tier": "established_professional",
@@ -62,11 +62,11 @@
   "new_picks": [],
   "candidate_posts": [
     {
-      "post_id": "2114883197054136470",
-      "source": "@iamrahstradamus",
-      "published_at_utc": "2026-10-27T00:53:41.000Z",
-      "text": "@StopLying5300 I didn\u2019t bet anything on this game. I had to give out a pick on a the ringer show but I didn\u2019t bet anything in real life",
-      "url": "https://x.com/iamrahstradamus/status/2114883197054136470"
+      "post_id": "2114979958007411047",
+      "source": "@wheatonbrando",
+      "published_at_utc": "2026-10-27T07:18:11.000Z",
+      "text": "@Tony_Mach1 Y\u2019all are WAY off.\n\nIt\u2019s about the same as being up 5-0 five minutes into the Super Bowl.\n\n10-0 is highly probable to win\u2026 one baseball game of four needed to win the title. Those runs don\u2019t carry over. You still gotta win three more.\n\nIt\u2019s a nice head start.",
+      "url": "https://x.com/wheatonbrando/status/2114979958007411047"
     }
   ],
   "promotion_thresholds": {
