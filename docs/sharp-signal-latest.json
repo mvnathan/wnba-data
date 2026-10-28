@@ -1,12 +1,12 @@
 {
-  "generated_at_utc": "2026-10-27T22:26:32.296951+00:00",
+  "generated_at_utc": "2026-10-28T05:58:15.058899+00:00",
   "status": "ok",
   "production_adjustment_enabled": false,
-  "new_posts_seen": 2,
+  "new_posts_seen": 1,
   "new_picks_parsed": 0,
   "ledger_size": 0,
-  "since_id_used": "2114979958007411047",
-  "newest_id": "2115150854583976180",
+  "since_id_used": "2115150854583976180",
+  "newest_id": "2115321557291852092",
   "accounts": {
     "@RufusPeabody": {
       "tier": "established_professional",
@@ -62,18 +62,11 @@
   "new_picks": [],
   "candidate_posts": [
     {
-      "post_id": "2115150854583976180",
-      "source": "@wheatonbrando",
-      "published_at_utc": "2026-10-27T18:37:15.000Z",
-      "text": "The replies to this are insane.\n\nIt\u2019s about like being up 5-0 five minutes into the Super Bowl.\n\n10-0 is highly probable to win\u2026 1 game of 4 needed to win the title. Those runs don\u2019t carry over. Still gotta win 3 more. https://t.co/VZ3EDUFElQ",
-      "url": "https://x.com/wheatonbrando/status/2115150854583976180"
-    },
-    {
-      "post_id": "2115119016188768546",
+      "post_id": "2115321557291852092",
       "source": "@iamrahstradamus",
-      "published_at_utc": "2026-10-27T16:30:45.000Z",
-      "text": "Jay-Z is the biggest example of how black people don't appreciate a damn thing. He takes over position of booking music artist for the Super Bowl so now we actually get young, hip and culturally relevant artists instead of washed up artists from other genres and all people do is",
-      "url": "https://x.com/iamrahstradamus/status/2115119016188768546"
+      "published_at_utc": "2026-10-28T05:55:34.000Z",
+      "text": "We split on our NBA plays tonight. Sides have been solid but one of these days my totals will come to life. \n\nBlazers +2.5 closes a PK. Wins.\nKnicks/Pistons Over 218.5 closes 220.5 and gets as high as 221.5 Loses.\n\nOnto Cincinnati!",
+      "url": "https://x.com/iamrahstradamus/status/2115321557291852092"
     }
   ],
   "promotion_thresholds": {
