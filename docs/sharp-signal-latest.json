@@ -1,12 +1,12 @@
 {
-  "generated_at_utc": "2026-10-28T05:58:15.058899+00:00",
+  "generated_at_utc": "2026-10-28T13:16:43.468612+00:00",
   "status": "ok",
   "production_adjustment_enabled": false,
-  "new_posts_seen": 1,
+  "new_posts_seen": 3,
   "new_picks_parsed": 0,
   "ledger_size": 0,
-  "since_id_used": "2115150854583976180",
-  "newest_id": "2115321557291852092",
+  "since_id_used": "2115321557291852092",
+  "newest_id": "2115331876596691182",
   "accounts": {
     "@RufusPeabody": {
       "tier": "established_professional",
@@ -62,11 +62,25 @@
   "new_picks": [],
   "candidate_posts": [
     {
-      "post_id": "2115321557291852092",
+      "post_id": "2115331876596691182",
       "source": "@iamrahstradamus",
-      "published_at_utc": "2026-10-28T05:55:34.000Z",
-      "text": "We split on our NBA plays tonight. Sides have been solid but one of these days my totals will come to life. \n\nBlazers +2.5 closes a PK. Wins.\nKnicks/Pistons Over 218.5 closes 220.5 and gets as high as 221.5 Loses.\n\nOnto Cincinnati!",
-      "url": "https://x.com/iamrahstradamus/status/2115321557291852092"
+      "published_at_utc": "2026-10-28T06:36:35.000Z",
+      "text": "@TheLetitRidePod gonna cannibalize one another......Also KD is over 30. They don't win MVPs.",
+      "url": "https://x.com/iamrahstradamus/status/2115331876596691182"
+    },
+    {
+      "post_id": "2115324162281796015",
+      "source": "@iamrahstradamus",
+      "published_at_utc": "2026-10-28T06:05:55.000Z",
+      "text": "Agreed, Blazers had a 6 point lead when he came back in. A minute or 2 earlier and they probably have enough to get over the hump. They still couldn't get stops though. Blazers got what they wanted offensively. As a Blazers' bettor I'll take it. https://t.co/HAH6uklyj9",
+      "url": "https://x.com/iamrahstradamus/status/2115324162281796015"
+    },
+    {
+      "post_id": "2115324055431840029",
+      "source": "@iamrahstradamus",
+      "published_at_utc": "2026-10-28T06:05:30.000Z",
+      "text": "Agreed, Blazers had a 6 point lead when he came back in. A minute or 2 earlier and they probably have enough to get over the hump. As a Blazers' bettor I'll take it. https://t.co/HAH6uklyj9",
+      "url": "https://x.com/iamrahstradamus/status/2115324055431840029"
     }
   ],
   "promotion_thresholds": {
