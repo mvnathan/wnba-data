@@ -1,12 +1,12 @@
 {
-  "generated_at_utc": "2026-10-28T13:16:43.468612+00:00",
+  "generated_at_utc": "2026-10-28T22:43:23.784951+00:00",
   "status": "ok",
   "production_adjustment_enabled": false,
-  "new_posts_seen": 3,
+  "new_posts_seen": 5,
   "new_picks_parsed": 0,
   "ledger_size": 0,
-  "since_id_used": "2115321557291852092",
-  "newest_id": "2115331876596691182",
+  "since_id_used": "2115331876596691182",
+  "newest_id": "2115562878950580514",
   "accounts": {
     "@RufusPeabody": {
       "tier": "established_professional",
@@ -62,25 +62,39 @@
   "new_picks": [],
   "candidate_posts": [
     {
-      "post_id": "2115331876596691182",
-      "source": "@iamrahstradamus",
-      "published_at_utc": "2026-10-28T06:36:35.000Z",
-      "text": "@TheLetitRidePod gonna cannibalize one another......Also KD is over 30. They don't win MVPs.",
-      "url": "https://x.com/iamrahstradamus/status/2115331876596691182"
+      "post_id": "2115562878950580514",
+      "source": "@FezzikSports",
+      "published_at_utc": "2026-10-28T21:54:30.000Z",
+      "text": "I think all these fake expert Touts giving out \"sharp\" Alt line bets is just silly on the day of the game.\n\nJax State is -3 -102\nNMex State is +3+100\n\nIMO, there is ZERO reason to F around and give out some dumbo play like NM St +4.5 -144 (take back a mind blowing terrible Jax St",
+      "url": "https://x.com/FezzikSports/status/2115562878950580514"
     },
     {
-      "post_id": "2115324162281796015",
-      "source": "@iamrahstradamus",
-      "published_at_utc": "2026-10-28T06:05:55.000Z",
-      "text": "Agreed, Blazers had a 6 point lead when he came back in. A minute or 2 earlier and they probably have enough to get over the hump. They still couldn't get stops though. Blazers got what they wanted offensively. As a Blazers' bettor I'll take it. https://t.co/HAH6uklyj9",
-      "url": "https://x.com/iamrahstradamus/status/2115324162281796015"
+      "post_id": "2115551879233179793",
+      "source": "@FezzikSports",
+      "published_at_utc": "2026-10-28T21:10:47.000Z",
+      "text": "Ask a handicapper \"What is your record?\"\n\nBULLSHIT answers\n\n\"15-7 on Totals\"\n\"13-5 on top rated plays\"\n\"9-2 on AFC 3* favorites\"\n\"34-24 overall\"\n\nTHE ONLY answer is \n\nYTD I am up/down ____ units.\nLast year I was  up/down ____ units.\n\nAll this other stuff is just nonsense.  Fine",
+      "url": "https://x.com/FezzikSports/status/2115551879233179793"
     },
     {
-      "post_id": "2115324055431840029",
-      "source": "@iamrahstradamus",
-      "published_at_utc": "2026-10-28T06:05:30.000Z",
-      "text": "Agreed, Blazers had a 6 point lead when he came back in. A minute or 2 earlier and they probably have enough to get over the hump. As a Blazers' bettor I'll take it. https://t.co/HAH6uklyj9",
-      "url": "https://x.com/iamrahstradamus/status/2115324055431840029"
+      "post_id": "2115551059473252538",
+      "source": "@FezzikSports",
+      "published_at_utc": "2026-10-28T21:07:32.000Z",
+      "text": "I think all these fake expert Touts giving out \"sharp\" Alt line bets is just silly on the day of the game.\n\nJax State is -3 -102\nNMex State is +3+100\n\nIMO, there is ZERO reason to F around and give out some dumbo play like NM St +4.5 -144 (take back a mind blowing terrible Jax St",
+      "url": "https://x.com/FezzikSports/status/2115551059473252538"
+    },
+    {
+      "post_id": "2115503481348124759",
+      "source": "@capjack2000",
+      "published_at_utc": "2026-10-28T17:58:28.000Z",
+      "text": "Sportsbooks all over the world are missing out on holiday-themed betting slips.\ud83c\udf85 https://t.co/2WzIKLb8R8",
+      "url": "https://x.com/capjack2000/status/2115503481348124759"
+    },
+    {
+      "post_id": "2115454622840275208",
+      "source": "@FezzikSports",
+      "published_at_utc": "2026-10-28T14:44:19.000Z",
+      "text": "Survivor:   It makes sense to disclose your selection EARLY.\n\nIn 2023 I believe @LAJoneser was the first person to publicly start disclosing his late in the year Survivor Picks.\n\nIt is such a strong strategy that several others now use it.\n\nIt drives me crazy when people question",
+      "url": "https://x.com/FezzikSports/status/2115454622840275208"
     }
   ],
   "promotion_thresholds": {
