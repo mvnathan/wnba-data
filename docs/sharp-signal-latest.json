@@ -1,12 +1,12 @@
 {
-  "generated_at_utc": "2026-10-29T13:24:12.855869+00:00",
+  "generated_at_utc": "2026-10-29T22:53:07.425075+00:00",
   "status": "ok",
   "production_adjustment_enabled": false,
-  "new_posts_seen": 1,
+  "new_posts_seen": 4,
   "new_picks_parsed": 0,
   "ledger_size": 0,
-  "since_id_used": "2115587364345282885",
-  "newest_id": "2115768676817437008",
+  "since_id_used": "2115768676817437008",
+  "newest_id": "2115855861310742844",
   "accounts": {
     "@RufusPeabody": {
       "tier": "established_professional",
@@ -62,11 +62,32 @@
   "new_picks": [],
   "candidate_posts": [
     {
-      "post_id": "2115768676817437008",
-      "source": "@wheatonbrando",
-      "published_at_utc": "2026-10-29T11:32:16.000Z",
-      "text": "@ShannonGaitz Yes! Totally agree and such a stark contrast to the other two tribes that had obvious majorities but were too afraid to use them. Play the game!!",
-      "url": "https://x.com/wheatonbrando/status/2115768676817437008"
+      "post_id": "2115855861310742844",
+      "source": "@FezzikSports",
+      "published_at_utc": "2026-10-29T17:18:42.000Z",
+      "text": "Preflop I bet WNBA UND 147.5\n\nLIVE I just bet OVER 152.5\n\nTHAT is one CRAP pfolio on the total.",
+      "url": "https://x.com/FezzikSports/status/2115855861310742844"
+    },
+    {
+      "post_id": "2115853163337261364",
+      "source": "@FezzikSports",
+      "published_at_utc": "2026-10-29T17:07:59.000Z",
+      "text": "@JBWinsBig IS the best NBA handicapper you have never heard of.\n\nI TOLD YOU THIS before the season started.\n\nProp bets only.   Most releases at 8AM EST.  REALLY hard to get the numbers. Lines move LIKE CRAZY.  \n\nHowever, all he does is WIN! (150 units a year)\n\n44-28 YTD\n+13.18",
+      "url": "https://x.com/FezzikSports/status/2115853163337261364"
+    },
+    {
+      "post_id": "2115826161397948671",
+      "source": "@FezzikSports",
+      "published_at_utc": "2026-10-29T15:20:41.000Z",
+      "text": "I have an AMAZING CFB run going.   \n\nHow much do you see my tweeting it?   ANYONE else would be going ape **** doing so.\n\nWHAT MATTERS is that I am up OVER 100 units in CFB since 2025 (and I did great before that!).\n\nI don't believe in Bad Pizza, and I report the Good AND the BAD https://t.co/Hsw9fn9tY5",
+      "url": "https://x.com/FezzikSports/status/2115826161397948671"
+    },
+    {
+      "post_id": "2115825176105595342",
+      "source": "@FezzikSports",
+      "published_at_utc": "2026-10-29T15:16:46.000Z",
+      "text": "THE ONLY reason to lie would be if you knew EVERY other contestant would copy your play. https://t.co/Lmj3wMNrc7",
+      "url": "https://x.com/FezzikSports/status/2115825176105595342"
     }
   ],
   "promotion_thresholds": {
