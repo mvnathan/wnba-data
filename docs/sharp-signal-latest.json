@@ -1,12 +1,12 @@
 {
-  "generated_at_utc": "2026-10-29T06:04:56.092904+00:00",
+  "generated_at_utc": "2026-10-29T13:24:12.855869+00:00",
   "status": "ok",
   "production_adjustment_enabled": false,
-  "new_posts_seen": 2,
+  "new_posts_seen": 1,
   "new_picks_parsed": 0,
   "ledger_size": 0,
-  "since_id_used": "2115562878950580514",
-  "newest_id": "2115587364345282885",
+  "since_id_used": "2115587364345282885",
+  "newest_id": "2115768676817437008",
   "accounts": {
     "@RufusPeabody": {
       "tier": "established_professional",
@@ -62,18 +62,11 @@
   "new_picks": [],
   "candidate_posts": [
     {
-      "post_id": "2115587364345282885",
-      "source": "@iamrahstradamus",
-      "published_at_utc": "2026-10-28T23:31:48.000Z",
-      "text": "My totals haven't been good but I'm on Raptors-Magic Under 224.5",
-      "url": "https://x.com/iamrahstradamus/status/2115587364345282885"
-    },
-    {
-      "post_id": "2115585641350361311",
-      "source": "@iamrahstradamus",
-      "published_at_utc": "2026-10-28T23:24:57.000Z",
-      "text": "@bertwedemeyer31 gotta pick your spots.",
-      "url": "https://x.com/iamrahstradamus/status/2115585641350361311"
+      "post_id": "2115768676817437008",
+      "source": "@wheatonbrando",
+      "published_at_utc": "2026-10-29T11:32:16.000Z",
+      "text": "@ShannonGaitz Yes! Totally agree and such a stark contrast to the other two tribes that had obvious majorities but were too afraid to use them. Play the game!!",
+      "url": "https://x.com/wheatonbrando/status/2115768676817437008"
     }
   ],
   "promotion_thresholds": {
