@@ -1,6 +1,6 @@
 {
-  "generated_at_utc": "2026-10-29T06:16:03.834693+00:00",
-  "source_generated_at_utc": "2026-10-29T06:15:56.889427+00:00",
+  "generated_at_utc": "2026-10-29T19:48:24.955210+00:00",
+  "source_generated_at_utc": "2026-10-29T19:48:24.552792+00:00",
   "active_opportunities": [
     {
       "market": "total",
@@ -28,55 +28,13 @@
       "context_rest_risk": 0.5275862068965517,
       "context_postseason_urgency": 0.27196125907990315,
       "availability_review_priority": true,
-      "evaluated_at_utc": "2026-10-29T06:16:03.834693+00:00",
-      "is_new": true,
-      "lifecycle_event": "new"
+      "evaluated_at_utc": "2026-10-29T19:48:24.955210+00:00",
+      "is_new": false,
+      "lifecycle_event": null
     }
   ],
-  "new_alerts": [
-    {
-      "event_id": "02b971819b94831b55dc",
-      "event_type": "new",
-      "notify": true,
-      "occurred_at_utc": "2026-10-29T06:16:03.834693+00:00",
-      "game_id": "401918310",
-      "phase": "pregame",
-      "market": "total",
-      "side": "OVER",
-      "level": "very_strong",
-      "edge": 11.490000000000009,
-      "away_abbr": "GS",
-      "home_abbr": "ATL",
-      "live_period": null,
-      "live_clock": null,
-      "live_away_score": null,
-      "live_home_score": null,
-      "market_bookmaker": "DraftKings",
-      "market_updated_at": "2026-10-29T06:16:03.302528+00:00"
-    }
-  ],
-  "notification_events": [
-    {
-      "event_id": "02b971819b94831b55dc",
-      "event_type": "new",
-      "notify": true,
-      "occurred_at_utc": "2026-10-29T06:16:03.834693+00:00",
-      "game_id": "401918310",
-      "phase": "pregame",
-      "market": "total",
-      "side": "OVER",
-      "level": "very_strong",
-      "edge": 11.490000000000009,
-      "away_abbr": "GS",
-      "home_abbr": "ATL",
-      "live_period": null,
-      "live_clock": null,
-      "live_away_score": null,
-      "live_home_score": null,
-      "market_bookmaker": "DraftKings",
-      "market_updated_at": "2026-10-29T06:16:03.302528+00:00"
-    }
-  ],
+  "new_alerts": [],
+  "notification_events": [],
   "recent_events": [
     {
       "event_id": "02b971819b94831b55dc",
@@ -4721,8 +4679,8 @@
   ],
   "summary": {
     "active_count": 1,
-    "notification_event_count": 1,
-    "new_count": 1,
+    "notification_event_count": 0,
+    "new_count": 0,
     "very_strong_count": 1,
     "strong_count": 0
   },
