@@ -1,12 +1,12 @@
 {
-  "generated_at_utc": "2026-10-28T22:43:23.784951+00:00",
+  "generated_at_utc": "2026-10-29T06:04:56.092904+00:00",
   "status": "ok",
   "production_adjustment_enabled": false,
-  "new_posts_seen": 5,
+  "new_posts_seen": 2,
   "new_picks_parsed": 0,
   "ledger_size": 0,
-  "since_id_used": "2115331876596691182",
-  "newest_id": "2115562878950580514",
+  "since_id_used": "2115562878950580514",
+  "newest_id": "2115587364345282885",
   "accounts": {
     "@RufusPeabody": {
       "tier": "established_professional",
@@ -62,39 +62,18 @@
   "new_picks": [],
   "candidate_posts": [
     {
-      "post_id": "2115562878950580514",
-      "source": "@FezzikSports",
-      "published_at_utc": "2026-10-28T21:54:30.000Z",
-      "text": "I think all these fake expert Touts giving out \"sharp\" Alt line bets is just silly on the day of the game.\n\nJax State is -3 -102\nNMex State is +3+100\n\nIMO, there is ZERO reason to F around and give out some dumbo play like NM St +4.5 -144 (take back a mind blowing terrible Jax St",
-      "url": "https://x.com/FezzikSports/status/2115562878950580514"
+      "post_id": "2115587364345282885",
+      "source": "@iamrahstradamus",
+      "published_at_utc": "2026-10-28T23:31:48.000Z",
+      "text": "My totals haven't been good but I'm on Raptors-Magic Under 224.5",
+      "url": "https://x.com/iamrahstradamus/status/2115587364345282885"
     },
     {
-      "post_id": "2115551879233179793",
-      "source": "@FezzikSports",
-      "published_at_utc": "2026-10-28T21:10:47.000Z",
-      "text": "Ask a handicapper \"What is your record?\"\n\nBULLSHIT answers\n\n\"15-7 on Totals\"\n\"13-5 on top rated plays\"\n\"9-2 on AFC 3* favorites\"\n\"34-24 overall\"\n\nTHE ONLY answer is \n\nYTD I am up/down ____ units.\nLast year I was  up/down ____ units.\n\nAll this other stuff is just nonsense.  Fine",
-      "url": "https://x.com/FezzikSports/status/2115551879233179793"
-    },
-    {
-      "post_id": "2115551059473252538",
-      "source": "@FezzikSports",
-      "published_at_utc": "2026-10-28T21:07:32.000Z",
-      "text": "I think all these fake expert Touts giving out \"sharp\" Alt line bets is just silly on the day of the game.\n\nJax State is -3 -102\nNMex State is +3+100\n\nIMO, there is ZERO reason to F around and give out some dumbo play like NM St +4.5 -144 (take back a mind blowing terrible Jax St",
-      "url": "https://x.com/FezzikSports/status/2115551059473252538"
-    },
-    {
-      "post_id": "2115503481348124759",
-      "source": "@capjack2000",
-      "published_at_utc": "2026-10-28T17:58:28.000Z",
-      "text": "Sportsbooks all over the world are missing out on holiday-themed betting slips.\ud83c\udf85 https://t.co/2WzIKLb8R8",
-      "url": "https://x.com/capjack2000/status/2115503481348124759"
-    },
-    {
-      "post_id": "2115454622840275208",
-      "source": "@FezzikSports",
-      "published_at_utc": "2026-10-28T14:44:19.000Z",
-      "text": "Survivor:   It makes sense to disclose your selection EARLY.\n\nIn 2023 I believe @LAJoneser was the first person to publicly start disclosing his late in the year Survivor Picks.\n\nIt is such a strong strategy that several others now use it.\n\nIt drives me crazy when people question",
-      "url": "https://x.com/FezzikSports/status/2115454622840275208"
+      "post_id": "2115585641350361311",
+      "source": "@iamrahstradamus",
+      "published_at_utc": "2026-10-28T23:24:57.000Z",
+      "text": "@bertwedemeyer31 gotta pick your spots.",
+      "url": "https://x.com/iamrahstradamus/status/2115585641350361311"
     }
   ],
   "promotion_thresholds": {
