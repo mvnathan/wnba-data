@@ -2,31 +2,31 @@
   "status": "production_baseline_audit",
   "source": "issued pregame forecasts only",
   "overall": {
-    "n": 69,
-    "winner_accuracy": 0.7014925373134329,
-    "brier_score": 0.2005682079120937,
-    "margin_mae": 10.627449009255688,
-    "total_mae": 11.800869861882465,
-    "home_score_mae": 9.0338307044001,
-    "away_score_mae": 7.574782608695653,
-    "ats_direction_accuracy": 0.5517241379310345,
-    "total_direction_accuracy": 0.6296296296296297
+    "n": 70,
+    "winner_accuracy": 0.7058823529411765,
+    "brier_score": 0.19864231270412658,
+    "margin_mae": 10.533914023409178,
+    "total_mae": 11.760714578141286,
+    "home_score_mae": 8.939847408622956,
+    "away_score_mae": 7.559928571428572,
+    "ats_direction_accuracy": 0.5666666666666667,
+    "total_direction_accuracy": 0.6428571428571429
   },
   "recent_20": {
     "n": 20,
     "winner_accuracy": 0.7368421052631579,
-    "brier_score": 0.1874957504732561,
-    "margin_mae": 9.877752221820353,
-    "total_mae": 15.512247778179647,
-    "home_score_mae": 8.723997778179648,
-    "away_score_mae": 10.12575,
-    "ats_direction_accuracy": 0.5,
-    "total_direction_accuracy": 0.5
+    "brier_score": 0.18143363721000433,
+    "margin_mae": 9.581752221820354,
+    "total_mae": 15.670247778179649,
+    "home_score_mae": 8.450997778179648,
+    "away_score_mae": 10.34825,
+    "ats_direction_accuracy": 0.5384615384615384,
+    "total_direction_accuracy": 0.5454545454545454
   },
   "market_coverage": {
-    "games_with_market": 29,
-    "games_total": 69,
-    "coverage": 0.42028985507246375
+    "games_with_market": 30,
+    "games_total": 70,
+    "coverage": 0.42857142857142855
   },
   "by_confidence": {
     "50-55%": {
@@ -63,15 +63,15 @@
       "total_direction_accuracy": 0.7777777777777778
     },
     "70-80%": {
-      "n": 22,
-      "winner_accuracy": 0.8095238095238095,
-      "brier_score": 0.15452185002940524,
-      "margin_mae": 8.428091858120498,
-      "total_mae": 10.236444693347668,
-      "home_score_mae": 7.047881176617494,
-      "away_score_mae": 7.047500000000003,
-      "ats_direction_accuracy": 0.5,
-      "total_direction_accuracy": 0.5
+      "n": 23,
+      "winner_accuracy": 0.8181818181818182,
+      "brier_score": 0.15066244539136134,
+      "margin_mae": 8.239044386028302,
+      "total_mae": 10.182251445810813,
+      "home_score_mae": 6.848190690677603,
+      "away_score_mae": 7.02521739130435,
+      "ats_direction_accuracy": 0.5454545454545454,
+      "total_direction_accuracy": 0.5454545454545454
     },
     "80%+": {
       "n": 11,
@@ -102,9 +102,9 @@
       "observed_home_win_rate": 0.47368421052631576
     },
     "70-80%": {
-      "n": 22,
-      "mean_predicted_home_win_probability": 0.5328979679950316,
-      "observed_home_win_rate": 0.7272727272727273
+      "n": 23,
+      "mean_predicted_home_win_probability": 0.5420576895125672,
+      "observed_home_win_rate": 0.7391304347826086
     },
     "80%+": {
       "n": 11,
@@ -136,28 +136,28 @@
       "total_direction_accuracy": 1
     },
     "2026-10": {
-      "n": 13,
-      "winner_accuracy": 0.6666666666666666,
-      "brier_score": 0.20505765771778617,
-      "margin_mae": 8.186541879723618,
-      "total_mae": 16.89807350489177,
-      "home_score_mae": 10.793073504891764,
-      "away_score_mae": 9.051153846153843,
-      "ats_direction_accuracy": 0.5454545454545454,
-      "total_direction_accuracy": 0.4444444444444444
+      "n": 14,
+      "winner_accuracy": 0.6923076923076923,
+      "brier_score": 0.19510750669182966,
+      "margin_mae": 7.893217459743361,
+      "total_mae": 16.333211111685213,
+      "home_score_mae": 10.197496825970925,
+      "away_score_mae": 8.871428571428568,
+      "ats_direction_accuracy": 0.5833333333333334,
+      "total_direction_accuracy": 0.5
     }
   },
   "by_team": {
     "ATL": {
-      "n": 16,
-      "winner_accuracy": 0.6,
-      "brier_score": 0.22131322653304164,
-      "margin_mae": 12.259538280349426,
-      "total_mae": 12.538032378622578,
-      "home_score_mae": 10.36014168888055,
-      "away_score_mae": 8.809374999999998,
-      "ats_direction_accuracy": 0.45454545454545453,
-      "total_direction_accuracy": 0.5555555555555556
+      "n": 17,
+      "winner_accuracy": 0.625,
+      "brier_score": 0.21216277458135654,
+      "margin_mae": 11.778388969740636,
+      "total_mae": 12.32932459164478,
+      "home_score_mae": 9.895133354240516,
+      "away_score_mae": 8.675588235294114,
+      "ats_direction_accuracy": 0.5,
+      "total_direction_accuracy": 0.6
     },
     "CHI": {
       "n": 6,
@@ -193,15 +193,15 @@
       "total_direction_accuracy": 0.5
     },
     "GS": {
-      "n": 18,
-      "winner_accuracy": 0.6111111111111112,
-      "brier_score": 0.2123406816397208,
-      "margin_mae": 11.885789823382076,
-      "total_mae": 19.1288126637813,
-      "home_score_mae": 13.588727577559853,
-      "away_score_mae": 9.037777777777777,
-      "ats_direction_accuracy": 0.4444444444444444,
-      "total_direction_accuracy": 0.4444444444444444
+      "n": 19,
+      "winner_accuracy": 0.631578947368421,
+      "brier_score": 0.20462567436154577,
+      "margin_mae": 11.474958780046178,
+      "total_mae": 18.59519094463492,
+      "home_score_mae": 13.00274191558302,
+      "away_score_mae": 8.906052631578945,
+      "ats_direction_accuracy": 0.5,
+      "total_direction_accuracy": 0.5
     },
     "IND": {
       "n": 7,
@@ -315,14 +315,14 @@
     }
   },
   "diagnostics": {
-    "mean_margin_error": -0.447251820416693,
-    "mean_total_error": 2.375574266539831,
-    "q1_total_mae": 5.750367957412444,
-    "q2_total_mae": 6.47195716574503,
-    "q3_total_mae": 6.602608695652174,
-    "q4_total_mae": 6.772753623188406,
-    "first_half_margin_mae": 9.584480970000822,
-    "second_half_margin_mae": 7.684927536231884
+    "mean_margin_error": -0.49914822298216877,
+    "mean_total_error": 2.470066062732119,
+    "q1_total_mae": 5.775005558020838,
+    "q2_total_mae": 6.6067863490915295,
+    "q3_total_mae": 6.508928571428572,
+    "q4_total_mae": 6.683285714285714,
+    "first_half_margin_mae": 9.719631241857954,
+    "second_half_margin_mae": 7.788928571428571
   },
   "promotion_rule": "Do not replace production from this audit alone; compare candidate models prospectively and with leakage-safe chronological validation."
 }
