@@ -1,12 +1,12 @@
 {
-  "generated_at_utc": "2026-10-30T06:05:40.562751+00:00",
+  "generated_at_utc": "2026-10-30T13:14:29.602982+00:00",
   "status": "ok",
   "production_adjustment_enabled": false,
-  "new_posts_seen": 2,
+  "new_posts_seen": 4,
   "new_picks_parsed": 0,
   "ledger_size": 0,
-  "since_id_used": "2115855861310742844",
-  "newest_id": "2116020422479331662",
+  "since_id_used": "2116020422479331662",
+  "newest_id": "2116139402888085512",
   "accounts": {
     "@RufusPeabody": {
       "tier": "established_professional",
@@ -62,18 +62,32 @@
   "new_picks": [],
   "candidate_posts": [
     {
-      "post_id": "2116020422479331662",
-      "source": "@FezzikSports",
-      "published_at_utc": "2026-10-30T04:12:37.000Z",
-      "text": "@VegasChump @BenderWinsYT All that the parlay does is FORCE you to play bad numbers on most of the legs vs. better numbers on Exchanges.   AOK to bet -1700.   NOT AOK to bet -1700 when you can bet it -1400.  \n\n\"But this way I am only laying -175!!\"\n\nNo, if the parlay is alive, you are laying the -1700 on",
-      "url": "https://x.com/FezzikSports/status/2116020422479331662"
+      "post_id": "2116139402888085512",
+      "source": "@wheatonbrando",
+      "published_at_utc": "2026-10-30T12:05:24.000Z",
+      "text": "@shelby_br93 There\u2019s no narrative. I shared a graph of QB play the last five weeks. The end.",
+      "url": "https://x.com/wheatonbrando/status/2116139402888085512"
     },
     {
-      "post_id": "2116011243240923198",
-      "source": "@iamrahstradamus",
-      "published_at_utc": "2026-10-30T03:36:08.000Z",
-      "text": "Monster day in general. Definitely recovered from what I did in NBA yesterday. \n\nHawks ML -120 cashes &amp; Under 46.5 too. https://t.co/Rl7ZJ5vsnl",
-      "url": "https://x.com/iamrahstradamus/status/2116011243240923198"
+      "post_id": "2116105053421674605",
+      "source": "@FezzikSports",
+      "published_at_utc": "2026-10-30T09:48:54.000Z",
+      "text": "Goodness.\n\n1) it is certainly possible that your parlay could still be +EV but it is extremely unlikely because you are not getting \"good\" numbers at all on any of the legs as you have to place them all at one shop, and cannot use exchanges.  So it is extremely likely you have https://t.co/xWSxVjL0eY",
+      "url": "https://x.com/FezzikSports/status/2116105053421674605"
+    },
+    {
+      "post_id": "2116104451224461778",
+      "source": "@FezzikSports",
+      "published_at_utc": "2026-10-30T09:46:31.000Z",
+      "text": "Goodness.\n\n1) it is certainly possible that your parlay could still be +EV but it is extremely unlikely because you are not getting \"good\" numbers at all on any of the legs as you have to place them all at one shop, and cannot use exchanges.  So it is extremely likely you have https://t.co/xWSxVjL0eY",
+      "url": "https://x.com/FezzikSports/status/2116104451224461778"
+    },
+    {
+      "post_id": "2116103779666022413",
+      "source": "@FezzikSports",
+      "published_at_utc": "2026-10-30T09:43:51.000Z",
+      "text": "Goodness.\n\n1) it is certainly possible that your parlay could still be +EV but it is extremely unlikely because you are not getting \"good\" numbers at all on any of the legs as you have to place them all at one shop, and cannot use exchanges.  So it is extremely likely you have https://t.co/xWSxVjL0eY",
+      "url": "https://x.com/FezzikSports/status/2116103779666022413"
     }
   ],
   "promotion_thresholds": {
