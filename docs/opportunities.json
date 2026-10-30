@@ -1,6 +1,6 @@
 {
-  "generated_at_utc": "2026-10-29T19:48:24.955210+00:00",
-  "source_generated_at_utc": "2026-10-29T19:48:24.552792+00:00",
+  "generated_at_utc": "2026-10-30T00:11:55.344922+00:00",
+  "source_generated_at_utc": "2026-10-30T00:11:54.812946+00:00",
   "active_opportunities": [
     {
       "market": "total",
@@ -28,7 +28,7 @@
       "context_rest_risk": 0.5275862068965517,
       "context_postseason_urgency": 0.27196125907990315,
       "availability_review_priority": true,
-      "evaluated_at_utc": "2026-10-29T19:48:24.955210+00:00",
+      "evaluated_at_utc": "2026-10-30T00:11:55.344922+00:00",
       "is_new": false,
       "lifecycle_event": null
     }
