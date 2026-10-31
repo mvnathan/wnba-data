@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-31T13:01:23.533115+00:00",
+  "generated_at_utc": "2026-10-31T18:43:53.733409+00:00",
   "status": "ok",
   "production_modified": false,
   "baseline_model_version": "nfl-v2",
@@ -16,9 +16,9 @@
   "note": "External signals were not available historically across the full 577-game backtest, so current deltas are prospective. Accuracy/Brier/MAE comparison begins as these shadow forecasts settle.",
   "summary": {
     "games": 13,
-    "games_changed_by_availability": 3,
-    "games_changed_by_combined": 3,
-    "availability_x_signals_available": 12,
+    "games_changed_by_availability": 4,
+    "games_changed_by_combined": 4,
+    "availability_x_signals_available": 14,
     "sharp_ledger_picks": 0,
     "sharp_production_weight": 0.0
   },
@@ -523,26 +523,40 @@
       },
       "availability_shadow": {
         "predicted_home_points": 20.1,
-        "predicted_away_points": 23.7,
-        "predicted_margin": -3.6,
-        "predicted_total": 43.9,
-        "home_win_probability": 0.3781,
-        "away_win_probability": 0.6219,
+        "predicted_away_points": 22.73,
+        "predicted_margin": -2.63,
+        "predicted_total": 42.83,
+        "home_win_probability": 0.4102,
+        "away_win_probability": 0.5898,
         "predicted_winner": "New England Patriots",
-        "availability_margin_delta": 0.0,
-        "availability_total_delta": 0.0,
-        "signals_applied": []
+        "availability_margin_delta": 0.97,
+        "availability_total_delta": -1.07,
+        "signals_applied": [
+          {
+            "team": "NE",
+            "player": "A.J. Brown",
+            "position": "WR",
+            "status": "out",
+            "confidence": 0.7447,
+            "base_points": 1.3,
+            "point_impact": 0.968,
+            "source": "@AdamSchefter",
+            "published_at_utc": "2026-10-31T18:02:18.000Z",
+            "url": "https://x.com/AdamSchefter/status/2116591607805841811",
+            "text": "More about the Patriots ruling out WR A.J. Brown and RB TreVeyon Henderson for Sunday\u2019s game vs. the Dolphins, via @MikeReiss: https://t.co/DJymTwJgLY"
+          }
+        ]
       },
       "combined_shadow": {
         "predicted_home_points": 20.1,
-        "predicted_away_points": 23.7,
-        "predicted_margin": -3.6,
-        "predicted_total": 43.9,
-        "home_win_probability": 0.3781,
-        "away_win_probability": 0.6219,
+        "predicted_away_points": 22.73,
+        "predicted_margin": -2.63,
+        "predicted_total": 42.83,
+        "home_win_probability": 0.4102,
+        "away_win_probability": 0.5898,
         "predicted_winner": "New England Patriots",
-        "combined_margin_delta_vs_production": 0.0,
-        "combined_total_delta_vs_production": 0.0,
+        "combined_margin_delta_vs_production": 0.97,
+        "combined_total_delta_vs_production": -1.07,
         "sharp_margin_delta": 0.0,
         "sharp_total_delta": 0.0,
         "sharp_signals_applied": []
