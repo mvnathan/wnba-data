@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-31T06:14:24.273410+00:00",
+  "generated_at_utc": "2026-10-31T13:01:23.533115+00:00",
   "status": "ok",
   "production_modified": false,
   "baseline_model_version": "nfl-v2",
@@ -16,8 +16,8 @@
   "note": "External signals were not available historically across the full 577-game backtest, so current deltas are prospective. Accuracy/Brier/MAE comparison begins as these shadow forecasts settle.",
   "summary": {
     "games": 13,
-    "games_changed_by_availability": 4,
-    "games_changed_by_combined": 4,
+    "games_changed_by_availability": 3,
+    "games_changed_by_combined": 3,
     "availability_x_signals_available": 12,
     "sharp_ledger_picks": 0,
     "sharp_production_weight": 0.0
@@ -42,40 +42,26 @@
       },
       "availability_shadow": {
         "predicted_home_points": 26.7,
-        "predicted_away_points": 21.66,
-        "predicted_margin": 5.04,
-        "predicted_total": 48.36,
-        "home_win_probability": 0.6672,
-        "away_win_probability": 0.3328,
+        "predicted_away_points": 24.9,
+        "predicted_margin": 1.8,
+        "predicted_total": 51.6,
+        "home_win_probability": 0.5633,
+        "away_win_probability": 0.4367,
         "predicted_winner": "Buffalo Bills",
-        "availability_margin_delta": 3.24,
-        "availability_total_delta": -3.24,
-        "signals_applied": [
-          {
-            "team": "BAL",
-            "player": "Lamar Jackson",
-            "position": "QB",
-            "status": "out",
-            "confidence": 0.7204,
-            "base_points": 4.5,
-            "point_impact": 3.242,
-            "source": "@RapSheet",
-            "published_at_utc": "2026-10-29T12:07:17.000Z",
-            "url": "https://x.com/RapSheet/status/2115777487967797540",
-            "text": "From @GMFB: #Ravens QB Lamar Jackson is poised to return to the field; #Packers WR Matthew Golden (questionable) is trending towards playing tonight; #Panthers edge Jaelan Phillips (hamstring) has been ruled out. https://t.co/lLLwjIrFJc"
-          }
-        ]
+        "availability_margin_delta": 0.0,
+        "availability_total_delta": 0.0,
+        "signals_applied": []
       },
       "combined_shadow": {
         "predicted_home_points": 26.7,
-        "predicted_away_points": 21.66,
-        "predicted_margin": 5.04,
-        "predicted_total": 48.36,
-        "home_win_probability": 0.6672,
-        "away_win_probability": 0.3328,
+        "predicted_away_points": 24.9,
+        "predicted_margin": 1.8,
+        "predicted_total": 51.6,
+        "home_win_probability": 0.5633,
+        "away_win_probability": 0.4367,
         "predicted_winner": "Buffalo Bills",
-        "combined_margin_delta_vs_production": 3.24,
-        "combined_total_delta_vs_production": -3.24,
+        "combined_margin_delta_vs_production": 0.0,
+        "combined_total_delta_vs_production": 0.0,
         "sharp_margin_delta": 0.0,
         "sharp_total_delta": 0.0,
         "sharp_signals_applied": []
