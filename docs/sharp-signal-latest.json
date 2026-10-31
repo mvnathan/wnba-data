@@ -1,12 +1,12 @@
 {
-  "generated_at_utc": "2026-10-30T22:30:51.080103+00:00",
+  "generated_at_utc": "2026-10-31T05:59:24.072585+00:00",
   "status": "ok",
   "production_adjustment_enabled": false,
-  "new_posts_seen": 3,
+  "new_posts_seen": 1,
   "new_picks_parsed": 0,
   "ledger_size": 0,
-  "since_id_used": "2116139402888085512",
-  "newest_id": "2116221508909720013",
+  "since_id_used": "2116221508909720013",
+  "newest_id": "2116299835439747263",
   "accounts": {
     "@RufusPeabody": {
       "tier": "established_professional",
@@ -62,25 +62,11 @@
   "new_picks": [],
   "candidate_posts": [
     {
-      "post_id": "2116221508909720013",
-      "source": "@FezzikSports",
-      "published_at_utc": "2026-10-30T17:31:39.000Z",
-      "text": "Everyone sharp  knows this yet  people fight and argue about it. It's crazy and the tout  world is full of big favorite nonsense. Moneyline parlays. https://t.co/AvAeo7rMLF",
-      "url": "https://x.com/FezzikSports/status/2116221508909720013"
-    },
-    {
-      "post_id": "2116217588271190088",
-      "source": "@wheatonbrando",
-      "published_at_utc": "2026-10-30T17:16:05.000Z",
-      "text": "@TropicBeaches I mean, they are close either way. If it comes down to a couple missed kicks or one broken play that could swing things, that counts as close even if one team was statistically relatively more dominant. You\u2019re leaving the door open by not scoring many points. Teams with defense",
-      "url": "https://x.com/wheatonbrando/status/2116217588271190088"
-    },
-    {
-      "post_id": "2116207209210417240",
-      "source": "@wheatonbrando",
-      "published_at_utc": "2026-10-30T16:34:50.000Z",
-      "text": "@TropicBeaches Close wins over the dolphins saints &amp; colts, right at average on epa vs three of the worst defenses in the league\u2026 not great. Pretty discouraging if you ask me",
-      "url": "https://x.com/wheatonbrando/status/2116207209210417240"
+      "post_id": "2116299835439747263",
+      "source": "@iamrahstradamus",
+      "published_at_utc": "2026-10-30T22:42:54.000Z",
+      "text": "\ud83c\udfc0 HARDWOOD HERO \ud83c\udfc0\n\nThe NBA Cup starts tonight and I\u2019m betting Terrence Shannon Jr. Over 13.5 points. Could also go 2+ made threes at +102. The volume is there but I\u2019m more confident in the points.\n\nGet a 50% Profit Boost Token for ANY wager on ANY NBA games tonight \u203c\ufe0f\n\nIf any",
+      "url": "https://x.com/iamrahstradamus/status/2116299835439747263"
     }
   ],
   "promotion_thresholds": {
