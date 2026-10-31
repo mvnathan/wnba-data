@@ -1,14 +1,14 @@
 {
-  "generated_at_utc": "2026-10-30T22:41:35.258960+00:00",
+  "generated_at_utc": "2026-10-31T01:48:45.828156+00:00",
   "method": "Earliest committed pregame NBA forecast and market line joined to ESPN final score by game ID",
   "summary": {
-    "n": 132,
+    "n": 133,
     "ml": {
       "wins": 80,
-      "losses": 52,
+      "losses": 53,
       "pushes": 0,
-      "graded": 132,
-      "rate": 0.6060606060606061
+      "graded": 133,
+      "rate": 0.6015037593984962
     },
     "ats": {
       "wins": 2,
@@ -26,6 +26,29 @@
     }
   },
   "games": [
+    {
+      "game_id": "401909277",
+      "game_date_utc": "2026-10-30T23:00Z",
+      "home_team": "Washington Wizards",
+      "away_team": "Charlotte Hornets",
+      "home_abbr": "WSH",
+      "away_abbr": "CHA",
+      "prediction_issued_at": "2026-10-30T02:07:43.716040+00:00",
+      "prediction_commit": "e69e54c9",
+      "home_win_probability": 0.4526895740299576,
+      "predicted_margin": -1.9870803724447854,
+      "predicted_total": 220.78227400276268,
+      "actual_home_score": 95.0,
+      "actual_away_score": 79.0,
+      "actual_margin": 16.0,
+      "actual_total": 174.0,
+      "winner_correct": false,
+      "market_home_spread": null,
+      "market_total": null,
+      "market_bookmaker": null,
+      "ats_result": null,
+      "ou_result": null
+    },
     {
       "game_id": "401909893",
       "game_date_utc": "2026-10-30T00:00Z",
