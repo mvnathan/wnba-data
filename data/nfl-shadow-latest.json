@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-31T18:43:53.733409+00:00",
+  "generated_at_utc": "2026-10-31T23:41:13.303360+00:00",
   "status": "ok",
   "production_modified": false,
   "baseline_model_version": "nfl-v2",
@@ -16,9 +16,9 @@
   "note": "External signals were not available historically across the full 577-game backtest, so current deltas are prospective. Accuracy/Brier/MAE comparison begins as these shadow forecasts settle.",
   "summary": {
     "games": 13,
-    "games_changed_by_availability": 4,
-    "games_changed_by_combined": 4,
-    "availability_x_signals_available": 14,
+    "games_changed_by_availability": 5,
+    "games_changed_by_combined": 5,
+    "availability_x_signals_available": 19,
     "sharp_ledger_picks": 0,
     "sharp_production_weight": 0.0
   },
@@ -451,15 +451,15 @@
         "predicted_winner": "Kansas City Chiefs"
       },
       "availability_shadow": {
-        "predicted_home_points": 20.0,
+        "predicted_home_points": 20.33,
         "predicted_away_points": 22.07,
-        "predicted_margin": -2.07,
-        "predicted_total": 42.06,
-        "home_win_probability": 0.4292,
-        "away_win_probability": 0.5708,
+        "predicted_margin": -1.74,
+        "predicted_total": 42.39,
+        "home_win_probability": 0.4404,
+        "away_win_probability": 0.5596,
         "predicted_winner": "Kansas City Chiefs",
-        "availability_margin_delta": -0.37,
-        "availability_total_delta": -0.73,
+        "availability_margin_delta": -0.04,
+        "availability_total_delta": -0.41,
         "signals_applied": [
           {
             "team": "DEN",
@@ -473,6 +473,19 @@
             "published_at_utc": "2026-10-30T20:48:03.000Z",
             "url": "https://x.com/AdamSchefter/status/2116270931203219653",
             "text": "Broncos ruled out RB RJ Harvey for Sunday\u2019s game vs. the Chiefs and are listing WR Jaylen Waddle as questionable. https://t.co/G4U7NFZZeh"
+          },
+          {
+            "team": "KC",
+            "player": "Mansoor Delane",
+            "position": "CB",
+            "status": "out",
+            "confidence": 0.5498,
+            "base_points": 0.8,
+            "point_impact": 0.44,
+            "source": "@AdamSchefter",
+            "published_at_utc": "2026-10-31T19:22:11.000Z",
+            "url": "https://x.com/AdamSchefter/status/2116611711981519008",
+            "text": "Chiefs downgraded CB Mansoor Delane to out for Sunday\u2019s game in Denver due to a shoulder injury. Chiefs also placed CB L\u2019Jarius Sneed on injured reserve. https://t.co/7EwgXGnNlu"
           },
           {
             "team": "KC",
@@ -490,15 +503,15 @@
         ]
       },
       "combined_shadow": {
-        "predicted_home_points": 20.0,
+        "predicted_home_points": 20.33,
         "predicted_away_points": 22.07,
-        "predicted_margin": -2.07,
-        "predicted_total": 42.06,
-        "home_win_probability": 0.4292,
-        "away_win_probability": 0.5708,
+        "predicted_margin": -1.74,
+        "predicted_total": 42.39,
+        "home_win_probability": 0.4404,
+        "away_win_probability": 0.5596,
         "predicted_winner": "Kansas City Chiefs",
-        "combined_margin_delta_vs_production": -0.37,
-        "combined_total_delta_vs_production": -0.73,
+        "combined_margin_delta_vs_production": -0.04,
+        "combined_total_delta_vs_production": -0.41,
         "sharp_margin_delta": 0.0,
         "sharp_total_delta": 0.0,
         "sharp_signals_applied": []
@@ -652,26 +665,40 @@
       },
       "availability_shadow": {
         "predicted_home_points": 22.7,
-        "predicted_away_points": 22.2,
-        "predicted_margin": 0.5,
-        "predicted_total": 44.9,
-        "home_win_probability": 0.5179,
-        "away_win_probability": 0.4821,
+        "predicted_away_points": 21.72,
+        "predicted_margin": 0.98,
+        "predicted_total": 44.42,
+        "home_win_probability": 0.5336,
+        "away_win_probability": 0.4664,
         "predicted_winner": "Seattle Seahawks",
-        "availability_margin_delta": 0.0,
-        "availability_total_delta": 0.0,
-        "signals_applied": []
+        "availability_margin_delta": 0.48,
+        "availability_total_delta": -0.48,
+        "signals_applied": [
+          {
+            "team": "CHI",
+            "player": "Colston Loveland",
+            "position": "TE",
+            "status": "out",
+            "confidence": 0.5277,
+            "base_points": 0.9,
+            "point_impact": 0.475,
+            "source": "@AdamSchefter",
+            "published_at_utc": "2026-10-31T18:53:47.000Z",
+            "url": "https://x.com/AdamSchefter/status/2116604564665503927",
+            "text": "Bears TE Colston Loveland has no injury designation for Monday night\u2019s game; RB Kyle Monangai officially is out. https://t.co/NlIU2tWhbS"
+          }
+        ]
       },
       "combined_shadow": {
         "predicted_home_points": 22.7,
-        "predicted_away_points": 22.2,
-        "predicted_margin": 0.5,
-        "predicted_total": 44.9,
-        "home_win_probability": 0.5179,
-        "away_win_probability": 0.4821,
+        "predicted_away_points": 21.72,
+        "predicted_margin": 0.98,
+        "predicted_total": 44.42,
+        "home_win_probability": 0.5336,
+        "away_win_probability": 0.4664,
         "predicted_winner": "Seattle Seahawks",
-        "combined_margin_delta_vs_production": 0.0,
-        "combined_total_delta_vs_production": 0.0,
+        "combined_margin_delta_vs_production": 0.48,
+        "combined_total_delta_vs_production": -0.48,
         "sharp_margin_delta": 0.0,
         "sharp_total_delta": 0.0,
         "sharp_signals_applied": []
