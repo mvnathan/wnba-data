@@ -1,6 +1,6 @@
 {
-  "generated_at_utc": "2026-10-31T18:42:17.743395+00:00",
-  "source_generated_at_utc": "2026-10-31T18:42:10.557678+00:00",
+  "generated_at_utc": "2026-10-31T23:37:34.863202+00:00",
+  "source_generated_at_utc": "2026-10-31T23:37:27.017733+00:00",
   "active_opportunities": [
     {
       "market": "total",
@@ -22,13 +22,13 @@
       "live_away_score": null,
       "live_home_score": null,
       "market_bookmaker": "DraftKings",
-      "market_updated_at": "2026-10-31T18:42:17.209367+00:00",
+      "market_updated_at": "2026-10-31T23:37:34.185449+00:00",
       "home_win_probability": 0.5780114225394367,
       "away_win_probability": 0.4219885774605633,
       "context_rest_risk": 0.530508474576271,
       "context_postseason_urgency": 0.06631355932203388,
       "availability_review_priority": true,
-      "evaluated_at_utc": "2026-10-31T18:42:17.743395+00:00",
+      "evaluated_at_utc": "2026-10-31T23:37:34.863202+00:00",
       "is_new": false,
       "lifecycle_event": null
     }

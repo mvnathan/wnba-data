@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-31T18:42:10.557678+00:00",
+  "generated_at_utc": "2026-10-31T23:37:27.017733+00:00",
   "target_date": "2026-10-31",
   "games": [
     {
@@ -78,23 +78,23 @@
       "market_home_spread_price": -105,
       "market_away_spread_price": -115,
       "market_total": 142.5,
-      "market_over_price": -115,
-      "market_under_price": -105,
+      "market_over_price": -112,
+      "market_under_price": -108,
       "market_home_moneyline": -115,
       "market_away_moneyline": -105,
-      "market_updated_at": "2026-10-31T18:42:17.209367+00:00",
+      "market_updated_at": "2026-10-31T23:37:34.185449+00:00",
       "market_books": [
         {
           "book": "DraftKings",
           "key": "draftkings",
-          "updated_at": "2026-10-31T18:42:17.209367+00:00",
+          "updated_at": "2026-10-31T23:37:34.185449+00:00",
           "home_spread": -1.5,
           "away_spread": 1.5,
           "home_spread_price": -105,
           "away_spread_price": -115,
           "total": 142.5,
-          "over_price": -115,
-          "under_price": -105,
+          "over_price": -112,
+          "under_price": -108,
           "home_moneyline": -115,
           "away_moneyline": -105
         }
@@ -133,14 +133,14 @@
   ],
   "uncertainty": {
     "full_total": {
-      "p10": 179.39388683036623,
-      "median": 179.39388683036623,
-      "p90": 179.39388683036623
+      "p10": 153.4909494313007,
+      "median": 153.4909494313007,
+      "p90": 153.4909494313007
     },
     "home_score": {
-      "p10": 60.69500000000001,
-      "median": 60.69500000000001,
-      "p90": 60.69500000000001
+      "p10": 75.32000000000001,
+      "median": 75.32000000000001,
+      "p90": 75.32000000000001
     }
   }
 }
