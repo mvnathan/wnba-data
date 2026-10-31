@@ -1,11 +1,11 @@
 {
-  "generated_at_utc": "2026-10-31T05:59:24.072585+00:00",
+  "generated_at_utc": "2026-10-31T12:51:32.677797+00:00",
   "status": "ok",
   "production_adjustment_enabled": false,
-  "new_posts_seen": 1,
+  "new_posts_seen": 0,
   "new_picks_parsed": 0,
   "ledger_size": 0,
-  "since_id_used": "2116221508909720013",
+  "since_id_used": "2116299835439747263",
   "newest_id": "2116299835439747263",
   "accounts": {
     "@RufusPeabody": {
@@ -60,15 +60,7 @@
     }
   },
   "new_picks": [],
-  "candidate_posts": [
-    {
-      "post_id": "2116299835439747263",
-      "source": "@iamrahstradamus",
-      "published_at_utc": "2026-10-30T22:42:54.000Z",
-      "text": "\ud83c\udfc0 HARDWOOD HERO \ud83c\udfc0\n\nThe NBA Cup starts tonight and I\u2019m betting Terrence Shannon Jr. Over 13.5 points. Could also go 2+ made threes at +102. The volume is there but I\u2019m more confident in the points.\n\nGet a 50% Profit Boost Token for ANY wager on ANY NBA games tonight \u203c\ufe0f\n\nIf any",
-      "url": "https://x.com/iamrahstradamus/status/2116299835439747263"
-    }
-  ],
+  "candidate_posts": [],
   "promotion_thresholds": {
     "minimum_graded_picks": 100,
     "minimum_positive_clv_rate": 0.52,
