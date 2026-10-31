@@ -1,14 +1,14 @@
 {
-  "generated_at_utc": "2026-10-31T17:24:44.404904+00:00",
+  "generated_at_utc": "2026-10-31T21:53:32.149178+00:00",
   "method": "Earliest committed pregame NBA forecast and market line joined to ESPN final score by game ID",
   "summary": {
-    "n": 142,
+    "n": 143,
     "ml": {
-      "wins": 86,
+      "wins": 87,
       "losses": 56,
       "pushes": 0,
-      "graded": 142,
-      "rate": 0.6056338028169014
+      "graded": 143,
+      "rate": 0.6083916083916084
     },
     "ats": {
       "wins": 2,
@@ -26,6 +26,29 @@
     }
   },
   "games": [
+    {
+      "game_id": "401909896",
+      "game_date_utc": "2026-10-31T19:00Z",
+      "home_team": "Utah Jazz",
+      "away_team": "Portland Trail Blazers",
+      "home_abbr": "UTAH",
+      "away_abbr": "POR",
+      "prediction_issued_at": "2026-10-31T01:46:58.991908+00:00",
+      "prediction_commit": "99e8a3bc",
+      "home_win_probability": 0.2553440511117722,
+      "predicted_margin": -7.803490245289488,
+      "predicted_total": 236.99309152033842,
+      "actual_home_score": 90.0,
+      "actual_away_score": 112.0,
+      "actual_margin": -22.0,
+      "actual_total": 202.0,
+      "winner_correct": true,
+      "market_home_spread": null,
+      "market_total": null,
+      "market_bookmaker": null,
+      "ats_result": null,
+      "ou_result": null
+    },
     {
       "game_id": "401909277",
       "game_date_utc": "2026-10-30T23:00Z",
