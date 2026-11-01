@@ -1,38 +1,7 @@
 {
-  "generated_at_utc": "2026-10-31T23:37:34.863202+00:00",
-  "source_generated_at_utc": "2026-10-31T23:37:27.017733+00:00",
-  "active_opportunities": [
-    {
-      "market": "total",
-      "level": "very_strong",
-      "side": "OVER",
-      "edge": 12.045000000000016,
-      "signed_edge": 12.045000000000016,
-      "model_total": 154.54500000000002,
-      "market_total": 142.5,
-      "game_id": "401918311",
-      "phase": "pregame",
-      "lifecycle_key": "401918311|pregame|total",
-      "away_abbr": "ATL",
-      "home_abbr": "GS",
-      "game_date_utc": "2026-11-01 00:00:00+00:00",
-      "status": "STATUS_SCHEDULED",
-      "live_period": null,
-      "live_clock": null,
-      "live_away_score": null,
-      "live_home_score": null,
-      "market_bookmaker": "DraftKings",
-      "market_updated_at": "2026-10-31T23:37:34.185449+00:00",
-      "home_win_probability": 0.5780114225394367,
-      "away_win_probability": 0.4219885774605633,
-      "context_rest_risk": 0.530508474576271,
-      "context_postseason_urgency": 0.06631355932203388,
-      "availability_review_priority": true,
-      "evaluated_at_utc": "2026-10-31T23:37:34.863202+00:00",
-      "is_new": false,
-      "lifecycle_event": null
-    }
-  ],
+  "generated_at_utc": "2026-11-01T06:39:03.419048+00:00",
+  "source_generated_at_utc": "2026-11-01T06:39:02.885238+00:00",
+  "active_opportunities": [],
   "new_alerts": [],
   "notification_events": [],
   "recent_events": [
@@ -4675,10 +4644,10 @@
     }
   ],
   "summary": {
-    "active_count": 1,
+    "active_count": 0,
     "notification_event_count": 0,
     "new_count": 0,
-    "very_strong_count": 1,
+    "very_strong_count": 0,
     "strong_count": 0
   },
   "policy": {
