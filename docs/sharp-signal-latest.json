@@ -1,12 +1,12 @@
 {
-  "generated_at_utc": "2026-11-01T17:59:35.354249+00:00",
+  "generated_at_utc": "2026-11-01T22:13:00.329506+00:00",
   "status": "ok",
   "production_adjustment_enabled": false,
-  "new_posts_seen": 0,
+  "new_posts_seen": 1,
   "new_picks_parsed": 0,
   "ledger_size": 0,
   "since_id_used": "2116754340346290567",
-  "newest_id": "2116754340346290567",
+  "newest_id": "2117008545241604481",
   "accounts": {
     "@RufusPeabody": {
       "tier": "established_professional",
@@ -60,7 +60,15 @@
     }
   },
   "new_picks": [],
-  "candidate_posts": [],
+  "candidate_posts": [
+    {
+      "post_id": "2117008545241604481",
+      "source": "@wheatonbrando",
+      "published_at_utc": "2026-11-01T21:39:03.000Z",
+      "text": "The Cardinals voodoo over the Cowboys knows no bounds.\n\nHilarious.",
+      "url": "https://x.com/wheatonbrando/status/2117008545241604481"
+    }
+  ],
   "promotion_thresholds": {
     "minimum_graded_picks": 100,
     "minimum_positive_clv_rate": 0.52,
