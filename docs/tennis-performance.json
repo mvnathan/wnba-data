@@ -1,16 +1,16 @@
 {
-  "generated_at_utc": "2026-11-01T22:00:40.649834Z",
+  "generated_at_utc": "2026-11-02T05:58:50.069729Z",
   "method": "Earliest committed pre-match forecast joined to ESPN final scores by match ID",
   "summary": {
-    "matches_evaluated": 1034,
-    "winner_accuracy": 0.6373307543520309,
-    "winner_auc": 0.689120016200162,
-    "winner_log_loss": 0.6441008852883798,
-    "winner_brier_score": 0.22434820795938104,
-    "spread_mae_games": 4.249129593810445,
-    "spread_bias_games": -0.06653771760154742,
-    "total_mae_games": 5.398452611218569,
-    "total_bias_games": -1.1713733075435202
+    "matches_evaluated": 1035,
+    "winner_accuracy": 0.6376811594202898,
+    "winner_auc": 0.6892566035193819,
+    "winner_log_loss": 0.6440474420805994,
+    "winner_brier_score": 0.22432277490821256,
+    "spread_mae_games": 4.250531400966183,
+    "spread_bias_games": -0.06096618357487926,
+    "total_mae_games": 5.39584541062802,
+    "total_bias_games": -1.172850241545894
   },
   "by_tour": {
     "ATP": {
@@ -25,15 +25,15 @@
       "total_bias_games": -0.6243902439024389
     },
     "WTA": {
-      "matches_evaluated": 583,
-      "winner_accuracy": 0.6449399656946827,
-      "winner_auc": 0.6819265448708871,
-      "winner_log_loss": 0.6569119848933809,
-      "winner_brier_score": 0.2284139146998285,
-      "spread_mae_games": 4.565866209262436,
-      "spread_bias_games": 0.037564322469982835,
-      "total_mae_games": 5.123499142367067,
-      "total_bias_games": -1.5945111492281303
+      "matches_evaluated": 584,
+      "winner_accuracy": 0.6455479452054794,
+      "winner_auc": 0.6821928762097389,
+      "winner_log_loss": 0.656795332804926,
+      "winner_brier_score": 0.22836187888698628,
+      "spread_mae_games": 4.567808219178082,
+      "spread_bias_games": 0.04726027397260273,
+      "total_mae_games": 5.119349315068493,
+      "total_bias_games": -1.596404109589041
     }
   },
   "by_day": [
@@ -735,15 +735,15 @@
     },
     {
       "date": "2026-11-01",
-      "matches_evaluated": 12,
-      "winner_accuracy": 0.5,
-      "winner_auc": 0.4375,
-      "winner_log_loss": 0.7281724859177466,
-      "winner_brier_score": 0.2668460541666667,
-      "spread_mae_games": 3.783333333333333,
-      "spread_bias_games": 2.433333333333333,
-      "total_mae_games": 6.141666666666668,
-      "total_bias_games": -2.191666666666667
+      "matches_evaluated": 13,
+      "winner_accuracy": 0.5384615384615384,
+      "winner_auc": 0.5,
+      "winner_log_loss": 0.717450538172974,
+      "winner_brier_score": 0.26155212692307694,
+      "spread_mae_games": 3.930769230769231,
+      "spread_bias_games": 2.6846153846153844,
+      "total_mae_games": 5.876923076923078,
+      "total_bias_games": -2.230769230769231
     }
   ],
   "matches": [
@@ -35902,6 +35902,40 @@
       "absolute_margin_error": 4.5,
       "total_error": -2.1000000000000014,
       "absolute_total_error": 2.1000000000000014
+    },
+    {
+      "match_id": "185819",
+      "target_date": "2026-11-01",
+      "start_time_utc": "2026-11-01T22:00Z",
+      "tour": "WTA",
+      "tournament": "Queretaro Open",
+      "round": "Final",
+      "player_1": "Tatjana Maria",
+      "player_2": "Bianca Andreescu",
+      "player_1_rank": 80,
+      "player_2_rank": 164,
+      "model_version": "tennis-v3-tournament-context",
+      "prediction_issued_at": "2026-11-01T05:59:03.558244+00:00",
+      "prediction_commit": "ad0daaba",
+      "player_1_win_probability": 0.445,
+      "predicted_winner": "Bianca Andreescu",
+      "predicted_game_margin_player_1": 1.7,
+      "predicted_total_games": 21.3,
+      "actual_player_1": "Tatjana Maria",
+      "actual_player_2": "Bianca Andreescu",
+      "actual_player_1_games": 10.0,
+      "actual_player_2_games": 14.0,
+      "actual_margin_player_1": -4.0,
+      "actual_total_games": 24.0,
+      "actual_winner_player_1": false,
+      "final_status": "Final",
+      "winner_correct": true,
+      "brier_score": 0.198025,
+      "log_loss": 0.5887871652357026,
+      "margin_error": 5.7,
+      "absolute_margin_error": 5.7,
+      "total_error": -2.6999999999999993,
+      "absolute_total_error": 2.6999999999999993
     }
   ]
 }
