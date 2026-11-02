@@ -1,12 +1,12 @@
 {
-  "generated_at_utc": "2026-11-01T22:13:00.329506+00:00",
+  "generated_at_utc": "2026-11-02T06:30:05.234785+00:00",
   "status": "ok",
   "production_adjustment_enabled": false,
-  "new_posts_seen": 1,
+  "new_posts_seen": 2,
   "new_picks_parsed": 0,
   "ledger_size": 0,
-  "since_id_used": "2116754340346290567",
-  "newest_id": "2117008545241604481",
+  "since_id_used": "2117008545241604481",
+  "newest_id": "2117098814024957989",
   "accounts": {
     "@RufusPeabody": {
       "tier": "established_professional",
@@ -62,11 +62,18 @@
   "new_picks": [],
   "candidate_posts": [
     {
-      "post_id": "2117008545241604481",
-      "source": "@wheatonbrando",
-      "published_at_utc": "2026-11-01T21:39:03.000Z",
-      "text": "The Cardinals voodoo over the Cowboys knows no bounds.\n\nHilarious.",
-      "url": "https://x.com/wheatonbrando/status/2117008545241604481"
+      "post_id": "2117098814024957989",
+      "source": "@iamrahstradamus",
+      "published_at_utc": "2026-11-02T03:37:45.000Z",
+      "text": "@templeoftheblog You enjoy watching Bo Nix play football and seeing the broncos get outgained every game only to pull a rabbit out of a hat?",
+      "url": "https://x.com/iamrahstradamus/status/2117098814024957989"
+    },
+    {
+      "post_id": "2117056859173773414",
+      "source": "@iamrahstradamus",
+      "published_at_utc": "2026-11-02T00:51:02.000Z",
+      "text": "At this point I\u2019m not sure what I do can even be considered betting. I bought some chiefs ml +280 when the Broncos scored the touchdown to take the lead and then sold my position when the chiefs got down to the 1 yard line.",
+      "url": "https://x.com/iamrahstradamus/status/2117056859173773414"
     }
   ],
   "promotion_thresholds": {
