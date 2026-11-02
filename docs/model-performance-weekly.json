@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-11-01T16:49:30.839510+00:00",
+  "generated_at_utc": "2026-11-02T20:23:06.459956+00:00",
   "season": 2026,
   "status": "ok",
   "models": [
@@ -14,27 +14,27 @@
         "ou": "Model total side vs nflverse historical closing total."
       },
       "overall": {
-        "n": 108,
+        "n": 120,
         "ml": {
-          "wins": 65,
-          "losses": 43,
+          "wins": 73,
+          "losses": 47,
           "pushes": 0,
-          "graded": 108,
-          "rate": 0.6018518518518519
+          "graded": 120,
+          "rate": 0.6083333333333333
         },
         "ats": {
-          "wins": 48,
-          "losses": 44,
+          "wins": 52,
+          "losses": 52,
           "pushes": 6,
-          "graded": 92,
-          "rate": 0.5217391304347826
+          "graded": 104,
+          "rate": 0.5
         },
         "ou": {
-          "wins": 43,
-          "losses": 56,
+          "wins": 48,
+          "losses": 61,
           "pushes": 0,
-          "graded": 99,
-          "rate": 0.43434343434343436
+          "graded": 109,
+          "rate": 0.44036697247706424
         }
       },
       "weekly": [
@@ -223,27 +223,27 @@
         {
           "week_start": "2026-10-26",
           "week_label": "Oct 26\u2013Nov 1",
-          "n": 2,
+          "n": 14,
           "ml": {
-            "wins": 2,
-            "losses": 0,
+            "wins": 10,
+            "losses": 4,
             "pushes": 0,
-            "graded": 2,
-            "rate": 1.0
+            "graded": 14,
+            "rate": 0.7142857142857143
           },
           "ats": {
-            "wins": 0,
-            "losses": 2,
+            "wins": 4,
+            "losses": 10,
             "pushes": 0,
-            "graded": 2,
-            "rate": 0.0
+            "graded": 14,
+            "rate": 0.2857142857142857
           },
           "ou": {
-            "wins": 2,
-            "losses": 0,
+            "wins": 7,
+            "losses": 5,
             "pushes": 0,
-            "graded": 2,
-            "rate": 1.0
+            "graded": 12,
+            "rate": 0.5833333333333334
           }
         }
       ]
@@ -259,27 +259,27 @@
         "ou": "Prospective issued-line tracking begins with NBA launch; historical line data is not imputed."
       },
       "overall": {
-        "n": 149,
+        "n": 153,
         "ml": {
-          "wins": 92,
-          "losses": 57,
+          "wins": 93,
+          "losses": 60,
           "pushes": 0,
-          "graded": 149,
-          "rate": 0.6174496644295302
+          "graded": 153,
+          "rate": 0.6078431372549019
         },
         "ats": {
-          "wins": 2,
-          "losses": 2,
+          "wins": 3,
+          "losses": 5,
           "pushes": 0,
-          "graded": 4,
-          "rate": 0.5
+          "graded": 8,
+          "rate": 0.375
         },
         "ou": {
-          "wins": 2,
-          "losses": 2,
+          "wins": 3,
+          "losses": 5,
           "pushes": 0,
-          "graded": 4,
-          "rate": 0.5
+          "graded": 8,
+          "rate": 0.375
         }
       },
       "weekly": [
@@ -364,27 +364,53 @@
         {
           "week_start": "2026-10-26",
           "week_label": "Oct 26\u2013Nov 1",
-          "n": 46,
+          "n": 48,
           "ml": {
             "wins": 32,
-            "losses": 14,
+            "losses": 16,
             "pushes": 0,
-            "graded": 46,
-            "rate": 0.6956521739130435
+            "graded": 48,
+            "rate": 0.6666666666666666
           },
           "ats": {
             "wins": 0,
-            "losses": 0,
+            "losses": 2,
             "pushes": 0,
-            "graded": 0,
-            "rate": null
+            "graded": 2,
+            "rate": 0.0
+          },
+          "ou": {
+            "wins": 1,
+            "losses": 1,
+            "pushes": 0,
+            "graded": 2,
+            "rate": 0.5
+          }
+        },
+        {
+          "week_start": "2026-11-02",
+          "week_label": "Nov 2\u2013Nov 8",
+          "n": 2,
+          "ml": {
+            "wins": 1,
+            "losses": 1,
+            "pushes": 0,
+            "graded": 2,
+            "rate": 0.5
+          },
+          "ats": {
+            "wins": 1,
+            "losses": 1,
+            "pushes": 0,
+            "graded": 2,
+            "rate": 0.5
           },
           "ou": {
             "wins": 0,
-            "losses": 0,
+            "losses": 2,
             "pushes": 0,
-            "graded": 0,
-            "rate": null
+            "graded": 2,
+            "rate": 0.0
           }
         }
       ]
@@ -864,13 +890,13 @@
         "ou": "Historical sportsbook totals were not retained with issued forecasts."
       },
       "overall": {
-        "n": 444,
+        "n": 459,
         "ml": {
-          "wins": 278,
-          "losses": 166,
+          "wins": 288,
+          "losses": 171,
           "pushes": 0,
-          "graded": 444,
-          "rate": 0.6261261261261262
+          "graded": 459,
+          "rate": 0.6274509803921569
         },
         "ats": {
           "wins": 0,
@@ -1073,13 +1099,39 @@
         {
           "week_start": "2026-10-26",
           "week_label": "Oct 26\u2013Nov 1",
-          "n": 76,
+          "n": 83,
           "ml": {
-            "wins": 52,
-            "losses": 24,
+            "wins": 57,
+            "losses": 26,
             "pushes": 0,
-            "graded": 76,
-            "rate": 0.6842105263157895
+            "graded": 83,
+            "rate": 0.6867469879518072
+          },
+          "ats": {
+            "wins": 0,
+            "losses": 0,
+            "pushes": 0,
+            "graded": 0,
+            "rate": null
+          },
+          "ou": {
+            "wins": 0,
+            "losses": 0,
+            "pushes": 0,
+            "graded": 0,
+            "rate": null
+          }
+        },
+        {
+          "week_start": "2026-11-02",
+          "week_label": "Nov 2\u2013Nov 8",
+          "n": 8,
+          "ml": {
+            "wins": 5,
+            "losses": 3,
+            "pushes": 0,
+            "graded": 8,
+            "rate": 0.625
           },
           "ats": {
             "wins": 0,
@@ -1109,13 +1161,13 @@
         "ou": "Historical sportsbook totals were not retained with issued forecasts."
       },
       "overall": {
-        "n": 581,
+        "n": 589,
         "ml": {
-          "wins": 376,
-          "losses": 205,
+          "wins": 381,
+          "losses": 208,
           "pushes": 0,
-          "graded": 581,
-          "rate": 0.6471600688468159
+          "graded": 589,
+          "rate": 0.6468590831918506
         },
         "ats": {
           "wins": 0,
@@ -1344,13 +1396,39 @@
         {
           "week_start": "2026-10-26",
           "week_label": "Oct 26\u2013Nov 1",
-          "n": 79,
+          "n": 82,
           "ml": {
-            "wins": 49,
-            "losses": 30,
+            "wins": 50,
+            "losses": 32,
             "pushes": 0,
-            "graded": 79,
-            "rate": 0.620253164556962
+            "graded": 82,
+            "rate": 0.6097560975609756
+          },
+          "ats": {
+            "wins": 0,
+            "losses": 0,
+            "pushes": 0,
+            "graded": 0,
+            "rate": null
+          },
+          "ou": {
+            "wins": 0,
+            "losses": 0,
+            "pushes": 0,
+            "graded": 0,
+            "rate": null
+          }
+        },
+        {
+          "week_start": "2026-11-02",
+          "week_label": "Nov 2\u2013Nov 8",
+          "n": 5,
+          "ml": {
+            "wins": 4,
+            "losses": 1,
+            "pushes": 0,
+            "graded": 5,
+            "rate": 0.8
           },
           "ats": {
             "wins": 0,

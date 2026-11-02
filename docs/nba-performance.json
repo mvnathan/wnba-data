@@ -1,31 +1,77 @@
 {
-  "generated_at_utc": "2026-11-02T01:51:01.237701+00:00",
+  "generated_at_utc": "2026-11-02T20:23:03.450462+00:00",
   "method": "Earliest committed pregame NBA forecast and market line joined to ESPN final score by game ID",
   "summary": {
-    "n": 151,
+    "n": 153,
     "ml": {
-      "wins": 92,
-      "losses": 59,
+      "wins": 93,
+      "losses": 60,
       "pushes": 0,
-      "graded": 151,
-      "rate": 0.609271523178808
+      "graded": 153,
+      "rate": 0.6078431372549019
     },
     "ats": {
-      "wins": 2,
-      "losses": 4,
+      "wins": 3,
+      "losses": 5,
       "pushes": 0,
-      "graded": 6,
-      "rate": 0.3333333333333333
+      "graded": 8,
+      "rate": 0.375
     },
     "ou": {
       "wins": 3,
-      "losses": 3,
+      "losses": 5,
       "pushes": 0,
-      "graded": 6,
-      "rate": 0.5
+      "graded": 8,
+      "rate": 0.375
     }
   },
   "games": [
+    {
+      "game_id": "401909905",
+      "game_date_utc": "2026-11-02T01:30Z",
+      "home_team": "Golden State Warriors",
+      "away_team": "LA Clippers",
+      "home_abbr": "GS",
+      "away_abbr": "LAC",
+      "prediction_issued_at": "2026-11-01T18:04:27.461089+00:00",
+      "prediction_commit": "12967aee",
+      "home_win_probability": 0.723492066690469,
+      "predicted_margin": 7.887243415876553,
+      "predicted_total": 220.16678334749326,
+      "actual_home_score": 124.0,
+      "actual_away_score": 112.0,
+      "actual_margin": 12.0,
+      "actual_total": 236.0,
+      "winner_correct": true,
+      "market_home_spread": -2.5,
+      "market_total": 221.5,
+      "market_bookmaker": "DraftKings",
+      "ats_result": "win",
+      "ou_result": "loss"
+    },
+    {
+      "game_id": "401909906",
+      "game_date_utc": "2026-11-02T02:00Z",
+      "home_team": "Los Angeles Lakers",
+      "away_team": "Toronto Raptors",
+      "home_abbr": "LAL",
+      "away_abbr": "TOR",
+      "prediction_issued_at": "2026-11-01T18:04:27.461089+00:00",
+      "prediction_commit": "12967aee",
+      "home_win_probability": 0.3333197337304304,
+      "predicted_margin": -4.869617722400529,
+      "predicted_total": 224.19523941396088,
+      "actual_home_score": 131.0,
+      "actual_away_score": 125.0,
+      "actual_margin": 6.0,
+      "actual_total": 256.0,
+      "winner_correct": false,
+      "market_home_spread": -2.5,
+      "market_total": 226.5,
+      "market_bookmaker": "DraftKings",
+      "ats_result": "loss",
+      "ou_result": "loss"
+    },
     {
       "game_id": "401909903",
       "game_date_utc": "2026-11-01T20:30Z",
