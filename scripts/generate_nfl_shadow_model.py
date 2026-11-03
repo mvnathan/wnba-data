@@ -18,6 +18,8 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
+from src.availability_intelligence import extract_status
+
 PROD = Path("docs/nfl-latest.json")
 AVAIL = Path("docs/availability-latest.json")
 SHARP = Path("data/sharp-picks-ledger.json")
@@ -160,9 +162,16 @@ def availability_adjustments(prod: dict[str,Any], avail: dict[str,Any]) -> dict[
             team=infer_affected_team(text,teams)
             if not team:
                 continue
-            status=str(s.get("status_signal") or "")
+            status=extract_status(text)
+            if status is None:
+                continue
+            # Do not apply retrospective or in-game updates to pregame forecasts.
+            published=str(s.get("published_at_utc") or "")
+            kickoff=str(g.get("game_date_utc") or "")
+            if not published or not kickoff or published >= kickoff:
+                continue
             sw=STATUS_WEIGHT.get(status,0.0)
-            if sw<=0:
+            if sw<=0 and status not in {"available","active"}:
                 continue
             player,pos=extract_player_position(text)
             if not pos:
@@ -187,13 +196,14 @@ def availability_adjustments(prod: dict[str,Any], avail: dict[str,Any]) -> dict[
                 "text":text,
             })
 
-        # Deduplicate repeated reports for the same player/team using strongest impact.
+        # Most recent pregame report for each player wins; a later clearance
+        # must cancel an earlier absence rather than preserve max impact.
         dedup={}
         for c in candidates:
             key=(c["team"],str(c["player"]).lower())
-            if key not in dedup or c["point_impact"]>dedup[key]["point_impact"]:
+            if key not in dedup or str(c["published_at_utc"]) > str(dedup[key]["published_at_utc"]):
                 dedup[key]=c
-        by_game[gid]=sorted(dedup.values(),key=lambda x:x["point_impact"],reverse=True)
+        by_game[gid]=sorted((x for x in dedup.values() if x["point_impact"]>0),key=lambda x:x["point_impact"],reverse=True)
     return by_game
 
 def apply_availability(g: dict[str,Any], items: list[dict[str,Any]]) -> dict[str,Any]:
