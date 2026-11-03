@@ -1,12 +1,12 @@
 {
-  "generated_at_utc": "2026-11-02T21:49:34.971752+00:00",
+  "generated_at_utc": "2026-11-03T07:01:38.065896+00:00",
   "status": "ok",
   "production_adjustment_enabled": false,
-  "new_posts_seen": 0,
+  "new_posts_seen": 5,
   "new_picks_parsed": 0,
   "ledger_size": 0,
   "since_id_used": "2117098814024957989",
-  "newest_id": "2117098814024957989",
+  "newest_id": "2117496516416045475",
   "accounts": {
     "@RufusPeabody": {
       "tier": "established_professional",
@@ -60,7 +60,43 @@
     }
   },
   "new_picks": [],
-  "candidate_posts": [],
+  "candidate_posts": [
+    {
+      "post_id": "2117496516416045475",
+      "source": "@iamrahstradamus",
+      "published_at_utc": "2026-11-03T05:58:05.000Z",
+      "text": "That Raptors-Clippers under got steamed to oblivion and never had a chance at all.",
+      "url": "https://x.com/iamrahstradamus/status/2117496516416045475"
+    },
+    {
+      "post_id": "2117469494331523532",
+      "source": "@iamrahstradamus",
+      "published_at_utc": "2026-11-03T04:10:42.000Z",
+      "text": "Let's go over 46.5!!! KABOOM!\n\nBears-Seahawks Over 46.5 \u2705\nLuther Burden Over 52.5 Receiving yards \u2705\nWolves -10.5 \u2705\nMagic/Wizards Over 225 (sorry I couldn't get a lot of you off this position when they announced Black out. Was in the doctor's office) \u274c",
+      "url": "https://x.com/iamrahstradamus/status/2117469494331523532"
+    },
+    {
+      "post_id": "2117467655661842778",
+      "source": "@iamrahstradamus",
+      "published_at_utc": "2026-11-03T04:03:24.000Z",
+      "text": "Yeah, that's why they're running. Sam Darnold over 0.5 interception cashes for like the millionth week in a row.\n\nThere's only so long fake thugs can pretend. https://t.co/lbwqYE39Cm",
+      "url": "https://x.com/iamrahstradamus/status/2117467655661842778"
+    },
+    {
+      "post_id": "2117465261188227300",
+      "source": "@iamrahstradamus",
+      "published_at_utc": "2026-11-03T03:53:53.000Z",
+      "text": "I absolutely LOVE this Bears team. The single most fun team to watch over the past 2 seasons. Caleb + Benjamin + the run game is just beautiful.",
+      "url": "https://x.com/iamrahstradamus/status/2117465261188227300"
+    },
+    {
+      "post_id": "2117432085724135677",
+      "source": "@wheatonbrando",
+      "published_at_utc": "2026-11-03T01:42:03.000Z",
+      "text": "One two three four five six points for the Bears\n\nSeven eight nein is what I said when somebody in Germany asked if I ever wanted to see that trash team play basketball https://t.co/UJk9GsDPzw",
+      "url": "https://x.com/wheatonbrando/status/2117432085724135677"
+    }
+  ],
   "promotion_thresholds": {
     "minimum_graded_picks": 100,
     "minimum_positive_clv_rate": 0.52,
