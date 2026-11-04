@@ -1,12 +1,12 @@
 {
-  "generated_at_utc": "2026-11-03T19:40:22.103128+00:00",
+  "generated_at_utc": "2026-11-04T06:45:30.161466+00:00",
   "status": "ok",
   "production_adjustment_enabled": false,
-  "new_posts_seen": 2,
+  "new_posts_seen": 3,
   "new_picks_parsed": 0,
   "ledger_size": 0,
-  "since_id_used": "2117496516416045475",
-  "newest_id": "2117634571252490705",
+  "since_id_used": "2117634571252490705",
+  "newest_id": "2117845190002245817",
   "accounts": {
     "@RufusPeabody": {
       "tier": "established_professional",
@@ -62,18 +62,25 @@
   "new_picks": [],
   "candidate_posts": [
     {
-      "post_id": "2117634571252490705",
-      "source": "@wheatonbrando",
-      "published_at_utc": "2026-11-03T15:06:40.000Z",
-      "text": "Prepping for today\u2019s NFL futures show!\n\nIf you\u2019ve been wanting to get in on some of the prediction markets and odds we discuss there, you can use this link to get a nice signup bonus at over 3x:\n\nhttps://t.co/p0p35SiMrF https://t.co/NxjrSZ80h2",
-      "url": "https://x.com/wheatonbrando/status/2117634571252490705"
+      "post_id": "2117845190002245817",
+      "source": "@iamrahstradamus",
+      "published_at_utc": "2026-11-04T05:03:35.000Z",
+      "text": "@phillygodfather Wow, I\u2019m on the same play too! Always good to be on the same side PG",
+      "url": "https://x.com/iamrahstradamus/status/2117845190002245817"
     },
     {
-      "post_id": "2117630002590351402",
+      "post_id": "2117791746163921149",
       "source": "@FezzikSports",
-      "published_at_utc": "2026-11-03T14:48:30.000Z",
-      "text": "After LOSING 5 units in CFB through the end of September.\n\nI had a great October +35 units.\n\nYTD in CFB +30 Units.\n\nLet's keep the great run going! https://t.co/lFRsbPvIyJ",
-      "url": "https://x.com/FezzikSports/status/2117630002590351402"
+      "published_at_utc": "2026-11-04T01:31:13.000Z",
+      "text": "Having only 2 or 4 teams in the playoffs was just stupid.\n\nEVERY other sports has a playoff in America, with lots of playoff teams.   March Madness WITH 48 to 68 teams was always great.\n\nWhy not put in 1/5 of the CFB teams in a playoff also??\n\n20 years from now everyone will say https://t.co/ReilZY6eWo",
+      "url": "https://x.com/FezzikSports/status/2117791746163921149"
+    },
+    {
+      "post_id": "2117777057526788149",
+      "source": "@FezzikSports",
+      "published_at_utc": "2026-11-04T00:32:51.000Z",
+      "text": "My CFB\n\n2025:  +78.6 Units\n2026: +30 Units\n\nNFL Positive in BOTH Seasons as well.\n\nBe Careful out there!  I ONLY sell my plays at https://t.co/Pekv6QB73V\n\nUse CODE  FLASH to get my plays at 50% off.  Also Dan the Stat Man IS the best CFB handicapper you have never heard of! https://t.co/ZCcVQcS5AY",
+      "url": "https://x.com/FezzikSports/status/2117777057526788149"
     }
   ],
   "promotion_thresholds": {
