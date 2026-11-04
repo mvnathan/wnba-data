@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-11-03T18:05:11.302228+00:00",
+  "generated_at_utc": "2026-11-04T18:00:09.280007+00:00",
   "season": 2026,
   "status": "ok",
   "models": [
@@ -916,13 +916,13 @@
         "ou": "Historical sportsbook totals were not retained with issued forecasts."
       },
       "overall": {
-        "n": 468,
+        "n": 482,
         "ml": {
-          "wins": 292,
-          "losses": 176,
+          "wins": 300,
+          "losses": 182,
           "pushes": 0,
-          "graded": 468,
-          "rate": 0.6239316239316239
+          "graded": 482,
+          "rate": 0.6224066390041494
         },
         "ats": {
           "wins": 0,
@@ -1151,13 +1151,13 @@
         {
           "week_start": "2026-11-02",
           "week_label": "Nov 2\u2013Nov 8",
-          "n": 17,
+          "n": 31,
           "ml": {
-            "wins": 9,
-            "losses": 8,
+            "wins": 17,
+            "losses": 14,
             "pushes": 0,
-            "graded": 17,
-            "rate": 0.5294117647058824
+            "graded": 31,
+            "rate": 0.5483870967741935
           },
           "ats": {
             "wins": 0,
@@ -1187,13 +1187,13 @@
         "ou": "Historical sportsbook totals were not retained with issued forecasts."
       },
       "overall": {
-        "n": 606,
+        "n": 628,
         "ml": {
-          "wins": 395,
-          "losses": 211,
+          "wins": 408,
+          "losses": 220,
           "pushes": 0,
-          "graded": 606,
-          "rate": 0.6518151815181518
+          "graded": 628,
+          "rate": 0.6496815286624203
         },
         "ats": {
           "wins": 0,
@@ -1448,13 +1448,13 @@
         {
           "week_start": "2026-11-02",
           "week_label": "Nov 2\u2013Nov 8",
-          "n": 22,
+          "n": 44,
           "ml": {
-            "wins": 18,
-            "losses": 4,
+            "wins": 31,
+            "losses": 13,
             "pushes": 0,
-            "graded": 22,
-            "rate": 0.8181818181818182
+            "graded": 44,
+            "rate": 0.7045454545454546
           },
           "ats": {
             "wins": 0,
