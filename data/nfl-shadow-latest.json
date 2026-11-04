@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-11-04T16:32:54.236651+00:00",
+  "generated_at_utc": "2026-11-04T22:10:19.849109+00:00",
   "status": "ok",
   "production_modified": false,
   "baseline_model_version": "nfl-v2",
@@ -16,9 +16,9 @@
   "note": "External signals were not available historically across the full 577-game backtest, so current deltas are prospective. Accuracy/Brier/MAE comparison begins as these shadow forecasts settle.",
   "summary": {
     "games": 1,
-    "games_changed_by_availability": 0,
-    "games_changed_by_combined": 0,
-    "availability_x_signals_available": 9,
+    "games_changed_by_availability": 1,
+    "games_changed_by_combined": 1,
+    "availability_x_signals_available": 11,
     "sharp_ledger_picks": 0,
     "sharp_production_weight": 0.0
   },
@@ -41,27 +41,54 @@
         "predicted_winner": "Seattle Seahawks"
       },
       "availability_shadow": {
-        "predicted_home_points": 22.7,
+        "predicted_home_points": 16.14,
         "predicted_away_points": 22.2,
-        "predicted_margin": 0.5,
-        "predicted_total": 44.9,
-        "home_win_probability": 0.5179,
-        "away_win_probability": 0.4821,
-        "predicted_winner": "Seattle Seahawks",
-        "availability_margin_delta": 0.0,
-        "availability_total_delta": 0.0,
-        "signals_applied": []
+        "predicted_margin": -6.06,
+        "predicted_total": 38.34,
+        "home_win_probability": 0.3025,
+        "away_win_probability": 0.6975,
+        "predicted_winner": "Chicago Bears",
+        "availability_margin_delta": -6.56,
+        "availability_total_delta": -6.56,
+        "signals_applied": [
+          {
+            "team": "SEA",
+            "player": "Deshaun Watson",
+            "position": "QB",
+            "status": "out",
+            "confidence": 0.7368,
+            "base_points": 4.5,
+            "point_impact": 3.316,
+            "source": "@AdamSchefter",
+            "published_at_utc": "2026-11-04T19:06:20.000Z",
+            "url": "https://x.com/AdamSchefter/status/2118057274249998458",
+            "text": "QB news today: \ud83c\udfc8Browns place QB Deshaun Watson in concussion protocol, meaning Shedeur Sanders is in line to start Sunday. \ud83c\udfc8Seahawks rule out QB Sam Darnold with a quad injury. Drew Lock is set to start Sunday. \ud83c\udfc8Eagles bench Tanner McKee and will start Joe Milton on Sunday."
+          },
+          {
+            "team": "SEA",
+            "player": "Sam Darnold",
+            "position": "QB",
+            "status": "out",
+            "confidence": 0.7204,
+            "base_points": 4.5,
+            "point_impact": 3.242,
+            "source": "@RapSheet",
+            "published_at_utc": "2026-11-04T18:50:47.000Z",
+            "url": "https://x.com/RapSheet/status/2118053359303143529",
+            "text": "#Seahawks QB Sam Darnold is going to be out Sunday vs. the #AZCardinals due to a quad injury, coach Mike Macdonald told reporters. https://t.co/CmUuPSUgAM"
+          }
+        ]
       },
       "combined_shadow": {
-        "predicted_home_points": 22.7,
+        "predicted_home_points": 16.14,
         "predicted_away_points": 22.2,
-        "predicted_margin": 0.5,
-        "predicted_total": 44.9,
-        "home_win_probability": 0.5179,
-        "away_win_probability": 0.4821,
-        "predicted_winner": "Seattle Seahawks",
-        "combined_margin_delta_vs_production": 0.0,
-        "combined_total_delta_vs_production": 0.0,
+        "predicted_margin": -6.06,
+        "predicted_total": 38.34,
+        "home_win_probability": 0.3025,
+        "away_win_probability": 0.6975,
+        "predicted_winner": "Chicago Bears",
+        "combined_margin_delta_vs_production": -6.56,
+        "combined_total_delta_vs_production": -6.56,
         "sharp_margin_delta": 0.0,
         "sharp_total_delta": 0.0,
         "sharp_signals_applied": []
