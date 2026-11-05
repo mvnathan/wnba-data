@@ -1,12 +1,12 @@
 {
-  "generated_at_utc": "2026-11-04T19:55:28.980452+00:00",
+  "generated_at_utc": "2026-11-05T07:04:23.437230+00:00",
   "status": "ok",
   "production_adjustment_enabled": false,
-  "new_posts_seen": 2,
+  "new_posts_seen": 5,
   "new_picks_parsed": 0,
   "ledger_size": 0,
-  "since_id_used": "2117845190002245817",
-  "newest_id": "2118064399978221575",
+  "since_id_used": "2118064399978221575",
+  "newest_id": "2118229866676101416",
   "accounts": {
     "@RufusPeabody": {
       "tier": "established_professional",
@@ -62,18 +62,39 @@
   "new_picks": [],
   "candidate_posts": [
     {
-      "post_id": "2118064399978221575",
-      "source": "@FezzikSports",
-      "published_at_utc": "2026-11-04T19:34:39.000Z",
-      "text": "I am NOT the gambling police.  If you want to make a $5fun side bet with a big jackpot shot, have fun.\n\nBut the EV bust even money bet on a dealer 2-3-4-5-6 is ONLY there to just RIP huge money away from the WORST 21 players.\n\nAssuming a 43% bust rate on a 5 or 6\n\"Everyone\" knows https://t.co/M9HK8n23uf",
-      "url": "https://x.com/FezzikSports/status/2118064399978221575"
+      "post_id": "2118229866676101416",
+      "source": "@iamrahstradamus",
+      "published_at_utc": "2026-11-05T06:32:09.000Z",
+      "text": "Miami's defense in that 4th quarter was downright stifling. Can't play with that intensity all the time but that's the best I've seen them defend all year long. They wanted this one and totally gutted it out.",
+      "url": "https://x.com/iamrahstradamus/status/2118229866676101416"
     },
     {
-      "post_id": "2118060459152871517",
-      "source": "@RufusPeabody",
-      "published_at_utc": "2026-11-04T19:18:59.000Z",
-      "text": "PSA: BTP Heater pick is for one of tonight's games. Pod should drop in the next hour.",
-      "url": "https://x.com/RufusPeabody/status/2118060459152871517"
+      "post_id": "2118177002641608812",
+      "source": "@iamrahstradamus",
+      "published_at_utc": "2026-11-05T03:02:05.000Z",
+      "text": "Knicks-Bulls Over 233.5! \u2705Cash it! \n\nFelt weird that this ended up being a sweat but once Shamet was ruled in for Hart, this was a go for me. Knicks offense gets an upgrade with Shamet in for Hart. https://t.co/WiJ1elfsJs",
+      "url": "https://x.com/iamrahstradamus/status/2118177002641608812"
+    },
+    {
+      "post_id": "2118176896068600200",
+      "source": "@iamrahstradamus",
+      "published_at_utc": "2026-11-05T03:01:40.000Z",
+      "text": "Knicks-Bulls Over 233.5! \u2705Cash it! \n\nFelt weird that this ended up being a sweat but once Shamet was ruled in, this was a go. https://t.co/WiJ1elfsJs",
+      "url": "https://x.com/iamrahstradamus/status/2118176896068600200"
+    },
+    {
+      "post_id": "2118124786664771684",
+      "source": "@iamrahstradamus",
+      "published_at_utc": "2026-11-04T23:34:36.000Z",
+      "text": "My model does like the under. I think you might be right. My models with priors are higher and using current numbers have this projected much lower. https://t.co/ZEpnHqBJII",
+      "url": "https://x.com/iamrahstradamus/status/2118124786664771684"
+    },
+    {
+      "post_id": "2118117053353832840",
+      "source": "@iamrahstradamus",
+      "published_at_utc": "2026-11-04T23:03:52.000Z",
+      "text": "Knicks-Bulls Over 233.5 feels like a good play if you weren't on it already. \n\nThe Knicks are replacing a 34% three point shooter with a 45% shooter on pretty much the same volume. Bulls defense continues to be downright abysmal giving up a Defensive Rating of a whopping 124.1. https://t.co/VVVyLIMflH",
+      "url": "https://x.com/iamrahstradamus/status/2118117053353832840"
     }
   ],
   "promotion_thresholds": {
