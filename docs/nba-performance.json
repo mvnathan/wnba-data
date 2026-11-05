@@ -1,14 +1,14 @@
 {
-  "generated_at_utc": "2026-11-04T23:56:39.828046+00:00",
+  "generated_at_utc": "2026-11-05T02:46:00.606669+00:00",
   "method": "Earliest committed pregame NBA forecast and market line joined to ESPN final score by game ID",
   "summary": {
-    "n": 168,
+    "n": 169,
     "ml": {
-      "wins": 104,
+      "wins": 105,
       "losses": 64,
       "pushes": 0,
-      "graded": 168,
-      "rate": 0.6190476190476191
+      "graded": 169,
+      "rate": 0.621301775147929
     },
     "ats": {
       "wins": 3,
@@ -26,6 +26,29 @@
     }
   },
   "games": [
+    {
+      "game_id": "401909923",
+      "game_date_utc": "2026-11-05T00:00Z",
+      "home_team": "Washington Wizards",
+      "away_team": "Atlanta Hawks",
+      "home_abbr": "WSH",
+      "away_abbr": "ATL",
+      "prediction_issued_at": "2026-11-03T01:11:48.539739+00:00",
+      "prediction_commit": "415c1838",
+      "home_win_probability": 0.3961587739358469,
+      "predicted_margin": -2.9797846074403163,
+      "predicted_total": 231.52654968333061,
+      "actual_home_score": 105.0,
+      "actual_away_score": 120.0,
+      "actual_margin": -15.0,
+      "actual_total": 225.0,
+      "winner_correct": true,
+      "market_home_spread": null,
+      "market_total": null,
+      "market_bookmaker": null,
+      "ats_result": null,
+      "ou_result": null
+    },
     {
       "game_id": "401909907",
       "game_date_utc": "2026-11-03T00:00Z",
