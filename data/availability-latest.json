@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-11-04T19:45:48.784173+00:00",
+  "generated_at_utc": "2026-11-05T00:54:00.985343+00:00",
   "status": "ok",
   "direct_model_adjustment_enabled": false,
   "integration_stage": "context_and_edge_reliability_only",
@@ -15,7 +15,7 @@
       "sport": "NFL",
       "url": "https://www.nfl.com/injuries/",
       "status": "ok",
-      "snippets": 14
+      "snippets": 22
     },
     {
       "source": "WNBA Official Injury Report",
@@ -60,9 +60,9 @@
   },
   "x_source_diagnostics": {
     "status": "ok",
-    "posts": 10,
-    "posts_general": 9,
-    "posts_nba": 1,
+    "posts": 1,
+    "posts_general": 1,
+    "posts_nba": 0,
     "accounts": [
       "AdamSchefter",
       "RapSheet",
@@ -71,15 +71,299 @@
       "ShamsCharania",
       "ChrisBHaynes"
     ],
-    "since_id_used_general": "2117755661710680379",
-    "since_id_used_nba": "2116334896998416431",
-    "newest_id": "2118066466520178866",
-    "newest_id_general": "2118066466520178866",
+    "since_id_used_general": "2118066466520178866",
+    "since_id_used_nba": "2118035829843222948",
+    "newest_id": "2118069920952885484",
+    "newest_id_general": "2118069920952885484",
     "newest_id_nba": "2118035829843222948",
     "query_general": "(from:AdamSchefter OR from:RapSheet OR from:JeffPassan OR from:alexaphilippou) (out OR inactive OR doubtful OR questionable OR injury OR injured OR rest OR resting OR \"expected to play\" OR \"will start\" OR \"minutes restriction\" OR \"snap count\" OR \"pitch count\") -is:retweet lang:en",
     "query_nba": "(from:ShamsCharania OR from:ChrisBHaynes) (out OR inactive OR doubtful OR questionable OR injury OR injured OR rest OR resting OR \"expected to play\" OR \"will start\" OR \"minutes restriction\" OR \"snap count\" OR \"pitch count\" OR \"will miss\" OR sidelined OR available OR cleared OR starting OR surgery OR sprain OR signed OR waived OR trade OR traded) -is:retweet lang:en"
   },
   "signals": [
+    {
+      "sport": "NFL",
+      "source": "NFL Official Injury Report",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-11-05T00:53:59.100464+00:00",
+      "status_signal": "out",
+      "tactical_flags": [],
+      "confidence": 0.65,
+      "text": "Jaylinn Hawkins S Knee Did Not Participate In Practice Out",
+      "url": "https://www.nfl.com/injuries/"
+    },
+    {
+      "sport": "NFL",
+      "source": "NFL Official Injury Report",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-11-05T00:53:59.100485+00:00",
+      "status_signal": "out",
+      "tactical_flags": [],
+      "confidence": 0.65,
+      "text": "Tyler Huntley QB Toe Did Not Participate In Practice Out",
+      "url": "https://www.nfl.com/injuries/"
+    },
+    {
+      "sport": "NFL",
+      "source": "NFL Official Injury Report",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-11-05T00:53:59.100502+00:00",
+      "status_signal": "out",
+      "tactical_flags": [],
+      "confidence": 0.65,
+      "text": "Lamar Jackson QB Thumb Did Not Participate In Practice Out",
+      "url": "https://www.nfl.com/injuries/"
+    },
+    {
+      "sport": "NFL",
+      "source": "NFL Official Injury Report",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-11-05T00:53:59.100727+00:00",
+      "status_signal": "out",
+      "tactical_flags": [],
+      "confidence": 0.65,
+      "text": "Report: Ravens QB Tyler Huntley out for season with turf toe injury",
+      "url": "https://www.nfl.com/injuries/"
+    },
+    {
+      "sport": "NFL",
+      "source": "NFL Official Injury Report",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-11-05T00:53:59.100741+00:00",
+      "status_signal": "out",
+      "tactical_flags": [],
+      "confidence": 0.65,
+      "text": "NFL Week 8 inactives: Players ruled out for Sunday's 12 games",
+      "url": "https://www.nfl.com/injuries/"
+    },
+    {
+      "sport": "NFL",
+      "source": "NFL Official Injury Report",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-11-05T00:53:59.100819+00:00",
+      "status_signal": "out",
+      "tactical_flags": [
+        "rest_candidate"
+      ],
+      "confidence": 0.65,
+      "text": "Commanders WR Terry McLaurin out for rest of season with torn patellar tendon",
+      "url": "https://www.nfl.com/injuries/"
+    },
+    {
+      "sport": "NFL",
+      "source": "NFL Official Injury Report",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-11-05T00:53:59.100859+00:00",
+      "status_signal": "out",
+      "tactical_flags": [
+        "rest_candidate"
+      ],
+      "confidence": 0.65,
+      "text": "NFL Network: Eagles QB Jalen Hurts likely out for rest of 2026 season due to blood clots",
+      "url": "https://www.nfl.com/injuries/"
+    },
+    {
+      "sport": "NFL",
+      "source": "NFL Official Injury Report",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-11-05T00:53:59.100872+00:00",
+      "status_signal": "out",
+      "tactical_flags": [],
+      "confidence": 0.65,
+      "text": "NFL Week 6 inactives: Players ruled out for Sunday's 12 games",
+      "url": "https://www.nfl.com/injuries/"
+    },
+    {
+      "sport": "NFL",
+      "source": "NFL Official Injury Report",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-11-05T00:53:59.100909+00:00",
+      "status_signal": "out",
+      "tactical_flags": [],
+      "confidence": 0.65,
+      "text": "Ravens QB Lamar Jackson (ankle) out Sunday vs. Browns; Tyler Huntley to start again",
+      "url": "https://www.nfl.com/injuries/"
+    },
+    {
+      "sport": "NFL",
+      "source": "NFL Official Injury Report",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-11-05T00:53:59.100948+00:00",
+      "status_signal": "out",
+      "tactical_flags": [],
+      "confidence": 0.65,
+      "text": "NFL news roundup: Cardinals RB Jeremiyah Love (ankle) out Sunday vs. Rams",
+      "url": "https://www.nfl.com/injuries/"
+    },
+    {
+      "sport": "MLB",
+      "source": "MLB Official Injury Report",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-11-05T00:53:59.671252+00:00",
+      "status_signal": "out",
+      "tactical_flags": [],
+      "confidence": 0.65,
+      "text": "Flaherty strikes out two in first rehab outing, eyes end-of-year return",
+      "url": "https://www.mlb.com/injury-report"
+    },
+    {
+      "sport": "MLB",
+      "source": "MLB Official Injury Report",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-11-05T00:53:59.671388+00:00",
+      "status_signal": "out",
+      "tactical_flags": [],
+      "confidence": 0.65,
+      "text": "Young out for season, but avoids serious injury after 'terrifying' collision with McLean",
+      "url": "https://www.mlb.com/injury-report"
+    },
+    {
+      "sport": "MLB",
+      "source": "MLB Official Injury Report",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-11-05T00:53:59.671478+00:00",
+      "status_signal": "out",
+      "tactical_flags": [],
+      "confidence": 0.65,
+      "text": "Goodman (right thumb soreness) out again on Wednesday",
+      "url": "https://www.mlb.com/injury-report"
+    },
+    {
+      "sport": "NFL",
+      "source": "NFL Official Injury Report",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-11-05T00:53:59.100373+00:00",
+      "status_signal": "questionable",
+      "tactical_flags": [],
+      "confidence": 0.585,
+      "text": "Bhayshul Tuten RB Ankle, Foot Did Not Participate In Practice Questionable",
+      "url": "https://www.nfl.com/injuries/"
+    },
+    {
+      "sport": "NFL",
+      "source": "NFL Official Injury Report",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-11-05T00:53:59.100439+00:00",
+      "status_signal": "questionable",
+      "tactical_flags": [],
+      "confidence": 0.585,
+      "text": "Travon Walker DE Rib Limited Participation in Practice Questionable",
+      "url": "https://www.nfl.com/injuries/"
+    },
+    {
+      "sport": "NFL",
+      "source": "NFL Official Injury Report",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-11-05T00:53:59.100522+00:00",
+      "status_signal": "questionable",
+      "tactical_flags": [],
+      "confidence": 0.585,
+      "text": "Adam Randall RB Neck Full Participation in Practice Questionable",
+      "url": "https://www.nfl.com/injuries/"
+    },
+    {
+      "sport": "NFL",
+      "source": "NFL Official Injury Report",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-11-05T00:53:59.100546+00:00",
+      "status_signal": "questionable",
+      "tactical_flags": [],
+      "confidence": 0.585,
+      "text": "Nate Wiggins CB Stinger, Illness Did Not Participate In Practice Questionable",
+      "url": "https://www.nfl.com/injuries/"
+    },
+    {
+      "sport": "NFL",
+      "source": "NFL Official Injury Report",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-11-05T00:53:59.100778+00:00",
+      "status_signal": "questionable",
+      "tactical_flags": [],
+      "confidence": 0.585,
+      "text": "Ravens' Lamar Jackson (ankle) questionable to make return Sunday vs. Bengals",
+      "url": "https://www.nfl.com/injuries/"
+    },
+    {
+      "sport": "NFL",
+      "source": "NFL Official Injury Report",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-11-05T00:53:59.100893+00:00",
+      "status_signal": "questionable",
+      "tactical_flags": [],
+      "confidence": 0.585,
+      "text": "Bears QB Caleb Williams (hamstring) questionable to play vs. Falcons despite full week of practice",
+      "url": "https://www.nfl.com/injuries/"
+    },
+    {
+      "sport": "MLB",
+      "source": "MLB Official Injury Report",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-11-05T00:53:59.670981+00:00",
+      "status_signal": "probable",
+      "tactical_flags": [],
+      "confidence": 0.585,
+      "text": "News Probable Pitchers Awards Starting Lineups Transactions Injury Report World Baseball Classic MLB Draft All-Star Game AUSL MLB Pipeline Postseason History Podcasts International",
+      "url": "https://www.mlb.com/injury-report"
+    },
+    {
+      "sport": "MLB",
+      "source": "MLB Probable Pitchers",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-11-05T00:54:00.111957+00:00",
+      "status_signal": "probable",
+      "tactical_flags": [],
+      "confidence": 0.585,
+      "text": "News Probable Pitchers Awards Starting Lineups Transactions Injury Report World Baseball Classic MLB Draft All-Star Game AUSL MLB Pipeline Postseason History Podcasts International",
+      "url": "https://www.mlb.com/probable-pitchers"
+    },
+    {
+      "sport": "NFL",
+      "source": "NFL Official Injury Report",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-11-05T00:53:59.100932+00:00",
+      "status_signal": null,
+      "tactical_flags": [
+        "expected_to_start"
+      ],
+      "confidence": 0.4875,
+      "text": "Falcons QB Michael Penix Jr. (ribs) has no injury designation, will start vs. Bears",
+      "url": "https://www.nfl.com/injuries/"
+    },
+    {
+      "sport": "MLB",
+      "source": "MLB Official Injury Report",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-11-05T00:53:59.671151+00:00",
+      "status_signal": null,
+      "tactical_flags": [
+        "rest_candidate"
+      ],
+      "confidence": 0.4875,
+      "text": "Anthony not expected to need surgery: 'Rest is likely the best path to recovery'",
+      "url": "https://www.mlb.com/injury-report"
+    },
     {
       "sport": "NFL",
       "source": "@AdamSchefter",
@@ -120,130 +404,6 @@
     },
     {
       "sport": "NFL",
-      "source": "NFL Official Injury Report",
-      "source_tier": "official",
-      "published_at_utc": null,
-      "fetched_at_utc": "2026-11-04T19:45:47.869655+00:00",
-      "status_signal": "out",
-      "tactical_flags": [],
-      "confidence": 0.65,
-      "text": "Report: Ravens QB Tyler Huntley out for season with turf toe injury",
-      "url": "https://www.nfl.com/injuries/"
-    },
-    {
-      "sport": "NFL",
-      "source": "NFL Official Injury Report",
-      "source_tier": "official",
-      "published_at_utc": null,
-      "fetched_at_utc": "2026-11-04T19:45:47.869704+00:00",
-      "status_signal": "out",
-      "tactical_flags": [],
-      "confidence": 0.65,
-      "text": "NFL Week 8 inactives: Players ruled out for Sunday's 12 games",
-      "url": "https://www.nfl.com/injuries/"
-    },
-    {
-      "sport": "NFL",
-      "source": "NFL Official Injury Report",
-      "source_tier": "official",
-      "published_at_utc": null,
-      "fetched_at_utc": "2026-11-04T19:45:47.870149+00:00",
-      "status_signal": "out",
-      "tactical_flags": [
-        "rest_candidate"
-      ],
-      "confidence": 0.65,
-      "text": "Commanders WR Terry McLaurin out for rest of season with torn patellar tendon",
-      "url": "https://www.nfl.com/injuries/"
-    },
-    {
-      "sport": "NFL",
-      "source": "NFL Official Injury Report",
-      "source_tier": "official",
-      "published_at_utc": null,
-      "fetched_at_utc": "2026-11-04T19:45:47.870205+00:00",
-      "status_signal": "out",
-      "tactical_flags": [
-        "rest_candidate"
-      ],
-      "confidence": 0.65,
-      "text": "NFL Network: Eagles QB Jalen Hurts likely out for rest of 2026 season due to blood clots",
-      "url": "https://www.nfl.com/injuries/"
-    },
-    {
-      "sport": "NFL",
-      "source": "NFL Official Injury Report",
-      "source_tier": "official",
-      "published_at_utc": null,
-      "fetched_at_utc": "2026-11-04T19:45:47.870224+00:00",
-      "status_signal": "out",
-      "tactical_flags": [],
-      "confidence": 0.65,
-      "text": "NFL Week 6 inactives: Players ruled out for Sunday's 12 games",
-      "url": "https://www.nfl.com/injuries/"
-    },
-    {
-      "sport": "NFL",
-      "source": "NFL Official Injury Report",
-      "source_tier": "official",
-      "published_at_utc": null,
-      "fetched_at_utc": "2026-11-04T19:45:47.870308+00:00",
-      "status_signal": "out",
-      "tactical_flags": [],
-      "confidence": 0.65,
-      "text": "Ravens QB Lamar Jackson (ankle) out Sunday vs. Browns; Tyler Huntley to start again",
-      "url": "https://www.nfl.com/injuries/"
-    },
-    {
-      "sport": "NFL",
-      "source": "NFL Official Injury Report",
-      "source_tier": "official",
-      "published_at_utc": null,
-      "fetched_at_utc": "2026-11-04T19:45:47.870361+00:00",
-      "status_signal": "out",
-      "tactical_flags": [],
-      "confidence": 0.65,
-      "text": "NFL news roundup: Cardinals RB Jeremiyah Love (ankle) out Sunday vs. Rams",
-      "url": "https://www.nfl.com/injuries/"
-    },
-    {
-      "sport": "MLB",
-      "source": "MLB Official Injury Report",
-      "source_tier": "official",
-      "published_at_utc": null,
-      "fetched_at_utc": "2026-11-04T19:45:48.136371+00:00",
-      "status_signal": "out",
-      "tactical_flags": [],
-      "confidence": 0.65,
-      "text": "Flaherty strikes out two in first rehab outing, eyes end-of-year return",
-      "url": "https://www.mlb.com/injury-report"
-    },
-    {
-      "sport": "MLB",
-      "source": "MLB Official Injury Report",
-      "source_tier": "official",
-      "published_at_utc": null,
-      "fetched_at_utc": "2026-11-04T19:45:48.136556+00:00",
-      "status_signal": "out",
-      "tactical_flags": [],
-      "confidence": 0.65,
-      "text": "Young out for season, but avoids serious injury after 'terrifying' collision with McLean",
-      "url": "https://www.mlb.com/injury-report"
-    },
-    {
-      "sport": "MLB",
-      "source": "MLB Official Injury Report",
-      "source_tier": "official",
-      "published_at_utc": null,
-      "fetched_at_utc": "2026-11-04T19:45:48.136674+00:00",
-      "status_signal": "out",
-      "tactical_flags": [],
-      "confidence": 0.65,
-      "text": "Goodman (right thumb soreness) out again on Wednesday",
-      "url": "https://www.mlb.com/injury-report"
-    },
-    {
-      "sport": "NFL",
       "source": "@RapSheet",
       "source_tier": "trusted_media",
       "published_at_utc": "2026-11-04T16:50:19.000Z",
@@ -253,54 +413,6 @@
       "confidence": 0.6054,
       "text": "Jeremy McNichols is out for the season and facing potential surgery, as are Daron Payne and Javon Kinlaw. https://t.co/qMzA9RAppy",
       "url": "https://x.com/RapSheet/status/2118023045583601700"
-    },
-    {
-      "sport": "NFL",
-      "source": "NFL Official Injury Report",
-      "source_tier": "official",
-      "published_at_utc": null,
-      "fetched_at_utc": "2026-11-04T19:45:47.870086+00:00",
-      "status_signal": "questionable",
-      "tactical_flags": [],
-      "confidence": 0.585,
-      "text": "Ravens' Lamar Jackson (ankle) questionable to make return Sunday vs. Bengals",
-      "url": "https://www.nfl.com/injuries/"
-    },
-    {
-      "sport": "NFL",
-      "source": "NFL Official Injury Report",
-      "source_tier": "official",
-      "published_at_utc": null,
-      "fetched_at_utc": "2026-11-04T19:45:47.870274+00:00",
-      "status_signal": "questionable",
-      "tactical_flags": [],
-      "confidence": 0.585,
-      "text": "Bears QB Caleb Williams (hamstring) questionable to play vs. Falcons despite full week of practice",
-      "url": "https://www.nfl.com/injuries/"
-    },
-    {
-      "sport": "MLB",
-      "source": "MLB Official Injury Report",
-      "source_tier": "official",
-      "published_at_utc": null,
-      "fetched_at_utc": "2026-11-04T19:45:48.136001+00:00",
-      "status_signal": "probable",
-      "tactical_flags": [],
-      "confidence": 0.585,
-      "text": "News Probable Pitchers Awards Starting Lineups Transactions Injury Report World Baseball Classic MLB Draft All-Star Game AUSL MLB Pipeline Postseason History Podcasts International",
-      "url": "https://www.mlb.com/injury-report"
-    },
-    {
-      "sport": "MLB",
-      "source": "MLB Probable Pitchers",
-      "source_tier": "official",
-      "published_at_utc": null,
-      "fetched_at_utc": "2026-11-04T19:45:48.186621+00:00",
-      "status_signal": "probable",
-      "tactical_flags": [],
-      "confidence": 0.585,
-      "text": "News Probable Pitchers Awards Starting Lineups Transactions Injury Report World Baseball Classic MLB Draft All-Star Game AUSL MLB Pipeline Postseason History Podcasts International",
-      "url": "https://www.mlb.com/probable-pitchers"
     },
     {
       "sport": "NBA",
@@ -315,34 +427,6 @@
       "confidence": 0.4886,
       "text": "Boston Celtics will rest Jayson Tatum tonight when they play the Milwaukee Bucks.",
       "url": "https://x.com/ChrisBHaynes/status/2118035829843222948"
-    },
-    {
-      "sport": "NFL",
-      "source": "NFL Official Injury Report",
-      "source_tier": "official",
-      "published_at_utc": null,
-      "fetched_at_utc": "2026-11-04T19:45:47.870340+00:00",
-      "status_signal": null,
-      "tactical_flags": [
-        "expected_to_start"
-      ],
-      "confidence": 0.4875,
-      "text": "Falcons QB Michael Penix Jr. (ribs) has no injury designation, will start vs. Bears",
-      "url": "https://www.nfl.com/injuries/"
-    },
-    {
-      "sport": "MLB",
-      "source": "MLB Official Injury Report",
-      "source_tier": "official",
-      "published_at_utc": null,
-      "fetched_at_utc": "2026-11-04T19:45:48.136208+00:00",
-      "status_signal": null,
-      "tactical_flags": [
-        "rest_candidate"
-      ],
-      "confidence": 0.4875,
-      "text": "Anthony not expected to need surgery: 'Rest is likely the best path to recovery'",
-      "url": "https://www.mlb.com/injury-report"
     },
     {
       "sport": "NFL",
@@ -421,24 +505,10 @@
       "confidence": 0.5102,
       "text": "In addition to Lamar Jackson and Tyler Huntley being ruled out for Thursday\u2019s game vs. the Jaguars, the Ravens' No. 3 quarterback Joe Fagnano is dealing with an ankle injury. Story via @jamisonhensley: https://t.co/RtIXGEwkFy",
       "url": "https://x.com/AdamSchefter/status/2117578125064261689"
-    },
-    {
-      "sport": "NFL",
-      "source": "@RapSheet",
-      "source_tier": "trusted_media",
-      "published_at_utc": "2026-11-02T21:32:05.000Z",
-      "fetched_at_utc": "2026-11-02T23:31:08.808321+00:00",
-      "status_signal": null,
-      "tactical_flags": [
-        "expected_to_start"
-      ],
-      "confidence": 0.4926,
-      "text": "Coach Mike LaFleur confirms Minshew will start and adds that Carson Beck will be the backup. https://t.co/m0Ys3arzFP",
-      "url": "https://x.com/RapSheet/status/2117369178403586326"
     }
   ],
   "structured": {
-    "generated_at_utc": "2026-11-04T19:45:48.784100+00:00",
+    "generated_at_utc": "2026-11-05T00:54:00.985250+00:00",
     "players": [],
     "teams": {},
     "policy": {
