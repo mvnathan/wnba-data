@@ -1,6 +1,6 @@
 {
   "sport": "NBA",
-  "generated_at_utc": "2026-11-05T02:44:19.283904+00:00",
+  "generated_at_utc": "2026-11-05T20:14:05.671598+00:00",
   "target_date": "2026-11-05",
   "season": "2026-27",
   "model_version": "nba-v2-roster-four-factors",
@@ -52,10 +52,10 @@
         "mae": 16.052277339680376
       },
       "total_rf": {
-        "mae": 15.750307765858189
+        "mae": 15.750307765858192
       },
       "total_extra_trees": {
-        "mae": 15.823980776889643
+        "mae": 15.823980776889647
       }
     },
     "test": {
@@ -6065,12 +6065,12 @@
       "home_team": "Phoenix Suns",
       "away_team": "Orlando Magic",
       "model_version": "nba-v2-roster-four-factors",
-      "home_win_probability": 0.4374085949442436,
-      "away_win_probability": 0.5625914050557563,
-      "predicted_margin": -1.85409515357561,
-      "predicted_total": 225.70122158637957,
-      "predicted_home_points": 111.92356321640199,
-      "predicted_away_points": 113.77765836997759,
+      "home_win_probability": 0.36425649911054964,
+      "away_win_probability": 0.6357435008894503,
+      "predicted_margin": -3.819614211635791,
+      "predicted_total": 225.19139272038802,
+      "predicted_home_points": 110.68588925437612,
+      "predicted_away_points": 114.5055034660119,
       "predicted_winner": "Orlando Magic",
       "roster_context": {
         "home": {
@@ -6086,8 +6086,17 @@
           "roster_value": 12.702651629659197
         }
       },
+      "market_bookmaker": "DraftKings",
+      "market_updated_at": "2026-11-05T20:15:45.067415+00:00",
+      "market_home_moneyline": -114,
+      "market_away_moneyline": -104,
+      "market_home_spread": -1.5,
+      "market_away_spread": 1.5,
+      "market_total": 221.5,
       "x_availability_adjustments": [],
-      "model_market_home_win_edge": null
+      "model_market_spread_edge": -5.32,
+      "model_market_total_edge": 3.69,
+      "model_market_home_win_edge": -0.1467
     },
     {
       "game_id": "401909937",
@@ -6102,12 +6111,12 @@
       "home_team": "Golden State Warriors",
       "away_team": "Miami Heat",
       "model_version": "nba-v2-roster-four-factors",
-      "home_win_probability": 0.6765277932130532,
-      "away_win_probability": 0.32347220678694677,
-      "predicted_margin": 6.275579327783784,
-      "predicted_total": 232.86450363995309,
-      "predicted_home_points": 119.57004148386844,
-      "predicted_away_points": 113.29446215608465,
+      "home_win_probability": 0.7273170171618206,
+      "away_win_probability": 0.2726829828381794,
+      "predicted_margin": 8.048166805019747,
+      "predicted_total": 231.74580398616263,
+      "predicted_home_points": 119.89698539559119,
+      "predicted_away_points": 111.84881859057144,
       "predicted_winner": "Golden State Warriors",
       "roster_context": {
         "home": {
@@ -6123,8 +6132,17 @@
           "roster_value": 11.77311115565334
         }
       },
+      "market_bookmaker": "DraftKings",
+      "market_updated_at": "2026-11-05T20:15:45.067415+00:00",
+      "market_home_moneyline": -269,
+      "market_away_moneyline": 221,
+      "market_home_spread": -6.5,
+      "market_away_spread": 6.5,
+      "market_total": 232.5,
       "x_availability_adjustments": [],
-      "model_market_home_win_edge": null
+      "model_market_spread_edge": 1.55,
+      "model_market_total_edge": -0.75,
+      "model_market_home_win_edge": 0.0267
     }
   ],
   "historical_data_source": "SportsDataverse ESPN NBA bulk releases",
