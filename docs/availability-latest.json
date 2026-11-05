@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-11-05T18:02:02.721738+00:00",
+  "generated_at_utc": "2026-11-05T23:38:44.398327+00:00",
   "status": "ok",
   "direct_model_adjustment_enabled": false,
   "integration_stage": "context_and_edge_reliability_only",
@@ -60,8 +60,8 @@
   },
   "x_source_diagnostics": {
     "status": "ok",
-    "posts": 2,
-    "posts_general": 2,
+    "posts": 3,
+    "posts_general": 3,
     "posts_nba": 0,
     "accounts": [
       "AdamSchefter",
@@ -71,10 +71,10 @@
       "ShamsCharania",
       "ChrisBHaynes"
     ],
-    "since_id_used_general": "2118265875916828700",
+    "since_id_used_general": "2118342389982978440",
     "since_id_used_nba": "2118158623058891259",
-    "newest_id": "2118342389982978440",
-    "newest_id_general": "2118342389982978440",
+    "newest_id": "2118449635069153592",
+    "newest_id_general": "2118449635069153592",
     "newest_id_nba": "2118158623058891259",
     "query_general": "(from:AdamSchefter OR from:RapSheet OR from:JeffPassan OR from:alexaphilippou) (out OR inactive OR doubtful OR questionable OR injury OR injured OR rest OR resting OR \"expected to play\" OR \"will start\" OR \"minutes restriction\" OR \"snap count\" OR \"pitch count\") -is:retweet lang:en",
     "query_nba": "(from:ShamsCharania OR from:ChrisBHaynes) (out OR inactive OR doubtful OR questionable OR injury OR injured OR rest OR resting OR \"expected to play\" OR \"will start\" OR \"minutes restriction\" OR \"snap count\" OR \"pitch count\" OR \"will miss\" OR sidelined OR available OR cleared OR starting OR surgery OR sprain OR signed OR waived OR trade OR traded) -is:retweet lang:en"
@@ -85,7 +85,7 @@
       "source": "NFL Official Injury Report",
       "source_tier": "official",
       "published_at_utc": null,
-      "fetched_at_utc": "2026-11-05T18:02:01.797747+00:00",
+      "fetched_at_utc": "2026-11-05T23:38:41.480482+00:00",
       "status_signal": "out",
       "tactical_flags": [],
       "confidence": 0.65,
@@ -97,7 +97,7 @@
       "source": "NFL Official Injury Report",
       "source_tier": "official",
       "published_at_utc": null,
-      "fetched_at_utc": "2026-11-05T18:02:01.797767+00:00",
+      "fetched_at_utc": "2026-11-05T23:38:41.480498+00:00",
       "status_signal": "out",
       "tactical_flags": [],
       "confidence": 0.65,
@@ -109,7 +109,7 @@
       "source": "NFL Official Injury Report",
       "source_tier": "official",
       "published_at_utc": null,
-      "fetched_at_utc": "2026-11-05T18:02:01.797786+00:00",
+      "fetched_at_utc": "2026-11-05T23:38:41.480512+00:00",
       "status_signal": "out",
       "tactical_flags": [],
       "confidence": 0.65,
@@ -121,7 +121,7 @@
       "source": "NFL Official Injury Report",
       "source_tier": "official",
       "published_at_utc": null,
-      "fetched_at_utc": "2026-11-05T18:02:01.798044+00:00",
+      "fetched_at_utc": "2026-11-05T23:38:41.480731+00:00",
       "status_signal": "out",
       "tactical_flags": [],
       "confidence": 0.65,
@@ -133,7 +133,7 @@
       "source": "NFL Official Injury Report",
       "source_tier": "official",
       "published_at_utc": null,
-      "fetched_at_utc": "2026-11-05T18:02:01.798063+00:00",
+      "fetched_at_utc": "2026-11-05T23:38:41.480746+00:00",
       "status_signal": "out",
       "tactical_flags": [],
       "confidence": 0.65,
@@ -145,7 +145,7 @@
       "source": "NFL Official Injury Report",
       "source_tier": "official",
       "published_at_utc": null,
-      "fetched_at_utc": "2026-11-05T18:02:01.798165+00:00",
+      "fetched_at_utc": "2026-11-05T23:38:41.480824+00:00",
       "status_signal": "out",
       "tactical_flags": [
         "rest_candidate"
@@ -159,7 +159,7 @@
       "source": "NFL Official Injury Report",
       "source_tier": "official",
       "published_at_utc": null,
-      "fetched_at_utc": "2026-11-05T18:02:01.798224+00:00",
+      "fetched_at_utc": "2026-11-05T23:38:41.480866+00:00",
       "status_signal": "out",
       "tactical_flags": [
         "rest_candidate"
@@ -173,7 +173,7 @@
       "source": "NFL Official Injury Report",
       "source_tier": "official",
       "published_at_utc": null,
-      "fetched_at_utc": "2026-11-05T18:02:01.798246+00:00",
+      "fetched_at_utc": "2026-11-05T23:38:41.480881+00:00",
       "status_signal": "out",
       "tactical_flags": [],
       "confidence": 0.65,
@@ -185,7 +185,7 @@
       "source": "NFL Official Injury Report",
       "source_tier": "official",
       "published_at_utc": null,
-      "fetched_at_utc": "2026-11-05T18:02:01.798296+00:00",
+      "fetched_at_utc": "2026-11-05T23:38:41.480919+00:00",
       "status_signal": "out",
       "tactical_flags": [],
       "confidence": 0.65,
@@ -193,23 +193,11 @@
       "url": "https://www.nfl.com/injuries/"
     },
     {
-      "sport": "NFL",
-      "source": "NFL Official Injury Report",
-      "source_tier": "official",
-      "published_at_utc": null,
-      "fetched_at_utc": "2026-11-05T18:02:01.798354+00:00",
-      "status_signal": "out",
-      "tactical_flags": [],
-      "confidence": 0.65,
-      "text": "NFL news roundup: Cardinals RB Jeremiyah Love (ankle) out Sunday vs. Rams",
-      "url": "https://www.nfl.com/injuries/"
-    },
-    {
       "sport": "MLB",
       "source": "MLB Official Injury Report",
       "source_tier": "official",
       "published_at_utc": null,
-      "fetched_at_utc": "2026-11-05T18:02:02.128311+00:00",
+      "fetched_at_utc": "2026-11-05T23:38:43.310890+00:00",
       "status_signal": "out",
       "tactical_flags": [],
       "confidence": 0.65,
@@ -221,7 +209,7 @@
       "source": "MLB Official Injury Report",
       "source_tier": "official",
       "published_at_utc": null,
-      "fetched_at_utc": "2026-11-05T18:02:02.128498+00:00",
+      "fetched_at_utc": "2026-11-05T23:38:43.311033+00:00",
       "status_signal": "out",
       "tactical_flags": [],
       "confidence": 0.65,
@@ -233,7 +221,7 @@
       "source": "MLB Official Injury Report",
       "source_tier": "official",
       "published_at_utc": null,
-      "fetched_at_utc": "2026-11-05T18:02:02.128621+00:00",
+      "fetched_at_utc": "2026-11-05T23:38:43.311141+00:00",
       "status_signal": "out",
       "tactical_flags": [],
       "confidence": 0.65,
@@ -245,7 +233,7 @@
       "source": "NFL Official Injury Report",
       "source_tier": "official",
       "published_at_utc": null,
-      "fetched_at_utc": "2026-11-05T18:02:01.797658+00:00",
+      "fetched_at_utc": "2026-11-05T23:38:41.480419+00:00",
       "status_signal": "questionable",
       "tactical_flags": [],
       "confidence": 0.585,
@@ -257,7 +245,7 @@
       "source": "NFL Official Injury Report",
       "source_tier": "official",
       "published_at_utc": null,
-      "fetched_at_utc": "2026-11-05T18:02:01.797722+00:00",
+      "fetched_at_utc": "2026-11-05T23:38:41.480462+00:00",
       "status_signal": "questionable",
       "tactical_flags": [],
       "confidence": 0.585,
@@ -269,7 +257,7 @@
       "source": "NFL Official Injury Report",
       "source_tier": "official",
       "published_at_utc": null,
-      "fetched_at_utc": "2026-11-05T18:02:01.797808+00:00",
+      "fetched_at_utc": "2026-11-05T23:38:41.480529+00:00",
       "status_signal": "questionable",
       "tactical_flags": [],
       "confidence": 0.585,
@@ -281,7 +269,7 @@
       "source": "NFL Official Injury Report",
       "source_tier": "official",
       "published_at_utc": null,
-      "fetched_at_utc": "2026-11-05T18:02:01.797832+00:00",
+      "fetched_at_utc": "2026-11-05T23:38:41.480549+00:00",
       "status_signal": "questionable",
       "tactical_flags": [],
       "confidence": 0.585,
@@ -293,7 +281,7 @@
       "source": "NFL Official Injury Report",
       "source_tier": "official",
       "published_at_utc": null,
-      "fetched_at_utc": "2026-11-05T18:02:01.798111+00:00",
+      "fetched_at_utc": "2026-11-05T23:38:41.480783+00:00",
       "status_signal": "questionable",
       "tactical_flags": [],
       "confidence": 0.585,
@@ -305,7 +293,7 @@
       "source": "NFL Official Injury Report",
       "source_tier": "official",
       "published_at_utc": null,
-      "fetched_at_utc": "2026-11-05T18:02:01.798274+00:00",
+      "fetched_at_utc": "2026-11-05T23:38:41.480903+00:00",
       "status_signal": "questionable",
       "tactical_flags": [],
       "confidence": 0.585,
@@ -317,7 +305,7 @@
       "source": "MLB Official Injury Report",
       "source_tier": "official",
       "published_at_utc": null,
-      "fetched_at_utc": "2026-11-05T18:02:02.127940+00:00",
+      "fetched_at_utc": "2026-11-05T23:38:43.310624+00:00",
       "status_signal": "probable",
       "tactical_flags": [],
       "confidence": 0.585,
@@ -329,7 +317,7 @@
       "source": "MLB Probable Pitchers",
       "source_tier": "official",
       "published_at_utc": null,
-      "fetched_at_utc": "2026-11-05T18:02:02.176850+00:00",
+      "fetched_at_utc": "2026-11-05T23:38:43.412576+00:00",
       "status_signal": "probable",
       "tactical_flags": [],
       "confidence": 0.585,
@@ -341,7 +329,7 @@
       "source": "NFL Official Injury Report",
       "source_tier": "official",
       "published_at_utc": null,
-      "fetched_at_utc": "2026-11-05T18:02:01.798328+00:00",
+      "fetched_at_utc": "2026-11-05T23:38:41.480944+00:00",
       "status_signal": null,
       "tactical_flags": [
         "expected_to_start"
@@ -355,7 +343,7 @@
       "source": "MLB Official Injury Report",
       "source_tier": "official",
       "published_at_utc": null,
-      "fetched_at_utc": "2026-11-05T18:02:02.128173+00:00",
+      "fetched_at_utc": "2026-11-05T23:38:43.310786+00:00",
       "status_signal": null,
       "tactical_flags": [
         "rest_candidate"
@@ -363,6 +351,20 @@
       "confidence": 0.4875,
       "text": "Anthony not expected to need surgery: 'Rest is likely the best path to recovery'",
       "url": "https://www.mlb.com/injury-report"
+    },
+    {
+      "sport": "NFL",
+      "source": "@AdamSchefter",
+      "source_tier": "trusted_media",
+      "published_at_utc": "2026-11-05T18:23:41.000Z",
+      "fetched_at_utc": "2026-11-05T23:38:44.187290+00:00",
+      "status_signal": null,
+      "tactical_flags": [
+        "expected_to_start"
+      ],
+      "confidence": 0.3712,
+      "text": "Just in: Vikings QB Carson Wentz will start Monday night\u2019s game vs. the Buffalo Bills while Kyler Murray deals with what the team has called a \u201csore hamstring.\u201d https://t.co/YM6AR24m9q",
+      "url": "https://x.com/AdamSchefter/status/2118408930678227068"
     },
     {
       "sport": "NFL",
@@ -479,50 +481,10 @@
       "confidence": 0.4123,
       "text": "Sources: tests revealed that Ravens\u2019 QB Tyler \u201cSnoop\u201d Huntley suffered a season-ending turf toe injury. Ravens QB Lamar Jackson is out indefinitely with a thumb injury, Huntley\u2019s season is over due to turf toe, and QB Joe Fagnano will start Thursday night vs. Jacksonville. https://t.co/Cok4gbSvH3",
       "url": "https://x.com/AdamSchefter/status/2117956094878175244"
-    },
-    {
-      "sport": "NFL",
-      "source": "@RapSheet",
-      "source_tier": "trusted_media",
-      "published_at_utc": "2026-11-03T23:07:50.000Z",
-      "fetched_at_utc": "2026-11-04T02:20:47.100349+00:00",
-      "status_signal": null,
-      "tactical_flags": [
-        "expected_to_start"
-      ],
-      "confidence": 0.4427,
-      "text": "From @SportsCenter: The #Ravens will start Joe Fagnano on TNF, but they are working behind the scenes. https://t.co/PwPP0dDnFG",
-      "url": "https://x.com/RapSheet/status/2117755661710680379"
-    },
-    {
-      "sport": "NFL",
-      "source": "@RapSheet",
-      "source_tier": "trusted_media",
-      "published_at_utc": "2026-11-03T18:54:18.000Z",
-      "fetched_at_utc": "2026-11-03T21:51:06.824665+00:00",
-      "status_signal": "out",
-      "tactical_flags": [],
-      "confidence": 0.6042,
-      "text": "Sources: #AZCardinals RB Jeremiyah Love is headed to Injured Reserve because of a high-ankle sprain that knocks him out 4-5 weeks. Arizona\u2019s first-round pick has previously been dealing with a different ankle sprain. https://t.co/KpnyNK5Buo",
-      "url": "https://x.com/RapSheet/status/2117691856708362496"
-    },
-    {
-      "sport": "NFL",
-      "source": "@AdamSchefter",
-      "source_tier": "trusted_media",
-      "published_at_utc": "2026-11-03T20:38:08.000Z",
-      "fetched_at_utc": "2026-11-03T21:51:06.824593+00:00",
-      "status_signal": null,
-      "tactical_flags": [
-        "expected_to_start"
-      ],
-      "confidence": 0.5265,
-      "text": "Ravens HC Jesse Minter announced QB Joe Fagnano will start Thursday night vs the Jaguars.",
-      "url": "https://x.com/AdamSchefter/status/2117717989189419416"
     }
   ],
   "structured": {
-    "generated_at_utc": "2026-11-05T18:02:02.721612+00:00",
+    "generated_at_utc": "2026-11-05T23:38:44.398257+00:00",
     "players": [],
     "teams": {},
     "policy": {
