@@ -1,12 +1,12 @@
 {
-  "generated_at_utc": "2026-11-05T07:04:23.437230+00:00",
+  "generated_at_utc": "2026-11-05T20:08:51.636037+00:00",
   "status": "ok",
   "production_adjustment_enabled": false,
-  "new_posts_seen": 5,
+  "new_posts_seen": 3,
   "new_picks_parsed": 0,
   "ledger_size": 0,
-  "since_id_used": "2118064399978221575",
-  "newest_id": "2118229866676101416",
+  "since_id_used": "2118229866676101416",
+  "newest_id": "2118424442108059779",
   "accounts": {
     "@RufusPeabody": {
       "tier": "established_professional",
@@ -62,39 +62,25 @@
   "new_picks": [],
   "candidate_posts": [
     {
-      "post_id": "2118229866676101416",
-      "source": "@iamrahstradamus",
-      "published_at_utc": "2026-11-05T06:32:09.000Z",
-      "text": "Miami's defense in that 4th quarter was downright stifling. Can't play with that intensity all the time but that's the best I've seen them defend all year long. They wanted this one and totally gutted it out.",
-      "url": "https://x.com/iamrahstradamus/status/2118229866676101416"
+      "post_id": "2118424442108059779",
+      "source": "@RufusPeabody",
+      "published_at_utc": "2026-11-05T19:25:20.000Z",
+      "text": "It has come to my attention that some of the 7 @BetTheProcess listeners missed yesterday's BTP heater pick so I'll tweet out a second BTP heater pick this afternoon at 4pm ET.",
+      "url": "https://x.com/RufusPeabody/status/2118424442108059779"
     },
     {
-      "post_id": "2118177002641608812",
-      "source": "@iamrahstradamus",
-      "published_at_utc": "2026-11-05T03:02:05.000Z",
-      "text": "Knicks-Bulls Over 233.5! \u2705Cash it! \n\nFelt weird that this ended up being a sweat but once Shamet was ruled in for Hart, this was a go for me. Knicks offense gets an upgrade with Shamet in for Hart. https://t.co/WiJ1elfsJs",
-      "url": "https://x.com/iamrahstradamus/status/2118177002641608812"
+      "post_id": "2118424129711804737",
+      "source": "@RufusPeabody",
+      "published_at_utc": "2026-11-05T19:24:05.000Z",
+      "text": "It has come to my attention that some of the 7 @BetTheProcess missed yesterday's BTP heater pick so I'll tweet out a second BTP heater pick this afternoon at 4pm ET.",
+      "url": "https://x.com/RufusPeabody/status/2118424129711804737"
     },
     {
-      "post_id": "2118176896068600200",
-      "source": "@iamrahstradamus",
-      "published_at_utc": "2026-11-05T03:01:40.000Z",
-      "text": "Knicks-Bulls Over 233.5! \u2705Cash it! \n\nFelt weird that this ended up being a sweat but once Shamet was ruled in, this was a go. https://t.co/WiJ1elfsJs",
-      "url": "https://x.com/iamrahstradamus/status/2118176896068600200"
-    },
-    {
-      "post_id": "2118124786664771684",
-      "source": "@iamrahstradamus",
-      "published_at_utc": "2026-11-04T23:34:36.000Z",
-      "text": "My model does like the under. I think you might be right. My models with priors are higher and using current numbers have this projected much lower. https://t.co/ZEpnHqBJII",
-      "url": "https://x.com/iamrahstradamus/status/2118124786664771684"
-    },
-    {
-      "post_id": "2118117053353832840",
-      "source": "@iamrahstradamus",
-      "published_at_utc": "2026-11-04T23:03:52.000Z",
-      "text": "Knicks-Bulls Over 233.5 feels like a good play if you weren't on it already. \n\nThe Knicks are replacing a 34% three point shooter with a 45% shooter on pretty much the same volume. Bulls defense continues to be downright abysmal giving up a Defensive Rating of a whopping 124.1. https://t.co/VVVyLIMflH",
-      "url": "https://x.com/iamrahstradamus/status/2118117053353832840"
+      "post_id": "2118391158611300447",
+      "source": "@capjack2000",
+      "published_at_utc": "2026-11-05T17:13:04.000Z",
+      "text": "@PlusEVAnalytics My understanding is the $200m is what funds the annuity, it is then parked in such a way that it accrues the very conservative ROI needed to be a $600m annuity over 29 years. The rake is taken out before the $200m number is reached and is never part of the jackpot number.",
+      "url": "https://x.com/capjack2000/status/2118391158611300447"
     }
   ],
   "promotion_thresholds": {
