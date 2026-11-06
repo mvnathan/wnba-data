@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-11-06T02:48:12.723940+00:00",
+  "generated_at_utc": "2026-11-06T12:25:31.163226+00:00",
   "status": "ok",
   "production_modified": false,
   "baseline_model_version": "nfl-v2",
@@ -16,9 +16,9 @@
   "note": "External signals were not available historically across the full 577-game backtest, so current deltas are prospective. Accuracy/Brier/MAE comparison begins as these shadow forecasts settle.",
   "summary": {
     "games": 15,
-    "games_changed_by_availability": 4,
-    "games_changed_by_combined": 4,
-    "availability_x_signals_available": 8,
+    "games_changed_by_availability": 5,
+    "games_changed_by_combined": 5,
+    "availability_x_signals_available": 12,
     "sharp_ledger_picks": 0,
     "sharp_production_weight": 0.0
   },
@@ -42,14 +42,14 @@
       },
       "availability_shadow": {
         "predicted_home_points": 19.14,
-        "predicted_away_points": 25.1,
-        "predicted_margin": -5.96,
-        "predicted_total": 44.25,
-        "home_win_probability": 0.3055,
-        "away_win_probability": 0.6945,
+        "predicted_away_points": 25.19,
+        "predicted_margin": -6.05,
+        "predicted_total": 44.34,
+        "home_win_probability": 0.3028,
+        "away_win_probability": 0.6972,
         "predicted_winner": "Jacksonville Jaguars",
-        "availability_margin_delta": -1.86,
-        "availability_total_delta": -1.85,
+        "availability_margin_delta": -1.95,
+        "availability_total_delta": -1.76,
         "signals_applied": [
           {
             "team": "BAL",
@@ -63,19 +63,45 @@
             "published_at_utc": "2026-11-04T12:24:17.000Z",
             "url": "https://x.com/AdamSchefter/status/2117956094878175244",
             "text": "Sources: tests revealed that Ravens\u2019 QB Tyler \u201cSnoop\u201d Huntley suffered a season-ending turf toe injury. Ravens QB Lamar Jackson is out indefinitely with a thumb injury, Huntley\u2019s season is over due to turf toe, and QB Joe Fagnano will start Thursday night vs. Jacksonville. https://t.co/Cok4gbSvH3"
+          },
+          {
+            "team": "BAL",
+            "player": "Kyle Hamilton",
+            "position": "S",
+            "status": "out",
+            "confidence": 0.5852,
+            "base_points": 0.6,
+            "point_impact": 0.351,
+            "source": "@RapSheet",
+            "published_at_utc": "2026-11-06T03:28:11.000Z",
+            "url": "https://x.com/RapSheet/status/2118545956714996025",
+            "text": "#Ravens S Kyle Hamilton (hip) has been ruled out."
+          },
+          {
+            "team": "JAX",
+            "player": "Bhayshul Tuten",
+            "position": "RB",
+            "status": "questionable",
+            "confidence": 0.3819,
+            "base_points": 1.0,
+            "point_impact": 0.172,
+            "source": "@AdamSchefter",
+            "published_at_utc": "2026-11-05T23:45:40.000Z",
+            "url": "https://x.com/AdamSchefter/status/2118489960382857529",
+            "text": "Jaguars RB Bhayshul Tuten, who is listed as questionable for tonight, officially is active versus the Ravens. https://t.co/p6yzJvN8Ph"
           }
         ]
       },
       "combined_shadow": {
         "predicted_home_points": 19.14,
-        "predicted_away_points": 25.1,
-        "predicted_margin": -5.96,
-        "predicted_total": 44.25,
-        "home_win_probability": 0.3055,
-        "away_win_probability": 0.6945,
+        "predicted_away_points": 25.19,
+        "predicted_margin": -6.05,
+        "predicted_total": 44.34,
+        "home_win_probability": 0.3028,
+        "away_win_probability": 0.6972,
         "predicted_winner": "Jacksonville Jaguars",
-        "combined_margin_delta_vs_production": -1.86,
-        "combined_total_delta_vs_production": -1.85,
+        "combined_margin_delta_vs_production": -1.95,
+        "combined_total_delta_vs_production": -1.76,
         "sharp_margin_delta": 0.0,
         "sharp_total_delta": 0.0,
         "sharp_signals_applied": []
@@ -726,27 +752,41 @@
         "predicted_winner": "Minnesota Vikings"
       },
       "availability_shadow": {
-        "predicted_home_points": 23.3,
+        "predicted_home_points": 21.3,
         "predicted_away_points": 23.1,
-        "predicted_margin": 0.2,
-        "predicted_total": 46.5,
-        "home_win_probability": 0.5071,
-        "away_win_probability": 0.4929,
-        "predicted_winner": "Minnesota Vikings",
-        "availability_margin_delta": 0.0,
-        "availability_total_delta": 0.0,
-        "signals_applied": []
+        "predicted_margin": -1.8,
+        "predicted_total": 44.4,
+        "home_win_probability": 0.4381,
+        "away_win_probability": 0.5619,
+        "predicted_winner": "Buffalo Bills",
+        "availability_margin_delta": -2.0,
+        "availability_total_delta": -2.1,
+        "signals_applied": [
+          {
+            "team": "MIN",
+            "player": "Carson Wentz",
+            "position": "QB",
+            "status": "out",
+            "confidence": 0.4455,
+            "base_points": 4.5,
+            "point_impact": 2.005,
+            "source": "@AdamSchefter",
+            "published_at_utc": "2026-11-06T00:19:25.000Z",
+            "url": "https://x.com/AdamSchefter/status/2118498450824450189",
+            "text": "More about the Vikings starting QB Carson Wentz against Bills and ruling out QB Kyler Murray due to his hamstring injury, via @SeifertESPN: https://t.co/ZUZczJzB4T"
+          }
+        ]
       },
       "combined_shadow": {
-        "predicted_home_points": 23.3,
+        "predicted_home_points": 21.3,
         "predicted_away_points": 23.1,
-        "predicted_margin": 0.2,
-        "predicted_total": 46.5,
-        "home_win_probability": 0.5071,
-        "away_win_probability": 0.4929,
-        "predicted_winner": "Minnesota Vikings",
-        "combined_margin_delta_vs_production": 0.0,
-        "combined_total_delta_vs_production": 0.0,
+        "predicted_margin": -1.8,
+        "predicted_total": 44.4,
+        "home_win_probability": 0.4381,
+        "away_win_probability": 0.5619,
+        "predicted_winner": "Buffalo Bills",
+        "combined_margin_delta_vs_production": -2.0,
+        "combined_total_delta_vs_production": -2.1,
         "sharp_margin_delta": 0.0,
         "sharp_total_delta": 0.0,
         "sharp_signals_applied": []
