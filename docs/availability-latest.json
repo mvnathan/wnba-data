@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-11-06T15:55:46.359672+00:00",
+  "generated_at_utc": "2026-11-06T21:29:59.883920+00:00",
   "status": "ok",
   "direct_model_adjustment_enabled": false,
   "integration_stage": "context_and_edge_reliability_only",
@@ -15,7 +15,7 @@
       "sport": "NFL",
       "url": "https://www.nfl.com/injuries/",
       "status": "ok",
-      "snippets": 22
+      "snippets": 21
     },
     {
       "source": "WNBA Official Injury Report",
@@ -60,8 +60,8 @@
   },
   "x_source_diagnostics": {
     "status": "ok",
-    "posts": 6,
-    "posts_general": 6,
+    "posts": 8,
+    "posts_general": 8,
     "posts_nba": 0,
     "accounts": [
       "AdamSchefter",
@@ -71,10 +71,10 @@
       "ShamsCharania",
       "ChrisBHaynes"
     ],
-    "since_id_used_general": "2118545956714996025",
+    "since_id_used_general": "2118711779299656139",
     "since_id_used_nba": "2118158623058891259",
-    "newest_id": "2118711779299656139",
-    "newest_id_general": "2118711779299656139",
+    "newest_id": "2118818032533271029",
+    "newest_id_general": "2118818032533271029",
     "newest_id_nba": "2118158623058891259",
     "query_general": "(from:AdamSchefter OR from:RapSheet OR from:JeffPassan OR from:alexaphilippou) (out OR inactive OR doubtful OR questionable OR injury OR injured OR rest OR resting OR \"expected to play\" OR \"will start\" OR \"minutes restriction\" OR \"snap count\" OR \"pitch count\") -is:retweet lang:en",
     "query_nba": "(from:ShamsCharania OR from:ChrisBHaynes) (out OR inactive OR doubtful OR questionable OR injury OR injured OR rest OR resting OR \"expected to play\" OR \"will start\" OR \"minutes restriction\" OR \"snap count\" OR \"pitch count\" OR \"will miss\" OR sidelined OR available OR cleared OR starting OR surgery OR sprain OR signed OR waived OR trade OR traded) -is:retweet lang:en"
@@ -82,10 +82,58 @@
   "signals": [
     {
       "sport": "NFL",
+      "source": "@AdamSchefter",
+      "source_tier": "trusted_media",
+      "published_at_utc": "2026-11-06T21:06:36.000Z",
+      "fetched_at_utc": "2026-11-06T21:29:59.765357+00:00",
+      "status_signal": "out",
+      "tactical_flags": [],
+      "confidence": 0.7541,
+      "text": "Patriots officially ruled out WR AJ Brown and RB TreVeyon Henderson. https://t.co/vreVFQlGYP",
+      "url": "https://x.com/AdamSchefter/status/2118812316804555234"
+    },
+    {
+      "sport": "NFL",
+      "source": "@AdamSchefter",
+      "source_tier": "trusted_media",
+      "published_at_utc": "2026-11-06T20:55:17.000Z",
+      "fetched_at_utc": "2026-11-06T21:29:59.765442+00:00",
+      "status_signal": "out",
+      "tactical_flags": [],
+      "confidence": 0.7419,
+      "text": "Eagles WRs DeVonta Smith (hamstring) and Dontayvion Wicks (ankle) are out for Sunday vs. Giants. https://t.co/xuQcLeaMGC",
+      "url": "https://x.com/AdamSchefter/status/2118809466351014380"
+    },
+    {
+      "sport": "NFL",
+      "source": "@AdamSchefter",
+      "source_tier": "trusted_media",
+      "published_at_utc": "2026-11-06T21:03:31.000Z",
+      "fetched_at_utc": "2026-11-06T21:29:59.765405+00:00",
+      "status_signal": "doubtful",
+      "tactical_flags": [],
+      "confidence": 0.6757,
+      "text": "Giants are listing RB Cam Skattebo as doubtful for Sunday\u2019s game vs. the Eagles due to his hamstring injury.",
+      "url": "https://x.com/AdamSchefter/status/2118811541130653924"
+    },
+    {
+      "sport": "NFL",
+      "source": "@AdamSchefter",
+      "source_tier": "trusted_media",
+      "published_at_utc": "2026-11-06T20:43:32.000Z",
+      "fetched_at_utc": "2026-11-06T21:29:59.765509+00:00",
+      "status_signal": "probable",
+      "tactical_flags": [],
+      "confidence": 0.6564,
+      "text": "More about outside linebacker Myles Garrett being expected to play Sunday against the Commanders \u201cbarring any sort of setbacks\u201d with his knee injury, via @sarahbarshop: https://t.co/p0ZnPAW7Vd",
+      "url": "https://x.com/AdamSchefter/status/2118806512655311253"
+    },
+    {
+      "sport": "NFL",
       "source": "NFL Official Injury Report",
       "source_tier": "official",
       "published_at_utc": null,
-      "fetched_at_utc": "2026-11-06T15:55:45.525605+00:00",
+      "fetched_at_utc": "2026-11-06T21:29:58.062652+00:00",
       "status_signal": "out",
       "tactical_flags": [],
       "confidence": 0.65,
@@ -97,7 +145,7 @@
       "source": "NFL Official Injury Report",
       "source_tier": "official",
       "published_at_utc": null,
-      "fetched_at_utc": "2026-11-06T15:55:45.525626+00:00",
+      "fetched_at_utc": "2026-11-06T21:29:58.062670+00:00",
       "status_signal": "out",
       "tactical_flags": [],
       "confidence": 0.65,
@@ -109,7 +157,7 @@
       "source": "NFL Official Injury Report",
       "source_tier": "official",
       "published_at_utc": null,
-      "fetched_at_utc": "2026-11-06T15:55:45.525645+00:00",
+      "fetched_at_utc": "2026-11-06T21:29:58.062687+00:00",
       "status_signal": "out",
       "tactical_flags": [],
       "confidence": 0.65,
@@ -121,7 +169,19 @@
       "source": "NFL Official Injury Report",
       "source_tier": "official",
       "published_at_utc": null,
-      "fetched_at_utc": "2026-11-06T15:55:45.525972+00:00",
+      "fetched_at_utc": "2026-11-06T21:29:58.062900+00:00",
+      "status_signal": "out",
+      "tactical_flags": [],
+      "confidence": 0.65,
+      "text": "NFL news roundup: Jets' Garrett Wilson ruled out; Falcons RB Brian Robinson out for Madrid game",
+      "url": "https://www.nfl.com/injuries/"
+    },
+    {
+      "sport": "NFL",
+      "source": "NFL Official Injury Report",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-11-06T21:29:58.062968+00:00",
       "status_signal": "out",
       "tactical_flags": [],
       "confidence": 0.65,
@@ -133,7 +193,7 @@
       "source": "NFL Official Injury Report",
       "source_tier": "official",
       "published_at_utc": null,
-      "fetched_at_utc": "2026-11-06T15:55:45.525992+00:00",
+      "fetched_at_utc": "2026-11-06T21:29:58.062985+00:00",
       "status_signal": "out",
       "tactical_flags": [],
       "confidence": 0.65,
@@ -145,7 +205,7 @@
       "source": "NFL Official Injury Report",
       "source_tier": "official",
       "published_at_utc": null,
-      "fetched_at_utc": "2026-11-06T15:55:45.526099+00:00",
+      "fetched_at_utc": "2026-11-06T21:29:58.063079+00:00",
       "status_signal": "out",
       "tactical_flags": [
         "rest_candidate"
@@ -159,7 +219,7 @@
       "source": "NFL Official Injury Report",
       "source_tier": "official",
       "published_at_utc": null,
-      "fetched_at_utc": "2026-11-06T15:55:45.526154+00:00",
+      "fetched_at_utc": "2026-11-06T21:29:58.063129+00:00",
       "status_signal": "out",
       "tactical_flags": [
         "rest_candidate"
@@ -173,7 +233,7 @@
       "source": "NFL Official Injury Report",
       "source_tier": "official",
       "published_at_utc": null,
-      "fetched_at_utc": "2026-11-06T15:55:45.526174+00:00",
+      "fetched_at_utc": "2026-11-06T21:29:58.063146+00:00",
       "status_signal": "out",
       "tactical_flags": [],
       "confidence": 0.65,
@@ -181,23 +241,11 @@
       "url": "https://www.nfl.com/injuries/"
     },
     {
-      "sport": "NFL",
-      "source": "NFL Official Injury Report",
-      "source_tier": "official",
-      "published_at_utc": null,
-      "fetched_at_utc": "2026-11-06T15:55:45.526223+00:00",
-      "status_signal": "out",
-      "tactical_flags": [],
-      "confidence": 0.65,
-      "text": "Ravens QB Lamar Jackson (ankle) out Sunday vs. Browns; Tyler Huntley to start again",
-      "url": "https://www.nfl.com/injuries/"
-    },
-    {
       "sport": "MLB",
       "source": "MLB Official Injury Report",
       "source_tier": "official",
       "published_at_utc": null,
-      "fetched_at_utc": "2026-11-06T15:55:45.774905+00:00",
+      "fetched_at_utc": "2026-11-06T21:29:59.181970+00:00",
       "status_signal": "out",
       "tactical_flags": [],
       "confidence": 0.65,
@@ -209,7 +257,7 @@
       "source": "MLB Official Injury Report",
       "source_tier": "official",
       "published_at_utc": null,
-      "fetched_at_utc": "2026-11-06T15:55:45.775094+00:00",
+      "fetched_at_utc": "2026-11-06T21:29:59.182146+00:00",
       "status_signal": "out",
       "tactical_flags": [],
       "confidence": 0.65,
@@ -221,12 +269,148 @@
       "source": "MLB Official Injury Report",
       "source_tier": "official",
       "published_at_utc": null,
-      "fetched_at_utc": "2026-11-06T15:55:45.775216+00:00",
+      "fetched_at_utc": "2026-11-06T21:29:59.182259+00:00",
       "status_signal": "out",
       "tactical_flags": [],
       "confidence": 0.65,
       "text": "Goodman (right thumb soreness) out again on Wednesday",
       "url": "https://www.mlb.com/injury-report"
+    },
+    {
+      "sport": "NFL",
+      "source": "NFL Official Injury Report",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-11-06T21:29:58.062573+00:00",
+      "status_signal": "questionable",
+      "tactical_flags": [],
+      "confidence": 0.585,
+      "text": "Bhayshul Tuten RB Ankle, Foot Did Not Participate In Practice Questionable",
+      "url": "https://www.nfl.com/injuries/"
+    },
+    {
+      "sport": "NFL",
+      "source": "NFL Official Injury Report",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-11-06T21:29:58.062630+00:00",
+      "status_signal": "questionable",
+      "tactical_flags": [],
+      "confidence": 0.585,
+      "text": "Travon Walker DE Rib Limited Participation in Practice Questionable",
+      "url": "https://www.nfl.com/injuries/"
+    },
+    {
+      "sport": "NFL",
+      "source": "NFL Official Injury Report",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-11-06T21:29:58.062708+00:00",
+      "status_signal": "questionable",
+      "tactical_flags": [],
+      "confidence": 0.585,
+      "text": "Adam Randall RB Neck Full Participation in Practice Questionable",
+      "url": "https://www.nfl.com/injuries/"
+    },
+    {
+      "sport": "NFL",
+      "source": "NFL Official Injury Report",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-11-06T21:29:58.062731+00:00",
+      "status_signal": "questionable",
+      "tactical_flags": [],
+      "confidence": 0.585,
+      "text": "Nate Wiggins CB Stinger, Illness Did Not Participate In Practice Questionable",
+      "url": "https://www.nfl.com/injuries/"
+    },
+    {
+      "sport": "NFL",
+      "source": "NFL Official Injury Report",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-11-06T21:29:58.063029+00:00",
+      "status_signal": "questionable",
+      "tactical_flags": [],
+      "confidence": 0.585,
+      "text": "Ravens' Lamar Jackson (ankle) questionable to make return Sunday vs. Bengals",
+      "url": "https://www.nfl.com/injuries/"
+    },
+    {
+      "sport": "NFL",
+      "source": "NFL Official Injury Report",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-11-06T21:29:58.063171+00:00",
+      "status_signal": "questionable",
+      "tactical_flags": [],
+      "confidence": 0.585,
+      "text": "Bears QB Caleb Williams (hamstring) questionable to play vs. Falcons despite full week of practice",
+      "url": "https://www.nfl.com/injuries/"
+    },
+    {
+      "sport": "MLB",
+      "source": "MLB Official Injury Report",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-11-06T21:29:59.181660+00:00",
+      "status_signal": "probable",
+      "tactical_flags": [],
+      "confidence": 0.585,
+      "text": "News Probable Pitchers Awards Starting Lineups Transactions Injury Report World Baseball Classic MLB Draft All-Star Game AUSL MLB Pipeline Postseason History Podcasts International",
+      "url": "https://www.mlb.com/injury-report"
+    },
+    {
+      "sport": "MLB",
+      "source": "MLB Probable Pitchers",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-11-06T21:29:59.313425+00:00",
+      "status_signal": "probable",
+      "tactical_flags": [],
+      "confidence": 0.585,
+      "text": "News Probable Pitchers Awards Starting Lineups Transactions Injury Report World Baseball Classic MLB Draft All-Star Game AUSL MLB Pipeline Postseason History Podcasts International",
+      "url": "https://www.mlb.com/probable-pitchers"
+    },
+    {
+      "sport": "MLB",
+      "source": "MLB Official Injury Report",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-11-06T21:29:59.181850+00:00",
+      "status_signal": null,
+      "tactical_flags": [
+        "rest_candidate"
+      ],
+      "confidence": 0.4875,
+      "text": "Anthony not expected to need surgery: 'Rest is likely the best path to recovery'",
+      "url": "https://www.mlb.com/injury-report"
+    },
+    {
+      "sport": "NFL",
+      "source": "@AdamSchefter",
+      "source_tier": "trusted_media",
+      "published_at_utc": "2026-11-06T16:03:07.000Z",
+      "fetched_at_utc": "2026-11-06T21:29:59.765693+00:00",
+      "status_signal": "out",
+      "tactical_flags": [],
+      "confidence": 0.4865,
+      "text": "Jets ruled out WR Garrett Wilson for Sunday\u2019s game versus the Chiefs due to his concussion. https://t.co/LHHaNUb08G",
+      "url": "https://x.com/AdamSchefter/status/2118735940482933217"
+    },
+    {
+      "sport": "NFL",
+      "source": "@AdamSchefter",
+      "source_tier": "trusted_media",
+      "published_at_utc": "2026-11-06T18:45:06.000Z",
+      "fetched_at_utc": "2026-11-06T21:29:59.765547+00:00",
+      "status_signal": null,
+      "tactical_flags": [
+        "expected_to_start"
+      ],
+      "confidence": 0.461,
+      "text": "Browns QB Shedeur Sanders will start his first game of the season Sunday at New Orleans.",
+      "url": "https://x.com/AdamSchefter/status/2118776707775877472"
     },
     {
       "sport": "NFL",
@@ -254,102 +438,6 @@
     },
     {
       "sport": "NFL",
-      "source": "NFL Official Injury Report",
-      "source_tier": "official",
-      "published_at_utc": null,
-      "fetched_at_utc": "2026-11-06T15:55:45.525508+00:00",
-      "status_signal": "questionable",
-      "tactical_flags": [],
-      "confidence": 0.585,
-      "text": "Bhayshul Tuten RB Ankle, Foot Did Not Participate In Practice Questionable",
-      "url": "https://www.nfl.com/injuries/"
-    },
-    {
-      "sport": "NFL",
-      "source": "NFL Official Injury Report",
-      "source_tier": "official",
-      "published_at_utc": null,
-      "fetched_at_utc": "2026-11-06T15:55:45.525579+00:00",
-      "status_signal": "questionable",
-      "tactical_flags": [],
-      "confidence": 0.585,
-      "text": "Travon Walker DE Rib Limited Participation in Practice Questionable",
-      "url": "https://www.nfl.com/injuries/"
-    },
-    {
-      "sport": "NFL",
-      "source": "NFL Official Injury Report",
-      "source_tier": "official",
-      "published_at_utc": null,
-      "fetched_at_utc": "2026-11-06T15:55:45.525667+00:00",
-      "status_signal": "questionable",
-      "tactical_flags": [],
-      "confidence": 0.585,
-      "text": "Adam Randall RB Neck Full Participation in Practice Questionable",
-      "url": "https://www.nfl.com/injuries/"
-    },
-    {
-      "sport": "NFL",
-      "source": "NFL Official Injury Report",
-      "source_tier": "official",
-      "published_at_utc": null,
-      "fetched_at_utc": "2026-11-06T15:55:45.525692+00:00",
-      "status_signal": "questionable",
-      "tactical_flags": [],
-      "confidence": 0.585,
-      "text": "Nate Wiggins CB Stinger, Illness Did Not Participate In Practice Questionable",
-      "url": "https://www.nfl.com/injuries/"
-    },
-    {
-      "sport": "NFL",
-      "source": "NFL Official Injury Report",
-      "source_tier": "official",
-      "published_at_utc": null,
-      "fetched_at_utc": "2026-11-06T15:55:45.526041+00:00",
-      "status_signal": "questionable",
-      "tactical_flags": [],
-      "confidence": 0.585,
-      "text": "Ravens' Lamar Jackson (ankle) questionable to make return Sunday vs. Bengals",
-      "url": "https://www.nfl.com/injuries/"
-    },
-    {
-      "sport": "NFL",
-      "source": "NFL Official Injury Report",
-      "source_tier": "official",
-      "published_at_utc": null,
-      "fetched_at_utc": "2026-11-06T15:55:45.526201+00:00",
-      "status_signal": "questionable",
-      "tactical_flags": [],
-      "confidence": 0.585,
-      "text": "Bears QB Caleb Williams (hamstring) questionable to play vs. Falcons despite full week of practice",
-      "url": "https://www.nfl.com/injuries/"
-    },
-    {
-      "sport": "MLB",
-      "source": "MLB Official Injury Report",
-      "source_tier": "official",
-      "published_at_utc": null,
-      "fetched_at_utc": "2026-11-06T15:55:45.774536+00:00",
-      "status_signal": "probable",
-      "tactical_flags": [],
-      "confidence": 0.585,
-      "text": "News Probable Pitchers Awards Starting Lineups Transactions Injury Report World Baseball Classic MLB Draft All-Star Game AUSL MLB Pipeline Postseason History Podcasts International",
-      "url": "https://www.mlb.com/injury-report"
-    },
-    {
-      "sport": "MLB",
-      "source": "MLB Probable Pitchers",
-      "source_tier": "official",
-      "published_at_utc": null,
-      "fetched_at_utc": "2026-11-06T15:55:45.844119+00:00",
-      "status_signal": "probable",
-      "tactical_flags": [],
-      "confidence": 0.585,
-      "text": "News Probable Pitchers Awards Starting Lineups Transactions Injury Report World Baseball Classic MLB Draft All-Star Game AUSL MLB Pipeline Postseason History Podcasts International",
-      "url": "https://www.mlb.com/probable-pitchers"
-    },
-    {
-      "sport": "NFL",
       "source": "@RapSheet",
       "source_tier": "trusted_media",
       "published_at_utc": "2026-11-06T11:45:14.000Z",
@@ -373,34 +461,6 @@
       "confidence": 0.5147,
       "text": "From @GMFB: #Browns QB Deshaun Watson may miss Sunday; #Vikings will start QB Carson Wentz; The #Jets get RB Breece Hall back on Sunday, while the #Giants may not have RB Cam Skattebo. https://t.co/7lBBdWEjnt",
       "url": "https://x.com/RapSheet/status/2118711779299656139"
-    },
-    {
-      "sport": "NFL",
-      "source": "NFL Official Injury Report",
-      "source_tier": "official",
-      "published_at_utc": null,
-      "fetched_at_utc": "2026-11-06T15:55:45.526253+00:00",
-      "status_signal": null,
-      "tactical_flags": [
-        "expected_to_start"
-      ],
-      "confidence": 0.4875,
-      "text": "Falcons QB Michael Penix Jr. (ribs) has no injury designation, will start vs. Bears",
-      "url": "https://www.nfl.com/injuries/"
-    },
-    {
-      "sport": "MLB",
-      "source": "MLB Official Injury Report",
-      "source_tier": "official",
-      "published_at_utc": null,
-      "fetched_at_utc": "2026-11-06T15:55:45.774743+00:00",
-      "status_signal": null,
-      "tactical_flags": [
-        "rest_candidate"
-      ],
-      "confidence": 0.4875,
-      "text": "Anthony not expected to need surgery: 'Rest is likely the best path to recovery'",
-      "url": "https://www.mlb.com/injury-report"
     },
     {
       "sport": "NFL",
@@ -503,74 +563,10 @@
       "confidence": 0.4007,
       "text": "Charlotte Hornets guard Kon Knueppel made his season debut tonight but now is ruled out in the first quarter with left leg discomfort.",
       "url": "https://x.com/ChrisBHaynes/status/2118158623058891259"
-    },
-    {
-      "sport": "NFL",
-      "source": "@AdamSchefter",
-      "source_tier": "trusted_media",
-      "published_at_utc": "2026-11-04T19:06:20.000Z",
-      "fetched_at_utc": "2026-11-04T19:45:48.571801+00:00",
-      "status_signal": "out",
-      "tactical_flags": [
-        "expected_to_start"
-      ],
-      "confidence": 0.7368,
-      "text": "QB news today: \ud83c\udfc8Browns place QB Deshaun Watson in concussion protocol, meaning Shedeur Sanders is in line to start Sunday. \ud83c\udfc8Seahawks rule out QB Sam Darnold with a quad injury. Drew Lock is set to start Sunday. \ud83c\udfc8Eagles bench Tanner McKee and will start Joe Milton on Sunday.",
-      "url": "https://x.com/AdamSchefter/status/2118057274249998458"
-    },
-    {
-      "sport": "NFL",
-      "source": "@RapSheet",
-      "source_tier": "trusted_media",
-      "published_at_utc": "2026-11-04T18:50:47.000Z",
-      "fetched_at_utc": "2026-11-04T19:45:48.571854+00:00",
-      "status_signal": "out",
-      "tactical_flags": [],
-      "confidence": 0.7204,
-      "text": "#Seahawks QB Sam Darnold is going to be out Sunday vs. the #AZCardinals due to a quad injury, coach Mike Macdonald told reporters. https://t.co/CmUuPSUgAM",
-      "url": "https://x.com/RapSheet/status/2118053359303143529"
-    },
-    {
-      "sport": "NFL",
-      "source": "@AdamSchefter",
-      "source_tier": "trusted_media",
-      "published_at_utc": "2026-11-04T18:49:24.000Z",
-      "fetched_at_utc": "2026-11-04T19:45:48.571890+00:00",
-      "status_signal": "out",
-      "tactical_flags": [],
-      "confidence": 0.719,
-      "text": "Seahawks QB Sam Darnold will be out Sunday vs. Arizona due to quad injury, per HC Mike Macdonald.",
-      "url": "https://x.com/AdamSchefter/status/2118053014779187595"
-    },
-    {
-      "sport": "NFL",
-      "source": "@RapSheet",
-      "source_tier": "trusted_media",
-      "published_at_utc": "2026-11-04T16:50:19.000Z",
-      "fetched_at_utc": "2026-11-04T19:45:48.571927+00:00",
-      "status_signal": "out",
-      "tactical_flags": [],
-      "confidence": 0.6054,
-      "text": "Jeremy McNichols is out for the season and facing potential surgery, as are Daron Payne and Javon Kinlaw. https://t.co/qMzA9RAppy",
-      "url": "https://x.com/RapSheet/status/2118023045583601700"
-    },
-    {
-      "sport": "NBA",
-      "source": "@ChrisBHaynes",
-      "source_tier": "trusted_media",
-      "published_at_utc": "2026-11-04T17:41:07.000Z",
-      "fetched_at_utc": "2026-11-04T19:45:48.783435+00:00",
-      "status_signal": null,
-      "tactical_flags": [
-        "rest_candidate"
-      ],
-      "confidence": 0.4886,
-      "text": "Boston Celtics will rest Jayson Tatum tonight when they play the Milwaukee Bucks.",
-      "url": "https://x.com/ChrisBHaynes/status/2118035829843222948"
     }
   ],
   "structured": {
-    "generated_at_utc": "2026-11-06T15:55:46.359567+00:00",
+    "generated_at_utc": "2026-11-06T21:29:59.883816+00:00",
     "players": [],
     "teams": {},
     "policy": {
