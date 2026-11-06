@@ -1,12 +1,12 @@
 {
-  "generated_at_utc": "2026-11-05T20:08:51.636037+00:00",
+  "generated_at_utc": "2026-11-06T07:04:15.103173+00:00",
   "status": "ok",
   "production_adjustment_enabled": false,
-  "new_posts_seen": 3,
+  "new_posts_seen": 1,
   "new_picks_parsed": 0,
   "ledger_size": 0,
-  "since_id_used": "2118229866676101416",
-  "newest_id": "2118424442108059779",
+  "since_id_used": "2118424442108059779",
+  "newest_id": "2118498794455408731",
   "accounts": {
     "@RufusPeabody": {
       "tier": "established_professional",
@@ -62,25 +62,11 @@
   "new_picks": [],
   "candidate_posts": [
     {
-      "post_id": "2118424442108059779",
-      "source": "@RufusPeabody",
-      "published_at_utc": "2026-11-05T19:25:20.000Z",
-      "text": "It has come to my attention that some of the 7 @BetTheProcess listeners missed yesterday's BTP heater pick so I'll tweet out a second BTP heater pick this afternoon at 4pm ET.",
-      "url": "https://x.com/RufusPeabody/status/2118424442108059779"
-    },
-    {
-      "post_id": "2118424129711804737",
-      "source": "@RufusPeabody",
-      "published_at_utc": "2026-11-05T19:24:05.000Z",
-      "text": "It has come to my attention that some of the 7 @BetTheProcess missed yesterday's BTP heater pick so I'll tweet out a second BTP heater pick this afternoon at 4pm ET.",
-      "url": "https://x.com/RufusPeabody/status/2118424129711804737"
-    },
-    {
-      "post_id": "2118391158611300447",
-      "source": "@capjack2000",
-      "published_at_utc": "2026-11-05T17:13:04.000Z",
-      "text": "@PlusEVAnalytics My understanding is the $200m is what funds the annuity, it is then parked in such a way that it accrues the very conservative ROI needed to be a $600m annuity over 29 years. The rake is taken out before the $200m number is reached and is never part of the jackpot number.",
-      "url": "https://x.com/capjack2000/status/2118391158611300447"
+      "post_id": "2118498794455408731",
+      "source": "@FezzikSports",
+      "published_at_utc": "2026-11-06T00:20:47.000Z",
+      "text": "Set up UNDER 100\n\nGo!\n\nWe are betting UNDER 100 https://t.co/qVOKnFg6XQ",
+      "url": "https://x.com/FezzikSports/status/2118498794455408731"
     }
   ],
   "promotion_thresholds": {
