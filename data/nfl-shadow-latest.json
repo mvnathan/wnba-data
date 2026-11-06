@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-11-05T21:12:15.201956+00:00",
+  "generated_at_utc": "2026-11-06T02:48:12.723940+00:00",
   "status": "ok",
   "production_modified": false,
   "baseline_model_version": "nfl-v2",
@@ -18,7 +18,7 @@
     "games": 15,
     "games_changed_by_availability": 4,
     "games_changed_by_combined": 4,
-    "availability_x_signals_available": 10,
+    "availability_x_signals_available": 8,
     "sharp_ledger_picks": 0,
     "sharp_production_weight": 0.0
   },
@@ -612,14 +612,14 @@
       },
       "availability_shadow": {
         "predicted_home_points": 19.14,
-        "predicted_away_points": 20.5,
-        "predicted_margin": -1.35,
-        "predicted_total": 39.64,
-        "home_win_probability": 0.4534,
-        "away_win_probability": 0.5466,
+        "predicted_away_points": 21.1,
+        "predicted_margin": -1.96,
+        "predicted_total": 40.24,
+        "home_win_probability": 0.4329,
+        "away_win_probability": 0.5671,
         "predicted_winner": "Arizona Cardinals",
-        "availability_margin_delta": -6.05,
-        "availability_total_delta": -7.16,
+        "availability_margin_delta": -6.66,
+        "availability_total_delta": -6.56,
         "signals_applied": [
           {
             "team": "SEA",
@@ -646,32 +646,19 @@
             "published_at_utc": "2026-11-04T18:50:47.000Z",
             "url": "https://x.com/RapSheet/status/2118053359303143529",
             "text": "#Seahawks QB Sam Darnold is going to be out Sunday vs. the #AZCardinals due to a quad injury, coach Mike Macdonald told reporters. https://t.co/CmUuPSUgAM"
-          },
-          {
-            "team": "ARI",
-            "player": "Jeremiyah Love",
-            "position": "RB",
-            "status": "out",
-            "confidence": 0.6042,
-            "base_points": 1.0,
-            "point_impact": 0.604,
-            "source": "@RapSheet",
-            "published_at_utc": "2026-11-03T18:54:18.000Z",
-            "url": "https://x.com/RapSheet/status/2117691856708362496",
-            "text": "Sources: #AZCardinals RB Jeremiyah Love is headed to Injured Reserve because of a high-ankle sprain that knocks him out 4-5 weeks. Arizona\u2019s first-round pick has previously been dealing with a different ankle sprain. https://t.co/KpnyNK5Buo"
           }
         ]
       },
       "combined_shadow": {
         "predicted_home_points": 19.14,
-        "predicted_away_points": 20.5,
-        "predicted_margin": -1.35,
-        "predicted_total": 39.64,
-        "home_win_probability": 0.4534,
-        "away_win_probability": 0.5466,
+        "predicted_away_points": 21.1,
+        "predicted_margin": -1.96,
+        "predicted_total": 40.24,
+        "home_win_probability": 0.4329,
+        "away_win_probability": 0.5671,
         "predicted_winner": "Arizona Cardinals",
-        "combined_margin_delta_vs_production": -6.05,
-        "combined_total_delta_vs_production": -7.16,
+        "combined_margin_delta_vs_production": -6.66,
+        "combined_total_delta_vs_production": -6.56,
         "sharp_margin_delta": 0.0,
         "sharp_total_delta": 0.0,
         "sharp_signals_applied": []
