@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-11-06T12:25:31.163226+00:00",
+  "generated_at_utc": "2026-11-06T19:40:06.283083+00:00",
   "status": "ok",
   "production_modified": false,
   "baseline_model_version": "nfl-v2",
@@ -16,9 +16,9 @@
   "note": "External signals were not available historically across the full 577-game backtest, so current deltas are prospective. Accuracy/Brier/MAE comparison begins as these shadow forecasts settle.",
   "summary": {
     "games": 15,
-    "games_changed_by_availability": 5,
-    "games_changed_by_combined": 5,
-    "availability_x_signals_available": 12,
+    "games_changed_by_availability": 6,
+    "games_changed_by_combined": 6,
+    "availability_x_signals_available": 15,
     "sharp_ledger_picks": 0,
     "sharp_production_weight": 0.0
   },
@@ -41,29 +41,16 @@
         "predicted_winner": "Jacksonville Jaguars"
       },
       "availability_shadow": {
-        "predicted_home_points": 19.14,
+        "predicted_home_points": 21.0,
         "predicted_away_points": 25.19,
-        "predicted_margin": -6.05,
-        "predicted_total": 44.34,
-        "home_win_probability": 0.3028,
-        "away_win_probability": 0.6972,
+        "predicted_margin": -4.19,
+        "predicted_total": 46.19,
+        "home_win_probability": 0.3594,
+        "away_win_probability": 0.6406,
         "predicted_winner": "Jacksonville Jaguars",
-        "availability_margin_delta": -1.95,
-        "availability_total_delta": -1.76,
+        "availability_margin_delta": -0.09,
+        "availability_total_delta": 0.09,
         "signals_applied": [
-          {
-            "team": "BAL",
-            "player": "Lamar Jackson",
-            "position": "QB",
-            "status": "out",
-            "confidence": 0.4123,
-            "base_points": 4.5,
-            "point_impact": 1.855,
-            "source": "@AdamSchefter",
-            "published_at_utc": "2026-11-04T12:24:17.000Z",
-            "url": "https://x.com/AdamSchefter/status/2117956094878175244",
-            "text": "Sources: tests revealed that Ravens\u2019 QB Tyler \u201cSnoop\u201d Huntley suffered a season-ending turf toe injury. Ravens QB Lamar Jackson is out indefinitely with a thumb injury, Huntley\u2019s season is over due to turf toe, and QB Joe Fagnano will start Thursday night vs. Jacksonville. https://t.co/Cok4gbSvH3"
-          },
           {
             "team": "BAL",
             "player": "Kyle Hamilton",
@@ -93,15 +80,15 @@
         ]
       },
       "combined_shadow": {
-        "predicted_home_points": 19.14,
+        "predicted_home_points": 21.0,
         "predicted_away_points": 25.19,
-        "predicted_margin": -6.05,
-        "predicted_total": 44.34,
-        "home_win_probability": 0.3028,
-        "away_win_probability": 0.6972,
+        "predicted_margin": -4.19,
+        "predicted_total": 46.19,
+        "home_win_probability": 0.3594,
+        "away_win_probability": 0.6406,
         "predicted_winner": "Jacksonville Jaguars",
-        "combined_margin_delta_vs_production": -1.95,
-        "combined_total_delta_vs_production": -1.76,
+        "combined_margin_delta_vs_production": -0.09,
+        "combined_total_delta_vs_production": 0.09,
         "sharp_margin_delta": 0.0,
         "sharp_total_delta": 0.0,
         "sharp_signals_applied": []
@@ -125,27 +112,41 @@
         "predicted_winner": "Cincinnati Bengals"
       },
       "availability_shadow": {
-        "predicted_home_points": 22.3,
+        "predicted_home_points": 21.66,
         "predicted_away_points": 25.5,
-        "predicted_margin": -3.2,
-        "predicted_total": 47.8,
-        "home_win_probability": 0.3911,
-        "away_win_probability": 0.6089,
+        "predicted_margin": -3.84,
+        "predicted_total": 47.16,
+        "home_win_probability": 0.3708,
+        "away_win_probability": 0.6292,
         "predicted_winner": "Cincinnati Bengals",
-        "availability_margin_delta": 0.0,
-        "availability_total_delta": 0.0,
-        "signals_applied": []
+        "availability_margin_delta": -0.64,
+        "availability_total_delta": -0.63,
+        "signals_applied": [
+          {
+            "team": "ATL",
+            "player": "Brian Robinson Jr",
+            "position": "RB",
+            "status": "out",
+            "confidence": 0.6349,
+            "base_points": 1.0,
+            "point_impact": 0.635,
+            "source": "@RapSheet",
+            "published_at_utc": "2026-11-06T13:33:17.000Z",
+            "url": "https://x.com/RapSheet/status/2118698237242814870",
+            "text": "The #Falcons have corrected their injury report, ruling RB Brian Robinson Jr. (hamstring) out. Pass-rusher James Pearce Jr. is dealing with a back issue and is questionable."
+          }
+        ]
       },
       "combined_shadow": {
-        "predicted_home_points": 22.3,
+        "predicted_home_points": 21.66,
         "predicted_away_points": 25.5,
-        "predicted_margin": -3.2,
-        "predicted_total": 47.8,
-        "home_win_probability": 0.3911,
-        "away_win_probability": 0.6089,
+        "predicted_margin": -3.84,
+        "predicted_total": 47.16,
+        "home_win_probability": 0.3708,
+        "away_win_probability": 0.6292,
         "predicted_winner": "Cincinnati Bengals",
-        "combined_margin_delta_vs_production": 0.0,
-        "combined_total_delta_vs_production": 0.0,
+        "combined_margin_delta_vs_production": -0.64,
+        "combined_total_delta_vs_production": -0.63,
         "sharp_margin_delta": 0.0,
         "sharp_total_delta": 0.0,
         "sharp_signals_applied": []
