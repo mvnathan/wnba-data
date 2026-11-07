@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Live Monitor | Research Prototype</title>
+<style>
+:root{color-scheme:dark;font-family:system-ui,-apple-system,sans-serif;background:#0b1020;color:#f3f6ff}
+body{margin:0;max-width:820px;padding:24px 18px 90px;margin-inline:auto}header{display:flex;justify-content:space-between;align-items:center}
+h1{font-size:1.8rem;margin-bottom:4px}.muted{color:#aab4c8}.card{background:#172038;border:1px solid #34415d;border-radius:16px;padding:18px;margin:16px 0}
+label{display:flex;align-items:center;gap:12px;padding:10px 0}input[type=checkbox]{width:20px;height:20px;accent-color:#62d6bd}
+button{background:#62d6bd;color:#09131d;font-weight:700;border:0;border-radius:12px;padding:15px;width:100%;font-size:1rem}
+button.stop{background:#f7a5a5}.pill{font-size:.8rem;padding:6px 10px;border-radius:99px;background:#33415a}
+.note{border-left:3px solid #e3b66d;padding-left:12px;font-size:.9rem}.small{font-size:.8rem}
+</style></head><body>
+<header><div><h1>Live Market Monitor</h1><div class="muted">Select games · Select markets · Activate on demand</div></div><span class="pill" id="state">OFFLINE</span></header>
+<div class="card"><h2>Games</h2><p class="muted">Live game discovery requires the backend. These are illustrative only.</p><div id="games"></div></div>
+<div class="card"><h2>Markets</h2><div id="markets"></div><p class="muted small">Actual DraftKings availability will be discovered from the licensed provider. Unsupported prediction models are labeled UNMODELED.</p></div>
+<div class="card"><h2>Session</h2><p id="summary" class="muted"></p><button id="toggle">Preview selected session</button><p class="note">Prototype only. No API connection, live monitoring, alerts, or betting is active.</p></div>
+<script>
+const games=[["nba-demo","NBA · Example matchup"],["wnba-demo","WNBA · Example matchup"]];
+const markets=["Full game","1st half","2nd half","Current quarter","Next quarter","Team totals","Alternate lines","Player props","Other DraftKings markets"];
+function renderOptions(id,values){document.getElementById(id).innerHTML=values.map(([value,label])=>'<label><input type="checkbox" value="'+value+'">'+label+'</label>').join('')}
+renderOptions("games",games);renderOptions("markets",markets.map(x=>[x,x]));
+let preview=false;
+function selected(id){return [...document.querySelectorAll('#'+id+' input:checked')].map(x=>x.value)}
+function update(){document.getElementById("summary").textContent=selected("games").length+" game(s) · "+selected("markets").length+" market group(s) selected";document.getElementById("state").textContent=preview?"PREVIEW":"OFFLINE"}
+document.querySelectorAll("input").forEach(x=>x.addEventListener("change",update));
+document.getElementById("toggle").addEventListener("click",()=>{preview=!preview;document.getElementById("toggle").textContent=preview?"End preview":"Preview selected session";document.getElementById("toggle").classList.toggle("stop",preview);update()});update();
+</script></body></html>
