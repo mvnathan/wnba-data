@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-11-07T19:01:19.812993+00:00",
+  "generated_at_utc": "2026-11-07T23:55:33.411977+00:00",
   "status": "ok",
   "production_modified": false,
   "baseline_model_version": "nfl-v2",
@@ -16,9 +16,9 @@
   "note": "External signals were not available historically across the full 577-game backtest, so current deltas are prospective. Accuracy/Brier/MAE comparison begins as these shadow forecasts settle.",
   "summary": {
     "games": 14,
-    "games_changed_by_availability": 7,
-    "games_changed_by_combined": 7,
-    "availability_x_signals_available": 22,
+    "games_changed_by_availability": 8,
+    "games_changed_by_combined": 8,
+    "availability_x_signals_available": 26,
     "sharp_ledger_picks": 0,
     "sharp_production_weight": 0.0
   },
@@ -290,26 +290,40 @@
       },
       "availability_shadow": {
         "predicted_home_points": 23.1,
-        "predicted_away_points": 21.9,
-        "predicted_margin": 1.2,
-        "predicted_total": 45.0,
-        "home_win_probability": 0.5399,
-        "away_win_probability": 0.4601,
+        "predicted_away_points": 20.87,
+        "predicted_margin": 2.23,
+        "predicted_total": 43.97,
+        "home_win_probability": 0.5762,
+        "away_win_probability": 0.4238,
         "predicted_winner": "New Orleans Saints",
-        "availability_margin_delta": 0.0,
-        "availability_total_delta": 0.0,
-        "signals_applied": []
+        "availability_margin_delta": 1.03,
+        "availability_total_delta": -1.03,
+        "signals_applied": [
+          {
+            "team": "CLE",
+            "player": "Deshaun Watson",
+            "position": "QB",
+            "status": "questionable",
+            "confidence": 0.5074,
+            "base_points": 4.5,
+            "point_impact": 1.027,
+            "source": "@AdamSchefter",
+            "published_at_utc": "2026-11-07T18:07:06.000Z",
+            "url": "https://x.com/AdamSchefter/status/2119129531399241943",
+            "text": "Browns QB Deshaun Watson now has cleared concussion protocol and remains questionable for Sunday\u2019s game at New Orleans."
+          }
+        ]
       },
       "combined_shadow": {
         "predicted_home_points": 23.1,
-        "predicted_away_points": 21.9,
-        "predicted_margin": 1.2,
-        "predicted_total": 45.0,
-        "home_win_probability": 0.5399,
-        "away_win_probability": 0.4601,
+        "predicted_away_points": 20.87,
+        "predicted_margin": 2.23,
+        "predicted_total": 43.97,
+        "home_win_probability": 0.5762,
+        "away_win_probability": 0.4238,
         "predicted_winner": "New Orleans Saints",
-        "combined_margin_delta_vs_production": 0.0,
-        "combined_total_delta_vs_production": 0.0,
+        "combined_margin_delta_vs_production": 1.03,
+        "combined_total_delta_vs_production": -1.03,
         "sharp_margin_delta": 0.0,
         "sharp_total_delta": 0.0,
         "sharp_signals_applied": []
