@@ -1,11 +1,11 @@
 {
-  "generated_at_utc": "2026-11-07T06:16:39.273612+00:00",
+  "generated_at_utc": "2026-11-07T13:21:24.198523+00:00",
   "status": "ok",
   "production_adjustment_enabled": false,
-  "new_posts_seen": 1,
+  "new_posts_seen": 0,
   "new_picks_parsed": 0,
   "ledger_size": 0,
-  "since_id_used": "2118773044051403154",
+  "since_id_used": "2118800701120008383",
   "newest_id": "2118800701120008383",
   "accounts": {
     "@RufusPeabody": {
@@ -60,15 +60,7 @@
     }
   },
   "new_picks": [],
-  "candidate_posts": [
-    {
-      "post_id": "2118800701120008383",
-      "source": "@wheatonbrando",
-      "published_at_utc": "2026-11-06T20:20:27.000Z",
-      "text": "its a weird nfl slate on sunday.\n\nwhat's something specific you're watching for?\n\nbest pick may make this week's newsletter!",
-      "url": "https://x.com/wheatonbrando/status/2118800701120008383"
-    }
-  ],
+  "candidate_posts": [],
   "promotion_thresholds": {
     "minimum_graded_picks": 100,
     "minimum_positive_clv_rate": 0.52,
