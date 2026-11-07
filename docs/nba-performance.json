@@ -1,14 +1,14 @@
 {
-  "generated_at_utc": "2026-11-06T23:33:00.669649+00:00",
+  "generated_at_utc": "2026-11-07T02:23:35.795043+00:00",
   "method": "Earliest committed pregame NBA forecast and market line joined to ESPN final score by game ID",
   "summary": {
-    "n": 184,
+    "n": 186,
     "ml": {
-      "wins": 115,
+      "wins": 117,
       "losses": 69,
       "pushes": 0,
-      "graded": 184,
-      "rate": 0.625
+      "graded": 186,
+      "rate": 0.6290322580645161
     },
     "ats": {
       "wins": 3,
@@ -26,6 +26,52 @@
     }
   },
   "games": [
+    {
+      "game_id": "401909287",
+      "game_date_utc": "2026-11-07T00:00Z",
+      "home_team": "Atlanta Hawks",
+      "away_team": "Washington Wizards",
+      "home_abbr": "ATL",
+      "away_abbr": "WSH",
+      "prediction_issued_at": "2026-11-06T02:47:58.755419+00:00",
+      "prediction_commit": "523e1d73",
+      "home_win_probability": 0.6219601117988414,
+      "predicted_margin": 4.9280322841326765,
+      "predicted_total": 230.36882623151183,
+      "actual_home_score": 139.0,
+      "actual_away_score": 132.0,
+      "actual_margin": 7.0,
+      "actual_total": 271.0,
+      "winner_correct": true,
+      "market_home_spread": null,
+      "market_total": null,
+      "market_bookmaker": null,
+      "ats_result": null,
+      "ou_result": null
+    },
+    {
+      "game_id": "401909288",
+      "game_date_utc": "2026-11-07T00:00Z",
+      "home_team": "Charlotte Hornets",
+      "away_team": "Boston Celtics",
+      "home_abbr": "CHA",
+      "away_abbr": "BOS",
+      "prediction_issued_at": "2026-11-06T02:47:58.755419+00:00",
+      "prediction_commit": "523e1d73",
+      "home_win_probability": 0.2536,
+      "predicted_margin": -8.42,
+      "predicted_total": 215.6,
+      "actual_home_score": 80.0,
+      "actual_away_score": 119.0,
+      "actual_margin": -39.0,
+      "actual_total": 199.0,
+      "winner_correct": true,
+      "market_home_spread": null,
+      "market_total": null,
+      "market_bookmaker": null,
+      "ats_result": null,
+      "ou_result": null
+    },
     {
       "game_id": "401909936",
       "game_date_utc": "2026-11-06T02:00Z",
