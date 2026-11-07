@@ -1,12 +1,12 @@
 {
-  "generated_at_utc": "2026-11-06T19:35:07.755162+00:00",
+  "generated_at_utc": "2026-11-07T06:16:39.273612+00:00",
   "status": "ok",
   "production_adjustment_enabled": false,
   "new_posts_seen": 1,
   "new_picks_parsed": 0,
   "ledger_size": 0,
-  "since_id_used": "2118498794455408731",
-  "newest_id": "2118773044051403154",
+  "since_id_used": "2118773044051403154",
+  "newest_id": "2118800701120008383",
   "accounts": {
     "@RufusPeabody": {
       "tier": "established_professional",
@@ -62,11 +62,11 @@
   "new_picks": [],
   "candidate_posts": [
     {
-      "post_id": "2118773044051403154",
-      "source": "@capjack2000",
-      "published_at_utc": "2026-11-06T18:30:33.000Z",
-      "text": "@JoeyKnish22 I don't think I said that. I'm just pointing out how medical debt works. It's all negotiable. \n\nThere's a downside of ignoring medical debt in that your SSN gets sold for pennies on the dollar. Over and over as debt gets resold. That can have some real consequences.",
-      "url": "https://x.com/capjack2000/status/2118773044051403154"
+      "post_id": "2118800701120008383",
+      "source": "@wheatonbrando",
+      "published_at_utc": "2026-11-06T20:20:27.000Z",
+      "text": "its a weird nfl slate on sunday.\n\nwhat's something specific you're watching for?\n\nbest pick may make this week's newsletter!",
+      "url": "https://x.com/wheatonbrando/status/2118800701120008383"
     }
   ],
   "promotion_thresholds": {
