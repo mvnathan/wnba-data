@@ -1,12 +1,12 @@
 {
-  "generated_at_utc": "2026-11-08T13:41:40.838666+00:00",
+  "generated_at_utc": "2026-11-08T22:18:05.934646+00:00",
   "status": "ok",
   "production_adjustment_enabled": false,
-  "new_posts_seen": 0,
+  "new_posts_seen": 6,
   "new_picks_parsed": 0,
   "ledger_size": 0,
   "since_id_used": "2119111827015798981",
-  "newest_id": "2119111827015798981",
+  "newest_id": "2119545884782596292",
   "accounts": {
     "@RufusPeabody": {
       "tier": "established_professional",
@@ -60,7 +60,50 @@
     }
   },
   "new_picks": [],
-  "candidate_posts": [],
+  "candidate_posts": [
+    {
+      "post_id": "2119545884782596292",
+      "source": "@wheatonbrando",
+      "published_at_utc": "2026-11-08T21:41:32.000Z",
+      "text": "If you had the Browns Saints under, you just gotta log off for the day, go outside, and take a week off. \ud83e\udd2e",
+      "url": "https://x.com/wheatonbrando/status/2119545884782596292"
+    },
+    {
+      "post_id": "2119539686335270971",
+      "source": "@iamrahstradamus",
+      "published_at_utc": "2026-11-08T21:16:55.000Z",
+      "text": "I'm still not sure why Dak was looking to throw deep on that last past to CeeDee. The goal should have been to move the chains, pick up the first down and bleed clock. You didn't need to score as fast as possible.",
+      "url": "https://x.com/iamrahstradamus/status/2119539686335270971"
+    },
+    {
+      "post_id": "2119539063703372068",
+      "source": "@iamrahstradamus",
+      "published_at_utc": "2026-11-08T21:14:26.000Z",
+      "text": "The Cowboys are about to lose a game in which they put up 6.9 yards per play, 8.1 yards per pass and nearly 500 yards of offense nearly doubling their opponent. It's a total complete joke what this franchise has become.",
+      "url": "https://x.com/iamrahstradamus/status/2119539063703372068"
+    },
+    {
+      "post_id": "2119512101979083216",
+      "source": "@iamrahstradamus",
+      "published_at_utc": "2026-11-08T19:27:18.000Z",
+      "text": "I swear every single positive offensive play for the Cowboys has been a penalty. Legit hate this team.",
+      "url": "https://x.com/iamrahstradamus/status/2119512101979083216"
+    },
+    {
+      "post_id": "2119477431027241244",
+      "source": "@capjack2000",
+      "published_at_utc": "2026-11-08T17:09:32.000Z",
+      "text": "@michaelluo Counterpoint: \nJust because SOMEONE has a problem doesn't mean that EVERYONE has a problem.\n\nEducate people before they play and you'll have less of a mess to clean up after.",
+      "url": "https://x.com/capjack2000/status/2119477431027241244"
+    },
+    {
+      "post_id": "2119475720132956195",
+      "source": "@wheatonbrando",
+      "published_at_utc": "2026-11-08T17:02:44.000Z",
+      "text": "@Sebasti66955284 I mean, we have a LONG way to go on a ticket. Lotta wins to lock up, gotta stay healthy, and need some afc help. But this is what MVP level play looks like, no doubt.",
+      "url": "https://x.com/wheatonbrando/status/2119475720132956195"
+    }
+  ],
   "promotion_thresholds": {
     "minimum_graded_picks": 100,
     "minimum_positive_clv_rate": 0.52,
