@@ -1,11 +1,11 @@
 {
-  "generated_at_utc": "2026-11-07T22:05:32.495049+00:00",
+  "generated_at_utc": "2026-11-08T06:22:40.624265+00:00",
   "status": "ok",
   "production_adjustment_enabled": false,
-  "new_posts_seen": 2,
+  "new_posts_seen": 0,
   "new_picks_parsed": 0,
   "ledger_size": 0,
-  "since_id_used": "2118800701120008383",
+  "since_id_used": "2119111827015798981",
   "newest_id": "2119111827015798981",
   "accounts": {
     "@RufusPeabody": {
@@ -60,22 +60,7 @@
     }
   },
   "new_picks": [],
-  "candidate_posts": [
-    {
-      "post_id": "2119111827015798981",
-      "source": "@FezzikSports",
-      "published_at_utc": "2026-11-07T16:56:45.000Z",
-      "text": "You have to love the tout nonsense:\n\n\"My clients ENJOYED a winning MLB year\"\n\nafter the tout won 1 unit.\n\nNever mind the -10, -20, -30 in some other sports......\n\nI had a ultra rare bad year in 2025........   and I reported on it all year long\n\nI made a terrible bet on the Purdue",
-      "url": "https://x.com/FezzikSports/status/2119111827015798981"
-    },
-    {
-      "post_id": "2119078795517046913",
-      "source": "@FezzikSports",
-      "published_at_utc": "2026-11-07T14:45:30.000Z",
-      "text": "CFB New Releases go up in 15 minutes!\n\n+30 Units THIS YEAR 2026\n+78.6 CFB Units in 2025 https://t.co/fd0664R55N",
-      "url": "https://x.com/FezzikSports/status/2119078795517046913"
-    }
-  ],
+  "candidate_posts": [],
   "promotion_thresholds": {
     "minimum_graded_picks": 100,
     "minimum_positive_clv_rate": 0.52,
