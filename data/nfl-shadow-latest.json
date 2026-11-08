@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-11-07T23:55:33.411977+00:00",
+  "generated_at_utc": "2026-11-08T06:39:28.910249+00:00",
   "status": "ok",
   "production_modified": false,
   "baseline_model_version": "nfl-v2",
@@ -16,9 +16,9 @@
   "note": "External signals were not available historically across the full 577-game backtest, so current deltas are prospective. Accuracy/Brier/MAE comparison begins as these shadow forecasts settle.",
   "summary": {
     "games": 14,
-    "games_changed_by_availability": 8,
-    "games_changed_by_combined": 8,
-    "availability_x_signals_available": 26,
+    "games_changed_by_availability": 7,
+    "games_changed_by_combined": 7,
+    "availability_x_signals_available": 24,
     "sharp_ledger_picks": 0,
     "sharp_production_weight": 0.0
   },
@@ -737,41 +737,27 @@
         "predicted_winner": "Minnesota Vikings"
       },
       "availability_shadow": {
-        "predicted_home_points": 21.3,
+        "predicted_home_points": 23.3,
         "predicted_away_points": 23.1,
-        "predicted_margin": -1.8,
-        "predicted_total": 44.4,
-        "home_win_probability": 0.4381,
-        "away_win_probability": 0.5619,
-        "predicted_winner": "Buffalo Bills",
-        "availability_margin_delta": -2.0,
-        "availability_total_delta": -2.1,
-        "signals_applied": [
-          {
-            "team": "MIN",
-            "player": "Carson Wentz",
-            "position": "QB",
-            "status": "out",
-            "confidence": 0.4455,
-            "base_points": 4.5,
-            "point_impact": 2.005,
-            "source": "@AdamSchefter",
-            "published_at_utc": "2026-11-06T00:19:25.000Z",
-            "url": "https://x.com/AdamSchefter/status/2118498450824450189",
-            "text": "More about the Vikings starting QB Carson Wentz against Bills and ruling out QB Kyler Murray due to his hamstring injury, via @SeifertESPN: https://t.co/ZUZczJzB4T"
-          }
-        ]
+        "predicted_margin": 0.2,
+        "predicted_total": 46.5,
+        "home_win_probability": 0.5071,
+        "away_win_probability": 0.4929,
+        "predicted_winner": "Minnesota Vikings",
+        "availability_margin_delta": 0.0,
+        "availability_total_delta": 0.0,
+        "signals_applied": []
       },
       "combined_shadow": {
-        "predicted_home_points": 21.3,
+        "predicted_home_points": 23.3,
         "predicted_away_points": 23.1,
-        "predicted_margin": -1.8,
-        "predicted_total": 44.4,
-        "home_win_probability": 0.4381,
-        "away_win_probability": 0.5619,
-        "predicted_winner": "Buffalo Bills",
-        "combined_margin_delta_vs_production": -2.0,
-        "combined_total_delta_vs_production": -2.1,
+        "predicted_margin": 0.2,
+        "predicted_total": 46.5,
+        "home_win_probability": 0.5071,
+        "away_win_probability": 0.4929,
+        "predicted_winner": "Minnesota Vikings",
+        "combined_margin_delta_vs_production": 0.0,
+        "combined_total_delta_vs_production": 0.0,
         "sharp_margin_delta": 0.0,
         "sharp_total_delta": 0.0,
         "sharp_signals_applied": []
