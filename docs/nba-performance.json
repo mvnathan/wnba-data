@@ -1,14 +1,14 @@
 {
-  "generated_at_utc": "2026-11-07T22:17:46.875400+00:00",
+  "generated_at_utc": "2026-11-08T01:48:52.066417+00:00",
   "method": "Earliest committed pregame NBA forecast and market line joined to ESPN final score by game ID",
   "summary": {
-    "n": 193,
+    "n": 194,
     "ml": {
-      "wins": 123,
+      "wins": 124,
       "losses": 70,
       "pushes": 0,
-      "graded": 193,
-      "rate": 0.6373056994818653
+      "graded": 194,
+      "rate": 0.6391752577319587
     },
     "ats": {
       "wins": 3,
@@ -26,6 +26,29 @@
     }
   },
   "games": [
+    {
+      "game_id": "401909938",
+      "game_date_utc": "2026-11-07T22:00Z",
+      "home_team": "Indiana Pacers",
+      "away_team": "Denver Nuggets",
+      "home_abbr": "IND",
+      "away_abbr": "DEN",
+      "prediction_issued_at": "2026-11-07T02:20:09.841198+00:00",
+      "prediction_commit": "0227c9f2",
+      "home_win_probability": 0.3764810727875875,
+      "predicted_margin": -3.9198266125898,
+      "predicted_total": 230.37576934908026,
+      "actual_home_score": 102.0,
+      "actual_away_score": 114.0,
+      "actual_margin": -12.0,
+      "actual_total": 216.0,
+      "winner_correct": true,
+      "market_home_spread": null,
+      "market_total": null,
+      "market_bookmaker": null,
+      "ats_result": null,
+      "ou_result": null
+    },
     {
       "game_id": "401909287",
       "game_date_utc": "2026-11-07T00:00Z",
