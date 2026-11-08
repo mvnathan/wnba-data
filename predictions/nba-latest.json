@@ -1,6 +1,6 @@
 {
   "sport": "NBA",
-  "generated_at_utc": "2026-11-08T01:47:06.275481+00:00",
+  "generated_at_utc": "2026-11-08T18:03:52.964899+00:00",
   "target_date": "2026-11-08",
   "season": "2026-27",
   "model_version": "nba-v2-roster-four-factors",
@@ -52,10 +52,10 @@
         "mae": 16.052277339680376
       },
       "total_rf": {
-        "mae": 15.750307765858189
+        "mae": 15.750307765858192
       },
       "total_extra_trees": {
-        "mae": 15.823980776889648
+        "mae": 15.823980776889647
       }
     },
     "test": {
@@ -6086,8 +6086,17 @@
           "roster_value": 13.399601605200303
         }
       },
+      "market_bookmaker": "DraftKings",
+      "market_updated_at": "2026-11-08T18:06:38.820599+00:00",
+      "market_home_moneyline": 329,
+      "market_away_moneyline": -420,
+      "market_home_spread": 9.5,
+      "market_away_spread": -9.5,
+      "market_total": 238.5,
       "x_availability_adjustments": [],
-      "model_market_home_win_edge": null
+      "model_market_spread_edge": 4.45,
+      "model_market_total_edge": -5.19,
+      "model_market_home_win_edge": 0.1233
     },
     {
       "game_id": "401909946",
@@ -6123,8 +6132,17 @@
           "roster_value": 12.420725462410314
         }
       },
+      "market_bookmaker": "DraftKings",
+      "market_updated_at": "2026-11-08T18:06:38.820599+00:00",
+      "market_home_moneyline": -191,
+      "market_away_moneyline": 160,
+      "market_home_spread": -5.5,
+      "market_away_spread": 5.5,
+      "market_total": 220.5,
       "x_availability_adjustments": [],
-      "model_market_home_win_edge": null
+      "model_market_spread_edge": 0.86,
+      "model_market_total_edge": 9.84,
+      "model_market_home_win_edge": 0.0838
     },
     {
       "game_id": "401909947",
@@ -6139,12 +6157,12 @@
       "home_team": "Minnesota Timberwolves",
       "away_team": "Utah Jazz",
       "model_version": "nba-v2-roster-four-factors",
-      "home_win_probability": 0.8774877715244735,
-      "away_win_probability": 0.12251222847552645,
-      "predicted_margin": 15.177476635167162,
-      "predicted_total": 227.89126927006262,
-      "predicted_home_points": 121.53437295261489,
-      "predicted_away_points": 106.35689631744773,
+      "home_win_probability": 0.877573433199512,
+      "away_win_probability": 0.12242656680048802,
+      "predicted_margin": 15.185036858155561,
+      "predicted_total": 227.9042235880459,
+      "predicted_home_points": 121.54463022310074,
+      "predicted_away_points": 106.35959336494517,
       "predicted_winner": "Minnesota Timberwolves",
       "roster_context": {
         "home": {
@@ -6160,8 +6178,17 @@
           "roster_value": 11.423893160993131
         }
       },
+      "market_bookmaker": "DraftKings",
+      "market_updated_at": "2026-11-08T18:06:38.820599+00:00",
+      "market_home_moneyline": -650,
+      "market_away_moneyline": 470,
+      "market_home_spread": -12.5,
+      "market_away_spread": 12.5,
+      "market_total": 221.5,
       "x_availability_adjustments": [],
-      "model_market_home_win_edge": null
+      "model_market_spread_edge": 2.69,
+      "model_market_total_edge": 6.4,
+      "model_market_home_win_edge": 0.0459
     },
     {
       "game_id": "401909948",
@@ -6176,12 +6203,12 @@
       "home_team": "Dallas Mavericks",
       "away_team": "Brooklyn Nets",
       "model_version": "nba-v2-roster-four-factors",
-      "home_win_probability": 0.7007892221443889,
-      "away_win_probability": 0.2992107778556111,
-      "predicted_margin": 6.091918370107585,
-      "predicted_total": 225.65844370524857,
-      "predicted_home_points": 115.87518103767808,
-      "predicted_away_points": 109.7832626675705,
+      "home_win_probability": 0.7833683262473892,
+      "away_win_probability": 0.21663167375261083,
+      "predicted_margin": 9.433535480145142,
+      "predicted_total": 226.01185892030463,
+      "predicted_home_points": 117.72269720022489,
+      "predicted_away_points": 108.28916172007975,
       "predicted_winner": "Dallas Mavericks",
       "roster_context": {
         "home": {
@@ -6197,8 +6224,17 @@
           "roster_value": 10.3371628906299
         }
       },
+      "market_bookmaker": "DraftKings",
+      "market_updated_at": "2026-11-08T18:06:38.820599+00:00",
+      "market_home_moneyline": -324,
+      "market_away_moneyline": 261,
+      "market_home_spread": -7.5,
+      "market_away_spread": 7.5,
+      "market_total": 222.5,
       "x_availability_adjustments": [],
-      "model_market_home_win_edge": null
+      "model_market_spread_edge": 1.93,
+      "model_market_total_edge": 3.51,
+      "model_market_home_win_edge": 0.0494
     },
     {
       "game_id": "401909949",
@@ -6234,8 +6270,17 @@
           "roster_value": 11.941139396958707
         }
       },
+      "market_bookmaker": "DraftKings",
+      "market_updated_at": "2026-11-08T18:06:38.820599+00:00",
+      "market_home_moneyline": 530,
+      "market_away_moneyline": -750,
+      "market_home_spread": 13.5,
+      "market_away_spread": -13.5,
+      "market_total": 221.5,
       "x_availability_adjustments": [],
-      "model_market_home_win_edge": null
+      "model_market_spread_edge": 0.89,
+      "model_market_total_edge": 4.05,
+      "model_market_home_win_edge": 0.0161
     },
     {
       "game_id": "401909950",
@@ -6250,12 +6295,12 @@
       "home_team": "LA Clippers",
       "away_team": "New Orleans Pelicans",
       "model_version": "nba-v2-roster-four-factors",
-      "home_win_probability": 0.3897813575783851,
-      "away_win_probability": 0.6102186424216149,
-      "predicted_margin": -4.443092728379132,
-      "predicted_total": 232.23375458494462,
-      "predicted_home_points": 113.89533092828275,
-      "predicted_away_points": 118.33842365666187,
+      "home_win_probability": 0.3891848647986436,
+      "away_win_probability": 0.6108151352013564,
+      "predicted_margin": -4.4523332946824405,
+      "predicted_total": 232.19453118066272,
+      "predicted_home_points": 113.87109894299014,
+      "predicted_away_points": 118.32343223767258,
       "predicted_winner": "New Orleans Pelicans",
       "roster_context": {
         "home": {
@@ -6271,8 +6316,17 @@
           "roster_value": 12.00395226052946
         }
       },
+      "market_bookmaker": "DraftKings",
+      "market_updated_at": "2026-11-08T18:06:38.820599+00:00",
+      "market_home_moneyline": 103,
+      "market_away_moneyline": -121,
+      "market_home_spread": 1.5,
+      "market_away_spread": -1.5,
+      "market_total": 226.5,
       "x_availability_adjustments": [],
-      "model_market_home_win_edge": null
+      "model_market_spread_edge": -2.95,
+      "model_market_total_edge": 5.69,
+      "model_market_home_win_edge": -0.0844
     },
     {
       "game_id": "401909951",
@@ -6308,8 +6362,17 @@
           "roster_value": 11.77311115565334
         }
       },
+      "market_bookmaker": "DraftKings",
+      "market_updated_at": "2026-11-08T18:06:38.820599+00:00",
+      "market_home_moneyline": 346,
+      "market_away_moneyline": -446,
+      "market_home_spread": 10.5,
+      "market_away_spread": -10.5,
+      "market_total": 237.5,
       "x_availability_adjustments": [],
-      "model_market_home_win_edge": null
+      "model_market_spread_edge": 9.24,
+      "model_market_total_edge": -2.48,
+      "model_market_home_win_edge": 0.2788
     }
   ],
   "historical_data_source": "SportsDataverse ESPN NBA bulk releases",
