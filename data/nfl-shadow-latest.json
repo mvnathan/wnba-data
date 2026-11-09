@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-11-08T23:58:41.781125+00:00",
+  "generated_at_utc": "2026-11-09T07:08:13.941570+00:00",
   "status": "ok",
   "production_modified": false,
   "baseline_model_version": "nfl-v2",
@@ -18,7 +18,7 @@
     "games": 6,
     "games_changed_by_availability": 3,
     "games_changed_by_combined": 3,
-    "availability_x_signals_available": 26,
+    "availability_x_signals_available": 23,
     "sharp_ledger_picks": 0,
     "sharp_production_weight": 0.0
   },
@@ -86,26 +86,40 @@
       },
       "availability_shadow": {
         "predicted_home_points": 27.2,
-        "predicted_away_points": 23.3,
-        "predicted_margin": 3.9,
-        "predicted_total": 50.5,
-        "home_win_probability": 0.6325,
-        "away_win_probability": 0.3675,
+        "predicted_away_points": 23.67,
+        "predicted_margin": 3.53,
+        "predicted_total": 50.87,
+        "home_win_probability": 0.6193,
+        "away_win_probability": 0.3807,
         "predicted_winner": "San Francisco 49ers",
-        "availability_margin_delta": 0.0,
-        "availability_total_delta": 0.0,
-        "signals_applied": []
+        "availability_margin_delta": -0.37,
+        "availability_total_delta": 0.37,
+        "signals_applied": [
+          {
+            "team": "SF",
+            "player": "Gracen Halton",
+            "position": "DT",
+            "status": "out",
+            "confidence": 0.7648,
+            "base_points": 0.65,
+            "point_impact": 0.497,
+            "source": "@AdamSchefter",
+            "published_at_utc": "2026-11-09T01:30:37.000Z",
+            "url": "https://x.com/AdamSchefter/status/2119603534102421819",
+            "text": "49ers DT Gracen Halton broke his ankle and is out for the season, per Kyle Shanahan. https://t.co/wB8XKEtzkU"
+          }
+        ]
       },
       "combined_shadow": {
         "predicted_home_points": 27.2,
-        "predicted_away_points": 23.3,
-        "predicted_margin": 3.9,
-        "predicted_total": 50.5,
-        "home_win_probability": 0.6325,
-        "away_win_probability": 0.3675,
+        "predicted_away_points": 23.67,
+        "predicted_margin": 3.53,
+        "predicted_total": 50.87,
+        "home_win_probability": 0.6193,
+        "away_win_probability": 0.3807,
         "predicted_winner": "San Francisco 49ers",
-        "combined_margin_delta_vs_production": 0.0,
-        "combined_total_delta_vs_production": 0.0,
+        "combined_margin_delta_vs_production": -0.37,
+        "combined_total_delta_vs_production": 0.37,
         "sharp_margin_delta": 0.0,
         "sharp_total_delta": 0.0,
         "sharp_signals_applied": []
@@ -187,41 +201,27 @@
         "predicted_winner": "Seattle Seahawks"
       },
       "availability_shadow": {
-        "predicted_home_points": 25.36,
+        "predicted_home_points": 25.7,
         "predicted_away_points": 21.1,
-        "predicted_margin": 4.26,
-        "predicted_total": 46.46,
-        "home_win_probability": 0.6428,
-        "away_win_probability": 0.3572,
+        "predicted_margin": 4.7,
+        "predicted_total": 46.8,
+        "home_win_probability": 0.6551,
+        "away_win_probability": 0.3449,
         "predicted_winner": "Seattle Seahawks",
-        "availability_margin_delta": -0.44,
-        "availability_total_delta": -0.34,
-        "signals_applied": [
-          {
-            "team": "SEA",
-            "player": "Quenton Nelson",
-            "position": "G",
-            "status": "out",
-            "confidence": 0.5678,
-            "base_points": 0.6,
-            "point_impact": 0.341,
-            "source": "@RapSheet",
-            "published_at_utc": "2026-11-06T22:16:57.000Z",
-            "url": "https://x.com/RapSheet/status/2118830021863215410",
-            "text": "#Seahawks G Quenton Nelson will have surgery to clean out some cartilage in his knee, sources say, as fragments had been causing an issue recently. The plan is for Nelson to avoid Injured Reserve, and his timeline is a few weeks. Seattle has two games, then a Week 11 bye. https://t.co/AZyUFzg7Kj"
-          }
-        ]
+        "availability_margin_delta": 0.0,
+        "availability_total_delta": 0.0,
+        "signals_applied": []
       },
       "combined_shadow": {
-        "predicted_home_points": 25.36,
+        "predicted_home_points": 25.7,
         "predicted_away_points": 21.1,
-        "predicted_margin": 4.26,
-        "predicted_total": 46.46,
-        "home_win_probability": 0.6428,
-        "away_win_probability": 0.3572,
+        "predicted_margin": 4.7,
+        "predicted_total": 46.8,
+        "home_win_probability": 0.6551,
+        "away_win_probability": 0.3449,
         "predicted_winner": "Seattle Seahawks",
-        "combined_margin_delta_vs_production": -0.44,
-        "combined_total_delta_vs_production": -0.34,
+        "combined_margin_delta_vs_production": 0.0,
+        "combined_total_delta_vs_production": 0.0,
         "sharp_margin_delta": 0.0,
         "sharp_total_delta": 0.0,
         "sharp_signals_applied": []
