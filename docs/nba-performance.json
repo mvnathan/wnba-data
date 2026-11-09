@@ -1,14 +1,14 @@
 {
-  "generated_at_utc": "2026-11-08T22:27:37.473215+00:00",
+  "generated_at_utc": "2026-11-09T02:00:04.224602+00:00",
   "method": "Earliest committed pregame NBA forecast and market line joined to ESPN final score by game ID",
   "summary": {
-    "n": 200,
+    "n": 202,
     "ml": {
-      "wins": 127,
-      "losses": 73,
+      "wins": 128,
+      "losses": 74,
       "pushes": 0,
-      "graded": 200,
-      "rate": 0.635
+      "graded": 202,
+      "rate": 0.6336633663366337
     },
     "ats": {
       "wins": 3,
@@ -26,6 +26,52 @@
     }
   },
   "games": [
+    {
+      "game_id": "401909946",
+      "game_date_utc": "2026-11-08T23:00Z",
+      "home_team": "Detroit Pistons",
+      "away_team": "Los Angeles Lakers",
+      "home_abbr": "DET",
+      "away_abbr": "LAL",
+      "prediction_issued_at": "2026-11-08T01:47:06.275481+00:00",
+      "prediction_commit": "b3997b82",
+      "home_win_probability": 0.7143040149781251,
+      "predicted_margin": 6.358531629958935,
+      "predicted_total": 230.3384447599451,
+      "actual_home_score": 116.0,
+      "actual_away_score": 121.0,
+      "actual_margin": -5.0,
+      "actual_total": 237.0,
+      "winner_correct": false,
+      "market_home_spread": null,
+      "market_total": null,
+      "market_bookmaker": null,
+      "ats_result": null,
+      "ou_result": null
+    },
+    {
+      "game_id": "401909945",
+      "game_date_utc": "2026-11-08T20:30Z",
+      "home_team": "Chicago Bulls",
+      "away_team": "Philadelphia 76ers",
+      "home_abbr": "CHI",
+      "away_abbr": "PHI",
+      "prediction_issued_at": "2026-11-08T01:47:06.275481+00:00",
+      "prediction_commit": "b3997b82",
+      "home_win_probability": 0.3472564702554254,
+      "predicted_margin": -5.045531601874306,
+      "predicted_total": 233.30569746997702,
+      "actual_home_score": 121.0,
+      "actual_away_score": 127.0,
+      "actual_margin": -6.0,
+      "actual_total": 248.0,
+      "winner_correct": true,
+      "market_home_spread": null,
+      "market_total": null,
+      "market_bookmaker": null,
+      "ats_result": null,
+      "ou_result": null
+    },
     {
       "game_id": "401909939",
       "game_date_utc": "2026-11-08T00:30Z",
