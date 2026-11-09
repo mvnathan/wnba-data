@@ -1,11 +1,11 @@
 {
-  "generated_at_utc": "2026-11-09T06:55:36.434776+00:00",
+  "generated_at_utc": "2026-11-09T22:33:52.884251+00:00",
   "status": "ok",
   "production_adjustment_enabled": false,
-  "new_posts_seen": 1,
+  "new_posts_seen": 0,
   "new_picks_parsed": 0,
   "ledger_size": 0,
-  "since_id_used": "2119545884782596292",
+  "since_id_used": "2119564023901663610",
   "newest_id": "2119564023901663610",
   "accounts": {
     "@RufusPeabody": {
@@ -60,15 +60,7 @@
     }
   },
   "new_picks": [],
-  "candidate_posts": [
-    {
-      "post_id": "2119564023901663610",
-      "source": "@wheatonbrando",
-      "published_at_utc": "2026-11-08T22:53:37.000Z",
-      "text": "@j_ns93 Yes it should, but the game was 6-6 mid 4q and went over lol, these are not the same. Yours stunk for sure, but that\u2019s an all timer",
-      "url": "https://x.com/wheatonbrando/status/2119564023901663610"
-    }
-  ],
+  "candidate_posts": [],
   "promotion_thresholds": {
     "minimum_graded_picks": 100,
     "minimum_positive_clv_rate": 0.52,
