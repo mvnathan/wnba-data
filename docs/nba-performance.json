@@ -1,14 +1,14 @@
 {
-  "generated_at_utc": "2026-11-10T04:22:17.432288+00:00",
+  "generated_at_utc": "2026-11-10T17:52:36.014997+00:00",
   "method": "Earliest committed pregame NBA forecast and market line joined to ESPN final score by game ID",
   "summary": {
-    "n": 214,
+    "n": 215,
     "ml": {
-      "wins": 136,
+      "wins": 137,
       "losses": 78,
       "pushes": 0,
-      "graded": 214,
-      "rate": 0.6355140186915887
+      "graded": 215,
+      "rate": 0.6372093023255814
     },
     "ats": {
       "wins": 3,
@@ -180,6 +180,29 @@
       "actual_away_score": 122.0,
       "actual_margin": -26.0,
       "actual_total": 218.0,
+      "winner_correct": true,
+      "market_home_spread": null,
+      "market_total": null,
+      "market_bookmaker": null,
+      "ats_result": null,
+      "ou_result": null
+    },
+    {
+      "game_id": "401909959",
+      "game_date_utc": "2026-11-10T03:00Z",
+      "home_team": "Golden State Warriors",
+      "away_team": "New Orleans Pelicans",
+      "home_abbr": "GS",
+      "away_abbr": "NO",
+      "prediction_issued_at": "2026-11-09T01:56:23.607196+00:00",
+      "prediction_commit": "619ccb71",
+      "home_win_probability": 0.5955227470765997,
+      "predicted_margin": 2.681597669892418,
+      "predicted_total": 232.60208989970695,
+      "actual_home_score": 138.0,
+      "actual_away_score": 87.0,
+      "actual_margin": 51.0,
+      "actual_total": 225.0,
       "winner_correct": true,
       "market_home_spread": null,
       "market_total": null,
