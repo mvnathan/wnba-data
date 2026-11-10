@@ -1,12 +1,12 @@
 {
-  "generated_at_utc": "2026-11-10T07:32:36.754387+00:00",
+  "generated_at_utc": "2026-11-10T19:52:55.063517+00:00",
   "status": "ok",
   "production_adjustment_enabled": false,
-  "new_posts_seen": 2,
+  "new_posts_seen": 1,
   "new_picks_parsed": 0,
   "ledger_size": 0,
-  "since_id_used": "2119564023901663610",
-  "newest_id": "2120027176648978765",
+  "since_id_used": "2120027176648978765",
+  "newest_id": "2120149969332285684",
   "accounts": {
     "@RufusPeabody": {
       "tier": "established_professional",
@@ -62,18 +62,11 @@
   "new_picks": [],
   "candidate_posts": [
     {
-      "post_id": "2120027176648978765",
-      "source": "@wheatonbrando",
-      "published_at_utc": "2026-11-10T05:34:01.000Z",
-      "text": "Carson Wentz had a -1.00 EPA per play tonight with a -31 CPOE, both in the 1st percentile on his 28 pass plays\n\nis that good?",
-      "url": "https://x.com/wheatonbrando/status/2120027176648978765"
-    },
-    {
-      "post_id": "2119942612882985469",
+      "post_id": "2120149969332285684",
       "source": "@FezzikSports",
-      "published_at_utc": "2026-11-09T23:58:00.000Z",
-      "text": "I ONLY sell my picks at https://t.co/Pekv6QB73V\n\nI do NOT have a website\n\nUse FLASH for a special discount\n\nMNF play going up in 7 minutes!",
-      "url": "https://x.com/FezzikSports/status/2119942612882985469"
+      "published_at_utc": "2026-11-10T13:41:57.000Z",
+      "text": "Obviously, Buf -3+118 Would have been an insanely great bet vs. the closer.\n\nBasically George bet -118 on something he needed +110 on to be around breakeven.\n\nGetting -28 cents on  a bet is insanely bad.\n\nThat's over a 10% ROI loser.\n\nNext time play Triple Green Roulette, you https://t.co/mjf1ahcuKC",
+      "url": "https://x.com/FezzikSports/status/2120149969332285684"
     }
   ],
   "promotion_thresholds": {
