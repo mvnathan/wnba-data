@@ -1,12 +1,12 @@
 {
-  "generated_at_utc": "2026-11-11T06:50:07.338697+00:00",
+  "generated_at_utc": "2026-11-11T19:44:51.693166+00:00",
   "status": "ok",
   "production_adjustment_enabled": false,
-  "new_posts_seen": 1,
+  "new_posts_seen": 2,
   "new_picks_parsed": 0,
   "ledger_size": 0,
-  "since_id_used": "2120149969332285684",
-  "newest_id": "2120357546942959787",
+  "since_id_used": "2120357546942959787",
+  "newest_id": "2120569494301294737",
   "accounts": {
     "@RufusPeabody": {
       "tier": "established_professional",
@@ -62,11 +62,18 @@
   "new_picks": [],
   "candidate_posts": [
     {
-      "post_id": "2120357546942959787",
-      "source": "@iamrahstradamus",
-      "published_at_utc": "2026-11-11T03:26:48.000Z",
-      "text": "Celtics 1H \u2705\nCeltics Full Game  \u2705\nCeltics/76ers over 217.5 \u2705\n\nMy handicaps are generally a combination of my model + eye test + situational spots + whatever data I have. https://t.co/eCvUL8z4X8",
-      "url": "https://x.com/iamrahstradamus/status/2120357546942959787"
+      "post_id": "2120569494301294737",
+      "source": "@wheatonbrando",
+      "published_at_utc": "2026-11-11T17:29:00.000Z",
+      "text": "@YorkshireBlade7 I actually think he\u2019s done a pretty amazing job as a head coach considering how awful the quarterback play has been, but I think his playcalling and OC abilities are pretty highly overrated at this point",
+      "url": "https://x.com/wheatonbrando/status/2120569494301294737"
+    },
+    {
+      "post_id": "2120545241904156889",
+      "source": "@wheatonbrando",
+      "published_at_utc": "2026-11-11T15:52:38.000Z",
+      "text": "if the Vikings start 6-0, fail two QBs and trade away a third that immediately leads a division winner, then trades a top 100 pick for an exiled Kirk Cousins and then *STILL* miss the playoffs\u2026\u2026.\n\nKOC has to be fired, right?? Surely.",
+      "url": "https://x.com/wheatonbrando/status/2120545241904156889"
     }
   ],
   "promotion_thresholds": {
