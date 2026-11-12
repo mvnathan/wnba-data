@@ -1,12 +1,12 @@
 {
-  "generated_at_utc": "2026-11-11T19:44:51.693166+00:00",
+  "generated_at_utc": "2026-11-12T07:27:35.561527+00:00",
   "status": "ok",
   "production_adjustment_enabled": false,
-  "new_posts_seen": 2,
+  "new_posts_seen": 4,
   "new_picks_parsed": 0,
   "ledger_size": 0,
-  "since_id_used": "2120357546942959787",
-  "newest_id": "2120569494301294737",
+  "since_id_used": "2120569494301294737",
+  "newest_id": "2120688166881607996",
   "accounts": {
     "@RufusPeabody": {
       "tier": "established_professional",
@@ -62,18 +62,32 @@
   "new_picks": [],
   "candidate_posts": [
     {
-      "post_id": "2120569494301294737",
-      "source": "@wheatonbrando",
-      "published_at_utc": "2026-11-11T17:29:00.000Z",
-      "text": "@YorkshireBlade7 I actually think he\u2019s done a pretty amazing job as a head coach considering how awful the quarterback play has been, but I think his playcalling and OC abilities are pretty highly overrated at this point",
-      "url": "https://x.com/wheatonbrando/status/2120569494301294737"
+      "post_id": "2120688166881607996",
+      "source": "@iamrahstradamus",
+      "published_at_utc": "2026-11-12T01:20:34.000Z",
+      "text": "Sometimes I don't think these high spreads are priced correctly with how bad some of these NBA teams are. \n\nI don't know what's going to happen nor did I bet it but it feels like the Lakers could have been laying -20.5 against the Bucks tonight and that the opener at -11.5 and",
+      "url": "https://x.com/iamrahstradamus/status/2120688166881607996"
     },
     {
-      "post_id": "2120545241904156889",
-      "source": "@wheatonbrando",
-      "published_at_utc": "2026-11-11T15:52:38.000Z",
-      "text": "if the Vikings start 6-0, fail two QBs and trade away a third that immediately leads a division winner, then trades a top 100 pick for an exiled Kirk Cousins and then *STILL* miss the playoffs\u2026\u2026.\n\nKOC has to be fired, right?? Surely.",
-      "url": "https://x.com/wheatonbrando/status/2120545241904156889"
+      "post_id": "2120687187737841735",
+      "source": "@capjack2000",
+      "published_at_utc": "2026-11-12T01:16:40.000Z",
+      "text": "Those that claim the Titanic was a hoax are having a field day. \n\nIt supposedly sank in under 3 hours.\n\nHowever, today they tried to sink a bigger ship, SS United States, and after 9 hrs it\u2019s still floating\ud83d\udedf\n\nWhat if the Titanic was just an insurance scam some rich people pulled",
+      "url": "https://x.com/capjack2000/status/2120687187737841735"
+    },
+    {
+      "post_id": "2120686195952796097",
+      "source": "@RufusPeabody",
+      "published_at_utc": "2026-11-12T01:12:44.000Z",
+      "text": "@chrisfallica Was my one pick I give each week on @BetTheProcess. Episode dropped 2:55pm ET today. But I\u2019m as surprised as you it moved it that much!",
+      "url": "https://x.com/RufusPeabody/status/2120686195952796097"
+    },
+    {
+      "post_id": "2120685826296184994",
+      "source": "@RufusPeabody",
+      "published_at_utc": "2026-11-12T01:11:16.000Z",
+      "text": "@kpLUCH @BigEisy @chrisfallica I give out one CFB play each week on @BetTheProcess",
+      "url": "https://x.com/RufusPeabody/status/2120685826296184994"
     }
   ],
   "promotion_thresholds": {
