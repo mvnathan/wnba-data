@@ -1,17 +1,17 @@
 {
-  "generated_at_utc": "2026-11-11T14:15:47.352162Z",
+  "generated_at_utc": "2026-11-12T00:39:50.287332Z",
   "metrics": [
     {
       "tour": "ATP",
-      "training_matches": 5153,
-      "holdout_matches": 1031,
+      "training_matches": 5138,
+      "holdout_matches": 1028,
       "holdout_start": "2026-06-29",
       "holdout_end": "2026-11-08",
-      "winner_accuracy": 0.6586,
-      "winner_auc": 0.7214,
-      "winner_log_loss": 0.6138,
-      "winner_brier_score": 0.213,
-      "spread_mae_games": 4.059,
+      "winner_accuracy": 0.6576,
+      "winner_auc": 0.7176,
+      "winner_log_loss": 0.616,
+      "winner_brier_score": 0.2141,
+      "spread_mae_games": 4.09,
       "total_mae_games": 5.523
     },
     {
