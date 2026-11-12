@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-11-12T00:44:49.434216+00:00",
+  "generated_at_utc": "2026-11-12T09:51:16.140251+00:00",
   "status": "ok",
   "direct_model_adjustment_enabled": false,
   "integration_stage": "context_and_edge_reliability_only",
@@ -60,9 +60,9 @@
   },
   "x_source_diagnostics": {
     "status": "ok",
-    "posts": 8,
-    "posts_general": 6,
-    "posts_nba": 2,
+    "posts": 0,
+    "posts_general": 0,
+    "posts_nba": 0,
     "accounts": [
       "AdamSchefter",
       "RapSheet",
@@ -71,8 +71,8 @@
       "ShamsCharania",
       "ChrisBHaynes"
     ],
-    "since_id_used_general": "2120279046651293752",
-    "since_id_used_nba": "2120359557025460299",
+    "since_id_used_general": "2120648072929615904",
+    "since_id_used_nba": "2120668311646093511",
     "newest_id": "2120648072929615904",
     "newest_id_general": "2120648072929615904",
     "newest_id_nba": "2120668311646093511",
@@ -80,6 +80,238 @@
     "query_nba": "(from:ShamsCharania OR from:ChrisBHaynes) (out OR inactive OR doubtful OR questionable OR injury OR injured OR rest OR resting OR \"expected to play\" OR \"will start\" OR \"minutes restriction\" OR \"snap count\" OR \"pitch count\" OR \"will miss\" OR sidelined OR available OR cleared OR starting OR surgery OR sprain OR signed OR waived OR trade OR traded) -is:retweet lang:en"
   },
   "signals": [
+    {
+      "sport": "NFL",
+      "source": "NFL Official Injury Report",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-11-12T09:51:13.782767+00:00",
+      "status_signal": "out",
+      "tactical_flags": [],
+      "confidence": 0.65,
+      "text": "Lucas Patrick C Concussion Did Not Participate In Practice Out",
+      "url": "https://www.nfl.com/injuries/"
+    },
+    {
+      "sport": "NFL",
+      "source": "NFL Official Injury Report",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-11-12T09:51:13.782826+00:00",
+      "status_signal": "out",
+      "tactical_flags": [],
+      "confidence": 0.65,
+      "text": "Colson Yankoff TE Knee Did Not Participate In Practice Out",
+      "url": "https://www.nfl.com/injuries/"
+    },
+    {
+      "sport": "NFL",
+      "source": "NFL Official Injury Report",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-11-12T09:51:13.783023+00:00",
+      "status_signal": "out",
+      "tactical_flags": [],
+      "confidence": 0.65,
+      "text": "Ben Brown C Knee Did Not Participate In Practice Out",
+      "url": "https://www.nfl.com/injuries/"
+    },
+    {
+      "sport": "NFL",
+      "source": "NFL Official Injury Report",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-11-12T09:51:13.783042+00:00",
+      "status_signal": "out",
+      "tactical_flags": [],
+      "confidence": 0.65,
+      "text": "Carlton Davis III CB Knee Did Not Participate In Practice Out",
+      "url": "https://www.nfl.com/injuries/"
+    },
+    {
+      "sport": "NFL",
+      "source": "NFL Official Injury Report",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-11-12T09:51:13.783059+00:00",
+      "status_signal": "out",
+      "tactical_flags": [],
+      "confidence": 0.65,
+      "text": "TreVeyon Henderson RB Illness Did Not Participate In Practice Out",
+      "url": "https://www.nfl.com/injuries/"
+    },
+    {
+      "sport": "NFL",
+      "source": "NFL Official Injury Report",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-11-12T09:51:13.783289+00:00",
+      "status_signal": "out",
+      "tactical_flags": [
+        "expected_to_start"
+      ],
+      "confidence": 0.65,
+      "text": "Sam Darnold ruled out for Seahawks' Week 10 game vs. Raiders; Drew Lock expected to start again",
+      "url": "https://www.nfl.com/injuries/"
+    },
+    {
+      "sport": "NFL",
+      "source": "NFL Official Injury Report",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-11-12T09:51:13.783374+00:00",
+      "status_signal": "out",
+      "tactical_flags": [],
+      "confidence": 0.65,
+      "text": "NFL Network: Ravens' Lamar Jackson (right thumb) out 6-9 weeks, expects to return this season",
+      "url": "https://www.nfl.com/injuries/"
+    },
+    {
+      "sport": "NFL",
+      "source": "NFL Official Injury Report",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-11-12T09:51:13.783391+00:00",
+      "status_signal": "out",
+      "tactical_flags": [],
+      "confidence": 0.65,
+      "text": "NFL Week 9 inactives: Players ruled out for Sunday's 13 games",
+      "url": "https://www.nfl.com/injuries/"
+    },
+    {
+      "sport": "NFL",
+      "source": "NFL Official Injury Report",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-11-12T09:51:13.783412+00:00",
+      "status_signal": "out",
+      "tactical_flags": [],
+      "confidence": 0.65,
+      "text": "NFL news roundup: Jets' Garrett Wilson ruled out; Falcons RB Brian Robinson out for Madrid game",
+      "url": "https://www.nfl.com/injuries/"
+    },
+    {
+      "sport": "NFL",
+      "source": "NFL Official Injury Report",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-11-12T09:51:13.783476+00:00",
+      "status_signal": "out",
+      "tactical_flags": [],
+      "confidence": 0.65,
+      "text": "Report: Ravens QB Tyler Huntley out for season with turf toe injury",
+      "url": "https://www.nfl.com/injuries/"
+    },
+    {
+      "sport": "NFL",
+      "source": "NFL Official Injury Report",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-11-12T09:51:13.783493+00:00",
+      "status_signal": "out",
+      "tactical_flags": [],
+      "confidence": 0.65,
+      "text": "NFL Week 8 inactives: Players ruled out for Sunday's 12 games",
+      "url": "https://www.nfl.com/injuries/"
+    },
+    {
+      "sport": "MLB",
+      "source": "MLB Official Injury Report",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-11-12T09:51:14.925907+00:00",
+      "status_signal": "out",
+      "tactical_flags": [],
+      "confidence": 0.65,
+      "text": "Flaherty strikes out two in first rehab outing, eyes end-of-year return",
+      "url": "https://www.mlb.com/injury-report"
+    },
+    {
+      "sport": "MLB",
+      "source": "MLB Official Injury Report",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-11-12T09:51:14.926099+00:00",
+      "status_signal": "out",
+      "tactical_flags": [],
+      "confidence": 0.65,
+      "text": "Young out for season, but avoids serious injury after 'terrifying' collision with McLean",
+      "url": "https://www.mlb.com/injury-report"
+    },
+    {
+      "sport": "MLB",
+      "source": "MLB Official Injury Report",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-11-12T09:51:14.926210+00:00",
+      "status_signal": "out",
+      "tactical_flags": [],
+      "confidence": 0.65,
+      "text": "Goodman (right thumb soreness) out again on Wednesday",
+      "url": "https://www.mlb.com/injury-report"
+    },
+    {
+      "sport": "NFL",
+      "source": "NFL Official Injury Report",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-11-12T09:51:13.783002+00:00",
+      "status_signal": "questionable",
+      "tactical_flags": [],
+      "confidence": 0.585,
+      "text": "Malik Harrison LB Groin Limited Participation in Practice Questionable",
+      "url": "https://www.nfl.com/injuries/"
+    },
+    {
+      "sport": "NFL",
+      "source": "NFL Official Injury Report",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-11-12T09:51:13.783317+00:00",
+      "status_signal": "probable",
+      "tactical_flags": [],
+      "confidence": 0.585,
+      "text": "NFL news roundup: J.J. McCarthy expected to play Week 10; Justin Herbert avoids finger fracture",
+      "url": "https://www.nfl.com/injuries/"
+    },
+    {
+      "sport": "MLB",
+      "source": "MLB Official Injury Report",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-11-12T09:51:14.925602+00:00",
+      "status_signal": "probable",
+      "tactical_flags": [],
+      "confidence": 0.585,
+      "text": "News Probable Pitchers Awards Starting Lineups Transactions Injury Report World Baseball Classic MLB Draft All-Star Game AUSL MLB Pipeline Postseason History Podcasts International",
+      "url": "https://www.mlb.com/injury-report"
+    },
+    {
+      "sport": "MLB",
+      "source": "MLB Probable Pitchers",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-11-12T09:51:15.270970+00:00",
+      "status_signal": "probable",
+      "tactical_flags": [],
+      "confidence": 0.585,
+      "text": "News Probable Pitchers Awards Starting Lineups Transactions Injury Report World Baseball Classic MLB Draft All-Star Game AUSL MLB Pipeline Postseason History Podcasts International",
+      "url": "https://www.mlb.com/probable-pitchers"
+    },
+    {
+      "sport": "MLB",
+      "source": "MLB Official Injury Report",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-11-12T09:51:14.925791+00:00",
+      "status_signal": null,
+      "tactical_flags": [
+        "rest_candidate"
+      ],
+      "confidence": 0.4875,
+      "text": "Anthony not expected to need surgery: 'Rest is likely the best path to recovery'",
+      "url": "https://www.mlb.com/injury-report"
+    },
     {
       "sport": "NFL",
       "source": "@AdamSchefter",
@@ -94,224 +326,6 @@
     },
     {
       "sport": "NFL",
-      "source": "NFL Official Injury Report",
-      "source_tier": "official",
-      "published_at_utc": null,
-      "fetched_at_utc": "2026-11-12T00:44:47.893461+00:00",
-      "status_signal": "out",
-      "tactical_flags": [],
-      "confidence": 0.65,
-      "text": "Lucas Patrick C Concussion Did Not Participate In Practice Out",
-      "url": "https://www.nfl.com/injuries/"
-    },
-    {
-      "sport": "NFL",
-      "source": "NFL Official Injury Report",
-      "source_tier": "official",
-      "published_at_utc": null,
-      "fetched_at_utc": "2026-11-12T00:44:47.893515+00:00",
-      "status_signal": "out",
-      "tactical_flags": [],
-      "confidence": 0.65,
-      "text": "Colson Yankoff TE Knee Did Not Participate In Practice Out",
-      "url": "https://www.nfl.com/injuries/"
-    },
-    {
-      "sport": "NFL",
-      "source": "NFL Official Injury Report",
-      "source_tier": "official",
-      "published_at_utc": null,
-      "fetched_at_utc": "2026-11-12T00:44:47.893631+00:00",
-      "status_signal": "out",
-      "tactical_flags": [],
-      "confidence": 0.65,
-      "text": "Ben Brown C Knee Did Not Participate In Practice Out",
-      "url": "https://www.nfl.com/injuries/"
-    },
-    {
-      "sport": "NFL",
-      "source": "NFL Official Injury Report",
-      "source_tier": "official",
-      "published_at_utc": null,
-      "fetched_at_utc": "2026-11-12T00:44:47.893643+00:00",
-      "status_signal": "out",
-      "tactical_flags": [],
-      "confidence": 0.65,
-      "text": "Carlton Davis III CB Knee Did Not Participate In Practice Out",
-      "url": "https://www.nfl.com/injuries/"
-    },
-    {
-      "sport": "NFL",
-      "source": "NFL Official Injury Report",
-      "source_tier": "official",
-      "published_at_utc": null,
-      "fetched_at_utc": "2026-11-12T00:44:47.893654+00:00",
-      "status_signal": "out",
-      "tactical_flags": [],
-      "confidence": 0.65,
-      "text": "TreVeyon Henderson RB Illness Did Not Participate In Practice Out",
-      "url": "https://www.nfl.com/injuries/"
-    },
-    {
-      "sport": "NFL",
-      "source": "NFL Official Injury Report",
-      "source_tier": "official",
-      "published_at_utc": null,
-      "fetched_at_utc": "2026-11-12T00:44:47.893795+00:00",
-      "status_signal": "out",
-      "tactical_flags": [
-        "expected_to_start"
-      ],
-      "confidence": 0.65,
-      "text": "Sam Darnold ruled out for Seahawks' Week 10 game vs. Raiders; Drew Lock expected to start again",
-      "url": "https://www.nfl.com/injuries/"
-    },
-    {
-      "sport": "NFL",
-      "source": "NFL Official Injury Report",
-      "source_tier": "official",
-      "published_at_utc": null,
-      "fetched_at_utc": "2026-11-12T00:44:47.893846+00:00",
-      "status_signal": "out",
-      "tactical_flags": [],
-      "confidence": 0.65,
-      "text": "NFL Network: Ravens' Lamar Jackson (right thumb) out 6-9 weeks, expects to return this season",
-      "url": "https://www.nfl.com/injuries/"
-    },
-    {
-      "sport": "NFL",
-      "source": "NFL Official Injury Report",
-      "source_tier": "official",
-      "published_at_utc": null,
-      "fetched_at_utc": "2026-11-12T00:44:47.893857+00:00",
-      "status_signal": "out",
-      "tactical_flags": [],
-      "confidence": 0.65,
-      "text": "NFL Week 9 inactives: Players ruled out for Sunday's 13 games",
-      "url": "https://www.nfl.com/injuries/"
-    },
-    {
-      "sport": "NFL",
-      "source": "NFL Official Injury Report",
-      "source_tier": "official",
-      "published_at_utc": null,
-      "fetched_at_utc": "2026-11-12T00:44:47.893869+00:00",
-      "status_signal": "out",
-      "tactical_flags": [],
-      "confidence": 0.65,
-      "text": "NFL news roundup: Jets' Garrett Wilson ruled out; Falcons RB Brian Robinson out for Madrid game",
-      "url": "https://www.nfl.com/injuries/"
-    },
-    {
-      "sport": "NFL",
-      "source": "NFL Official Injury Report",
-      "source_tier": "official",
-      "published_at_utc": null,
-      "fetched_at_utc": "2026-11-12T00:44:47.893908+00:00",
-      "status_signal": "out",
-      "tactical_flags": [],
-      "confidence": 0.65,
-      "text": "Report: Ravens QB Tyler Huntley out for season with turf toe injury",
-      "url": "https://www.nfl.com/injuries/"
-    },
-    {
-      "sport": "NFL",
-      "source": "NFL Official Injury Report",
-      "source_tier": "official",
-      "published_at_utc": null,
-      "fetched_at_utc": "2026-11-12T00:44:47.893919+00:00",
-      "status_signal": "out",
-      "tactical_flags": [],
-      "confidence": 0.65,
-      "text": "NFL Week 8 inactives: Players ruled out for Sunday's 12 games",
-      "url": "https://www.nfl.com/injuries/"
-    },
-    {
-      "sport": "MLB",
-      "source": "MLB Official Injury Report",
-      "source_tier": "official",
-      "published_at_utc": null,
-      "fetched_at_utc": "2026-11-12T00:44:48.436705+00:00",
-      "status_signal": "out",
-      "tactical_flags": [],
-      "confidence": 0.65,
-      "text": "Flaherty strikes out two in first rehab outing, eyes end-of-year return",
-      "url": "https://www.mlb.com/injury-report"
-    },
-    {
-      "sport": "MLB",
-      "source": "MLB Official Injury Report",
-      "source_tier": "official",
-      "published_at_utc": null,
-      "fetched_at_utc": "2026-11-12T00:44:48.436823+00:00",
-      "status_signal": "out",
-      "tactical_flags": [],
-      "confidence": 0.65,
-      "text": "Young out for season, but avoids serious injury after 'terrifying' collision with McLean",
-      "url": "https://www.mlb.com/injury-report"
-    },
-    {
-      "sport": "MLB",
-      "source": "MLB Official Injury Report",
-      "source_tier": "official",
-      "published_at_utc": null,
-      "fetched_at_utc": "2026-11-12T00:44:48.436892+00:00",
-      "status_signal": "out",
-      "tactical_flags": [],
-      "confidence": 0.65,
-      "text": "Goodman (right thumb soreness) out again on Wednesday",
-      "url": "https://www.mlb.com/injury-report"
-    },
-    {
-      "sport": "NFL",
-      "source": "NFL Official Injury Report",
-      "source_tier": "official",
-      "published_at_utc": null,
-      "fetched_at_utc": "2026-11-12T00:44:47.893617+00:00",
-      "status_signal": "questionable",
-      "tactical_flags": [],
-      "confidence": 0.585,
-      "text": "Malik Harrison LB Groin Limited Participation in Practice Questionable",
-      "url": "https://www.nfl.com/injuries/"
-    },
-    {
-      "sport": "NFL",
-      "source": "NFL Official Injury Report",
-      "source_tier": "official",
-      "published_at_utc": null,
-      "fetched_at_utc": "2026-11-12T00:44:47.893812+00:00",
-      "status_signal": "probable",
-      "tactical_flags": [],
-      "confidence": 0.585,
-      "text": "NFL news roundup: J.J. McCarthy expected to play Week 10; Justin Herbert avoids finger fracture",
-      "url": "https://www.nfl.com/injuries/"
-    },
-    {
-      "sport": "MLB",
-      "source": "MLB Official Injury Report",
-      "source_tier": "official",
-      "published_at_utc": null,
-      "fetched_at_utc": "2026-11-12T00:44:48.436510+00:00",
-      "status_signal": "probable",
-      "tactical_flags": [],
-      "confidence": 0.585,
-      "text": "News Probable Pitchers Awards Starting Lineups Transactions Injury Report World Baseball Classic MLB Draft All-Star Game AUSL MLB Pipeline Postseason History Podcasts International",
-      "url": "https://www.mlb.com/injury-report"
-    },
-    {
-      "sport": "MLB",
-      "source": "MLB Probable Pitchers",
-      "source_tier": "official",
-      "published_at_utc": null,
-      "fetched_at_utc": "2026-11-12T00:44:48.641906+00:00",
-      "status_signal": "probable",
-      "tactical_flags": [],
-      "confidence": 0.585,
-      "text": "News Probable Pitchers Awards Starting Lineups Transactions Injury Report World Baseball Classic MLB Draft All-Star Game AUSL MLB Pipeline Postseason History Podcasts International",
-      "url": "https://www.mlb.com/probable-pitchers"
-    },
-    {
-      "sport": "NFL",
       "source": "@AdamSchefter",
       "source_tier": "trusted_media",
       "published_at_utc": "2026-11-11T20:54:13.000Z",
@@ -321,20 +335,6 @@
       "confidence": 0.5591,
       "text": "Rams HC Sean McVay told reporters that the team will not place Puka Nacua on injured reserve due to roster mechanics, but that the WR still will be out for a \u201csignificant period of time.\u201d https://t.co/QggesIr2Nh",
       "url": "https://x.com/AdamSchefter/status/2120621139525263707"
-    },
-    {
-      "sport": "MLB",
-      "source": "MLB Official Injury Report",
-      "source_tier": "official",
-      "published_at_utc": null,
-      "fetched_at_utc": "2026-11-12T00:44:48.436641+00:00",
-      "status_signal": null,
-      "tactical_flags": [
-        "rest_candidate"
-      ],
-      "confidence": 0.4875,
-      "text": "Anthony not expected to need surgery: 'Rest is likely the best path to recovery'",
-      "url": "https://www.mlb.com/injury-report"
     },
     {
       "sport": "NFL",
@@ -407,36 +407,10 @@
       "confidence": 0.4113,
       "text": "Free-agent DT Jordan Elliott is working out today for the Chicago Bears.",
       "url": "https://x.com/AdamSchefter/status/2120146116482126295"
-    },
-    {
-      "sport": "NFL",
-      "source": "@AdamSchefter",
-      "source_tier": "trusted_media",
-      "published_at_utc": "2026-11-10T02:58:11.000Z",
-      "fetched_at_utc": "2026-11-10T04:07:42.454885+00:00",
-      "status_signal": "questionable",
-      "tactical_flags": [],
-      "confidence": 0.6349,
-      "text": "Bills say CB Christian Benford is questionable to return tonight due to a wrist injury.",
-      "url": "https://x.com/AdamSchefter/status/2119987959164236047"
-    },
-    {
-      "sport": "NFL",
-      "source": "@RapSheet",
-      "source_tier": "trusted_media",
-      "published_at_utc": "2026-11-10T02:33:55.000Z",
-      "fetched_at_utc": "2026-11-10T04:07:42.455014+00:00",
-      "status_signal": null,
-      "tactical_flags": [
-        "rest_candidate"
-      ],
-      "confidence": 0.5109,
-      "text": "#Patriots RB Rhamondre Stevenson is expected to miss the next few weeks because of plantaris tendon issue in the back of his knee, sources say. No surgery, just rest and rehab for Stevenson. https://t.co/qnJngxsP4H",
-      "url": "https://x.com/RapSheet/status/2119981853125808369"
     }
   ],
   "structured": {
-    "generated_at_utc": "2026-11-12T00:44:49.434152+00:00",
+    "generated_at_utc": "2026-11-12T09:51:16.140153+00:00",
     "players": [],
     "teams": {},
     "policy": {
