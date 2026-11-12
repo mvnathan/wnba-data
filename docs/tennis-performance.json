@@ -1,28 +1,28 @@
 {
-  "generated_at_utc": "2026-11-12T00:40:08.629031Z",
+  "generated_at_utc": "2026-11-12T15:09:44.144595Z",
   "method": "Earliest committed pre-match forecast joined to ESPN final scores by match ID",
   "summary": {
-    "matches_evaluated": 1225,
-    "winner_accuracy": 0.6391836734693878,
-    "winner_auc": 0.6906031869703502,
-    "winner_log_loss": 0.6431299282596384,
-    "winner_brier_score": 0.22411617105306125,
-    "spread_mae_games": 4.26073469387755,
-    "spread_bias_games": -0.02857142857142855,
-    "total_mae_games": 5.379510204081632,
-    "total_bias_games": -1.1135510204081631
+    "matches_evaluated": 1226,
+    "winner_accuracy": 0.6386623164763459,
+    "winner_auc": 0.6902889656054213,
+    "winner_log_loss": 0.6432946946620024,
+    "winner_brier_score": 0.22419884159053832,
+    "spread_mae_games": 4.2615008156606855,
+    "spread_bias_games": -0.024306688417618245,
+    "total_mae_games": 5.376101141924959,
+    "total_bias_games": -1.113621533442088
   },
   "by_tour": {
     "ATP": {
-      "matches_evaluated": 538,
-      "winner_accuracy": 0.6263940520446096,
-      "winner_auc": 0.6915905315614617,
-      "winner_log_loss": 0.6321302580095941,
-      "winner_brier_score": 0.22109270654275093,
-      "spread_mae_games": 3.877509293680298,
-      "spread_bias_games": -0.24851301115241634,
-      "total_mae_games": 5.737546468401487,
-      "total_bias_games": -0.48438661710037156
+      "matches_evaluated": 539,
+      "winner_accuracy": 0.6252319109461967,
+      "winner_auc": 0.6908163265306122,
+      "winner_log_loss": 0.6325254403464183,
+      "winner_brier_score": 0.22128635690166978,
+      "spread_mae_games": 3.879962894248609,
+      "spread_bias_games": -0.2384044526901669,
+      "total_mae_games": 5.729128014842301,
+      "total_bias_games": -0.48571428571428554
     },
     "WTA": {
       "matches_evaluated": 687,
@@ -864,6 +864,18 @@
       "spread_bias_games": 0.6,
       "total_mae_games": 4.516666666666667,
       "total_bias_games": -2.366666666666667
+    },
+    {
+      "date": "2026-11-12",
+      "matches_evaluated": 1,
+      "winner_accuracy": 0.0,
+      "winner_auc": null,
+      "winner_log_loss": 0.845133537557827,
+      "winner_brier_score": 0.32547025,
+      "spread_mae_games": 5.2,
+      "spread_bias_games": 5.2,
+      "total_mae_games": 1.1999999999999993,
+      "total_bias_games": -1.1999999999999993
     }
   ],
   "matches": [
@@ -42516,6 +42528,40 @@
       "absolute_margin_error": 9.8,
       "total_error": 4.600000000000001,
       "absolute_total_error": 4.600000000000001
+    },
+    {
+      "match_id": "186549",
+      "target_date": "2026-11-12",
+      "start_time_utc": "2026-11-12T12:00Z",
+      "tour": "ATP",
+      "tournament": "Bybit Stockholm Open",
+      "round": "Quarterfinal",
+      "player_1": "Alex Michelsen",
+      "player_2": "Alejandro Tabilo",
+      "player_1_rank": 35,
+      "player_2_rank": 30,
+      "model_version": "tennis-v3-tournament-context",
+      "prediction_issued_at": "2026-11-12T00:39:50.287332+00:00",
+      "prediction_commit": "3a992513",
+      "player_1_win_probability": 0.5705,
+      "predicted_winner": "Alex Michelsen",
+      "predicted_game_margin_player_1": 2.2,
+      "predicted_total_games": 23.8,
+      "actual_player_1": "Alex Michelsen",
+      "actual_player_2": "Alejandro Tabilo",
+      "actual_player_1_games": 11.0,
+      "actual_player_2_games": 14.0,
+      "actual_margin_player_1": -3.0,
+      "actual_total_games": 25.0,
+      "actual_winner_player_1": false,
+      "final_status": "Final",
+      "winner_correct": false,
+      "brier_score": 0.32547025,
+      "log_loss": 0.845133537557827,
+      "margin_error": 5.2,
+      "absolute_margin_error": 5.2,
+      "total_error": -1.1999999999999993,
+      "absolute_total_error": 1.1999999999999993
     }
   ]
 }
