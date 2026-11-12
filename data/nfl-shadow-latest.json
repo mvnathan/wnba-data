@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-11-12T00:58:20.851340+00:00",
+  "generated_at_utc": "2026-11-12T10:14:20.134115+00:00",
   "status": "ok",
   "production_modified": false,
   "baseline_model_version": "nfl-v2",
@@ -16,9 +16,9 @@
   "note": "External signals were not available historically across the full 577-game backtest, so current deltas are prospective. Accuracy/Brier/MAE comparison begins as these shadow forecasts settle.",
   "summary": {
     "games": 1,
-    "games_changed_by_availability": 1,
-    "games_changed_by_combined": 1,
-    "availability_x_signals_available": 10,
+    "games_changed_by_availability": 0,
+    "games_changed_by_combined": 0,
+    "availability_x_signals_available": 8,
     "sharp_ledger_picks": 0,
     "sharp_production_weight": 0.0
   },
@@ -41,41 +41,27 @@
         "predicted_winner": "Minnesota Vikings"
       },
       "availability_shadow": {
-        "predicted_home_points": 23.47,
+        "predicted_home_points": 23.3,
         "predicted_away_points": 23.1,
-        "predicted_margin": 0.37,
-        "predicted_total": 46.57,
-        "home_win_probability": 0.5128,
-        "away_win_probability": 0.4872,
+        "predicted_margin": 0.2,
+        "predicted_total": 46.5,
+        "home_win_probability": 0.5071,
+        "away_win_probability": 0.4929,
         "predicted_winner": "Minnesota Vikings",
-        "availability_margin_delta": 0.17,
-        "availability_total_delta": 0.07,
-        "signals_applied": [
-          {
-            "team": "BUF",
-            "player": "Christian Benford",
-            "position": "CB",
-            "status": "questionable",
-            "confidence": 0.6349,
-            "base_points": 0.8,
-            "point_impact": 0.229,
-            "source": "@AdamSchefter",
-            "published_at_utc": "2026-11-10T02:58:11.000Z",
-            "url": "https://x.com/AdamSchefter/status/2119987959164236047",
-            "text": "Bills say CB Christian Benford is questionable to return tonight due to a wrist injury."
-          }
-        ]
+        "availability_margin_delta": 0.0,
+        "availability_total_delta": 0.0,
+        "signals_applied": []
       },
       "combined_shadow": {
-        "predicted_home_points": 23.47,
+        "predicted_home_points": 23.3,
         "predicted_away_points": 23.1,
-        "predicted_margin": 0.37,
-        "predicted_total": 46.57,
-        "home_win_probability": 0.5128,
-        "away_win_probability": 0.4872,
+        "predicted_margin": 0.2,
+        "predicted_total": 46.5,
+        "home_win_probability": 0.5071,
+        "away_win_probability": 0.4929,
         "predicted_winner": "Minnesota Vikings",
-        "combined_margin_delta_vs_production": 0.17,
-        "combined_total_delta_vs_production": 0.07,
+        "combined_margin_delta_vs_production": 0.0,
+        "combined_total_delta_vs_production": 0.0,
         "sharp_margin_delta": 0.0,
         "sharp_total_delta": 0.0,
         "sharp_signals_applied": []
