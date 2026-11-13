@@ -1,12 +1,12 @@
 {
-  "generated_at_utc": "2026-11-12T20:10:56.695159+00:00",
+  "generated_at_utc": "2026-11-13T06:58:50.591433+00:00",
   "status": "ok",
   "production_adjustment_enabled": false,
-  "new_posts_seen": 2,
+  "new_posts_seen": 1,
   "new_picks_parsed": 0,
   "ledger_size": 0,
-  "since_id_used": "2120688166881607996",
-  "newest_id": "2120931578620653721",
+  "since_id_used": "2120931578620653721",
+  "newest_id": "2121038579346629088",
   "accounts": {
     "@RufusPeabody": {
       "tier": "established_professional",
@@ -62,18 +62,11 @@
   "new_picks": [],
   "candidate_posts": [
     {
-      "post_id": "2120931578620653721",
-      "source": "@wheatonbrando",
-      "published_at_utc": "2026-11-12T17:27:48.000Z",
-      "text": "@MaskedMyles Fine, he can be top five that one season.\n\nI honestly don\u2019t care that much, and there are never five running backs in a season important enough to even bother ranking a top five year by year.\n\nAt that one moment in time he was probably top five for that part of the season when",
-      "url": "https://x.com/wheatonbrando/status/2120931578620653721"
-    },
-    {
-      "post_id": "2120923417901662276",
-      "source": "@wheatonbrando",
-      "published_at_utc": "2026-11-12T16:55:22.000Z",
-      "text": "@MaskedMyles I wanted no part of him as a Vikings fan. I\u2019m so relieved they did not waste a good draft pick trading for a player that is pretty clearly a one dimensional product of the league\u2018s best run blocking line, plus injury prone and very expensive. He\u2019s good not great.",
-      "url": "https://x.com/wheatonbrando/status/2120923417901662276"
+      "post_id": "2121038579346629088",
+      "source": "@FezzikSports",
+      "published_at_utc": "2026-11-13T00:32:58.000Z",
+      "text": "I ONLY sell my picks at https://t.co/NUJQCrd3YF\n\nI am ON UNDER 43 (released very early in the week).\n\nI have 3 leans tonight ONLY available at SIC!\n\nI mentioned the other day that my DraftKings exclusive plays\u00a0can be found only on my Juice Reel profile.\n\nIf you want to check out",
+      "url": "https://x.com/FezzikSports/status/2121038579346629088"
     }
   ],
   "promotion_thresholds": {
