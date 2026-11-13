@@ -1,12 +1,12 @@
 {
-  "generated_at_utc": "2026-11-13T06:58:50.591433+00:00",
+  "generated_at_utc": "2026-11-13T19:54:06.490397+00:00",
   "status": "ok",
   "production_adjustment_enabled": false,
   "new_posts_seen": 1,
   "new_picks_parsed": 0,
   "ledger_size": 0,
-  "since_id_used": "2120931578620653721",
-  "newest_id": "2121038579346629088",
+  "since_id_used": "2121038579346629088",
+  "newest_id": "2121291439602602426",
   "accounts": {
     "@RufusPeabody": {
       "tier": "established_professional",
@@ -62,11 +62,11 @@
   "new_picks": [],
   "candidate_posts": [
     {
-      "post_id": "2121038579346629088",
-      "source": "@FezzikSports",
-      "published_at_utc": "2026-11-13T00:32:58.000Z",
-      "text": "I ONLY sell my picks at https://t.co/NUJQCrd3YF\n\nI am ON UNDER 43 (released very early in the week).\n\nI have 3 leans tonight ONLY available at SIC!\n\nI mentioned the other day that my DraftKings exclusive plays\u00a0can be found only on my Juice Reel profile.\n\nIf you want to check out",
-      "url": "https://x.com/FezzikSports/status/2121038579346629088"
+      "post_id": "2121291439602602426",
+      "source": "@wheatonbrando",
+      "published_at_utc": "2026-11-13T17:17:45.000Z",
+      "text": "@AndyGlockner It was a brilliant play by McCaffrey and this rule has been around forever. How about don\u2019t kick it out of bounds",
+      "url": "https://x.com/wheatonbrando/status/2121291439602602426"
     }
   ],
   "promotion_thresholds": {
