@@ -1,0 +1,44 @@
+{
+  "generated_at_utc": "2026-10-15T21:28:00Z",
+  "strategy_date": "2026-10-15",
+  "simulation_only": true,
+  "real_money_enabled": false,
+  "source": "Prospective Daily Strategy refresh",
+  "issued": [
+    {
+      "sport": "MLB",
+      "event": "Milwaukee Brewers @ Los Angeles Dodgers",
+      "game_id": "849810",
+      "scheduled_start_utc": "2026-10-16T00:00:00Z",
+      "market": "moneyline",
+      "selection": "Milwaukee Brewers",
+      "line": "+130",
+      "units": 0.5,
+      "model_win_probability": 0.4742,
+      "market_home_moneyline": -157,
+      "market_away_moneyline": 130,
+      "note": "Issued prospectively from fresh pregame snapshot; qualifies on no-vig moneyline edge."
+    }
+  ],
+  "excluded": [
+    {
+      "sport": "NFL",
+      "event": "Seattle Seahawks @ Denver Broncos",
+      "market": "total",
+      "line": "40.5",
+      "model_total": 45.5,
+      "raw_edge": 5.05,
+      "reason": "NFL totals temporarily excluded due to weak cumulative leakage-safe O/U performance (26-44, 37.1%)."
+    },
+    {
+      "sport": "NBA",
+      "event": "Toronto Raptors @ New York Knicks",
+      "reason": "Preseason excluded from Daily Strategy."
+    },
+    {
+      "sport": "NBA",
+      "event": "Oklahoma City Thunder @ Houston Rockets",
+      "reason": "Preseason excluded from Daily Strategy."
+    }
+  ]
+}
