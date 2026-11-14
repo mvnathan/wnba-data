@@ -1,12 +1,12 @@
 {
-  "generated_at_utc": "2026-11-14T06:47:02.762656+00:00",
+  "generated_at_utc": "2026-11-14T18:20:37.844136+00:00",
   "status": "ok",
   "production_adjustment_enabled": false,
-  "new_posts_seen": 4,
+  "new_posts_seen": 1,
   "new_picks_parsed": 0,
   "ledger_size": 0,
-  "since_id_used": "2121291439602602426",
-  "newest_id": "2121460467956596787",
+  "since_id_used": "2121460467956596787",
+  "newest_id": "2121618405996331106",
   "accounts": {
     "@RufusPeabody": {
       "tier": "established_professional",
@@ -62,32 +62,11 @@
   "new_picks": [],
   "candidate_posts": [
     {
-      "post_id": "2121460467956596787",
+      "post_id": "2121618405996331106",
       "source": "@wheatonbrando",
-      "published_at_utc": "2026-11-14T04:29:25.000Z",
-      "text": "@CWGSH Right. Just like it doesn\u2019t hurt Josh to have the best power run game in the league, a top three offensive line, a great play caller, and a versatile top five tight end room.\n\nI promise you, more than one QB can be really good. The entire league doesn\u2019t have to be just your story",
-      "url": "https://x.com/wheatonbrando/status/2121460467956596787"
-    },
-    {
-      "post_id": "2121445333561757964",
-      "source": "@iamrahstradamus",
-      "published_at_utc": "2026-11-14T03:29:16.000Z",
-      "text": "Tie game going into OT with the Bulls being 19-of-45 from 3 and the Hawks being 8-of-34. Bulls shooting well over expectation with them shooting 29% from 3 for the year. Bulls outshooting the Hawks from the field too. Hawks have more field goal attempts tho. https://t.co/tgL5K2KeVI",
-      "url": "https://x.com/iamrahstradamus/status/2121445333561757964"
-    },
-    {
-      "post_id": "2121423511839494515",
-      "source": "@FezzikSports",
-      "published_at_utc": "2026-11-14T02:02:34.000Z",
-      "text": "HUGE Saturday upcoming!\n\nI am up OVER 100 units the last 2 seasons in CFB\n\nGet ALL of my plays at https://t.co/Pekv6QB73V https://t.co/sapdhlDMCf",
-      "url": "https://x.com/FezzikSports/status/2121423511839494515"
-    },
-    {
-      "post_id": "2121381284492742960",
-      "source": "@wheatonbrando",
-      "published_at_utc": "2026-11-13T23:14:46.000Z",
-      "text": "@jon_juko @TrevorMagers In the sense that he ranks 3rd in epa per play against elite defenses on the largest sample in the league. In both those games, Bengals were in position to tie or win in the final minute and could be undefeated. So because someone got tackled an inch shorter, he\u2019s not elite?",
-      "url": "https://x.com/wheatonbrando/status/2121381284492742960"
+      "published_at_utc": "2026-11-14T14:57:00.000Z",
+      "text": "@ghotye @floydianship Isn\u2019t Purdy throwing to the best tight end in the league and the best receiving rb in the league with the best play caller in the league behind one of the best lines in the league with one of the best defenses in the league protecting and setting him up?",
+      "url": "https://x.com/wheatonbrando/status/2121618405996331106"
     }
   ],
   "promotion_thresholds": {
