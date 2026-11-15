@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-11-14T20:54:25.211860+00:00",
+  "generated_at_utc": "2026-11-15T02:06:01.663926+00:00",
   "status": "ok",
   "production_modified": false,
   "baseline_model_version": "nfl-v2",
@@ -16,9 +16,9 @@
   "note": "External signals were not available historically across the full 577-game backtest, so current deltas are prospective. Accuracy/Brier/MAE comparison begins as these shadow forecasts settle.",
   "summary": {
     "games": 13,
-    "games_changed_by_availability": 4,
-    "games_changed_by_combined": 4,
-    "availability_x_signals_available": 8,
+    "games_changed_by_availability": 5,
+    "games_changed_by_combined": 5,
+    "availability_x_signals_available": 11,
     "sharp_ledger_picks": 0,
     "sharp_production_weight": 0.0
   },
@@ -289,27 +289,41 @@
         "predicted_winner": "New Orleans Saints"
       },
       "availability_shadow": {
-        "predicted_home_points": 24.7,
+        "predicted_home_points": 24.63,
         "predicted_away_points": 24.7,
-        "predicted_margin": 0.0,
-        "predicted_total": 49.5,
-        "home_win_probability": 0.5007,
-        "away_win_probability": 0.4993,
-        "predicted_winner": "New Orleans Saints",
-        "availability_margin_delta": 0.0,
-        "availability_total_delta": 0.0,
-        "signals_applied": []
+        "predicted_margin": -0.07,
+        "predicted_total": 49.33,
+        "home_win_probability": 0.4976,
+        "away_win_probability": 0.5024,
+        "predicted_winner": "Carolina Panthers",
+        "availability_margin_delta": -0.07,
+        "availability_total_delta": -0.17,
+        "signals_applied": [
+          {
+            "team": "NO",
+            "player": "Travis Etienne",
+            "position": "RB",
+            "status": "probable",
+            "confidence": 0.4626,
+            "base_points": 1.0,
+            "point_impact": 0.069,
+            "source": "@AdamSchefter",
+            "published_at_utc": "2026-11-14T21:07:39.000Z",
+            "url": "https://x.com/AdamSchefter/status/2121711682699288748",
+            "text": "Saints activated RB Travis Etienne off injured reserve, and he is expected to play Sunday against Carolina. https://t.co/iBJnY9R2xF"
+          }
+        ]
       },
       "combined_shadow": {
-        "predicted_home_points": 24.7,
+        "predicted_home_points": 24.63,
         "predicted_away_points": 24.7,
-        "predicted_margin": 0.0,
-        "predicted_total": 49.5,
-        "home_win_probability": 0.5007,
-        "away_win_probability": 0.4993,
-        "predicted_winner": "New Orleans Saints",
-        "combined_margin_delta_vs_production": 0.0,
-        "combined_total_delta_vs_production": 0.0,
+        "predicted_margin": -0.07,
+        "predicted_total": 49.33,
+        "home_win_probability": 0.4976,
+        "away_win_probability": 0.5024,
+        "predicted_winner": "Carolina Panthers",
+        "combined_margin_delta_vs_production": -0.07,
+        "combined_total_delta_vs_production": -0.17,
         "sharp_margin_delta": 0.0,
         "sharp_total_delta": 0.0,
         "sharp_signals_applied": []
@@ -612,14 +626,14 @@
       },
       "availability_shadow": {
         "predicted_home_points": 20.77,
-        "predicted_away_points": 20.9,
-        "predicted_margin": -0.13,
-        "predicted_total": 41.67,
-        "home_win_probability": 0.4954,
-        "away_win_probability": 0.5046,
-        "predicted_winner": "Los Angeles Chargers",
-        "availability_margin_delta": -3.13,
-        "availability_total_delta": -3.13,
+        "predicted_away_points": 20.62,
+        "predicted_margin": 0.14,
+        "predicted_total": 41.39,
+        "home_win_probability": 0.505,
+        "away_win_probability": 0.495,
+        "predicted_winner": "Baltimore Ravens",
+        "availability_margin_delta": -2.86,
+        "availability_total_delta": -3.41,
         "signals_applied": [
           {
             "team": "BAL",
@@ -633,19 +647,32 @@
             "published_at_utc": "2026-11-14T13:47:22.000Z",
             "url": "https://x.com/AdamSchefter/status/2121600882496426223",
             "text": "As it turns out, Ravens QB Lamar Jackson underwent thumb surgery last week, per sources. If the 6-10 week injury window that Ravens HC Jesse Minter is applied to last week\u2019s surgery, it would give Jackson a chance at returning later this season."
+          },
+          {
+            "team": "LAC",
+            "player": "Ladd McConkey",
+            "position": "WR",
+            "status": "questionable",
+            "confidence": 0.4754,
+            "base_points": 1.3,
+            "point_impact": 0.278,
+            "source": "@AdamSchefter",
+            "published_at_utc": "2026-11-14T21:26:30.000Z",
+            "url": "https://x.com/AdamSchefter/status/2121716427426271473",
+            "text": "Chargers are listing WR Ladd McConkey as questionable for Monday night\u2019s game at Baltimore while WR Tre Harris is off the injury report."
           }
         ]
       },
       "combined_shadow": {
         "predicted_home_points": 20.77,
-        "predicted_away_points": 20.9,
-        "predicted_margin": -0.13,
-        "predicted_total": 41.67,
-        "home_win_probability": 0.4954,
-        "away_win_probability": 0.5046,
-        "predicted_winner": "Los Angeles Chargers",
-        "combined_margin_delta_vs_production": -3.13,
-        "combined_total_delta_vs_production": -3.13,
+        "predicted_away_points": 20.62,
+        "predicted_margin": 0.14,
+        "predicted_total": 41.39,
+        "home_win_probability": 0.505,
+        "away_win_probability": 0.495,
+        "predicted_winner": "Baltimore Ravens",
+        "combined_margin_delta_vs_production": -2.86,
+        "combined_total_delta_vs_production": -3.41,
         "sharp_margin_delta": 0.0,
         "sharp_total_delta": 0.0,
         "sharp_signals_applied": []
