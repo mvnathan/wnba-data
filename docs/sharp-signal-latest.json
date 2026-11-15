@@ -1,12 +1,12 @@
 {
-  "generated_at_utc": "2026-11-15T06:52:10.030641+00:00",
+  "generated_at_utc": "2026-11-15T18:59:21.355943+00:00",
   "status": "ok",
   "production_adjustment_enabled": false,
-  "new_posts_seen": 1,
+  "new_posts_seen": 2,
   "new_picks_parsed": 0,
   "ledger_size": 0,
-  "since_id_used": "2121677459108270165",
-  "newest_id": "2121802893695336716",
+  "since_id_used": "2121802893695336716",
+  "newest_id": "2122022497046388879",
   "accounts": {
     "@RufusPeabody": {
       "tier": "established_professional",
@@ -62,11 +62,18 @@
   "new_picks": [],
   "candidate_posts": [
     {
-      "post_id": "2121802893695336716",
-      "source": "@iamrahstradamus",
-      "published_at_utc": "2026-11-15T03:10:05.000Z",
-      "text": "Just when it feels like the Bulls are one of the worst teams in the league, they pull off wins over ATL and Minnesota.",
-      "url": "https://x.com/iamrahstradamus/status/2121802893695336716"
+      "post_id": "2122022497046388879",
+      "source": "@wheatonbrando",
+      "published_at_utc": "2026-11-15T17:42:43.000Z",
+      "text": "@JomboyMedia It was a wrongly given \u201c5th\u201d down and that\u2019s the backup QB. Good on Chang respecting the game and getting everyone outta there for a matchup that was already over.",
+      "url": "https://x.com/wheatonbrando/status/2122022497046388879"
+    },
+    {
+      "post_id": "2122005135283159098",
+      "source": "@FezzikSports",
+      "published_at_utc": "2026-11-15T16:33:43.000Z",
+      "text": "Think your Survivor Season is OVER!?\n\nDon't get MAD\n\nGET BACK IN THE GAME!!\n\nLet's go! https://t.co/vPo9SO4osb",
+      "url": "https://x.com/FezzikSports/status/2122005135283159098"
     }
   ],
   "promotion_thresholds": {
