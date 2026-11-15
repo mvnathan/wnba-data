@@ -1,14 +1,14 @@
 {
-  "generated_at_utc": "2026-11-15T19:05:47.520450+00:00",
+  "generated_at_utc": "2026-11-15T23:11:38.272370+00:00",
   "method": "Earliest committed pregame NBA forecast and market line joined to ESPN final score by game ID",
   "summary": {
-    "n": 249,
+    "n": 250,
     "ml": {
-      "wins": 160,
+      "wins": 161,
       "losses": 89,
       "pushes": 0,
-      "graded": 249,
-      "rate": 0.642570281124498
+      "graded": 250,
+      "rate": 0.644
     },
     "ats": {
       "wins": 4,
@@ -26,6 +26,29 @@
     }
   },
   "games": [
+    {
+      "game_id": "401909985",
+      "game_date_utc": "2026-11-15T18:00Z",
+      "home_team": "Philadelphia 76ers",
+      "away_team": "Indiana Pacers",
+      "home_abbr": "PHI",
+      "away_abbr": "IND",
+      "prediction_issued_at": "2026-11-15T02:06:21.035953+00:00",
+      "prediction_commit": "01526a1e",
+      "home_win_probability": 0.6300219879298057,
+      "predicted_margin": 4.660677128768919,
+      "predicted_total": 224.42707023746738,
+      "actual_home_score": 131.0,
+      "actual_away_score": 124.0,
+      "actual_margin": 7.0,
+      "actual_total": 255.0,
+      "winner_correct": true,
+      "market_home_spread": null,
+      "market_total": null,
+      "market_bookmaker": null,
+      "ats_result": null,
+      "ou_result": null
+    },
     {
       "game_id": "401909980",
       "game_date_utc": "2026-11-15T00:00Z",
