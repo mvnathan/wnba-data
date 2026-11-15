@@ -1,12 +1,12 @@
 {
-  "generated_at_utc": "2026-11-14T22:37:33.123579+00:00",
+  "generated_at_utc": "2026-11-15T06:52:10.030641+00:00",
   "status": "ok",
   "production_adjustment_enabled": false,
-  "new_posts_seen": 2,
+  "new_posts_seen": 1,
   "new_picks_parsed": 0,
   "ledger_size": 0,
-  "since_id_used": "2121618405996331106",
-  "newest_id": "2121677459108270165",
+  "since_id_used": "2121677459108270165",
+  "newest_id": "2121802893695336716",
   "accounts": {
     "@RufusPeabody": {
       "tier": "established_professional",
@@ -62,18 +62,11 @@
   "new_picks": [],
   "candidate_posts": [
     {
-      "post_id": "2121677459108270165",
-      "source": "@wheatonbrando",
-      "published_at_utc": "2026-11-14T18:51:39.000Z",
-      "text": "@billsmafiatampa @mlmoe1988 yes yes, tell me about all the mighty teams the Bills have disposed of, the best of which are the wildly shorthanded Lions on an early short week and a Vikings team playing a 4th string QB so bad they traded a 3rd round pick to replace him the very next day",
-      "url": "https://x.com/wheatonbrando/status/2121677459108270165"
-    },
-    {
-      "post_id": "2121673408555647226",
+      "post_id": "2121802893695336716",
       "source": "@iamrahstradamus",
-      "published_at_utc": "2026-11-14T18:35:34.000Z",
-      "text": "@GDB541374297650 If you watched the show on Thursday you know I gave out the grizzlies. Had to do another pick for a fan duel obligation.",
-      "url": "https://x.com/iamrahstradamus/status/2121673408555647226"
+      "published_at_utc": "2026-11-15T03:10:05.000Z",
+      "text": "Just when it feels like the Bulls are one of the worst teams in the league, they pull off wins over ATL and Minnesota.",
+      "url": "https://x.com/iamrahstradamus/status/2121802893695336716"
     }
   ],
   "promotion_thresholds": {
