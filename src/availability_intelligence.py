@@ -69,10 +69,42 @@ def _freshness(published_at_utc: str | None, now: datetime | None = None) -> flo
 
 
 def extract_status(text: str) -> str | None:
-    lowered = text.lower()
-    for status, pattern in STATUS_PATTERNS:
-        if re.search(pattern, lowered):
-            return status
+    """Classify availability assertions, not isolated status keywords.
+
+    Positive clearances and negated injury labels must not create an OUT signal.
+    Contradictory reports are left unclassified for human/source reconciliation.
+    """
+    lowered = re.sub(r"\\s+", " ", text.lower())
+    # An in-game 'questionable to return' report is not a pregame absence.
+    if re.search(r"\\bquestionable to return\\b", lowered):
+        return None
+    positive = bool(re.search(
+        r"\\b(cleared(?: to play)?|will (?:play|start|be active)|"
+        r"expected to start|set to (?:play|start)|"
+        r"active for (?:today|tonight|the game)|"
+        r"available (?:to play|for (?:today|tonight|the game))|"
+        r"not (?:ruled out|expected to miss)|"
+        r"on track to play|good to go)\\b", lowered
+    ))
+    negative = bool(re.search(
+        r"\\b(ruled out|will not play|won't play|"
+        r"not expected to play|inactive|doubtful|"
+        r"out for (?:today|tonight|the game|week \\d+)|(?:is|listed|declared) out)\\b", lowered
+    ))
+    # Strong positive assertions override incidental 'out' references in the
+    # same sentence (e.g. 'ruled out earlier, now cleared to play').
+    if positive:
+        return "available"
+    if negative:
+        return "out" if re.search(
+            r"\\b(ruled out|will not play|won't play|inactive|out for)\\b", lowered
+        ) else "doubtful"
+    if re.search(r"\\bquestionable\\b", lowered):
+        return "questionable"
+    if re.search(r"\\b(probable|expected to play|likely to play)\\b", lowered):
+        return "probable"
+    if re.search(r"\\b(available|active)\\b", lowered):
+        return "available"
     return None
 
 
