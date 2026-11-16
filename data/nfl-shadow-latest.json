@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-11-16T07:13:21.955685+00:00",
+  "generated_at_utc": "2026-11-16T18:52:40.988992+00:00",
   "status": "ok",
   "production_modified": false,
   "baseline_model_version": "nfl-v2",
@@ -16,9 +16,9 @@
   "note": "External signals were not available historically across the full 577-game backtest, so current deltas are prospective. Accuracy/Brier/MAE comparison begins as these shadow forecasts settle.",
   "summary": {
     "games": 5,
-    "games_changed_by_availability": 0,
-    "games_changed_by_combined": 0,
-    "availability_x_signals_available": 0,
+    "games_changed_by_availability": 1,
+    "games_changed_by_combined": 1,
+    "availability_x_signals_available": 5,
     "sharp_ledger_picks": 0,
     "sharp_production_weight": 0.0
   },
@@ -129,27 +129,41 @@
         "predicted_winner": "San Francisco 49ers"
       },
       "availability_shadow": {
-        "predicted_home_points": 23.8,
+        "predicted_home_points": 23.42,
         "predicted_away_points": 26.2,
-        "predicted_margin": -2.4,
-        "predicted_total": 49.9,
-        "home_win_probability": 0.4184,
-        "away_win_probability": 0.5816,
+        "predicted_margin": -2.78,
+        "predicted_total": 49.62,
+        "home_win_probability": 0.4052,
+        "away_win_probability": 0.5948,
         "predicted_winner": "San Francisco 49ers",
-        "availability_margin_delta": 0.0,
-        "availability_total_delta": 0.0,
-        "signals_applied": []
+        "availability_margin_delta": -0.38,
+        "availability_total_delta": -0.28,
+        "signals_applied": [
+          {
+            "team": "DAL",
+            "player": "Tyler Booker",
+            "position": "G",
+            "status": "out",
+            "confidence": 0.6381,
+            "base_points": 0.6,
+            "point_impact": 0.383,
+            "source": "@RapSheet",
+            "published_at_utc": "2026-11-16T16:14:29.000Z",
+            "url": "https://x.com/RapSheet/status/2122362683437506747",
+            "text": "#Cowboys G Tyler Booker suffered a high-ankle sprain in his team's loss to the #49ers, sources say. While it's generally a 4-6 week injury, the hope is that Booker can be back within that 4 week window. Last year, a similar injury kept him out three games. https://t.co/Z88W4iPfbs"
+          }
+        ]
       },
       "combined_shadow": {
-        "predicted_home_points": 23.8,
+        "predicted_home_points": 23.42,
         "predicted_away_points": 26.2,
-        "predicted_margin": -2.4,
-        "predicted_total": 49.9,
-        "home_win_probability": 0.4184,
-        "away_win_probability": 0.5816,
+        "predicted_margin": -2.78,
+        "predicted_total": 49.62,
+        "home_win_probability": 0.4052,
+        "away_win_probability": 0.5948,
         "predicted_winner": "San Francisco 49ers",
-        "combined_margin_delta_vs_production": 0.0,
-        "combined_total_delta_vs_production": 0.0,
+        "combined_margin_delta_vs_production": -0.38,
+        "combined_total_delta_vs_production": -0.28,
         "sharp_margin_delta": 0.0,
         "sharp_total_delta": 0.0,
         "sharp_signals_applied": []
