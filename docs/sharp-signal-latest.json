@@ -1,12 +1,12 @@
 {
-  "generated_at_utc": "2026-11-15T18:59:21.355943+00:00",
+  "generated_at_utc": "2026-11-16T06:53:10.057665+00:00",
   "status": "ok",
   "production_adjustment_enabled": false,
-  "new_posts_seen": 2,
+  "new_posts_seen": 4,
   "new_picks_parsed": 0,
   "ledger_size": 0,
-  "since_id_used": "2121802893695336716",
-  "newest_id": "2122022497046388879",
+  "since_id_used": "2122022497046388879",
+  "newest_id": "2122157095537745962",
   "accounts": {
     "@RufusPeabody": {
       "tier": "established_professional",
@@ -62,18 +62,32 @@
   "new_picks": [],
   "candidate_posts": [
     {
-      "post_id": "2122022497046388879",
-      "source": "@wheatonbrando",
-      "published_at_utc": "2026-11-15T17:42:43.000Z",
-      "text": "@JomboyMedia It was a wrongly given \u201c5th\u201d down and that\u2019s the backup QB. Good on Chang respecting the game and getting everyone outta there for a matchup that was already over.",
-      "url": "https://x.com/wheatonbrando/status/2122022497046388879"
+      "post_id": "2122157095537745962",
+      "source": "@iamrahstradamus",
+      "published_at_utc": "2026-11-16T02:37:34.000Z",
+      "text": "@Cap10Planet @cobrajok You\u2019ve never heard the term WAR? Wins over replacement? That\u2019s where he was going with it. That warrants a clap back",
+      "url": "https://x.com/iamrahstradamus/status/2122157095537745962"
     },
     {
-      "post_id": "2122005135283159098",
-      "source": "@FezzikSports",
-      "published_at_utc": "2026-11-15T16:33:43.000Z",
-      "text": "Think your Survivor Season is OVER!?\n\nDon't get MAD\n\nGET BACK IN THE GAME!!\n\nLet's go! https://t.co/vPo9SO4osb",
-      "url": "https://x.com/FezzikSports/status/2122005135283159098"
+      "post_id": "2122147288042885604",
+      "source": "@wheatonbrando",
+      "published_at_utc": "2026-11-16T01:58:35.000Z",
+      "text": "@_Noops Ah man, I immediately came here to look assuming you probably picked sample, that one had your name all over it",
+      "url": "https://x.com/wheatonbrando/status/2122147288042885604"
+    },
+    {
+      "post_id": "2122120690958762226",
+      "source": "@iamrahstradamus",
+      "published_at_utc": "2026-11-16T00:12:54.000Z",
+      "text": "@N0SpaceforHate @wheatonbrando There were people who talked about him like he was. Automatically assuming he was the number 1 pick in the draft. He had all the hype.",
+      "url": "https://x.com/iamrahstradamus/status/2122120690958762226"
+    },
+    {
+      "post_id": "2122079382206660852",
+      "source": "@iamrahstradamus",
+      "published_at_utc": "2026-11-15T21:28:45.000Z",
+      "text": "The most stunning thing is that the Texans have held the lead in 4 of these games with under two minutes to go and lost every single game. https://t.co/FppZ7Ndymy",
+      "url": "https://x.com/iamrahstradamus/status/2122079382206660852"
     }
   ],
   "promotion_thresholds": {
