@@ -1,12 +1,12 @@
 {
-  "generated_at_utc": "2026-11-16T22:22:59.785702+00:00",
+  "generated_at_utc": "2026-11-17T08:11:44.769411+00:00",
   "status": "ok",
   "production_adjustment_enabled": false,
-  "new_posts_seen": 0,
+  "new_posts_seen": 4,
   "new_picks_parsed": 0,
   "ledger_size": 0,
   "since_id_used": "2122157095537745962",
-  "newest_id": "2122157095537745962",
+  "newest_id": "2122544179964432766",
   "accounts": {
     "@RufusPeabody": {
       "tier": "established_professional",
@@ -60,7 +60,36 @@
     }
   },
   "new_picks": [],
-  "candidate_posts": [],
+  "candidate_posts": [
+    {
+      "post_id": "2122544179964432766",
+      "source": "@iamrahstradamus",
+      "published_at_utc": "2026-11-17T04:15:42.000Z",
+      "text": "Every time the Chargers needed a first down to clinch a game over the past 3 years, they've run Herbert on a bootleg, got him outside of the pocket giving him the option to run or pass.......it seemingly always works.",
+      "url": "https://x.com/iamrahstradamus/status/2122544179964432766"
+    },
+    {
+      "post_id": "2122538221888266531",
+      "source": "@capjack2000",
+      "published_at_utc": "2026-11-17T03:52:01.000Z",
+      "text": "@tlecavs If you want to bet the under on the team total of their opponent or a specific prop, it might not be offered. You\u2019re not permitted to be the market maker on the other side either. \n\nAfter taker fees you might have a worse price than is widely available on sportsbooks, but you",
+      "url": "https://x.com/capjack2000/status/2122538221888266531"
+    },
+    {
+      "post_id": "2122461403122655283",
+      "source": "@iamrahstradamus",
+      "published_at_utc": "2026-11-16T22:46:46.000Z",
+      "text": "@macetalk I'm a Cowboys fan.....We all know that game was over.",
+      "url": "https://x.com/iamrahstradamus/status/2122461403122655283"
+    },
+    {
+      "post_id": "2122460113105785126",
+      "source": "@iamrahstradamus",
+      "published_at_utc": "2026-11-16T22:41:39.000Z",
+      "text": "The Cowboys offense would find a way to generate 120 yards of penalties and make the game way closer than it needed to be. We just saw this last week against the Colts.\n\nEveryone is going to say Dak threw 5 touchdowns yesterday but three of his touchdowns came when in the 4th https://t.co/aZ12Bj8E7i",
+      "url": "https://x.com/iamrahstradamus/status/2122460113105785126"
+    }
+  ],
   "promotion_thresholds": {
     "minimum_graded_picks": 100,
     "minimum_positive_clv_rate": 0.52,
