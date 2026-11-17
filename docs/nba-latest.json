@@ -1,6 +1,6 @@
 {
   "sport": "NBA",
-  "generated_at_utc": "2026-11-17T02:02:45.917146+00:00",
+  "generated_at_utc": "2026-11-17T04:45:06.906227+00:00",
   "target_date": "2026-11-17",
   "season": "2026-27",
   "model_version": "nba-v2-roster-four-factors",
@@ -52,10 +52,10 @@
         "mae": 16.052277339680376
       },
       "total_rf": {
-        "mae": 15.750307765858192
+        "mae": 15.750307765858189
       },
       "total_extra_trees": {
-        "mae": 15.823980776889643
+        "mae": 15.823980776889647
       }
     },
     "test": {
@@ -6176,12 +6176,12 @@
       "home_team": "LA Clippers",
       "away_team": "Utah Jazz",
       "model_version": "nba-v2-roster-four-factors",
-      "home_win_probability": 0.5456588258381593,
-      "away_win_probability": 0.4543411741618407,
-      "predicted_margin": 1.1406255573675623,
-      "predicted_total": 228.6690287344457,
-      "predicted_home_points": 114.90482714590664,
-      "predicted_away_points": 113.76420158853907,
+      "home_win_probability": 0.5425074831812039,
+      "away_win_probability": 0.4574925168187961,
+      "predicted_margin": 1.0570766195539525,
+      "predicted_total": 228.66869821197005,
+      "predicted_home_points": 114.862887415762,
+      "predicted_away_points": 113.80581079620805,
       "predicted_winner": "LA Clippers",
       "roster_context": {
         "home": {
@@ -6191,10 +6191,10 @@
           "roster_value": 9.871650518540758
         },
         "away": {
-          "continuity": 0.6903572800614676,
-          "incoming_share": 0.30964271993853243,
-          "top3_share": 0.3058009988474837,
-          "roster_value": 11.423893160993131
+          "continuity": 0.6945886250690226,
+          "incoming_share": 0.30541137493097736,
+          "top3_share": 0.30767531750414134,
+          "roster_value": 11.45697867579867
         }
       },
       "x_availability_adjustments": [],
