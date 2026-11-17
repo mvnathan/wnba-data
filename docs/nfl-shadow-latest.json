@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-11-16T18:52:40.988992+00:00",
+  "generated_at_utc": "2026-11-17T03:07:46.482932+00:00",
   "status": "ok",
   "production_modified": false,
   "baseline_model_version": "nfl-v2",
@@ -15,204 +15,14 @@
   "evaluation_status": "prospective_shadow_only",
   "note": "External signals were not available historically across the full 577-game backtest, so current deltas are prospective. Accuracy/Brier/MAE comparison begins as these shadow forecasts settle.",
   "summary": {
-    "games": 5,
-    "games_changed_by_availability": 1,
-    "games_changed_by_combined": 1,
-    "availability_x_signals_available": 5,
+    "games": 1,
+    "games_changed_by_availability": 0,
+    "games_changed_by_combined": 0,
+    "availability_x_signals_available": 6,
     "sharp_ledger_picks": 0,
     "sharp_production_weight": 0.0
   },
   "games": [
-    {
-      "game_id": "2026_10_LA_ARI",
-      "game_date_utc": "2026-11-15T21:05:00Z",
-      "home_team": "Arizona Cardinals",
-      "away_team": "Los Angeles Rams",
-      "home_abbr": "ARI",
-      "away_abbr": "LA",
-      "market_home_spread": 9.5,
-      "market_total": 38.5,
-      "production": {
-        "predicted_home_points": 21.1,
-        "predicted_away_points": 24.8,
-        "predicted_margin": -3.8,
-        "predicted_total": 45.9,
-        "home_win_probability": 0.373,
-        "predicted_winner": "Los Angeles Rams"
-      },
-      "availability_shadow": {
-        "predicted_home_points": 21.1,
-        "predicted_away_points": 24.8,
-        "predicted_margin": -3.8,
-        "predicted_total": 45.9,
-        "home_win_probability": 0.373,
-        "away_win_probability": 0.627,
-        "predicted_winner": "Los Angeles Rams",
-        "availability_margin_delta": 0.0,
-        "availability_total_delta": 0.0,
-        "signals_applied": []
-      },
-      "combined_shadow": {
-        "predicted_home_points": 21.1,
-        "predicted_away_points": 24.8,
-        "predicted_margin": -3.8,
-        "predicted_total": 45.9,
-        "home_win_probability": 0.373,
-        "away_win_probability": 0.627,
-        "predicted_winner": "Los Angeles Rams",
-        "combined_margin_delta_vs_production": 0.0,
-        "combined_total_delta_vs_production": 0.0,
-        "sharp_margin_delta": 0.0,
-        "sharp_total_delta": 0.0,
-        "sharp_signals_applied": []
-      }
-    },
-    {
-      "game_id": "2026_10_SEA_LV",
-      "game_date_utc": "2026-11-15T21:05:00Z",
-      "home_team": "Las Vegas Raiders",
-      "away_team": "Seattle Seahawks",
-      "home_abbr": "LV",
-      "away_abbr": "SEA",
-      "market_home_spread": 6.5,
-      "market_total": 40.5,
-      "production": {
-        "predicted_home_points": 22.9,
-        "predicted_away_points": 24.8,
-        "predicted_margin": -1.9,
-        "predicted_total": 47.7,
-        "home_win_probability": 0.4343,
-        "predicted_winner": "Seattle Seahawks"
-      },
-      "availability_shadow": {
-        "predicted_home_points": 22.9,
-        "predicted_away_points": 24.8,
-        "predicted_margin": -1.9,
-        "predicted_total": 47.7,
-        "home_win_probability": 0.4343,
-        "away_win_probability": 0.5657,
-        "predicted_winner": "Seattle Seahawks",
-        "availability_margin_delta": 0.0,
-        "availability_total_delta": 0.0,
-        "signals_applied": []
-      },
-      "combined_shadow": {
-        "predicted_home_points": 22.9,
-        "predicted_away_points": 24.8,
-        "predicted_margin": -1.9,
-        "predicted_total": 47.7,
-        "home_win_probability": 0.4343,
-        "away_win_probability": 0.5657,
-        "predicted_winner": "Seattle Seahawks",
-        "combined_margin_delta_vs_production": 0.0,
-        "combined_total_delta_vs_production": 0.0,
-        "sharp_margin_delta": 0.0,
-        "sharp_total_delta": 0.0,
-        "sharp_signals_applied": []
-      }
-    },
-    {
-      "game_id": "2026_10_SF_DAL",
-      "game_date_utc": "2026-11-15T21:25:00Z",
-      "home_team": "Dallas Cowboys",
-      "away_team": "San Francisco 49ers",
-      "home_abbr": "DAL",
-      "away_abbr": "SF",
-      "market_home_spread": 3.5,
-      "market_total": 56.5,
-      "production": {
-        "predicted_home_points": 23.8,
-        "predicted_away_points": 26.2,
-        "predicted_margin": -2.4,
-        "predicted_total": 49.9,
-        "home_win_probability": 0.4184,
-        "predicted_winner": "San Francisco 49ers"
-      },
-      "availability_shadow": {
-        "predicted_home_points": 23.42,
-        "predicted_away_points": 26.2,
-        "predicted_margin": -2.78,
-        "predicted_total": 49.62,
-        "home_win_probability": 0.4052,
-        "away_win_probability": 0.5948,
-        "predicted_winner": "San Francisco 49ers",
-        "availability_margin_delta": -0.38,
-        "availability_total_delta": -0.28,
-        "signals_applied": [
-          {
-            "team": "DAL",
-            "player": "Tyler Booker",
-            "position": "G",
-            "status": "out",
-            "confidence": 0.6381,
-            "base_points": 0.6,
-            "point_impact": 0.383,
-            "source": "@RapSheet",
-            "published_at_utc": "2026-11-16T16:14:29.000Z",
-            "url": "https://x.com/RapSheet/status/2122362683437506747",
-            "text": "#Cowboys G Tyler Booker suffered a high-ankle sprain in his team's loss to the #49ers, sources say. While it's generally a 4-6 week injury, the hope is that Booker can be back within that 4 week window. Last year, a similar injury kept him out three games. https://t.co/Z88W4iPfbs"
-          }
-        ]
-      },
-      "combined_shadow": {
-        "predicted_home_points": 23.42,
-        "predicted_away_points": 26.2,
-        "predicted_margin": -2.78,
-        "predicted_total": 49.62,
-        "home_win_probability": 0.4052,
-        "away_win_probability": 0.5948,
-        "predicted_winner": "San Francisco 49ers",
-        "combined_margin_delta_vs_production": -0.38,
-        "combined_total_delta_vs_production": -0.28,
-        "sharp_margin_delta": 0.0,
-        "sharp_total_delta": 0.0,
-        "sharp_signals_applied": []
-      }
-    },
-    {
-      "game_id": "2026_10_PIT_CIN",
-      "game_date_utc": "2026-11-16T01:20:00Z",
-      "home_team": "Cincinnati Bengals",
-      "away_team": "Pittsburgh Steelers",
-      "home_abbr": "CIN",
-      "away_abbr": "PIT",
-      "market_home_spread": -3.5,
-      "market_total": 49.5,
-      "production": {
-        "predicted_home_points": 24.2,
-        "predicted_away_points": 22.2,
-        "predicted_margin": 2.0,
-        "predicted_total": 46.4,
-        "home_win_probability": 0.57,
-        "predicted_winner": "Cincinnati Bengals"
-      },
-      "availability_shadow": {
-        "predicted_home_points": 24.2,
-        "predicted_away_points": 22.2,
-        "predicted_margin": 2.0,
-        "predicted_total": 46.4,
-        "home_win_probability": 0.57,
-        "away_win_probability": 0.43,
-        "predicted_winner": "Cincinnati Bengals",
-        "availability_margin_delta": 0.0,
-        "availability_total_delta": 0.0,
-        "signals_applied": []
-      },
-      "combined_shadow": {
-        "predicted_home_points": 24.2,
-        "predicted_away_points": 22.2,
-        "predicted_margin": 2.0,
-        "predicted_total": 46.4,
-        "home_win_probability": 0.57,
-        "away_win_probability": 0.43,
-        "predicted_winner": "Cincinnati Bengals",
-        "combined_margin_delta_vs_production": 0.0,
-        "combined_total_delta_vs_production": 0.0,
-        "sharp_margin_delta": 0.0,
-        "sharp_total_delta": 0.0,
-        "sharp_signals_applied": []
-      }
-    },
     {
       "game_id": "2026_10_LAC_BAL",
       "game_date_utc": "2026-11-17T01:15:00Z",
@@ -221,7 +31,7 @@
       "home_abbr": "BAL",
       "away_abbr": "LAC",
       "market_home_spread": -4.5,
-      "market_total": 38.5,
+      "market_total": 39.5,
       "production": {
         "predicted_home_points": 23.9,
         "predicted_away_points": 20.9,
