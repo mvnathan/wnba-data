@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-11-18T07:29:45.629610+00:00",
+  "generated_at_utc": "2026-11-18T17:16:06.812339+00:00",
   "status": "ok",
   "direct_model_adjustment_enabled": false,
   "integration_stage": "context_and_edge_reliability_only",
@@ -60,8 +60,8 @@
   },
   "x_source_diagnostics": {
     "status": "ok",
-    "posts": 1,
-    "posts_general": 1,
+    "posts": 0,
+    "posts_general": 0,
     "posts_nba": 0,
     "accounts": [
       "AdamSchefter",
@@ -71,7 +71,7 @@
       "ShamsCharania",
       "ChrisBHaynes"
     ],
-    "since_id_used_general": "2122808951292973293",
+    "since_id_used_general": "2122842914200137986",
     "since_id_used_nba": "2121371002429227476",
     "newest_id": "2122842914200137986",
     "newest_id_general": "2122842914200137986",
@@ -85,7 +85,19 @@
       "source": "NFL Official Injury Report",
       "source_tier": "official",
       "published_at_utc": null,
-      "fetched_at_utc": "2026-11-18T07:29:42.747797+00:00",
+      "fetched_at_utc": "2026-11-18T17:16:05.638610+00:00",
+      "status_signal": "out",
+      "tactical_flags": [],
+      "confidence": 0.65,
+      "text": "NFL news roundup: Baker Mayfield sits out Buccaneers practice; Geno Smith to be limited",
+      "url": "https://www.nfl.com/injuries/"
+    },
+    {
+      "sport": "NFL",
+      "source": "NFL Official Injury Report",
+      "source_tier": "official",
+      "published_at_utc": null,
+      "fetched_at_utc": "2026-11-18T17:16:05.639051+00:00",
       "status_signal": "out",
       "tactical_flags": [
         "expected_to_start"
@@ -99,7 +111,7 @@
       "source": "NFL Official Injury Report",
       "source_tier": "official",
       "published_at_utc": null,
-      "fetched_at_utc": "2026-11-18T07:29:42.747886+00:00",
+      "fetched_at_utc": "2026-11-18T17:16:05.639110+00:00",
       "status_signal": "out",
       "tactical_flags": [],
       "confidence": 0.65,
@@ -111,7 +123,7 @@
       "source": "NFL Official Injury Report",
       "source_tier": "official",
       "published_at_utc": null,
-      "fetched_at_utc": "2026-11-18T07:29:42.747905+00:00",
+      "fetched_at_utc": "2026-11-18T17:16:05.639121+00:00",
       "status_signal": "out",
       "tactical_flags": [],
       "confidence": 0.65,
@@ -119,23 +131,11 @@
       "url": "https://www.nfl.com/injuries/"
     },
     {
-      "sport": "NFL",
-      "source": "NFL Official Injury Report",
-      "source_tier": "official",
-      "published_at_utc": null,
-      "fetched_at_utc": "2026-11-18T07:29:42.747927+00:00",
-      "status_signal": "out",
-      "tactical_flags": [],
-      "confidence": 0.65,
-      "text": "NFL news roundup: Jets' Garrett Wilson ruled out; Falcons RB Brian Robinson out for Madrid game",
-      "url": "https://www.nfl.com/injuries/"
-    },
-    {
       "sport": "MLB",
       "source": "MLB Official Injury Report",
       "source_tier": "official",
       "published_at_utc": null,
-      "fetched_at_utc": "2026-11-18T07:29:44.910641+00:00",
+      "fetched_at_utc": "2026-11-18T17:16:05.998722+00:00",
       "status_signal": "out",
       "tactical_flags": [],
       "confidence": 0.65,
@@ -147,7 +147,7 @@
       "source": "MLB Official Injury Report",
       "source_tier": "official",
       "published_at_utc": null,
-      "fetched_at_utc": "2026-11-18T07:29:44.910884+00:00",
+      "fetched_at_utc": "2026-11-18T17:16:05.998857+00:00",
       "status_signal": "out",
       "tactical_flags": [],
       "confidence": 0.65,
@@ -159,7 +159,7 @@
       "source": "MLB Official Injury Report",
       "source_tier": "official",
       "published_at_utc": null,
-      "fetched_at_utc": "2026-11-18T07:29:44.911003+00:00",
+      "fetched_at_utc": "2026-11-18T17:16:05.998936+00:00",
       "status_signal": "out",
       "tactical_flags": [],
       "confidence": 0.65,
@@ -171,7 +171,7 @@
       "source": "NFL Official Injury Report",
       "source_tier": "official",
       "published_at_utc": null,
-      "fetched_at_utc": "2026-11-18T07:29:42.747705+00:00",
+      "fetched_at_utc": "2026-11-18T17:16:05.638989+00:00",
       "status_signal": "questionable",
       "tactical_flags": [],
       "confidence": 0.585,
@@ -183,7 +183,7 @@
       "source": "NFL Official Injury Report",
       "source_tier": "official",
       "published_at_utc": null,
-      "fetched_at_utc": "2026-11-18T07:29:42.747827+00:00",
+      "fetched_at_utc": "2026-11-18T17:16:05.639071+00:00",
       "status_signal": "probable",
       "tactical_flags": [],
       "confidence": 0.585,
@@ -195,7 +195,7 @@
       "source": "MLB Official Injury Report",
       "source_tier": "official",
       "published_at_utc": null,
-      "fetched_at_utc": "2026-11-18T07:29:44.910329+00:00",
+      "fetched_at_utc": "2026-11-18T17:16:05.998513+00:00",
       "status_signal": "probable",
       "tactical_flags": [],
       "confidence": 0.585,
@@ -207,7 +207,7 @@
       "source": "MLB Probable Pitchers",
       "source_tier": "official",
       "published_at_utc": null,
-      "fetched_at_utc": "2026-11-18T07:29:45.045290+00:00",
+      "fetched_at_utc": "2026-11-18T17:16:06.093213+00:00",
       "status_signal": "probable",
       "tactical_flags": [],
       "confidence": 0.585,
@@ -219,7 +219,7 @@
       "source": "NFL Official Injury Report",
       "source_tier": "official",
       "published_at_utc": null,
-      "fetched_at_utc": "2026-11-18T07:29:42.747425+00:00",
+      "fetched_at_utc": "2026-11-18T17:16:05.638837+00:00",
       "status_signal": null,
       "tactical_flags": [
         "rest_candidate"
@@ -233,7 +233,7 @@
       "source": "NFL Official Injury Report",
       "source_tier": "official",
       "published_at_utc": null,
-      "fetched_at_utc": "2026-11-18T07:29:42.747673+00:00",
+      "fetched_at_utc": "2026-11-18T17:16:05.638969+00:00",
       "status_signal": null,
       "tactical_flags": [
         "expected_to_start"
@@ -247,7 +247,7 @@
       "source": "MLB Official Injury Report",
       "source_tier": "official",
       "published_at_utc": null,
-      "fetched_at_utc": "2026-11-18T07:29:44.910525+00:00",
+      "fetched_at_utc": "2026-11-18T17:16:05.998650+00:00",
       "status_signal": null,
       "tactical_flags": [
         "rest_candidate"
@@ -272,7 +272,7 @@
     }
   ],
   "structured": {
-    "generated_at_utc": "2026-11-18T07:29:45.629464+00:00",
+    "generated_at_utc": "2026-11-18T17:16:06.812273+00:00",
     "players": [],
     "teams": {},
     "policy": {
