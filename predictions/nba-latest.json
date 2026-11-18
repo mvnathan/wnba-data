@@ -1,6 +1,6 @@
 {
   "sport": "NBA",
-  "generated_at_utc": "2026-11-18T03:50:31.032435+00:00",
+  "generated_at_utc": "2026-11-18T16:07:13.741201+00:00",
   "target_date": "2026-11-18",
   "season": "2026-27",
   "model_version": "nba-v2-roster-four-factors",
@@ -55,7 +55,7 @@
         "mae": 15.750307765858192
       },
       "total_extra_trees": {
-        "mae": 15.823980776889647
+        "mae": 15.823980776889643
       }
     },
     "test": {
@@ -6065,12 +6065,12 @@
       "home_team": "Cleveland Cavaliers",
       "away_team": "Memphis Grizzlies",
       "model_version": "nba-v2-roster-four-factors",
-      "home_win_probability": 0.6693,
-      "away_win_probability": 0.3307,
-      "predicted_margin": 5.5,
-      "predicted_total": 229.55,
-      "predicted_home_points": 117.52,
-      "predicted_away_points": 112.02,
+      "home_win_probability": 0.6947521698992359,
+      "away_win_probability": 0.30524783010076406,
+      "predicted_margin": 4.881095545175151,
+      "predicted_total": 233.3098146613133,
+      "predicted_home_points": 119.09545510324423,
+      "predicted_away_points": 114.21435955806908,
       "predicted_winner": "Cleveland Cavaliers",
       "roster_context": {
         "home": {
@@ -6086,82 +6086,7 @@
           "roster_value": 9.967568599557298
         }
       },
-      "base_predicted_home_points": 119.09545510324423,
-      "base_predicted_away_points": 114.21435955806908,
-      "x_availability_adjustments": [
-        {
-          "team_side": "home",
-          "player": "Sam Merrill",
-          "status": "out",
-          "points": 0.5,
-          "source": "ESPN NBA Injuries",
-          "url": "https://www.espn.com/nba/injuries",
-          "text": "Sam Merrill G Nov 18 Out Nov 17: Merrill (elbow) is questionable to face the Grizzlies on Wednesday."
-        },
-        {
-          "team_side": "home",
-          "player": "Evan Mobley",
-          "status": "out",
-          "points": 0.63,
-          "source": "ESPN NBA Injuries",
-          "url": "https://www.espn.com/nba/injuries",
-          "text": "Evan Mobley C Nov 29 Out Nov 16: Mobley will receive treatment and participate in rehab after the team confirmed a diagnosis of a right great toe sprain, and he'll be re-evaluated in the next 7-to-10 days."
-        },
-        {
-          "team_side": "home",
-          "player": "Nae'Qwan Tomlin",
-          "status": "out",
-          "points": 0.44,
-          "source": "ESPN NBA Injuries",
-          "url": "https://www.espn.com/nba/injuries",
-          "text": "Nae'Qwan Tomlin F Nov 18 Out Oct 20: Tomlin is set to miss several weeks with a lower back stress reaction, Chris Fedor of The Cleveland Plain Dealer reports."
-        },
-        {
-          "team_side": "away",
-          "player": "GG Jackson",
-          "status": "out",
-          "points": 0.47,
-          "source": "ESPN NBA Injuries",
-          "url": "https://www.espn.com/nba/injuries",
-          "text": "GG Jackson F Jan 18 Out Nov 16: Jackson will undergo surgery to repair the broken fifth metatarsal in his left foot and is set to miss significant time."
-        },
-        {
-          "team_side": "away",
-          "player": "Ty Jerome",
-          "status": "out",
-          "points": 0.41,
-          "source": "ESPN NBA Injuries",
-          "url": "https://www.espn.com/nba/injuries",
-          "text": "Ty Jerome G Nov 19 Out Nov 17: Jerome (hip) has been ruled out for Wednesday's game in Cleveland."
-        },
-        {
-          "team_side": "away",
-          "player": "Scotty Pippen Jr.",
-          "status": "out",
-          "points": 0.41,
-          "source": "ESPN NBA Injuries",
-          "url": "https://www.espn.com/nba/injuries",
-          "text": "Scotty Pippen Jr. G Nov 25 Out Nov 16: Pippen (back) is progressing in his recovery but is still considered week-to-week."
-        },
-        {
-          "team_side": "away",
-          "player": "Richie Saunders",
-          "status": "out",
-          "points": 0.41,
-          "source": "ESPN NBA Injuries",
-          "url": "https://www.espn.com/nba/injuries",
-          "text": "Richie Saunders G Dec 1 Out Nov 7: Saunders signed a two-way contract with the Grizzlies on Saturday, Shams Charania of ESPN reports."
-        },
-        {
-          "team_side": "away",
-          "player": "Isaiah Stewart",
-          "status": "out",
-          "points": 0.5,
-          "source": "ESPN NBA Injuries",
-          "url": "https://www.espn.com/nba/injuries",
-          "text": "Isaiah Stewart C Nov 19 Out Nov 17: Stewart (illness) won't play Wednesday against the Cavs."
-        }
-      ],
+      "x_availability_adjustments": [],
       "model_market_home_win_edge": null
     },
     {
@@ -6177,12 +6102,12 @@
       "home_team": "Indiana Pacers",
       "away_team": "Houston Rockets",
       "model_version": "nba-v2-roster-four-factors",
-      "home_win_probability": 0.2669,
-      "away_win_probability": 0.7331,
-      "predicted_margin": -7.88,
-      "predicted_total": 220.52,
-      "predicted_home_points": 106.32,
-      "predicted_away_points": 114.2,
+      "home_win_probability": 0.29432897346741727,
+      "away_win_probability": 0.7056710265325827,
+      "predicted_margin": -6.423919378097285,
+      "predicted_total": 222.78669020205183,
+      "predicted_home_points": 108.18138541197727,
+      "predicted_away_points": 114.60530479007456,
       "predicted_winner": "Houston Rockets",
       "roster_context": {
         "home": {
@@ -6198,55 +6123,7 @@
           "roster_value": 14.132103816168014
         }
       },
-      "base_predicted_home_points": 108.18138541197727,
-      "base_predicted_away_points": 114.60530479007456,
-      "x_availability_adjustments": [
-        {
-          "team_side": "home",
-          "player": "Johnny Furphy",
-          "status": "out",
-          "points": 0.41,
-          "source": "ESPN NBA Injuries",
-          "url": "https://www.espn.com/nba/injuries",
-          "text": "Johnny Furphy G Jan 2 Out Oct 30: Furphy (knee) is practicing with the G League's Noblesville Boom, per Alex Golden of SI.com."
-        },
-        {
-          "team_side": "home",
-          "player": "Tyrese Haliburton",
-          "status": "out",
-          "points": 0.41,
-          "source": "ESPN NBA Injuries",
-          "url": "https://www.espn.com/nba/injuries",
-          "text": "Tyrese Haliburton G Nov 28 Out Nov 17: Head coach Rick Carlisle said Tuesday that Haliburton (hamstring) is \"getting there,\" but there's still no definitive timetable for his return to game action, Dustin Dopirak of The Indianapolis Star reports."
-        },
-        {
-          "team_side": "home",
-          "player": "Andrew Nembhard",
-          "status": "out",
-          "points": 0.56,
-          "source": "ESPN NBA Injuries",
-          "url": "https://www.espn.com/nba/injuries",
-          "text": "Andrew Nembhard G Nov 18 Day-To-Day Nov 15: Nembhard (hip) has been ruled out for Sunday's game against the 76ers, Tony East of Forbes.com reports."
-        },
-        {
-          "team_side": "home",
-          "player": "Ben Sheppard",
-          "status": "out",
-          "points": 0.49,
-          "source": "ESPN NBA Injuries",
-          "url": "https://www.espn.com/nba/injuries",
-          "text": "Ben Sheppard G Jan 2 Out Oct 28: Head coach Rick Carlise confirmed Sheppard will miss \"months\" after undergoing surgery to repair a torn meniscus in his left knee, Tony East of Forbes.com reports."
-        },
-        {
-          "team_side": "away",
-          "player": "Clint Capela",
-          "status": "out",
-          "points": 0.41,
-          "source": "ESPN NBA Injuries",
-          "url": "https://www.espn.com/nba/injuries",
-          "text": "Clint Capela C Nov 20 Out Nov 17: Capela (ankle) has been ruled out for Wednesday's game against Indiana."
-        }
-      ],
+      "x_availability_adjustments": [],
       "model_market_home_win_edge": null
     },
     {
@@ -6262,12 +6139,12 @@
       "home_team": "Miami Heat",
       "away_team": "Milwaukee Bucks",
       "model_version": "nba-v2-roster-four-factors",
-      "home_win_probability": 0.8236,
-      "away_win_probability": 0.1764,
-      "predicted_margin": 12.02,
-      "predicted_total": 229.47,
-      "predicted_home_points": 120.75,
-      "predicted_away_points": 108.72,
+      "home_win_probability": 0.8255113063352033,
+      "away_win_probability": 0.1744886936647967,
+      "predicted_margin": 11.608067214311502,
+      "predicted_total": 229.8880966840972,
+      "predicted_home_points": 120.74808194920435,
+      "predicted_away_points": 109.14001473489286,
       "predicted_winner": "Miami Heat",
       "roster_context": {
         "home": {
@@ -6283,19 +6160,7 @@
           "roster_value": 10.619766671802397
         }
       },
-      "base_predicted_home_points": 120.74808194920435,
-      "base_predicted_away_points": 109.14001473489286,
-      "x_availability_adjustments": [
-        {
-          "team_side": "away",
-          "player": "Ousmane Dieng",
-          "status": "out",
-          "points": 0.42,
-          "source": "ESPN NBA Injuries",
-          "url": "https://www.espn.com/nba/injuries",
-          "text": "Ousmane Dieng F Dec 14 Out Nov 15: Dieng will undergo a procedure to repair a fractured left finger Monday, Justin Garcia of the Milwaukee Bucks Radio Network reports."
-        }
-      ],
+      "x_availability_adjustments": [],
       "model_market_home_win_edge": null
     },
     {
@@ -6311,12 +6176,12 @@
       "home_team": "Orlando Magic",
       "away_team": "Philadelphia 76ers",
       "model_version": "nba-v2-roster-four-factors",
-      "home_win_probability": 0.5844,
-      "away_win_probability": 0.4156,
-      "predicted_margin": 2.66,
-      "predicted_total": 219.07,
-      "predicted_home_points": 110.86,
-      "predicted_away_points": 108.2,
+      "home_win_probability": 0.6070862965672688,
+      "away_win_probability": 0.39291370343273124,
+      "predicted_margin": 2.599163862041077,
+      "predicted_total": 222.83090854977917,
+      "predicted_home_points": 112.71503620591012,
+      "predicted_away_points": 110.11587234386904,
       "predicted_winner": "Orlando Magic",
       "roster_context": {
         "home": {
@@ -6332,82 +6197,7 @@
           "roster_value": 13.399601605200303
         }
       },
-      "base_predicted_home_points": 112.71503620591012,
-      "base_predicted_away_points": 110.11587234386904,
-      "x_availability_adjustments": [
-        {
-          "team_side": "home",
-          "player": "Paolo Banchero",
-          "status": "out",
-          "points": 0.63,
-          "source": "ESPN NBA Injuries",
-          "url": "https://www.espn.com/nba/injuries",
-          "text": "Paolo Banchero F Nov 22 Out Oct 24: Banchero is expected to be sidelined for the next four-to-six weeks due to a right high-ankle sprain, Shams Charania of ESPN reports."
-        },
-        {
-          "team_side": "home",
-          "player": "Jonathan Isaac",
-          "status": "out",
-          "points": 0.41,
-          "source": "ESPN NBA Injuries",
-          "url": "https://www.espn.com/nba/injuries",
-          "text": "Jonathan Isaac F Nov 22 Out Nov 15: Isaac (knee) has been ruled out for Monday's game against the Celtics."
-        },
-        {
-          "team_side": "home",
-          "player": "Izaiyah Nelson",
-          "status": "out",
-          "points": 0.41,
-          "source": "ESPN NBA Injuries",
-          "url": "https://www.espn.com/nba/injuries",
-          "text": "Izaiyah Nelson F Nov 28 Out Nov 17: Nelson (ankle) has been ruled out for Wednesday's game against the 76ers."
-        },
-        {
-          "team_side": "home",
-          "player": "Noah Penda",
-          "status": "out",
-          "points": 0.41,
-          "source": "ESPN NBA Injuries",
-          "url": "https://www.espn.com/nba/injuries",
-          "text": "Noah Penda F Nov 22 Out Nov 14: Penda (hamstring) is making progress but remains without a timetable to return to game action, Jason Beede of the Orlando Sentinel reports."
-        },
-        {
-          "team_side": "away",
-          "player": "Dominick Barlow",
-          "status": "out",
-          "points": 0.49,
-          "source": "ESPN NBA Injuries",
-          "url": "https://www.espn.com/nba/injuries",
-          "text": "Dominick Barlow F Nov 21 Out Nov 17: Barlow (back) is out for Wednesday's game against Orlando."
-        },
-        {
-          "team_side": "away",
-          "player": "Adem Bona",
-          "status": "out",
-          "points": 0.42,
-          "source": "ESPN NBA Injuries",
-          "url": "https://www.espn.com/nba/injuries",
-          "text": "Adem Bona C Nov 21 Out Nov 12: Bona (back) will be re-evaluated in approximately one week after seeing a specialist, Ky Carlin of USA Today reports."
-        },
-        {
-          "team_side": "away",
-          "player": "Jaylen Brown",
-          "status": "out",
-          "points": 0.6,
-          "source": "ESPN NBA Injuries",
-          "url": "https://www.espn.com/nba/injuries",
-          "text": "Jaylen Brown G Nov 21 Out Nov 17: Brown is out for Wednesday's game against the Magic with a left hamstring strain."
-        },
-        {
-          "team_side": "away",
-          "player": "Ariel Hukporti",
-          "status": "out",
-          "points": 0.41,
-          "source": "ESPN NBA Injuries",
-          "url": "https://www.espn.com/nba/injuries",
-          "text": "Ariel Hukporti C Oct 1 Out Oct 6: Hukporti has sustained a season-ending ruptured right Achilles tendon, per Shams Charania of ESPN."
-        }
-      ],
+      "x_availability_adjustments": [],
       "model_market_home_win_edge": null
     },
     {
@@ -6423,12 +6213,12 @@
       "home_team": "Brooklyn Nets",
       "away_team": "Chicago Bulls",
       "model_version": "nba-v2-roster-four-factors",
-      "home_win_probability": 0.7265,
-      "away_win_probability": 0.2735,
-      "predicted_margin": 7.62,
-      "predicted_total": 230.3,
-      "predicted_home_points": 118.96,
-      "predicted_away_points": 111.34,
+      "home_win_probability": 0.6909475817620802,
+      "away_win_probability": 0.30905241823791985,
+      "predicted_margin": 6.806407012584086,
+      "predicted_total": 231.11079969640997,
+      "predicted_home_points": 118.95860335449703,
+      "predicted_away_points": 112.15219634191294,
       "predicted_winner": "Brooklyn Nets",
       "roster_context": {
         "home": {
@@ -6444,28 +6234,7 @@
           "roster_value": 11.660874852022669
         }
       },
-      "base_predicted_home_points": 118.95860335449703,
-      "base_predicted_away_points": 112.15219634191294,
-      "x_availability_adjustments": [
-        {
-          "team_side": "away",
-          "player": "Tobe Awaka",
-          "status": "out",
-          "points": 0.41,
-          "source": "ESPN NBA Injuries",
-          "url": "https://www.espn.com/nba/injuries",
-          "text": "Tobe Awaka F Nov 25 Out Nov 17: Awaka (back) has been ruled out for Wednesday's game against the Nets."
-        },
-        {
-          "team_side": "away",
-          "player": "Caleb Wilson",
-          "status": "out",
-          "points": 0.41,
-          "source": "ESPN NBA Injuries",
-          "url": "https://www.espn.com/nba/injuries",
-          "text": "Caleb Wilson F Dec 13 Out Nov 12: Wilson (hand) is expected to miss four to six weeks, Shams Charania of ESPN reports."
-        }
-      ],
+      "x_availability_adjustments": [],
       "model_market_home_win_edge": null
     },
     {
@@ -6481,12 +6250,12 @@
       "home_team": "Toronto Raptors",
       "away_team": "Washington Wizards",
       "model_version": "nba-v2-roster-four-factors",
-      "home_win_probability": 0.8365792110354922,
-      "away_win_probability": 0.16342078896450785,
-      "predicted_margin": 12.509733158677191,
-      "predicted_total": 226.7670304409524,
-      "predicted_home_points": 119.6383817998148,
-      "predicted_away_points": 107.1286486411376,
+      "home_win_probability": 0.7598101446561595,
+      "away_win_probability": 0.24018985534384052,
+      "predicted_margin": 8.674289256832552,
+      "predicted_total": 225.3128337782164,
+      "predicted_home_points": 116.99356151752448,
+      "predicted_away_points": 108.31927226069192,
       "predicted_winner": "Toronto Raptors",
       "roster_context": {
         "home": {
@@ -6518,12 +6287,12 @@
       "home_team": "New Orleans Pelicans",
       "away_team": "Detroit Pistons",
       "model_version": "nba-v2-roster-four-factors",
-      "home_win_probability": 0.405,
-      "away_win_probability": 0.595,
-      "predicted_margin": -3.0,
-      "predicted_total": 224.34,
-      "predicted_home_points": 110.67,
-      "predicted_away_points": 113.67,
+      "home_win_probability": 0.4874886946226831,
+      "away_win_probability": 0.5125113053773169,
+      "predicted_margin": 0.6761114234177367,
+      "predicted_total": 227.23874151498745,
+      "predicted_home_points": 113.95742646920259,
+      "predicted_away_points": 113.28131504578486,
       "predicted_winner": "Detroit Pistons",
       "roster_context": {
         "home": {
@@ -6539,100 +6308,7 @@
           "roster_value": 12.379148735639733
         }
       },
-      "base_predicted_home_points": 112.99241659379113,
-      "base_predicted_away_points": 116.17231895556951,
-      "x_availability_adjustments": [
-        {
-          "team_side": "home",
-          "player": "Bennedict Mathurin",
-          "status": "out",
-          "points": 0.5,
-          "source": "ESPN NBA Injuries",
-          "url": "https://www.espn.com/nba/injuries",
-          "text": "Bennedict Mathurin G Nov 20 Out Nov 17: Mathurin (foot) has been ruled out for Wednesday's game against Detroit."
-        },
-        {
-          "team_side": "home",
-          "player": "Bryce McGowens",
-          "status": "out",
-          "points": 0.41,
-          "source": "ESPN NBA Injuries",
-          "url": "https://www.espn.com/nba/injuries",
-          "text": "Bryce McGowens G Nov 20 Out Nov 17: McGowens (elbow) has been ruled out for Wednesday's game against Detroit."
-        },
-        {
-          "team_side": "home",
-          "player": "Trey Murphy III",
-          "status": "out",
-          "points": 0.61,
-          "source": "ESPN NBA Injuries",
-          "url": "https://www.espn.com/nba/injuries",
-          "text": "Trey Murphy III F Nov 20 Out Nov 17: Murphy (knee) has been ruled out for Wednesday's game against Detroit."
-        },
-        {
-          "team_side": "home",
-          "player": "Dejounte Murray",
-          "status": "out",
-          "points": 0.41,
-          "source": "ESPN NBA Injuries",
-          "url": "https://www.espn.com/nba/injuries",
-          "text": "Dejounte Murray G Nov 20 Out Nov 13: Murray (ankle) is out for Friday's game against Memphis."
-        },
-        {
-          "team_side": "home",
-          "player": "Trendon Watford",
-          "status": "out",
-          "points": 0.41,
-          "source": "ESPN NBA Injuries",
-          "url": "https://www.espn.com/nba/injuries",
-          "text": "Trendon Watford F Nov 20 Out Nov 17: Watford (ankle) has been ruled out for Wednesday's game against Detroit."
-        },
-        {
-          "team_side": "away",
-          "player": "Jalen Duren",
-          "status": "out",
-          "points": 0.56,
-          "source": "ESPN NBA Injuries",
-          "url": "https://www.espn.com/nba/injuries",
-          "text": "Jalen Duren C Nov 24 Out Nov 8: Duren (hamstring) has begun on-court activity and will be re-evaluated in two weeks, Hunter Patterson of The Athletic reports."
-        },
-        {
-          "team_side": "away",
-          "player": "Ronald Holland II",
-          "status": "out",
-          "points": 0.49,
-          "source": "ESPN NBA Injuries",
-          "url": "https://www.espn.com/nba/injuries",
-          "text": "Ronald Holland II F Nov 18 Out Nov 16: Holland is out for Tuesday's game against San Antonio due to a left knee contusion."
-        },
-        {
-          "team_side": "away",
-          "player": "Isaiah Joe",
-          "status": "out",
-          "points": 0.48,
-          "source": "ESPN NBA Injuries",
-          "url": "https://www.espn.com/nba/injuries",
-          "text": "Isaiah Joe G Nov 18 Out Nov 17: Joe (hip) is out for Tuesday's game against the Spurs."
-        },
-        {
-          "team_side": "away",
-          "player": "Taurean Prince",
-          "status": "out",
-          "points": 0.41,
-          "source": "ESPN NBA Injuries",
-          "url": "https://www.espn.com/nba/injuries",
-          "text": "Taurean Prince F Nov 18 Out Nov 16: Prince (knee) has been ruled out for Tuesday's game against the Spurs."
-        },
-        {
-          "team_side": "away",
-          "player": "Duncan Robinson",
-          "status": "out",
-          "points": 0.57,
-          "source": "ESPN NBA Injuries",
-          "url": "https://www.espn.com/nba/injuries",
-          "text": "Duncan Robinson F Nov 27 Out Nov 17: Robinson will be re-evaluated in one week due to a left quadriceps strain, Coty M. Davis of The Detroit News reports."
-        }
-      ],
+      "x_availability_adjustments": [],
       "model_market_home_win_edge": null
     },
     {
@@ -6648,12 +6324,12 @@
       "home_team": "Oklahoma City Thunder",
       "away_team": "Atlanta Hawks",
       "model_version": "nba-v2-roster-four-factors",
-      "home_win_probability": 0.7078,
-      "away_win_probability": 0.2922,
-      "predicted_margin": 6.9,
-      "predicted_total": 224.94,
-      "predicted_home_points": 115.92,
-      "predicted_away_points": 109.02,
+      "home_win_probability": 0.7302745365165364,
+      "away_win_probability": 0.2697254634834636,
+      "predicted_margin": 7.139873841470861,
+      "predicted_total": 229.7195599788009,
+      "predicted_home_points": 118.42971691013588,
+      "predicted_away_points": 111.28984306866502,
       "predicted_winner": "Oklahoma City Thunder",
       "roster_context": {
         "home": {
@@ -6669,100 +6345,7 @@
           "roster_value": 12.906899534104463
         }
       },
-      "base_predicted_home_points": 118.42971691013588,
-      "base_predicted_away_points": 111.28984306866502,
-      "x_availability_adjustments": [
-        {
-          "team_side": "home",
-          "player": "Chet Holmgren",
-          "status": "out",
-          "points": 0.6,
-          "source": "ESPN NBA Injuries",
-          "url": "https://www.espn.com/nba/injuries",
-          "text": "Chet Holmgren C Jan 2 Out Oct 30: Holmgren underwent a biological treatment Friday to address a small patellar tendon tear and will miss at least 8-10 weeks, Nick Crain of Slam reports."
-        },
-        {
-          "team_side": "home",
-          "player": "Thomas Sorber",
-          "status": "out",
-          "points": 0.41,
-          "source": "ESPN NBA Injuries",
-          "url": "https://www.espn.com/nba/injuries",
-          "text": "Thomas Sorber C Nov 20 Out Nov 12: Sorber (knee) has been ruled out for Friday's game against the Clippers."
-        },
-        {
-          "team_side": "home",
-          "player": "Cason Wallace",
-          "status": "out",
-          "points": 0.61,
-          "source": "ESPN NBA Injuries",
-          "url": "https://www.espn.com/nba/injuries",
-          "text": "Cason Wallace G Mar 2 Out Oct 30: Wallace underwent surgery Friday to repair a torn labrum in his left shoulder and will be re-evaluated before the end of the regular season, Clemente Almanza of USA Today reports."
-        },
-        {
-          "team_side": "home",
-          "player": "Jalen Williams",
-          "status": "out",
-          "points": 0.42,
-          "source": "ESPN NBA Injuries",
-          "url": "https://www.espn.com/nba/injuries",
-          "text": "Jalen Williams G Mar 2 Out Oct 28: Williams (leg) underwent successful surgery Wednesday to \"address a fractured left fibula and reconstruction of ankle ligaments following a fracture and dislocation.\" He will be re-evaluated before the end of the regular season, Tim MacMahon of ESPN.com reports."
-        },
-        {
-          "team_side": "home",
-          "player": "Jaylin Williams",
-          "status": "out",
-          "points": 0.48,
-          "source": "ESPN NBA Injuries",
-          "url": "https://www.espn.com/nba/injuries",
-          "text": "Jaylin Williams F Nov 18 Out Nov 14: Williams (back) has been ruled out for Sunday's game against the Kings."
-        },
-        {
-          "team_side": "away",
-          "player": "Mouhamed Gueye",
-          "status": "out",
-          "points": 0.42,
-          "source": "ESPN NBA Injuries",
-          "url": "https://www.espn.com/nba/injuries",
-          "text": "Mouhamed Gueye F Dec 12 Out Nov 12: Gueye (foot) is ready to begin on-court activities and will be re-evaluated in four weeks, Brad Rowland of the Locked On Podcast Network reports."
-        },
-        {
-          "team_side": "away",
-          "player": "Jock Landale",
-          "status": "out",
-          "points": 0.47,
-          "source": "ESPN NBA Injuries",
-          "url": "https://www.espn.com/nba/injuries",
-          "text": "Jock Landale C Nov 18 Day-To-Day Nov 16: Landale (hip) is out for Sunday's game against Bucks, Brad Rowland of the Locked On Podcast Network reports."
-        },
-        {
-          "team_side": "away",
-          "player": "CJ McCollum",
-          "status": "out",
-          "points": 0.57,
-          "source": "ESPN NBA Injuries",
-          "url": "https://www.espn.com/nba/injuries",
-          "text": "CJ McCollum G Dec 19 Out Nov 17: McCollum (calf) will miss at least four weeks, per Brad Rowland of the Locked On Podcast Network."
-        },
-        {
-          "team_side": "away",
-          "player": "Asa Newell",
-          "status": "out",
-          "points": 0.41,
-          "source": "ESPN NBA Injuries",
-          "url": "https://www.espn.com/nba/injuries",
-          "text": "Asa Newell F Mar 17 Out Nov 17: Newell underwent surgery Tuesday for a plantar plate tear in his left great toe, and he will be re-evaluated in approximately four months, Brad Rowland of the Locked On Podcast Network reports."
-        },
-        {
-          "team_side": "away",
-          "player": "Henri Veesaar",
-          "status": "out",
-          "points": 0.41,
-          "source": "ESPN NBA Injuries",
-          "url": "https://www.espn.com/nba/injuries",
-          "text": "Henri Veesaar C Jul 1 Out Sep 21: Veesaar was diagnosed with a torn right ACL and is expected to miss the 2026-27 season, the Hawks announced Monday."
-        }
-      ],
+      "x_availability_adjustments": [],
       "model_market_home_win_edge": null
     },
     {
@@ -6778,13 +6361,13 @@
       "home_team": "Dallas Mavericks",
       "away_team": "Golden State Warriors",
       "model_version": "nba-v2-roster-four-factors",
-      "home_win_probability": 0.5038,
-      "away_win_probability": 0.4962,
-      "predicted_margin": 0.12,
-      "predicted_total": 218.61,
-      "predicted_home_points": 109.36,
-      "predicted_away_points": 109.25,
-      "predicted_winner": "Dallas Mavericks",
+      "home_win_probability": 0.47763351225808676,
+      "away_win_probability": 0.5223664877419132,
+      "predicted_margin": -0.6560109167289689,
+      "predicted_total": 222.62698692170096,
+      "predicted_home_points": 110.985488002486,
+      "predicted_away_points": 111.64149891921497,
+      "predicted_winner": "Golden State Warriors",
       "roster_context": {
         "home": {
           "continuity": 0.6802258514965698,
@@ -6799,91 +6382,7 @@
           "roster_value": 11.672387268147963
         }
       },
-      "base_predicted_home_points": 110.985488002486,
-      "base_predicted_away_points": 111.64149891921497,
-      "x_availability_adjustments": [
-        {
-          "team_side": "home",
-          "player": "Tarik Biberovic",
-          "status": "out",
-          "points": 0.41,
-          "source": "ESPN NBA Injuries",
-          "url": "https://www.espn.com/nba/injuries",
-          "text": "Tarik Biberovic F Nov 18 Out Nov 11: Biberovic (heel) is out for Thursday's game against Minnesota."
-        },
-        {
-          "team_side": "home",
-          "player": "Sergio de Larrea",
-          "status": "out",
-          "points": 0.41,
-          "source": "ESPN NBA Injuries",
-          "url": "https://www.espn.com/nba/injuries",
-          "text": "Sergio de Larrea F Nov 18 Out Nov 11: De Larrea (knee) has been ruled out for Thursday's game at Minnesota."
-        },
-        {
-          "team_side": "home",
-          "player": "Kyrie Irving",
-          "status": "out",
-          "points": 0.41,
-          "source": "ESPN NBA Injuries",
-          "url": "https://www.espn.com/nba/injuries",
-          "text": "Kyrie Irving G Nov 18 Day-To-Day Nov 16: Irving (knee) has been ruled out for Sunday's game against the Celtics."
-        },
-        {
-          "team_side": "home",
-          "player": "Dereck Lively II",
-          "status": "out",
-          "points": 0.41,
-          "source": "ESPN NBA Injuries",
-          "url": "https://www.espn.com/nba/injuries",
-          "text": "Dereck Lively II C Nov 18 Out Nov 11: Lively (foot) is listed as out for Thursday's game in Minnesota."
-        },
-        {
-          "team_side": "away",
-          "player": "Jimmy Butler III",
-          "status": "out",
-          "points": 0.46,
-          "source": "ESPN NBA Injuries",
-          "url": "https://www.espn.com/nba/injuries",
-          "text": "Jimmy Butler III F Jan 2 Out Oct 16: Butler (knee) could return sometime between January and February as he continues recovering from a torn right ACL, Anthony Slater of ESPN reports."
-        },
-        {
-          "team_side": "away",
-          "player": "Stephen Curry",
-          "status": "out",
-          "points": 0.49,
-          "source": "ESPN NBA Injuries",
-          "url": "https://www.espn.com/nba/injuries",
-          "text": "Stephen Curry G Dec 12 Out Nov 12: Curry has been diagnosed with an oblique abdominal tear and will be re-evaluated in two weeks, Shams Charania of ESPN reports."
-        },
-        {
-          "team_side": "away",
-          "player": "Moses Moody",
-          "status": "out",
-          "points": 0.53,
-          "source": "ESPN NBA Injuries",
-          "url": "https://www.espn.com/nba/injuries",
-          "text": "Moses Moody G Dec 1 Out Oct 16: Moody (knee) is progressing toward a potential return between December and January after rupturing his left patellar tendon in March, Anthony Slater of ESPN reports."
-        },
-        {
-          "team_side": "away",
-          "player": "Kristaps Porzingis",
-          "status": "out",
-          "points": 0.41,
-          "source": "ESPN NBA Injuries",
-          "url": "https://www.espn.com/nba/injuries",
-          "text": "Kristaps Porzingis C Jan 2 Out Nov 6: Porzingis announced on his social media that he's stepping away from basketball."
-        },
-        {
-          "team_side": "away",
-          "player": "Brandon Williams",
-          "status": "out",
-          "points": 0.51,
-          "source": "ESPN NBA Injuries",
-          "url": "https://www.espn.com/nba/injuries",
-          "text": "Brandon Williams G Nov 22 Out Nov 10: Williams (hamstring) will miss at least one week, per Anthony Slater of ESPN.com."
-        }
-      ],
+      "x_availability_adjustments": [],
       "model_market_home_win_edge": null
     },
     {
@@ -6899,12 +6398,12 @@
       "home_team": "Denver Nuggets",
       "away_team": "Boston Celtics",
       "model_version": "nba-v2-roster-four-factors",
-      "home_win_probability": 0.3803,
-      "away_win_probability": 0.6197,
-      "predicted_margin": -3.81,
-      "predicted_total": 218.68,
-      "predicted_home_points": 107.44,
-      "predicted_away_points": 111.24,
+      "home_win_probability": 0.38558735574565856,
+      "away_win_probability": 0.6144126442543414,
+      "predicted_margin": -3.9647667454006976,
+      "predicted_total": 219.6508796728816,
+      "predicted_home_points": 107.84305646374044,
+      "predicted_away_points": 111.80782320914115,
       "predicted_winner": "Boston Celtics",
       "roster_context": {
         "home": {
@@ -6920,28 +6419,7 @@
           "roster_value": 11.941139396958707
         }
       },
-      "base_predicted_home_points": 107.84305646374044,
-      "base_predicted_away_points": 111.80782320914115,
-      "x_availability_adjustments": [
-        {
-          "team_side": "home",
-          "player": "Julian Strawther",
-          "status": "out",
-          "points": 0.41,
-          "source": "ESPN NBA Injuries",
-          "url": "https://www.espn.com/nba/injuries",
-          "text": "Julian Strawther G Nov 29 Out Oct 16: Strawther (knee) was diagnosed with a left knee sprain Friday and will be re-evaluated in six weeks, Vinny Benedetto of The Denver Gazette reports."
-        },
-        {
-          "team_side": "away",
-          "player": "Neemias Queta",
-          "status": "out",
-          "points": 0.56,
-          "source": "ESPN NBA Injuries",
-          "url": "https://www.espn.com/nba/injuries",
-          "text": "Neemias Queta C Nov 18 Day-To-Day Nov 16: Queta (rest) won't play in Monday's game against the Magic, Taylor Snow of the Celtics' official site reports."
-        }
-      ],
+      "x_availability_adjustments": [],
       "model_market_home_win_edge": null
     },
     {
@@ -6957,12 +6435,12 @@
       "home_team": "Los Angeles Lakers",
       "away_team": "Utah Jazz",
       "model_version": "nba-v2-roster-four-factors",
-      "home_win_probability": 0.763,
-      "away_win_probability": 0.237,
-      "predicted_margin": 9.12,
-      "predicted_total": 227.15,
-      "predicted_home_points": 118.13,
-      "predicted_away_points": 109.01,
+      "home_win_probability": 0.7472926395610483,
+      "away_win_probability": 0.2527073604389517,
+      "predicted_margin": 8.143935550273909,
+      "predicted_total": 227.20450087493353,
+      "predicted_home_points": 117.67421821260372,
+      "predicted_away_points": 109.53028266232981,
       "predicted_winner": "Los Angeles Lakers",
       "roster_context": {
         "home": {
@@ -6978,28 +6456,7 @@
           "roster_value": 11.45697867579867
         }
       },
-      "base_predicted_home_points": 119.11773501423052,
-      "base_predicted_away_points": 109.01170645424928,
-      "x_availability_adjustments": [
-        {
-          "team_side": "home",
-          "player": "Walker Kessler",
-          "status": "out",
-          "points": 0.41,
-          "source": "ESPN NBA Injuries",
-          "url": "https://www.espn.com/nba/injuries",
-          "text": "Walker Kessler C Nov 18 Out Nov 16: Walker (leg) has been ruled out for Tuesday's game against the Hornets."
-        },
-        {
-          "team_side": "home",
-          "player": "Austin Reaves",
-          "status": "out",
-          "points": 0.58,
-          "source": "ESPN NBA Injuries",
-          "url": "https://www.espn.com/nba/injuries",
-          "text": "Austin Reaves G Nov 18 Out Nov 16: Reaves (heel) is out for Tuesday's game against the Hornets, Dave McMenamin of ESPN.com reports."
-        }
-      ],
+      "x_availability_adjustments": [],
       "model_market_home_win_edge": null
     },
     {
@@ -7015,13 +6472,13 @@
       "home_team": "Sacramento Kings",
       "away_team": "Phoenix Suns",
       "model_version": "nba-v2-roster-four-factors",
-      "home_win_probability": 0.3724,
-      "away_win_probability": 0.6276,
-      "predicted_margin": -4.07,
-      "predicted_total": 224.96,
-      "predicted_home_points": 110.45,
-      "predicted_away_points": 114.51,
-      "predicted_winner": "Phoenix Suns",
+      "home_win_probability": 0.5102236090775178,
+      "away_win_probability": 0.48977639092248215,
+      "predicted_margin": -1.4885413556059648,
+      "predicted_total": 228.4614621552954,
+      "predicted_home_points": 113.48646039984472,
+      "predicted_away_points": 114.97500175545069,
+      "predicted_winner": "Sacramento Kings",
       "roster_context": {
         "home": {
           "continuity": 0.8203431159104764,
@@ -7036,64 +6493,7 @@
           "roster_value": 11.346538770951012
         }
       },
-      "base_predicted_home_points": 113.48646039984472,
-      "base_predicted_away_points": 114.97500175545069,
-      "x_availability_adjustments": [
-        {
-          "team_side": "home",
-          "player": "Precious Achiuwa",
-          "status": "out",
-          "points": 0.72,
-          "source": "ESPN NBA Injuries",
-          "url": "https://www.espn.com/nba/injuries",
-          "text": "Precious Achiuwa F Nov 18 Day-To-Day Nov 16: Achiuwa (ankle) has been ruled out for Sunday's game against the Thunder, Brenden Nunes of KHTK Sactown Sports 1140 reports."
-        },
-        {
-          "team_side": "home",
-          "player": "De'Andre Hunter",
-          "status": "out",
-          "points": 0.57,
-          "source": "ESPN NBA Injuries",
-          "url": "https://www.espn.com/nba/injuries",
-          "text": "De'Andre Hunter F Nov 18 Day-To-Day Nov 16: Hunter (hip) is out for Sunday's game against the Thunder."
-        },
-        {
-          "team_side": "home",
-          "player": "Zach LaVine",
-          "status": "out",
-          "points": 0.58,
-          "source": "ESPN NBA Injuries",
-          "url": "https://www.espn.com/nba/injuries",
-          "text": "Zach LaVine G Nov 18 Day-To-Day Nov 16: LaVine is out for Sunday's game against Oklahoma City due to illness, Brandon Rahbar of DailyThunder.com reports."
-        },
-        {
-          "team_side": "home",
-          "player": "Maxime Raynaud",
-          "status": "out",
-          "points": 0.77,
-          "source": "ESPN NBA Injuries",
-          "url": "https://www.espn.com/nba/injuries",
-          "text": "Maxime Raynaud C Nov 18 Out Nov 14: Raynaud (knee) has been ruled out for Sunday's game against the Thunder."
-        },
-        {
-          "team_side": "home",
-          "player": "Ben Simmons",
-          "status": "out",
-          "points": 0.41,
-          "source": "ESPN NBA Injuries",
-          "url": "https://www.espn.com/nba/injuries",
-          "text": "Ben Simmons G Oct 1 Out Oct 21: Simmons underwent successful surgery Tuesday to repair a torn right Achilles tendon, James Ham of ESPN 1320 Sacramento reports."
-        },
-        {
-          "team_side": "away",
-          "player": "Mark Williams",
-          "status": "out",
-          "points": 0.46,
-          "source": "ESPN NBA Injuries",
-          "url": "https://www.espn.com/nba/injuries",
-          "text": "Mark Williams C Feb 3 Out Sep 11: Williams underwent surgery Thursday to repair a torn labrum in his left shoulder and will miss an extended period of time, Shams Charania of ESPN reports."
-        }
-      ],
+      "x_availability_adjustments": [],
       "model_market_home_win_edge": null
     }
   ],
