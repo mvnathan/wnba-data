@@ -1,12 +1,12 @@
 {
-  "generated_at_utc": "2026-11-18T07:45:14.669338+00:00",
+  "generated_at_utc": "2026-11-18T20:45:05.257643+00:00",
   "status": "ok",
   "production_adjustment_enabled": false,
   "new_posts_seen": 2,
   "new_picks_parsed": 0,
   "ledger_size": 0,
-  "since_id_used": "2122544179964432766",
-  "newest_id": "2122887867831554308",
+  "since_id_used": "2122887867831554308",
+  "newest_id": "2123119604008439916",
   "accounts": {
     "@RufusPeabody": {
       "tier": "established_professional",
@@ -62,18 +62,18 @@
   "new_picks": [],
   "candidate_posts": [
     {
-      "post_id": "2122887867831554308",
-      "source": "@wheatonbrando",
-      "published_at_utc": "2026-11-18T03:01:23.000Z",
-      "text": "NFL Midseason Awards show!! \ud83d\udd2e \ud83c\udfc8 \n\n@BrandonKravitz &amp; I talk through every major award and where the value is, with a fresh pick for each award at @ActionNetworkHQ:\n\nhttps://t.co/1bbiAybQ7e",
-      "url": "https://x.com/wheatonbrando/status/2122887867831554308"
+      "post_id": "2123119604008439916",
+      "source": "@capjack2000",
+      "published_at_utc": "2026-11-18T18:22:13.000Z",
+      "text": "@chinamaniac The CFTC has ruled that CreatorID's are not permissible. Kalshi has told them it'll take them a year to unwind them from their RFQ process.\n\nYet, they were able to remove American Odds in under a day. \ud83e\udd28",
+      "url": "https://x.com/capjack2000/status/2123119604008439916"
     },
     {
-      "post_id": "2122861361227293062",
-      "source": "@FezzikSports",
-      "published_at_utc": "2026-11-18T01:16:04.000Z",
-      "text": "Captain Obvious asks\n\nWHO ARE These guys posting 21 videos betting 5k/hand?\n\nAs Paul Newman said in the Sting\n\n\"They wouldn't let you play in this game if they didn't know you were a sucker\".\n\nBy Example The M kicked out @KelleyBydlon when he was half drunk betting $100 a",
-      "url": "https://x.com/FezzikSports/status/2122861361227293062"
+      "post_id": "2123074768584998981",
+      "source": "@wheatonbrando",
+      "published_at_utc": "2026-11-18T15:24:04.000Z",
+      "text": "@CodyL95_ @BrandonKravitz @ActionNetworkHQ Not for me, maybe Kravitz? I\u2019m actually not sure I had a preseason Super Bowl pick but it definitely wasn\u2019t San Francisco",
+      "url": "https://x.com/wheatonbrando/status/2123074768584998981"
     }
   ],
   "promotion_thresholds": {
