@@ -2,6 +2,7 @@
 from __future__ import annotations
 import json, pickle, math
 from datetime import datetime, timezone, timedelta
+from zoneinfo import ZoneInfo
 from pathlib import Path
 import pandas as pd
 
@@ -70,11 +71,15 @@ def main():
     if not current["games"].empty:history_parts.append(current["games"])
     history=pd.concat(history_parts,ignore_index=True).sort_values(["date","game_id"])
 
-    date=now.date().isoformat()
+    # ESPN's NBA scoreboard dates represent US game days, not UTC dates.
+    # Using UTC after 6/7pm Central prematurely switches the dashboard to
+    # tomorrow while tonight's games are still in progress.
+    local_today=now.astimezone(ZoneInfo("America/Chicago")).date()
+    date=local_today.isoformat()
     slate=espn_schedule(date)
     if not slate:
         for i in (1,2):
-            candidate=(now+timedelta(days=i)).date().isoformat()
+            candidate=(local_today+timedelta(days=i)).isoformat()
             slate=espn_schedule(candidate)
             if slate:date=candidate;break
 
