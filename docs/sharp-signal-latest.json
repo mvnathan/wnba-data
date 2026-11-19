@@ -1,12 +1,12 @@
 {
-  "generated_at_utc": "2026-11-18T20:45:05.257643+00:00",
+  "generated_at_utc": "2026-11-19T07:41:14.160393+00:00",
   "status": "ok",
   "production_adjustment_enabled": false,
-  "new_posts_seen": 2,
+  "new_posts_seen": 5,
   "new_picks_parsed": 0,
   "ledger_size": 0,
-  "since_id_used": "2122887867831554308",
-  "newest_id": "2123119604008439916",
+  "since_id_used": "2123119604008439916",
+  "newest_id": "2123285012170826226",
   "accounts": {
     "@RufusPeabody": {
       "tier": "established_professional",
@@ -62,18 +62,39 @@
   "new_picks": [],
   "candidate_posts": [
     {
-      "post_id": "2123119604008439916",
-      "source": "@capjack2000",
-      "published_at_utc": "2026-11-18T18:22:13.000Z",
-      "text": "@chinamaniac The CFTC has ruled that CreatorID's are not permissible. Kalshi has told them it'll take them a year to unwind them from their RFQ process.\n\nYet, they were able to remove American Odds in under a day. \ud83e\udd28",
-      "url": "https://x.com/capjack2000/status/2123119604008439916"
+      "post_id": "2123285012170826226",
+      "source": "@iamrahstradamus",
+      "published_at_utc": "2026-11-19T05:19:30.000Z",
+      "text": "I've been betting way too long because I've reached the point where I get betting Deja Vu. As soon as I saw the Celtics at -2.5 tonight I thought of a random ass game from November 5th, 2018. I remember it vividly. I came home from my job at Roc Nation in New York and went",
+      "url": "https://x.com/iamrahstradamus/status/2123285012170826226"
     },
     {
-      "post_id": "2123074768584998981",
+      "post_id": "2123268745531658499",
+      "source": "@iamrahstradamus",
+      "published_at_utc": "2026-11-19T04:14:52.000Z",
+      "text": "@DeshaunNation There's only so much they can adjust. They played the Spurs right after Steph got hurt but the Spurs are a juggernaut so . Even I bet them against the Pelicans because I thought the line was short. At this point I'm either fading or laying off.",
+      "url": "https://x.com/iamrahstradamus/status/2123268745531658499"
+    },
+    {
+      "post_id": "2123184882834980932",
+      "source": "@FezzikSports",
+      "published_at_utc": "2026-11-18T22:41:37.000Z",
+      "text": "THIS GUY won +187 units last year, risking 1.0 per bet!\n\nWhy isn't EVERYONE getting in??\n\nBy contrast, there are guys who are TOTAL shucksters, charging to get their nonexistent numbers, bragging about their great FAKE 20 year records\n\nNever mind they give out stuff -145 that https://t.co/0cOgiP85tw",
+      "url": "https://x.com/FezzikSports/status/2123184882834980932"
+    },
+    {
+      "post_id": "2123181703057612930",
+      "source": "@FezzikSports",
+      "published_at_utc": "2026-11-18T22:28:59.000Z",
+      "text": "THIS GUY won +187 units last year, risking 1.0 per bet!\n\nWhy isn't EVERYONE getting in??\n\nBy contrast, there are guys who are TOTAL shucksters, bragging about their great FAKE 20 year records\n\nNever mind they give out stuff -145 that moved to -190 40 seconds before in regular https://t.co/0cOgiP85tw",
+      "url": "https://x.com/FezzikSports/status/2123181703057612930"
+    },
+    {
+      "post_id": "2123174774788792756",
       "source": "@wheatonbrando",
-      "published_at_utc": "2026-11-18T15:24:04.000Z",
-      "text": "@CodyL95_ @BrandonKravitz @ActionNetworkHQ Not for me, maybe Kravitz? I\u2019m actually not sure I had a preseason Super Bowl pick but it definitely wasn\u2019t San Francisco",
-      "url": "https://x.com/wheatonbrando/status/2123074768584998981"
+      "published_at_utc": "2026-11-18T22:01:27.000Z",
+      "text": "NFL Midseason Awards at @ActionNetworkHQ!\n\n\ud83d\udd2e Burrow live for more than one award\n\ud83d\udd2e a default Rookie of the Year pick\n\ud83d\udd2e an outlier DPOY hedge\n\ud83d\udd2e the Coach of the Year kingmaker\n\nhttps://t.co/Q7GQiLsGAn",
+      "url": "https://x.com/wheatonbrando/status/2123174774788792756"
     }
   ],
   "promotion_thresholds": {
