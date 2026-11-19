@@ -1,0 +1,24 @@
+name: Live odds provider diagnostic
+on:
+  workflow_dispatch:
+    inputs:
+      sport:
+        description: 'Sport key'
+        required: true
+        default: 'basketball_nba'
+        type: choice
+        options: [basketball_nba, basketball_wnba]
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    env:
+      ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - name: Check provider access and DraftKings market catalog
+        run: python live-monitor/probe_odds_api.py --sport "${{ inputs.sport }}"
