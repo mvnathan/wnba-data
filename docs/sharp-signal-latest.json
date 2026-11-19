@@ -1,12 +1,12 @@
 {
-  "generated_at_utc": "2026-11-19T07:41:14.160393+00:00",
+  "generated_at_utc": "2026-11-19T20:50:26.581003+00:00",
   "status": "ok",
   "production_adjustment_enabled": false,
-  "new_posts_seen": 5,
+  "new_posts_seen": 4,
   "new_picks_parsed": 0,
   "ledger_size": 0,
-  "since_id_used": "2123119604008439916",
-  "newest_id": "2123285012170826226",
+  "since_id_used": "2123285012170826226",
+  "newest_id": "2123518622371029195",
   "accounts": {
     "@RufusPeabody": {
       "tier": "established_professional",
@@ -62,39 +62,32 @@
   "new_picks": [],
   "candidate_posts": [
     {
-      "post_id": "2123285012170826226",
-      "source": "@iamrahstradamus",
-      "published_at_utc": "2026-11-19T05:19:30.000Z",
-      "text": "I've been betting way too long because I've reached the point where I get betting Deja Vu. As soon as I saw the Celtics at -2.5 tonight I thought of a random ass game from November 5th, 2018. I remember it vividly. I came home from my job at Roc Nation in New York and went",
-      "url": "https://x.com/iamrahstradamus/status/2123285012170826226"
-    },
-    {
-      "post_id": "2123268745531658499",
-      "source": "@iamrahstradamus",
-      "published_at_utc": "2026-11-19T04:14:52.000Z",
-      "text": "@DeshaunNation There's only so much they can adjust. They played the Spurs right after Steph got hurt but the Spurs are a juggernaut so . Even I bet them against the Pelicans because I thought the line was short. At this point I'm either fading or laying off.",
-      "url": "https://x.com/iamrahstradamus/status/2123268745531658499"
-    },
-    {
-      "post_id": "2123184882834980932",
-      "source": "@FezzikSports",
-      "published_at_utc": "2026-11-18T22:41:37.000Z",
-      "text": "THIS GUY won +187 units last year, risking 1.0 per bet!\n\nWhy isn't EVERYONE getting in??\n\nBy contrast, there are guys who are TOTAL shucksters, charging to get their nonexistent numbers, bragging about their great FAKE 20 year records\n\nNever mind they give out stuff -145 that https://t.co/0cOgiP85tw",
-      "url": "https://x.com/FezzikSports/status/2123184882834980932"
-    },
-    {
-      "post_id": "2123181703057612930",
-      "source": "@FezzikSports",
-      "published_at_utc": "2026-11-18T22:28:59.000Z",
-      "text": "THIS GUY won +187 units last year, risking 1.0 per bet!\n\nWhy isn't EVERYONE getting in??\n\nBy contrast, there are guys who are TOTAL shucksters, bragging about their great FAKE 20 year records\n\nNever mind they give out stuff -145 that moved to -190 40 seconds before in regular https://t.co/0cOgiP85tw",
-      "url": "https://x.com/FezzikSports/status/2123181703057612930"
-    },
-    {
-      "post_id": "2123174774788792756",
+      "post_id": "2123518622371029195",
       "source": "@wheatonbrando",
-      "published_at_utc": "2026-11-18T22:01:27.000Z",
-      "text": "NFL Midseason Awards at @ActionNetworkHQ!\n\n\ud83d\udd2e Burrow live for more than one award\n\ud83d\udd2e a default Rookie of the Year pick\n\ud83d\udd2e an outlier DPOY hedge\n\ud83d\udd2e the Coach of the Year kingmaker\n\nhttps://t.co/Q7GQiLsGAn",
-      "url": "https://x.com/wheatonbrando/status/2123174774788792756"
+      "published_at_utc": "2026-11-19T20:47:47.000Z",
+      "text": "@rubberchicken27 @ActionNetworkHQ That one\u2019s available at normal books! That\u2019s where I bet it",
+      "url": "https://x.com/wheatonbrando/status/2123518622371029195"
+    },
+    {
+      "post_id": "2123494240844218429",
+      "source": "@FezzikSports",
+      "published_at_utc": "2026-11-19T19:10:54.000Z",
+      "text": "set up Over 252.5\n\nGo!\n\n#dunktankaccidenttooverparlay https://t.co/wpPMYwR0jF",
+      "url": "https://x.com/FezzikSports/status/2123494240844218429"
+    },
+    {
+      "post_id": "2123428385271730622",
+      "source": "@FezzikSports",
+      "published_at_utc": "2026-11-19T14:49:13.000Z",
+      "text": "You been tellin' me you're a genius since you were seventeen\n\nIn all the time I've known you I still don't know what you mean\n\nThe weekends at the colleges didn't turn out like you planned\n\nThe teams you pick to cover I can't understand",
+      "url": "https://x.com/FezzikSports/status/2123428385271730622"
+    },
+    {
+      "post_id": "2123321379747446961",
+      "source": "@wheatonbrando",
+      "published_at_utc": "2026-11-19T07:44:00.000Z",
+      "text": "@jeskeets @treykerby @tjasondoyle 1- What would you do to fix the obvious flaw in the coin flip (you know\u2026 the fact that we can all tell time)?\n\n2- how many hours long will survivor episodes have to be for the franchise to actually SHOW US THE FREAKING SCHOOLYARD PICK",
+      "url": "https://x.com/wheatonbrando/status/2123321379747446961"
     }
   ],
   "promotion_thresholds": {
