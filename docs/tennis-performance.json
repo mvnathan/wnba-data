@@ -1,28 +1,28 @@
 {
-  "generated_at_utc": "2026-11-18T20:29:07.745822Z",
+  "generated_at_utc": "2026-11-19T07:21:30.626140Z",
   "method": "Earliest committed pre-match forecast joined to ESPN final scores by match ID",
   "summary": {
-    "matches_evaluated": 1257,
-    "winner_accuracy": 0.639618138424821,
-    "winner_auc": 0.6913381613847177,
-    "winner_log_loss": 0.642481891221908,
-    "winner_brier_score": 0.22383766696897375,
-    "spread_mae_games": 4.254653937947494,
-    "spread_bias_games": -0.03444709626093872,
-    "total_mae_games": 5.371917263325378,
-    "total_bias_games": -1.0936356404136833
+    "matches_evaluated": 1258,
+    "winner_accuracy": 0.6399046104928457,
+    "winner_auc": 0.6914821171800637,
+    "winner_log_loss": 0.642431795454765,
+    "winner_brier_score": 0.22381349079491256,
+    "spread_mae_games": 4.254372019077901,
+    "spread_bias_games": -0.0313195548489666,
+    "total_mae_games": 5.370985691573927,
+    "total_bias_games": -1.0894276629570747
   },
   "by_tour": {
     "ATP": {
-      "matches_evaluated": 552,
-      "winner_accuracy": 0.6340579710144928,
-      "winner_auc": 0.6962658061116964,
-      "winner_log_loss": 0.6292093974541584,
-      "winner_brier_score": 0.21967499942028984,
-      "spread_mae_games": 3.853623188405797,
-      "spread_bias_games": -0.2518115942028985,
-      "total_mae_games": 5.738405797101449,
-      "total_bias_games": -0.4489130434782608
+      "matches_evaluated": 553,
+      "winner_accuracy": 0.6347197106690777,
+      "winner_auc": 0.6965504120086076,
+      "winner_log_loss": 0.6291194372709794,
+      "winner_brier_score": 0.21962752933092225,
+      "spread_mae_games": 3.8537070524412296,
+      "spread_bias_games": -0.24430379746835437,
+      "total_mae_games": 5.735623869801086,
+      "total_bias_games": -0.440506329113924
     },
     "WTA": {
       "matches_evaluated": 705,
@@ -939,15 +939,15 @@
     },
     {
       "date": "2026-11-18",
-      "matches_evaluated": 3,
-      "winner_accuracy": 0.6666666666666666,
-      "winner_auc": null,
-      "winner_log_loss": 0.5377861860838021,
-      "winner_brier_score": 0.17546036333333337,
-      "spread_mae_games": 3.3666666666666667,
-      "spread_bias_games": -3.3666666666666667,
-      "total_mae_games": 2.2333333333333343,
-      "total_bias_games": 2.2333333333333343
+      "matches_evaluated": 4,
+      "winner_accuracy": 0.75,
+      "winner_auc": 1.0,
+      "winner_log_loss": 0.5482049936018838,
+      "winner_brier_score": 0.17995128250000003,
+      "spread_mae_games": 3.5,
+      "spread_bias_games": -1.5499999999999998,
+      "total_mae_games": 2.7250000000000005,
+      "total_bias_games": 2.7250000000000005
     }
   ],
   "matches": [
@@ -43688,6 +43688,40 @@
       "absolute_margin_error": 6.4,
       "total_error": 1.3000000000000007,
       "absolute_total_error": 1.3000000000000007
+    },
+    {
+      "match_id": "187514",
+      "target_date": "2026-11-18",
+      "start_time_utc": "2026-11-18T19:30Z",
+      "tour": "ATP",
+      "tournament": "Nitto ATP Finals",
+      "round": "Group Stage",
+      "player_1": "Flavio Cobolli",
+      "player_2": "Frances Tiafoe",
+      "player_1_rank": 6,
+      "player_2_rank": 9,
+      "model_version": "tennis-v3-tournament-context",
+      "prediction_issued_at": "2026-11-18T07:23:16.094424+00:00",
+      "prediction_commit": "0f0022e3",
+      "player_1_win_probability": 0.4398,
+      "predicted_winner": "Frances Tiafoe",
+      "predicted_game_margin_player_1": -3.1,
+      "predicted_total_games": 23.2,
+      "actual_player_1": "Flavio Cobolli",
+      "actual_player_2": "Frances Tiafoe",
+      "actual_player_1_games": 6.0,
+      "actual_player_2_games": 13.0,
+      "actual_margin_player_1": -7.0,
+      "actual_total_games": 19.0,
+      "actual_winner_player_1": false,
+      "final_status": "Final",
+      "winner_correct": true,
+      "brier_score": 0.19342404000000002,
+      "log_loss": 0.5794614161561289,
+      "margin_error": 3.9,
+      "absolute_margin_error": 3.9,
+      "total_error": 4.199999999999999,
+      "absolute_total_error": 4.199999999999999
     }
   ]
 }
