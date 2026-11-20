@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-11-20T03:42:27.556331+00:00",
+  "generated_at_utc": "2026-11-20T13:33:23.063714+00:00",
   "status": "ok",
   "production_modified": false,
   "baseline_model_version": "nfl-v2",
@@ -18,7 +18,7 @@
     "games": 13,
     "games_changed_by_availability": 2,
     "games_changed_by_combined": 2,
-    "availability_x_signals_available": 6,
+    "availability_x_signals_available": 7,
     "sharp_ledger_picks": 0,
     "sharp_production_weight": 0.0
   },
@@ -42,14 +42,14 @@
       },
       "availability_shadow": {
         "predicted_home_points": 25.6,
-        "predicted_away_points": 22.08,
-        "predicted_margin": 3.52,
-        "predicted_total": 47.68,
-        "home_win_probability": 0.6192,
-        "away_win_probability": 0.3808,
+        "predicted_away_points": 21.74,
+        "predicted_margin": 3.86,
+        "predicted_total": 47.34,
+        "home_win_probability": 0.6302,
+        "away_win_probability": 0.3698,
         "predicted_winner": "Houston Texans",
-        "availability_margin_delta": 0.42,
-        "availability_total_delta": -0.52,
+        "availability_margin_delta": 0.76,
+        "availability_total_delta": -0.86,
         "signals_applied": [
           {
             "team": "IND",
@@ -63,19 +63,32 @@
             "published_at_utc": "2026-11-18T18:34:26.000Z",
             "url": "https://x.com/AdamSchefter/status/2123122678223741276",
             "text": "Colts ruled out TE Will Mallory (hamstring), OT Bernhard Raimann (concussion), DT Jerry Tillery (calf), OT Jalen Travis (knee) and CB Charvarius Ward Sr. (knee) for Thursday night's game vs. the Texans."
+          },
+          {
+            "team": "IND",
+            "player": "Seth McGowan",
+            "position": "RB",
+            "status": "out",
+            "confidence": 0.3398,
+            "base_points": 1.0,
+            "point_impact": 0.34,
+            "source": "@AdamSchefter",
+            "published_at_utc": "2026-11-20T03:19:09.000Z",
+            "url": "https://x.com/AdamSchefter/status/2123617114561171512",
+            "text": "Colts RB Seth McGowan has been downgraded to out for tonight\u2019s game due to a hamstring injury."
           }
         ]
       },
       "combined_shadow": {
         "predicted_home_points": 25.6,
-        "predicted_away_points": 22.08,
-        "predicted_margin": 3.52,
-        "predicted_total": 47.68,
-        "home_win_probability": 0.6192,
-        "away_win_probability": 0.3808,
+        "predicted_away_points": 21.74,
+        "predicted_margin": 3.86,
+        "predicted_total": 47.34,
+        "home_win_probability": 0.6302,
+        "away_win_probability": 0.3698,
         "predicted_winner": "Houston Texans",
-        "combined_margin_delta_vs_production": 0.42,
-        "combined_total_delta_vs_production": -0.52,
+        "combined_margin_delta_vs_production": 0.76,
+        "combined_total_delta_vs_production": -0.86,
         "sharp_margin_delta": 0.0,
         "sharp_total_delta": 0.0,
         "sharp_signals_applied": []
