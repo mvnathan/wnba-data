@@ -1,11 +1,11 @@
 {
-  "generated_at_utc": "2026-11-20T07:32:42.724809+00:00",
+  "generated_at_utc": "2026-11-20T20:35:16.945317+00:00",
   "status": "ok",
   "production_adjustment_enabled": false,
-  "new_posts_seen": 3,
+  "new_posts_seen": 0,
   "new_picks_parsed": 0,
   "ledger_size": 0,
-  "since_id_used": "2123518622371029195",
+  "since_id_used": "2123618391453991130",
   "newest_id": "2123618391453991130",
   "accounts": {
     "@RufusPeabody": {
@@ -60,29 +60,7 @@
     }
   },
   "new_picks": [],
-  "candidate_posts": [
-    {
-      "post_id": "2123618391453991130",
-      "source": "@iamrahstradamus",
-      "published_at_utc": "2026-11-20T03:24:14.000Z",
-      "text": "The offense down the stretch in this Knicks-Wolves game was ugly. Great for an under tho.",
-      "url": "https://x.com/iamrahstradamus/status/2123618391453991130"
-    },
-    {
-      "post_id": "2123613507459629245",
-      "source": "@wheatonbrando",
-      "published_at_utc": "2026-11-20T03:04:49.000Z",
-      "text": "@teddolla00 I don\u2019t think so! I think that\u2019s a FG too high if Bowers is a full go. Denver hasn\u2019t covered that all season! I think the raiders are live to win tbh. I didn\u2019t play but definitely raiders or nothing for me",
-      "url": "https://x.com/wheatonbrando/status/2123613507459629245"
-    },
-    {
-      "post_id": "2123600185985237273",
-      "source": "@iamrahstradamus",
-      "published_at_utc": "2026-11-20T02:11:53.000Z",
-      "text": "The way NBA referees just pick and choose when they want to call continuation based on random times and situations just drives me crazy. It's the least consistent call in all of sports. It's literally whatever they feel like calling.",
-      "url": "https://x.com/iamrahstradamus/status/2123600185985237273"
-    }
-  ],
+  "candidate_posts": [],
   "promotion_thresholds": {
     "minimum_graded_picks": 100,
     "minimum_positive_clv_rate": 0.52,
