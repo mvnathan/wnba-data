@@ -1,12 +1,12 @@
 {
-  "generated_at_utc": "2026-11-20T20:35:16.945317+00:00",
+  "generated_at_utc": "2026-11-21T07:28:33.996685+00:00",
   "status": "ok",
   "production_adjustment_enabled": false,
-  "new_posts_seen": 0,
+  "new_posts_seen": 2,
   "new_picks_parsed": 0,
   "ledger_size": 0,
   "since_id_used": "2123618391453991130",
-  "newest_id": "2123618391453991130",
+  "newest_id": "2123930423017480397",
   "accounts": {
     "@RufusPeabody": {
       "tier": "established_professional",
@@ -60,7 +60,22 @@
     }
   },
   "new_picks": [],
-  "candidate_posts": [],
+  "candidate_posts": [
+    {
+      "post_id": "2123930423017480397",
+      "source": "@iamrahstradamus",
+      "published_at_utc": "2026-11-21T00:04:08.000Z",
+      "text": "@wheatonbrando I get it, but I\u2019m more so speaking as someone who is just watching sports and looking for things to bet on with endless options or just watching for the love of the game. The finality is somewhat depressing in the sense that it\u2019s almost over. Like I feel this way about",
+      "url": "https://x.com/iamrahstradamus/status/2123930423017480397"
+    },
+    {
+      "post_id": "2123889739963232653",
+      "source": "@iamrahstradamus",
+      "published_at_utc": "2026-11-20T21:22:28.000Z",
+      "text": "I'm not the biggest college basketball fan but I will always maintain that March Madness is overrated. \n\nRight now is the best part of the college basketball schedule with these early-season tournaments. There's games on all day and all night without the lingering feeling of",
+      "url": "https://x.com/iamrahstradamus/status/2123889739963232653"
+    }
+  ],
   "promotion_thresholds": {
     "minimum_graded_picks": 100,
     "minimum_positive_clv_rate": 0.52,
