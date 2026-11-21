@@ -1,28 +1,28 @@
 {
-  "generated_at_utc": "2026-11-21T03:29:44.980868+00:00",
+  "generated_at_utc": "2026-11-21T17:35:11.379204+00:00",
   "method": "Earliest committed pregame NBA forecast and market line joined to ESPN final score by game ID",
   "summary": {
-    "n": 293,
+    "n": 296,
     "ml": {
-      "wins": 187,
-      "losses": 106,
+      "wins": 189,
+      "losses": 107,
       "pushes": 0,
-      "graded": 293,
-      "rate": 0.6382252559726962
+      "graded": 296,
+      "rate": 0.6385135135135135
     },
     "ats": {
-      "wins": 7,
-      "losses": 11,
+      "wins": 8,
+      "losses": 13,
       "pushes": 0,
-      "graded": 18,
-      "rate": 0.3888888888888889
+      "graded": 21,
+      "rate": 0.38095238095238093
     },
     "ou": {
       "wins": 5,
-      "losses": 13,
+      "losses": 15,
       "pushes": 0,
-      "graded": 18,
-      "rate": 0.2777777777777778
+      "graded": 20,
+      "rate": 0.25
     }
   },
   "games": [
@@ -139,6 +139,75 @@
       "market_total": 227.5,
       "market_bookmaker": "DraftKings",
       "ats_result": null,
+      "ou_result": "loss"
+    },
+    {
+      "game_id": "401909311",
+      "game_date_utc": "2026-11-21T02:30Z",
+      "home_team": "Utah Jazz",
+      "away_team": "Phoenix Suns",
+      "home_abbr": "UTAH",
+      "away_abbr": "PHX",
+      "prediction_issued_at": "2026-11-20T20:40:55.303247+00:00",
+      "prediction_commit": "73d0e0fb",
+      "home_win_probability": 0.4226797523634555,
+      "predicted_margin": -1.4209541925927311,
+      "predicted_total": 225.35476671464232,
+      "actual_home_score": 101.0,
+      "actual_away_score": 111.0,
+      "actual_margin": -10.0,
+      "actual_total": 212.0,
+      "winner_correct": true,
+      "market_home_spread": 4.5,
+      "market_total": 225.5,
+      "market_bookmaker": "DraftKings",
+      "ats_result": "loss",
+      "ou_result": null
+    },
+    {
+      "game_id": "401909312",
+      "game_date_utc": "2026-11-21T03:00Z",
+      "home_team": "Denver Nuggets",
+      "away_team": "Houston Rockets",
+      "home_abbr": "DEN",
+      "away_abbr": "HOU",
+      "prediction_issued_at": "2026-11-20T20:40:55.303247+00:00",
+      "prediction_commit": "73d0e0fb",
+      "home_win_probability": 0.43650061947140956,
+      "predicted_margin": -2.619351649007868,
+      "predicted_total": 222.1981671932971,
+      "actual_home_score": 133.0,
+      "actual_away_score": 124.0,
+      "actual_margin": 9.0,
+      "actual_total": 257.0,
+      "winner_correct": false,
+      "market_home_spread": -1.5,
+      "market_total": 226.5,
+      "market_bookmaker": "DraftKings",
+      "ats_result": "loss",
+      "ou_result": "loss"
+    },
+    {
+      "game_id": "401909313",
+      "game_date_utc": "2026-11-21T03:00Z",
+      "home_team": "Los Angeles Lakers",
+      "away_team": "Sacramento Kings",
+      "home_abbr": "LAL",
+      "away_abbr": "SAC",
+      "prediction_issued_at": "2026-11-20T20:40:55.303247+00:00",
+      "prediction_commit": "73d0e0fb",
+      "home_win_probability": 0.7588204679473222,
+      "predicted_margin": 9.188559066813365,
+      "predicted_total": 229.20330574220944,
+      "actual_home_score": 106.0,
+      "actual_away_score": 104.0,
+      "actual_margin": 2.0,
+      "actual_total": 210.0,
+      "winner_correct": true,
+      "market_home_spread": -14.5,
+      "market_total": 228.5,
+      "market_bookmaker": "DraftKings",
+      "ats_result": "win",
       "ou_result": "loss"
     },
     {
