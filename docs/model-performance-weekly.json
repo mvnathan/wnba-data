@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-11-21T17:35:14.780885+00:00",
+  "generated_at_utc": "2026-11-22T17:51:17.080235+00:00",
   "season": 2026,
   "status": "ok",
   "models": [
@@ -337,27 +337,27 @@
         "ou": "Prospective issued-line tracking begins with NBA launch; historical line data is not imputed."
       },
       "overall": {
-        "n": 296,
+        "n": 301,
         "ml": {
-          "wins": 189,
-          "losses": 107,
+          "wins": 193,
+          "losses": 108,
           "pushes": 0,
-          "graded": 296,
-          "rate": 0.6385135135135135
+          "graded": 301,
+          "rate": 0.6411960132890365
         },
         "ats": {
-          "wins": 8,
-          "losses": 13,
+          "wins": 10,
+          "losses": 16,
           "pushes": 0,
-          "graded": 21,
-          "rate": 0.38095238095238093
+          "graded": 26,
+          "rate": 0.38461538461538464
         },
         "ou": {
-          "wins": 5,
-          "losses": 15,
+          "wins": 8,
+          "losses": 16,
           "pushes": 0,
-          "graded": 20,
-          "rate": 0.25
+          "graded": 24,
+          "rate": 0.3333333333333333
         }
       },
       "weekly": [
@@ -520,27 +520,27 @@
         {
           "week_start": "2026-11-16",
           "week_label": "Nov 16\u2013Nov 22",
-          "n": 41,
+          "n": 46,
           "ml": {
-            "wins": 24,
-            "losses": 17,
+            "wins": 28,
+            "losses": 18,
             "pushes": 0,
-            "graded": 41,
-            "rate": 0.5853658536585366
+            "graded": 46,
+            "rate": 0.6086956521739131
           },
           "ats": {
-            "wins": 4,
-            "losses": 8,
+            "wins": 6,
+            "losses": 11,
             "pushes": 0,
-            "graded": 12,
-            "rate": 0.3333333333333333
+            "graded": 17,
+            "rate": 0.35294117647058826
           },
           "ou": {
-            "wins": 1,
-            "losses": 10,
+            "wins": 4,
+            "losses": 11,
             "pushes": 0,
-            "graded": 11,
-            "rate": 0.09090909090909091
+            "graded": 15,
+            "rate": 0.26666666666666666
           }
         }
       ]
@@ -1020,13 +1020,13 @@
         "ou": "Historical sportsbook totals were not retained with issued forecasts."
       },
       "overall": {
-        "n": 557,
+        "n": 559,
         "ml": {
-          "wins": 355,
+          "wins": 357,
           "losses": 202,
           "pushes": 0,
-          "graded": 557,
-          "rate": 0.6373429084380611
+          "graded": 559,
+          "rate": 0.6386404293381037
         },
         "ats": {
           "wins": 0,
@@ -1307,12 +1307,12 @@
         {
           "week_start": "2026-11-16",
           "week_label": "Nov 16\u2013Nov 22",
-          "n": 10,
+          "n": 12,
           "ml": {
-            "wins": 10,
+            "wins": 12,
             "losses": 0,
             "pushes": 0,
-            "graded": 10,
+            "graded": 12,
             "rate": 1.0
           },
           "ats": {
@@ -1343,13 +1343,13 @@
         "ou": "Historical sportsbook totals were not retained with issued forecasts."
       },
       "overall": {
-        "n": 712,
+        "n": 714,
         "ml": {
-          "wins": 460,
-          "losses": 252,
+          "wins": 461,
+          "losses": 253,
           "pushes": 0,
-          "graded": 712,
-          "rate": 0.6460674157303371
+          "graded": 714,
+          "rate": 0.6456582633053222
         },
         "ats": {
           "wins": 0,
@@ -1656,13 +1656,13 @@
         {
           "week_start": "2026-11-16",
           "week_label": "Nov 16\u2013Nov 22",
-          "n": 16,
+          "n": 18,
           "ml": {
-            "wins": 11,
-            "losses": 5,
+            "wins": 12,
+            "losses": 6,
             "pushes": 0,
-            "graded": 16,
-            "rate": 0.6875
+            "graded": 18,
+            "rate": 0.6666666666666666
           },
           "ats": {
             "wins": 0,
