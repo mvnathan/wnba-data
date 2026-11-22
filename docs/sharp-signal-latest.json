@@ -1,11 +1,11 @@
 {
-  "generated_at_utc": "2026-11-21T19:33:46.301279+00:00",
+  "generated_at_utc": "2026-11-22T07:09:41.873062+00:00",
   "status": "ok",
   "production_adjustment_enabled": false,
-  "new_posts_seen": 3,
+  "new_posts_seen": 0,
   "new_picks_parsed": 0,
   "ledger_size": 0,
-  "since_id_used": "2123930423017480397",
+  "since_id_used": "2124177961222082974",
   "newest_id": "2124177961222082974",
   "accounts": {
     "@RufusPeabody": {
@@ -60,29 +60,7 @@
     }
   },
   "new_picks": [],
-  "candidate_posts": [
-    {
-      "post_id": "2124177961222082974",
-      "source": "@FezzikSports",
-      "published_at_utc": "2026-11-21T16:27:45.000Z",
-      "text": "There is a handicapper that is on a 1-9 Run laying over -130 on those 10 plays.\n\nHe is touting that he is on  \"An extended Win streak\"\n\nNever seen that before.\n\nVery creative.",
-      "url": "https://x.com/FezzikSports/status/2124177961222082974"
-    },
-    {
-      "post_id": "2124175490735095883",
-      "source": "@FezzikSports",
-      "published_at_utc": "2026-11-21T16:17:56.000Z",
-      "text": "SO much going on @splashsports !\n\n500K Bloody Survivor!\nLast Bird Standing!\n\nBeat the BEAR CFB\nEVEN MONEY beat Fez NFL\nBeat the Kelly in Vegas CFB\n\nSplash IS your premier spot to play weekly NFL and annual Football contests!",
-      "url": "https://x.com/FezzikSports/status/2124175490735095883"
-    },
-    {
-      "post_id": "2124175361160388704",
-      "source": "@iamrahstradamus",
-      "published_at_utc": "2026-11-21T16:17:26.000Z",
-      "text": "The one thing I enjoy about the NBA regular season is that you can see teams in certain scenarios over and over again so when the playoffs come around, we truly know who these teams are.\n\nThe Houston Rockets are 3-4 in Clutch Games this season with a Net Rating of -27.4 with an https://t.co/5q44nj9fJn",
-      "url": "https://x.com/iamrahstradamus/status/2124175361160388704"
-    }
-  ],
+  "candidate_posts": [],
   "promotion_thresholds": {
     "minimum_graded_picks": 100,
     "minimum_positive_clv_rate": 0.52,
