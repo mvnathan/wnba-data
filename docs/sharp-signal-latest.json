@@ -1,12 +1,12 @@
 {
-  "generated_at_utc": "2026-11-22T07:09:41.873062+00:00",
+  "generated_at_utc": "2026-11-22T19:52:59.826885+00:00",
   "status": "ok",
   "production_adjustment_enabled": false,
-  "new_posts_seen": 0,
+  "new_posts_seen": 1,
   "new_picks_parsed": 0,
   "ledger_size": 0,
   "since_id_used": "2124177961222082974",
-  "newest_id": "2124177961222082974",
+  "newest_id": "2124589691550736406",
   "accounts": {
     "@RufusPeabody": {
       "tier": "established_professional",
@@ -60,7 +60,15 @@
     }
   },
   "new_picks": [],
-  "candidate_posts": [],
+  "candidate_posts": [
+    {
+      "post_id": "2124589691550736406",
+      "source": "@wheatonbrando",
+      "published_at_utc": "2026-11-22T19:43:50.000Z",
+      "text": "Up 3 with 30s in 1Q, Chicago eschews FG that would\u2019ve covered to go for 4th down.\n\n\u274c Bears -3.5 1q\n\n4th down pass into EZ clear DPI, would\u2019ve setup 1yd td for 10-0 1q lead, no call.\n\n\u274c Bears -6.5 1q +178\n\u274c Bears -7.5 1q +456\n\nUp 9 under a minute til HT, Saints 2nd and 22, QB https://t.co/O30HQJrEAJ https://t.co/cXRBdeaCaI",
+      "url": "https://x.com/wheatonbrando/status/2124589691550736406"
+    }
+  ],
   "promotion_thresholds": {
     "minimum_graded_picks": 100,
     "minimum_positive_clv_rate": 0.52,
