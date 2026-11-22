@@ -1,28 +1,28 @@
 {
-  "generated_at_utc": "2026-11-22T06:42:31.496390Z",
+  "generated_at_utc": "2026-11-22T19:34:42.501972Z",
   "method": "Earliest committed pre-match forecast joined to ESPN final scores by match ID",
   "summary": {
-    "matches_evaluated": 1273,
-    "winner_accuracy": 0.6425765907305577,
-    "winner_auc": 0.6923209187485464,
-    "winner_log_loss": 0.6418274122163048,
-    "winner_brier_score": 0.2235206105106049,
-    "spread_mae_games": 4.2432835820895525,
-    "spread_bias_games": -0.03621366849960724,
-    "total_mae_games": 5.351296150824823,
-    "total_bias_games": -1.0845247446975648
+    "matches_evaluated": 1274,
+    "winner_accuracy": 0.6428571428571429,
+    "winner_auc": 0.6924103845935352,
+    "winner_log_loss": 0.641805108291913,
+    "winner_brier_score": 0.22351017223704872,
+    "spread_mae_games": 4.2429356357927785,
+    "spread_bias_games": -0.033202511773940346,
+    "total_mae_games": 5.349450549450549,
+    "total_bias_games": -1.0813186813186813
   },
   "by_tour": {
     "ATP": {
-      "matches_evaluated": 559,
-      "winner_accuracy": 0.6386404293381037,
-      "winner_auc": 0.6995101442567307,
-      "winner_log_loss": 0.6273941781902007,
-      "winner_brier_score": 0.218786873059034,
-      "spread_mae_games": 3.8296958855098384,
-      "spread_bias_games": -0.24400715563506256,
-      "total_mae_games": 5.711449016100179,
-      "total_bias_games": -0.4277280858676207
+      "matches_evaluated": 560,
+      "winner_accuracy": 0.6392857142857142,
+      "winner_auc": 0.699658025513602,
+      "winner_log_loss": 0.6273692103943987,
+      "winner_brier_score": 0.2187715790892857,
+      "spread_mae_games": 3.829642857142857,
+      "spread_bias_games": -0.23678571428571432,
+      "total_mae_games": 5.706607142857142,
+      "total_bias_games": -0.4216071428571429
     },
     "WTA": {
       "matches_evaluated": 714,
@@ -984,6 +984,18 @@
       "spread_bias_games": 1.95,
       "total_mae_games": 4.3999999999999995,
       "total_bias_games": -2.6000000000000005
+    },
+    {
+      "date": "2026-11-22",
+      "matches_evaluated": 1,
+      "winner_accuracy": 1.0,
+      "winner_auc": null,
+      "winner_log_loss": 0.6134122125410918,
+      "winner_brier_score": 0.21022225000000003,
+      "spread_mae_games": 3.8,
+      "spread_bias_games": 3.8,
+      "total_mae_games": 3.0,
+      "total_bias_games": 3.0
     }
   ],
   "matches": [
@@ -44268,6 +44280,40 @@
       "absolute_margin_error": 5.0,
       "total_error": 2.6999999999999993,
       "absolute_total_error": 2.6999999999999993
+    },
+    {
+      "match_id": "187529",
+      "target_date": "2026-11-22",
+      "start_time_utc": "2026-11-22T17:00Z",
+      "tour": "ATP",
+      "tournament": "Nitto ATP Finals",
+      "round": "Final",
+      "player_1": "Alexander Zverev",
+      "player_2": "Carlos Alcaraz",
+      "player_1_rank": 1,
+      "player_2_rank": 3,
+      "model_version": "tennis-v3-tournament-context",
+      "prediction_issued_at": "2026-11-22T06:42:19.353471+00:00",
+      "prediction_commit": "92dab7a6",
+      "player_1_win_probability": 0.4585,
+      "predicted_winner": "Carlos Alcaraz",
+      "predicted_game_margin_player_1": -1.2,
+      "predicted_total_games": 24.0,
+      "actual_player_1": "Alexander Zverev",
+      "actual_player_2": "Carlos Alcaraz",
+      "actual_player_1_games": 8.0,
+      "actual_player_2_games": 13.0,
+      "actual_margin_player_1": -5.0,
+      "actual_total_games": 21.0,
+      "actual_winner_player_1": false,
+      "final_status": "Final",
+      "winner_correct": true,
+      "brier_score": 0.21022225000000003,
+      "log_loss": 0.6134122125410918,
+      "margin_error": 3.8,
+      "absolute_margin_error": 3.8,
+      "total_error": 3.0,
+      "absolute_total_error": 3.0
     }
   ]
 }
