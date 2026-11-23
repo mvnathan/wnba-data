@@ -1,28 +1,28 @@
 {
-  "generated_at_utc": "2026-11-23T03:06:27.277527+00:00",
+  "generated_at_utc": "2026-11-23T22:03:45.000125+00:00",
   "method": "Earliest committed pregame NBA forecast and market line joined to ESPN final score by game ID",
   "summary": {
-    "n": 306,
+    "n": 308,
     "ml": {
-      "wins": 195,
-      "losses": 111,
+      "wins": 196,
+      "losses": 112,
       "pushes": 0,
-      "graded": 306,
-      "rate": 0.6372549019607843
+      "graded": 308,
+      "rate": 0.6363636363636364
     },
     "ats": {
-      "wins": 11,
-      "losses": 20,
+      "wins": 12,
+      "losses": 21,
       "pushes": 0,
-      "graded": 31,
-      "rate": 0.3548387096774194
+      "graded": 33,
+      "rate": 0.36363636363636365
     },
     "ou": {
-      "wins": 9,
-      "losses": 20,
+      "wins": 10,
+      "losses": 21,
       "pushes": 0,
-      "graded": 29,
-      "rate": 0.3103448275862069
+      "graded": 31,
+      "rate": 0.3225806451612903
     }
   },
   "games": [
@@ -93,6 +93,52 @@
       "market_total": 226.5,
       "market_bookmaker": "DraftKings",
       "ats_result": "loss",
+      "ou_result": "loss"
+    },
+    {
+      "game_id": "401910034",
+      "game_date_utc": "2026-11-23T01:00Z",
+      "home_team": "New York Knicks",
+      "away_team": "Indiana Pacers",
+      "home_abbr": "NY",
+      "away_abbr": "IND",
+      "prediction_issued_at": "2026-11-22T19:56:36.705004+00:00",
+      "prediction_commit": "662de00b",
+      "home_win_probability": 0.7675525957568743,
+      "predicted_margin": 10.590624975824849,
+      "predicted_total": 219.2284973276966,
+      "actual_home_score": 113.0,
+      "actual_away_score": 106.0,
+      "actual_margin": 7.0,
+      "actual_total": 219.0,
+      "winner_correct": true,
+      "market_home_spread": -7.5,
+      "market_total": 213.5,
+      "market_bookmaker": "DraftKings",
+      "ats_result": "loss",
+      "ou_result": "win"
+    },
+    {
+      "game_id": "401910035",
+      "game_date_utc": "2026-11-23T01:30Z",
+      "home_team": "Golden State Warriors",
+      "away_team": "Boston Celtics",
+      "home_abbr": "GS",
+      "away_abbr": "BOS",
+      "prediction_issued_at": "2026-11-22T19:56:36.705004+00:00",
+      "prediction_commit": "662de00b",
+      "home_win_probability": 0.3805432522513634,
+      "predicted_margin": -2.3024790981994485,
+      "predicted_total": 216.25821307409802,
+      "actual_home_score": 88.0,
+      "actual_away_score": 87.0,
+      "actual_margin": 1.0,
+      "actual_total": 175.0,
+      "winner_correct": false,
+      "market_home_spread": 8.5,
+      "market_total": 210.5,
+      "market_bookmaker": "DraftKings",
+      "ats_result": "win",
       "ou_result": "loss"
     },
     {
