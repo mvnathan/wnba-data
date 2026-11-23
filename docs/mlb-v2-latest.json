@@ -1,10 +1,10 @@
 {
-  "generated_at_utc": "2026-11-23T01:41:58.839167+00:00",
-  "target_date": "2026-11-22",
+  "generated_at_utc": "2026-11-23T23:52:36.335812+00:00",
+  "target_date": "2026-11-23",
   "sport": "MLB",
   "model_version": "mlb-runs-v2",
   "model_status": "production",
-  "pitcher_stats_as_of": "2026-11-21",
+  "pitcher_stats_as_of": "2026-11-22",
   "features": [
     "recent offense",
     "recent run prevention",
