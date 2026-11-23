@@ -1,16 +1,16 @@
 {
-  "generated_at_utc": "2026-11-22T19:34:42.501972Z",
+  "generated_at_utc": "2026-11-23T07:32:12.980570Z",
   "method": "Earliest committed pre-match forecast joined to ESPN final scores by match ID",
   "summary": {
-    "matches_evaluated": 1274,
-    "winner_accuracy": 0.6428571428571429,
-    "winner_auc": 0.6924103845935352,
-    "winner_log_loss": 0.641805108291913,
-    "winner_brier_score": 0.22351017223704872,
-    "spread_mae_games": 4.2429356357927785,
-    "spread_bias_games": -0.033202511773940346,
-    "total_mae_games": 5.349450549450549,
-    "total_bias_games": -1.0813186813186813
+    "matches_evaluated": 1275,
+    "winner_accuracy": 0.6431372549019608,
+    "winner_auc": 0.6923713307819774,
+    "winner_log_loss": 0.6418439660882475,
+    "winner_brier_score": 0.2235302433254902,
+    "spread_mae_games": 4.243372549019608,
+    "spread_bias_games": -0.02941176470588236,
+    "total_mae_games": 5.346039215686274,
+    "total_bias_games": -1.079686274509804
   },
   "by_tour": {
     "ATP": {
@@ -25,15 +25,15 @@
       "total_bias_games": -0.4216071428571429
     },
     "WTA": {
-      "matches_evaluated": 714,
-      "winner_accuracy": 0.6456582633053222,
-      "winner_auc": 0.6870390008247909,
-      "winner_log_loss": 0.6531273811527084,
-      "winner_brier_score": 0.22722671588235296,
-      "spread_mae_games": 4.567086834733893,
-      "spread_bias_games": 0.12647058823529414,
-      "total_mae_games": 5.069327731092437,
-      "total_bias_games": -1.5987394957983194
+      "matches_evaluated": 715,
+      "winner_accuracy": 0.6461538461538462,
+      "winner_auc": 0.6869644563497659,
+      "winner_log_loss": 0.6531808376806326,
+      "winner_brier_score": 0.22725730902097901,
+      "spread_mae_games": 4.567412587412587,
+      "spread_bias_games": 0.13300699300699306,
+      "total_mae_games": 5.0636363636363635,
+      "total_bias_games": -1.5951048951048952
     }
   },
   "by_day": [
@@ -987,15 +987,15 @@
     },
     {
       "date": "2026-11-22",
-      "matches_evaluated": 1,
+      "matches_evaluated": 2,
       "winner_accuracy": 1.0,
       "winner_auc": null,
-      "winner_log_loss": 0.6134122125410918,
-      "winner_brier_score": 0.21022225000000003,
-      "spread_mae_games": 3.8,
-      "spread_bias_games": 3.8,
-      "total_mae_games": 3.0,
-      "total_bias_games": 3.0
+      "winner_log_loss": 0.6523805055798289,
+      "winner_brier_score": 0.22966153,
+      "spread_mae_games": 4.3,
+      "spread_bias_games": 4.3,
+      "total_mae_games": 2.0,
+      "total_bias_games": 2.0
     }
   ],
   "matches": [
@@ -44314,6 +44314,40 @@
       "absolute_margin_error": 3.8,
       "total_error": 3.0,
       "absolute_total_error": 3.0
+    },
+    {
+      "match_id": "186812",
+      "target_date": "2026-11-22",
+      "start_time_utc": "2026-11-22T21:00Z",
+      "tour": "WTA",
+      "tournament": "LP Open by IND",
+      "round": "Final",
+      "player_1": "Leyre Romero Gormaz",
+      "player_2": "Rebeka Masarova",
+      "player_1_rank": 147,
+      "player_2_rank": 141,
+      "model_version": "tennis-v3-tournament-context",
+      "prediction_issued_at": "2026-11-22T06:42:19.353471+00:00",
+      "prediction_commit": "92dab7a6",
+      "player_1_win_probability": 0.4991,
+      "predicted_winner": "Rebeka Masarova",
+      "predicted_game_margin_player_1": 0.8,
+      "predicted_total_games": 21.0,
+      "actual_player_1": "Leyre Romero Gormaz",
+      "actual_player_2": "Rebeka Masarova",
+      "actual_player_1_games": 8.0,
+      "actual_player_2_games": 12.0,
+      "actual_margin_player_1": -4.0,
+      "actual_total_games": 20.0,
+      "actual_winner_player_1": false,
+      "final_status": "Final",
+      "winner_correct": true,
+      "brier_score": 0.24910080999999998,
+      "log_loss": 0.6913487986185659,
+      "margin_error": 4.8,
+      "absolute_margin_error": 4.8,
+      "total_error": 1.0,
+      "absolute_total_error": 1.0
     }
   ]
 }
