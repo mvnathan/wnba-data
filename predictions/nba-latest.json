@@ -1,6 +1,6 @@
 {
   "sport": "NBA",
-  "generated_at_utc": "2026-11-22T23:46:56.758154+00:00",
+  "generated_at_utc": "2026-11-23T03:03:57.738311+00:00",
   "target_date": "2026-11-22",
   "season": "2026-27",
   "model_version": "nba-v2-roster-four-factors",
@@ -52,7 +52,7 @@
         "mae": 16.052277339680376
       },
       "total_rf": {
-        "mae": 15.750307765858189
+        "mae": 15.750307765858192
       },
       "total_extra_trees": {
         "mae": 15.823980776889647
@@ -6092,7 +6092,7 @@
     {
       "game_id": "401910030",
       "date": "2026-11-22T23:00Z",
-      "status": "In Progress",
+      "status": "Final",
       "season_type": 2,
       "decision_eligible": true,
       "home_id": 14,
@@ -6129,7 +6129,7 @@
     {
       "game_id": "401910031",
       "date": "2026-11-23T00:00Z",
-      "status": "Scheduled",
+      "status": "Final",
       "season_type": 2,
       "decision_eligible": true,
       "home_id": 27,
@@ -6160,22 +6160,13 @@
           "roster_value": 12.702651629659197
         }
       },
-      "market_bookmaker": "DraftKings",
-      "market_updated_at": "2026-11-22T23:49:13.003204+00:00",
-      "market_home_moneyline": 164,
-      "market_away_moneyline": -196,
-      "market_home_spread": 4.5,
-      "market_away_spread": -4.5,
-      "market_total": 219.5,
       "x_availability_adjustments": [],
-      "model_market_spread_edge": -0.75,
-      "model_market_total_edge": 6.86,
-      "model_market_home_win_edge": -0.0439
+      "model_market_home_win_edge": null
     },
     {
       "game_id": "401910032",
       "date": "2026-11-23T00:00Z",
-      "status": "Scheduled",
+      "status": "Final",
       "season_type": 2,
       "decision_eligible": true,
       "home_id": 4,
@@ -6206,22 +6197,13 @@
           "roster_value": 13.993160713942164
         }
       },
-      "market_bookmaker": "DraftKings",
-      "market_updated_at": "2026-11-22T23:49:13.003204+00:00",
-      "market_home_moneyline": 328,
-      "market_away_moneyline": -419,
-      "market_home_spread": 9.5,
-      "market_away_spread": -9.5,
-      "market_total": 237.5,
       "x_availability_adjustments": [],
-      "model_market_spread_edge": 5.87,
-      "model_market_total_edge": -5.27,
-      "model_market_home_win_edge": 0.1464
+      "model_market_home_win_edge": null
     },
     {
       "game_id": "401910033",
       "date": "2026-11-23T00:00Z",
-      "status": "Scheduled",
+      "status": "Final",
       "season_type": 2,
       "decision_eligible": true,
       "home_id": 26,
@@ -6252,22 +6234,13 @@
           "roster_value": 11.047126860528898
         }
       },
-      "market_bookmaker": "DraftKings",
-      "market_updated_at": "2026-11-22T23:49:13.003204+00:00",
-      "market_home_moneyline": 114,
-      "market_away_moneyline": -135,
-      "market_home_spread": 2.5,
-      "market_away_spread": -2.5,
-      "market_total": 225.5,
       "x_availability_adjustments": [],
-      "model_market_spread_edge": 3.18,
-      "model_market_total_edge": -6.87,
-      "model_market_home_win_edge": 0.0373
+      "model_market_home_win_edge": null
     },
     {
       "game_id": "401910034",
       "date": "2026-11-23T01:00Z",
-      "status": "Scheduled",
+      "status": "In Progress",
       "season_type": 2,
       "decision_eligible": true,
       "home_id": 18,
@@ -6298,22 +6271,13 @@
           "roster_value": 11.153526668651265
         }
       },
-      "market_bookmaker": "DraftKings",
-      "market_updated_at": "2026-11-22T23:49:13.003204+00:00",
-      "market_home_moneyline": -296,
-      "market_away_moneyline": 240,
-      "market_home_spread": -7.5,
-      "market_away_spread": 7.5,
-      "market_total": 213.5,
       "x_availability_adjustments": [],
-      "model_market_spread_edge": 3.09,
-      "model_market_total_edge": 5.73,
-      "model_market_home_win_edge": 0.0499
+      "model_market_home_win_edge": null
     },
     {
       "game_id": "401910035",
       "date": "2026-11-23T01:30Z",
-      "status": "Scheduled",
+      "status": "In Progress",
       "season_type": 2,
       "decision_eligible": true,
       "home_id": 9,
@@ -6344,17 +6308,8 @@
           "roster_value": 11.941139396958707
         }
       },
-      "market_bookmaker": "DraftKings",
-      "market_updated_at": "2026-11-22T23:49:13.003204+00:00",
-      "market_home_moneyline": 261,
-      "market_away_moneyline": -324,
-      "market_home_spread": 7.5,
-      "market_away_spread": -7.5,
-      "market_total": 210.5,
       "x_availability_adjustments": [],
-      "model_market_spread_edge": 5.2,
-      "model_market_total_edge": 5.76,
-      "model_market_home_win_edge": 0.1145
+      "model_market_home_win_edge": null
     }
   ],
   "historical_data_source": "SportsDataverse ESPN NBA bulk releases",
