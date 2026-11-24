@@ -1,12 +1,12 @@
 {
-  "generated_at_utc": "2026-11-23T07:55:40.867419+00:00",
+  "generated_at_utc": "2026-11-24T00:07:25.356873+00:00",
   "status": "ok",
   "production_adjustment_enabled": false,
-  "new_posts_seen": 1,
+  "new_posts_seen": 2,
   "new_picks_parsed": 0,
   "ledger_size": 0,
-  "since_id_used": "2124589691550736406",
-  "newest_id": "2124649332888748183",
+  "since_id_used": "2124649332888748183",
+  "newest_id": "2125012513725321397",
   "accounts": {
     "@RufusPeabody": {
       "tier": "established_professional",
@@ -62,11 +62,18 @@
   "new_picks": [],
   "candidate_posts": [
     {
-      "post_id": "2124649332888748183",
+      "post_id": "2125012513725321397",
       "source": "@iamrahstradamus",
-      "published_at_utc": "2026-11-22T23:40:49.000Z",
-      "text": "NFL team I bet on goes up 17-0, 10-0, 13-0, 14-0 or 16-0  in the first half is a guaranteed loss for me this year. \n\nI've lost count at this point.",
-      "url": "https://x.com/iamrahstradamus/status/2124649332888748183"
+      "published_at_utc": "2026-11-23T23:43:58.000Z",
+      "text": "This is true but if I can get CLV over and over and over and over again then long term it will pay off. That's all we can do is get the best of it. I gave out two NBA plays on the show today, both could very well lose but I got 2 to 2.5 points of CLV on both. I don't know what https://t.co/JqEVsWN9mT",
+      "url": "https://x.com/iamrahstradamus/status/2125012513725321397"
+    },
+    {
+      "post_id": "2124924520591212642",
+      "source": "@capjack2000",
+      "published_at_utc": "2026-11-23T17:54:19.000Z",
+      "text": "@ComeauxGab81963 @Kalshi @UnabatedSports Kalshi offered them $50 BILLION over 5 years and NY turned that down. When we finally take gambling away from the greedy states, that'll be remembered as when \u26f7\ufe0f\ud83e\udd88.",
+      "url": "https://x.com/capjack2000/status/2124924520591212642"
     }
   ],
   "promotion_thresholds": {
