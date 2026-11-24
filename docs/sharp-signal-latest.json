@@ -1,12 +1,12 @@
 {
-  "generated_at_utc": "2026-11-24T10:09:25.305893+00:00",
+  "generated_at_utc": "2026-11-24T22:38:23.309684+00:00",
   "status": "ok",
   "production_adjustment_enabled": false,
   "new_posts_seen": 4,
   "new_picks_parsed": 0,
   "ledger_size": 0,
-  "since_id_used": "2125012513725321397",
-  "newest_id": "2125098315662627287",
+  "since_id_used": "2125098315662627287",
+  "newest_id": "2125344187931615664",
   "accounts": {
     "@RufusPeabody": {
       "tier": "established_professional",
@@ -62,32 +62,32 @@
   "new_picks": [],
   "candidate_posts": [
     {
-      "post_id": "2125098315662627287",
-      "source": "@iamrahstradamus",
-      "published_at_utc": "2026-11-24T05:24:55.000Z",
-      "text": "Today's show went pretty well \n\nCommanders +6.5 \u2705\nBlazers +3.5 \u2705\nSpurs -10.5 \u2705 \nDiggs Over 47.5 receiving yards \u274c",
-      "url": "https://x.com/iamrahstradamus/status/2125098315662627287"
+      "post_id": "2125344187931615664",
+      "source": "@FezzikSports",
+      "published_at_utc": "2026-11-24T21:41:56.000Z",
+      "text": "I just saw a guy who during the last 30 days\n\n1) Is down 150 units all sports (betting 1-3)\n2) Is down 50 units in the NHL\n\nDescribing his NHL as being \"on straight Fire\".\n\nA+ For Creativity.",
+      "url": "https://x.com/FezzikSports/status/2125344187931615664"
     },
     {
-      "post_id": "2125092708826190071",
+      "post_id": "2125318599875379509",
       "source": "@iamrahstradamus",
-      "published_at_utc": "2026-11-24T05:02:38.000Z",
-      "text": "@knicksmustwin The Knicks had an all time great playoff run but I'm not sure if they can play to that level again. Recent history over the past 10 years has shown that teams fail to get back to the Conference Finals let alone win it again.",
-      "url": "https://x.com/iamrahstradamus/status/2125092708826190071"
+      "published_at_utc": "2026-11-24T20:00:15.000Z",
+      "text": "@iKnowBall0444 I\u2019m not apart of the ringer nba content. I only do the gambling content over there. I have no votes.",
+      "url": "https://x.com/iamrahstradamus/status/2125318599875379509"
     },
     {
-      "post_id": "2125088610412347547",
-      "source": "@wheatonbrando",
-      "published_at_utc": "2026-11-24T04:46:21.000Z",
-      "text": "@RyanFee93 i bet on your team to win the division before the season and said they were the most obvious improvement team in the league in a long time. did you?",
-      "url": "https://x.com/wheatonbrando/status/2125088610412347547"
+      "post_id": "2125314262260445397",
+      "source": "@iamrahstradamus",
+      "published_at_utc": "2026-11-24T19:43:01.000Z",
+      "text": "So first things first let\u2019s address the elephant in the room. \n\n1.) The perception you have of the ringer is flat out wrong. People assume that because Bill Simmons is a massive Boston sports fan that everyone in his company thinks like him, sits around conspiring to come up with https://t.co/swHFksLpCf https://t.co/xVjV4Lt4D4",
+      "url": "https://x.com/iamrahstradamus/status/2125314262260445397"
     },
     {
-      "post_id": "2125078663221903368",
-      "source": "@iamrahstradamus",
-      "published_at_utc": "2026-11-24T04:06:50.000Z",
-      "text": "I'm not willing to say that right now. Right now I'm unsure about the entire Eastern Conference to be honest. Every single one of these teams are flawed and as of today, November 23rd, I'm having trouble coming up with a definitive pick. https://t.co/kfacY8YXhq",
-      "url": "https://x.com/iamrahstradamus/status/2125078663221903368"
+      "post_id": "2125260115825856844",
+      "source": "@capjack2000",
+      "published_at_utc": "2026-11-24T16:07:51.000Z",
+      "text": "@SteveRuddock Name one state regulator that understands exchange dynamics?\n\nWhat I've heard over and over again for the last 8 years is that trying to explain to a state board the difference between sportsbooks and exchanges brick wall stuff.\n\nNot just from these young guys, but from longtime",
+      "url": "https://x.com/capjack2000/status/2125260115825856844"
     }
   ],
   "promotion_thresholds": {
