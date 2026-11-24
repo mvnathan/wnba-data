@@ -1,12 +1,12 @@
 {
-  "generated_at_utc": "2026-11-24T00:07:25.356873+00:00",
+  "generated_at_utc": "2026-11-24T10:09:25.305893+00:00",
   "status": "ok",
   "production_adjustment_enabled": false,
-  "new_posts_seen": 2,
+  "new_posts_seen": 4,
   "new_picks_parsed": 0,
   "ledger_size": 0,
-  "since_id_used": "2124649332888748183",
-  "newest_id": "2125012513725321397",
+  "since_id_used": "2125012513725321397",
+  "newest_id": "2125098315662627287",
   "accounts": {
     "@RufusPeabody": {
       "tier": "established_professional",
@@ -62,18 +62,32 @@
   "new_picks": [],
   "candidate_posts": [
     {
-      "post_id": "2125012513725321397",
+      "post_id": "2125098315662627287",
       "source": "@iamrahstradamus",
-      "published_at_utc": "2026-11-23T23:43:58.000Z",
-      "text": "This is true but if I can get CLV over and over and over and over again then long term it will pay off. That's all we can do is get the best of it. I gave out two NBA plays on the show today, both could very well lose but I got 2 to 2.5 points of CLV on both. I don't know what https://t.co/JqEVsWN9mT",
-      "url": "https://x.com/iamrahstradamus/status/2125012513725321397"
+      "published_at_utc": "2026-11-24T05:24:55.000Z",
+      "text": "Today's show went pretty well \n\nCommanders +6.5 \u2705\nBlazers +3.5 \u2705\nSpurs -10.5 \u2705 \nDiggs Over 47.5 receiving yards \u274c",
+      "url": "https://x.com/iamrahstradamus/status/2125098315662627287"
     },
     {
-      "post_id": "2124924520591212642",
-      "source": "@capjack2000",
-      "published_at_utc": "2026-11-23T17:54:19.000Z",
-      "text": "@ComeauxGab81963 @Kalshi @UnabatedSports Kalshi offered them $50 BILLION over 5 years and NY turned that down. When we finally take gambling away from the greedy states, that'll be remembered as when \u26f7\ufe0f\ud83e\udd88.",
-      "url": "https://x.com/capjack2000/status/2124924520591212642"
+      "post_id": "2125092708826190071",
+      "source": "@iamrahstradamus",
+      "published_at_utc": "2026-11-24T05:02:38.000Z",
+      "text": "@knicksmustwin The Knicks had an all time great playoff run but I'm not sure if they can play to that level again. Recent history over the past 10 years has shown that teams fail to get back to the Conference Finals let alone win it again.",
+      "url": "https://x.com/iamrahstradamus/status/2125092708826190071"
+    },
+    {
+      "post_id": "2125088610412347547",
+      "source": "@wheatonbrando",
+      "published_at_utc": "2026-11-24T04:46:21.000Z",
+      "text": "@RyanFee93 i bet on your team to win the division before the season and said they were the most obvious improvement team in the league in a long time. did you?",
+      "url": "https://x.com/wheatonbrando/status/2125088610412347547"
+    },
+    {
+      "post_id": "2125078663221903368",
+      "source": "@iamrahstradamus",
+      "published_at_utc": "2026-11-24T04:06:50.000Z",
+      "text": "I'm not willing to say that right now. Right now I'm unsure about the entire Eastern Conference to be honest. Every single one of these teams are flawed and as of today, November 23rd, I'm having trouble coming up with a definitive pick. https://t.co/kfacY8YXhq",
+      "url": "https://x.com/iamrahstradamus/status/2125078663221903368"
     }
   ],
   "promotion_thresholds": {
