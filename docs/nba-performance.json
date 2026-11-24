@@ -1,28 +1,28 @@
 {
-  "generated_at_utc": "2026-11-24T04:08:10.549046+00:00",
+  "generated_at_utc": "2026-11-24T06:24:32.241630+00:00",
   "method": "Earliest committed pregame NBA forecast and market line joined to ESPN final score by game ID",
   "summary": {
-    "n": 314,
+    "n": 316,
     "ml": {
-      "wins": 199,
+      "wins": 201,
       "losses": 115,
       "pushes": 0,
-      "graded": 314,
-      "rate": 0.6337579617834395
+      "graded": 316,
+      "rate": 0.6360759493670886
     },
     "ats": {
       "wins": 13,
-      "losses": 25,
+      "losses": 26,
       "pushes": 0,
-      "graded": 38,
-      "rate": 0.34210526315789475
+      "graded": 39,
+      "rate": 0.3333333333333333
     },
     "ou": {
       "wins": 12,
-      "losses": 24,
+      "losses": 26,
       "pushes": 0,
-      "graded": 36,
-      "rate": 0.3333333333333333
+      "graded": 38,
+      "rate": 0.3157894736842105
     }
   },
   "games": [
@@ -162,6 +162,52 @@
       "market_total": 223.5,
       "market_bookmaker": "DraftKings",
       "ats_result": "loss",
+      "ou_result": "loss"
+    },
+    {
+      "game_id": "401910044",
+      "game_date_utc": "2026-11-24T03:00Z",
+      "home_team": "Los Angeles Lakers",
+      "away_team": "Utah Jazz",
+      "home_abbr": "LAL",
+      "away_abbr": "UTAH",
+      "prediction_issued_at": "2026-11-24T00:18:01.340230+00:00",
+      "prediction_commit": "1ef7f6df",
+      "home_win_probability": 0.7484722764062226,
+      "predicted_margin": 7.813476816475246,
+      "predicted_total": 227.64779277656066,
+      "actual_home_score": 109.0,
+      "actual_away_score": 94.0,
+      "actual_margin": 15.0,
+      "actual_total": 203.0,
+      "winner_correct": true,
+      "market_home_spread": -13.5,
+      "market_total": 225.5,
+      "market_bookmaker": "DraftKings",
+      "ats_result": "loss",
+      "ou_result": "loss"
+    },
+    {
+      "game_id": "401910045",
+      "game_date_utc": "2026-11-24T03:00Z",
+      "home_team": "Sacramento Kings",
+      "away_team": "San Antonio Spurs",
+      "home_abbr": "SAC",
+      "away_abbr": "SA",
+      "prediction_issued_at": "2026-11-24T00:18:01.340230+00:00",
+      "prediction_commit": "1ef7f6df",
+      "home_win_probability": 0.1828353245750121,
+      "predicted_margin": -12.603304287581851,
+      "predicted_total": 217.5272769282891,
+      "actual_home_score": 107.0,
+      "actual_away_score": 123.0,
+      "actual_margin": -16.0,
+      "actual_total": 230.0,
+      "winner_correct": true,
+      "market_home_spread": 12.5,
+      "market_total": 224.5,
+      "market_bookmaker": "DraftKings",
+      "ats_result": null,
       "ou_result": "loss"
     },
     {
