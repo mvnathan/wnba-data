@@ -1,16 +1,16 @@
 {
-  "generated_at_utc": "2026-11-25T08:28:43.078498Z",
+  "generated_at_utc": "2026-11-25T21:39:51.161227Z",
   "method": "Earliest committed pre-match forecast joined to ESPN final scores by match ID",
   "summary": {
-    "matches_evaluated": 1280,
-    "winner_accuracy": 0.64296875,
-    "winner_auc": 0.6920667190202541,
-    "winner_log_loss": 0.6418694689714963,
-    "winner_brier_score": 0.223566838796875,
-    "spread_mae_games": 4.2515625,
-    "spread_bias_games": -0.012812499999999994,
-    "total_mae_games": 5.332109375,
-    "total_bias_games": -1.071640625
+    "matches_evaluated": 1281,
+    "winner_accuracy": 0.6432474629195941,
+    "winner_auc": 0.6924282169270299,
+    "winner_log_loss": 0.6416653416169056,
+    "winner_brier_score": 0.2234704626229508,
+    "spread_mae_games": 4.251209992193599,
+    "spread_bias_games": -0.009836065573770477,
+    "total_mae_games": 5.335284933645589,
+    "total_bias_games": -1.0634660421545667
   },
   "by_tour": {
     "ATP": {
@@ -25,15 +25,15 @@
       "total_bias_games": -0.4216071428571429
     },
     "WTA": {
-      "matches_evaluated": 720,
-      "winner_accuracy": 0.6458333333333334,
-      "winner_auc": 0.6864626696221009,
-      "winner_log_loss": 0.6531474478647946,
-      "winner_brier_score": 0.22729648523611118,
-      "spread_mae_games": 4.579722222222222,
-      "spread_bias_games": 0.1613888888888889,
-      "total_mae_games": 5.0408333333333335,
-      "total_bias_games": -1.577222222222222
+      "matches_evaluated": 721,
+      "winner_accuracy": 0.6463245492371706,
+      "winner_auc": 0.6870966499807472,
+      "winner_log_loss": 0.6527691328576877,
+      "winner_brier_score": 0.22712008090152572,
+      "spread_mae_games": 4.578640776699029,
+      "spread_bias_games": 0.1664355062413315,
+      "total_mae_games": 5.046879334257976,
+      "total_bias_games": -1.561997226074896
     }
   },
   "by_day": [
@@ -1020,6 +1020,18 @@
       "spread_bias_games": 3.3999999999999995,
       "total_mae_games": 1.9750000000000005,
       "total_bias_games": 0.9750000000000005
+    },
+    {
+      "date": "2026-11-25",
+      "matches_evaluated": 1,
+      "winner_accuracy": 1.0,
+      "winner_auc": null,
+      "winner_log_loss": 0.38038232774070124,
+      "winner_brier_score": 0.10010896000000001,
+      "spread_mae_games": 3.8,
+      "spread_bias_games": 3.8,
+      "total_mae_games": 9.399999999999999,
+      "total_bias_games": 9.399999999999999
     }
   ],
   "matches": [
@@ -44542,6 +44554,40 @@
       "absolute_margin_error": 5.3,
       "total_error": 1.1000000000000014,
       "absolute_total_error": 1.1000000000000014
+    },
+    {
+      "match_id": "186839",
+      "target_date": "2026-11-25",
+      "start_time_utc": "2026-11-25T18:00Z",
+      "tour": "WTA",
+      "tournament": "IEB+ Argentina Open",
+      "round": "Round 2",
+      "player_1": "Martina Trevisan",
+      "player_2": "Veronika Erjavec",
+      "player_1_rank": 299,
+      "player_2_rank": 106,
+      "model_version": "tennis-v3-tournament-context",
+      "prediction_issued_at": "2026-11-25T08:28:21.668080+00:00",
+      "prediction_commit": "e5a4fffa",
+      "player_1_win_probability": 0.3164,
+      "predicted_winner": "Veronika Erjavec",
+      "predicted_game_margin_player_1": -4.2,
+      "predicted_total_games": 19.4,
+      "actual_player_1": "Martina Trevisan",
+      "actual_player_2": "Veronika Erjavec",
+      "actual_player_1_games": 1.0,
+      "actual_player_2_games": 9.0,
+      "actual_margin_player_1": -8.0,
+      "actual_total_games": 10.0,
+      "actual_winner_player_1": false,
+      "final_status": "Retired",
+      "winner_correct": true,
+      "brier_score": 0.10010896000000001,
+      "log_loss": 0.38038232774070124,
+      "margin_error": 3.8,
+      "absolute_margin_error": 3.8,
+      "total_error": 9.399999999999999,
+      "absolute_total_error": 9.399999999999999
     }
   ]
 }
