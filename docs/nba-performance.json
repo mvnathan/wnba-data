@@ -1,14 +1,14 @@
 {
-  "generated_at_utc": "2026-11-25T02:49:05.614761+00:00",
+  "generated_at_utc": "2026-11-25T05:03:07.550893+00:00",
   "method": "Earliest committed pregame NBA forecast and market line joined to ESPN final score by game ID",
   "summary": {
-    "n": 317,
+    "n": 318,
     "ml": {
-      "wins": 201,
+      "wins": 202,
       "losses": 116,
       "pushes": 0,
-      "graded": 317,
-      "rate": 0.6340694006309149
+      "graded": 318,
+      "rate": 0.6352201257861635
     },
     "ats": {
       "wins": 13,
@@ -43,6 +43,29 @@
       "actual_margin": -18.0,
       "actual_total": 190.0,
       "winner_correct": false,
+      "market_home_spread": null,
+      "market_total": null,
+      "market_bookmaker": null,
+      "ats_result": null,
+      "ou_result": null
+    },
+    {
+      "game_id": "401909315",
+      "game_date_utc": "2026-11-25T01:00Z",
+      "home_team": "Washington Wizards",
+      "away_team": "Boston Celtics",
+      "home_abbr": "WSH",
+      "away_abbr": "BOS",
+      "prediction_issued_at": "2026-11-24T06:21:00.520106+00:00",
+      "prediction_commit": "1e529506",
+      "home_win_probability": 0.17904170887861326,
+      "predicted_margin": -10.395623532206306,
+      "predicted_total": 220.43009445583823,
+      "actual_home_score": 116.0,
+      "actual_away_score": 131.0,
+      "actual_margin": -15.0,
+      "actual_total": 247.0,
+      "winner_correct": true,
       "market_home_spread": null,
       "market_total": null,
       "market_bookmaker": null,
