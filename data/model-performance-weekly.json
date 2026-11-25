@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-11-24T20:41:01.087484+00:00",
+  "generated_at_utc": "2026-11-25T19:57:38.784270+00:00",
   "season": 2026,
   "status": "ok",
   "models": [
@@ -363,13 +363,13 @@
         "ou": "Prospective issued-line tracking begins with NBA launch; historical line data is not imputed."
       },
       "overall": {
-        "n": 316,
+        "n": 319,
         "ml": {
-          "wins": 201,
-          "losses": 115,
+          "wins": 202,
+          "losses": 117,
           "pushes": 0,
-          "graded": 316,
-          "rate": 0.6360759493670886
+          "graded": 319,
+          "rate": 0.6332288401253918
         },
         "ats": {
           "wins": 13,
@@ -572,13 +572,13 @@
         {
           "week_start": "2026-11-23",
           "week_label": "Nov 23\u2013Nov 29",
-          "n": 13,
+          "n": 16,
           "ml": {
-            "wins": 8,
-            "losses": 5,
+            "wins": 9,
+            "losses": 7,
             "pushes": 0,
-            "graded": 13,
-            "rate": 0.6153846153846154
+            "graded": 16,
+            "rate": 0.5625
           },
           "ats": {
             "wins": 3,
@@ -1395,13 +1395,13 @@
         "ou": "Historical sportsbook totals were not retained with issued forecasts."
       },
       "overall": {
-        "n": 716,
+        "n": 720,
         "ml": {
-          "wins": 462,
-          "losses": 254,
+          "wins": 465,
+          "losses": 255,
           "pushes": 0,
-          "graded": 716,
-          "rate": 0.6452513966480447
+          "graded": 720,
+          "rate": 0.6458333333333334
         },
         "ats": {
           "wins": 0,
@@ -1734,13 +1734,13 @@
         {
           "week_start": "2026-11-23",
           "week_label": "Nov 23\u2013Nov 29",
-          "n": 1,
+          "n": 5,
           "ml": {
-            "wins": 0,
-            "losses": 1,
+            "wins": 3,
+            "losses": 2,
             "pushes": 0,
-            "graded": 1,
-            "rate": 0.0
+            "graded": 5,
+            "rate": 0.6
           },
           "ats": {
             "wins": 0,

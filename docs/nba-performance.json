@@ -1,14 +1,14 @@
 {
-  "generated_at_utc": "2026-11-25T05:03:07.550893+00:00",
+  "generated_at_utc": "2026-11-25T19:57:36.506118+00:00",
   "method": "Earliest committed pregame NBA forecast and market line joined to ESPN final score by game ID",
   "summary": {
-    "n": 318,
+    "n": 319,
     "ml": {
       "wins": 202,
-      "losses": 116,
+      "losses": 117,
       "pushes": 0,
-      "graded": 318,
-      "rate": 0.6352201257861635
+      "graded": 319,
+      "rate": 0.6332288401253918
     },
     "ats": {
       "wins": 13,
@@ -26,6 +26,29 @@
     }
   },
   "games": [
+    {
+      "game_id": "401909316",
+      "game_date_utc": "2026-11-25T03:00Z",
+      "home_team": "Denver Nuggets",
+      "away_team": "Dallas Mavericks",
+      "home_abbr": "DEN",
+      "away_abbr": "DAL",
+      "prediction_issued_at": "2026-11-24T06:21:00.520106+00:00",
+      "prediction_commit": "1e529506",
+      "home_win_probability": 0.6889333499692549,
+      "predicted_margin": 5.015344909785478,
+      "predicted_total": 225.24885609405186,
+      "actual_home_score": 101.0,
+      "actual_away_score": 120.0,
+      "actual_margin": -19.0,
+      "actual_total": 221.0,
+      "winner_correct": false,
+      "market_home_spread": null,
+      "market_total": null,
+      "market_bookmaker": null,
+      "ats_result": null,
+      "ou_result": null
+    },
     {
       "game_id": "401909314",
       "game_date_utc": "2026-11-25T00:00Z",
