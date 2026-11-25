@@ -1,12 +1,12 @@
 {
-  "generated_at_utc": "2026-11-24T22:38:23.309684+00:00",
+  "generated_at_utc": "2026-11-25T08:54:35.435135+00:00",
   "status": "ok",
   "production_adjustment_enabled": false,
-  "new_posts_seen": 4,
+  "new_posts_seen": 2,
   "new_picks_parsed": 0,
   "ledger_size": 0,
-  "since_id_used": "2125098315662627287",
-  "newest_id": "2125344187931615664",
+  "since_id_used": "2125344187931615664",
+  "newest_id": "2125394127965630550",
   "accounts": {
     "@RufusPeabody": {
       "tier": "established_professional",
@@ -62,32 +62,18 @@
   "new_picks": [],
   "candidate_posts": [
     {
-      "post_id": "2125344187931615664",
-      "source": "@FezzikSports",
-      "published_at_utc": "2026-11-24T21:41:56.000Z",
-      "text": "I just saw a guy who during the last 30 days\n\n1) Is down 150 units all sports (betting 1-3)\n2) Is down 50 units in the NHL\n\nDescribing his NHL as being \"on straight Fire\".\n\nA+ For Creativity.",
-      "url": "https://x.com/FezzikSports/status/2125344187931615664"
-    },
-    {
-      "post_id": "2125318599875379509",
-      "source": "@iamrahstradamus",
-      "published_at_utc": "2026-11-24T20:00:15.000Z",
-      "text": "@iKnowBall0444 I\u2019m not apart of the ringer nba content. I only do the gambling content over there. I have no votes.",
-      "url": "https://x.com/iamrahstradamus/status/2125318599875379509"
-    },
-    {
-      "post_id": "2125314262260445397",
-      "source": "@iamrahstradamus",
-      "published_at_utc": "2026-11-24T19:43:01.000Z",
-      "text": "So first things first let\u2019s address the elephant in the room. \n\n1.) The perception you have of the ringer is flat out wrong. People assume that because Bill Simmons is a massive Boston sports fan that everyone in his company thinks like him, sits around conspiring to come up with https://t.co/swHFksLpCf https://t.co/xVjV4Lt4D4",
-      "url": "https://x.com/iamrahstradamus/status/2125314262260445397"
-    },
-    {
-      "post_id": "2125260115825856844",
+      "post_id": "2125394127965630550",
       "source": "@capjack2000",
-      "published_at_utc": "2026-11-24T16:07:51.000Z",
-      "text": "@SteveRuddock Name one state regulator that understands exchange dynamics?\n\nWhat I've heard over and over again for the last 8 years is that trying to explain to a state board the difference between sportsbooks and exchanges brick wall stuff.\n\nNot just from these young guys, but from longtime",
-      "url": "https://x.com/capjack2000/status/2125260115825856844"
+      "published_at_utc": "2026-11-25T01:00:22.000Z",
+      "text": "Seeing a lot of vitriol around the @Novig taker fees. \n\nGuys, hate to break it to you, fees are going to increase even more over the next few months. Double-digit fee %'s are coming.\ud83d\ude31\n\nYou're paying for the marketing and branding deals which will make PM's bulletproof regardless",
+      "url": "https://x.com/capjack2000/status/2125394127965630550"
+    },
+    {
+      "post_id": "2125383220237873209",
+      "source": "@iamrahstradamus",
+      "published_at_utc": "2026-11-25T00:17:02.000Z",
+      "text": "@brandom52 It is about truth but his whole attitude toward this reeks of white privilege. All he has to say is I\u2019m sorry, I don\u2019t know you, I was wrong for speculating and this would be all over.",
+      "url": "https://x.com/iamrahstradamus/status/2125383220237873209"
     }
   ],
   "promotion_thresholds": {
