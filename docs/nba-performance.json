@@ -1,14 +1,14 @@
 {
-  "generated_at_utc": "2026-11-24T22:47:33.365616+00:00",
+  "generated_at_utc": "2026-11-25T02:49:05.614761+00:00",
   "method": "Earliest committed pregame NBA forecast and market line joined to ESPN final score by game ID",
   "summary": {
-    "n": 316,
+    "n": 317,
     "ml": {
       "wins": 201,
-      "losses": 115,
+      "losses": 116,
       "pushes": 0,
-      "graded": 316,
-      "rate": 0.6360759493670886
+      "graded": 317,
+      "rate": 0.6340694006309149
     },
     "ats": {
       "wins": 13,
@@ -26,6 +26,29 @@
     }
   },
   "games": [
+    {
+      "game_id": "401909314",
+      "game_date_utc": "2026-11-25T00:00Z",
+      "home_team": "Orlando Magic",
+      "away_team": "Detroit Pistons",
+      "home_abbr": "ORL",
+      "away_abbr": "DET",
+      "prediction_issued_at": "2026-11-24T06:21:00.520106+00:00",
+      "prediction_commit": "1e529506",
+      "home_win_probability": 0.5549643618846838,
+      "predicted_margin": 1.4152907394194725,
+      "predicted_total": 223.6829498413886,
+      "actual_home_score": 86.0,
+      "actual_away_score": 104.0,
+      "actual_margin": -18.0,
+      "actual_total": 190.0,
+      "winner_correct": false,
+      "market_home_spread": null,
+      "market_total": null,
+      "market_bookmaker": null,
+      "ats_result": null,
+      "ou_result": null
+    },
     {
       "game_id": "401910038",
       "game_date_utc": "2026-11-24T00:30Z",
