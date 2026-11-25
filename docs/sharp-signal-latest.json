@@ -1,12 +1,12 @@
 {
-  "generated_at_utc": "2026-11-25T08:54:35.435135+00:00",
+  "generated_at_utc": "2026-11-25T21:51:45.680461+00:00",
   "status": "ok",
   "production_adjustment_enabled": false,
   "new_posts_seen": 2,
   "new_picks_parsed": 0,
   "ledger_size": 0,
-  "since_id_used": "2125344187931615664",
-  "newest_id": "2125394127965630550",
+  "since_id_used": "2125394127965630550",
+  "newest_id": "2125708603286052969",
   "accounts": {
     "@RufusPeabody": {
       "tier": "established_professional",
@@ -62,18 +62,18 @@
   "new_picks": [],
   "candidate_posts": [
     {
-      "post_id": "2125394127965630550",
-      "source": "@capjack2000",
-      "published_at_utc": "2026-11-25T01:00:22.000Z",
-      "text": "Seeing a lot of vitriol around the @Novig taker fees. \n\nGuys, hate to break it to you, fees are going to increase even more over the next few months. Double-digit fee %'s are coming.\ud83d\ude31\n\nYou're paying for the marketing and branding deals which will make PM's bulletproof regardless",
-      "url": "https://x.com/capjack2000/status/2125394127965630550"
+      "post_id": "2125708603286052969",
+      "source": "@iamrahstradamus",
+      "published_at_utc": "2026-11-25T21:49:59.000Z",
+      "text": "The team at  @FanDuel asked me to provide a Thanksgiving Feast for you guys! \n\nTonight we're on the Rams -2.5\nTomorrow we're on a 2 Team 6 Point Teaser Lions +8.5/Cowboys -2.5 which you can get at -110 on @FanDuel + Chiefs ML +128!\n\nLet's eat and have a Happy Thanksgiving!",
+      "url": "https://x.com/iamrahstradamus/status/2125708603286052969"
     },
     {
-      "post_id": "2125383220237873209",
+      "post_id": "2125546427669753908",
       "source": "@iamrahstradamus",
-      "published_at_utc": "2026-11-25T00:17:02.000Z",
-      "text": "@brandom52 It is about truth but his whole attitude toward this reeks of white privilege. All he has to say is I\u2019m sorry, I don\u2019t know you, I was wrong for speculating and this would be all over.",
-      "url": "https://x.com/iamrahstradamus/status/2125383220237873209"
+      "published_at_utc": "2026-11-25T11:05:33.000Z",
+      "text": "@Clevta At this point, I'd rather see Drew Allar over Mason Rudolph because we know Mason isn't any good. I'm legitimately confused.",
+      "url": "https://x.com/iamrahstradamus/status/2125546427669753908"
     }
   ],
   "promotion_thresholds": {
