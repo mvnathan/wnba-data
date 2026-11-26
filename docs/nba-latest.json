@@ -1,6 +1,6 @@
 {
   "sport": "NBA",
-  "generated_at_utc": "2026-11-26T01:56:22.040929+00:00",
+  "generated_at_utc": "2026-11-26T04:20:16.206130+00:00",
   "target_date": "2026-11-25",
   "season": "2026-27",
   "model_version": "nba-v2-roster-four-factors",
@@ -52,10 +52,10 @@
         "mae": 16.052277339680376
       },
       "total_rf": {
-        "mae": 15.750307765858189
+        "mae": 15.750307765858192
       },
       "total_extra_trees": {
-        "mae": 15.823980776889648
+        "mae": 15.823980776889643
       }
     },
     "test": {
@@ -6092,7 +6092,7 @@
     {
       "game_id": "401909318",
       "date": "2026-11-26T00:00Z",
-      "status": "In Progress",
+      "status": "Final",
       "season_type": 2,
       "decision_eligible": true,
       "home_id": 30,
@@ -6129,7 +6129,7 @@
     {
       "game_id": "401909319",
       "date": "2026-11-26T00:30Z",
-      "status": "In Progress",
+      "status": "Final",
       "season_type": 2,
       "decision_eligible": true,
       "home_id": 18,
@@ -6166,7 +6166,7 @@
     {
       "game_id": "401909320",
       "date": "2026-11-26T00:30Z",
-      "status": "Halftime",
+      "status": "Final",
       "season_type": 2,
       "decision_eligible": true,
       "home_id": 25,
@@ -6203,7 +6203,7 @@
     {
       "game_id": "401909321",
       "date": "2026-11-26T01:00Z",
-      "status": "In Progress",
+      "status": "Final",
       "season_type": 2,
       "decision_eligible": true,
       "home_id": 29,
@@ -6240,7 +6240,7 @@
     {
       "game_id": "401909322",
       "date": "2026-11-26T01:00Z",
-      "status": "In Progress",
+      "status": "Final",
       "season_type": 2,
       "decision_eligible": true,
       "home_id": 15,
@@ -6277,7 +6277,7 @@
     {
       "game_id": "401909323",
       "date": "2026-11-26T01:30Z",
-      "status": "In Progress",
+      "status": "Final",
       "season_type": 2,
       "decision_eligible": true,
       "home_id": 10,
@@ -6314,7 +6314,7 @@
     {
       "game_id": "401909324",
       "date": "2026-11-26T03:00Z",
-      "status": "Scheduled",
+      "status": "Halftime",
       "season_type": 2,
       "decision_eligible": true,
       "home_id": 9,
@@ -6345,22 +6345,13 @@
           "roster_value": 10.306463134738115
         }
       },
-      "market_bookmaker": "DraftKings",
-      "market_updated_at": "2026-11-26T01:58:09.820610+00:00",
-      "market_home_moneyline": -324,
-      "market_away_moneyline": 261,
-      "market_home_spread": -8.5,
-      "market_away_spread": 8.5,
-      "market_total": 216.5,
       "x_availability_adjustments": [],
-      "model_market_spread_edge": 2.24,
-      "model_market_total_edge": 3.0,
-      "model_market_home_win_edge": 0.0411
+      "model_market_home_win_edge": null
     },
     {
       "game_id": "401909325",
       "date": "2026-11-26T03:00Z",
-      "status": "Scheduled",
+      "status": "Halftime",
       "season_type": 2,
       "decision_eligible": true,
       "home_id": 22,
@@ -6391,17 +6382,8 @@
           "roster_value": 13.09913667182242
         }
       },
-      "market_bookmaker": "DraftKings",
-      "market_updated_at": "2026-11-26T01:58:09.820610+00:00",
-      "market_home_moneyline": 136,
-      "market_away_moneyline": -162,
-      "market_home_spread": 3.5,
-      "market_away_spread": -3.5,
-      "market_total": 227.5,
       "x_availability_adjustments": [],
-      "model_market_spread_edge": -1.12,
-      "model_market_total_edge": -8.54,
-      "model_market_home_win_edge": -0.0522
+      "model_market_home_win_edge": null
     }
   ],
   "historical_data_source": "SportsDataverse ESPN NBA bulk releases",
