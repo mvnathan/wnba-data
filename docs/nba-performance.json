@@ -1,21 +1,21 @@
 {
-  "generated_at_utc": "2026-11-25T21:59:53.146228+00:00",
+  "generated_at_utc": "2026-11-26T01:58:18.630182+00:00",
   "method": "Earliest committed pregame NBA forecast and market line joined to ESPN final score by game ID",
   "summary": {
-    "n": 319,
+    "n": 320,
     "ml": {
-      "wins": 202,
+      "wins": 203,
       "losses": 117,
       "pushes": 0,
-      "graded": 319,
-      "rate": 0.6332288401253918
+      "graded": 320,
+      "rate": 0.634375
     },
     "ats": {
-      "wins": 13,
+      "wins": 14,
       "losses": 26,
       "pushes": 0,
-      "graded": 39,
-      "rate": 0.3333333333333333
+      "graded": 40,
+      "rate": 0.35
     },
     "ou": {
       "wins": 12,
@@ -26,6 +26,29 @@
     }
   },
   "games": [
+    {
+      "game_id": "401909317",
+      "game_date_utc": "2026-11-25T22:00Z",
+      "home_team": "Philadelphia 76ers",
+      "away_team": "Miami Heat",
+      "home_abbr": "PHI",
+      "away_abbr": "MIA",
+      "prediction_issued_at": "2026-11-25T21:57:24.782759+00:00",
+      "prediction_commit": "3201254c",
+      "home_win_probability": 0.5298270437208202,
+      "predicted_margin": -0.612415680137679,
+      "predicted_total": 237.82680619772623,
+      "actual_home_score": 111.0,
+      "actual_away_score": 104.0,
+      "actual_margin": 7.0,
+      "actual_total": 215.0,
+      "winner_correct": true,
+      "market_home_spread": 1.5,
+      "market_total": 237.5,
+      "market_bookmaker": "DraftKings",
+      "ats_result": "win",
+      "ou_result": null
+    },
     {
       "game_id": "401909316",
       "game_date_utc": "2026-11-25T03:00Z",
