@@ -1,12 +1,12 @@
 {
-  "generated_at_utc": "2026-11-25T21:51:45.680461+00:00",
+  "generated_at_utc": "2026-11-26T08:40:20.129987+00:00",
   "status": "ok",
   "production_adjustment_enabled": false,
-  "new_posts_seen": 2,
+  "new_posts_seen": 8,
   "new_picks_parsed": 0,
   "ledger_size": 0,
-  "since_id_used": "2125394127965630550",
-  "newest_id": "2125708603286052969",
+  "since_id_used": "2125708603286052969",
+  "newest_id": "2125809048939614540",
   "accounts": {
     "@RufusPeabody": {
       "tier": "established_professional",
@@ -62,18 +62,60 @@
   "new_picks": [],
   "candidate_posts": [
     {
-      "post_id": "2125708603286052969",
-      "source": "@iamrahstradamus",
-      "published_at_utc": "2026-11-25T21:49:59.000Z",
-      "text": "The team at  @FanDuel asked me to provide a Thanksgiving Feast for you guys! \n\nTonight we're on the Rams -2.5\nTomorrow we're on a 2 Team 6 Point Teaser Lions +8.5/Cowboys -2.5 which you can get at -110 on @FanDuel + Chiefs ML +128!\n\nLet's eat and have a Happy Thanksgiving!",
-      "url": "https://x.com/iamrahstradamus/status/2125708603286052969"
+      "post_id": "2125809048939614540",
+      "source": "@FezzikSports",
+      "published_at_utc": "2026-11-26T04:29:07.000Z",
+      "text": "The RAMS team total was 23.5\n\nHASHEM for those who bet UNDER, as Rams kick a meaningful fg up 10 with :30 to play.",
+      "url": "https://x.com/FezzikSports/status/2125809048939614540"
     },
     {
-      "post_id": "2125546427669753908",
+      "post_id": "2125808714326131176",
       "source": "@iamrahstradamus",
-      "published_at_utc": "2026-11-25T11:05:33.000Z",
-      "text": "@Clevta At this point, I'd rather see Drew Allar over Mason Rudolph because we know Mason isn't any good. I'm legitimately confused.",
-      "url": "https://x.com/iamrahstradamus/status/2125546427669753908"
+      "published_at_utc": "2026-11-26T04:27:47.000Z",
+      "text": "Rams -2.5 \u2705\n\nAs a Rams -2.5 bettor, I was sweating truly bullets because I truly believed that if the Packers scored a touchdown down 10, they'd go for a 2 point conversion to make it a 2 point game knowing that ONE stop would allow them to win the game with a field goal.\n\nThat https://t.co/YxcSYT6z4k",
+      "url": "https://x.com/iamrahstradamus/status/2125808714326131176"
+    },
+    {
+      "post_id": "2125763927703207942",
+      "source": "@iamrahstradamus",
+      "published_at_utc": "2026-11-26T01:29:49.000Z",
+      "text": "@DruryEnterprise @FanDuel Yeah this isn\u2019t the arrangement at the ringer lol. I bet real money lol",
+      "url": "https://x.com/iamrahstradamus/status/2125763927703207942"
+    },
+    {
+      "post_id": "2125762744062222823",
+      "source": "@iamrahstradamus",
+      "published_at_utc": "2026-11-26T01:25:07.000Z",
+      "text": "@DruryEnterprise @FanDuel Who said I bet with fan duel credits? You just made that up. Lol I bet real money",
+      "url": "https://x.com/iamrahstradamus/status/2125762744062222823"
+    },
+    {
+      "post_id": "2125755677276860698",
+      "source": "@FezzikSports",
+      "published_at_utc": "2026-11-26T00:57:02.000Z",
+      "text": "NO PICK 2..........  OH NO..... https://t.co/D2O9JXgFTu",
+      "url": "https://x.com/FezzikSports/status/2125755677276860698"
+    },
+    {
+      "post_id": "2125742381177987389",
+      "source": "@FezzikSports",
+      "published_at_utc": "2026-11-26T00:04:12.000Z",
+      "text": "The problem is There odds are -125, not -120\n\nAOK to release this teaser as an official play, but I think I would have to grade it -130.......\n\nSo no official play. \n\nI  am SURE many with accounts got it at -125 or -120 however....... https://t.co/kddgAzz7EQ",
+      "url": "https://x.com/FezzikSports/status/2125742381177987389"
+    },
+    {
+      "post_id": "2125733588289351818",
+      "source": "@FezzikSports",
+      "published_at_utc": "2026-11-25T23:29:16.000Z",
+      "text": "Don't believe the nonsense out there!\n\nI gave a teaser, 2 star, to my clients today.....\n\nGB +2.5 to +8.5\nDallas -8.5 to -2.5\n\nI was doing a podcast when I released, I had already bet this myself, and I saw at least HALF of the books had -8.5 on Dallas.\n\n@Hitman428 alerted me",
+      "url": "https://x.com/FezzikSports/status/2125733588289351818"
+    },
+    {
+      "post_id": "2125732892504715300",
+      "source": "@FezzikSports",
+      "published_at_utc": "2026-11-25T23:26:30.000Z",
+      "text": "Don't believe the nonsense out there!\n\nI gave a teaser, 2 star, to my clients today.....\n\nGB +2.5 to +8.5\nDallas -8.5 to -2.5\n\nI was doing a podcast when I released, I had already bet this myself, and I saw at least HALF of the books had -8.5 on Dallas.\n\n@Hitman428 alerted me",
+      "url": "https://x.com/FezzikSports/status/2125732892504715300"
     }
   ],
   "promotion_thresholds": {
