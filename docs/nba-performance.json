@@ -1,31 +1,77 @@
 {
-  "generated_at_utc": "2026-11-26T04:22:40.396344+00:00",
+  "generated_at_utc": "2026-11-26T19:38:33.665260+00:00",
   "method": "Earliest committed pregame NBA forecast and market line joined to ESPN final score by game ID",
   "summary": {
-    "n": 326,
+    "n": 328,
     "ml": {
-      "wins": 207,
-      "losses": 119,
+      "wins": 208,
+      "losses": 120,
       "pushes": 0,
-      "graded": 326,
-      "rate": 0.6349693251533742
+      "graded": 328,
+      "rate": 0.6341463414634146
     },
     "ats": {
-      "wins": 17,
-      "losses": 28,
+      "wins": 18,
+      "losses": 29,
       "pushes": 0,
-      "graded": 45,
-      "rate": 0.37777777777777777
+      "graded": 47,
+      "rate": 0.3829787234042553
     },
     "ou": {
-      "wins": 14,
-      "losses": 30,
+      "wins": 15,
+      "losses": 31,
       "pushes": 0,
-      "graded": 44,
-      "rate": 0.3181818181818182
+      "graded": 46,
+      "rate": 0.32608695652173914
     }
   },
   "games": [
+    {
+      "game_id": "401909324",
+      "game_date_utc": "2026-11-26T03:00Z",
+      "home_team": "Golden State Warriors",
+      "away_team": "Sacramento Kings",
+      "home_abbr": "GS",
+      "away_abbr": "SAC",
+      "prediction_issued_at": "2026-11-25T21:57:24.782759+00:00",
+      "prediction_commit": "3201254c",
+      "home_win_probability": 0.7750467988267513,
+      "predicted_margin": 10.736336959430043,
+      "predicted_total": 219.5028329382852,
+      "actual_home_score": 129.0,
+      "actual_away_score": 110.0,
+      "actual_margin": 19.0,
+      "actual_total": 239.0,
+      "winner_correct": true,
+      "market_home_spread": -7.5,
+      "market_total": 215.5,
+      "market_bookmaker": "DraftKings",
+      "ats_result": "win",
+      "ou_result": "win"
+    },
+    {
+      "game_id": "401909325",
+      "game_date_utc": "2026-11-26T03:00Z",
+      "home_team": "Portland Trail Blazers",
+      "away_team": "San Antonio Spurs",
+      "home_abbr": "POR",
+      "away_abbr": "SA",
+      "prediction_issued_at": "2026-11-25T21:57:24.782759+00:00",
+      "prediction_commit": "3201254c",
+      "home_win_probability": 0.3544704159242525,
+      "predicted_margin": -4.622561524267353,
+      "predicted_total": 218.96479935984323,
+      "actual_home_score": 116.0,
+      "actual_away_score": 111.0,
+      "actual_margin": 5.0,
+      "actual_total": 227.0,
+      "winner_correct": false,
+      "market_home_spread": 3.5,
+      "market_total": 225.5,
+      "market_bookmaker": "DraftKings",
+      "ats_result": "loss",
+      "ou_result": "loss"
+    },
     {
       "game_id": "401909317",
       "game_date_utc": "2026-11-25T22:00Z",
