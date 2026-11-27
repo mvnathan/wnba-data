@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-11-26T19:38:35.563078+00:00",
+  "generated_at_utc": "2026-11-27T19:29:40.713546+00:00",
   "season": 2026,
   "status": "ok",
   "models": [
@@ -14,27 +14,27 @@
         "ou": "Model total side vs nflverse historical closing total."
       },
       "overall": {
-        "n": 164,
+        "n": 167,
         "ml": {
-          "wins": 105,
-          "losses": 59,
+          "wins": 106,
+          "losses": 61,
           "pushes": 0,
-          "graded": 164,
-          "rate": 0.6402439024390244
+          "graded": 167,
+          "rate": 0.6347305389221557
         },
         "ats": {
-          "wins": 67,
-          "losses": 77,
-          "pushes": 6,
-          "graded": 144,
-          "rate": 0.4652777777777778
+          "wins": 68,
+          "losses": 78,
+          "pushes": 7,
+          "graded": 146,
+          "rate": 0.4657534246575342
         },
         "ou": {
           "wins": 69,
-          "losses": 80,
+          "losses": 83,
           "pushes": 0,
-          "graded": 149,
-          "rate": 0.46308724832214765
+          "graded": 152,
+          "rate": 0.45394736842105265
         }
       },
       "weekly": [
@@ -327,27 +327,27 @@
         {
           "week_start": "2026-11-23",
           "week_label": "Nov 23\u2013Nov 29",
-          "n": 2,
+          "n": 5,
           "ml": {
-            "wins": 1,
-            "losses": 1,
+            "wins": 2,
+            "losses": 3,
             "pushes": 0,
-            "graded": 2,
-            "rate": 0.5
+            "graded": 5,
+            "rate": 0.4
           },
           "ats": {
-            "wins": 1,
-            "losses": 0,
-            "pushes": 0,
-            "graded": 1,
-            "rate": 1.0
+            "wins": 2,
+            "losses": 1,
+            "pushes": 1,
+            "graded": 3,
+            "rate": 0.6666666666666666
           },
           "ou": {
             "wins": 1,
-            "losses": 1,
+            "losses": 4,
             "pushes": 0,
-            "graded": 2,
-            "rate": 0.5
+            "graded": 5,
+            "rate": 0.2
           }
         }
       ]
