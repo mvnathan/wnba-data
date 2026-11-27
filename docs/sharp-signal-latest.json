@@ -1,12 +1,12 @@
 {
-  "generated_at_utc": "2026-11-26T21:45:36.974302+00:00",
+  "generated_at_utc": "2026-11-27T08:51:07.092042+00:00",
   "status": "ok",
   "production_adjustment_enabled": false,
-  "new_posts_seen": 4,
+  "new_posts_seen": 3,
   "new_picks_parsed": 0,
   "ledger_size": 0,
-  "since_id_used": "2125809048939614540",
-  "newest_id": "2126024931146346820",
+  "since_id_used": "2126024931146346820",
+  "newest_id": "2126162087629991998",
   "accounts": {
     "@RufusPeabody": {
       "tier": "established_professional",
@@ -62,32 +62,25 @@
   "new_picks": [],
   "candidate_posts": [
     {
-      "post_id": "2126024931146346820",
+      "post_id": "2126162087629991998",
       "source": "@iamrahstradamus",
-      "published_at_utc": "2026-11-26T18:46:57.000Z",
-      "text": "@Kalshito Still doesn\u2019t change my overall point. The bears turnover regression is becoming a problem. They were driving to score today and turned the ball over. Last week\u2019s game was harder than it had to be because they turned the ball over.",
-      "url": "https://x.com/iamrahstradamus/status/2126024931146346820"
+      "published_at_utc": "2026-11-27T03:51:58.000Z",
+      "text": "Offensive pass interference is out of control in this league these days. Let guys play football, what the hell.",
+      "url": "https://x.com/iamrahstradamus/status/2126162087629991998"
     },
     {
-      "post_id": "2126018252304461833",
+      "post_id": "2126131295873093972",
       "source": "@iamrahstradamus",
-      "published_at_utc": "2026-11-26T18:20:25.000Z",
-      "text": "The Chicago Bears have NINE offensive turnovers over the past 4 weeks. Last season the Bears led the NFL in takeaways at +33 and turnover differential at +22. This season they have a turnover differential of -5 which is tied for 27th in the NFL.\n\nRegression to the mean.",
-      "url": "https://x.com/iamrahstradamus/status/2126018252304461833"
+      "published_at_utc": "2026-11-27T01:49:37.000Z",
+      "text": "@RantingJohnson Just bad. Honestly I feel bad for anyone who tailed this one because it's like, I was able to get out of it barely losing anything because a I took some Eagles ML -118 once they made the 4th down stop knowing that Jake Elliott has unlimited range but it just sucks when you give",
+      "url": "https://x.com/iamrahstradamus/status/2126131295873093972"
     },
     {
-      "post_id": "2126005297613254849",
-      "source": "@wheatonbrando",
-      "published_at_utc": "2026-11-26T17:28:56.000Z",
-      "text": "@YorkshireBlade7 How dare you! I bet him at 100\u20131 in about week 4 :)",
-      "url": "https://x.com/wheatonbrando/status/2126005297613254849"
-    },
-    {
-      "post_id": "2125995729126670454",
+      "post_id": "2126116482039828671",
       "source": "@iamrahstradamus",
-      "published_at_utc": "2026-11-26T16:50:55.000Z",
-      "text": "Can we revisit this question? \n\nBack to back wins over the Spurs and 76ers\n\nOr is there still NO chance like people in this thread have said. In the modern NBA, I think we need to at least consider everyone's chances because there's been many surprises over the past 8 years. https://t.co/jCXofEtvvi",
-      "url": "https://x.com/iamrahstradamus/status/2125995729126670454"
+      "published_at_utc": "2026-11-27T00:50:45.000Z",
+      "text": "@benbean1996 I would love to do a deep dive on every time a team went for it under this situation because I'm truly curious.",
+      "url": "https://x.com/iamrahstradamus/status/2126116482039828671"
     }
   ],
   "promotion_thresholds": {
