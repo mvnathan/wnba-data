@@ -1,12 +1,12 @@
 {
-  "generated_at_utc": "2026-11-27T08:51:07.092042+00:00",
+  "generated_at_utc": "2026-11-27T21:29:35.516074+00:00",
   "status": "ok",
   "production_adjustment_enabled": false,
-  "new_posts_seen": 3,
+  "new_posts_seen": 1,
   "new_picks_parsed": 0,
   "ledger_size": 0,
-  "since_id_used": "2126024931146346820",
-  "newest_id": "2126162087629991998",
+  "since_id_used": "2126162087629991998",
+  "newest_id": "2126416940784910625",
   "accounts": {
     "@RufusPeabody": {
       "tier": "established_professional",
@@ -62,25 +62,11 @@
   "new_picks": [],
   "candidate_posts": [
     {
-      "post_id": "2126162087629991998",
-      "source": "@iamrahstradamus",
-      "published_at_utc": "2026-11-27T03:51:58.000Z",
-      "text": "Offensive pass interference is out of control in this league these days. Let guys play football, what the hell.",
-      "url": "https://x.com/iamrahstradamus/status/2126162087629991998"
-    },
-    {
-      "post_id": "2126131295873093972",
-      "source": "@iamrahstradamus",
-      "published_at_utc": "2026-11-27T01:49:37.000Z",
-      "text": "@RantingJohnson Just bad. Honestly I feel bad for anyone who tailed this one because it's like, I was able to get out of it barely losing anything because a I took some Eagles ML -118 once they made the 4th down stop knowing that Jake Elliott has unlimited range but it just sucks when you give",
-      "url": "https://x.com/iamrahstradamus/status/2126131295873093972"
-    },
-    {
-      "post_id": "2126116482039828671",
-      "source": "@iamrahstradamus",
-      "published_at_utc": "2026-11-27T00:50:45.000Z",
-      "text": "@benbean1996 I would love to do a deep dive on every time a team went for it under this situation because I'm truly curious.",
-      "url": "https://x.com/iamrahstradamus/status/2126116482039828671"
+      "post_id": "2126416940784910625",
+      "source": "@FezzikSports",
+      "published_at_utc": "2026-11-27T20:44:40.000Z",
+      "text": "I gave this play out to  my clients YESTERDAY!\n\nLet's go https://t.co/d3zsk0gdLL",
+      "url": "https://x.com/FezzikSports/status/2126416940784910625"
     }
   ],
   "promotion_thresholds": {
