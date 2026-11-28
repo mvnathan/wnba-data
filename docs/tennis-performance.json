@@ -1,16 +1,16 @@
 {
-  "generated_at_utc": "2026-11-27T21:14:15.905587Z",
+  "generated_at_utc": "2026-11-28T07:44:32.902429Z",
   "method": "Earliest committed pre-match forecast joined to ESPN final scores by match ID",
   "summary": {
-    "matches_evaluated": 1284,
-    "winner_accuracy": 0.6425233644859814,
-    "winner_auc": 0.6918589813700828,
-    "winner_log_loss": 0.6420021007426503,
-    "winner_brier_score": 0.223635439711838,
-    "spread_mae_games": 4.254049844236761,
-    "spread_bias_games": -0.0024922118380062215,
-    "total_mae_games": 5.348520249221184,
-    "total_bias_games": -1.0497663551401868
+    "matches_evaluated": 1285,
+    "winner_accuracy": 0.6428015564202335,
+    "winner_auc": 0.6921747908294993,
+    "winner_log_loss": 0.641842531617714,
+    "winner_brier_score": 0.22355892652918288,
+    "spread_mae_games": 4.253774319066149,
+    "spread_bias_games": 0.0005447470817120645,
+    "total_mae_games": 5.345603112840467,
+    "total_bias_games": -1.047704280155642
   },
   "by_tour": {
     "ATP": {
@@ -25,15 +25,15 @@
       "total_bias_games": -0.4216071428571429
     },
     "WTA": {
-      "matches_evaluated": 724,
-      "winner_accuracy": 0.6450276243093923,
-      "winner_auc": 0.6861976283377749,
-      "winner_log_loss": 0.6533203584705798,
-      "winner_brier_score": 0.22739754185082878,
-      "spread_mae_games": 4.5823204419889505,
-      "spread_bias_games": 0.1787292817679558,
-      "total_mae_games": 5.071546961325967,
-      "total_bias_games": -1.5356353591160223
+      "matches_evaluated": 725,
+      "winner_accuracy": 0.6455172413793103,
+      "winner_auc": 0.6867338236861742,
+      "winner_log_loss": 0.6530219245626196,
+      "winner_brier_score": 0.22725673972413798,
+      "spread_mae_games": 4.581379310344827,
+      "spread_bias_games": 0.18386206896551727,
+      "total_mae_games": 5.066758620689655,
+      "total_bias_games": -1.5313103448275862
     }
   },
   "by_day": [
@@ -1035,15 +1035,15 @@
     },
     {
       "date": "2026-11-27",
-      "matches_evaluated": 1,
+      "matches_evaluated": 2,
       "winner_accuracy": 1.0,
       "winner_auc": null,
-      "winner_log_loss": 0.536314386533157,
-      "winner_brier_score": 0.17230801,
-      "spread_mae_games": 3.5,
-      "spread_bias_games": -3.5,
-      "total_mae_games": 20.6,
-      "total_bias_games": 20.6
+      "winner_log_loss": 0.4866350808663461,
+      "winner_brier_score": 0.148812005,
+      "spread_mae_games": 3.7,
+      "spread_bias_games": 0.19999999999999996,
+      "total_mae_games": 11.100000000000001,
+      "total_bias_games": 11.100000000000001
     }
   ],
   "matches": [
@@ -44702,6 +44702,40 @@
       "absolute_margin_error": 3.5,
       "total_error": 20.6,
       "absolute_total_error": 20.6
+    },
+    {
+      "match_id": "186831",
+      "target_date": "2026-11-27",
+      "start_time_utc": "2026-11-27T21:00Z",
+      "tour": "WTA",
+      "tournament": "IEB+ Argentina Open",
+      "round": "Quarterfinal",
+      "player_1": "Alicia Herrero Linana",
+      "player_2": "Julia Riera",
+      "player_1_rank": 358,
+      "player_2_rank": 144,
+      "model_version": "tennis-v3-tournament-context",
+      "prediction_issued_at": "2026-11-27T08:23:22.136208+00:00",
+      "prediction_commit": "a02005e9",
+      "player_1_win_probability": 0.354,
+      "predicted_winner": "Julia Riera",
+      "predicted_game_margin_player_1": -3.1,
+      "predicted_total_games": 20.6,
+      "actual_player_1": "Alicia Herrero Linana",
+      "actual_player_2": "Julia Riera",
+      "actual_player_1_games": 6.0,
+      "actual_player_2_games": 13.0,
+      "actual_margin_player_1": -7.0,
+      "actual_total_games": 19.0,
+      "actual_winner_player_1": false,
+      "final_status": "Final",
+      "winner_correct": true,
+      "brier_score": 0.12531599999999998,
+      "log_loss": 0.43695577519953516,
+      "margin_error": 3.9,
+      "absolute_margin_error": 3.9,
+      "total_error": 1.6000000000000014,
+      "absolute_total_error": 1.6000000000000014
     }
   ]
 }
