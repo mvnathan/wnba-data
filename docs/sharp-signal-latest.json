@@ -1,12 +1,12 @@
 {
-  "generated_at_utc": "2026-11-27T21:29:35.516074+00:00",
+  "generated_at_utc": "2026-11-28T08:10:05.736454+00:00",
   "status": "ok",
   "production_adjustment_enabled": false,
-  "new_posts_seen": 1,
+  "new_posts_seen": 3,
   "new_picks_parsed": 0,
   "ledger_size": 0,
-  "since_id_used": "2126162087629991998",
-  "newest_id": "2126416940784910625",
+  "since_id_used": "2126416940784910625",
+  "newest_id": "2126552022552043717",
   "accounts": {
     "@RufusPeabody": {
       "tier": "established_professional",
@@ -62,11 +62,25 @@
   "new_picks": [],
   "candidate_posts": [
     {
-      "post_id": "2126416940784910625",
-      "source": "@FezzikSports",
-      "published_at_utc": "2026-11-27T20:44:40.000Z",
-      "text": "I gave this play out to  my clients YESTERDAY!\n\nLet's go https://t.co/d3zsk0gdLL",
-      "url": "https://x.com/FezzikSports/status/2126416940784910625"
+      "post_id": "2126552022552043717",
+      "source": "@wheatonbrando",
+      "published_at_utc": "2026-11-28T05:41:26.000Z",
+      "text": "Just so it\u2019s on the record: changing my official DK contest pick from Cardinals +7.5 to Seahawks +3.5. \ud83c\udfc8",
+      "url": "https://x.com/wheatonbrando/status/2126552022552043717"
+    },
+    {
+      "post_id": "2126514853594440096",
+      "source": "@wheatonbrando",
+      "published_at_utc": "2026-11-28T03:13:44.000Z",
+      "text": "@MichaelFFlorio Not if you play in a league with real scoring.",
+      "url": "https://x.com/wheatonbrando/status/2126514853594440096"
+    },
+    {
+      "post_id": "2126440094064107773",
+      "source": "@iamrahstradamus",
+      "published_at_utc": "2026-11-27T22:16:40.000Z",
+      "text": "@KDTrey5 I know we've gone back and forth over the years but I'm trying to get better when it comes to being critical towards people in the spotlight. I can disagree without being disrespectful. Also, that reminds me, things I've said about you were probably a bit unfair. I'm growing.",
+      "url": "https://x.com/iamrahstradamus/status/2126440094064107773"
     }
   ],
   "promotion_thresholds": {
